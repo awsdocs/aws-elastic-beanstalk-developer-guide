@@ -1,0 +1,150 @@
+# Example: Launching an Elastic Beanstalk in a VPC with Amazon RDS<a name="vpc-rds"></a>
+
+This topic walks you through deploying an Elastic Beanstalk application with Amazon RDS in a VPC using a NAT gateway\. Your infrastructure will look similar to the following diagram:
+
+![\[Elastic Beanstalk and VPC Topology with Amazon RDS\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vpc-rds-topo-ngw.png)
+
+**Note**  
+If you haven't used a DB instance with your application before, try adding one to a test environment, and connecting to an external DB instance before adding VPC configuration to the mix\.
+
+To deploy an Elastic Beanstalk application with Amazon RDS inside a VPC using a NAT gateway, you need to complete the following:
+
+
++ [Create a VPC with a Public and Private Subnet](#vpc-rds-create)
++ [Create a DB Subnet Group](#vpc-rds-subnet)
++ [Deploy to Elastic Beanstalk](#vpc-rds-create-env)
+
+## Create a VPC with a Public and Private Subnet<a name="vpc-rds-create"></a>
+
+You can use the [Amazon VPC console](https://console.aws.amazon.com/vpc/) to create a VPC\. 
+
+**To create a VPC**
+
+1. Sign in to the [Amazon VPC console](https://console.aws.amazon.com/vpc/)\.
+
+1. In the navigation pane, choose **VPC Dashboard**\. Then choose **Start VPC Wizard**\.
+
+1. Choose **VPC with Public and Private Subnets** and then choose **Select**\.  
+![\[Choose option 2 in the wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/Case2_Wizard_Page2.png)
+
+1. Your Elastic Load Balancing load balancer and your Amazon EC2 instances must be in the same Availability Zone so they can communicate with each other\. Choose the same Availability Zone from each **Availability Zone** list\.  
+![\[Option 2 confirmation page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/Case2_Wizard_Confirmation2.png)
+
+1. Choose an Elastic IP address for your NAT gateway\.
+
+1. Choose **Create VPC**\.
+
+   The wizard begins to create your VPC, subnets, and Internet gateway\. It also updates the main route table and creates a custom route table\. Finally, the wizard creates a NAT gateway in the public subnet\.
+**Note**  
+You can choose to launch a NAT instance in the public subnet instead of a NAT gateway\. For more information, see [Scenario 2: VPC with Public and Private Subnets \(NAT\)](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario2.html) in the *Amazon VPC User Guide*\.
+
+1. After the VPC is successfully created, you get a VPC ID\. You need this value for this for the next step\. To view your VPC ID, choose **Your VPCs** in the left pane of the [Amazon VPC console](https://console.aws.amazon.com/vpc/)\.  
+![\[VPC ID\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vpc-id.png)
+
+## Create a DB Subnet Group<a name="vpc-rds-subnet"></a>
+
+A DB Subnet Group for a VPC is a collection of subnets \(typically private\) that you may want to designate for your back\-end RDS DB Instances\. Each DB Subnet Group should have at least one subnet for every Availability Zone in a given region\. 
+
+**Create a DB subnet group**
+
+1. Open the Amazon RDS console at [https://console\.aws\.amazon\.com/rds/](https://console.aws.amazon.com/rds/)\.
+
+1. In the navigation pane, click **Subnet Groups**\.
+
+1. Click **Create DB Subnet Group**\.
+
+1.  Click **Name**, and then type the name of your DB Subnet Group\.
+
+1.  Click **Description**, and then describe your DB Subnet Group\.
+
+1.  Next to **VPC ID**, select the ID of the VPC that you created\.
+
+1.  Click the **add all the subnets** link in the **Add Subnet\(s\) to this Subnet Group** section\.   
+![\[Create DB Subnet Group button\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vpc-rds-subnet.png)
+
+1. When you are finished, click **Yes, Create**\.
+
+1. In the confirmation window, click **Close**\.
+
+    Your new DB Subnet Group appears in the DB Subnet Groups list of the RDS console\. You can click it to see details, such as all of the subnets associated with this group, in the details pane at the bottom of the window\.
+
+## Deploy to Elastic Beanstalk<a name="vpc-rds-create-env"></a>
+
+After you set up your VPC, you can create your environment inside your VPC and deploy your application to Elastic Beanstalk\. You can do this using the Elastic Beanstalk console, or you can use the AWS toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API\. If you use the Elastic Beanstalk console, you just need to upload your `.war` or `.zip` file and select the VPC settings inside the wizard\. Elastic Beanstalk then creates your environment inside your VPC and deploys your application\. Alternatively, you can use the AWS toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API to deploy your application\. To do this, you need to define your VPC option settings in a configuration file and deploy this file with your source bundle\. This topic provides instructions for both methods\.
+
+### Deploying with the Elastic Beanstalk Console<a name="vpc-rds-new-console"></a>
+
+The Elastic Beanstalk console walks you through creating your new environment inside your VPC\. You need to provide a `.war` file \(for Java applications\) or a `.zip` file \(for all other applications\)\. In the **VPC Configuration** page of the Elastic Beanstalk environment wizard, you must make the following selections:
+
+**VPC**  
+Select your VPC
+
+**VPC security group**  
+Select the instance security group you created above\.
+
+**ELB visibility**  
+Select `External` if your load balancer should be publicly available, or select `Internal` if the load balancer should only be available within your VPC\.
+
+Select the subnets for your load balancer and EC2 instances\. Make sure you select the public subnet for the load balancer, and the private subnet for your Amazon EC2 instances\. By default, the VPC creation wizard creates the public subnet in `10.0.0.0/24` and the private subnet in `10.0.1.0/24`\.
+
+You can view your subnet IDs by choosing **Subnets** in the [Amazon VPC console](https://console.aws.amazon.com/vpc/)\.
+
+![\[Subnet IDs for your VPC\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vpc-subnets.png)
+
+### Deploying with the AWS Toolkits, Eb, CLI, or API<a name="vpc-rds-new-options"></a>
+
+When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, the AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See  for more information\.
+
+When you update the option settings, you will need to specify at least the following:
+
++ **VPCId**–Contains the ID of the VPC\. 
+
++ **Subnets**–Contains the ID of the Auto Scaling group subnet\. In this example, this is the ID of the private subnet\. 
+
++ **ELBSubnets**–Contains the ID of the subnet for the elastic load balancer\. In this example, this is the ID of the public subnet\.
+
++ **SecurityGroups**–Contains the ID of the security groups\.
+
++ **DBSubnets**–Contains the ID of the DB subnets\. 
+**Note**  
+When using DBSubnets, you need to create additional subnets in your VPC to cover all the Availability Zones in the region\. 
+
+Optionally, you can also specify the following information:
+
++ **ELBScheme** — Specify `internal` if you want to create an internal load balancer inside your VPC so that your Elastic Beanstalk application cannot be accessed from outside your VPC\.
+
+The following is an example of the option settings you could use when deploying your Elastic Beanstalk application inside a VPC\. For more information about VPC option settings \(including examples for how to specify them, default values, and valid values\), see the **aws:ec2:vpc** namespace table in [Configuration Options](command-options.md)\.
+
+```
+option_settings:
+  - namespace: aws:autoscaling:launchconfiguration
+    option_name: EC2KeyName
+    value: ec2keypair
+    
+  - namespace: aws:ec2:vpc
+    option_name: VPCId
+    value: vpc-170647c
+    
+  - namespace: aws:ec2:vpc
+    option_name: Subnets
+    value: subnet-4f195024
+    
+  - namespace: aws:ec2:vpc
+    option_name: ELBSubnets
+    value: subnet-fe064f95
+    
+  - namespace: aws:ec2:vpc
+    option_name: DBSubnets
+    value: subnet-fg148g78
+    
+  - namespace: aws:autoscaling:launchconfiguration
+    option_name: InstanceType
+    value: m1.small
+    
+  - namespace: aws:autoscaling:launchconfiguration
+    option_name: SecurityGroups
+    value: sg-7f1ef110
+```
+
+**Note**  
+When using DBSubnets, make sure you have subnets in your VPC to cover all the Availability Zones in the region\.
