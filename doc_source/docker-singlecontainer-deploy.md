@@ -36,7 +36,7 @@ This sample is a PHP application that runs on a custom Ubuntu image defined in a
 
 The PHP sample application uses Amazon RDS\. You may be charged for using these services\. If you are a new customer, you can make use of the AWS Free Usage Tier\. For more information about pricing, see the following:
 
-+ [Amazon Relational Database Service \(RDS\) Pricing](http://aws.amazon.com/rds/pricing/)
++ [Amazon Relational Database Service \(RDS\) Pricing](https://aws.amazon.com/rds/pricing/)
 
 ## Sample Python Application<a name="docker-singlecontainer-pythonsample"></a>
 
@@ -46,9 +46,9 @@ This sample is a Python application that runs on a custom Ubuntu image defined i
 
 The Python sample application uses Amazon DynamoDB, Amazon SQS, and Amazon SNS\. You may be charged for using these services\. If you are a new customer, you can make use of the AWS Free Usage Tier\. For more information about pricing, see the following:
 
-+ [Amazon DynamoDB Pricing](http://aws.amazon.com/dynamodb/pricing/)
++ [Amazon DynamoDB Pricing](https://aws.amazon.com/dynamodb/pricing/)
 
-+ [Amazon SQS Pricing](http://aws.amazon.com/sqs/pricing/)
++ [Amazon SQS Pricing](https://aws.amazon.com/sqs/pricing/)
 
 + [Amazon SNS Pricing](https://aws.amazon.com/sns/pricing/)
 

@@ -23,16 +23,17 @@ For production environments, create a DB instance outside of your Elastic Beanst
 
 1. Choose **Configuration**\.
 
-1. Under **Data Tier**, choose **Create a new RDS database**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-db.png)
+1. On the **Database** configuration card, choose **Modify**\.
 
-1. Choose a DB engine, enter a user name and password, and then choose **Apply**\.
+1. Choose a DB engine, and enter a user name and password\.
+
+1. Choose **Save**, and then choose **Apply**\.
 
 Adding a DB instance takes about 10 minutes\. When the environment update is complete, the DB instance's hostname and other connection information are available to your application through the following environment properties:
 
 + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
-  Amazon RDS console label – **Endpoint** is the hostname\.
+  Amazon RDS console label – **Endpoint** \(this is the hostname\)
 
 + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
 

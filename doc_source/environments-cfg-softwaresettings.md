@@ -5,15 +5,15 @@ You can use **environment properties** to pass secrets, endpoints, debug setting
 **Environment Variables**  
 In most cases, environment properties are passed to your application as *environment variables*, but the behavior is platform dependent\. For example, the Java SE platform sets environment variables that you retrieve with `System.getenv`, while the Tomcat platform sets Java system properties that you retrieve with `System.getProperty`\.
 
-In addition to the standard set of options available for all environments, most Elastic Beanstalk platforms let you set language\-specific or framework\-specific settings\. These can take the following forms\.
+In addition to the standard set of options available for all environments, most Elastic Beanstalk platforms let you specify language\-specific or framework\-specific settings\. These can take the following forms\.
 
 **Platform\-Specific Settings**
 
-+ **Preset environment properties** – The Ruby platform uses environment properties for framework settings like `RACK_ENV` and `BUNDLE_WITHOUT`\.
++ **Preset environment properties** – The Ruby platform uses environment properties for framework settings, such as `RACK_ENV` and `BUNDLE_WITHOUT`\.
 
 + **Placeholder environment properties** – The Tomcat platform defines an environment property named `JDBC_CONNECTION_STRING` that is not set to any value\. This type of setting was more common on older platform versions\.
 
-+ **Configuration options** – Most platforms define configuration options in platform\-specific or shared namespaces like `aws:elasticbeanstalk:xray` or `aws:elasticbeanstalk:container:python`\.
++ **Configuration options** – Most platforms define configuration options in platform\-specific or shared namespaces, such as `aws:elasticbeanstalk:xray` or `aws:elasticbeanstalk:container:python`\.
 
 For information about platform\-specific options, see the platform topic for your language or framework:
 
@@ -33,11 +33,18 @@ For information about platform\-specific options, see the platform topic for you
 
 + Ruby – 
 
-Also, when you add a database to your environment, Elastic Beanstalk sets environment properties such as `RDS_HOSTNAME` that you can read in your application code to construct a connection object or string\.
+Also, when you add a database to your environment, Elastic Beanstalk sets environment properties, such as `RDS_HOSTNAME`, that you can read in your application code to construct a connection object or string\.
+
+
++ [Configuring Environment Properties](#environments-cfg-softwaresettings-console)
++ [Software Setting Namespaces](#environments-cfg-softwaresettings-configfiles)
++ [Accessing Environment Properties](#environments-cfg-softwaresettings-accessing)
++ [Configuring AWS X\-Ray Debugging](environment-configuration-debugging.md)
++ [Viewing Logs from Your Elastic Beanstalk Environment's Amazon EC2 Instances](environments-cfg-logging.md)
 
 ## Configuring Environment Properties<a name="environments-cfg-softwaresettings-console"></a>
 
-Environment properties appear in the console under **Software Configuration**\.
+Environment properties appear in the Elastic Beanstalk console under **Software Configuration**\.
 
 **To configure environment properties in the Elastic Beanstalk console**
 
@@ -47,21 +54,21 @@ Environment properties appear in the console under **Software Configuration**\.
 
 1. Choose **Configuration**\.
 
-1. In the **Software Configuration** section, choose the settings icon \( ![\[Edit\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cog.png)\)\.
+1. On the **Software** configuration card, choose **Modify**\.
 
 1. Under **Environment Properties**, enter key\-value pairs\.
 
-1. Choose **Apply**\.
+1. Choose **Save**, and then choose **Apply**\.
 
 **Environment Property Limits**
 
-+ **Keys** can contain any alphanumeric characters and the following symbols: `_`, `.`, `:`, `/`, `+`, `\`, `-`, `@`
++ **Keys** can contain any alphanumeric characters and the following symbols: `_ . : / + \ - @`
 
-  The symbols listed are valid for environment property keys, but may not be valid for environment variable names on your environment's platform\. For compatibility with all platforms, limit environment properties to the following pattern: `[A-Z_][A-Z0-9_]*`
+  The symbols listed are valid for environment property keys, but might not be valid for environment variable names on your environment's platform\. For compatibility with all platforms, limit environment properties to the following pattern: `[A-Z_][A-Z0-9_]*`
 
-+ **Values** can contain any alphanumeric characters, white space, and the following symbols: `_`, `.`, `:`, `/`, `=`, `+`, `\`, `-`, `@`, `'`\*, `"`\*
-
-  \*Single and double quotation marks in values must be escaped\.
++ **Values** can contain any alphanumeric characters, white space, and the following symbols: `_ . : / = + \ - @ ' "`
+**Note**  
+Single and double quotation marks in values must be escaped\.
 
 + **Keys** can contain up to 128 characters\. **Values** can contain up to 256 characters\.
 
@@ -83,7 +90,7 @@ option_settings:
     API_ENDPOINT: www.example.com/api
 ```
 
-If you use configuration files or AWS CloudFormation templates to create custom resources, you can use an AWS CloudFormation function to get information about the resource and assign it to an environment property dynamically during deployment\. The following example from the the [elastic\-beanstalk\-docs](https://github.com/awslabs/elastic-beanstalk-docs/) GitHub repository uses the Ref function to get the ARN of an Amazon SNS topic that it creates, and assigns it to an environment property named `NOTIFICATION_TOPIC`\.
+If you use configuration files or AWS CloudFormation templates to create custom resources, you can use an AWS CloudFormation function to get information about the resource and assign it to an environment property dynamically during deployment\. The following example from the the [elastic\-beanstalk\-samples](https://github.com/awslabs/elastic-beanstalk-docs/) GitHub repository uses the Ref function to get the ARN of an Amazon SNS topic that it creates, and assigns it to an environment property named `NOTIFICATION_TOPIC`\.
 
 **Example \.ebextensions/[sns\-topic\.config](https://github.com/awslabs/elastic-beanstalk-docs/blob/master/configuration-files/aws-provided/resource-configuration/sns-topic.config)**  
 
@@ -107,7 +114,7 @@ option_settings:
     AWS_REGION: '`{"Ref" : "AWS::Region"}`'
 ```
 
-Most Elastic Beanstalk platforms define additional namespaces with options for configuring software that runs on the instance, such as the reverse proxy that relays requests to your application\. For more information about the namespaces available for your platform, see one of the following sections:
+Most Elastic Beanstalk platforms define additional namespaces with options for configuring software that runs on the instance, such as the reverse proxy that relays requests to your application\. For more information about the namespaces available for your platform, see the following:
 
 + Go – 
 
@@ -181,4 +188,4 @@ In most cases, you access environment properties in your application code like a
   endpoint = ENV['API_ENDPOINT']
   ```
 
-Outside of application code, such as in a script that runs during deployment, you can access environment properties with the `get-config` platform script\. See the [elastic\-beanstalk\-docs](https://github.com/awslabs/elastic-beanstalk-docs/search?utf8=%E2%9C%93&q=get-config) GitHub repository for example configurations that use `get-config`\.
+Outside of application code, such as in a script that runs during deployment, you can access environment properties with the `get-config` platform script\. See the [elastic\-beanstalk\-samples](https://github.com/awslabs/elastic-beanstalk-docs/search?utf8=%E2%9C%93&q=get-config) GitHub repository for example configurations that use `get-config`\.

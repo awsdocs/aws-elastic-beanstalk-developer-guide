@@ -8,27 +8,27 @@ With health\-based rolling updates, Elastic Beanstalk waits until instances in a
 
 With enhanced health reporting, all of the instances in a batch must pass multiple consecutive health checks before Elastic Beanstalk will move on to the next batch\. In addition to ELB health checks, which only check your instances, enhanced health monitors application logs and the state of your environment's other resources\. In a web server environment with enhanced health, all instances must pass 12 health checks over the course of two minutes \(18 checks over three minutes for worker environments\)\. If any instance fails one health check, the count resets\.
 
-If a batch does not become healthy within the rolling update timeout \(default is 30 minutes\), the update is cancelled\. Rolling update timeout is a configuration option that is available in the `aws:autoscaling:updatepolicy:rollingupdate` namespace\. If your application does not pass health checks with `Ok` status but is stable at a different level, you can set the `HealthCheckSuccessThreshold` option in the `aws:elasticbeanstalk:command namespace` to change the level at which Elastic Beanstalk considers an instance to be healthy\.
+If a batch does not become healthy within the rolling update timeout \(default is 30 minutes\), the update is canceled\. Rolling update timeout is a configuration option that is available in the `aws:autoscaling:updatepolicy:rollingupdate` namespace\. If your application does not pass health checks with `Ok` status but is stable at a different level, you can set the `HealthCheckSuccessThreshold` option in the `aws:elasticbeanstalk:command namespace` to change the level at which Elastic Beanstalk considers an instance to be healthy\.
 
-If the rolling update process fails, Elastic Beanstalk starts another rolling update to rollback to the previous configuration\. A rolling update can fail due to failed health checks or if launching new instances causes you to exceed the limits on your account\. If you hit a limit on the number of EC2 instances, for example, the rolling update can fail when it attempts to provision a batch of new instances\. In this case, the rollback fails as well\.
+If the rolling update process fails, Elastic Beanstalk starts another rolling update to roll back to the previous configuration\. A rolling update can fail due to failed health checks or if launching new instances causes you to exceed the limits on your account\. If you hit a limit on the number of EC2 instances, for example, the rolling update can fail when it attempts to provision a batch of new instances\. In this case, the rollback fails as well\.
 
 A failed rollback ends the update process and leaves your environment in an unhealthy state\. Unprocessed batches are still running instances with the old configuration, while any batches that completed successfully have the new configuration\. To fix an environment after a failed rollback, first resolve the underlying issue that caused the update to fail, and then initiate another environment update\.
 
 An alternative method is to deploy the new version of your application to a different environment and then perform a CNAME swap to redirect traffic with zero downtime\. See  for more information\.
 
-## Rolling Updates vs Rolling Deployments<a name="environments-cfg-rollingupdates-deployments"></a>
+## Rolling Updates versus Rolling Deployments<a name="environments-cfg-rollingupdates-deployments"></a>
 
-Rolling updates occur when you change settings that require new EC2 instances to be provisioned for your environment\. This includes changes to the Auto Scaling group configuration such as instance type and key pair settings, and changes to VPC settings\. In a rolling update, each batch of instances is terminated prior to a new batch being provisioned to replace it\.
+Rolling updates occur when you change settings that require new EC2 instances to be provisioned for your environment\. This includes changes to the Auto Scaling group configuration, such as instance type and key pair settings, and changes to VPC settings\. In a rolling update, each batch of instances is terminated prior to a new batch being provisioned to replace it\.
 
 Rolling deployments occur whenever you deploy your application and can typically be performed without replacing instances in your environment\. Elastic Beanstalk takes each batch out of service, deploys the new application version, and then places it back in service\.
 
-The exception to this is if you change settings that require instance replacement at the same time you deploy a new application version\. For example, if you change the key name settings in a configuration file in your source bundle and deploy it to your environment, you trigger a rolling update\. Instead of deploying your new application version to each batch of existing instances, a new batch of instances is provisioned with the new configuration\. A separate deployment does not occur in this case because the new instances are brought up with the new application version\.
+The exception to this is if you change settings that require instance replacement at the same time you deploy a new application version\. For example, if you change the key name settings in a configuration file in your source bundle and deploy it to your environment, you trigger a rolling update\. Instead of deploying your new application version to each batch of existing instances, a new batch of instances is provisioned with the new configuration\. In this case, a separate deployment does not occur because the new instances are brought up with the new application version\.
 
-Any time that new instances are provisioned as part of an environment update, there is a deployment phase where your application's source code is deployed to the new instances and any configuration settings that modify the operating system or software on the instances are applied\. Deployment health check settings \(**Ignore health check**, **Healthy threshold** and **Command timeout**\) also apply to health based rolling updates and immutable updates during the deployment phase\.
+Any time new instances are provisioned as part of an environment update, there is a deployment phase where your application's source code is deployed to the new instances and any configuration settings that modify the operating system or software on the instances are applied\. Deployment health check settings \(**Ignore health check**, **Healthy threshold**, and **Command timeout**\) also apply to health\-based rolling updates and immutable updates during the deployment phase\.
 
 ## Configuring Rolling Updates<a name="rollingupdates-configure"></a>
 
-You can enable and configure rolling updates in the Elastic Beanstalk Management Console\.
+You can enable and configure rolling updates in the Elastic Beanstalk console\.
 
 **To enable rolling updates**
 
@@ -38,18 +38,18 @@ You can enable and configure rolling updates in the Elastic Beanstalk Management
 
 1. Choose **Configuration**\.
 
-1. In the **Updates and Deployments** section, choose ![\[Edit\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cog.png)\. 
+1. On the **Rolling updates and deployments** configuration card, choose **Modify**\.
 
 1. In the **Configuration Updates** section, select **Rolling configuration updates**\.  
-![\[Elastic Beanstalk Rolling Updates Configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-rolling-updates-health.png)
+![\[The configuration updates section on the modify rolling updates and deployments configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-rolling-updates-health.png)
 
 1. Choose an **Update type** and batch settings\.
 
-1. Choose **Apply**\.
+1. Choose **Save**, and then choose **Apply**\.
 
-The **Configuration Updates** section of the **Updates and Deployments** page has the following options for rolling updates:
+The **Configuration Updates** section of the **Rolling updates and deployments** page has the following options for rolling updates:
 
-+ **Update type** – Choose from the following options: Elastic Beanstalk waits after it finishes updating a batch of instances before moving on to the next batch, to allow those instances to finish bootstrapping and start serving traffic\.
++ **Rolling update type** – Elastic Beanstalk waits after it finishes updating a batch of instances before moving on to the next batch, to allow those instances to finish bootstrapping and start serving traffic\. Choose from the following options:
 
   + **Rolling based on Health** – Wait until instances in the current batch are healthy before placing instances in service and starting the next batch\.
 
@@ -57,11 +57,11 @@ The **Configuration Updates** section of the **Updates and Deployments** page ha
 
   + **Immutable** – Apply the configuration change to a fresh group of instances by performing an immutable update\.
 
-+ **Maximum batch size** – The number of instances to replace in each batch, between **1** and **10000**\. By default, this value is one\-third of the minimum size of the autoscaling group, rounded up\.
++ **Batch size** – The number of instances to replace in each batch, between **1** and **10000**\. By default, this value is one\-third of the minimum size of the Auto Scaling group, rounded up\.
 
-+ **Minimum instances in service** – The minimum number of instances to keep running while other instances are being updated, between **0** and **9999**\. The default value is either the minimum size of the autoscaling group or one less than the maximum size of the autoscaling group, whichever number is lower\.
++ **Minimum capacity** – The minimum number of instances to keep running while other instances are updated, between **0** and **9999**\. The default value is either the minimum size of the autoscaling group or one less than the maximum size of the autoscaling group, whichever number is lower\.
 
-+ **Pause time** \(time\-based only\) – The amount of time to wait after a batch is updated before moving on to the next batch, to allow your application to start receiving traffic\. Between 0 seconds to 1 hour\.
++ **Pause time** \(time\-based only\) – The amount of time to wait after a batch is updated before moving on to the next batch, to allow your application to start receiving traffic\. Between 0 seconds and 1 hour\.
 
 ## The aws:autoscaling:updatepolicy:rollingupdate namespace<a name="rollingupdate-namespace"></a>
 
@@ -69,7 +69,7 @@ You can also use the configuration options in the `aws:autoscaling:updatepolicy:
 
 Use the `RollingUpdateEnabled` option to enable rolling updates, and `RollingUpdateType` to choose the update type\. The following values are supported for `RollingUpdateType`:
 
-+ `Health` \.– Wait until instances in the current batch are healthy before placing instances in service and starting the next batch\.
++ `Health` – Wait until instances in the current batch are healthy before placing instances in service and starting the next batch\.
 
 + `Time` – Specify an amount of time to wait between launching new instances and placing them in service before starting the next batch\.
 
@@ -77,7 +77,7 @@ Use the `RollingUpdateEnabled` option to enable rolling updates, and `RollingUpd
 
 When you enable rolling updates, set the `MaxBatchSize` and `MinInstancesInService` options to configure the size of each batch\. For time\-based and health\-based rolling updates, you can also configure a `PauseTime` and `Timeout`, respectively\.
 
-For example, to launch up to five instances at a time, while maintaining at least two instances in service, and wait five minutes and 30 seconds between batches, specify the following options and values:
+For example, to launch up to five instances at a time, while maintaining at least two instances in service, and wait five minutes and 30 seconds between batches, specify the following options and values\.
 
 **Example \.ebextensions/timebased\.config**  
 
@@ -91,7 +91,7 @@ option_settings:
     PauseTime: PT5M30S
 ```
 
-To enable health based rolling updates, with a 45 minute timeout for each batch, specify the following options and values:
+To enable health\-based rolling updates, with a 45\-minute timeout for each batch, specify the following options and values\.
 
 **Example \.ebextensions/healthbased\.config**  
 
@@ -105,6 +105,6 @@ option_settings:
     Timeout: PT45M
 ```
 
-Timeout and PauseTime values must be specified in [ISO8601 duration](http://en.wikipedia.org/wiki/ISO_8601#Durations): `PT#H#M#S`, where each \# is the number of hours, minutes, and/or seconds, respectively\.
+Timeout and PauseTime values must be specified in [ISO8601 duration](http://en.wikipedia.org/wiki/ISO_8601#Durations): `PT#H#M#S`, where each \# is the number of hours, minutes, or seconds, respectively\.
 
-EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. These settings must be removed if you want to use configuration files to configure the same\. See  for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See  for details\.

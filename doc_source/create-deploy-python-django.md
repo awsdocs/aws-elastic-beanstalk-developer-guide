@@ -263,7 +263,7 @@ Next, you'll create your application environment and deploy your configured appl
    ~/ebdjango$ eb create django-env
    ```
 **Note**  
-If you see a "service role required" error message, run `eb create` interactively \(without specifying an environment name\) and EB CLI creates the role for you\.
+If you see a "service role required" error message, run `eb create` interactively \(without specifying an environment name\) and the EB CLI creates the role for you\.
 
    This command creates a load balanced Elastic Beanstalk environment named `django-env`\. Creating an environment takes about 5 minutes\. As Elastic Beanstalk creates the resources necessary to run your application, it outputs informational messages that the EB CLI relays to your terminal\.
 

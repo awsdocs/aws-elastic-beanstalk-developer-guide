@@ -71,7 +71,7 @@ On the **Environment Information** page, enter the details of your environment a
 
 + If you want to add an Amazon RDS DB to the environment, select **Create an RDS Database with this environment**\. For more information about Amazon RDS, see [Amazon Relational Database Service \(Amazon RDS\)](http://aws.amazon.com/rds/)\.
 
-+ To create your environment in a custom VPC, select **Create this environment inside a VPC**\. For more information about Amazon VPC, see [Amazon Virtual Private Cloud \(Amazon VPC\)](http://aws.amazon.com/vpc/)\.
++ To create your environment in a custom VPC, select **Create this environment inside a VPC**\. For more information about Amazon VPC, see [Amazon Virtual Private Cloud \(Amazon VPC\)](https://aws.amazon.com/vpc/)\.
 
 ## Configuration Details<a name="environments-create-wizard-old-configurationdetails"></a>
 
@@ -81,7 +81,7 @@ Set configuration details for the environment, and then choose **Next**\.
 
 + **Instance type** displays the instance types available to your Elastic Beanstalk environment\. Select a server with the characteristics \(including memory size and CPU power\) that are most appropriate to your application\. 
 **Note**  
-Elastic Beanstalk is free, but the AWS resources that it provisions might not be\. For information on Amazon EC2 usage fees, see [Amazon EC2 Pricing](http://aws.amazon.com/ec2/pricing/)\.
+Elastic Beanstalk is free, but the AWS resources that it provisions might not be\. For information on Amazon EC2 usage fees, see [Amazon EC2 Pricing](https://aws.amazon.com/ec2/pricing/)\.
 
   For more information about the Amazon EC2 instance types that are available for your Elastic Beanstalk environment, see [Instance Families and Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
 
@@ -89,11 +89,11 @@ Elastic Beanstalk is free, but the AWS resources that it provisions might not be
 
 + Specify an **Email address** to receive notifications about important events emitted by your environment\. For more information, see \.
 
-+ For load\-balancing, automatically scaling environments, **Application health check URL**, **Cross\-zone load balancing**, **Connection draining**, and **Connection draining timeout** let you configure the load balancer's behavior\. For more information, see [Your AWS Elastic Beanstalk Environment's Load Balancer](using-features.managing.elb.md)\. 
++ For load\-balancing, automatically scaling environments, **Application health check URL**, **Cross\-zone load balancing**, **Connection draining**, and **Connection draining timeout** let you configure the load balancer's behavior\. For more information, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)\. 
 
 + **Rolling updates type** provides options for managing how instances are replaced when you change settings on the AutoScaling group or VPC\. For more information, see [Elastic Beanstalk Rolling Environment Configuration Updates](using-features.rollingupdates.md)\. 
 
-+ **Root volume type** displays the types of storage volumes provided by Amazon EBS that you can attach to Amazon EC2 instances in your Elastic Beanstalk environment\. Select the volume type that meets your performance and price requirements\. For more information, see [Amazon EBS Volume Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) and [Amazon EBS Product Details](http://aws.amazon.com/ebs/details/)\. The size of magnetic volumes can be between 8 GiB and 1,024 GiB, and SSD volumes can be between 10 GiB and 16,384 GiB\.
++ **Root volume type** displays the types of storage volumes provided by Amazon EBS that you can attach to Amazon EC2 instances in your Elastic Beanstalk environment\. Select the volume type that meets your performance and price requirements\. For more information, see [Amazon EBS Volume Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) and [Amazon EBS Product Details](https://aws.amazon.com/ebs/details/)\. The size of magnetic volumes can be between 8 GiB and 1,024 GiB, and SSD volumes can be between 10 GiB and 16,384 GiB\.
 
 + With **Root volume size**, you can specify the size of the storage volume that you selected\. You must specify the root volume size you want if you choose **Provisioned IOPS \(SSD\)** as the root volume type that your instances will use\. For other root volumes, if you do not specify your own value, Elastic Beanstalk uses the default volume size for the storage volume type\. 
 
@@ -141,7 +141,7 @@ If you chose to associate an Amazon RDS DB earlier in the environment configurat
 
 + \(Optional\) For **DB engine**, select a database engine\.
 
-+ \(Optional\) For **Instance Class**, select a database instance class\. For information about the DB instance classes, see [http://aws\.amazon\.com/rds/](http://aws.amazon.com/rds/)\.
++ \(Optional\) For **Instance Class**, select a database instance class\. For information about the DB instance classes, see [https://aws\.amazon\.com/rds/](http://aws.amazon.com/rds/)\.
 
 + For **Allocated Storage**, type the space needed for your database\. You can allocate between 5 GB and 1024 GB\. You cannot update the allocated storage for a database to a lower amount after you set it\. In some cases, allocating a larger amount of storage for your DB instance than the size of your database can improve IO performance\. For information about storage allocation, see [Features](https://aws.amazon.com/rds/#features)\.
 
@@ -151,7 +151,7 @@ If you chose to associate an Amazon RDS DB earlier in the environment configurat
 
 + For **Deletion Policy**, select **Create snapshot** to create a snapshot that you can use later to create another Amazon RDS database\. Select **Delete** to delete the DB instance when you terminate the environment\. If you select **Delete**, you lose your DB instance and all the data in it when you terminate the Elastic Beanstalk instance associated with it\. By default, Elastic Beanstalk creates and saves a snapshot\. You can use a snapshot to restore data to use in a new environment, but cannot otherwise recover lost data\.
 **Note**  
-You may incur charges for storing database snapshots\. For more information, see the "Backup Storage" section of [Amazon RDS Pricing](http://aws.amazon.com/rds/pricing/)\.
+You may incur charges for storing database snapshots\. For more information, see the "Backup Storage" section of [Amazon RDS Pricing](https://aws.amazon.com/rds/pricing/)\.
 
 + For **Availability**, select one of the following:
 

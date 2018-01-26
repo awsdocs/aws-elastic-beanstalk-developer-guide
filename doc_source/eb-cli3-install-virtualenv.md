@@ -1,6 +1,6 @@
 # Install the EB CLI in a Virtual Environment<a name="eb-cli3-install-virtualenv"></a>
 
-You can avoid requirement version conflicts with other pip packages by installing the EB CLI in a virtual environment\.
+You can avoid version requirement conflicts with other `pip` packages by installing the EB CLI in a virtual environment\.
 
 **To install the EB CLI in a virtual environment**
 
@@ -51,7 +51,7 @@ You can avoid requirement version conflicts with other pip packages by installin
 
 You can use the `deactivate` command to exit the virtual environment\. Whenever you start a new session, run the activation command again\.
 
-To upgrade to the latest version, run the installation command again:
+To upgrade to the latest version, run the installation command again\.
 
 ```
 (eb-ve)~$ pip install awsebcli --upgrade

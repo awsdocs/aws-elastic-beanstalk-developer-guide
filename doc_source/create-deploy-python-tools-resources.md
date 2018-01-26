@@ -9,4 +9,4 @@ There are several places you can go to get additional help when developing your 
 | --- | --- | 
 | [Boto \(the AWS SDK for Python\)](https://github.com/boto/boto/downloads/) | Install Boto using GitHub\. | 
 | [Python Development Forum](https://forums.aws.amazon.com/forum.jspa?forumID=132) | Post your questions and get feedback\. | 
-| [Python Developer Center](http://aws.amazon.com/python/) | One\-stop shop for sample code, documentation, tools, and additional resources\. | 
+| [Python Developer Center](https://aws.amazon.com/python/) | One\-stop shop for sample code, documentation, tools, and additional resources\. | 

@@ -2,7 +2,7 @@
 
 ## AWS SDK for Ruby<a name="create_deploy_Ruby.tools.sdk"></a>
 
-You can get started in minutes with a single, downloadable package complete with the AWS Ruby library, code samples, and documentation\. You can build Ruby applications on top of APIs that take the complexity out of coding directly against web services interfaces\. The all\-in\-one library provides Ruby developer\-friendly APIs that hide much of the lower\-level tasks associated with programming for the AWS cloud, including authentication, request retries, and error handling\. Practical examples are provided in Ruby for how to use the libraries to build applications\. For information about the SDK, sample code, documentation, tools, and additional resources, go to [http://aws\.amazon\.com/ruby/](http://aws.amazon.com/ruby/)\. 
+You can get started in minutes with a single, downloadable package complete with the AWS Ruby library, code samples, and documentation\. You can build Ruby applications on top of APIs that take the complexity out of coding directly against web services interfaces\. The all\-in\-one library provides Ruby developer\-friendly APIs that hide much of the lower\-level tasks associated with programming for the AWS cloud, including authentication, request retries, and error handling\. Practical examples are provided in Ruby for how to use the libraries to build applications\. For information about the SDK, sample code, documentation, tools, and additional resources, go to [https://aws\.amazon\.com/ruby/](https://aws.amazon.com/ruby/)\. 
 
 ## Git Deployment Via EB CLI<a name="create_deploy_Ruby.tools.eb"></a>
 

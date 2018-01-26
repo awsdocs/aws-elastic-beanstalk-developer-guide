@@ -448,7 +448,7 @@ The following Elastic Beanstalk platform configurations for Docker were current 
 | Name | AMI | Docker Version | 
 |  64bit Amazon Linux 2014\.091 v1\.1\.0 running Docker 1\.3\.3  |  2014\.09  |  1\.3\.3  | 
 
-1[CVE\-2015\-0235 Advisory \(Ghost\)](http://aws.amazon.com/security/security-bulletins/cve-2015-0235-advisory--ghost-/)
+1[CVE\-2015\-0235 Advisory \(Ghost\)](https://aws.amazon.com/security/security-bulletins/cve-2015-0235-advisory--ghost-/)
 
 The following Elastic Beanstalk platform configurations for Docker were current between December 13, 2014 and January 27, 2015:
 
@@ -505,7 +505,7 @@ The following Elastic Beanstalk platform configurations for Docker were current 
 | Name | AMI | Docker Version | 
 |  64bit Amazon Linux 2014\.03 v1\.0\.71 running Docker 1\.0\.0  |  2014\.03  |  1\.0\.0  | 
 
-1 [CVE\-2014\-6271 Advisory](http://aws.amazon.com/security/security-bulletins/CVE_2014_6271_advisory/) and [ALAS\-2014\-419](https://alas.aws.amazon.com/ALAS-2014-419.html)
+1 [CVE\-2014\-6271 Advisory](https://aws.amazon.com/security/security-bulletins/CVE_2014_6271_advisory/) and [ALAS\-2014\-419](https://alas.aws.amazon.com/ALAS-2014-419.html)
 
 The following Elastic Beanstalk platform configurations for Docker were current between June 30, 2014 and September 23, 2014:
 
@@ -537,7 +537,7 @@ The following Elastic Beanstalk platform configurations for Docker were current 
 | Name | AMI | Docker Version | 
 |  64bit Amazon Linux 2014\.03 v1\.0\.51 running Docker 0\.9\.0  |  2014\.03  |  0\.9\.0  | 
 
-1 [OpenSSL Security Advisory](http://aws.amazon.com/security/security-bulletins/openssl-security-advisory/)
+1 [OpenSSL Security Advisory](https://aws.amazon.com/security/security-bulletins/openssl-security-advisory/)
 
 The following Elastic Beanstalk platform configurations for Docker were current between May 5, 2014 and June 4, 2014:
 

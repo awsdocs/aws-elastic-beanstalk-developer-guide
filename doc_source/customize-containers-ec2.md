@@ -3,7 +3,7 @@
 You may want to customize and configure the software that your application depends on\. These files could be either dependencies required by the application—for example, additional packages from the yum repository—or they could be configuration files such as a replacement for `httpd.conf` to override specific settings that are defaulted by Elastic Beanstalk\. 
 
 **Note**  
-YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and make sure that your text editor uses spaces, not tab characters, to indent\.
+YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
 This section describes the type of information you can include in a configuration file to customize the software on your EC2 instances running Linux\. For general information about customizing and configuring your Elastic Beanstalk environments, see [AWS Elastic Beanstalk Environment Configuration](customize-containers.md)\. For information about customizing software on your EC2 instances running Windows, see [Customizing Software on Windows Servers](customize-containers-windows-ec2.md)\.
 
@@ -146,7 +146,7 @@ sources:
 
 ### Supported Formats<a name="linux-sources-support"></a>
 
-Supported formats are tar, tar\+gzip, tar\+bz2, and zip\. You can reference external locations such as Amazon Simple Storage Service \(Amazon S3\) \(e\.g\., `http://s3.amazonaws.com/mybucket/myobject`\) as long as the URL is publicly accessible\.
+Supported formats are tar, tar\+gzip, tar\+bz2, and zip\. You can reference external locations such as Amazon Simple Storage Service \(Amazon S3\) \(e\.g\., `https://s3.amazonaws.com/mybucket/myobject`\) as long as the URL is publicly accessible\.
 
 ### Example Snippet<a name="linux-sources-example"></a>
 
@@ -154,7 +154,7 @@ The following example downloads a public \.zip file from an Amazon S3 bucket and
 
 ```
 sources:  
-  /etc/myapp: http://s3.amazonaws.com/mybucket/myobject
+  /etc/myapp: https://s3.amazonaws.com/mybucket/myobject
 ```
 
 ## Files<a name="linux-files"></a>

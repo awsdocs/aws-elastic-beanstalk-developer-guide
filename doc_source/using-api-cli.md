@@ -1,7 +1,7 @@
 # Elastic Beanstalk API Command Line Interface \(deprecated\)<a name="using-api-cli"></a>
 
 **Note**  
- This tool, the Elastic Beanstalk API CLI, and its documentation have been replaced with the AWS CLI\. See the [AWS CLI User Guide ](http://docs.aws.amazon.com/cli/latest/userguide/) to get started with the AWS CLI\. Also try the EB CLI for a simplified, higher level command line experience\. 
+ This tool, the Elastic Beanstalk API CLI, and its documentation have been replaced with the AWS CLI\. See the [AWS CLI User Guide ](http://docs.aws.amazon.com/cli/latest/userguide/) to get started with the AWS CLI\. Also try the EB CLI for a simplified, higher\-level command line experience\. 
 
 This section contains a reference for the old Elastic Beanstalk API command line interface\. This tool's functionality has been replaced by the AWS CLI, which provides API equivalent commands for all AWS services\. See [Installing the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) to get started with the AWS CLI\.
 

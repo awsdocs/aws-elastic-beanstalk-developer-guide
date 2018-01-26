@@ -1,6 +1,6 @@
 # Configuring EC2 Server Instances Using AWS Toolkit for Eclipse<a name="create_deploy_Java.managingappenv.ec2"></a>
 
-Amazon Elastic Compute Cloud \(EC2\) is a web service for launching and managing server instances in Amazon's data centers\. You can use Amazon EC2 server instances at any time, for as long as you need, and for any legal purpose\. Instances are available in different sizes and configurations\. For more information, go to the [Amazon EC2 product page](http://aws.amazon.com/ec2/)\.
+Amazon Elastic Compute Cloud \(EC2\) is a web service for launching and managing server instances in Amazon's data centers\. You can use Amazon EC2 server instances at any time, for as long as you need, and for any legal purpose\. Instances are available in different sizes and configurations\. For more information, go to the [Amazon EC2 product page](https://aws.amazon.com/ec2/)\.
 
  Under **Server**, on your environment's **Configuration** tab inside the Toolkit for Eclipse, you can edit the Elastic Beanstalk environment's Amazon EC2 instance configuration\.
 
@@ -8,7 +8,7 @@ Amazon Elastic Compute Cloud \(EC2\) is a web service for launching and managing
 
 ## Amazon EC2 Instance Types<a name="create_deploy_Java.managingappenv.ec2.instancetypes"></a>
 
-**Instance type** displays the instance types available to your Elastic Beanstalk application\. Change the instance type to select a server with the characteristics \(including memory size and CPU power\) that are most appropriate to your application\. For example, applications with intensive and long\-running operations may require more CPU or memory\.
+**Instance type** displays the instance types available to your Elastic Beanstalk application\. Change the instance type to select a server with the characteristics \(including memory size and CPU power\) that are most appropriate to your application\. For example, applications with intensive and long\-running operations can require more CPU or memory\.
 
 For more information about the Amazon EC2 instance types available for your Elastic Beanstalk application, see [Instance Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon Elastic Compute Cloud User Guide*\.
 
@@ -43,14 +43,14 @@ For more information on Amazon EC2 key pairs, go to [Using Amazon EC2 Credential
 
 ## CloudWatch Metrics<a name="create_deploy_Java.managingappenv.monitoring"></a>
 
- By default, only basic Amazon CloudWatch metrics are enabled; they return data in five\-minute periods\. You can enable more granular one\-minute CloudWatch metrics by selecting **1 minute** for the **Monitoring Interval** in the **Server** section of the **Configuration** tab for your environment in the AWS Toolkit for Eclipse\.
+ By default, only basic Amazon CloudWatch metrics are enabled\. They return data in five\-minute periods\. You can enable more granular one\-minute CloudWatch metrics by selecting **1 minute** for the **Monitoring Interval** in the **Server** section of the **Configuration** tab for your environment in the AWS Toolkit for Eclipse\.
 
 **Note**  
-Amazon CloudWatch service charges can apply for one\-minute interval metrics\. See [Amazon CloudWatch](http://aws.amazon.com/cloudwatch/) for more information\.
+Amazon CloudWatch service charges can apply for one\-minute interval metrics\. See [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) for more information\.
 
 ## Custom AMI ID<a name="create_deploy_Java.managing.customami"></a>
 
  You can override the default AMI used for your Amazon EC2 instances with your own custom AMI by entering the identifier of your custom AMI into the **Custom AMI ID** box in the **Server** section of the **Configuration** tab for your environment in the AWS Toolkit for Eclipse\. 
 
 **Important**  
-Using your own AMI is an advanced task and should be done with care\. If you need a custom AMI, we recommend you start with the default Elastic Beanstalk AMI and then modify it\. To be considered healthy, Elastic Beanstalk expects Amazon EC2 instances to meet a set of requirements, including having a running host manager\. If these requirements are not met, your environment might not work properly\.
+Using your own AMI is an advanced task that you should do with care\. If you need a custom AMI, we recommend you start with the default Elastic Beanstalk AMI and then modify it\. To be considered healthy, Elastic Beanstalk expects Amazon EC2 instances to meet a set of requirements, including having a running host manager\. If these requirements are not met, your environment might not work properly\.

@@ -2,7 +2,7 @@
 
 You can deploy an Elastic Beanstalk application in a load balancing, autoscaling environment in a VPC that has both a public and private subnet\. Use this configuration if you want Elastic Beanstalk to assign private IP addresses to your Amazon EC2 instances\. In this configuration, the Amazon EC2 instances in the private subnet require a load balancer and a network address translation \(NAT\) gateway in the public subnet\. The load balancer routes inbound traffic from the Internet to the Amazon EC2 instances\. You need to create a NAT gateway to route outbound traffic from the Amazon EC2 instances to the Internet\. Your infrastructure will look similar to the following diagram\.
 
-
+![\[Elastic Beanstalk and VPC Topology\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vpc-basic-topo-ngw.png)
 
 **Note**  
 In this configuration, you cannot connect to your instances remotely because the instances are located in a private subnet\. If you need to be able to connect to your instances, and your instances must be in a private subnet, you must implement a bastion host as described in [Example: Launching an Elastic Beanstalk Application in a VPC with Bastion Hosts](vpc-bastion-host.md)\.
@@ -24,7 +24,7 @@ You can use the [Amazon VPC console](https://console.aws.amazon.com/vpc/) to cre
 
 1. In the navigation pane, choose **VPC Dashboard**\. Then choose **Start VPC Wizard**\.
 
-1. Choose **VPC with Public and Private Subnets** and then choose **Select**\.  
+1. Choose **VPC with Public and Private Subnets**, and then choose **Select**\.  
 ![\[Choose option 2 in the wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/Case2_Wizard_Page2.png)
 
 1. Your Elastic Load Balancing load balancer and your Amazon EC2 instances must be in the same Availability Zone so they can communicate with each other\. Choose the same Availability Zone from each **Availability Zone** list\.  
@@ -34,11 +34,11 @@ You can use the [Amazon VPC console](https://console.aws.amazon.com/vpc/) to cre
 
 1. Choose **Create VPC**\.
 
-   The wizard begins to create your VPC, subnets, and Internet gateway\. It also updates the main route table and creates a custom route table\. Finally, the wizard creates a NAT gateway in the public subnet\.
+   The wizard begins to create your VPC, subnets, and internet gateway\. It also updates the main route table and creates a custom route table\. Finally, the wizard creates a NAT gateway in the public subnet\.
 **Note**  
 You can choose to launch a NAT instance in the public subnet instead of a NAT gateway\. For more information, see [Scenario 2: VPC with Public and Private Subnets \(NAT\)](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario2.html) in the *Amazon VPC User Guide*\.
 
-1. After the VPC is successfully created, you get a VPC ID\. You need this value for this for the next step\. To view your VPC ID, choose **Your VPCs** in the left pane of the [Amazon VPC console](https://console.aws.amazon.com/vpc/)\.  
+1. After the VPC is successfully created, you get a VPC ID\. You need this value for the next step\. To view your VPC ID, choose **Your VPCs** in the left pane of the [Amazon VPC console](https://console.aws.amazon.com/vpc/)\.  
 ![\[VPC ID\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vpc-id.png)
 
 ## Create a Security Group for Your Instances<a name="create-instance-sg"></a>
@@ -67,7 +67,7 @@ Select your VPC\.
 
 ## Deploy to Elastic Beanstalk<a name="vpc-basic-create-env"></a>
 
-After you set up your VPC, you can create your environment inside your VPC and deploy your application to Elastic Beanstalk\. You can do this using the Elastic Beanstalk console, or you can use the AWS toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API\. If you use the Elastic Beanstalk console, you just need to upload your `.war` or `.zip` file and select the VPC settings inside the wizard\. Elastic Beanstalk then creates your environment inside your VPC and deploys your application\. Alternatively, you can use the AWS toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API to deploy your application\. To do this, you need to define your VPC option settings in a configuration file and deploy this file with your source bundle\. This topic provides instructions for both methods\.
+After you set up your VPC, you can create your environment inside it and deploy your application to Elastic Beanstalk\. You can do this using the Elastic Beanstalk console, or you can use the AWS toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API\. If you use the Elastic Beanstalk console, you just need to upload your `.war` or `.zip` file and select the VPC settings inside the wizard\. Elastic Beanstalk then creates your environment inside your VPC and deploys your application\. Alternatively, you can use the AWS toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API to deploy your application\. To do this, you need to define your VPC option settings in a configuration file and deploy this file with your source bundle\. This topic provides instructions for both methods\.
 
 
 + [Deploying with the Elastic Beanstalk Console](#vpc-basic-new-console)
@@ -84,9 +84,9 @@ Select your VPC
 Select the instance security group you created above\.
 
 **ELB visibility**  
-Select `External` if your load balancer should be publicly available, or select `Internal` if the load balancer should only be available within your VPC\.
+Select `External` if your load balancer should be publicly available, or select `Internal` if the load balancer should be available only within your VPC\.
 
-Select the subnets for your load balancer and EC2 instances\. Make sure you select the public subnet for the load balancer, and the private subnet for your Amazon EC2 instances\. By default, the VPC creation wizard creates the public subnet in `10.0.0.0/24` and the private subnet in `10.0.1.0/24`\.
+Select the subnets for your load balancer and EC2 instances\. Be sure you select the public subnet for the load balancer, and the private subnet for your Amazon EC2 instances\. By default, the VPC creation wizard creates the public subnet in `10.0.0.0/24` and the private subnet in `10.0.1.0/24`\.
 
 You can view your subnet IDs by choosing **Subnets** in the [Amazon VPC console](https://console.aws.amazon.com/vpc/)\.
 
@@ -94,7 +94,7 @@ You can view your subnet IDs by choosing **Subnets** in the [Amazon VPC console]
 
 ### Deploying with the AWS Toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API<a name="vpc-basic-new-options"></a>
 
-When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, the AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See  for more information\.
+When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See  for more information\.
 
 When you create your configuration file with your option settings, you need to specify the following configuration options:[aws:autoscaling:launchconfiguration](command-options-general.md#command-options-general-autoscalinglaunchconfiguration) Namespace:
 

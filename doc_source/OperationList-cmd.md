@@ -1,7 +1,7 @@
 # Operations<a name="OperationList-cmd"></a>
 
 **Note**  
- This tool, the Elastic Beanstalk API CLI, and its documentation have been replaced with the AWS CLI\. See the [AWS CLI User Guide ](http://docs.aws.amazon.com/cli/latest/userguide/) to get started with the AWS CLI\. Also try the EB CLI for a simplified, higher level command line experience\. 
+ This tool, the Elastic Beanstalk API CLI, and its documentation have been replaced with the AWS CLI\. See the [AWS CLI User Guide ](http://docs.aws.amazon.com/cli/latest/userguide/) to get started with the AWS CLI\. Also try the EB CLI for a simplified, higher\-level command line experience\. 
 
 
 + [elastic\-beanstalk\-check\-dns\-availability](#CLIReference-cmd-CheckDNSAvailability)
@@ -144,7 +144,7 @@ Creates an application version for the specified application\.
 |   `-c`   `--auto-create`   |  Determines how the system behaves if the specified application for this version does not already exist:  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/OperationList-cmd.html) Type: Boolean Valid Values: `true` | `false` Default: `false`  |  No  | 
 |   `-d`   `--description` *desc*   |  The description of the version\. Type: String Default: None Length Constraints: Minimum value of 0\. Maximum value of 200\.  |  No  | 
 |   `-l`   `--version-label` *label*   |  A label identifying this version\. Type: String Default: None Constraint: Must be unique per application\. If an application version already exists with this label for the specified application, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
-|   `-s`   `--source-location` *location*   |  The name of the Amazon S3 bucket and key that identify the location of the source bundle for this version, in the format `bucketname/key`\.  If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, Elastic Beanstalk returns an `InvalidParameterCombination` error\. Type: String Default: If not specified, AWS Elastic Beanstalk uses a sample application\. If only partially specified \(for example, a bucket is provided but not the key\) or if no data is found at the Amazon S3 location, AWS Elastic Beanstalk returns an `InvalidParameterCombination` error\.   |  No  | 
+|   `-s`   `--source-location` *location*   |  The name of the Amazon S3 bucket and key that identify the location of the source bundle for this version, in the format `bucketname/key`\.  If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, Elastic Beanstalk returns an `InvalidParameterCombination` error\. Type: String Default: If not specified, Elastic Beanstalk uses a sample application\. If only partially specified \(for example, a bucket is provided but not the key\) or if no data is found at the Amazon S3 location, Elastic Beanstalk returns an `InvalidParameterCombination` error\.   |  No  | 
 
 ### Output<a name="CLIReference-cmd-CreateApplicationVersion-Response"></a>
 
@@ -189,14 +189,14 @@ Creates a configuration template\. Templates are associated with a specific appl
 
 | Name | Description | Required | 
 | --- | --- | --- | 
-|   `-a`   `--application-name` *name*   |   The name of the application to associate with this configuration template\. If no application is found with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Type: String Default: None  |  Yes  | 
-|   `-t`   `--template-name` *name*   |   The name of the configuration template\. If a configuration template already exists with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Type: String Default: None Constraint: Must be unique for this application\. Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
+|   `-a`   `--application-name` *name*   |  The name of the application to associate with this configuration template\. If no application is found with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Type: String Default: None  |  Yes  | 
+|   `-t`   `--template-name` *name*   |  The name of the configuration template\. If a configuration template already exists with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Type: String Default: None Constraint: Must be unique for this application\. Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
 |   `-E`   `--environment-id` *id*   |  The environment ID of the configuration template\. Type: String Default: None  |  No  | 
 |   `-d`   `--description` *desc*   |  The description of the configuration\. Type: String Default: None  |  No  | 
-|   `-s`   `--solution-stack` *stack*   |   The name of the solution stack used by this configuration\. The solution stack specifies the operating system, architecture, and application server for a configuration template\. It determines the set of configuration options as well as the possible and default values\. Use `elastic-beanstalk-list-available-solution-stacks` to obtain a list of available solution stacks\. A solution stack name or a source configuration parameter must be specified; otherwise, Elastic Beanstalk returns an `InvalidParameterValue` error\.  If a solution stack name is not specified and the source configuration parameter is specified, Elastic Beanstalk uses the same solution stack as the source configuration template\. Type: String Length Constraints: Minimum value of 0\. Maximum value of 100\.  |  No  | 
-|   `-f`   `--options-file` *filename*   |   The name of a JSON file that contains a set of key\-value pairs defining configuration options for the configuration template\. The new values override the values obtained from the solution stack or the source configuration template\.  Type: String  |  No  | 
-|   `-A`   `--source-application-name` *name*   |   The name of the application to use as the source for this configuration template\. Type: String Default: None  |  No  | 
-|   `-T`   `--source-template-name` *name*   |   The name of the template to use as the source for this configuration template\. Type: String Default: None  |  No  | 
+|   `-s`   `--solution-stack` *stack*   |  The name of the solution stack used by this configuration\. The solution stack specifies the operating system, architecture, and application server for a configuration template\. It determines the set of configuration options as well as the possible and default values\. Use `elastic-beanstalk-list-available-solution-stacks` to obtain a list of available solution stacks\. A solution stack name or a source configuration parameter must be specified; otherwise, Elastic Beanstalk returns an `InvalidParameterValue` error\.  If a solution stack name is not specified and the source configuration parameter is specified, Elastic Beanstalk uses the same solution stack as the source configuration template\. Type: String Length Constraints: Minimum value of 0\. Maximum value of 100\.  |  No  | 
+|   `-f`   `--options-file` *filename*   |  The name of a JSON file that contains a set of key\-value pairs defining configuration options for the configuration template\. The new values override the values obtained from the solution stack or the source configuration template\.  Type: String  |  No  | 
+|   `-A`   `--source-application-name` *name*   |  The name of the application to use as the source for this configuration template\. Type: String Default: None  |  No  | 
+|   `-T`   `--source-template-name` *name*   |  The name of the template to use as the source for this configuration template\. Type: String Default: None  |  No  | 
 
 ### Output<a name="CLIReference-cmd-CreateConfigurationTemplate-Response"></a>
 
@@ -263,15 +263,15 @@ Launches an environment for the specified application using the specified config
 
 | Name | Description | Required | 
 | --- | --- | --- | 
-|   `-a`   `--application-name` *name*   |   The name of the application that contains the version to be deployed\. If no application is found with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
-|   `-l`   `--version-label` *>label*   |   The name of the application version to deploy\. If the specified application has no associated application versions, Elastic Beanstalk `UpdateEnvironment` returns an `InvalidParameterValue` error\. Default: If not specified, Elastic Beanstalk attempts to launch the the sample application in the container\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
+|   `-a`   `--application-name` *name*   |  The name of the application that contains the version to be deployed\. If no application is found with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
+|   `-l`   `--version-label` *>label*   |  The name of the application version to deploy\. If the specified application has no associated application versions, Elastic Beanstalk `UpdateEnvironment` returns an `InvalidParameterValue` error\. Default: If not specified, Elastic Beanstalk attempts to launch the sample application in the container\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
 |   `-e`   `--environment-name` *name*   |  A unique name for the deployment environment\. Used in the application URL\. Constraint: Must be from 4 to 23 characters in length\. The name can contain only letters, numbers, and hyphens\. It cannot start or end with a hyphen\. This name must be unique in your account\. If the specified name already exists, Elastic Beanstalk returns an `InvalidParameterValue`\. Type: String Default: If the CNAME parameter is not specified, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application\.  |  Yes  | 
-|   `-t`   `--template-name` *name*   |   The name of the configuration template to use in the deployment\. If no configuration template is found with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Conditional: You must specify either this parameter or a solution stack name, but not both\. If you specify both, Elastic Beanstalk returns an `InvalidParameterValue` error\. If you do not specify either, Elastic Beanstalk returns a `MissingRequiredParameter`\. Type: String Default: None Constraint: Must be unique for this application\.  |  Conditional  | 
+|   `-t`   `--template-name` *name*   |  The name of the configuration template to use in the deployment\. If no configuration template is found with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Conditional: You must specify either this parameter or a solution stack name, but not both\. If you specify both, Elastic Beanstalk returns an `InvalidParameterValue` error\. If you do not specify either, Elastic Beanstalk returns a `MissingRequiredParameter`\. Type: String Default: None Constraint: Must be unique for this application\.  |  Conditional  | 
 |   `-s`   `--solution-stack` *stack*   |  This is the alternative to specifying a configuration name\. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack\.  Condition: You must specify either this or a `TemplateName`, but not both\. If you specify both, Elastic Beanstalk returns an `InvalidParameterCombination` error\. If you do not specify either, Elastic Beanstalk returns `MissingRequiredParameter` error\. Type: String Default: None  |  Conditional  | 
 |   `-c`   `--cname-prefix` *prefix*   |  If specified, the environment attempts to use this value as the prefix for the CNAME\. If not specified, the environment uses the environment name\. Type: String Default: None Length Constraints: Minimum value of 4\. Maximum value of 23\.  |  No  | 
 |   `-d`   `--description` *desc*   |  The description of the environment\. Type: String Default: None  |  No  | 
-|   `-f`   `--options-file` *filename*   |   The name of a JSON file that contains a set of key\-value pairs defining configuration options for this new environment\. These override the values obtained from the solution stack or the configuration template\. Type: String  |  No  | 
-|   `-F`   `--options-to-remove-file` *value*   |   The name of a JSON file that contains configuration options to remove from the configuration set for this new environment\. Type: String Default: None  |  No  | 
+|   `-f`   `--options-file` *filename*   |  The name of a JSON file that contains a set of key\-value pairs defining configuration options for this new environment\. These override the values obtained from the solution stack or the configuration template\. Type: String  |  No  | 
+|   `-F`   `--options-to-remove-file` *value*   |  The name of a JSON file that contains configuration options to remove from the configuration set for this new environment\. Type: String Default: None  |  No  | 
 
 ### Output<a name="CLIReference-cmd-CreateEnvironment-Response"></a>
 
@@ -287,7 +287,7 @@ The command returns a table with the following information:
 
 + **Description—**The description of the environment\.
 
-+ **EndpointURL—**The URL to the LoadBalancer for this environment\. 
++ **EndpointURL—**The URL to the load balancer for this environment\. 
 
 + **EnvironmentID—**The ID of this environment\. 
 
@@ -365,7 +365,7 @@ $ elastic-beanstalk-create-environment -a MySampleApp -t myconfigtemplate -e MyS
 
 ### Description<a name="CLIReference-cmd-CreateStorageLocation-Description"></a>
 
-Creates the Amazon S3 storage location for the account\. This location is used to store user log files and is used by the AWS Management Console to upload application versions\. You do not need to create this bucket in order to work with Elastic Beanstalk\. 
+Creates theAmazon S3 storage location for the account\. This location is used to store user log files and is used by the AWS Management Console to upload application versions\. You do not need to create this bucket in order to work with Elastic Beanstalk\. 
 
 ### Syntax<a name="CLIReference-cmd-CreateStorageLocation-Syntax"></a>
 
@@ -403,7 +403,7 @@ Deletes the specified application along with all associated versions and configu
 
 | Name | Description | Required | 
 | --- | --- | --- | 
-|   `-a`   `--application-name` *name*   |   The name of the application to delete\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
+|   `-a`   `--application-name` *name*   |  The name of the application to delete\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
 |   `-f`   `--force-terminate-env`   |  Determines if all running environments should be deleted before deleting the application\.  Type: Boolean Valid Values: `true | false` Default: `false`  |  No  | 
 
 ### Output<a name="CLIReference-cmd-DeleteApplication-Response"></a>
@@ -440,9 +440,9 @@ Deletes the specified version from the specified application\.
 
 | Name | Description | Required | 
 | --- | --- | --- | 
-|   `-a`   `--application-name` *name*   |   The name of the application to delete releases from\. Type: String Default: None  |  Yes  | 
-|   `-l`   `--version-label`   |   The label of the version to delete\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
-|   `-d`   `--delete-source-bundle`   |   Indicates whether to delete the associated source bundle from Amazon S3\. `true`: An attempt is made to delete the associated Amazon S3 source bundle specified at time of creation\. `false`: No action is taken on the Amazon S3 source bundle specified at time of creation\. Type: Boolean Valid Values: `true` | `false` Default: `false`  |  No  | 
+|   `-a`   `--application-name` *name*   |  The name of the application to delete releases from\. Type: String Default: None  |  Yes  | 
+|   `-l`   `--version-label`   |  The label of the version to delete\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
+|   `-d`   `--delete-source-bundle`   |  Indicates whether to delete the associated source bundle from Amazon S3\. `true`: An attempt is made to delete the associated Amazon S3 source bundle specified at time of creation\. `false`: No action is taken on the Amazon S3 source bundle specified at time of creation\. Type: Boolean Valid Values: `true` | `false` Default: `false`  |  No  | 
 
 ### Output<a name="CLIReference-cmd-DeleteApplicationVersion-Response"></a>
 
@@ -473,7 +473,7 @@ This example shows how to delete an application version\.
 Deletes the specified configuration template\.
 
 **Note**  
- When you launch an environment using a configuration template, the environment gets a copy of the template\. You can delete or modify the environment's copy of the template without affecting the running environment\. 
+When you launch an environment using a configuration template, the environment gets a copy of the template\. You can delete or modify the environment's copy of the template without affecting the running environment\. 
 
 ### Syntax<a name="CLIReference-cmd-DeleteConfigurationTemplate-Syntax"></a>
 
@@ -486,8 +486,8 @@ Deletes the specified configuration template\.
 
 | Name | Description | Required | 
 | --- | --- | --- | 
-|   `-a`   `--application-name` *name*   |   The name of the application to delete the configuration template from\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
-|   `-t`   `--template-name`   |   The name of the configuration template to delete\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
+|   `-a`   `--application-name` *name*   |  The name of the application to delete the configuration template from\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
+|   `-t`   `--template-name`   |  The name of the configuration template to delete\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
 
 ### Output<a name="CLIReference-cmd-DeleteConfigurationTemplate-Response"></a>
 
@@ -510,7 +510,7 @@ This example shows how to delete a configuration template\.
 Deletes the draft configuration associated with the running environment\. 
 
 **Note**  
- Updating a running environment with any configuration changes creates a draft configuration set\. You can get the draft configuration using `elastic-beanstalk-describe-configuration-settings` while the update is in progress or if the update fails\. The deployment status for the draft configuration indicates whether the deployment is in process or has failed\. The draft configuration remains in existence until it is deleted with this action\. 
+Updating a running environment with any configuration changes creates a draft configuration set\. You can get the draft configuration using `elastic-beanstalk-describe-configuration-settings` while the update is in progress or if the update fails\. The deployment status for the draft configuration indicates whether the deployment is in process or has failed\. The draft configuration remains in existence until it is deleted with this action\. 
 
 ### Syntax<a name="CLIReference-cmd-DeleteEnvironmentConfiguration-Syntax"></a>
 
@@ -523,8 +523,8 @@ Deletes the draft configuration associated with the running environment\.
 
 | Name | Description | Required | 
 | --- | --- | --- | 
-|   `-a`   `--application-name` *name*   |   The name of the application the environment is associated with\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
-|   `-e`   `--environment-name` *name*   |   The name of the environment to delete the draft configuration from\.  Type: String Default: None Length Constraints: Minimum value of 4\. Maximum value of 23\.  |  Yes  | 
+|   `-a`   `--application-name` *name*   |  The name of the application the environment is associated with\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
+|   `-e`   `--environment-name` *name*   |  The name of the environment to delete the draft configuration from\.  Type: String Default: None Length Constraints: Minimum value of 4\. Maximum value of 23\.  |  Yes  | 
 
 ### Output<a name="CLIReference-cmd-DeleteEnvironmentConfiguration-Response"></a>
 
@@ -557,8 +557,8 @@ Returns information about existing application versions\.
 
 | Name | Description | Required | 
 | --- | --- | --- | 
-|   `-a`   `--application-name` *value*   |   The name of the application\. If specified, Elastic Beanstalk restricts the returned descriptions to only include ones that are associated with the specified application\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
-|   `-l`   `--version-label` *labels*   |   Comma\-delimited list of version labels\. If specified, restricts the returned descriptions to only include ones that have the specified version labels\.  Type: String\[\] Default: None  |  No  | 
+|   `-a`   `--application-name` *value*   |  The name of the application\. If specified, Elastic Beanstalk restricts the returned descriptions to only include ones that are associated with the specified application\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
+|   `-l`   `--version-label` *labels*   |  Comma\-delimited list of version labels\. If specified, restricts the returned descriptions to only include ones that have the specified version labels\.  Type: String\[\] Default: None  |  No  | 
 
 ### Output<a name="CLIReference-cmd-DescribeApplicationVersions-Response"></a>
 
@@ -619,7 +619,7 @@ Returns descriptions about existing applications\.
 
 | Name | Description | Required | 
 | --- | --- | --- | 
-|   `-a`   `--application-names` *name*   |   The name of one or more applications, separated by commas\. If specified, Elastic Beanstalk restricts the returned descriptions to only include those with the specified names\.  Type: String\[\] Default: None  |  No  | 
+|   `-a`   `--application-names` *name*   |  The name of one or more applications, separated by commas\. If specified, Elastic Beanstalk restricts the returned descriptions to only include those with the specified names\.  Type: String\[\] Default: None  |  No  | 
 
 ### Output<a name="CLIReference-cmd-DescribeApplications-Response"></a>
 
@@ -672,11 +672,11 @@ Describes the configuration options that are used in a particular configuration 
 
 | Name | Description | Required | 
 | --- | --- | --- | 
-|   `-a`   `--application-name` *name*   |   The name of the application associated with the configuration template or environment\. Only needed if you want to describe the configuration options associated with either the configuration template or environment\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
-|   `-t`   `--template-name` *name*   |   The name of the configuration template whose configuration options you want to describe\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
+|   `-a`   `--application-name` *name*   |  The name of the application associated with the configuration template or environment\. Only needed if you want to describe the configuration options associated with either the configuration template or environment\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
+|   `-t`   `--template-name` *name*   |  The name of the configuration template whose configuration options you want to describe\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
 |   `-e`   `--environment-name` *name*   |  The name of the environment whose configuration options you want to describe\. Type: String Length Constraints: Minimum value of 4\. Maximum value of 23\.  |  No  | 
 |   `-s`   `--solution-stack` *stack*   |  The name of the solution stack whose configuration options you want to describe\. Type: String Default: None Length Constraints: Minimum value of 0\. Maximum value of 100\.  |  No  | 
-|   `-f`   `--options-file` *filename*   |   The name of a JSON file that contains the options you want described\.  Type: String  |  No  | 
+|   `-f`   `--options-file` *filename*   |  The name of a JSON file that contains the options you want described\.  Type: String  |  No  | 
 
 ### Output<a name="CLIReference-cmd-DescribeConfigurationOptions-Response"></a>
 
@@ -716,7 +716,7 @@ When describing the settings for the configuration set associated with a running
 | Name | Description | Required | 
 | --- | --- | --- | 
 |   `-a`   `--application-name` *name*   |  The application name for the environment or configuration template\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
-|   `-t`   `--template-name` *name*   |   The name of the configuration template to describe\. If no configuration template is found with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Conditional: You must specify either this parameter or an environment name, but not both\. If you specify both, Elastic Beanstalk returns an `InvalidParameterValue` error\. If you do not specify either, Elastic Beanstalk returns a `MissingRequiredParameter` error\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Conditional  | 
+|   `-t`   `--template-name` *name*   |  The name of the configuration template to describe\. If no configuration template is found with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Conditional: You must specify either this parameter or an environment name, but not both\. If you specify both, Elastic Beanstalk returns an `InvalidParameterValue` error\. If you do not specify either, Elastic Beanstalk returns a `MissingRequiredParameter` error\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Conditional  | 
 |   `-e`   `--environment-name` *name*   |  The name of the environment to describe\. Type: String Default: None Length Constraints: Minimum value of 4\. Maximum value of 23\.  |  Conditional  | 
 
 ### Output<a name="CLIReference-cmd-DescribeConfigurationSettings-Response"></a>
@@ -763,7 +763,7 @@ This example shows how to describe the configuration options for an environment\
 
 The command returns a table with the following information:
 
-+ **AutoScalingGroups—**A list of AutoScalingGroups used by this environment\.
++ **AutoScalingGroups—**A list of AutoScaling groups used by this environment\.
 
 + **EnvironmentName—**The name of the environment\.
 
@@ -771,9 +771,9 @@ The command returns a table with the following information:
 
 + **LaunchConfigurations—**The Auto Scaling launch configurations in use by this environment\.
 
-+ **LoadBalancers—**The LoadBalancers in use by this environment\.
++ **LoadBalancers—**The load balancers in use by this environment\.
 
-+ **Triggers—**The AutoScaling triggers in use by this environment\.
++ **Triggers—**The Auto Scaling triggers in use by this environment\.
 
 ### Examples<a name="CLIReference-cmd-DescribeEnvironmentResources-Examples"></a>
 
@@ -823,7 +823,7 @@ The command returns a table with the following information:
 
 + **Description—**The description of the environment\.
 
-+ **EndpointURL—**The URL to the LoadBalancer for this environment\. 
++ **EndpointURL—**The URL to the load balancer for this environment\. 
 
 + **EnvironmentID—**The ID of this environment\. 
 
@@ -959,7 +959,7 @@ This example shows how to get the list of available solution stacks\.
 
 ### Description<a name="CLIReference-cmd-RebuildEnvironment-Description"></a>
 
-Deletes and recreates all of the AWS resources \(for example: the Auto Scaling group, LoadBalancer, etc\.\) for a specified environment and forces a restart\.
+Deletes and recreates all of the AWS resources \(for example: the Auto Scaling group, Elastic Load Balancing, etc\.\) for a specified environment and forces a restart\.
 
 ### Syntax<a name="CLIReference-cmd-RebuildEnvironment-Syntax"></a>
 
@@ -995,7 +995,7 @@ This example shows how to rebuild an environment\.
 
 Initiates a request to compile the specified type of information of the deployed environment\.
 
-Setting the InfoType to `tail` compiles the last lines from the application server log files of every Amazon EC2 instance in your environment\. Use RetrieveEnvironmentInfo to access the compiled information\.
+Setting the InfoType to `tail` compiles the last lines from the application server log files of every Amazon EC2 instance in your environment\. Use `RetrieveEnvironmentInfo` to access the compiled information\.
 
 ### Syntax<a name="CLIReference-cmd-RequestEnvironmentInfo-Syntax"></a>
 
@@ -1060,7 +1060,7 @@ This example shows how to restart the application server\.
 
 ### Description<a name="CLIReference-cmd-RetrieveEnvironmentInfo-Description"></a>
 
-Retrieves the compiled information from a RequestEnvironmentInfo request\.
+Retrieves the compiled information from a `RequestEnvironmentInfo` request\.
 
 ### Syntax<a name="CLIReference-cmd-RetrieveEnvironmentInfo-Syntax"></a>
 
@@ -1170,7 +1170,7 @@ The command returns a table with the following information:
 
 + **Description—**The description of the environment\.
 
-+ **EndpointURL—**The URL to the LoadBalancer for this environment\. 
++ **EndpointURL—**The URL to the load balancer for this environment\. 
 
 + **EnvironmentID—**The ID of this environment\. 
 
@@ -1184,7 +1184,7 @@ The command returns a table with the following information:
 
   + `Green`: Indicates the environment is healthy and fully functional\.
 
-  + `Gray`: Default health for a new environment\. The environment is not fully launched and health checks have not started or health checks are suspended during an `UpdateEnvironment` or `RestartEnvironment`request\.
+  + `Gray`: Default health for a new environment\. The environment is not fully launched, and health checks have not started or health checks are suspended during an `UpdateEnvironment` or `RestartEnvironment` request\.
 
 + **Resources—**A list of AWS resources used in this environment\. 
 
@@ -1198,7 +1198,7 @@ The command returns a table with the following information:
 
   + `Ready`: Environment is available to have an action performed on it, such as update or terminate\.
 
-  + `Terminating`: Environment is in the shut\-down process\.
+  + `Terminating`: Environment is in the shutdown process\.
 
   + `Terminated`: Environment is not running\.
 
@@ -1335,11 +1335,11 @@ If a property \(for example, `ApplicationName`\) is not provided, its value rema
 
 | Name | Description | Required | 
 | --- | --- | --- | 
-|   `-a`   `--application-name` *name*   |   The name of the application associated with the configuration template to update\. If no application is found with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
-|   `-t`   `--template-name` *name*   |   The name of the configuration template to update\. If no configuration template is found with this name, UpdateConfigurationTemplate returns an `InvalidParameterValue` error\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
+|   `-a`   `--application-name` *name*   |  The name of the application associated with the configuration template to update\. If no application is found with this name, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
+|   `-t`   `--template-name` *name*   |  The name of the configuration template to update\. If no configuration template is found with this name, UpdateConfigurationTemplate returns an `InvalidParameterValue` error\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
 |   `-d`   `--description` *desc*   |  A new description for the configuration\. Type: String Default: None Length Constraints: Minimum value of 0\. Maximum value of 200\.  |  No  | 
-|   `-f`   `--options-file` *filename*   |   The name of a JSON file that contains option settings to update with the new specified option value\.  Type: String  |  No  | 
-|   `-F`   `--options-to-remove-file` *value*   |   The name of a JSON file that contains configuration options to remove\. Type: String Default: None  |  No  | 
+|   `-f`   `--options-file` *filename*   |  The name of a JSON file that contains option settings to update with the new specified option value\.  Type: String  |  No  | 
+|   `-F`   `--options-to-remove-file` *value*   |  The name of a JSON file that contains configuration options to remove\. Type: String Default: None  |  No  | 
 
 ### Output<a name="CLIReference-cmd-UpdateConfigurationTemplate-Response"></a>
 
@@ -1406,7 +1406,7 @@ This example shows how to update a configuration template\. For a list of config
 
 ### Description<a name="CLIReference-cmd-UpdateEnvironment-Description"></a>
 
- Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment\.
+Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment\.
 
  Attempting to update both the release and configuration is not allowed and Elastic Beanstalk returns an `InvalidParameterCombination` error\.
 
@@ -1429,7 +1429,7 @@ When updating the configuration settings to a new template or individual setting
 |   `-t`   `--template-name` *name*   |  If this parameter is specified, Elastic Beanstalk deploys this configuration template to the environment\. If no such configuration template is found, Elastic Beanstalk returns an `InvalidParameterValue` error\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
 |   `-d`   `--description` *desc*   |  If this parameter is specified, Elastic Beanstalk updates the description of this environment\. Type: String Default: None Length Constraints: Minimum value of 0\. Maximum value of 200\.  |  No  | 
 |   `-f`   `--options-file` *filename*   |  A file containing option settings to update\. If specified, Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified configuration options to the requested values\. Type: String Default: None  |  No  | 
-|   `-F`   `--options-to-remove-file` *filename*   |  A file containing options settings to remove\. If specified, Elastic Beanstalk removes the option settings from the configuration set associated with the running environment\. Type: String Default: None  |  No  | 
+|   `-F`   `--options-to-remove-file` *filename*   |  A file containing option settings to remove\. If specified, Elastic Beanstalk removes the option settings from the configuration set associated with the running environment\. Type: String Default: None  |  No  | 
 
 ### Output<a name="CLIReference-cmd-UpdateEnvironment-Response"></a>
 
@@ -1445,7 +1445,7 @@ The command returns a table with the following information:
 
 + **Description—**The description of the environment\.
 
-+ **EndpointURL—**The URL to the LoadBalancer for this environment\. 
++ **EndpointURL—**The URL to the load balancer for this environment\. 
 
 + **EnvironmentID—**The ID of this environment\. 
 
@@ -1459,7 +1459,7 @@ The command returns a table with the following information:
 
   + `Green`: Indicates the environment is healthy and fully functional\.
 
-  + `Gray`: Default health for a new environment\. The environment is not fully launched and health checks have not started or health checks are suspended during an `UpdateEnvironment` or `RestartEnvironment`request\.
+  + `Gray`: Default health for a new environment\. The environment is not fully launched, and health checks have not started or health checks are suspended during an `UpdateEnvironment` or `RestartEnvironment`request\.
 
 + **Resources—**A list of AWS resources used in this environment\. 
 
@@ -1473,7 +1473,7 @@ The command returns a table with the following information:
 
   + `Ready`: Environment is available to have an action performed on it, such as update or terminate\.
 
-  + `Terminating`: Environment is in the shut\-down process\.
+  + `Terminating`: Environment is in the shutdown process\.
 
   + `Terminated`: Environment is not running\.
 
@@ -1485,7 +1485,7 @@ The command returns a table with the following information:
 
 #### Updating an Existing Environment<a name="CLIReference-cmd-UpdateEnvironment-Example-Request-1"></a>
 
-This example shows how to update an existing environment\. It passes in a file called options\.txt that updates the size of the instance to a t1\.micro and sets two environment variables\. For a list of possible configuration settings, see [Configuration Options](command-options.md)\.
+This example shows how to update an existing environment\. It passes in a file named options\.txt that updates the size of the instance to a t1\.micro and sets two environment variables\. For a list of possible configuration settings, see [Configuration Options](command-options.md)\.
 
 ```
 1. PROMPT> elastic-beanstalk-update-environment -e MySampleAppEnv -f "options.txt"
@@ -1517,7 +1517,7 @@ This example shows how to update an existing environment\. It passes in a file c
 
 ### Description<a name="CLIReference-cmd-ValidateConfigurationSettings-Description"></a>
 
- Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid\.
+Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid\.
 
 This action returns a list of messages indicating any errors or warnings associated with the selection of option values\.
 
@@ -1533,9 +1533,9 @@ This action returns a list of messages indicating any errors or warnings associa
 | Name | Description | Required | 
 | --- | --- | --- | 
 |   `-a`   `--application-name` *name*   |  The name of the application that the configuration template or environment belongs to\.  Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
-|   `-t`   `--template-name` *name*   |   The name of the configuration template to validate the settings against\.  Condition: You cannot specify both this and the environment name\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
+|   `-t`   `--template-name` *name*   |  The name of the configuration template to validate the settings against\.  Condition: You cannot specify both the configuration template name and the environment name\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
 |   `-e`   `--environment-name` *name*   |  The name of the environment to validate the settings against\. Type: String Default: None Length Constraints: Minimum value of 4\. Maximum value of 23\.  |  No  | 
-|   `-f`   `--options-file` *>filename*   |   The name of a JSON file that contains a list of options and desired values to evaluate\. Type: String  |  Yes  | 
+|   `-f`   `--options-file` *>filename*   |  The name of a JSON file that contains a list of options and specified values to evaluate\. Type: String  |  Yes  | 
 
 ### Output<a name="CLIReference-cmd-ValidateConfigurationSettings-Response"></a>
 
@@ -1549,9 +1549,9 @@ The command returns a table with the following information:
 
 + **Severity—**An indication of the severity of this message:
 
-  + `error`: This message indicates that this is not a valid settings for an option\.
+  + `error`: This message indicates that this is not a valid setting for an option\.
 
-  + `warning`: This message provides information you should take into account\.
+  + `warning`: This message provides information you should consider\.
 
 ### Examples<a name="CLIReference-cmd-ValidateConfigurationSettings-Examples"></a>
 

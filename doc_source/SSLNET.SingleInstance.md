@@ -1,4 +1,4 @@
-# Terminating HTTPS on EC2 Instances Running \.NET<a name="SSLNET.SingleInstance"></a>
+# Terminating HTTPS on Amazon EC2 Instances Running \.NET<a name="SSLNET.SingleInstance"></a>
 
 The following configuration file creates and runs a Windows PowerShell script that performs the following tasks:
 
@@ -6,13 +6,13 @@ The following configuration file creates and runs a Windows PowerShell script th
 
 + Gets the PFX certificate and password from an Amazon S3 bucket
 
-  Don't forget to to add an `AmazonS3ReadOnlyAccess` policy to the `aws-elasticbeanstalk-service-role` to access the SSL certificate and password files on the Amazon S3 bucket\.
+  Add an `AmazonS3ReadOnlyAccess` policy to the `aws-elasticbeanstalk-service-role` to access the SSL certificate and password files on the Amazon S3 bucket\.
 
 + Installs the certificate
 
 + Binds the certificate to port 443
 
-  See the comment above the `Remove-WebBinding` command if you want to remove the HTTP endpoint \(port 80\)\.
+  If you want to remove the HTTP endpoint \(port 80\), see the comment above the `Remove-WebBinding` command\.
 
 **Example \.ebextensions/https\-instance\-dotnet\.config**  
 
@@ -33,7 +33,7 @@ files:
       Read-S3Object -BucketName $bucket -Key $pwdkey -File $pwdfile
       $pwd = Get-Content $pwdfile -Raw
 
-      # Cleanup existing binding
+      # Clean up existing binding
       if ( Get-WebBinding "Default Web Site" -Port 443 ) {
         Echo "Removing WebBinding"
         Remove-WebBinding -Name "Default Web Site" -BindingInformation *:443:
@@ -68,7 +68,7 @@ commands:
     command: powershell -NoProfile -ExecutionPolicy Bypass -file C:\\certs\\install-cert.ps1
 ```
 
-In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation function and adds a rule to it:
+In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation function and adds a rule to it\.
 
 **Example \.ebextensions/https\-instance\-single\.config**  
 
@@ -84,4 +84,4 @@ Resources:
       CidrIp: 0.0.0.0/0
 ```
 
-For a load balanced environment, you configure the load balancer to either pass secure traffic through untouched, or decrypt and re\-encrypt for end\-to\-end encryption\.
+For a load\-balanced environment, you configure the load balancer to either pass secure traffic through untouched, or decrypt and re\-encrypt for end\-to\-end encryption\.

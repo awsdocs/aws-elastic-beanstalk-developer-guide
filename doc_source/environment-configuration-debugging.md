@@ -6,8 +6,7 @@ You can use the AWS Elastic Beanstalk console or a configuration file to run the
 Some regions don't offer AWS X\-Ray\. If you create an environment in one of these regions, you can't run the AWS X\-Ray daemon on the instances in your environment\.  
 For information about the AWS services offered in each region, see [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)\.
 
-![\[The service map for a web API application that uses Amazon DynamoDB to store
-      data.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/scorekeep-servicemap.png)
+![\[The service map for a web API application that uses Amazon DynamoDB to store data\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/scorekeep-servicemap.png)
 
 AWS X\-Ray provides an SDK that you can use to instrument your application code, and a daemon application that relays debugging information from the SDK to the X\-Ray API\.
 
@@ -23,12 +22,12 @@ You can use the AWS X\-Ray SDK with the following Elastic Beanstalk platform con
 
 + **Python** \- version 2\.5\.0 and later
 
-+ **Windows Server** \- all configurations starting December 9th, 2016
++ **Windows Server** \- all configurations, starting December 9th, 2016
 
-On supported platforms, you can use a configuration option to run the X\-Ray daemon on the instances in your environment\. You can enable the daemon in the console or by using a configuration file\.
+On supported platforms, you can use a configuration option to run the X\-Ray daemon on the instances in your environment\. You can enable the daemon in the Elastic Beanstalk console or by using a configuration file\.
 
 **Note**  
-To be able to upload data to X\-Ray, the X\-Ray daemon requires IAM permissions in the **AWSXrayWriteOnlyAccess** managed policy\. These permissions are included in the Elastic Beanstalk instance profile\. If you don't use the default instance profile, see [Giving the Daemon Permission to Send Data to X\-Ray](http://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html#xray-daemon-permissions)\.
+To upload data to X\-Ray, the X\-Ray daemon requires IAM permissions in the **AWSXrayWriteOnlyAccess** managed policy\. These permissions are included in the Elastic Beanstalk instance profile\. If you don't use the default instance profile, see [Giving the Daemon Permission to Send Data to X\-Ray](http://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html#xray-daemon-permissions)\.
 
 Debugging with AWS X\-Ray requires the use of the AWS X\-Ray SDK\. See the [AWS X\-Ray Developer Guide](http://docs.aws.amazon.com//xray/latest/devguide/xray-gettingstarted.html) for instructions and sample applications\.
 
@@ -50,11 +49,11 @@ You can enable the AWS X\-Ray daemon on a running environment in the Elastic Bea
 
 1. Choose **Configuration**\.
 
-1. In the **Software Configuration** section, choose the settings icon \( ![\[Edit\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cog.png)\)\.
+1. On the **Software** configuration card, choose **Modify**\.
 
 1. For **X\-Ray Daemon**, choose **Enabled**\.
 
-1. Choose **Apply**\.
+1. Choose **Save**, and then choose **Apply**\.
 
 You can also enable this option during environment creation\. For more information, see \.
 

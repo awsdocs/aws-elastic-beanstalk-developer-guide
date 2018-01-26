@@ -4,13 +4,13 @@ The following related resources can help you as you work with this service\.
 
 +  **[Elastic Beanstalk API Reference](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/)** A comprehensive description of all SOAP and Query APIs\. Additionally, it contains a list of all SOAP data types\. 
 
-+  **[Elastic Beanstalk Sample Code and Libraries](http://aws.amazon.com/code/AWS-Elastic-Beanstalk)** – A link to the command line tool as well as a sample Java web application\. See the links below for additional sample applications\.
++  **[Elastic Beanstalk Sample Code and Libraries](https://aws.amazon.com/code/AWS-Elastic-Beanstalk)** – A link to the command line tool as well as a sample Java web application\. See the links below for additional sample applications\.
 
-+  **[elastic\-beanstalk\-docs on GitHub](https://github.com/awslabs/elastic-beanstalk-docs)** – A GitHub repository with Elastic Beanstalk tutorials and sample configuration files \(\.ebextensions\)\. The repository's README file has links to additional GitHub repositories with sample applications\.
++  **[elastic\-beanstalk\-samples on GitHub](https://github.com/awslabs/elastic-beanstalk-samples)** – A GitHub repository with Elastic Beanstalk sample configuration files \(\.ebextensions\)\. The repository's `README.md` file has links to additional GitHub repositories with sample applications\.
 
-+  **[Elastic Beanstalk Technical FAQ](http://aws.amazon.com/elasticbeanstalk/faqs/)** – The top questions developers have asked about this product\. 
++  **[Elastic Beanstalk Technical FAQ](https://aws.amazon.com/elasticbeanstalk/faqs/)** – The top questions developers have asked about this product\. 
 
-+  **[Elastic Beanstalk Release Notes](http://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)** – A high\-level overview of each release\. These documents provide a summary of new features, corrections, and known issues\. 
++  **[Elastic Beanstalk Release Notes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)** – A high\-level overview of each release\. These documents provide a summary of new features, corrections, and known issues\. 
 
 + ** [Classes & Workshops](https://aws.amazon.com/training/course-descriptions/)** – Links to role\-based and specialty courses as well as self\-paced labs to help sharpen your AWS skills and gain practical experience\.
 

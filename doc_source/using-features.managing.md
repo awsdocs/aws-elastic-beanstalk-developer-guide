@@ -22,5 +22,5 @@ As your application grows in complexity, you can split it into multiple componen
 + [Canceling Environment Configuration Updates and Application Deployments](using-features.rollingupdates.cancel.md)
 + [Rebuilding AWS Elastic Beanstalk Environments](environment-management-rebuild.md)
 + [Environment Types](using-features-managing-env-types.md)
-+ [Worker Environments](using-features-managing-env-tiers.md)
++ [AWS Elastic Beanstalk Worker Environments](using-features-managing-env-tiers.md)
 + [Creating Links Between AWS Elastic Beanstalk Environments](environment-cfg-links.md)

@@ -2,7 +2,7 @@
 
 To update your Elastic Beanstalk environment to use HTTPS, you need to configure an HTTPS listener for the load balancer in your environment\.
 
-You can use the Elastic Beanstalk Management Console to configure a secure listener and assign the certificate\.
+You can use the Elastic Beanstalk console to configure a secure listener and assign the certificate\.
 
 **To assign a certificate to your environment's load balancer \(AWS Management Console\)**
 
@@ -12,15 +12,17 @@ You can use the Elastic Beanstalk Management Console to configure a secure liste
 
 1. Choose **Configuration**\.
 
-1. In the **Network Tier** section, choose the gear icon next to **Load Balancing**\.
+1. On the **Load balancer** configuration card, choose **Modify**\.
 **Note**  
-If the **Network Tier** section is not shown, your environment does not have a load balancer\.
+If the **Load balancer** configuration card doesn't have a **Modify** button, your environment doesn't have a load balancer\.
 
-1. In the **Load Balancer** section, choose your certificate from the **SSL certificate ID** drop down menu\.
+1. On the **Modify load balancer** page, choose your certificate from the **SSL certificate** drop\-down menu\.
+
+1. Choose **Save**, and then choose **Apply**\.
 
 ## Configuring a Secure Listener with a Configuration File<a name="https-loadbalancer-configurationfile"></a>
 
-You can configure a secure listener on your load balancer with a configuration file like the following:
+You can configure a secure listener on your load balancer with a configuration file like the following\.
 
 **Example \.ebextensions/securelistener\.config**  
 
@@ -32,11 +34,11 @@ option_settings:
     InstancePort: 80
 ```
 
-Replace the highlighted text with the ARN of your certificate\. The certificate can be one that you created in ACM or one that you uploaded to IAM with the AWS CLI\.
+Replace the highlighted text with the ARN of your certificate\. The certificate can be one that you created in AWS Certificate Manager or one that you uploaded to IAM with the AWS CLI\.
 
-The above example uses options in the `aws:elb:listener` namespace to configure an HTTPS listener on port 443 with the specified certificate, and forward the decrypted traffic to the instances in your environment on port 80\.
+The previous example uses options in the `aws:elb:listener` namespace to configure an HTTPS listener on port 443 with the specified certificate, and to forward the decrypted traffic to the instances in your environment on port 80\.
 
-For more information on load balancer configuration options, see \.
+For more information about load balancer configuration options, see \.
 
 ## Security Group Configuration<a name="https-update-security-group"></a>
 
@@ -44,7 +46,7 @@ If you configure your load balancer to forward traffic to an instance port other
 
 You add this rule by adding a `Resources` key to a configuration file in the `.ebextensions` directory for your application\.
 
-The following example configuration file adds an ingress rule to the `AWSEBSecurityGroup` security group allows traffic on port 1000 from the load balancer's security group\.
+The following example configuration file adds an ingress rule to the `AWSEBSecurityGroup` security group, which allows traffic on port 1000 from the load balancer's security group\.
 
 **Example \.ebextensions/sg\-ingressfromlb\.config**  
 

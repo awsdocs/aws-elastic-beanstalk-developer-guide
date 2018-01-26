@@ -1,15 +1,15 @@
 # Deploying a Geddy Application with Clustering to Elastic Beanstalk<a name="create_deploy_nodejs_geddy_elasticache"></a>
 
-This section walks you through deploying a sample application to Elastic Beanstalk using the Elastic Beanstalk Command Line Interface \(EB CLI\) and Git, and then updating the application to use the [Geddy](http://geddyjs.org/) framework and [Amazon ElastiCache](http://aws.amazon.com/elasticache/) for clustering\. Clustering enhances your web application's high availability, performance, and security\. To learn more about Amazon ElastiCache, go to [Introduction to ElastiCache](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Introduction.html) in the *Amazon ElastiCache User Guide*\. 
+This section walks you through deploying a sample application to Elastic Beanstalk using the Elastic Beanstalk Command Line Interface \(EB CLI\) and Git, and then updating the application to use the [Geddy](http://geddyjs.org/) framework and [Amazon ElastiCache](https://aws.amazon.com/elasticache/) for clustering\. Clustering enhances your web application's high availability, performance, and security\. To learn more about Amazon ElastiCache, go to [Introduction to ElastiCache](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Introduction.html) in the *Amazon ElastiCache User Guide*\. 
 
 **Note**  
-This example creates AWS resources, which you may be charged for\. For more information about AWS pricing, go to [http://aws\.amazon\.com/pricing/](http://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you may test drive these services for free\. Go to [http://aws\.amazon\.com/free/](http://aws.amazon.com/free/) for more information\.
+This example creates AWS resources, which you might be charged for\. For more information about AWS pricing, see [https://aws.amazon.com/pricing/](https://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you can test drive these services for free\. See [https://aws.amazon.com/free/](https://aws.amazon.com/free/) for more information\.
 
 ## Step 1: Set Up Your Git Repository<a name="create_deploy_nodejs_geddy_elasticache_gitinit"></a>
 
-EB CLI is a command line interface that you can use with Git to deploy applications quickly and more easily\. EB is available as part of the Elastic Beanstalk command line tools package\. For instructions to install EB CLI, see [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md)\.
+The EB CLI is a command line interface that you can use with Git to deploy applications quickly and more easily\. The EB CLI is available as part of the Elastic Beanstalk command line tools package\. For instructions to install the EB CLI, see [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md)\.
 
-Initialize your Git repository\. After you run the following command, when you run `eb init`, EB CLI recognizes that your application is set up with Git\.
+Initialize your Git repository\. After you run the following command, when you run `eb init`, the EB CLI recognizes that your application is set up with Git\.
 
 ```
 git init .
@@ -92,21 +92,21 @@ The following instructions use the Elastic Beanstalk command line interface \(EB
 
 **To configure Elastic Beanstalk**
 
-1. From the directory where you created your local repository, type the following command:
+1. From the directory where you created your local repository, type the following command\.
 
    ```
    eb init
    ```
 
-1. When you are prompted for the Elastic Beanstalk region, type the number of the region\. For information about this product's regions, go to [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html?r=1166) in the Amazon Web Services General Reference\. For this example, we'll use **US West \(Oregon\)**\.
+1. When you are prompted for the Elastic Beanstalk region, type the number of the region\. For information about this product's regions, see [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html?r=1166) in the *Amazon Web Services General Reference*\. For this example, we'll use **US West \(Oregon\)**\.
 
-1.  When you are prompted for the Elastic Beanstalk application to use, type the number corresponding to the option **Create new Application**\. Elastic Beanstalk generates an application name based on the current directory name if an application name has not been previously configured\. In this example, we use geddyapp\. 
+1.  When you are prompted for the Elastic Beanstalk application to use, type the number corresponding to the option **Create New Application**\. Elastic Beanstalk generates an application name based on the current directory name, if an application name has not been previously configured\. In this example, we use geddyapp\. 
 
    ```
    Enter an AWS Elastic Beanstalk application name (auto-generated value is "myapp"): geddyapp
    ```
 **Note**  
-If you have a space in your application name, make sure you do not use quotation marks\. 
+If you have a space in your application name, be sure you do not use quotation marks\. 
 
 1. Type **y** if Elastic Beanstalk correctly detected the correct platform you are using\. Type **n** if not, and then specify the correct platform\.
 
@@ -123,16 +123,16 @@ If you have a space in your application name, make sure you do not use quotation
    eb create
    ```
 
-1. When you are prompted for the Elastic Beanstalk environment name, type the name of the environment\. Elastic Beanstalk automatically creates an environment name based on your application name\. If you want to accept the default, press **Enter**\.
+1. When you are prompted for the Elastic Beanstalk environment name, type the name of the environment\. Elastic Beanstalk automatically creates an environment name based on your application name\. To accept the default, press **Enter**\.
 
    ```
    Enter Environment Name
    (default is HelloWorld-env):
    ```
 **Note**  
-If you have a space in your application name, make sure you do not have a space in your environment name\. 
+If you have a space in your application name, be sure you do not have a space in your environment name\. 
 
-1. When you are prompted to provide a CNAME prefix, type the CNAME prefix you want to use\. Elastic Beanstalk automatically creates a CNAME prefix based on the environment name\. If you want to accept the default, press **Enter**\.
+1. When you are prompted to provide a CNAME prefix, type the CNAME prefix you want to use\. Elastic Beanstalk automatically creates a CNAME prefix based on the environment name\. To accept the default, press **Enter**\.
 
    ```
    Enter DNS CNAME prefix
@@ -141,7 +141,7 @@ If you have a space in your application name, make sure you do not have a space 
 
 After configuring Elastic Beanstalk, you are ready to deploy a sample application\. 
 
-If you want to update your Elastic Beanstalk configuration, you can use the **init** command again\. When prompted, you can update your configuration options\. If you want to keep any previous settings, press the **Enter** key\. 
+To update your Elastic Beanstalk configuration, you can use the **init** command again\. When prompted, you can update your configuration options\. To keep any previous settings, press the **Enter** key\. 
 
 ## Step 5: View the Application<a name="create_deploy_nodejs_geddy_elasticache_update-view"></a>
 
@@ -215,7 +215,7 @@ Next, let's create an environment variable and set the environment to production
 
 1. On your local computer, create a file called `node-geddy/myapp/.ebextensions/myapp.config` with the following snippet to set the environment to production\.
 **Note**  
-YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and make sure that your text editor uses spaces, not tab characters, to indent\.
+YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
    ```
    option_settings:
@@ -496,10 +496,10 @@ Use the `terminate` command to terminate your environment and the `delete` comma
 
 **To terminate your environment and delete the application**
 
-+ From the directory where you created your local repository, run `eb terminate`:
++ From the directory where you created your local repository, run `eb terminate`\.
 
   ```
   $ eb terminate
   ```
 
-  This process may take a few minutes\. Elastic Beanstalk displays a message once the environment has been successfully terminated\. 
+  This process can take a few minutes\. Elastic Beanstalk displays a message once the environment is successfully terminated\. 

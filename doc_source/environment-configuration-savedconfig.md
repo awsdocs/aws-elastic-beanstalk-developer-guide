@@ -31,7 +31,7 @@ eb config get NAME
 
 1. Choose **Saved Configurations**\.
 
-1. Choose a saved configuration and then choose **Launch environment**\.
+1. Choose a saved configuration, and then choose **Launch environment**\.
 
 1. Proceed through the wizard to create your environment\.
 

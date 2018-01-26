@@ -13,7 +13,7 @@
 
 ## Docker Platform Options<a name="command-options-docker"></a>
 
-The following Docker\-specific configuration options apply to the Sinlge Container and Preconfigured Docker platforms\.
+The following Docker\-specific configuration options apply to the Single Container and Preconfigured Docker platforms\.
 
 **Note**  
 These configuration options do not apply to the Multicontainer Docker platform\.

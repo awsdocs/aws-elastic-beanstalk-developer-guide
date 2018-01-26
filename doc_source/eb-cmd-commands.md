@@ -1,7 +1,7 @@
 # EB CLI 2 Commands<a name="eb-cmd-commands"></a>
 
 **Note**  
- This version of EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of EB CLI\)\. For information on the new version, see \. 
+ This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see \. 
 
 You can use the EB command line interface to perform a wide variety of operations\.
 

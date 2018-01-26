@@ -3,7 +3,7 @@
 You may want to customize and configure the software that your application depends on\. These files could be either dependencies required by the application—for example, additional packages or services that need to be run\. For general information on customizing and configuring your Elastic Beanstalk environments, see [AWS Elastic Beanstalk Environment Configuration](customize-containers.md)\.
 
 **Note**  
-YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and make sure that your text editor uses spaces, not tab characters, to indent\.
+YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
 Configuration files support the following keys that affect the Windows server on which your application runs\.
 
@@ -65,7 +65,7 @@ sources:
 
 ### Supported Formats<a name="windows-sources-support"></a>
 
-Elastic Beanstalk currently supports \.zip format\. You can reference external locations such as Amazon Simple Storage Service \(Amazon S3\) \(e\.g\., `http://s3.amazonaws.com/mybucket/myobject`\) as long as the URL is publically accessible\.
+Elastic Beanstalk currently supports \.zip format\. You can reference external locations such as Amazon Simple Storage Service \(Amazon S3\) \(e\.g\., `https://s3.amazonaws.com/mybucket/myobject`\) as long as the URL is publically accessible\.
 
 ### Example<a name="windows-sources-example"></a>
 
@@ -73,7 +73,7 @@ The following example downloads a public \.zip file from an Amazon S3 bucket and
 
 ```
 sources:  
-  "c:/myproject/myapp": http://s3.amazonaws.com/mybucket/myobject.zip
+  "c:/myproject/myapp": https://s3.amazonaws.com/mybucket/myobject.zip
 ```
 
 ## Files<a name="windows-files"></a>

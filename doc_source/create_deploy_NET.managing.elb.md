@@ -30,7 +30,7 @@ For example, using the [AWS CLI for Classic load balancers](http://docs.aws.amaz
 ```
 aws elb create-load-balancer-listeners --load-balancer-name LOAD_BALANCER_NAME --listeners "Protocol=HTTP, LoadBalancerPort=8080, InstanceProtocol=HTTP, InstancePort=80"
 ```
-For example, using the [AWS CLI for Application load balancers](http://docs.aws.amazon.com/cli/latest/reference/elbv2/create-listener.html), type the following command, replacing *LOAD\_BALANCER\_ARN* with the ARN of your load balancer for Elastic Beanstalk\.  
+For example, using the [AWS CLI for Application Load Balancers](http://docs.aws.amazon.com/cli/latest/reference/elbv2/create-listener.html), type the following command, replacing *LOAD\_BALANCER\_ARN* with the ARN of your load balancer for Elastic Beanstalk\.  
 
 ```
 aws elbv2 create-listener --load-balancer-arn LOAD_BALANCER_ARN --protocol HTTP --port 8080

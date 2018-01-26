@@ -1,6 +1,6 @@
 # Immutable Environment Updates<a name="environmentmgmt-updates-immutable"></a>
 
-Immutable environment updates are an alternative to rolling updates that ensure that configuration changes that require replacing instances are applied efficiently and safely\. If an immutable environment update fails, the rollback process requires only terminating an Auto Scaling group\. A failed rolling update, on the other hand, requires performing an additional rolling update to roll back the changes\.
+Immutable environment updates are an alternative to rolling updates\. Immutable environment updates ensure that configuration changes that require replacing instances are applied efficiently and safely\. If an immutable environment update fails, the rollback process requires only terminating an Auto Scaling group\. A failed rolling update, on the other hand, requires performing an additional rolling update to roll back the changes\.
 
 To perform an immutable environment update, Elastic Beanstalk creates a second, temporary Auto Scaling group behind your environment's load balancer to contain the new instances\. First, Elastic Beanstalk launches a single instance with the new configuration in the new group\. This instance serves traffic alongside all of the instances in the original Auto Scaling group that are running the previous configuration\.
 
@@ -16,7 +16,7 @@ You can also use immutable updates to deploy new versions of your application, a
 If an immutable update fails, the new instances upload bundle logs to Amazon S3 before Elastic Beanstalk terminates them\. Elastic Beanstalk leaves logs from a failed immutable update in Amazon S3 for one hour before deleting them, instead of the standard 15 minutes for bundle and tail logs\.
 
 **Note**  
-If you use immutable updates for application version deployments, but not for configuration, you might encounter an error if you attempt to deploy an application version that contains configuration changes that would normally trigger a rolling update \(for example, that change instance type\)\. To avoid this, make the configuration change in a separate update, or configure immutable updates for both deployments and configuration changes\.
+If you use immutable updates for application version deployments, but not for configuration, you might encounter an error if you attempt to deploy an application version that contains configuration changes that would normally trigger a rolling update \(for example, configurations that change instance type\)\. To avoid this, make the configuration change in a separate update, or configure immutable updates for both deployments and configuration changes\.
 
 You can't perform an immutable update in concert with resource configuration changes\. For example, you can't change settings that require instance replacement while also updating other settings, or perform an immutable deployment with configuration files that change configuration settings or additional resources in your source code\. If you attempt to change resource settings \(for example, load balancer settings\) and concurrently perform an immutable update, Elastic Beanstalk returns an error\.
 
@@ -24,7 +24,7 @@ If your resource configuration changes aren't dependent on your source code chan
 
 ## Configuring Immutable Updates<a name="updates-immutable-configure"></a>
 
-You can enable and configure immutable updates in the Elastic Beanstalk Management Console\.
+You can enable and configure immutable updates in the Elastic Beanstalk console\.
 
 **To enable immutable updates \(console\)**
 
@@ -34,16 +34,16 @@ You can enable and configure immutable updates in the Elastic Beanstalk Manageme
 
 1. Choose **Configuration**\.
 
-1. In the **Updates and Deployments** section, choose ![\[Edit\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cog.png)\. 
+1. On the **Rolling updates and deployments** configuration card, choose **Modify**\.
 
 1. In the **Configuration Updates** section, set **Rolling update type** to **Immutable**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-mgmt-updates-immutable.png)
+![\[The configuration updates section on the modify rolling updates and deployments configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-mgmt-updates-immutable.png)
 
-1. Choose **Apply**\.
+1. Choose **Save**, and then choose **Apply**\.
 
 ## The aws:autoscaling:updatepolicy:rollingupdate namespace<a name="updates-immutable-namespace"></a>
 
-You can also use the options in the `aws:autoscaling:updatepolicy:rollingupdate` namespace to configure immutable updates\. The following example configuration file enables immutable updates for configuration changes:
+You can also use the options in the `aws:autoscaling:updatepolicy:rollingupdate` namespace to configure immutable updates\. The following example configuration file enables immutable updates for configuration changes\.
 
 **Example \.ebextensions/immutable\-updates\.config**  
 
@@ -53,7 +53,7 @@ option_settings:
     RollingUpdateType: Immutable
 ```
 
-The following example enables immutable updates for both configuration changes and deployments:
+The following example enables immutable updates for both configuration changes and deployments\.
 
 **Example \.ebextensions/immutable\-all\.config**  
 
@@ -65,4 +65,4 @@ option_settings:
     DeploymentPolicy: Immutable
 ```
 
-EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. These settings must be removed if you want to use configuration files to configure the same\. See  for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See  for details\.

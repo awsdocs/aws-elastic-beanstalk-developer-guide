@@ -18,7 +18,7 @@ The installer installs Python in your user folder and adds its executable direct
 
 1. Open the Windows Command Processor from the Start menu\.
 
-1. Verify that Python and pip are both installed correctly with the following commands:
+1. Verify that Python and `pip` are both installed correctly by using the following commands\.
 
    ```
    C:\Windows\System32> python --version
@@ -27,7 +27,7 @@ The installer installs Python in your user folder and adds its executable direct
    pip 9.0.1 from c:\users\myname\appdata\local\programs\python\python36\lib\site-packages (python 3.6)
    ```
 
-1. Install the EB CLI using `pip`:
+1. Install the EB CLI using `pip`\.
 
    ```
    C:\Windows\System32> pip install awsebcli --upgrade --user
@@ -57,18 +57,32 @@ The installer installs Python in your user folder and adds its executable direct
    Successfully installed awsebcli-3.2.2 cement-2.4.0 jmespath-0.6.2 python-dateutil-2.4.2 pyyaml-3.11 six-1.9.0
    ```
 
-1.  Add the following to the PATH environment variable: `%USERPROFILE%\AppData\roaming\Python\Python36\scripts`\. The location may differ depending on whether you install Python for one user or all users\. 
+1. Add the executable path, `%USERPROFILE%\AppData\roaming\Python\Python36\scripts`, to your PATH environment variable\. The location may differ depending on whether you install Python for one user or all users\.
+
+   To modify your PATH variable \(Windows\):
+
+   1. Press the Windows key, and then type **environment variables**\.
+
+   1. Choose **Edit environment variables for your account**\.
+
+   1. Choose **PATH**, and then choose **Edit**\.
+
+   1. Add paths to the **Variable value** field, separated by semicolons\. For example: `C:\existing\path;C:\new\path`
+
+   1. Choose **OK** twice to apply the new settings\.
+
+   1. Close any running command prompts and reopen\.
 
 1.  Restart a new command shell for the new PATH variable to take effect\. 
 
-1. Verify that the EB CLI is installed correctly:
+1. Verify that the EB CLI is installed correctly\.
 
    ```
    C:\Windows\System32> eb --version
    EB CLI 3.2.2 (Python 3.4.3)
    ```
 
-To upgrade to the latest version, run the installation command again:
+To upgrade to the latest version, run the installation command again\.
 
 ```
 C:\Windows\System32> pip install awsebcli --upgrade --user

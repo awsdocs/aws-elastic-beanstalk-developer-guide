@@ -31,4 +31,4 @@ In a load balanced environment in a default VPC, you can modify this policy to o
 + [Terminating HTTPS on EC2 Instances Running Python](https-singleinstance-python.md)
 + [Terminating HTTPS on EC2 Instances Running Ruby](https-singleinstance-ruby.md)
 + [Terminating HTTPS on EC2 Instances Running Tomcat](https-singleinstance-tomcat.md)
-+ [Terminating HTTPS on EC2 Instances Running \.NET](SSLNET.SingleInstance.md)
++ [Terminating HTTPS on Amazon EC2 Instances Running \.NET](SSLNET.SingleInstance.md)

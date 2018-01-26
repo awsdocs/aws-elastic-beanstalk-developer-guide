@@ -13,7 +13,7 @@ The following samples add an Amazon ElastiCache cluster to EC2\-Classic and EC2\
 This sample adds an Amazon ElastiCache cluster to an environment with instances launched into the EC2\-Classic platform\. All of the properties that are listed in this example are the minimum required properties that must be set for each resource type\. You can download the example at [ElastiCache Example](https://s3.amazonaws.com/elasticbeanstalk/extensions/ElastiCache.config)\. 
 
 **Note**  
-This example creates AWS resources, which you may be charged for\. For more information about AWS pricing, go to [http://aws\.amazon\.com/pricing/](http://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you may test drive these services for free\. Go to [http://aws\.amazon\.com/free/](http://aws.amazon.com/free/) for more information\.
+This example creates AWS resources, which you might be charged for\. For more information about AWS pricing, see [https://aws.amazon.com/pricing/](https://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you can test drive these services for free\. See [https://aws.amazon.com/free/](https://aws.amazon.com/free/) for more information\.
 
 To use this example, do the following:
 
@@ -23,7 +23,7 @@ To use this example, do the following:
 
 1. Deploy your application to Elastic Beanstalk\.
 
-   YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and make sure that your text editor uses spaces, not tab characters, to indent\.
+   YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
 Create a configuration file \(e\.g\., `elasticache.config`\) that defines the resources\. In this example, we create the ElastiCache cluster by specifying the name of the ElastiCache cluster resource \(`MyElastiCache`\), declaring its type, and then configuring the properties for the cluster\. The example references the name of the ElastiCache security group resource that gets created and defined in this configuration file\. Next, we create an ElastiCache security group\. We define the name for this resource, declare its type, and add a description for the security group\. Finally, we set the ingress rules for the ElastiCache security group to allow access only from instances inside the ElastiCache security group \(`MyCacheSecurityGroup`\) and the Elastic Beanstalk security group \(`AWSEBSecurityGroup`\)\. The parameter name, `AWSEBSecurityGroup`, is a fixed resource name provided by Elastic Beanstalk\. You must add `AWSEBSecurityGroup` to your ElastiCache security group ingress rules in order for your Elastic Beanstalk application to connect to the instances in your ElastiCache cluster\. 
 
@@ -86,7 +86,7 @@ These lines tell Elastic Beanstalk to get the values for the **CacheNodeType, Nu
 This sample adds an Amazon ElastiCache cluster to an environment with instances launched into the EC2\-VPC platform\. Specifically, the information in this section applies to a scenario where EC2 launches instances into the default VPC\. All of the properties in this example are the minimum required properties that must be set for each resource type\. For more information about default VPCs, see [Your Default VPC and Subnets](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html)\.
 
 **Note**  
-This example creates AWS resources, which you may be charged for\. For more information about AWS pricing, go to [http://aws\.amazon\.com/pricing/](http://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you may test drive these services for free\. Go to [http://aws\.amazon\.com/free/](http://aws.amazon.com/free/) for more information\.
+This example creates AWS resources, which you might be charged for\. For more information about AWS pricing, see [https://aws.amazon.com/pricing/](https://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you can test drive these services for free\. See [https://aws.amazon.com/free/](https://aws.amazon.com/free/) for more information\.
 
 To use this example, do the following:
 
@@ -96,7 +96,7 @@ To use this example, do the following:
 
 1. Deploy your application to Elastic Beanstalk\.
 
-   YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and make sure that your text editor uses spaces, not tab characters, to indent\.
+   YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
 Now name the resources configuration file `elasticache.config`\. To create the ElastiCache cluster, this example specifies the name of the ElastiCache cluster resource \(`MyElastiCache`\), declares its type, and then configures the properties for the cluster\. The example references the ID of the security group resource that we create and define in this configuration file\.
 
@@ -176,7 +176,7 @@ These lines tell Elastic Beanstalk to get the values for the `CacheNodeType`, `N
 If you create a custom VPC on the EC2\-VPC platform and specify it as the VPC into which EC2 launches instances, the process of adding an Amazon ElastiCache cluster to your environment differs from that of a default VPC\. The main difference is that you must create a subnet group for the ElastiCache cluster\. All of the properties in this example are the minimum required properties that must be set for each resource type\.
 
 **Note**  
-This example creates AWS resources, which you may be charged for\. For more information about AWS pricing, go to [http://aws\.amazon\.com/pricing/](http://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you may test drive these services for free\. Go to [http://aws\.amazon\.com/free/](http://aws.amazon.com/free/) for more information\.
+This example creates AWS resources, which you might be charged for\. For more information about AWS pricing, see [https://aws.amazon.com/pricing/](https://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you can test drive these services for free\. See [https://aws.amazon.com/free/](https://aws.amazon.com/free/) for more information\.
 
 To use this example, do the following:
 
@@ -186,7 +186,7 @@ To use this example, do the following:
 
 1. Deploy your application to Elastic Beanstalk\.
 
-   YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and make sure that your text editor uses spaces, not tab characters, to indent\.
+   YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
 Now name the resources configuration file `elasticache.config`\. To create the ElastiCache cluster, this example specifies the name of the ElastiCache cluster resource \(`MyElastiCache`\), declares its type, and then configures the properties for the cluster\. The properties in the example reference the name of the subnet group for the ElastiCache cluster as well as the ID of security group resource that we create and define in this configuration file\.
 

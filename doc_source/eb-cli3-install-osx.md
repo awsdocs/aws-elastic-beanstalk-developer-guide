@@ -1,6 +1,6 @@
 # Install the EB CLI on macOS<a name="eb-cli3-install-osx"></a>
 
-If you use the Homebrew package manager, you can install the EB CLI with the brew command\. You can also install Python and pip, and then use pip to install the EB CLI\.
+If you use the Homebrew package manager, you can install the EB CLI with the `brew` command\. You can also install Python and `pip`, and then use `pip` to install the EB CLI\.
 
 ## Install the EB CLI with Homebrew<a name="eb-cli3-install-osx-homebrew"></a>
 
@@ -8,19 +8,19 @@ If you have Homebrew, you can use it to install the EB CLI\. The latest version 
 
 **To install the EB CLI with Homebrew**
 
-1. Make sure you have the latest version of Homebrew
+1. Ensure you have the latest version of Homebrew\.
 
    ```
    $ brew update
    ```
 
-1. Run `brew install awsebcli`:
+1. Run `brew install awsebcli`\.
 
    ```
    $ brew install awsebcli
    ```
 
-1. Verify that the EB CLI is installed correctly:
+1. Verify that the EB CLI is installed correctly\.
 
    ```
    $ eb --version
@@ -29,7 +29,7 @@ If you have Homebrew, you can use it to install the EB CLI\. The latest version 
 
 ## Install Python, pip, and the EB CLI on macOS<a name="eb-cli3-install-osx-pip"></a>
 
-You can install the latest version of Python and pip and then use them to install the EB CLI\.
+You can install the latest version of Python and `pip` and then use them to install the EB CLI\.
 
 **To install the EB CLI on macOS**
 
@@ -48,9 +48,9 @@ You can install the latest version of Python and pip and then use them to instal
    $ pip3 install awsebcli --upgrade --user
    ```
 
-1. Add the path to the executable \(`~/Library/Python/3.4/bin`\) to your path variable:
+1. Add the executable path, `~/Library/Python/3.4/bin`, to your PATH variable\.
 
-**To modify your PATH variable \(Linux, macOS, or Unix\)**
+   To modify your PATH variable \(Linux, macOS, or Unix\):
 
    1. Find your shell's profile script in your user folder\. If you are not sure which shell you have, run `echo $SHELL`\.
 
@@ -84,7 +84,7 @@ You can install the latest version of Python and pip and then use them to instal
    EB CLI 3.7.8 (Python 3.4.1)
    ```
 
-To upgrade to the latest version, run the installation command again:
+To upgrade to the latest version, run the installation command again\.
 
 ```
 $ pip3 install awsebcli --upgrade --user

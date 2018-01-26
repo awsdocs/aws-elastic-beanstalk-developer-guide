@@ -1,6 +1,6 @@
 # Elastic Beanstalk Service Role<a name="concepts-roles-service"></a>
 
-A service role is the IAM role that Elastic Beanstalk assumes when calling other services on your behalf\. For example, Elastic Beanstalk uses the service role that you specify when creating an Elastic Beanstalk environment when it calls Amazon Elastic Compute Cloud \(Amazon EC2\), Elastic Load Balancing, and Auto Scaling APIs to gather information about the health of its AWS resources for enhanced health monitoring\.
+A service role is the IAM role that Elastic Beanstalk assumes when calling other services on your behalf\. For example, Elastic Beanstalk uses the service role that you specify when creating an Elastic Beanstalk environment when it calls Amazon Elastic Compute Cloud \(Amazon EC2\), Elastic Load Balancing, and Amazon EC2 Auto Scaling APIs to gather information about the health of its AWS resources for enhanced health monitoring\.
 
 The `AWSElasticBeanstalkEnhancedHealth` managed policy contains all of the permissions that Elastic Beanstalk needs to monitor environment health:
 

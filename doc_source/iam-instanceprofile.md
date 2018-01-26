@@ -1,6 +1,6 @@
 # Managing Elastic Beanstalk Instance Profiles<a name="iam-instanceprofile"></a>
 
-An instance profile is a container for an AWS Identity and Access Management \(IAM\) role that you can use to pass role information to an EC2 instance when the instance starts\. When you launch an environment in the AWS Elastic Beanstalk environment management console, the console creates a default instance profile, called `aws-elasticbeanstalk-ec2-role`, and assigns managed policies with default permissions to it\. 
+An instance profile is a container for an AWS Identity and Access Management \(IAM\) role that you can use to pass role information to an Amazon EC2 instance when the instance starts\. When you launch an environment in the AWS Elastic Beanstalk environment management console, the console creates a default instance profile, called `aws-elasticbeanstalk-ec2-role`, and assigns managed policies with default permissions to it\. 
 
 Elastic Beanstalk provides three managed policies: one for the web server tier, one for the worker tier, and one with additional permissions required for multicontainer Docker environments\. The console assigns all of these policies to the role attached to the default instance profile\. The policies follow\.
 
@@ -145,7 +145,7 @@ Elastic Beanstalk provides three managed policies: one for the web server tier, 
   }
   ```
 
-To allow the EC2 instances in your environment to assume the `aws-elasticbeanstalk-ec2-role` role, the instance profile specifies Amazon EC2 as a trusted entity in the trust relationship policy:
+To allow the EC2 instances in your environment to assume the `aws-elasticbeanstalk-ec2-role` role, the instance profile specifies Amazon EC2 as a trusted entity in the trust relationship policy, as follows\.
 
 ```
 {
@@ -162,7 +162,7 @@ To allow the EC2 instances in your environment to assume the `aws-elasticbeansta
 }
 ```
 
-To customize permissions, you can either add policies to the role attached to the default instance profile, or create your own instance profile with a restricted set of permissions\.
+To customize permissions, you can add policies to the role attached to the default instance profile or create your own instance profile with a restricted set of permissions\.
 
 
 + [Verifying the Permissions Assigned to the Default Instance Profile](#iam-instanceprofile-verify)
@@ -226,7 +226,7 @@ If your application accesses AWS APIs or resources to which permissions aren't g
 
 ## Creating an Instance Profile<a name="iam-instanceprofile-create"></a>
 
-An instance profile is a wrapper around a standard IAM role that allows an EC2 instance to assume the role\. You can create additional instance profiles to customize permissions for different applications or to create an instance profile that doesn't grant permissions for worker tier or multicontainer Docker environments if you don't use those features\.
+An instance profile is a wrapper around a standard IAM role that allows an EC2 instance to assume the role\. You can create additional instance profiles to customize permissions for different applications or to create an instance profile that doesn't grant permissions for worker tier or multicontainer Docker environments, if you don't use those features\.
 
 **To create an instance profile**
 

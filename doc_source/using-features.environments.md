@@ -18,21 +18,21 @@ Follow this procedure to launch a new environment running the default applicatio
 
 1. Choose an application or create a new one\.
 
-1. In the upper right corner, choose **Create New Environment** from the **Actions** menu\.  
+1. From the **Actions** menu in the upper right corner, choose **Create environment**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/application-actions-createnewenvironment.png)
 
-1. Choose between **Web server** and **Worker** environment tiers\. You cannot change an environment's tier after creation\.
+1. Choose either the **Web server environment** or **Worker environment** environment tier\. You cannot change an environment's tier after creation\.
 **Note**  
 The \.NET on Windows Server platform doesn't support the worker environment tier\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-choosetier.png)
 
-1. For **Platform**, choose the platform that matches the language used by your application\.
+1. Choose a **Platform** that matches the language used by your application\.
 **Note**  
-Elastic Beanstalk supports multiple configurations for most platforms listed\. By default, the console selects the latest version of the language, web container or framework supported by Elastic Beanstalk\. If your application requires an older version, choose **Configure more options** below\.
+Elastic Beanstalk supports multiple configurations for most platforms listed\. By default, the console selects the latest version of the language, web container, or framework supported by Elastic Beanstalk\. If your application requires an older version, choose **Configure more options**, as described below\.
 
 1. For **App code**, choose **Sample application**\.
 
-1. If you would like to further customize your environment, choose **Configure more options**\. The following options can only be set during environment creation:
+1. If you want to further customize your environment, choose **Configure more options**\. The following options can be set only during environment creation:
 
    + Environment name
 
@@ -48,7 +48,7 @@ Elastic Beanstalk supports multiple configurations for most platforms listed\. B
 
    + Instance type, root volume, key pair, and IAM role
 
-   + Internal RDS database
+   + Internal Amazon RDS database
 
    + Load balancer
 
@@ -60,8 +60,8 @@ While Elastic Beanstalk creates your environment, you are redirected to the \. O
 
 
 + [The Create New Environment Wizard](environments-create-wizard.md)
-+ [Clone an Environment](using-features.managing.clone.md)
-+ [Terminate an Environment](using-features.terminating.md)
++ [Clone an Elastic Beanstalk Environment](using-features.managing.clone.md)
++ [Terminate an Elastic Beanstalk Environment](using-features.terminating.md)
 + [Creating Elastic Beanstalk Environments with the AWS CLI](environments-create-awscli.md)
 + [Creating Elastic Beanstalk Environments with the API](environments-create-api.md)
 + [Constructing a Launch Now URL](launch-now-url.md)

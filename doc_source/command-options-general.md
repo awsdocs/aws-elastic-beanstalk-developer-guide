@@ -43,7 +43,7 @@ Configure your environment's Auto Scaling group\.
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
 |  Availability Zones  |  Availability Zones \(AZs\) are distinct locations within a region that are engineered to be isolated from failures in other AZs and provide inexpensive, low\-latency network connectivity to other AZs in the same region\. Choose the number of AZs for your instances\.  |  `Any`  |  `Any` `Any 1` `Any 2` `Any 3`  | 
-|  Cooldown  |  Cooldown periods help to prevent Auto Scaling from initiating additional scaling activities before the effects of previous activities are visible\.  |   `360`   |  `0` to `10000`  | 
+|  Cooldown  |  Cooldown periods help to prevent Amazon EC2 Auto Scaling from initiating additional scaling activities before the effects of previous activities are visible\.  |   `360`   |  `0` to `10000`  | 
 |  Custom Availability Zones  |  Define the AZs for your instances\.  |  None  |   `us-east-1a`   `us-east-1b`   `us-east-1c`   `us-east-1d`   `us-east-1e`   `eu-central-1`   | 
 |  MinSize  |  Minimum number of instances you want in your Auto Scaling group\.  |   `1`   |  `1` to `10000`  | 
 |  MaxSize  |  Maximum number of instances you want in your Auto Scaling group\.  |   `4`   |  `1` to `10000`  | 
@@ -79,7 +79,7 @@ Configure scheduled actions for your environment's Auto Scaling group\. For each
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
 |  StartTime  |  For one\-time actions, choose the date and time to run the action\. For recurrent actions, choose when to activate the action\.  |  None  |  A [ISO\-8601 timestamp](http://www.w3.org/TR/NOTE-datetime) unique across all scheduled scaling actions\.  | 
-|  EndTime  |  A date and time in the future \(in the UTC/GMT time zone\) when you want the scheduled scaling action to stop repeating\. If you don't specify an **EndTime**, the action recurs according to the `Recurrence` expression\. Example: `2015-04-28T04:07:2Z` When a scheduled action ends, the Auto Scaling does not automatically go back to its previous settings\. Configure a second scheduled action to return to the original settings as needed\.  |  None  |  A [ISO\-8601 timestamp](http://www.w3.org/TR/NOTE-datetime) unique across all scheduled scaling actions\.  | 
+|  EndTime  |  A date and time in the future \(in the UTC/GMT time zone\) when you want the scheduled scaling action to stop repeating\. If you don't specify an **EndTime**, the action recurs according to the `Recurrence` expression\. Example: `2015-04-28T04:07:2Z` When a scheduled action ends, Amazon EC2 Auto Scaling does not automatically go back to its previous settings\. Configure a second scheduled action to return to the original settings as needed\.  |  None  |  A [ISO\-8601 timestamp](http://www.w3.org/TR/NOTE-datetime) unique across all scheduled scaling actions\.  | 
 |  MaxSize  |  The maximum instance count to apply when the action runs\.  |  None  |  `0` to `10000`  | 
 |  MinSize  |  The minimum instance count to apply when the action runs\.  |  None  |  `0` to `10000`  | 
 |  DesiredCapacity  |  Set the initial desired capacity for the Auto Scaling group\. After the scheduled action is applied, triggers will adjust the desired capacity based on their settings\.  |  None  |  `1` to `10000`  | 
@@ -148,7 +148,7 @@ Configure a health check path for your application\.
 | --- | --- | --- | --- | 
 |  Application Healthcheck URL  |  The path to which to send health check requests\. If not set, the load balancer attempts to make a TCP connection on port 80 to verify health\. Set to a path starting with `/` to send an HTTP GET request to that path\. You can also include a protocol \(HTTP, HTTPS, TCP, or SSL\) and port prior to the path to check HTTPS connectivity or use a non\-default port\.  |  None  |  `/` \(HTTP GET to root path\) `/health` `HTTPS:443/` `HTTPS:443/health` etc  | 
 
-EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. These settings must be removed if you want to use configuration files to configure the same\. See  for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See  for details\.
 
 ## aws:elasticbeanstalk:application:environment<a name="command-options-general-elasticbeanstalkapplicationenvironment"></a>
 
@@ -190,7 +190,6 @@ Configure rolling deployments for your application code\.
 |  BatchSizeType  |  The type of number that is specified in **BatchSize**\.  |   `Percentage`   |  `Percentage`  `Fixed`   | 
 |  BatchSize  |  Percentage or fixed number of Amazon EC2 instances in the Auto Scaling group on which to simultaneously perform deployments\. Valid values vary per **BatchSizeType** setting\.  |   `100`   |  `1` to `100` \(`Percentage`\)\. `1` to aws:autoscaling:asg::MaxSize \(`Fixed`\)  | 
 |  IgnoreHealthCheck  |  Do not cancel a deployment due to failed health checks\.  |  false  |   `true`   `false`   | 
-|  HealthCheckSuccessThreshold  | Lower the threshold for instances to pass health checks\. |  `Ok`  |  `Ok` `Warning` `Degraded` `Severe`  | 
 
 ## aws:elasticbeanstalk:environment<a name="command-options-general-elasticbeanstalkenvironment"></a>
 
@@ -259,7 +258,8 @@ Configure enhanced health reporting for your environment\.
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
 |  SystemType  | Health reporting system \(basic or enhanced\)\. Enhanced health reporting requires a service role and a version 2 platform configuration\. |   `basic`   |   `basic`   `enhanced`   | 
-|  ConfigDocument  | A JSON document describing the environment and instance metrics to publish to CloudWatch\. | None |  | 
+| ConfigDocument | A JSON document describing the environment and instance metrics to publish to CloudWatch\. | None |  | 
+|  HealthCheckSuccessThreshold  | Lower the threshold for instances to pass health checks\. |  `Ok`  |  `Ok` `Warning` `Degraded` `Severe`  | 
 
 ## aws:elasticbeanstalk:hostmanager<a name="command-options-general-elasticbeanstalkhostmanager"></a>
 
@@ -400,12 +400,12 @@ Configure additional listeners on a classic load balancer\.
 
 | Name | Description | Default | Valid Values | 
 | --- | --- | --- | --- | 
-| ListenerProtocol | The protocol used by the listener\. |  HTTP  |  HTTP HTTPS TCP SSL  | 
-| InstancePort | The port that this listener uses to communicate with the EC2 instances\. | The same as listener\_port\. | 1 to 65535 | 
-| InstanceProtocol | The protocol that this listener uses to communicate with the EC2 instances\. |  `HTTP` when `ListenerProtocol` is `HTTP` or `HTTPS` `TCP` when `ListenerProtocol` is `TCP` or `SSL`  | HTTP or HTTPS when ListenerProtocol is HTTP or HTTPS `TCP` or `SSL` when `ListenerProtocol` is `TCP` or `SSL` | 
-| PolicyNames | A comma\-separated list of policy names to apply to the port for this listener\. We suggest that you use the LoadBalancerPorts option of the [aws:elb:policies](#command-options-general-elbpolicies) namespace instead\. | None |  | 
+|  ListenerProtocol  | The protocol used by the listener\. |  HTTP  |  HTTP HTTPS TCP SSL  | 
+|  InstancePort  | The port that this listener uses to communicate with the EC2 instances\. | The same as listener\_port\. | 1 to 65535 | 
+|  InstanceProtocol  | The protocol that this listener uses to communicate with the EC2 instances\. |  `HTTP` when `ListenerProtocol` is `HTTP` or `HTTPS` `TCP` when `ListenerProtocol` is `TCP` or `SSL`  | HTTP or HTTPS when ListenerProtocol is HTTP or HTTPS `TCP` or `SSL` when `ListenerProtocol` is `TCP` or `SSL` | 
+|  PolicyNames  | A comma\-separated list of policy names to apply to the port for this listener\. We suggest that you use the LoadBalancerPorts option of the [aws:elb:policies](#command-options-general-elbpolicies) namespace instead\. | None |  | 
 |  SSLCertificateId  | ARN of an SSL certificate to bind to the listener\. |  None  |  | 
-| ListenerEnabled | Specifies whether this listener is enabled\. If you specify false, the listener is not included in the load balancer\.  | true if any other option is set\. false otherwise\. |  true false  | 
+|  ListenerEnabled  | Specifies whether this listener is enabled\. If you specify false, the listener is not included in the load balancer\.  | true if any other option is set\. false otherwise\. |  true false  | 
 
 ## aws:elb:policies<a name="command-options-general-elbpolicies"></a>
 
@@ -432,14 +432,14 @@ Create additional load balancer policies for a classic load balancer\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-| CookieName | The name of the application\-generated cookie that controls the session lifetimes of a AppCookieStickinessPolicyType policy\. This policy can be associated only with HTTP/HTTPS listeners\.  | None |  | 
-| InstancePorts |  A comma\-separated list of the instance ports that this policy applies to\.  | None | A list of ports, or :all | 
-| LoadBalancerPorts |  A comma\-separated list of the listener ports that this policy applies to\.  | None | A list of ports, or :all | 
-| ProxyProtocol |  For a `ProxyProtocolPolicyType` policy, specifies whether to include the IP address and port of the originating request for TCP messages\. This policy can be associated only with TCP/SSL listeners\.  | None |  true false  | 
-| PublicKey |  The contents of a public key for a `PublicKeyPolicyType` policy to use when authenticating the back\-end server or servers\. This policy cannot be applied directly to back\-end servers or listeners; it must be part of a `BackendServerAuthenticationPolicyType` policy\.  | None |  | 
-| PublicKeyPolicyNames |  A comma\-separated list of policy names \(from the `PublicKeyPolicyType` policies\) for a `BackendServerAuthenticationPolicyType` policy that controls authentication to a back\-end server or servers\. This policy can be associated only with back\-end servers that are using HTTPS/SSL\.  | None |  | 
-| SSLProtocols |  A comma\-separated list of SSL protocols to be enabled for a `SSLNegotiationPolicyType` policy that defines the ciphers and protocols that will be accepted by the load balancer\. This policy can be associated only with HTTPS/SSL listeners\.  | None |  | 
-| SSLReferencePolicy  |  The name of a predefined security policy that adheres to AWS security best practices and that you want to enable for a `SSLNegotiationPolicyType` policy that defines the ciphers and protocols that will be accepted by the load balancer\. This policy can be associated only with HTTPS/SSL listeners\.  | None |  | 
+|  CookieName  | The name of the application\-generated cookie that controls the session lifetimes of a AppCookieStickinessPolicyType policy\. This policy can be associated only with HTTP/HTTPS listeners\.  | None |  | 
+|  InstancePorts  |  A comma\-separated list of the instance ports that this policy applies to\.  | None | A list of ports, or :all | 
+|  LoadBalancerPorts  |  A comma\-separated list of the listener ports that this policy applies to\.  | None | A list of ports, or :all | 
+|  ProxyProtocol  |  For a `ProxyProtocolPolicyType` policy, specifies whether to include the IP address and port of the originating request for TCP messages\. This policy can be associated only with TCP/SSL listeners\.  | None |  true false  | 
+|  PublicKey  |  The contents of a public key for a `PublicKeyPolicyType` policy to use when authenticating the back\-end server or servers\. This policy cannot be applied directly to back\-end servers or listeners; it must be part of a `BackendServerAuthenticationPolicyType` policy\.  | None |  | 
+|  PublicKeyPolicyNames  |  A comma\-separated list of policy names \(from the `PublicKeyPolicyType` policies\) for a `BackendServerAuthenticationPolicyType` policy that controls authentication to a back\-end server or servers\. This policy can be associated only with back\-end servers that are using HTTPS/SSL\.  | None |  | 
+|  SSLProtocols  |  A comma\-separated list of SSL protocols to be enabled for a `SSLNegotiationPolicyType` policy that defines the ciphers and protocols that will be accepted by the load balancer\. This policy can be associated only with HTTPS/SSL listeners\.  | None |  | 
+|  SSLReferencePolicy  |  The name of a predefined security policy that adheres to AWS security best practices and that you want to enable for a `SSLNegotiationPolicyType` policy that defines the ciphers and protocols that will be accepted by the load balancer\. This policy can be associated only with HTTPS/SSL listeners\.  | None |  | 
 |  Stickiness Cookie Expiration  |  The amount of time, in seconds, that each cookie is valid\.  |   `0`   |  `0` to `1000000`  | 
 |  Stickiness Policy  |  Binds a user's session to a specific server instance so that all requests coming from the user during the session are sent to the same server instance\.  |   `false`   |  true false  | 
 

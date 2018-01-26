@@ -1,6 +1,6 @@
 # Configuration Changes<a name="environments-updating"></a>
 
-When you modify configuration option settings in the **Configuration** section of the environment management console, AWS Elastic Beanstalk propagates the change to all affected resources\. These resources include the load balancer that distributes traffic to the EC2 instances running your application, the Auto Scaling group that manages those instances, and the EC2 instances themselves\.
+When you modify configuration option settings in the **Configuration** section of the environment management console, AWS Elastic Beanstalk propagates the change to all affected resources\. These resources include the load balancer that distributes traffic to the Amazon EC2 instances running your application, the Auto Scaling group that manages those instances, and the EC2 instances themselves\.
 
 Many configuration changes can be applied to a running environment without replacing existing instances\. For example, setting a health check URL triggers an environment update to modify the load balancer settings, but doesn't cause any downtime because the instances running your application continue serving requests while the update is propagated\.
 
@@ -11,7 +11,7 @@ Immutable updates are an alternative to rolling updates where a temporary Auto S
 
 **Supported Update Types**  
 
-| Rolling Update Setting | Load Balanced Environments | Single Instance Environments | Windows Server Environments | 
+| Rolling Update Setting | Load\-Balanced Environments | Single\-Instance Environments | Windows Server Environments | 
 | --- | --- | --- | --- | 
 |  Disabled  |  ✓  |  ✓  |  ✓  | 
 |  Rolling Based on Health  |  ✓  |  ☓  |  ✓  | 
@@ -21,4 +21,3 @@ Immutable updates are an alternative to rolling updates where a temporary Auto S
 
 + [Elastic Beanstalk Rolling Environment Configuration Updates](using-features.rollingupdates.md)
 + [Immutable Environment Updates](environmentmgmt-updates-immutable.md)
-+ [Tagging Resources in Your Elastic Beanstalk Environment](using-features.tagging.md)

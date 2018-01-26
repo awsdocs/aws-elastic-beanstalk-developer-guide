@@ -1,9 +1,5 @@
 # Deploying a Symfony2 Application to Elastic Beanstalk<a name="create_deploy_PHP_symfony2"></a>
 
- [https://github.com/awslabs/elastic-beanstalk-docs/blob/master/tutorials/php/symfony2/tutorial-deploy-symfony2-application-aws-elastic-beanstalk.md](https://github.com/awslabs/elastic-beanstalk-docs/blob/master/tutorials/php/symfony2/tutorial-deploy-symfony2-application-aws-elastic-beanstalk.md) 
-
-
-
 This section walks you through deploying a sample application to Elastic Beanstalk using the Elastic Beanstalk Command Line Interface \(EB CLI\) and Git, and then updating the application to use the [Symfony2](http://symfony.com/) framework\. 
 
 
@@ -94,21 +90,21 @@ The following instructions use the Elastic Beanstalk command line interface \(EB
 
 **To configure Elastic Beanstalk**
 
-1. From the directory where you created your local repository, type the following command:
+1. From the directory where you created your local repository, type the following command\.
 
    ```
    eb init
    ```
 
-1. When you are prompted for the Elastic Beanstalk region, type the number of the region\. For information about this product's regions, go to [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html?r=1166) in the Amazon Web Services General Reference\. For this example, we'll use **US West \(Oregon\)**\.
+1. When you are prompted for the Elastic Beanstalk region, type the number of the region\. For information about this product's regions, see [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html?r=1166) in the *Amazon Web Services General Reference*\. For this example, we'll use **US West \(Oregon\)**\.
 
-1.  When you are prompted for the Elastic Beanstalk application to use, type the number corresponding to the option **Create new Application**\. Elastic Beanstalk generates an application name based on the current directory name if an application name has not been previously configured\. In this example, we use symfony2app\. 
+1.  When you are prompted for the Elastic Beanstalk application to use, type the number corresponding to the option **Create New Application**\. Elastic Beanstalk generates an application name based on the current directory name, if an application name has not been previously configured\. In this example, we use symfony2app\. 
 
    ```
    Enter an AWS Elastic Beanstalk application name (auto-generated value is "windows"): symfony2app
    ```
 **Note**  
-If you have a space in your application name, make sure you do not use quotation marks\. 
+If you have a space in your application name, be sure you do not use quotation marks\. 
 
 1. Type **y** if Elastic Beanstalk correctly detected the correct platform you are using\. Type **n** if not, and then specify the correct platform\.
 
@@ -125,16 +121,16 @@ If you have a space in your application name, make sure you do not use quotation
    eb create
    ```
 
-1. When you are prompted for the Elastic Beanstalk environment name, type the name of the environment\. Elastic Beanstalk automatically creates an environment name based on your application name\. If you want to accept the default, press **Enter**\.
+1. When you are prompted for the Elastic Beanstalk environment name, type the name of the environment\. Elastic Beanstalk automatically creates an environment name based on your application name\. To accept the default, press **Enter**\.
 
    ```
    Enter Environment Name
    (default is HelloWorld-env):
    ```
 **Note**  
-If you have a space in your application name, make sure you do not have a space in your environment name\. 
+If you have a space in your application name, be sure you do not have a space in your environment name\. 
 
-1. When you are prompted to provide a CNAME prefix, type the CNAME prefix you want to use\. Elastic Beanstalk automatically creates a CNAME prefix based on the environment name\. If you want to accept the default, press **Enter**\.
+1. When you are prompted to provide a CNAME prefix, type the CNAME prefix you want to use\. Elastic Beanstalk automatically creates a CNAME prefix based on the environment name\. To accept the default, press **Enter**\.
 
    ```
    Enter DNS CNAME prefix
@@ -143,17 +139,17 @@ If you have a space in your application name, make sure you do not have a space 
 
 After configuring Elastic Beanstalk, you are ready to deploy a sample application\. 
 
-If you want to update your Elastic Beanstalk configuration, you can use the **init** command again\. When prompted, you can update your configuration options\. If you want to keep any previous settings, press the **Enter** key\. 
+To update your Elastic Beanstalk configuration, you can use the **init** command again\. When prompted, you can update your configuration options\. To keep any previous settings, press the **Enter** key\. 
 
 **To deploy a sample application**
 
-+ From the directory where you created your local repository, type the following command:
++ From the directory where you created your local repository, type the following command\.
 
   ```
   eb deploy
   ```
 
-  This process may take several minutes to complete\. Elastic Beanstalk provides status updates during the process\. If at any time you want to stop polling for status updates, press **Ctrl\+C**\. Once the environment status is Green, Elastic Beanstalk outputs a URL for the application\. Copy and paste the URL into your web browser to view the application\.
+  This process can take several minutes to complete\. Elastic Beanstalk provides status updates during the process\. If at any time you want to stop polling for status updates, press **Ctrl\+C**\. Once the environment status is Green, Elastic Beanstalk outputs a URL for the application\. Copy and paste the URL into your web browser to view the application\.
 
 ## View the Application<a name="create_deploy_PHP_symfony2_update-view"></a>
 
@@ -199,10 +195,10 @@ Use the `terminate` command to terminate your environment and the `delete` comma
 
 **To terminate your environment and delete the application**
 
-+ From the directory where you created your local repository, run `eb terminate`:
++ From the directory where you created your local repository, run `eb terminate`\.
 
   ```
   $ eb terminate
   ```
 
-  This process may take a few minutes\. Elastic Beanstalk displays a message once the environment has been successfully terminated\. 
+  This process can take a few minutes\. Elastic Beanstalk displays a message once the environment is successfully terminated\. 

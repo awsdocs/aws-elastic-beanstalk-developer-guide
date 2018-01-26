@@ -19,7 +19,7 @@ Use the Elastic Beanstalk environment management console to enable managed platf
 
 1. Choose **Configuration**\.
 
-1. Choose **Managed Updates**\.  
+1. On the **Managed Updates** card, choose **Modify**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-managedupdates.png)
 
 1. Select **Enable managed updates**\.
@@ -28,7 +28,7 @@ Use the Elastic Beanstalk environment management console to enable managed platf
 
 1. \(optional\) Select **Instance replacement** to enable weekly instance replacement\.
 
-1. Choose **Apply**\.
+1. Choose **Save**, and then choose **Apply**\.
 
 Managed platform updates depend on enhanced health reporting to determine that your application is healthy enough to consider the platform update successful\. See  for instructions\.
 

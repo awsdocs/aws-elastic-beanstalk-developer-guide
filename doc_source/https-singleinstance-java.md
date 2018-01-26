@@ -7,7 +7,7 @@ Add the following snippet to your configuration file, replacing the certificate 
 + The `files` key creates the following files on the instance:  
 `/etc/pki/tls/certs/server.crt`  
 Creates the certificate file on the instance\. Replace *certificate file contents* with the contents of your certificate\.  
-YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and make sure that your text editor uses spaces, not tab characters, to indent\.
+YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 If you have intermediate certificates, include them in `server.crt` after your site certificate:  
 
   ```
@@ -48,7 +48,7 @@ container_commands:
 ```
 
 **Note**  
-Avoid commiting a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)\.
+Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)\.
 
 Place the following in a file with the `.conf` extension in the `.ebextensions/nginx/conf.d/` directory of your source bundle \(e\.g\., `.ebextensions/nginx/conf.d/https.conf`\)\. Replace *app\_port* with the port number that your application listens on\. This example configures the nginx server to listen on port 443 using SSL\. For more information about these configuration files on the Java SE platform, see [Configuring the Reverse Proxy](java-se-nginx.md)\.
 
@@ -82,7 +82,7 @@ server {
 }
 ```
 
-In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation function and adds a rule to it:
+In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation function and adds a rule to it\.
 
 **Example \.ebextensions/https\-instance\-single\.config**  
 
@@ -98,4 +98,4 @@ Resources:
       CidrIp: 0.0.0.0/0
 ```
 
-For a load balanced environment, you configure the load balancer to either pass secure traffic through untouched, or decrypt and re\-encrypt for end\-to\-end encryption\.
+For a load\-balanced environment, you configure the load balancer to either pass secure traffic through untouched, or decrypt and re\-encrypt for end\-to\-end encryption\.

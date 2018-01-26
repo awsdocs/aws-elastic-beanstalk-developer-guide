@@ -42,7 +42,7 @@ If a health check URL is configured, Elastic Load Balancing expects a GET reques
 For more information about Elastic Load Balancing health checks, see [Health Check](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/TerminologyandKeyConcepts.html#healthcheck) in the *Elastic Load Balancing User Guide*\.
 
 **Note**  
-Configuring a health check URL does not change the health check behavior of an environment's Auto Scaling group\. An unhealthy instance is removed from the load balancer, but is not automatically replaced by Auto Scaling unless you configure Auto Scaling to use the Elastic Load Balancing health check as a basis for replacing instances\. To configure Auto Scaling to replace instances that fail an Elastic Load Balancing health check, see \.
+Configuring a health check URL does not change the health check behavior of an environment's Auto Scaling group\. An unhealthy instance is removed from the load balancer, but is not automatically replaced by Amazon EC2 Auto Scaling unless you configure Amazon EC2 Auto Scaling to use the Elastic Load Balancing health check as a basis for replacing instances\. To configure Amazon EC2 Auto Scaling to replace instances that fail an Elastic Load Balancing health check, see \.
 
 ## Single Instance Environment Health Check<a name="monitoring-basic-healthcheck-singleinstance"></a>
 

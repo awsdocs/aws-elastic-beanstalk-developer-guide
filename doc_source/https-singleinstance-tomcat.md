@@ -9,11 +9,11 @@ Add the following snippet to your configuration file, replacing the certificate 
 + The `files` key creates the following files on the instance:  
 `/etc/pki/tls/certs/server.crt`  
 Creates the certificate file on the instance\. Replace *certificate file contents* with the contents of your certificate\.  
-YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and make sure that your text editor uses spaces, not tab characters, to indent\.  
+YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.  
 `/etc/pki/tls/certs/server.key`  
-Creates the private key file on the instance\. Replace *private key contents* with the contents of the private key used to create the certificate request or self\-signed certificate\. 
-
-+ The `container_commands` key stops the httpd service after everything has been configured so that the service uses the new `https.conf` file and certificate\.
+Creates the private key file on the instance\. Replace *private key contents* with the contents of the private key used to create the certificate request or self\-signed certificate\.   
+`/opt/elasticbeanstalk/hooks/appdeploy/post/99_start_httpd.sh`  
+Creates a post\-deployment hook script to restart the httpd service\.
 
 **Example \.ebextensions/https\-instance\.config**  
 
@@ -41,11 +41,13 @@ files:
       private key contents # See note below.
       -----END RSA PRIVATE KEY-----
 
-container_commands:
-  killhttpd:
-    command: "killall httpd"
-  waitforhttpddeath:
-    command: "sleep 3"
+  /opt/elasticbeanstalk/hooks/appdeploy/post/99_start_httpd.sh:
+    mode: "000755"
+    owner: root
+    group: root
+    content: |
+      #!/usr/bin/env bash
+      sudo service httpd restart
 ```
 
 Your certificate vendor may include intermediate certificates that you can install for better compatibility with mobile clients\. Configure Apache with an intermediate certificate authority \(CA\) bundle by adding the following to your SSL configuration file \(see [Extending the Default Apache Configuration](java-tomcat-proxy.md#java-tomcat-proxy-apache) for the location\):
@@ -76,9 +78,9 @@ Your certificate vendor may include intermediate certificates that you can insta
   ```
 
 **Note**  
-Avoid commiting a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)\.
+Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)\.
 
-In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation function and adds a rule to it:
+In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation function and adds a rule to it\.
 
 **Example \.ebextensions/https\-instance\-single\.config**  
 
@@ -94,4 +96,4 @@ Resources:
       CidrIp: 0.0.0.0/0
 ```
 
-For a load balanced environment, you configure the load balancer to either pass secure traffic through untouched, or decrypt and re\-encrypt for end\-to\-end encryption\.
+For a load\-balanced environment, you configure the load balancer to either pass secure traffic through untouched, or decrypt and re\-encrypt for end\-to\-end encryption\.

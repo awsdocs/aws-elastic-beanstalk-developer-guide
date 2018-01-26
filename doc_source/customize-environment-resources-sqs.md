@@ -3,7 +3,7 @@
 This example adds an Amazon SQS queue and an alarm on queue depth to the environment\. The properties that you see in this example are the minimum required properties that you must set for each of these resources\. You can download the example at [SQS, SNS, and CloudWatch](https://s3.amazonaws.com/elasticbeanstalk/extensions/SNS.config)\.
 
 **Note**  
-This example creates AWS resources, which you may be charged for\. For more information about AWS pricing, go to [http://aws\.amazon\.com/pricing/](http://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you may test drive these services for free\. Go to [http://aws\.amazon\.com/free/](http://aws.amazon.com/free/) for more information\.
+This example creates AWS resources, which you might be charged for\. For more information about AWS pricing, see [https://aws.amazon.com/pricing/](https://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you can test drive these services for free\. See [https://aws.amazon.com/free/](https://aws.amazon.com/free/) for more information\.
 
 To use this example, do the following:
 
@@ -13,7 +13,7 @@ To use this example, do the following:
 
 1. Deploy your application to Elastic Beanstalk\.
 
-   YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and make sure that your text editor uses spaces, not tab characters, to indent\.
+   YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
 Create a configuration file \(e\.g\., sqs\.config\) that defines the resources\. In this example, we create an SQS queue and define the `VisbilityTimeout` property in the `MySQSQueue` resource\. Next, we create an SNS `Topic` and specify that email gets sent to `someone@example.com` when the alarm is fired\. Finally, we create a CloudWatch alarm if the queue grows beyond 10 messages\. In the `Dimensions` property, we specify the name of the dimension and the value representing the dimension measurement\. We use `Fn::GetAtt` to return the value of `QueueName` from `MySQSQueue`\.
 

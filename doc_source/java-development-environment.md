@@ -61,4 +61,4 @@ If you just want to begin coding and don't need all of the features of an IDE, c
 
 ## Installing the AWS Toolkit for Eclipse<a name="java-development-environment-toolkit"></a>
 
-The AWS Toolkit for Eclipse is an open source plug\-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using AWS\. Visit the [AWS Toolkit for Eclipse homepage](http://aws.amazon.com/eclipse/) for installation instructions\. 
+The AWS Toolkit for Eclipse is an open source plug\-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using AWS\. Visit the [AWS Toolkit for Eclipse homepage](https://aws.amazon.com/eclipse/) for installation instructions\. 

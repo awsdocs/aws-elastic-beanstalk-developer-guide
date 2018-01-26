@@ -64,7 +64,7 @@ In JSON:
 This configures the Elastic Load Balancing load balancer in your Elastic Beanstalk environment to make an HTTP request to the path `/health` to each EC2 instance to determine if it is healthy or not\.
 
 **Note**  
-YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and make sure that your text editor uses spaces, not tab characters, to indent\.
+YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
 Include the `.ebextensions` directory in your Application Source Bundle and deploy it to a new or existing Elastic Beanstalk environment\.
 

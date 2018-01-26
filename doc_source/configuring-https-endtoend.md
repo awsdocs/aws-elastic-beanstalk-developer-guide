@@ -31,7 +31,7 @@ option_settings:
 ```
 
 **Note**  
-EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. These settings must be removed if you want to use configuration files to configure the same\. See  for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See  for details\.
 
 The next part is a bit more complex\. You need to modify the load balancer's security group to allow traffic, but depending on whether you launch your environment in the default VPC or a custom VPC, the load balancer's security group will vary\. In a default VPC, Elastic Load Balancing provides a default security group that can be used by all load balancers\. In a VPC that you create, Elastic Beanstalk creates a security group for the load balancer to use\.
 

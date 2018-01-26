@@ -1,6 +1,6 @@
 # Your Elastic Beanstalk Environment's Domain Name<a name="customdomains"></a>
 
-Your environment is available to users at a subdomain of elasticbeanstalk\.com\. When you create an environment, you can choose a unique subdomain that represents your application\. To route users to your environment Elastic Beanstalk registers a CNAME record that points to your environment's load balancer\. You can see the current value of the CNAME in the Environment Dashboard:
+Your environment is available to users at a subdomain of elasticbeanstalk\.com\. When you create an environment, you can choose a unique subdomain that represents your application\. To route users to your environment, Elastic Beanstalk registers a CNAME record that points to your environment's load balancer\. You can see the current value of the CNAME in the environment Dashboard, as shown\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-dashboard-url.png)
 
@@ -12,7 +12,7 @@ To use a custom domain name, first create a hosted zone for your domain\. A host
 
 **To create a hosted zone in Route 53**
 
-1. Open the [Route 53 management console](https://console.aws.amazon.com/route53/home)\.
+1. Open the [Route 53 console](https://console.aws.amazon.com/route53/home)\.
 
 1. Choose **Hosted Zones**\.
 
@@ -31,7 +31,7 @@ If your environment has a regionalized subdomain, you can use an Route 53 [alia
 
 **To add an alias resource record set in Route 53**
 
-1. Open the [Route 53 management console](https://console.aws.amazon.com/route53/home)\.
+1. Open the [Route 53 console](https://console.aws.amazon.com/route53/home)\.
 
 1. Choose **Hosted Zones**\.
 
@@ -43,17 +43,17 @@ If your environment has a regionalized subdomain, you can use an Route 53 [alia
 
 1. For **Type**, choose **A \- IPv4 address**\.
 
-1. For **Alias**, choose **yes**
+1. For **Alias**, choose **yes**\.
 
 1. For **Alias Target**, choose the domain name of your Elastic Beanstalk environment\.
 
 1. Choose **Save Record Set**\.
 
-If your environment does not have a regionalized subdomain, create a CNAME record instead\.
+If your environment doesn't have a regionalized subdomain, create a CNAME record instead\.
 
 **To add a CNAME record in Route 53**
 
-1. Open the [Route 53 management console](https://console.aws.amazon.com/route53/home)\.
+1. Open the [Route 53 console](https://console.aws.amazon.com/route53/home)\.
 
 1. Choose **Hosted Zones**\.
 
@@ -71,13 +71,13 @@ If your environment does not have a regionalized subdomain, create a CNAME recor
 
 DNS records take up to 24 hours to propagate worldwide\.
 
-If you registered a domain name with another provider, register the name servers in your Route 53 hosted zone in the domain configuration\. When your provider receives DNS requests for your domain name, it will forward them to Route 53's name servers to resolve the domain name to an IP address\. Look for a setting called *Nameservers* or check your provider's documentation\.
+If you registered a domain name with another provider, register the name servers in your Route 53 hosted zone in the domain configuration\. When your provider receives DNS requests for your domain name, it will forward them to the Route 53 name servers to resolve the domain name to an IP address\. Look for a setting called *Nameservers*, or check your provider's documentation\.
 
-The Route 53 console displays the list of name servers for your hosted zone in an NS record on the **Hosted Zones** page:
+The Route 53 console displays the list of name servers for your hosted zone in an NS record on the **Hosted Zones** page\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/route53-nameservers.png)
+![\[Route 53 list of name servers for your hosted zone\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/route53-nameservers.png)
 
-If you have multiple environments running your application, you can use the Elastic Beanstalk console to swap two environments' domain names\. This allows you to deploy a new version of your application to a standby environment, test it, and then swap domains with the production environment\.
+If you have multiple environments running your application, you can use the Elastic Beanstalk console to swap the domain names of two environments\. This allows you to deploy a new version of your application to a standby environment, test it, and then swap domains with the production environment\.
 
 When you perform a CNAME swap, users are directed to the new version of your application with zero downtime\. This is known as a *blue/green deployment*\.
 
@@ -85,10 +85,8 @@ When you perform a CNAME swap, users are directed to the new version of your app
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Choose either environment to open the **Environment Dashboard**\.
+1. Choose either environment to open the environment dashboard\.
 
 1. Choose **Actions**, and then choose **Swap Environment URLs**\.
 
-1. Select the other environment\.
-
-1. Choose **Swap**\.
+1. Select the other environment, and then choose **Swap**\.

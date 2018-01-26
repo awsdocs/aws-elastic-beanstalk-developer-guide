@@ -157,11 +157,12 @@ Use the EB CLI to create your first custom platform with the sample platform def
    ~$ mkdir ~/custom-platform
    ```
 
-1. Extract `NodePlatform_Ubuntu.zip` to the directory\.
+1. Extract `NodePlatform_Ubuntu.zip` to the directory, and then change to the extracted directory\.
 
    ```
    ~$ cd ~/custom-platform
    ~/custom-platform$ unzip ~/NodePlatform_Ubuntu.zip
+   ~/custom-platform$ cd NodePlatform_Ubuntu
    ```
 
 1. Run `eb platform init` and follow the prompts to initialize a platform repository\.

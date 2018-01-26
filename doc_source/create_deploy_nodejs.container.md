@@ -26,7 +26,7 @@ The Node\.js settings lets you fine\-tune the behavior of your Amazon EC2 instan
 
 1. Choose **Configuration**\.
 
-1. In the **Software Configuration** section, choose the settings icon \( ![\[Edit\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cog.png)\)\.
+1. On the **Software** configuration card, choose **Modify**\.
 
 ### Container Options<a name="nodejs-platform-console-settings"></a>
 

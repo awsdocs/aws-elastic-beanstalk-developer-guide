@@ -47,7 +47,7 @@ Some older platform configurations do not support the latest Elastic Beanstalk f
 
 1. Swap your environment URL\. For instructions, go to [Blue/Green Deployments with AWS Elastic Beanstalk](using-features.CNAMESwap.md)\.
 
-1. Terminate your old environment\. For instructions, go to [Terminate an Environment](using-features.terminating.md)\.
+1. Terminate your old environment\. For instructions, go to [Terminate an Elastic Beanstalk Environment](using-features.terminating.md)\.
 
 **Note**  
 If you use AWS Identity and Access Management \(IAM\) then you will need to update your policies to include AWS CloudFormation and Amazon RDS \(if applicable\)\. For more information, see [Using Elastic Beanstalk with AWS Identity and Access Management](AWSHowTo.iam.md)\.

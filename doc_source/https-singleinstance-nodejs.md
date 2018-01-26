@@ -62,7 +62,7 @@ Configures the nginx server\. This file is loaded when the nginx service starts\
 
 `/etc/pki/tls/certs/server.crt`  
 Creates the certificate file on the instance\. Replace *certificate file contents* with the contents of your certificate\.  
-YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and make sure that your text editor uses spaces, not tab characters, to indent\.
+YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 If you have intermediate certificates, include them in `server.crt` after your site certificate:  
 
 ```
@@ -81,9 +81,9 @@ If you have intermediate certificates, include them in `server.crt` after your s
 Creates the private key file on the instance\. Replace *private key contents* with the contents of the private key used to create the certificate request or self\-signed certificate\. 
 
 **Note**  
-Avoid commiting a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)\.
+Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)\.
 
-In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation function and adds a rule to it:
+In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation function and adds a rule to it\.
 
 **Example \.ebextensions/https\-instance\-single\.config**  
 
@@ -99,4 +99,4 @@ Resources:
       CidrIp: 0.0.0.0/0
 ```
 
-For a load balanced environment, you configure the load balancer to either pass secure traffic through untouched, or decrypt and re\-encrypt for end\-to\-end encryption\.
+For a load\-balanced environment, you configure the load balancer to either pass secure traffic through untouched, or decrypt and re\-encrypt for end\-to\-end encryption\.

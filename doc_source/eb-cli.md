@@ -1,7 +1,7 @@
 # EB CLI 2\.6 \(Deprecated\)<a name="eb-cli"></a>
 
 **Note**  
- This version of EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of EB CLI\)\. For information on the new version, see \. 
+ This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see \. 
 
 This section describes how to set up EB CLI 2\.6 and how to create a sample application using EB CLI 2\.6\. This section also includes a command reference for Eb CLI 2\.6\.
 

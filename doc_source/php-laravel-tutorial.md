@@ -142,7 +142,7 @@ To allow access to this folder, use the Elastic Beanstalk console to configure t
 
 1. Choose **Configuration**\.
 
-1. In the **Software Configuration** section, choose the settings icon \( ![\[Edit\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cog.png)\)\.
+1. On the **Software** configuration card, choose **Modify**\.
 
 1. For **Document Root**, type **/public**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-laravel-docroot.png)

@@ -33,7 +33,7 @@ To deploy a single\-instance Elastic Beanstalk application inside a VPC, you nee
 
 ## Deploy to Elastic Beanstalk<a name="vpc-single-instance-create-env"></a>
 
-After you set up your VPC, you can create your environment inside your VPC and deploy your application to Elastic Beanstalk\. You can do this using the Elastic Beanstalk console, or you can use the AWS toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API\. If you use the Elastic Beanstalk console, you just need to upload your `.war` or `.zip` file and select the VPC settings inside the wizard\. Elastic Beanstalk then creates your environment inside your VPC and deploys your application\. Alternatively, you can use the AWS toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API to deploy your application\. To do this, you need to define your VPC option settings in a configuration file and deploy this file with your source bundle\. This topic provides instructions for both methods\.
+After you set up your VPC, you can create your environment inside it and deploy your application to Elastic Beanstalk\. You can do this using the Elastic Beanstalk console, or you can use the AWS toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API\. If you use the Elastic Beanstalk console, you just need to upload your `.war` or `.zip` file and select the VPC settings inside the wizard\. Elastic Beanstalk then creates your environment inside your VPC and deploys your application\. Alternatively, you can use the AWS toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API to deploy your application\. To do this, you need to define your VPC option settings in a configuration file and deploy this file with your source bundle\. This topic provides instructions for both methods\.
 
 ### Deploying with the Elastic Beanstalk Console<a name="vpc-single-instance-new-console"></a>
 
@@ -45,7 +45,7 @@ You'll need to select the VPC ID and subnet ID for your instance\. By default, V
 
 ### Deploying with the AWS Toolkits, Eb, CLI, or API<a name="vpc-single-instance-new-options"></a>
 
-When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, the AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See  for more information\.[aws:ec2:vpc](command-options-general.md#command-options-general-ec2vpc) Namespace:
+When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See  for more information\.[aws:ec2:vpc](command-options-general.md#command-options-general-ec2vpc) Namespace:
 
 VPCId  
 The identifier of your VPC\.

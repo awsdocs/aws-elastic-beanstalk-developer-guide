@@ -2,7 +2,7 @@
 
 Amazon Web Services \(AWS\) comprises dozens of services, each of which exposes an area of functionality\. While the variety of services offers flexibility for how you want to manage your AWS infrastructure, it can be challenging to figure out which services to use and how to provision them\.
 
-With Elastic Beanstalk, you can quickly deploy and manage applications in the AWS Cloud without worrying about the infrastructure that runs those applications\. AWS Elastic Beanstalk reduces management complexity without restricting choice or control\. You simply upload your application, and Elastic Beanstalk automatically handles the details of capacity provisioning, load balancing, scaling, and application health monitoring\. Elastic Beanstalk uses highly reliable and scalable services that are available in the [AWS Free Usage Tier](http://aws.amazon.com/free)\.
+With Elastic Beanstalk, you can quickly deploy and manage applications in the AWS Cloud without worrying about the infrastructure that runs those applications\. AWS Elastic Beanstalk reduces management complexity without restricting choice or control\. You simply upload your application, and Elastic Beanstalk automatically handles the details of capacity provisioning, load balancing, scaling, and application health monitoring\. Elastic Beanstalk uses highly reliable and scalable services that are available in the [AWS Free Tier](https://aws.amazon.com/free)\.
 
 Elastic Beanstalk supports applications developed in Java, PHP, \.NET, Node\.js, Python, and Ruby, as well as different container types for each language\. A container defines the infrastructure and software stack to be used for a given environment\. When you deploy your application, Elastic Beanstalk provisions one or more AWS resources, such as Amazon EC2 instances\. The software stack that runs on your Amazon EC2 instances depends on the container type\. For example, Elastic Beanstalk supports two container types for Node\.js: a 32\-bit Amazon Linux image and a 64\-bit Amazon Linux image\. Each runs a software stack tailored to hosting a Node\.js application\. You can interact with Elastic Beanstalk by using the AWS Management Console, the AWS Command Line Interface \(AWS CLI\), or `eb`, a high\-level CLI designed specifically for Elastic Beanstalk\. 
 
@@ -20,15 +20,15 @@ Elastic Beanstalk provides developers and systems administrators an easy, fast w
 
 ## Storage<a name="Welcome.storage"></a>
 
-Elastic Beanstalk does not restrict your choice of persistent storage and database service options\. For more information on AWS storage options, go to [Storage Options in the AWS Cloud](http://aws.amazon.com/whitepapers/)\.
+Elastic Beanstalk does not restrict your choice of persistent storage and database service options\. For more information on AWS storage options, go to [Storage Options in the AWS Cloud](https://aws.amazon.com/whitepapers/)\.
 
 ## Pricing<a name="Welcome.pricing"></a>
 
-There is no additional charge for Elastic Beanstalk\. You pay only for the underlying AWS resources that your application consumes\. For details about pricing, see the [Elastic Beanstalk service detail page](http://aws.amazon.com/elasticbeanstalk)\.
+There is no additional charge for Elastic Beanstalk\. You pay only for the underlying AWS resources that your application consumes\. For details about pricing, see the [Elastic Beanstalk service detail page](https://aws.amazon.com/elasticbeanstalk)\.
 
 ## Community<a name="Welcome.community"></a>
 
-Customers have built a wide variety of products, services, and applications on top of AWS\. Whether you are searching for ideas about what to build, looking for examples, or just want to explore, you can find many solutions at the [AWS Customer App Catalog](http://aws.amazon.com/customerapps)\. You can browse by audience, services, and technology\. We also invite you to share applications you build with the community\. Developer resources produced by the AWS community are at [http://aws\.amazon\.com/resources/](http://aws.amazon.com/resources/)\. 
+Customers have built a wide variety of products, services, and applications on top of AWS\. Whether you are searching for ideas about what to build, looking for examples, or just want to explore, you can find many solutions at the [AWS Customer App Catalog](https://aws.amazon.com/customerapps)\. You can browse by audience, services, and technology\. We also invite you to share applications you build with the community\. Developer resources produced by the AWS community are at [https://aws\.amazon\.com/resources/](https://aws.amazon.com/resources/)\. 
 
 ## Where to Go Next<a name="Welcome.WhereToGo"></a>
 

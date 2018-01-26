@@ -245,7 +245,7 @@ INFO: createEnvironment is starting.
 ```
 
 **Note**  
-If you see a "service role required" error message, run `eb create` interactively \(without specifying an environment name\) and EB CLI creates the role for you\.
+If you see a "service role required" error message, run `eb create` interactively \(without specifying an environment name\) and the EB CLI creates the role for you\.
 
  With just one command, the EB CLI sets up all of the resources our application needs to run in AWS, including the following: 
 
@@ -427,12 +427,12 @@ Use the `terminate` command to terminate your environment and the `delete` comma
 
 **To terminate your environment and delete the application**
 
-+ From the directory where you created your local repository, run `eb terminate`:
++ From the directory where you created your local repository, run `eb terminate`\.
 
   ```
   $ eb terminate
   ```
 
-  This process may take a few minutes\. Elastic Beanstalk displays a message once the environment has been successfully terminated\. 
+  This process can take a few minutes\. Elastic Beanstalk displays a message once the environment is successfully terminated\. 
 
  Don't hesitate to terminate an environment to save on resources while you continue to develop your site\. You can always recreate your Beanstalk environment using `eb create`\. 

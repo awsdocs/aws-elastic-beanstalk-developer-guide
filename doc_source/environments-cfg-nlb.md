@@ -16,7 +16,7 @@ A Network Load Balancer supports active health checks\. These checks are based o
 **Note**  
 You can set the load balancer type only during environment creation using the EB CLI, the Elastic Beanstalk APIs, or `.ebextensions`, such as the one in the example \.ebextensions/network\-load\-balancer\.config\. The console does not support this functionality\.
 
-The EB CLI prompts you to choose a load balancer type when you run `eb create`:
+The EB CLI prompts you to choose a load balancer type when you run `eb create`\.
 
 ```
 $ eb create
@@ -32,7 +32,7 @@ Select a load balancer type
 (default is 1): 3
 ```
 
-You can also specify a load balancer type with the `--elb-type` option:
+You can also specify a load balancer type with the `--elb-type` option\.
 
 ```
 $ eb create test-env --elb-type network
@@ -40,7 +40,7 @@ $ eb create test-env --elb-type network
 
 ## Network Load Balancer Namespaces<a name="environments-cfg-nlb-namespaces"></a>
 
-Settings related to Network Load Balancers are found across the following namespaces:
+You can find settings related to Network Load Balancers in the following namespaces:
 
 + `aws:elasticbeanstalk:environment` – Choose the load balancer type for the environment\. The value for a Network Load Balancer is `network`\.
 
@@ -53,7 +53,7 @@ The `ManagedSecurityGroup` and `SecurityGroups` settings in this namespace don't
 + `aws:elasticbeanstalk:environment:process` – Configure health checks and specify the port and protocol for the processes that run on your environment's instances\. The port and protocol settings map to the instance port and instance protocol settings in `aws:elb:listener` for a listener on a Classic Load Balancer\. Health check settings map to the settings in the `aws:elb:healthcheck` and `aws:elasticbeanstalk:application` namespaces\.
 
 **Example \.ebextensions/network\-load\-balancer\.config**  
-To get started with a Network Load Balancer, use a configuration file to set the load balancer type to `network`:  
+To get started with a Network Load Balancer, use a configuration file to set the load balancer type to `network`\.  
 
 ```
 option_settings:
@@ -62,10 +62,10 @@ option_settings:
 ```
 
 **Note**  
-You can only set the load balancer type during environment creation\.
+You can set the load balancer type only during environment creation\.
 
 **Example \.ebextensions/nlb\-default\-process\.config**  
-The following configuration file modifies health check settings on the default process:  
+The following configuration file modifies health check settings on the default process\.  
 
 ```
 option_settings:
@@ -79,7 +79,7 @@ option_settings:
 ```
 
 **Example \.ebextensions/nlb\-secure\-listener\.config**  
-The following configuration file adds a listener for secure traffic on port 443 and a matching target process that listens to port 443:  
+The following configuration file adds a listener for secure traffic on port 443 and a matching target process that listens to port 443\.  
 
 ```
 option_settings:
@@ -90,4 +90,4 @@ option_settings:
     Port: '443'
 ```
 The `DefaultProcess` option is named this way because of Application Load Balancers, which can have non\-default listeners on the same port for traffic to specific paths \(see  for details\)\. For a Network Load Balancer the option specifies the only target process for this listener\.  
-In this example, we named the process `https` because it listens to secure \(HTTPS\) traffic\. The listener sends traffic to the process on the designated port using the TCP protocol, because a Network Load Balancer only works with TCP\. This is OK, because HTTP and HTTPS network traffic is implemented on top of TCP\.
+In this example, we named the process `https` because it listens to secure \(HTTPS\) traffic\. The listener sends traffic to the process on the designated port using the TCP protocol, because a Network Load Balancer works only with TCP\. This is OK, because HTTP and HTTPS network traffic is implemented on top of TCP\.

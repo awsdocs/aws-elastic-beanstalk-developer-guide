@@ -54,7 +54,7 @@ Resources:
       RoleARN: { "Fn::GetAtt" : [ "hookrole", "Arn"] }
 ```
 
-This example defines three resources, `hookrole`, `hooktopic` and `lifecyclehook`\. The first two resources are an IAM role, which grants Auto Scaling permission to publish messages to Amazon SNS, and an SNS topic, which relays messages from the Auto Scaling group to an email address\. Elastic Beanstalk creates these resources with the specified properties and types\.
+This example defines three resources, `hookrole`, `hooktopic` and `lifecyclehook`\. The first two resources are an IAM role, which grants Amazon EC2 Auto Scaling permission to publish messages to Amazon SNS, and an SNS topic, which relays messages from the Auto Scaling group to an email address\. Elastic Beanstalk creates these resources with the specified properties and types\.
 
 The final resource, `lifecyclehook`, is the lifecycle hook itself:
 

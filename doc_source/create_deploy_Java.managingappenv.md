@@ -16,8 +16,6 @@
 
 When you deploy your application, Elastic Beanstalk configures a number of AWS cloud computing services\. You can control how these individual services are configured using the AWS Toolkit for Eclipse\.
 
-### <a name="create_deploy_Java.managingappenv.env.CON"></a>
-
 **To edit an application's environment settings**
 
 1. If Eclipse isn't displaying the **AWS Explorer** view, in the menu click **Window** > **Show View** > **AWS Explorer**\. Expand the Elastic Beanstalk node and your application node\. 

@@ -37,7 +37,7 @@ $instanceId = file_get_contents("http://169.254.169.254/latest/meta-data/instanc
 container and the session support for DynamoDB from the AWS SDK for PHP 2.
 Using DynamoDB session support, the application can be scaled out across
 multiple web servers. For more details, see the
-<a href="http://aws.amazon.com/php/">PHP Developer Center</a>.</p>
+<a href="https://aws.amazon.com/php/">PHP Developer Center</a>.</p>
 
 <form id="SimpleForm" name="SimpleForm" method="post" action="index.php">
 <?php

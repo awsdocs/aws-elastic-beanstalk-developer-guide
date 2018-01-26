@@ -13,9 +13,9 @@ Elastic Beanstalk creates an application version whenever you upload source code
 1. Choose **Upload**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-version-upload.png)
 
-1. Enter a label for this version in the **Version label** field\.
+1. Enter a **Version label** for this version\.
 
-1. \(Optional\) Enter a brief description for this version in the **Description** field\.
+1. \(Optional\) Enter a brief **Description** for this version\.
 
 1. Choose **Browse** to specify the location of the source bundle\.
 **Note**  
@@ -28,7 +28,7 @@ The file you specified is associated with your application\. You can deploy the 
 Over time, your application can accumulate a large number of application versions\. To save storage space and avoid hitting the [application version limit](http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_elastic_beanstalk), you can configure Elastic Beanstalk to delete old versions automatically\.
 
 **Note**  
-Deleting an application version does not have any affect on environments currently running that version\.
+Deleting an application version doesn't have any effect on environments currently running that version\.
 
 **To delete an application version**
 
@@ -46,6 +46,6 @@ Deleting an application version does not have any affect on environments current
 
 1. Choose **Apply**\.
 
-Lifecycle settings are applied when you create new application versions\. For example, if you configure a maximum of 25 application versions, Elastic Beanstalk deletes the oldest version when you upload a 26th version\. If you set a maximum age of 90 days, any versions more than 90 days old are deleted when you upload a new version\.
+If you configure application lifecycle settings, they are applied when you create new application versions\. For example, if you configure a maximum of 25 application versions, Elastic Beanstalk deletes the oldest version when you upload a 26th version\. If you set a maximum age of 90 days, any versions more than 90 days old are deleted when you upload a new version\. For details, see [Configuring Application Version Lifecycle Settings](applications-lifecycle.md)\.
 
-If you don't choose to delete the source bundle from Amazon S3, Elastic Beanstalk deletes the version from it's records, but the source bundle is left if your Elastic Beanstalk storage bucket\. The application version limit only applies to versions Elastic Beanstalk tracks, so you can delete versions to stay within the limit, but retain all source bundles in Amazon S3 if needed\.
+If you don't choose to delete the source bundle from Amazon S3, Elastic Beanstalk deletes the version from its records\. However, the source bundle is left in your Elastic Beanstalk storage bucket\. The application version limit applies only to versions Elastic Beanstalk tracks\. Therefore, if you need you can delete versions to stay within the limit, but retain all source bundles in Amazon S3\.

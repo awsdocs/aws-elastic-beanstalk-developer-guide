@@ -1,10 +1,10 @@
 # Adding a Database to Your Elastic Beanstalk Environment<a name="using-features.managing.db"></a>
 
-Elastic Beanstalk provides integration with Amazon RDS to help you add a database instance to your Elastic Beanstalk environment\. You can use Elastic Beanstalk to add a MySQL, PostgreSQL, Oracle, or SQL Server database to your environment during or after environment creation\. When you add a database instance to your environment, Elastic Beanstalk provides connection information to your application by setting environment properties for the database hostname, port, username, password, and database name\.
+Elastic Beanstalk provides integration with Amazon Relational Database Service \(Amazon RDS\) to help you add a database instance to your Elastic Beanstalk environment\. You can use Elastic Beanstalk to add a MySQL, PostgreSQL, Oracle, or SQL Server database to your environment during or after environment creation\. When you add a database instance to your environment, Elastic Beanstalk provides connection information to your application by setting environment properties for the database hostname, port, user name, password, and database name\.
 
-A database instance that is part of your environment is tied to the lifecycle of your environment, and cannot be removed from your environment once added\. If you terminate the environment, the database instance is terminated as well\. You can configure Elastic Beanstalk to save a snapshot of the database when you terminate your environment, and restore a database from a snapshot when you add a DB instance to an environment\. You may incur charges for storing database snapshots\. For more information, see the *Backup Storage* section of [Amazon RDS Pricing](http://aws.amazon.com/rds/pricing/)\.
+A database instance that is part of your environment is tied to the lifecycle of your environment\. You can't remove it from your environment once added\. If you terminate the environment, the database instance is terminated as well\. You can configure Elastic Beanstalk to save a snapshot of the database when you terminate your environment, and restore a database from a snapshot when you add a DB instance to an environment\. You might incur charges for storing database snapshots\. For more information, see the *Backup Storage* section of [Amazon RDS Pricing](https://aws.amazon.com/rds/pricing/)\.
 
-For a production environment, you may want to launch a database instance outside of your environment and configure your application to connect to it outside of the functionality provided by Elastic Beanstalk\. Using a database instance external to your environment requires additional security group and connection string configuration, but it also lets you connect to the database from multiple environments, use database types not supported with integrated databases, perform blue/green deployments, and tear down your environment without affecting the database instance\.
+For a production environment, you can launch a database instance outside of your environment and configure your application to connect to it outside of the functionality provided by Elastic Beanstalk\. Using a database instance that is external to your environment requires additional security group and connection string configuration\. However, it also lets you connect to the database from multiple environments, use database types not supported with integrated databases, perform blue/green deployments, and tear down your environment without affecting the database instance\.
 
 
 + [Adding an Amazon RDS DB Instance to Your Environment](#environments-cfg-rds-create)
@@ -13,7 +13,7 @@ For a production environment, you may want to launch a database instance outside
 
 ## Adding an Amazon RDS DB Instance to Your Environment<a name="environments-cfg-rds-create"></a>
 
-You can add a DB instance to your environment in the Elastic Beanstalk console\.
+You can add a DB instance to your environment by using the Elastic Beanstalk console\.
 
 **To add a DB instance to your environment**
 
@@ -23,34 +23,39 @@ You can add a DB instance to your environment in the Elastic Beanstalk console\.
 
 1. Choose **Configuration**\.
 
-1. Under **Data Tier**, choose **Create a new RDS database**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-db.png)
+1. On the **Database** configuration card, choose **Modify**\.
 
-1. Choose a DB engine, enter a user name and password, and then choose **Apply**\.
+1. Choose a DB engine, and enter a user name and password\.
+
+1. Choose **Save**, and then choose **Apply**\.
 
 You can configure the following options:
 
-+ **DB engine** – Choose a database engine\.
++ **Snapshot** – Choose an existing database snapshot\. Elastic Beanstalk restores the snapshot and adds it to your environment\. The default value is **None**, which lets you configure a new database using the other settings on this page\.
 
-+ **Instance Class** – Choose the DB instance class\. For information about the DB instance classes, see [http://aws\.amazon\.com/rds/](http://aws.amazon.com/rds/)\.
++ **Engine** – Choose a database engine\.
 
-+ **Allocated Storage** – Choose the amount of storage to provision for your database\. You can increase allocated storage later, but you cannot decrease it\. For information about storage allocation, see [Features](https://aws.amazon.com/rds/#features)\.
++ **Engine version** – Choose a specific version of the database engine\.
 
-+ **Master Username** – Type a username using alphanumeric characters\.
++ **Instance class** – Choose the DB instance class\. For information about the DB instance classes, see [https://aws\.amazon\.com/rds/](http://aws.amazon.com/rds/)\.
 
-+ **Master Password** – Type a password containing 8 to 16 printable ASCII characters \(excluding `/`, `\`, and `@`\)\.
++ **Storage** – Choose the amount of storage to provision for your database\. You can increase allocated storage later, but you cannot decrease it\. For information about storage allocation, see [Features](https://aws.amazon.com/rds/#features)\.
 
-+ **Deletion Policy** – Choose **Create snapshot** to create a snapshot of the database when you terminate your environment\.
++ **Username** – Type a user name using alphanumeric characters\.
 
-+ **Snapshot** – To restore a database from an existing snapshot, choose a snapshot\.
++ **Password** – Type a password containing 8–16 printable ASCII characters \(excluding `/`, `\`, and `@`\)\.
 
-+ **Availability** – Choose **Multiple Availability Zones** to run a warm backup in a second AZ for high availability\.
++ **Retention** – Choose **Create snapshot** to create a snapshot of the database when you terminate your environment\.
+
++ **Availability** – Choose **High \(Multi\-AZ\)** to run a warm backup in a second Availability Zone for high availability\.
+
+![\[Elastic Beanstalk Auto Scaling Configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-rds-create.png)
 
 Adding a DB instance takes about 10 minutes\. When the environment update is complete, the DB instance's hostname and other connection information are available to your application through the following environment properties:
 
 + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
-  Amazon RDS console label – **Endpoint** is the hostname\.
+  Amazon RDS console label – **Endpoint** \(this is the hostname\)
 
 + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
 
@@ -96,9 +101,8 @@ You can view and modify configuration settings for your DB instance in the **Dat
 
 1. Choose **Configuration**\.
 
-1. Under **Data Tier**, choose **RDS**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-rds-card.png)
+1. On the **Database** configuration card, choose **Modify**\.
 
-You can modify the **Master Password**, **Allocated Storage**, **Instance Class**, **Deletion Policy**, and **Availability** after database creation\. Changing the instance class requires Elastic Beanstalk to reprovision the DB instance\.
+You can modify the **Instance class**, ****Storage**, Password**, **Retention**, and **Availability** settings after database creation\. If you change the instance class, Elastic Beanstalk reprovisions the DB instance\.
 
 Do not modify settings on the DB instance outside of the functionality provided by Elastic Beanstalk \(for example, in the Amazon RDS console\)\.

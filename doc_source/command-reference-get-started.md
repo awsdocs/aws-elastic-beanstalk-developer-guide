@@ -1,11 +1,11 @@
 # Getting Started with Eb<a name="command-reference-get-started"></a>
 
 **Note**  
- This version of EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of EB CLI\)\. For information on the new version, see \. 
+ This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see \. 
 
 Eb is a command line interface \(CLI\) tool that asks you a series of questions and uses your answers to deploy and manage Elastic Beanstalk applications\. This section provides an end\-to\-end walkthrough using eb to launch a sample application, view it, update it, and then delete it\.
 
-To complete this walkthrough, you will need to download the command line tools at the [AWS Sample Code & Libraries](http://aws.amazon.com/code/6752709412171743) website\. For a complete CLI reference for more advanced scenarios, see [Operations](OperationList-cmd.md), and see [Getting Set Up](usingCLI.md) for instructions on how to get set up\.
+To complete this walkthrough, you will need to download the command line tools at the [AWS Sample Code & Libraries](https://aws.amazon.com/code/6752709412171743) website\. For a complete CLI reference for more advanced scenarios, see [Operations](OperationList-cmd.md), and see [Getting Set Up](usingCLI.md) for instructions on how to get set up\.
 
 ## Step 1: Initialize Your Git Repository<a name="command-reference-get-started-getinit"></a>
 
@@ -17,7 +17,7 @@ Eb is a command line interface that you can use with Git to deploy applications 
 
    1. Linux/Unix/Mac
 
-      + Download and unzip the Elastic Beanstalk command line tools package at the [AWS Sample Code & Libraries](http://aws.amazon.com/code/6752709412171743) website\.
+      + Download and unzip the Elastic Beanstalk command line tools package at the [AWS Sample Code & Libraries](https://aws.amazon.com/code/6752709412171743) website\.
 
       + Git 1\.6\.6 or later\. To download Git, go to [http://git\-scm\.com/](http://git-scm.com/)\.
 
@@ -25,7 +25,7 @@ Eb is a command line interface that you can use with Git to deploy applications 
 
    1. Windows
 
-      + Download and unzip the Elastic Beanstalk command line tools package at the [AWS Sample Code & Libraries](http://aws.amazon.com/code/6752709412171743) website\.
+      + Download and unzip the Elastic Beanstalk command line tools package at the [AWS Sample Code & Libraries](https://aws.amazon.com/code/6752709412171743) website\.
 
       + Git 1\.6\.6 or later\. To download Git, go to [http://git\-scm\.com/](http://git-scm.com/)\. 
 
@@ -96,7 +96,7 @@ EB CLI stores your credentials in a file named `credentials` in a folder named `
    Enter an AWS Elastic Beanstalk application name (auto-generated value is "windows"): HelloWorld
    ```
 **Note**  
-If you have a space in your application name, make sure you do not use quotation marks\. 
+If you have a space in your application name, be sure you do not use quotation marks\. 
 
 1. When you are prompted for the Elastic Beanstalk environment name, type the name of the environment\. Elastic Beanstalk automatically creates an environment name based on your application name\. If you want to accept the default, press **Enter**\.
 
@@ -104,7 +104,7 @@ If you have a space in your application name, make sure you do not use quotation
    Enter an AWS Elastic Beanstalk environment name (current value is "HelloWorld-env"): 
    ```
 **Note**  
-If you have a space in your application name, make sure you do not have a space in your environment name\. 
+If you have a space in your application name, be sure you do not have a space in your environment name\. 
 
 1. When you are prompted, choose an environment tier\. For more information about environment tiers, see [Environment Tier](concepts.md#concepts-tier)\. For this example, we'll use **1**\.
 

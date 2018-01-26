@@ -178,7 +178,7 @@ Next, create an Elastic Beanstalk environment and deploy a sample application to
 ```
 
 **Note**  
-If you see a "service role required" error message, run `eb create` interactively \(without specifying an environment name\) and EB CLI creates the role for you\.
+If you see a "service role required" error message, run `eb create` interactively \(without specifying an environment name\) and the EB CLI creates the role for you\.
 
  With just one command, the EB CLI sets up all of the resources our application needs to run in AWS, including the following: 
 

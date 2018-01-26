@@ -1,6 +1,6 @@
 # Monitoring Environment Health in the AWS Management Console<a name="environment-health-console"></a>
 
-You can access operational information about your application from the AWS Management Console at [http://console\.aws\.amazon\.com/elasticbeanstalk](http://console.aws.amazon.com/elasticbeanstalk)\. 
+You can access operational information about your application from the AWS Management Console at [https://console\.aws\.amazon\.com/elasticbeanstalk](https://console.aws.amazon.com/elasticbeanstalk)\. 
 
 The AWS Management Console displays your environment's status and application health at a glance\. In the Elastic Beanstalk console applications page, each environment is color\-coded to indicate an environment's status\.
 

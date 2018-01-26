@@ -24,7 +24,7 @@ You can use the AWS Management Console to enable log rotation to Amazon S3, conf
 
 1. Choose **Configuration**\.
 
-1. In the **Software Configuration** section, choose the settings icon \( ![\[Edit\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cog.png)\)\.
+1. On the **Software** configuration card, choose **Modify**\.
 
 ### Log Options<a name="create-deploy-python-container.console.logoptions"></a>
 

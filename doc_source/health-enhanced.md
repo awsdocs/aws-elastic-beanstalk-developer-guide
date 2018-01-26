@@ -6,7 +6,7 @@ In addition to changes in how health color works, enhanced health adds a *status
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-dashboard-cause.png)
 
-To provide detailed health information about the EC2 instances running in your environment, Elastic Beanstalk includes a health agent in the Amazon Machine Image \(AMI\) for each platform configuration that supports enhanced health\. The health agent monitors web server logs and system metrics and relays them to the Elastic Beanstalk service\. Elastic Beanstalk analyzes these metrics along with data from Elastic Load Balancing and Auto Scaling to provide an overall picture of an environment's health\.
+To provide detailed health information about the EC2 instances running in your environment, Elastic Beanstalk includes a health agent in the Amazon Machine Image \(AMI\) for each platform configuration that supports enhanced health\. The health agent monitors web server logs and system metrics and relays them to the Elastic Beanstalk service\. Elastic Beanstalk analyzes these metrics along with data from Elastic Load Balancing and Amazon EC2 Auto Scaling to provide an overall picture of an environment's health\.
 
 In addition to collecting and presenting information about your environment's resources, Elastic Beanstalk monitors the resources in your environment for several error conditions and provides notifications to help you avoid failures and resolve configuration issues\. Factors that influence your environment's health include the results of each request served by your application, metrics from your instances' operating system, and the status of the most recent deployment\.
 
@@ -35,7 +35,7 @@ The first time you create an environment with a version 2 platform configuration
 
 The Elastic Beanstalk health agent is a daemon process that runs on each EC2 instance in your environment, monitoring operating system and application\-level health metrics and reporting issues to Elastic Beanstalk\. The health agent is included in all Linux platform solution stacks starting with version 2\.0 of each configuration\.
 
-The health agent reports similar metrics to those published to CloudWatch by Auto Scaling and Elastic Load Balancing as part of basic health reporting, including CPU load, HTTP codes, and latency\. The health agent, however, reports directly to Elastic Beanstalk, with greater granularity and frequency than basic health reporting\.
+The health agent reports similar metrics to those published to CloudWatch by Amazon EC2 Auto Scaling and Elastic Load Balancing as part of basic health reporting, including CPU load, HTTP codes, and latency\. The health agent, however, reports directly to Elastic Beanstalk, with greater granularity and frequency than basic health reporting\.
 
 For basic health, these metrics are published every five minutes and can be monitored with graphs in the environment management console\. With enhanced health, the Elastic Beanstalk health agent reports metrics to Elastic Beanstalk every ten seconds\. Elastic Beanstalk uses the metrics provided by the health agent to determine the health status of each instance in the environment, and, combined with other factors, to determine the overall health of the environment\. 
 

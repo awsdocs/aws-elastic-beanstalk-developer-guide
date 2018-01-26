@@ -15,11 +15,11 @@ For more information about Amazon EFS, see the [Amazon Elastic File System User 
 
 Elastic Beanstalk provides configuration files that you can use to create and mount Amazon EFS file systems\. You can create an Amazon EFS volume as part of your environment, or mount an Amazon EFS volume that you created independently of Elastic Beanstalk\.
 
-+ **[storage\-efs\-createfilesystem\.config](https://github.com/awslabs/elastic-beanstalk-docs/blob/master/configuration-files/aws-provided/instance-configuration/storage-efs-createfilesystem.config)** – Uses the `Resources` key to create a new file system and mount points in Amazon EFS\. All instances in your environment can connect to the same file system for shared, scalable storage\. Use `storage-efs-mountfilesystem.config` to mount the file system on each instance\.
++ **[storage\-efs\-createfilesystem\.config](https://github.com/awslabs/elastic-beanstalk-samples/blob/master/configuration-files/aws-provided/instance-configuration/storage-efs-createfilesystem.config)** – Uses the `Resources` key to create a new file system and mount points in Amazon EFS\. All instances in your environment can connect to the same file system for shared, scalable storage\. Use `storage-efs-mountfilesystem.config` to mount the file system on each instance\.
 **Internal Resources**  
 Any resources that you create with configuration files are tied to the lifecycle of your environment and will be lost if you terminate your environment or remove the configuration file\.
 
-+ **[storage\-efs\-mountfilesystem\.config](https://github.com/awslabs/elastic-beanstalk-docs/blob/master/configuration-files/aws-provided/instance-configuration/storage-efs-mountfilesystem.config)** – Mount an Amazon EFS file system to a local path on the instances in your environment\. You can create the volume as part of the environment with `storage-efs-createfilesystem.config`, or external to your environment by using the Amazon EFS console, AWS CLI, or AWS SDK\.
++ **[storage\-efs\-mountfilesystem\.config](https://github.com/awslabs/elastic-beanstalk-samples/blob/master/configuration-files/aws-provided/instance-configuration/storage-efs-mountfilesystem.config)** – Mount an Amazon EFS file system to a local path on the instances in your environment\. You can create the volume as part of the environment with `storage-efs-createfilesystem.config`, or external to your environment by using the Amazon EFS console, AWS CLI, or AWS SDK\.
 
 To use the configuration files, start by creating your Amazon EFS file system with `storage-efs-createfilesystem.config`\. Follow the instructions in the configuration file and add it to the `.ebextensions` directory in your source code to create the file system in your VPC\.
 
@@ -27,7 +27,7 @@ Deploy your updated source code to your Elastic Beanstalk environment to confirm
 
 ## Encrypted File Systems<a name="services-efs-encrypted"></a>
 
-Amazon EFS supports encrypted file systems\. The [https://github.com/awslabs/elastic-beanstalk-docs/blob/master/configuration-files/aws-provided/instance-configuration/storage-efs-createfilesystem.config](https://github.com/awslabs/elastic-beanstalk-docs/blob/master/configuration-files/aws-provided/instance-configuration/storage-efs-createfilesystem.config) configuration file discussed in this topic defines two custom options that you can use to create an Amazon EFS encrypted file system\. For details, follow the instructions in the configuration file\.
+Amazon EFS supports encrypted file systems\. The [https://github.com/awslabs/elastic-beanstalk-samples/blob/master/configuration-files/aws-provided/instance-configuration/storage-efs-createfilesystem.config](https://github.com/awslabs/elastic-beanstalk-samples/blob/master/configuration-files/aws-provided/instance-configuration/storage-efs-createfilesystem.config) configuration file discussed in this topic defines two custom options that you can use to create an Amazon EFS encrypted file system\. For details, follow the instructions in the configuration file\.
 
 ## Sample Applications<a name="services-efs-samples"></a>
 

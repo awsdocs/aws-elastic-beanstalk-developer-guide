@@ -12,16 +12,17 @@ If you are using Amazon RDS for the first time, add a DB instance to a test envi
 
 1. Choose **Configuration**\.
 
-1. Under **Data Tier**, choose **Create a new RDS database**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-db.png)
+1. On the **Database** configuration card, choose **Modify**\.
 
-1. Choose a DB engine, enter a user name and password, and then choose **Apply**\.
+1. Choose a DB engine, and enter a user name and password\.
+
+1. Choose **Save**, and then choose **Apply**\.
 
 Adding a DB instance takes about 10 minutes\. When the environment update is complete, the DB instance's hostname and other connection information are available to your application through the following environment properties:
 
 + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
-  Amazon RDS console label – **Endpoint** is the hostname\.
+  Amazon RDS console label – **Endpoint** \(this is the hostname\)
 
 + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
 
@@ -49,7 +50,7 @@ To connect to the database, add the appropriate driver JAR file to your applicat
 
 ## Downloading the JDBC Driver<a name="java-rds-drivers"></a>
 
-You will need the JAR file of the JDBC driver for the DB engine that you chose\. Save the JAR file in your source code and include it in your classpath when you compile the class that creates connections to the database\.
+You will need the JAR file of the JDBC driver for the DB engine that you choose\. Save the JAR file in your source code and include it in your classpath when you compile the class that creates connections to the database\.
 
 You can find the latest driver for your DB engine in the following locations:
 
@@ -235,7 +236,7 @@ To display the results, place the following code in the body of the HTML portion
 
 If you run into issues connecting to a database from within your application, review the web container log and database\.
 
-### Reviewing Logs<a name="w3ab1c37c51c36b4"></a>
+### Reviewing Logs<a name="create_deploy_Java.rds.troubleshooting.logs"></a>
 
 You can view all the logs from your Elastic Beanstalk environment from within Eclipse\. If you don't have the AWS Explorer view open, choose the arrow next to the orange AWS icon in the toolbar, and then choose **Show AWS Explorer View**\. Expand **AWS Elastic Beanstalk** and your environment name, and then open the context \(right\-click\) menu for the server\. Choose **Open in WTP Server Editor**\. 
 
@@ -261,7 +262,7 @@ All information that the web application sends to standard output appears in the
 
 As an example, the preceding is acceptable\. But in actual applications, keep your database definitions in schema objects, perform transactions from within model classes, and coordinate requests with controller servlets\.
 
-### Connecting to an RDS DB Instance<a name="w3ab1c37c51c36b6"></a>
+### Connecting to an RDS DB Instance<a name="create_deploy_Java.rds.troubleshooting.connecting"></a>
 
  You can connect directly to the RDS DB instance in your Elastic Beanstalk environment by using the MySQL client application\. 
 
@@ -273,9 +274,9 @@ As an example, the preceding is acceptable\. But in actual applications, keep yo
 
 1. Choose **Configuration**\.
 
-1. Under **Network Tier**, in the **RDS** section, choose ![\[Edit\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cog.png) \(the gear icon\)\.
+1. On the **Database** configuration card, choose **Modify**\.
 
-1. Next to the **DB endpoint**, choose **View in RDS Console**\.
+1. Next to **Endpoint**, choose the Amazon RDS console link\.
 
 1. On the **RDS Dashboard** instance details page, under **Security and Network**, choose the security group starting with *rds\-* next to **Security Groups**\.
 **Note**  

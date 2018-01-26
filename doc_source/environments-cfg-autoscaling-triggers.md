@@ -1,6 +1,6 @@
 # Auto Scaling Triggers<a name="environments-cfg-autoscaling-triggers"></a>
 
-The Auto Scaling group in your Elastic Beanstalk environment uses two Amazon CloudWatch alarms to trigger scaling operations\. The default triggers scale when the average outbound network traffic from each instance is higher than 6 MiB or lower than 2 MiB over a period of 5 minutes\. To use Auto Scaling effectively, configure triggers that are appropriate for your application, instance type, and service requirements\. You can scale based on several statistics including latency, disk I/O, CPU utilization, and request count\.
+The Auto Scaling group in your Elastic Beanstalk environment uses two Amazon CloudWatch alarms to trigger scaling operations\. The default triggers scale when the average outbound network traffic from each instance is higher than 6 MiB or lower than 2 MiB over a period of five minutes\. To use Amazon EC2 Auto Scaling effectively, configure triggers that are appropriate for your application, instance type, and service requirements\. You can scale based on several statistics including latency, disk I/O, CPU utilization, and request count\.
 
 ## Configuring Auto Scaling Triggers<a name="environments-cfg-autoscaling-triggers-console"></a>
 
@@ -14,32 +14,30 @@ You can configure the triggers that adjust the number of instances in your envir
 
 1. Choose **Configuration**\.
 
-1. Choose **Scaling**\.
+1. On the **Capacity** configuration card, choose **Modify**\.
 
-1. Expand the **Scaling Trigger** section\.  
-![\[Elastic Beanstalk Auto Scaling Triggers Configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-autoscaling-triggers.png)
+1. In the **Scaling triggers** section, configure the following settings:
 
-1. Configure the following options\.
+   + **Metric** – Metric used for your Auto Scaling trigger\.
 
-   + **Trigger measurement** – Metric used for your Auto Scaling trigger\.
+   + **Statistic** – Statistic calculation the trigger should use, such as `Average`\.
 
-   + **Trigger statistic** – Statistic the trigger should use, such as `Average`\.
+   + **Unit** – Unit for the trigger metric, such as **Bytes**\.
 
-   + **Unit of measurement** – Unit for the trigger measurement, such as Bytes\.
+   + **Period** – Specifies how frequently Amazon CloudWatch measures the metrics for your trigger\.
 
-   + **Measurement period** – Specifies how frequently Amazon CloudWatch measures the metrics for your trigger\.
+   + **Breach duration** – Amount of time, in minutes, a metric can be outside of the upper and lower thresholds before triggering a scaling operation\.
 
-   + **Breach duration** – Amount of time, in minutes, a metric can be beyond outside of the upper and lower thresholds before the trigger fires\.
+   + **Upper threshold** – If the metric exceeds this number for the breach duration, a scaling operation is triggered\. 
 
-   + **Upper threshold** – If the measurement is higher than this number for the breach duration, a trigger is fired\. 
+   + **Scale up increment** – The number of Amazon EC2 instances to add when performing a scaling activity\.
 
-   + **Upper breach scale increment** – How many Amazon EC2 instances to add when performing a scaling activity\. 
+   + **Lower threshold** – If the metric falls below this number for the breach duration, a scaling operation is triggered\. 
 
-   + **Lower threshold** – If the measurement falls below this number for the breach duration, a trigger is fired\. 
+   + **Scale down increment** – The number of Amazon EC2 instances to remove when performing a scaling activity\.  
+![\[Elastic Beanstalk Auto Scaling triggers configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-autoscaling-triggers.png)
 
-   + **Lower breach scale increment** – How many Amazon EC2 instances to remove when performing a scaling activity\.
-
-1. Choose **Apply**\.
+1. Choose **Save**, and then choose **Apply**\.
 
 ## The aws:autoscaling:trigger Namespace<a name="environments-cfg-autoscaling-triggers-namespace"></a>
 

@@ -6,11 +6,11 @@ Register in a DNS server a CNAME record such as: www\.mydomain\.com CNAME mydoma
 
 **Question:** *How do I specify a specific Availability Zone for my Elastic Beanstalk application\.*
 
-You can pick specific AZs using the APIs, CLI, Eclipse plug\-in, or Visual Studio plug\-in\. For instructions about using the AWS Management Console to specify an Availability Zone, see [Your AWS Elastic Beanstalk Environment's Auto Scaling Group](using-features.managing.as.md)\.
+You can pick specific AZs using the APIs, CLI, Eclipse plug\-in, or Visual Studio plug\-in\. For instructions about using the AWS Management Console to specify an Availability Zone, see [Auto Scaling Group for Your AWS Elastic Beanstalk Environment](using-features.managing.as.md)\.
 
 **Question:** *How do I avoid getting charged for my applications?*
 
-The default set of resources used by an Elastic Beanstalk do not incur charges in the Free Tier\. However, if you change the Amazon EC2 instance type, add EC2 instances, or run resources outside of your Elastic Beanstalk environment, charges may be accrued\. For information about the free tier, see [http://aws\.amazon\.com/free](http://aws.amazon.com/free)\. If you have questions about your account, contact our [ customer service team](https://aws-portal.amazon.com/gp/aws/html-forms-controller/contactus/aws-account-and-billing) directly\.
+The default set of resources used by an Elastic Beanstalk do not incur charges in the Free Tier\. However, if you change the Amazon EC2 instance type, add EC2 instances, or run resources outside of your Elastic Beanstalk environment, charges may be accrued\. For information about the free tier, see [AWS Free Tier](https://aws.amazon.com/free)\. If you have questions about your account, contact our [ customer service team](https://aws-portal.amazon.com/gp/aws/html-forms-controller/contactus/aws-account-and-billing) directly\.
 
 **Question:** *Can I receive notifications by SMS?*
 

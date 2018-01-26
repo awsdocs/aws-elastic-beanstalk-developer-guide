@@ -11,7 +11,7 @@ This chapter walks you through deploying a sample \.NET application to Elastic B
 
 ## Prerequisites<a name="deploy_NET_standalone_tool.prereq"></a>
 
-To use the deployment tool, you need to install the AWS Toolkit for Visual Studio\. For information on prerequisites and installation instructions, see [AWS Toolkit for Microsoft Visual Studio](http://aws.amazon.com/visualstudio/)\.
+To use the deployment tool, you need to install the AWS Toolkit for Visual Studio\. For information on prerequisites and installation instructions, see [AWS Toolkit for Microsoft Visual Studio](https://aws.amazon.com/visualstudio/)\.
 
 The deployment tool is typically installed in one of the following directories on Windows:
 
