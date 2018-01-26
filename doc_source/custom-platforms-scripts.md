@@ -4,16 +4,13 @@ Elastic Beanstalk installs the shell script `get-config` that you can use to get
 
 This tool is available at `/opt/elasticbeanstalk/bin/get-config`\. You can use it in the following ways:
 
-+ `get-config optionsettings` – Returns a JSON object listing the configuration options set on the environment, organized by namespace\. You can use the `-n` and `-o` switches to select one value from the optionsettings
++ `get-config optionsettings` – Returns a JSON object listing the configuration options set on the environment, organized by namespace\.
 
   ```
   $ /opt/elasticbeanstalk/bin/get-config optionsettings
   {"aws:elasticbeanstalk:container:php:phpini":{"memory_limit":"256M","max_execution_time":"60","display_errors":"Off","composer_options":"","allow_url_fopen":"On","zlib_output_compression":"Off","document_root":""},"aws:elasticbeanstalk:hostmanager":{"LogPublicationControl":"false"},"aws:elasticbeanstalk:application:environment":{"TESTPROPERTY":"testvalue"}}
-  $ /opt/elasticbeanstalk/bin/get-config optionsettings -n aws:elasticbeanstalk:container:php:phpini -o memory_limit
-  256M
   ```
 
-<<<<<<< HEAD
   To return a specific configuration option, use the `-n` option to specify a namespace, and the `-o` option to specify an option name\.
 
   ```
@@ -22,16 +19,10 @@ This tool is available at `/opt/elasticbeanstalk/bin/get-config`\. You can use i
   ```
 
 + `get-config environment` – Returns a JSON object containing a list of environment properties, including both user\-configured properties and those provided by Elastic Beanstalk\.
-=======
-+ `get-config environment` – Returns a JSON object containing a list of environment properties, including both user\-configured properties and those provided by Elastic Beanstalk\. You can use the `-k` switch to select one value from this object.
->>>>>>> 18614d5b28261df703c8871991fcf48bebcdb347
 
   ```
   $ /opt/elasticbeanstalk/bin/get-config environment
   {"TESTPROPERTY":"testvalue","RDS_PORT":"3306","RDS_HOSTNAME":"anj9aw1b0tbj6b.cijbpanmxz5u.us-west-2.rds.amazonaws.com","RDS_USERNAME":"testusername","RDS_DB_NAME":"ebdb","RDS_PASSWORD":"testpassword1923851"}
-  $ /opt/elasticbeanstalk/bin/get-config environment -k TESTPROPERTY
-  testvalue
-
   ```
 
    For example, Elastic Beanstalk provides environment properties for connecting to an integrated RDS DB instance \(RDS\_HOSTNAME, etc\.\)\. These properties appear in the output of `get-config environment` but not in the output of `get-config optionsettings`, because they are not set by the user\.
