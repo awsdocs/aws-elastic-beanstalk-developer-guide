@@ -135,8 +135,9 @@ After you have created an environment with a sample application, you can update 
 
    ```
    option_settings:
-     aws:elasticbeanstalk:container:nodejs:
-       NodeCommand: "npm start"
+     - namespace: aws:elasticbeanstalk:container:nodejs
+       option_name: NodeCommand
+       value: "npm start"
    ```
 
    For more information, see \.
