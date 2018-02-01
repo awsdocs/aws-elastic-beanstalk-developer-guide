@@ -282,7 +282,7 @@ Configure managed platform updates for your environment\.
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
 |  ManagedActionsEnabled  |  Enable managed platform updates\. When you set this to `true`, you must also specify a `PreferredStartTime` and `UpdateLevel`\.  |   `true`   |   `true`   `false`   | 
-|  PreferredStartTime  |  Configure a maintenance window for managed actions in UTC\. For example, `"Tue:10:00"`\.  | None | Day and time in *day*:*hour*:*minute* format\. | 
+|  PreferredStartTime  |  Configure a maintenance window for managed actions in UTC\. For example, `"Tue:09:00"`\.  | None | Day and time in *day*:*hour*:*minute* format\. | 
 
 ## aws:elasticbeanstalk:managedactions:platformupdate<a name="command-options-general-elasticbeanstalkmanagedactionsplatformupdate"></a>
 
