@@ -123,7 +123,7 @@ Set `UpdateLevel` to `minor` or `patch` to apply both minor and patch version up
 
 When managed platform updates are enabled, you can enable instance replacement by setting the `InstanceRefreshEnabled` option to `true`\. When this setting is enabled, Elastic Beanstalk runs an immutable update on your environment every week, regardless of whether there is a new platform version available\.
 
-The following example configuration file enables managed platform updates for patch version updates with a maintenance window starting at 10:00 AM UTC each Tuesday:
+The following example configuration file enables managed platform updates for patch version updates with a maintenance window starting at 9:00 AM UTC each Tuesday:
 
 **Example \.ebextensions/managed\-platform\-update\.config**  
 
@@ -131,7 +131,7 @@ The following example configuration file enables managed platform updates for pa
 option_settings:
   aws:elasticbeanstalk:managedactions:
     ManagedActionsEnabled: true
-    PreferredStartTime: "Tue:10:00"
+    PreferredStartTime: "Tue:09:00"
   aws:elasticbeanstalk:managedactions:platformupdate:
     UpdateLevel: patch
     InstanceRefreshEnabled: true
