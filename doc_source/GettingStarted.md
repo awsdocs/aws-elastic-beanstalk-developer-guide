@@ -62,7 +62,7 @@ During the environment creation process, the console tracks its progress and dis
 
 ![\[Console showing environment creation event output.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-events.png)
 
-When all of the resources finish launching and the EC2 instances running the application pass health checks, the environment's health changes to `Ok`and the website becomes ready to use\.
+When all of the resources finish launching and the EC2 instances running the application pass health checks, the environment's health changes to `Ok` and the website becomes ready to use\.
 
 ## Step 3: View Information about Your Environment<a name="GettingStarted.Walkthrough.ViewApp"></a>
 
