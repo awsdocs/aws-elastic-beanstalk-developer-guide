@@ -29,9 +29,12 @@ Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosin
 
 1. Choose **Launch DB Instance**\.
 
-1. Choose a **DB Engine** and preset configuration\.
+1. Under **Engine options**, choose **MySQL**, then select **Next**.
 
-1. Under **Specify DB Details**, choose a **DB Instance Class**\. For high availability, set **Multi\-AZ Deployment** to **Yes**\.
+1. Under **Use case**, choose between free tier **Dev/Test - MySQL**\. For high availability, choose **Production-MySQL**\., then select **Next**.
+
+1. Under **Instance specifications**, choose a **DB Instance Class**. Micro or small is suffienct for personal projects. 
+\For high availability, set **Multi-AZ Deployment** to **Create a replica in different zone**.
 
 1. Under **Settings**, enter values for **DB Instance Identifier**, **Master Username**, and **Master Password** \(and **Confirm Password**\)\. Note the values that you entered for later\.
 
@@ -49,7 +52,7 @@ Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosin
 
    + **VPC Security Groups** – **Default VPC Security Group**
 
-1. For **Database Name**, type **ebdb**, and verify the default settings for the remaining options\. Note the values of the following options:
+1. Under **Database options**, for  **Database Name**, type **ebdb**, and verify the default settings for the remaining options\. Note the values of the following options:
 
    + **Database Name**
 
@@ -65,15 +68,12 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 
 1. Choose **Instances**\.
 
-1. Choose the arrow next to the entry for your DB instance to expand the view\.
+1. Choose the name of your recently created DB instance to view details\.
 
-1. Choose the **Details** tab\.
-
-1. In the **Security and Network** section, the security group associated with the DB instance is shown\. Open the link to view the security group in the Amazon EC2 console\.  
-![\[Details tab of a DB instance page in the Amazon RDS console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup.png)
+1. Go to **Details**. In the **Security and Network** section, the security group associated with the DB instance is shown\. Open the link to view the security group in the Amazon EC2 console\.  
 **Note**  
-While you have the **Details** tab open, note the **Endpoint** and security group name shown on this page for use later\.  
-The security group name is the first value of the link shown in **Security Groups**, before the parentheses\. The second value, in parentheses, is the security group ID\.
+You can also view the **Endpoint** and security group name on this page for use later\.  
+The security group name is the first value of the link shown in **Security groups**, before the parentheses\. The second value, in parentheses, is the security group ID\.
 
 1. In the security group details, choose the **Inbound** tab\.
 
@@ -145,7 +145,7 @@ To prepare to deploy WordPress using AWS Elastic Beanstalk, you must copy the Wo
 
 1. Modify the configuration files in the `.ebextensions` folder with the IDs of your default VPC and subnets, and your public IP address\.
 
-1. The `.ebextensions/efs-create.config` file creates an EFS file system and mount points in each Availability Zone/subnet in your VPC\. Identify your default VPC and subnet IDs in the Amazon VPC console\.
+1. The `.ebextensions/efs-create.config` file creates an EFS file system and mount points in each Availability Zone/subnet in your VPC\. Identify your default VPC and subnet IDs in the Amazon VPC console\. This can be found in the **Details** of your DB instance from the [Amazon RDS console](https://console.aws.amazon.com/rds/home).
 
    The `.ebextensions/dev.config` file restricts access to your environment to your IP address to protect it during the WordPress installation process\. Replace the placeholder IP address near the top of the file with your public IP address\.
 
@@ -167,21 +167,27 @@ Use the AWS Management Console to launch an Elastic Beanstalk environment\.
 
 1. Open the Elastic Beanstalk console with this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=wordpress\-beanstalk&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=wordpress-beanstalk&environmentType=LoadBalanced)
 
+1. For **New Enviroment**, choose **Web Server Enviroment**\.
+
 1. For **Platform**, choose **PHP**\.
-
-1. For **App code**, choose **Upload your code**\.
-
-1. Choose **Upload** and navigate to the ZIP file you created for your WordPress files\.
-
-1. Choose **Upload** to select your application code\.
-
-1. Choose **Configure more options**\.
-
-1. For **Configuration presets**, select **Custom configuration**\.
 
 1. Choose **Change platform configuration** and select **64bit Amazon Linux 2016\.09 v2\.3\.1 running PHP 5\.6** from the drop down menu and then choose **Save**\.
 
-1. Review all options and once you are satisfied with those options choose **Create app**\.
+1. For **Application Version**, choose **Upload your code**\.
+
+1. Choose **Upload** and navigate to the ZIP file you created for your WordPress files\.
+
+1. Choose **Upload** to select your application code\, then **Next**.
+
+1. For **Deployment Preferences**, leave everything as default\, then choose **Next**.
+
+1. For **Enviroment Information**, review options, then choose **Next**\.
+
+1. For **Environment Tags**, specify tags if you want, then choose **Next**\.
+
+1. For **Permissions**,  leave default selected, then choose **Next**\.
+
+1. Review all options and once you are satisfied with those options choose **Launch**\.
 
 Environment creation takes about 5 minutes\.
 
