@@ -36,9 +36,9 @@ Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosin
 1. Under **Instance specifications**, choose a **DB Instance Class**. Micro or small is suffienct for personal projects. 
 \For high availability, set **Multi-AZ Deployment** to **Create a replica in different zone**.
 
-1. Under **Settings**, enter values for **DB Instance Identifier**, **Master Username**, and **Master Password** \(and **Confirm Password**\)\. Note the values that you entered for later\.
+1. Under **Settings**, enter values for **DB Instance Identifier**, **Master Username**, and **Master Password** \(and **Confirm Password**\)\. 
 
-1. Choose **Next**\.
+1. Make a note of the entered valudes for **Master Username**, and **Master Password**, then choose **Next**\. 
 
 1. For **Network and Security** settings, choose the following:
 
@@ -227,11 +227,11 @@ Next, pass the connection information to your environment by using environment p
 
    + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
-     Amazon RDS console label – **Endpoint** \(this is the hostname\)
+     Amazon [RDS console](https://console.aws.amazon.com/rds/home) label – **Endpoint** \(this is the hostname\)
 
    + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
 
-     Amazon RDS console label – **Port**
+     Amazon [RDS console](https://console.aws.amazon.com/rds/home) label – **Port**
 
    + **RDS\_DB\_NAME** – The database name, `ebdb`\.
 
