@@ -1,7 +1,7 @@
 # events<a name="eb-events"></a>
 
 **Note**  
- This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see \. 
+ This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md)\. 
 
 ## Description<a name="eb-eventsdescription"></a>
 

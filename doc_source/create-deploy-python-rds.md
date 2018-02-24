@@ -2,11 +2,11 @@
 
 You can use an Amazon Relational Database Service \(Amazon RDS\) DB instance to store data gathered and modified by your application\. The database can be attached to your environment and managed by Elastic Beanstalk, or created and managed externally\.
 
-If you are using Amazon RDS for the first time, add a DB instance to a test environment with the Elastic Beanstalk Management Console and verify that your application can connect to it\.
+If you are using Amazon RDS for the first time, [add a DB instance](#python-rds-create) to a test environment with the Elastic Beanstalk Management Console and verify that your application can connect to it\.
 
-To connect to a database, add the driver to your application, load the driver in your code, and create a connection object with the environment properties provided by Elastic Beanstalk\. The configuration and connection code vary depending on the database engine and framework that you use\.
+To connect to a database, [add the driver](#python-rds-drivers) to your application, load the driver in your code, and [create a connection object](#python-rds-connect) with the environment properties provided by Elastic Beanstalk\. The configuration and connection code vary depending on the database engine and framework that you use\.
 
-For production environments, create a DB instance outside of your Elastic Beanstalk environment to decouple your environment resources from your database resources\. Using an external DB instance lets you connect to the same database from multiple environments and perform blue\-green deployments\. For instructions, see \.
+For production environments, create a DB instance outside of your Elastic Beanstalk environment to decouple your environment resources from your database resources\. Using an external DB instance lets you connect to the same database from multiple environments and perform blue\-green deployments\. For instructions, see [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)\.
 
 
 + [Adding a DB Instance to Your Environment](#python-rds-create)
@@ -19,7 +19,7 @@ For production environments, create a DB instance outside of your Elastic Beanst
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -49,11 +49,11 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
 
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
-For more information about configuring an internal DB instance, see \.
+For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
 
 ## Downloading a Driver<a name="python-rds-drivers"></a>
 
-Add the database driver to your project's requirements file\.
+Add the database driver to your project's [requirements file](python-configuration-requirements.md)\.
 
 **Example requirements\.txt – Django with MySQL**  
 

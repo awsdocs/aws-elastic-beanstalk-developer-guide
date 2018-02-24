@@ -1,6 +1,6 @@
 # Notifications and Troubleshooting<a name="environments-health-enhanced-notifications"></a>
 
-This page lists example cause messages for common issues and links to more information\. Cause messages appear in the environment dashboard and are recorded in events when health issues persist across several checks\.
+This page lists example cause messages for common issues and links to more information\. Cause messages appear in the [environment dashboard](environment-health-console.md) and are recorded in [events](using-features.events.md) when health issues persist across several checks\.
 
 ## Deployments<a name="environments-health-enhanced-notifications-deployments"></a>
 
@@ -16,9 +16,9 @@ The expected application version is not running on some or all instances in an *
 
 The application deployed to an **instance** differs from the expected version\. If a deployment fails, the expected version is reset to the version from the most recent successful deployment\. In the above example, the first deployment \(version "v1"\) succeeded, but the second deployment \(version "v2"\) failed\. Any instances running "v2" are considered unhealthy\.
 
-To solve this issue, start another deployment\. You can redeploy a previous version that you know works, or configure your environment to ignore health checks during deployment and redeploy the new version to force the deployment to complete\.
+To solve this issue, start another deployment\. You can [redeploy a previous version](using-features.deploy-existing-version.md) that you know works, or configure your environment to [ignore health checks](using-features.rolling-version-deploy.md#environments-cfg-rollingdeployments-console) during deployment and redeploy the new version to force the deployment to complete\.
 
-You can also identify and terminate the instances that are running the wrong application version\. Elastic Beanstalk will launch instances with the correct version to replace any instances that you terminate\. Use the EB CLI health command to identify instances that are running the wrong application version\.
+You can also identify and terminate the instances that are running the wrong application version\. Elastic Beanstalk will launch instances with the correct version to replace any instances that you terminate\. Use the [EB CLI health command](health-enhanced-ebcli.md) to identify instances that are running the wrong application version\.
 
 ## Application Server<a name="environments-health-enhanced-notifications-webapp"></a>
 
@@ -52,7 +52,7 @@ Requests are being added to your worker environment's queue faster than they can
 
 *5 messages in Dead Letter Queue \(15 seconds ago\)*
 
-Worker requests are failing repeatedly and being added to the Dead Letter Queue\. Check the requests in the dead letter queue to see why they are failing\. 
+Worker requests are failing repeatedly and being added to the [Dead Letter Queue](using-features-managing-env-tiers.md#worker-deadletter)\. Check the requests in the dead letter queue to see why they are failing\. 
 
 ## Other Resources<a name="environments-health-enhanced-notifications-other"></a>
 

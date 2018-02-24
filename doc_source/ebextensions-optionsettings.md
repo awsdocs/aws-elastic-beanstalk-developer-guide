@@ -2,7 +2,7 @@
 
 You can use the `option_settings` key to modify the Elastic Beanstalk configuration and define variables that can be retrieved from your application using environment variables\. Some namespaces allow you to extend the number of parameters, and specify the parameter names\. For a list of namespaces and configuration options, see [Configuration Options](command-options.md)\.
 
-Option settings can also be applied directly to an environment during environment creation or an environment update\. Settings applied directly to the environment override the settings for the same options in configuration files\. If you remove settings from an environment's configuration, settings in configuration files will take effect\. See  for details\.
+Option settings can also be applied directly to an environment during environment creation or an environment update\. Settings applied directly to the environment override the settings for the same options in configuration files\. If you remove settings from an environment's configuration, settings in configuration files will take effect\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
 
 ## Syntax<a name="ebextensions-optionsettings-syntax"></a>
 

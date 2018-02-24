@@ -13,7 +13,7 @@ For more information about Amazon EFS, see the [Amazon Elastic File System User 
 
 ## Configuration Files<a name="services-efs-configs"></a>
 
-Elastic Beanstalk provides configuration files that you can use to create and mount Amazon EFS file systems\. You can create an Amazon EFS volume as part of your environment, or mount an Amazon EFS volume that you created independently of Elastic Beanstalk\.
+Elastic Beanstalk provides [configuration files](ebextensions.md) that you can use to create and mount Amazon EFS file systems\. You can create an Amazon EFS volume as part of your environment, or mount an Amazon EFS volume that you created independently of Elastic Beanstalk\.
 
 + **[storage\-efs\-createfilesystem\.config](https://github.com/awslabs/elastic-beanstalk-samples/blob/master/configuration-files/aws-provided/instance-configuration/storage-efs-createfilesystem.config)** – Uses the `Resources` key to create a new file system and mount points in Amazon EFS\. All instances in your environment can connect to the same file system for shared, scalable storage\. Use `storage-efs-mountfilesystem.config` to mount the file system on each instance\.
 **Internal Resources**  

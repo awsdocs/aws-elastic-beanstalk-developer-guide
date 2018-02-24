@@ -13,7 +13,7 @@ First, use the Create New Application wizard in the Elastic Beanstalk console to
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 **Note**  
-If the New Environment wizard does not show the screens described below, see \.
+If the New Environment wizard does not show the screens described below, see [The Old New Environment Wizard](environments-create-wizard-old.md)\.
 
 1. Choose **Create New Application**\.  
 ![\[Elastic Beanstalk .NET tutorial create new application wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-create-new-application.png)
@@ -47,7 +47,7 @@ If the New Environment wizard does not show the screens described below, see \.
 1. On the **Environment Tags** page, leave both the **Key** and the **Value** fields blank, and then choose **Next**\.  
 ![\[Elastic Beanstalk .NET tutorial Environment Tags\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-environment-tags.png)
 
-1. Choose **Next** on the **Permissions** page\. If you don't have a default instance profile and service role, Elastic Beanstalk creates them for you\.
+1. Choose **Next** on the **Permissions** page\. If you don't have a default [instance profile and service role](concepts-roles.md), Elastic Beanstalk creates them for you\.
 
 1. On the **RDS Configuration** page, for **DB engine**, choose **sqlserver\-ex**\. For **Instance class**, choose **db\.t2\.micro**, and then increase the **Allocated storage** to **20 GB**\.  
 ![\[Elastic Beanstalk .NET tutorial RDS configuration\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-rds-configuration.png)
@@ -98,8 +98,7 @@ If you haven't done so already, you can get the sample [here](samples/dotnet-asp
 ![\[Elastic Beanstalk .NET tutorial launch sample app from console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-launch-sample-app-from-console.png)
 
    Your ASP\.NET application opens in a new tab\.  
-![\[Elastic Beanstalk .NET tutorial see your ASP.NET application running in the Web
-                  browser\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-my-asp-net-application.png)
+![\[Elastic Beanstalk .NET tutorial see your ASP.NET application running in the Web browser\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-my-asp-net-application.png)
 
 ## Clean Up Your AWS Resources<a name="aws-elastic-beanstalk-tutorial-step-3-clean-up-your-resources"></a>
 
@@ -111,7 +110,7 @@ If you are done working with Elastic Beanstalk for now, you can terminate your \
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Actions** and then choose **Terminate Environment**\.
 

@@ -19,7 +19,7 @@ If you already have `pip` and a supported version of Python, use the following p
 
    The `--upgrade` option tells `pip` to upgrade any requirements that are already installed\. The `--user` option tells `pip` to install the program to a subdirectory of your user directory to avoid modifying libraries used by your operating sytem\.
 **Note**  
-If you encounter issues when you attempt to install the EB CLI with `pip`, you can install the EB CLI in a virtual environment to isolate the tool and its dependencies, or use a different version of Python than you normally do\.
+If you encounter issues when you attempt to install the EB CLI with `pip`, you can [install the EB CLI in a virtual environment](eb-cli3-install-virtualenv.md) to isolate the tool and its dependencies, or use a different version of Python than you normally do\.
 
 1. Add the path to the executable file to your PATH variable:
 

@@ -2,11 +2,11 @@
 
 You can modify the option settings on a running environment by applying saved configurations, uploading a new source bundle with configuration files \(`.ebextensions`\), or using a JSON document\. The EB CLI and Elastic Beanstalk console also have client\-specific functionality for setting and updating configuration options\.
 
-When you set or change a configuration option, you can trigger a full environment update, depending on the severity of the change\. For example, changes to options in the `aws:autoscaling:launchconfiguration`, such as `InstanceType`, require that the Amazon EC2 instances in your environment are reprovisioned\. This triggers a rolling update\. Other configuration changes can be applied without any interruption or reprovisioning\.
+When you set or change a configuration option, you can trigger a full environment update, depending on the severity of the change\. For example, changes to options in the [`aws:autoscaling:launchconfiguration`](command-options-general.md#command-options-general-autoscalinglaunchconfiguration), such as `InstanceType`, require that the Amazon EC2 instances in your environment are reprovisioned\. This triggers a [rolling update](using-features.rollingupdates.md)\. Other configuration changes can be applied without any interruption or reprovisioning\.
 
 You can remove option settings from an environment with EB CLI or AWS CLI commands\. Removing an option that has been set directly on an environment at an API level allows settings in configuration files, which are otherwise masked by settings applied directly to an environment, to surface and take effect\.
 
-Settings in saved configurations and configuration files can be overridden by setting the same option directly on the environment with one of the other configuration methods\. However, these can only be removed completely by applying an updated saved configuration or configuration file\. When an option is not set in a saved configuration, in a configuration file, or directly on an environment, the default value applies, if there is one\. See  for details\.
+Settings in saved configurations and configuration files can be overridden by setting the same option directly on the environment with one of the other configuration methods\. However, these can only be removed completely by applying an updated saved configuration or configuration file\. When an option is not set in a saved configuration, in a configuration file, or directly on an environment, the default value applies, if there is one\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
 
 
 + [The Elastic Beanstalk console](#configuration-options-after-console)
@@ -30,7 +30,7 @@ Update configuration files in your source directory, create a new source bundle,
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Upload and Deploy**  
 ![\[Upload and Deploy\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-upload.png)
@@ -39,7 +39,7 @@ Update configuration files in your source directory, create a new source bundle,
 
 1. Choose **Deploy**\.
 
-Changes made to configuration files will not override option settings in saved configurations or settings applied directly to the environment at the API level\. See Precedence for details\.
+Changes made to configuration files will not override option settings in saved configurations or settings applied directly to the environment at the API level\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
 
 ### Using a Saved Configuration<a name="configuration-options-after-console-savedconfig"></a>
 
@@ -59,7 +59,7 @@ Apply a saved configuration to a running environment to apply option settings th
 
 Settings defined in a saved configuration override settings in configuration files, and are overridden by settings configured using the environment management console\.
 
-See  for details on creating saved configurations\.
+See [Saved Configurations](environment-configuration-methods-before.md#configuration-options-before-savedconfig) for details on creating saved configurations\.
 
 ### Using the Environment Management Console<a name="configuration-options-after-console-configpage"></a>
 
@@ -69,7 +69,7 @@ The Elastic Beanstalk console presents several configuration options on the **Co
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -81,7 +81,7 @@ The Elastic Beanstalk console presents several configuration options on the **Co
 
 1. Choose **Apply**\.
 
-Changes made to configuration options in the environment management console are applied directly to the environment, overriding settings for the same options in configuration files or saved configurations\. See Precedence for details\.
+Changes made to configuration options in the environment management console are applied directly to the environment, overriding settings for the same options in configuration files or saved configurations\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
 
 For details about changing configuration options on a running environment using the Elastic Beanstalk console, see the topics under [AWS Elastic Beanstalk Environment Configuration](customize-containers.md)\.
 
@@ -124,7 +124,7 @@ You can use the `eb config` command to apply a saved configuration to a running 
 $ eb config --cfg v1
 ```
 
-In this example, `v1` is the name of a previously created and saved configuration file\.
+In this example, `v1` is the name of a [previously created and saved configuration file](environment-configuration-methods-before.md#configuration-options-before-savedconfig)\.
 
 Settings applied to an environment with this command override settings that were applied during environment creation, and settings defined in configuration files in your application source bundle\.
 
@@ -135,7 +135,7 @@ The EB CLI's `eb config` command lets you set and remove option settings directl
 When you run `eb config`, the EB CLI shows settings applied to your environment from all sources, including configuration files, saved configurations, recommended values, options set directly on the environment, and API defaults\.
 
 **Note**  
-`eb config` does not show environment properties\. To set environment properties that you can read from within your application, use `eb setenv`\.
+`eb config` does not show environment properties\. To set environment properties that you can read from within your application, use [`eb setenv`](#configuration-options-after-ebcli-ebsetenv)\.
 
 The following example shows settings applied in the `aws:autoscaling:launchconfiguration` namespace\. These settings include:
 
@@ -186,7 +186,7 @@ aws:autoscaling:launchconfiguration:
 
 Setting configuration options with `eb config` overrides settings from all other sources\.
 
-You can also remove options from your environment with `eb config`\.
+You can also remove options from your environment with `eb config`\.<a name="configuration-options-remove-ebcli"></a>
 
 **To remove configuration options \(EB CLI\)**
 
@@ -211,7 +211,7 @@ You can also remove options from your environment with `eb config`\.
 
 1. The EB CLI updates your environment configuration\.
 
-Removing options from your environment with `eb config` allows settings for the same options to surface from configuration files in your application source bundle\. See Precedence for details\.
+Removing options from your environment with `eb config` allows settings for the same options to surface from configuration files in your application source bundle\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
 
 ### Using `eb setenv`<a name="configuration-options-after-ebcli-ebsetenv"></a>
 
@@ -225,7 +225,7 @@ INFO: Environment health has transitioned from Ok to Info. Command is executing 
 INFO: Successfully deployed new configuration to environment.
 ```
 
-This command sets environment properties in the `aws:elasticbeanstalk:application:environment` namespace\. Environment properties set with `eb setenv` are available to your application after a short update process\.
+This command sets environment properties in the [`aws:elasticbeanstalk:application:environment` namespace](command-options-general.md#command-options-general-elasticbeanstalkapplicationenvironment)\. Environment properties set with `eb setenv` are available to your application after a short update process\.
 
 View environment properties set on your environment with `eb printenv`\.
 
@@ -341,7 +341,7 @@ In this example, `as-zero.json` defines options that configure the environment w
 **Note**  
 Setting configuration options with `update-environment` overrides settings from all other sources\.
 
-You can also remove options from your environment with `update-environment`\.
+You can also remove options from your environment with `update-environment`\.<a name="configuration-options-remove-awscli"></a>
 
 **To remove configuration options \(AWS CLI\)**
 
@@ -351,4 +351,4 @@ You can also remove options from your environment with `update-environment`\.
   $ aws elasticbeanstalk update-environment --environment-name my-env --options-to-remove Namespace=aws:autoscaling:launchconfiguration,OptionName=InstanceType
   ```
 
-Removing options from your environment with `update-environment` allows settings for the same options to surface from configuration files in your application source bundle\. If an option isn't configured using any of these methods, the API default value applies, if one exists\. See Precedence for details\.
+Removing options from your environment with `update-environment` allows settings for the same options to surface from configuration files in your application source bundle\. If an option isn't configured using any of these methods, the API default value applies, if one exists\. See [Precedence](command-options.md#configuration-options-precedence) for details\.

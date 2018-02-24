@@ -4,7 +4,7 @@ Elastic Beanstalk provides integration with Amazon Relational Database Service \
 
 A database instance that is part of your environment is tied to the lifecycle of your environment\. You can't remove it from your environment once added\. If you terminate the environment, the database instance is terminated as well\. You can configure Elastic Beanstalk to save a snapshot of the database when you terminate your environment, and restore a database from a snapshot when you add a DB instance to an environment\. You might incur charges for storing database snapshots\. For more information, see the *Backup Storage* section of [Amazon RDS Pricing](https://aws.amazon.com/rds/pricing/)\.
 
-For a production environment, you can launch a database instance outside of your environment and configure your application to connect to it outside of the functionality provided by Elastic Beanstalk\. Using a database instance that is external to your environment requires additional security group and connection string configuration\. However, it also lets you connect to the database from multiple environments, use database types not supported with integrated databases, perform blue/green deployments, and tear down your environment without affecting the database instance\.
+For a production environment, you can [launch a database instance outside of your environment](AWSHowTo.RDS.md) and configure your application to connect to it outside of the functionality provided by Elastic Beanstalk\. Using a database instance that is external to your environment requires additional security group and connection string configuration\. However, it also lets you connect to the database from multiple environments, use database types not supported with integrated databases, perform blue/green deployments, and tear down your environment without affecting the database instance\.
 
 
 + [Adding an Amazon RDS DB Instance to Your Environment](#environments-cfg-rds-create)
@@ -19,7 +19,7 @@ You can add a DB instance to your environment by using the Elastic Beanstalk con
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -75,29 +75,29 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
 
 Use the connectivity information to connect to your DB from inside your application through environment variables\. For more information about using Amazon RDS with your applications, see the following topics\.
 
-+ Java SE – 
++ Java SE – [Connecting to a Database \(Java SE Platforms\)](java-rds.md#java-rds-javase)
 
-+ Java with Tomcat – 
++ Java with Tomcat – [Connecting to a Database \(Tomcat Platforms\)](java-rds.md#java-rds-tomcat)
 
-+ Node\.js – 
++ Node\.js – [Connecting to a Database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
 
-+ \.NET – 
++ \.NET – [Connecting to a Database](create_deploy_NET.rds.md#dotnet-rds-connect)
 
-+ PHP – 
++ PHP – [Connecting to a Database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
 
-+ Python – 
++ Python – [Connecting to a Database](create-deploy-python-rds.md#python-rds-connect)
 
-+ Ruby – 
++ Ruby – [Connecting to a Database](create_deploy_Ruby.rds.md#ruby-rds-connect)
 
 ## Configuring an Integrated RDS DB Instance<a name="using-features.managing.db.CON"></a>
 
-You can view and modify configuration settings for your DB instance in the **Data Tier** section on the environment's **Configuration** page in the environment management console\.
+You can view and modify configuration settings for your DB instance in the **Data Tier** section on the environment's **Configuration** page in the [environment management console](environments-console.md)\.
 
 **To configure your environment's DB instance in the Elastic Beanstalk console**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 

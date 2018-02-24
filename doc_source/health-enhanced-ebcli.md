@@ -1,8 +1,8 @@
 # Using the EB CLI to Monitor Environment Health<a name="health-enhanced-ebcli"></a>
 
-The Elastic Beanstalk Command Line Interface \(EB CLI\) is a command line tool for managing AWS Elastic Beanstalk environments\. You also can use the EB CLI to monitor your environment's health in real time and with more granularity than is currently available in the AWS Management Console
+The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) is a command line tool for managing AWS Elastic Beanstalk environments\. You also can use the EB CLI to monitor your environment's health in real time and with more granularity than is currently available in the AWS Management Console
 
-After installing and configuring the EB CLI, you can launch a new environment and deploy your code to it with the `eb create` command\. If you already have an environment that you created in the AWS Management Console, you can attach the EB CLI to it by running `eb init` in a project folder and following the prompts \(the project folder can be empty\)\. 
+After [installing](eb-cli3-install.md) and [configuring](eb-cli3-configuration.md) the EB CLI, you can [launch a new environment](eb-cli3-getting-started.md) and deploy your code to it with the `eb create` command\. If you already have an environment that you created in the AWS Management Console, you can attach the EB CLI to it by running `eb init` in a project folder and following the prompts \(the project folder can be empty\)\. 
 
 **Important**  
 Ensure that you are using the latest version of the EB CLI by running `pip install` with the `--upgrade` option:  
@@ -10,9 +10,9 @@ Ensure that you are using the latest version of the EB CLI by running `pip insta
 ```
 $ sudo pip install --upgrade awsebcli
 ```
-For complete EB CLI installation instructions, see \.
+For complete EB CLI installation instructions, see [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md)\.
 
-To use the EB CLI to monitor your environment's health, you must first configure a local project folder by running `eb init` and following the prompts\. For complete instructions, see \.
+To use the EB CLI to monitor your environment's health, you must first configure a local project folder by running `eb init` and following the prompts\. For complete instructions, see [Configure the EB CLI](eb-cli3-configuration.md)\.
 
 If you already have an environment running in Elastic Beanstalk and want to use the EB CLI to monitor its health, attach it to use the existing environment by following these steps\.
 
@@ -109,7 +109,7 @@ The rest of the output is split into four sections\. The first displays the *sta
   i-8b2cf575     Ok
 ```
 
-For information about health statuses and colors, see \.
+For information about health statuses and colors, see [Health Colors and Statuses](health-enhanced-status.md)\.
 
 The **requests** section displays information from the web server logs on each instance\. In this example, each instance is taking requests normally and there are no errors:
 
@@ -134,7 +134,7 @@ The **cpu** section shows operating system metrics for each instance:
   i-8b2cf575    t2.micro   1c   1 hour         0.0    0.01        0.2    0.0      0.1   99.6       0.1
 ```
 
-For information about the server and operating system metrics shown, see \.
+For information about the server and operating system metrics shown, see [Instance Metrics](health-enhanced-metrics.md)\.
 
 The final section, **deployments**, shows the deployment status of each instance\. If a rolling deployment fails, you can use the deployment ID, status and version label shown to identify instances in your environment that are running the wrong version\.
 

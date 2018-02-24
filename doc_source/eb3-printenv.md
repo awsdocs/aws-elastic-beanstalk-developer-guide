@@ -17,7 +17,7 @@ Prints all the environment properties in the command window\.
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-printenvoutput"></a>
 

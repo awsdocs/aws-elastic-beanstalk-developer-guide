@@ -4,7 +4,7 @@ In this tutorial, you walk through the process of building a new ASP\.NET Core a
 
 Next, you modify the default `Program` class, and add an ASP\.NET `Startup` class and configuration files to make an application that serves HTTP requests with ASP\.NET and IIS\. The `dotnet publish` command generates compiled classes and dependencies that you can bundle with a `web.config` file to create a *site archive* that you can deploy to an Elastic Beanstalk environment\.
 
-Elastic Beanstalk uses a deployment manifest to configure deployments for \.NET Core applications, custom applications, and multiple \.NET Core or MSBuild applications on a single server\. To deploy a \.NET Core application to a Windows Server environment, you add the site archive to an application source bundle with a deployment manifest\. The deployment manifest tells Elastic Beanstalk the path at which the site should run and can be used to configure application pools and run multiple applications at different paths\.
+Elastic Beanstalk uses a [deployment manifest](dotnet-manifest.md) to configure deployments for \.NET Core applications, custom applications, and multiple \.NET Core or MSBuild applications on a single server\. To deploy a \.NET Core application to a Windows Server environment, you add the site archive to an application source bundle with a deployment manifest\. The deployment manifest tells Elastic Beanstalk the path at which the site should run and can be used to configure application pools and run multiple applications at different paths\.
 
 **Note**  
 The application source code is available here: [dotnet\-core\-tutorial\-source\.zip](samples/dotnet-core-tutorial-source.zip)  
@@ -33,7 +33,7 @@ This tutorial uses the \.NET Core SDK to generate a basic \.NET Core application
 
 1. Run the installer and follow the instructions\.
 
-This tutorial uses a command line ZIP utility to create a source bundle that you can deploy to Elastic Beanstalk\. To use the `zip` command in Windows, you can install `UnxUtils`, a lightweight collection of useful command line utilities like `zip` and `ls`\. \(Alternatively, you can use Windows Explorer or any other ZIP utility to create source bundle archives\.\)
+This tutorial uses a command line ZIP utility to create a source bundle that you can deploy to Elastic Beanstalk\. To use the `zip` command in Windows, you can install `UnxUtils`, a lightweight collection of useful command line utilities like `zip` and `ls`\. \(Alternatively, you can [use Windows Explorer](applications-sourcebundle.md#using-features.deployment.source.gui) or any other ZIP utility to create source bundle archives\.\)
 
 **To install UnxUtils**
 
@@ -193,7 +193,9 @@ The source code is available here: [dotnet\-core\-tutorial\-source\.zip](samples
    </configuration>
    ```
 
-1. Update `dotnet-core-tutorial.csproj` to include IIS middleware and include the `web.config` file in the output of `dotnet publish`\.  
+1. Update `dotnet-core-tutorial.csproj` to include IIS middleware and include the `web.config` file in the output of `dotnet publish`\.
+**Note**  
+The following example was developed using \.NET Core Runtime 2\.0\.5\. You might need to modify the `TargetFramework` or the `Version` attribute values in the `PackageReference` elements to match the version of \.NET Core Runtime that you are using\.  
 **Example c:\\users\\username\\dotnet\-core\-tutorial\\dotnet\-core\-tutorial\.csproj**  
 
    ```
@@ -201,15 +203,15 @@ The source code is available here: [dotnet\-core\-tutorial\-source\.zip](samples
    
        <PropertyGroup>
            <OutputType>Exe</OutputType>
-           <TargetFramework>netcoreapp1.1</TargetFramework>
+           <TargetFramework>netcoreapp2.0</TargetFramework>
        </PropertyGroup>
    
        <ItemGroup>
-           <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" />
+           <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.0.1" />
        </ItemGroup>
    
        <ItemGroup>
-           <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" />
+           <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.0.1" />
        </ItemGroup>
    
        <ItemGroup>
@@ -239,7 +241,7 @@ To run the application on a web server, you need to bundle the compiled source c
   C:\users\username\dotnet-core-tutorial> dotnet publish -o site
   ```
 
-To deploy the application to Elastic Beanstalk, bundle the site archive with a deployment manifest that tells Elastic Beanstalk how to run it\.
+To deploy the application to Elastic Beanstalk, bundle the site archive with a [deployment manifest](dotnet-manifest.md) that tells Elastic Beanstalk how to run it\.
 
 **To create a source bundle**
 
@@ -248,42 +250,46 @@ To deploy the application to Elastic Beanstalk, bundle the site archive with a d
    ```
    C:\users\username\dotnet-core-tutorial> cd site
    C:\users\username\dotnet-core-tutorial\site> zip ../site.zip *
-     adding: dotnet-core-tutorial.deps.json (164 bytes security) (deflated 81%)
-     adding: dotnet-core-tutorial.dll (164 bytes security) (deflated 58%)
-     adding: dotnet-core-tutorial.pdb (164 bytes security) (deflated 30%)
-     adding: dotnet-core-tutorial.runtimeconfig.json (164 bytes security) (deflated 25%)
-     adding: Microsoft.AspNetCore.Hosting.Abstractions.dll (164 bytes security) (deflated 48%)
-     adding: Microsoft.AspNetCore.Hosting.dll (164 bytes security) (deflated 54%)
-     adding: Microsoft.AspNetCore.Hosting.Server.Abstractions.dll (164 bytes security) (deflated 45%)
-     adding: Microsoft.AspNetCore.Http.Abstractions.dll (164 bytes security) (deflated 52%)
-     adding: Microsoft.AspNetCore.Http.dll (164 bytes security) (deflated 55%)
-     adding: Microsoft.AspNetCore.Http.Extensions.dll (164 bytes security) (deflated 50%)
-     adding: Microsoft.AspNetCore.Http.Features.dll (164 bytes security) (deflated 50%)
-     adding: Microsoft.AspNetCore.HttpOverrides.dll (164 bytes security) (deflated 47%)
-     adding: Microsoft.AspNetCore.Server.IISIntegration.dll (164 bytes security) (deflated 47%)
-     adding: Microsoft.AspNetCore.Server.Kestrel.dll (164 bytes security) (deflated 62%)
-     adding: Microsoft.AspNetCore.WebUtilities.dll (164 bytes security) (deflated 55%)
-     adding: Microsoft.Extensions.Configuration.Abstractions.dll (164 bytes security) (deflated 48%)
-     adding: Microsoft.Extensions.Configuration.dll (164 bytes security) (deflated 45%)
-     adding: Microsoft.Extensions.Configuration.EnvironmentVariables.dll (164 bytes security) (deflated 47%)
-     adding: Microsoft.Extensions.DependencyInjection.Abstractions.dll (164 bytes security) (deflated 55%)
-     adding: Microsoft.Extensions.DependencyInjection.dll (164 bytes security) (deflated 50%)
-     adding: Microsoft.Extensions.FileProviders.Abstractions.dll (164 bytes security) (deflated 46%)
-     adding: Microsoft.Extensions.FileProviders.Physical.dll (164 bytes security) (deflated 46%)
-     adding: Microsoft.Extensions.FileSystemGlobbing.dll (164 bytes security) (deflated 48%)
-     adding: Microsoft.Extensions.Logging.Abstractions.dll (164 bytes security) (deflated 55%)
-     adding: Microsoft.Extensions.Logging.dll (164 bytes security) (deflated 43%)
-     adding: Microsoft.Extensions.ObjectPool.dll (164 bytes security) (deflated 45%)
-     adding: Microsoft.Extensions.Options.dll (164 bytes security) (deflated 46%)
-     adding: Microsoft.Extensions.PlatformAbstractions.dll (164 bytes security) (deflated 45%)
-     adding: Microsoft.Extensions.Primitives.dll (164 bytes security) (deflated 49%)
-     adding: Microsoft.Net.Http.Headers.dll (164 bytes security) (deflated 52%)
-     adding: System.Diagnostics.Contracts.dll (164 bytes security) (deflated 46%)
-     adding: System.Diagnostics.StackTrace.dll (164 bytes security) (deflated 45%)
-     adding: System.Net.WebSockets.dll (164 bytes security) (deflated 47%)
-     adding: System.Runtime.CompilerServices.Unsafe.dll (164 bytes security) (deflated 42%)
-     adding: System.Text.Encodings.Web.dll (164 bytes security) (deflated 57%)
-     adding: web.config (164 bytes security) (deflated 39%)
+     adding: dotnet-core-tutorial.deps.json (144 bytes security) (deflated 83%)
+     adding: dotnet-core-tutorial.dll (144 bytes security) (deflated 60%)
+     adding: dotnet-core-tutorial.pdb (144 bytes security) (deflated 29%)
+     adding: dotnet-core-tutorial.runtimeconfig.json (144 bytes security) (deflated 27%)
+     adding: Microsoft.AspNetCore.Authentication.Abstractions.dll (144 bytes security) (deflated 50%)
+     adding: Microsoft.AspNetCore.Authentication.Core.dll (144 bytes security) (deflated 52%)
+     adding: Microsoft.AspNetCore.Hosting.Abstractions.dll (144 bytes security) (deflated 47%)
+     adding: Microsoft.AspNetCore.Hosting.dll (144 bytes security) (deflated 60%)
+     adding: Microsoft.AspNetCore.Hosting.Server.Abstractions.dll (144 bytes security) (deflated 44%)
+     adding: Microsoft.AspNetCore.Http.Abstractions.dll (144 bytes security) (deflated 54%)
+     adding: Microsoft.AspNetCore.Http.dll (144 bytes security) (deflated 54%)
+     adding: Microsoft.AspNetCore.Http.Extensions.dll (144 bytes security) (deflated 50%)
+     adding: Microsoft.AspNetCore.Http.Features.dll (144 bytes security) (deflated 51%)
+     adding: Microsoft.AspNetCore.HttpOverrides.dll (144 bytes security) (deflated 49%)
+     adding: Microsoft.AspNetCore.Server.IISIntegration.dll (144 bytes security) (deflated 46%)
+     adding: Microsoft.AspNetCore.Server.Kestrel.Core.dll (144 bytes security) (deflated 63%)
+     adding: Microsoft.AspNetCore.Server.Kestrel.dll (144 bytes security) (deflated 44%)
+     adding: Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll (144 bytes security) (deflated 54%)
+     adding: Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.dll (144 bytes security) (deflated 54%)
+     adding: Microsoft.AspNetCore.WebUtilities.dll (144 bytes security) (deflated 55%)
+     adding: Microsoft.Extensions.Configuration.Abstractions.dll (144 bytes security) (deflated 47%)
+     adding: Microsoft.Extensions.Configuration.dll (144 bytes security) (deflated 45%)
+     adding: Microsoft.Extensions.Configuration.EnvironmentVariables.dll (144 bytes security) (deflated 46%)
+     adding: Microsoft.Extensions.Configuration.FileExtensions.dll (144 bytes security) (deflated 46%)
+     adding: Microsoft.Extensions.DependencyInjection.Abstractions.dll (144 bytes security) (deflated 54%)
+     adding: Microsoft.Extensions.DependencyInjection.dll (144 bytes security) (deflated 51%)
+     adding: Microsoft.Extensions.FileProviders.Abstractions.dll (144 bytes security) (deflated 45%)
+     adding: Microsoft.Extensions.FileProviders.Physical.dll (144 bytes security) (deflated 46%)
+     adding: Microsoft.Extensions.FileSystemGlobbing.dll (144 bytes security) (deflated 49%)
+     adding: Microsoft.Extensions.Hosting.Abstractions.dll (144 bytes security) (deflated 45%)
+     adding: Microsoft.Extensions.Logging.Abstractions.dll (144 bytes security) (deflated 55%)
+     adding: Microsoft.Extensions.Logging.dll (144 bytes security) (deflated 48%)
+     adding: Microsoft.Extensions.ObjectPool.dll (144 bytes security) (deflated 45%)
+     adding: Microsoft.Extensions.Options.dll (144 bytes security) (deflated 48%)
+     adding: Microsoft.Extensions.Primitives.dll (144 bytes security) (deflated 49%)
+     adding: Microsoft.Net.Http.Headers.dll (144 bytes security) (deflated 53%)
+     adding: runtimes/ (144 bytes security) (stored 0%)
+     adding: System.Runtime.CompilerServices.Unsafe.dll (144 bytes security) (deflated 44%)
+     adding: System.Text.Encodings.Web.dll (144 bytes security) (deflated 57%)
+     adding: web.config (144 bytes security) (deflated 41%)
    C:\users\username\dotnet-core-tutorial\site> cd ../
    ```
 
@@ -327,7 +333,7 @@ You can download the source bundle here: [dotnet\-core\-tutorial\-bundle\.zip](s
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Upload and Deploy**\.
 
@@ -366,17 +372,17 @@ Launching an environment creates the following resources:
 All of these resources are managed by Elastic Beanstalk\. When you terminate your environment, Elastic Beanstalk terminates all the resources that it contains\.
 
 **Note**  
-The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see \.
+The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)\.
 
 ## Clean Up<a name="w3ab1c39c31c44"></a>
 
-When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as Amazon EC2 instances, database instances, load balancers, security groups, and alarms\. 
+When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 
 **To terminate your Elastic Beanstalk environment**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Actions**, and then choose **Terminate Environment**\.
 
@@ -408,10 +414,10 @@ In addition, you can terminate database resources that you created outside of yo
 
 ## Next Steps<a name="dotnet-core-tutorial-nextsteps"></a>
 
-As you continue to develop your application, you'll probably want to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The Elastic Beanstalk Command Line Interface \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
+As you continue to develop your application, you'll probably want to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
 
-If you use Visual Studio to develop your application, you can also use the AWS Toolkit for Visual Studio to deploy changed, manage your Elastic Beanstalk environments, and manage other AWS resources\. See  for more information\.
+If you use Visual Studio to develop your application, you can also use the AWS Toolkit for Visual Studio to deploy changed, manage your Elastic Beanstalk environments, and manage other AWS resources\. See [The AWS Toolkit for Visual Studio](dotnet-toolkit.md) for more information\.
 
-For developing and testing, you might want to use Elastic Beanstalk's functionality for adding a managed DB instance directly to your environment\. For instructions on setting up a database inside your environment, see \.
+For developing and testing, you might want to use Elastic Beanstalk's functionality for adding a managed DB instance directly to your environment\. For instructions on setting up a database inside your environment, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
 
-Finally, if you plan to use your application in a production environment, configure a custom domain name for your environment and enable HTTPS for secure connections\.
+Finally, if you plan to use your application in a production environment, [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.

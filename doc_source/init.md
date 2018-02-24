@@ -1,11 +1,11 @@
 # init<a name="init"></a>
 
 **Note**  
- This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see \. 
+ This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md)\. 
 
 ## Description<a name="initdescription"></a>
 
-Sets various default values for AWS Elastic Beanstalk environments created with eb, including your AWS credentials and region\. The values you set with `init` apply only to the current directory and repository\. You can override some defaults with operation options \(for example, use `-e` or `--environment-name` to target `` to a specific environment\)\.
+Sets various default values for AWS Elastic Beanstalk environments created with eb, including your AWS credentials and region\. The values you set with `init` apply only to the current directory and repository\. You can override some defaults with operation options \(for example, use `-e` or `--environment-name` to target `[branch](branch.md)` to a specific environment\)\.
 
 **Note**  
 Until you run the `init` command, the current running environment is unchanged\. Each time you run the `init` command, new settings get appended to the `config` file\.

@@ -5,7 +5,7 @@ This topic walks you through deploying an Elastic Beanstalk application with Ama
 ![\[Elastic Beanstalk and VPC Topology with Amazon RDS\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vpc-rds-topo-ngw.png)
 
 **Note**  
-If you haven't used a DB instance with your application before, try adding one to a test environment, and connecting to an external DB instance before adding VPC configuration to the mix\.
+If you haven't used a DB instance with your application before, try [adding one to a test environment](using-features.managing.db.md), and [connecting to an external DB instance](AWSHowTo.RDS.md) before adding VPC configuration to the mix\.
 
 To deploy an Elastic Beanstalk application with Amazon RDS inside a VPC using a NAT gateway, you need to complete the following:
 
@@ -93,7 +93,7 @@ You can view your subnet IDs by choosing **Subnets** in the [Amazon VPC console]
 
 ### Deploying with the AWS Toolkits, Eb, CLI, or API<a name="vpc-rds-new-options"></a>
 
-When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See  for more information\.
+When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md) for more information\.
 
 When you update the option settings, you will need to specify at least the following:
 

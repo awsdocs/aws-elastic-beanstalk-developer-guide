@@ -24,7 +24,7 @@ You can always launch a new environment using the same version later\. If you ha
 | --- | --- | 
 |  `--all`  |  Terminates the environment, application, and all resources\.  | 
 |  `--force`  |  Terminate the environment without prompting for confirmation\.  | 
-|  `--ignore-links`  |  Terminate the environment even if there are dependent environments with links to it\. See Compose Environments\.  | 
+|  `--ignore-links`  |  Terminate the environment even if there are dependent environments with links to it\. See [Compose Environments](ebcli-compose.md)\.  | 
 |  `--timeout`  |  The number of minutes before the command times out\.  | 
 
 ## Output<a name="eb3-terminateoutput"></a>

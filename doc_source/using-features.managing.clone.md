@@ -52,4 +52,4 @@ By default, `eb clone` creates the new environment with the latest available ver
 ~/workspace/my-app$ eb clone --exact
 ```
 
-For more information about this command, see eb clone\.
+For more information about this command, see [eb clone](eb3-clone.md)\.

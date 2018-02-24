@@ -2,7 +2,7 @@
 
 This page lists earlier versions of AWS Elastic Beanstalk's Single Container Docker and Multicontainer Docker platform configurations, before September 25, 2017, and the dates that each version was current\. Configurations that you used to launch or update an environment in the last 30 days remain available \(to the using account, in the used region\) even after they are no longer current\.
 
-See the Supported Platforms page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
+See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
 The following Elastic Beanstalk platform configurations for Docker were current between August 30, 2017 and September 24, 2017:
 

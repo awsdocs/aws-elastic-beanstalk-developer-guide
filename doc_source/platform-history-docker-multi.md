@@ -4,7 +4,7 @@ This page lists the previous versions of AWS Elastic Beanstalk's Multicontainer 
 
 For Multicontainer Docker platform configurations that were current earlier than September 25, 2017, see [Docker Platform Earlier History](platform-history-docker.md)\.
 
-See the Supported Platforms page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
+See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
 The following Elastic Beanstalk platform configurations for Multicontainer Docker were current between January 10, 2018 and January 18, 2018:
 

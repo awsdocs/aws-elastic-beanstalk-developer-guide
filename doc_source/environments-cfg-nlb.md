@@ -1,6 +1,6 @@
 # Configuring a Network Load Balancer<a name="environments-cfg-nlb"></a>
 
-If you've enabled load balancing, your environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Beanstalk supports a few Elastic Load Balancing types\. See the [Elastic Load Balancing User Guide](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/) to learn about them\. This topic describes the configuration of a Network Load Balancer\. To learn how to configure other load balancer types, see Classic Load Balancer and \.
+If you've [enabled load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Beanstalk supports a few Elastic Load Balancing types\. See the [Elastic Load Balancing User Guide](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/) to learn about them\. This topic describes the configuration of a Network Load Balancer\. To learn how to configure other load balancer types, see [Classic Load Balancer](using-features.managing.elb.md) and [Application Load Balancer](environments-cfg-applicationloadbalancer.md)\.
 
 ## Introduction<a name="environments-cfg-nlb-intro"></a>
 
@@ -14,7 +14,7 @@ A Network Load Balancer supports active health checks\. These checks are based o
 ## Getting Started<a name="environments-cfg-nlb-getstarted"></a>
 
 **Note**  
-You can set the load balancer type only during environment creation using the EB CLI, the Elastic Beanstalk APIs, or `.ebextensions`, such as the one in the example \.ebextensions/network\-load\-balancer\.config\. The console does not support this functionality\.
+You can set the load balancer type only during environment creation using the EB CLI, the Elastic Beanstalk APIs, or `.ebextensions`, such as the one in the example [\.ebextensions/network\-load\-balancer\.config](#network-load-balancer.config)\. The console does not support this functionality\.
 
 The EB CLI prompts you to choose a load balancer type when you run `eb create`\.
 
@@ -42,18 +42,18 @@ $ eb create test-env --elb-type network
 
 You can find settings related to Network Load Balancers in the following namespaces:
 
-+ `aws:elasticbeanstalk:environment` – Choose the load balancer type for the environment\. The value for a Network Load Balancer is `network`\.
++ `[aws:elasticbeanstalk:environment](command-options-general.md#command-options-general-elasticbeanstalkenvironment)` – Choose the load balancer type for the environment\. The value for a Network Load Balancer is `network`\.
 
-+ `aws:elbv2:loadbalancer` – Configure access logs and other settings that apply to the Network Load Balancer as a whole\.
++ `[aws:elbv2:loadbalancer](command-options-general.md#command-options-general-elbv2)` – Configure access logs and other settings that apply to the Network Load Balancer as a whole\.
 **Note**  
 The `ManagedSecurityGroup` and `SecurityGroups` settings in this namespace don't apply to a Network Load Balancer\.
 
-+ `aws:elbv2:listener` – Configure listeners on the Network Load Balancer\. These settings map to the settings in `aws:elb:listener` for Classic Load Balancers\.
++ `[aws:elbv2:listener](command-options-general.md#command-options-general-elbv2-listener)` – Configure listeners on the Network Load Balancer\. These settings map to the settings in `aws:elb:listener` for Classic Load Balancers\.
 
-+ `aws:elasticbeanstalk:environment:process` – Configure health checks and specify the port and protocol for the processes that run on your environment's instances\. The port and protocol settings map to the instance port and instance protocol settings in `aws:elb:listener` for a listener on a Classic Load Balancer\. Health check settings map to the settings in the `aws:elb:healthcheck` and `aws:elasticbeanstalk:application` namespaces\.
++ `[aws:elasticbeanstalk:environment:process](command-options-general.md#command-options-general-environmentprocess)` – Configure health checks and specify the port and protocol for the processes that run on your environment's instances\. The port and protocol settings map to the instance port and instance protocol settings in `aws:elb:listener` for a listener on a Classic Load Balancer\. Health check settings map to the settings in the `aws:elb:healthcheck` and `aws:elasticbeanstalk:application` namespaces\.
 
 **Example \.ebextensions/network\-load\-balancer\.config**  
-To get started with a Network Load Balancer, use a configuration file to set the load balancer type to `network`\.  
+To get started with a Network Load Balancer, use a [configuration file](ebextensions.md) to set the load balancer type to `network`\.  
 
 ```
 option_settings:
@@ -89,5 +89,5 @@ option_settings:
   aws:elasticbeanstalk:environment:process:https:
     Port: '443'
 ```
-The `DefaultProcess` option is named this way because of Application Load Balancers, which can have non\-default listeners on the same port for traffic to specific paths \(see  for details\)\. For a Network Load Balancer the option specifies the only target process for this listener\.  
+The `DefaultProcess` option is named this way because of Application Load Balancers, which can have non\-default listeners on the same port for traffic to specific paths \(see [Application Load Balancer](environments-cfg-applicationloadbalancer.md) for details\)\. For a Network Load Balancer the option specifies the only target process for this listener\.  
 In this example, we named the process `https` because it listens to secure \(HTTPS\) traffic\. The listener sends traffic to the process on the designated port using the TCP protocol, because a Network Load Balancer works only with TCP\. This is OK, because HTTP and HTTPS network traffic is implemented on top of TCP\.

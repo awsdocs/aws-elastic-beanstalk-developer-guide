@@ -23,7 +23,7 @@ You can change your environment type to a single\-instance or load\-balancing, a
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -33,7 +33,7 @@ You can change your environment type to a single\-instance or load\-balancing, a
 1. From the **Environment Type** list, select the type of environment that you want\.  
 ![\[The Auto Scaling group section of the modify capacity page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-capacity.png)
 
-1. If your environment is in a VPC, select subnets to place Elastic Load Balancing and Amazon EC2 instances in\. Each Availability Zone that your application runs in must have both\. See  for details\.
+1. If your environment is in a VPC, select subnets to place Elastic Load Balancing and Amazon EC2 instances in\. Each Availability Zone that your application runs in must have both\. See [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md) for details\.
 
 1. Choose **Save**\.
 

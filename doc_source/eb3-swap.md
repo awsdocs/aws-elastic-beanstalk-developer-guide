@@ -24,7 +24,7 @@ The *environment\_name* is the environment for which you want a different CNAME\
 |  Name  |  Description  | 
 | --- | --- | 
 |  `-n` or `--destination_name`  |  Specifies the name of the environment with which you want to swap CNAMEs\. If you run `eb swap` without this option, then EB CLI prompts you to choose from a list of your environments\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-swapoutput"></a>
 

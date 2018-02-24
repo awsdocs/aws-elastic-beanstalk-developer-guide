@@ -2,15 +2,15 @@
 
 You can use a deployment manifest to tell Elastic Beanstalk how to deploy your application\. For example, instead of using `MSDeploy` to generate a source bundle for a single ASP\.NET application that runs at the root path of your website, you can use a manifest file to run multiple applications at different paths, or tell Elastic Beanstalk to deploy and run the app with ASP\.NET Core\. You can also use a deployment manifest to configure an application pool in which to run your applications\.
 
-Deployment manifests add support for \.NET Core applications to Elastic Beanstalk\. You can deploy a \.NET Standard application without a deployment manifest, but \.NET Core applications require a deployment manifest to run on Elastic Beanstalk\. When you use a deployment manifest, you create a site archive for each application and then bundle the site archives in a second ZIP archive that contains the deployment manifest\.
+Deployment manifests add support for [\.NET Core applications](#dotnet-manifest-dotnetcore) to Elastic Beanstalk\. You can deploy a \.NET Standard application without a deployment manifest, but \.NET Core applications require a deployment manifest to run on Elastic Beanstalk\. When you use a deployment manifest, you create a site archive for each application and then bundle the site archives in a second ZIP archive that contains the deployment manifest\.
 
-Deployment manifests also add the ability to run multiple applications at different paths\. A deployment manifest defines an array of deployment targets, each with a site archive and a path at which IIS should run it\. For example, you could run a web API at the `/api` path to serve asynchronous requests, and a web app at the root path that consumes the API\.
+Deployment manifests also add the ability to [run multiple applications at different paths](#dotnet-manifest-multiapp)\. A deployment manifest defines an array of deployment targets, each with a site archive and a path at which IIS should run it\. For example, you could run a web API at the `/api` path to serve asynchronous requests, and a web app at the root path that consumes the API\.
 
-You can also use a deployment manifest to create application pools in IIS in which to run one or more applications\. You can configure an application pool to restart your applications periodically, run 32\-bit applications, or use a specific version of the \.NET Framework runtime\.
+You can also use a deployment manifest to [create application pools in IIS](#dotnet-manifest-apppool) in which to run one or more applications\. You can configure an application pool to restart your applications periodically, run 32\-bit applications, or use a specific version of the \.NET Framework runtime\.
 
-For full customization, you can write your own deployment scripts in Windows PowerShell and tell Elastic Beanstalk which scripts to run to install, uninstall, and restart your application\.
+For full customization, you can [write your own deployment scripts](#dotnet-manifest-custom) in Windows PowerShell and tell Elastic Beanstalk which scripts to run to install, uninstall, and restart your application\.
 
-Deployment manifests and related features require a Windows Server platform configuration version 1\.2\.0 or newer\.
+Deployment manifests and related features require a Windows Server platform configuration [version 1\.2\.0 or newer](dotnet-v2migration.md)\.
 
 
 + [\.NET Core Apps](#dotnet-manifest-dotnetcore)
@@ -23,7 +23,7 @@ Deployment manifests and related features require a Windows Server platform conf
 You can use a deployment manifest to run \.NET Core applications on Elastic Beanstalk\. \.NET Core is a cross\-platform version of \.NET that comes with a commandline tool \(`dotnet`\) that you can use to generate an application, run it locally, and prepare it for publishing\.
 
 **Note**  
-See  for a tutorial and sample application that use a deployment manifest to run a \.NET Core application on Elastic Beanstalk\.
+See [Deploying an ASP\.NET Core Application with AWS Elastic Beanstalk](dotnet-core-tutorial.md) for a tutorial and sample application that use a deployment manifest to run a \.NET Core application on Elastic Beanstalk\.
 
 To run a \.NET Core application on Elastic Beanstalk, run `dotnet publish` and package the output in a ZIP archive, not including any containing directories\. Place the site archive in a source bundle with a deployment manifest with a deployment target of type `aspNetCoreWeb`\.
 
@@ -100,13 +100,13 @@ The site archive contains the compiled application code, dependencies, and `web.
 `-- web.config
 ```
 
-See the tutorial for a full example\.
+See [the tutorial](dotnet-core-tutorial.md) for a full example\.
 
 ## Run Multiple Applications<a name="dotnet-manifest-multiapp"></a>
 
 You can run multiple applications with a deployment manifest by defining multiple deployment targets\.
 
-The following deployment manifest runs a \.NET Standard web application at the root path using MS Deploy, and an ASP\.NET Core web application at `/admin`\. The front\-end web application is a standard MS Deploy source bundle named `webapp.zip`, and the admin application is a \.NET Core site archive named `admin.zip`\.
+The following deployment manifest runs a \.NET Standard web application at the root path using MS Deploy, and an ASP\.NET Core web application at `/admin`\. The front\-end web application is a standard [MS Deploy source bundle](applications-sourcebundle.md#using-features.deployment.source.dotnet) named `webapp.zip`, and the admin application is a \.NET Core site archive named `admin.zip`\.
 
 **Example aws\-windows\-deployment\-manifest\.json \- multiple apps**  
 
@@ -189,7 +189,7 @@ Each deployment in the `deployments` block specifies an archive, a path to run i
 
 For even more control, you can completely customize an application deployment by defining a *custom deployment*\.
 
-The following deployment manifest tells Elastic Beanstalk to run an `install` script named `siteInstall.ps1` to install the website during instance launch and deployments, run an `uninstall` script prior to installing a new version during a deployment, and a `restart` script to restart the application when you choose Restart App Server in the management console\.
+The following deployment manifest tells Elastic Beanstalk to run an `install` script named `siteInstall.ps1` to install the website during instance launch and deployments, run an `uninstall` script prior to installing a new version during a deployment, and a `restart` script to restart the application when you choose [Restart App Server](environments-console.md#environments-dashboard-actions) in the management console\.
 
 **Example aws\-windows\-deployment\-manifest\.json \- custom deployment**  
 

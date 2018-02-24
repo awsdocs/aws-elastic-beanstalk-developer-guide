@@ -4,7 +4,7 @@ This section walks you through deploying a sample application to Elastic Beansta
 
 ## Prerequisites<a name="nodejs-express-tutorial-prerequisites"></a>
 
-This tutorial requires the Node\.js language and its package manager, NPM\. See  for details on setting up your local development environment\.
+This tutorial requires the Node\.js language and its package manager, NPM\. See [Setting Up your Node\.js Development Environment](nodejs-devenv.md) for details on setting up your local development environment\.
 
 ## Install Express and Generate a Project<a name="create_deploy_nodejs_express_setup"></a>
 
@@ -139,7 +139,7 @@ After you have created an environment with a sample application, you can update 
        NodeCommand: "npm start"
    ```
 
-   For more information, see \.
+   For more information, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.
 
 1. Stage the files:
 
@@ -170,7 +170,7 @@ Next, let's update the Express application to serve static files and add a new p
        /public: public
    ```
 
-   This setting configures the proxy server to serve files in the `public` folder at the `/public` path of the application\. Serving files statically from the proxy reduces the load on your application\.
+   This setting configures the proxy server to serve files in the `public` folder at the `/public` path of the application\. [Serving files statically](create_deploy_nodejs.container.md#nodejs-namespaces) from the proxy reduces the load on your application\.
 
 1. Comment out the static mapping in `node-express/app.js`\. This step is not required, but it is a good test to confirm that static mappings are configured correctly\.
 

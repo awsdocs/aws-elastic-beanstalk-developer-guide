@@ -1,6 +1,6 @@
 # Advanced AWS Elastic Beanstalk Environment Configuration<a name="beanstalk-environment-configuration-advanced"></a>
 
-When you create an AWS Elastic Beanstalk environment, Elastic Beanstalk provisions and configures all of the AWS resources required to run and support your application\. In addition to configuring your environment's metadata and update behavior, you can customize these resources by providing values for configuration options\. For example, you may want to add an Amazon SQS queue and an alarm on queue depth, or you might want to add an Amazon ElastiCache cluster\.
+When you create an AWS Elastic Beanstalk environment, Elastic Beanstalk provisions and configures all of the AWS resources required to run and support your application\. In addition to configuring your environment's metadata and update behavior, you can customize these resources by providing values for [configuration options](command-options.md)\. For example, you may want to add an Amazon SQS queue and an alarm on queue depth, or you might want to add an Amazon ElastiCache cluster\.
 
 Most of the configuration options have default values that are applied automatically by Elastic Beanstalk\. You can override these defaults with configuration files, saved configurations, command line options, or by directly calling the Elastic Beanstalk API\. The EB CLI and Elastic Beanstalk console also apply recommended values for some options\.
 

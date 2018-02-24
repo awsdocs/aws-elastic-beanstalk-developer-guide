@@ -1,6 +1,6 @@
 # Configure the EB CLI<a name="eb-cli3-configuration"></a>
 
-After installing the EB CLI, you are ready to configure your project directory and the EB CLI by running `eb init`\.
+After [installing the EB CLI](eb-cli3-install.md), you are ready to configure your project directory and the EB CLI by running `eb init`\.
 
 The following example shows the configuration steps when running `eb init` for the first time in a project folder named `eb`\.
 
@@ -21,11 +21,13 @@ The following example shows the configuration steps when running `eb init` for t
    8) ap-southeast-2 : Asia Pacific (Sydney)
    9) ap-northeast-1 : Asia Pacific (Tokyo)
    10) ap-northeast-2 : Asia Pacific (Seoul)
-   11) sa-east-1 : South America (Sao Paulo)
+   11) sa-east-1 : South America (São Paulo)
    12) cn-north-1 : China (Beijing)
-   13) us-east-2 : US East (Columbus)
-   14) ca-central-1 : Canada (Central)
-   15) eu-west-2 : EU (London)
+   13) cn-northwest-1 : China (Ningxia)
+   14) us-east-2 : US East (Ohio)
+   15) ca-central-1 : Canada (Central)
+   16) eu-west-2 : EU (London)
+   17) eu-west-3 : EU (Paris)
    (default is 3): 3
    ```
 
@@ -87,7 +89,7 @@ The following example shows the configuration steps when running `eb init` for t
    (default is 1): 1
    ```
 
-Your EB CLI installation is now configured and ready to use\. See  for instructions on creating and working with an Elastic Beanstalk environment\.
+Your EB CLI installation is now configured and ready to use\. See [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md) for instructions on creating and working with an Elastic Beanstalk environment\.
 
 
 + [Ignoring Files Using \.ebignore](#eb-cli3-ebignore)
@@ -109,7 +111,7 @@ In Windows, adding `.ebignore` causes the EB CLI to follow symbolic links and in
 
 ## Using Named Profiles<a name="eb-cli3-profile"></a>
 
-If you store your credentials as a named profile in a `credentials` or `config` file, you can use the `--profile` option to explicitly specify a profile\. For example, the following command creates a new application using the `user2` profile\.
+If you store your credentials as a named profile in a `credentials` or `config` file, you can use the [`--profile`](eb3-cmd-options.md) option to explicitly specify a profile\. For example, the following command creates a new application using the `user2` profile\.
 
 ```
 $ eb init --profile user2
@@ -138,7 +140,7 @@ deploy:
   artifact: path/to/buildartifact.zip
 ```
 
-If you configure the EB CLI in your Git repository, and you don't commit the artifact to source, use the `--staged` option to deploy the latest build\.
+If you configure the EB CLI in your [Git repository](eb3-cli-git.md), and you don't commit the artifact to source, use the `--staged` option to deploy the latest build\.
 
 ```
 ~/eb$ eb deploy --staged
@@ -160,7 +162,7 @@ The EB CLI looks for credentials and configuration settings in the following ord
 
 1. **Legacy EB CLI configuration file** – Located at `~/.elasticbeanstalk/config` on Linux and OS X systems or `C:\Users\USERNAME\.elasticbeanstalk/config` on Windows systems\.
 
-1. **Instance profile credentials** – These credentials can be used on Amazon EC2 instances with an assigned instance role, and are delivered through the Amazon EC2 metadata service\. The instance profile must have permission to use Elastic Beanstalk\.
+1. **Instance profile credentials** – These credentials can be used on Amazon EC2 instances with an assigned instance role, and are delivered through the Amazon EC2 metadata service\. The [instance profile](concepts-roles-instance.md) must have permission to use Elastic Beanstalk\.
 
 If the credentials file contains a named profile with the name "eb\-cli", the EB CLI will prefer that profile over the default profile\. If no profiles are found, or a profile is found but does not have permission to use Elastic Beanstalk, the EB CLI prompts you to enter keys\.
 

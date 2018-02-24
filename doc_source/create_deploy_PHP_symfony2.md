@@ -86,7 +86,7 @@ Configuration files should conform to YAML or JSON formatting standards\. For mo
 
 ## Configure Elastic Beanstalk<a name="create_deploy_PHP_eb_init"></a>
 
-The following instructions use the Elastic Beanstalk command line interface \(EB CLI\) to configure an Elastic Beanstalk application repository in your local project directory\.
+The following instructions use the [Elastic Beanstalk command line interface](eb-cli3.md) \(EB CLI\) to configure an Elastic Beanstalk application repository in your local project directory\.
 
 **To configure Elastic Beanstalk**
 

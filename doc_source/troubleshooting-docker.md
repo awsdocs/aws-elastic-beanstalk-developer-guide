@@ -14,4 +14,4 @@ The `dockerrun.aws.json` provides an invalid EC2 key pair and/or S3 bucket for t
 
 **Event:** *Activity execution failed, because: WARNING: Invalid auth configuration file*
 
-Your authentication file \(`config.json`\) is not formatted correctly\. See 
+Your authentication file \(`config.json`\) is not formatted correctly\. See [Using Images From a Private Repository](create_deploy_docker.container.console.md#docker-images-private)

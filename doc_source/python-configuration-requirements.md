@@ -13,4 +13,4 @@ In your development environment, you can use the `pip freeze` command to generat
 ~/my-app$ pip freeze > requirements.txt
 ```
 
-To ensure that your requirements file only contains packages that are actually used by your application, use a virtual environment that only has those packages installed\. Outside of a virtual environment, the output of `pip freeze` will include all pip packages installed on your development machine, including those that came with your operating system\.
+To ensure that your requirements file only contains packages that are actually used by your application, use a [virtual environment](create-deploy-python-common-steps.md#python-common-setup-venv) that only has those packages installed\. Outside of a virtual environment, the output of `pip freeze` will include all pip packages installed on your development machine, including those that came with your operating system\.

@@ -44,7 +44,7 @@ When you deploy your application, Elastic Beanstalk configures a number of AWS c
 The following example sets the `JDBC_CONNECTION_STRING` system property in the AWS Toolkit for Eclipse\. After you set this properties, it becomes available to your Elastic Beanstalk application as system properties called `JDBC_CONNECTION_STRING`\.
 
 **Note**  
- The AWS Toolkit for Eclipse does not yet support modifying environment configuration, including system properties, for environments in a VPC\. Unless you have an older account using EC2 Classic, you must use the AWS Management Console \(described in the next section\) or the EB CLI 
+ The AWS Toolkit for Eclipse does not yet support modifying environment configuration, including system properties, for environments in a VPC\. Unless you have an older account using EC2 Classic, you must use the AWS Management Console \(described in the next section\) or the [EB CLI](eb-cli3.md) 
 
 **Note**  
 Environment configuration settings can contain any printable ASCII character except the grave accent \(`, ASCII 96\) and cannot exceed 200 characters in length\.

@@ -1,10 +1,10 @@
 # Terminating HTTPS on Amazon EC2 Instances Running \.NET<a name="SSLNET.SingleInstance"></a>
 
-The following configuration file creates and runs a Windows PowerShell script that performs the following tasks:
+The following [configuration file](ebextensions.md) creates and runs a Windows PowerShell script that performs the following tasks:
 
 + Checks for an existing HTTPS certificate binding to port 443
 
-+ Gets the PFX certificate and password from an Amazon S3 bucket
++ Gets the [PFX certificate](configuring-https-ssl.md) and password from an Amazon S3 bucket
 
   Add an `AmazonS3ReadOnlyAccess` policy to the `aws-elasticbeanstalk-service-role` to access the SSL certificate and password files on the Amazon S3 bucket\.
 
@@ -68,7 +68,7 @@ commands:
     command: powershell -NoProfile -ExecutionPolicy Bypass -file C:\\certs\\install-cert.ps1
 ```
 
-In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation function and adds a rule to it\.
+In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation [function](ebextensions-functions.md) and adds a rule to it\.
 
 **Example \.ebextensions/https\-instance\-single\.config**  
 
@@ -84,4 +84,4 @@ Resources:
       CidrIp: 0.0.0.0/0
 ```
 
-For a load\-balanced environment, you configure the load balancer to either pass secure traffic through untouched, or decrypt and re\-encrypt for end\-to\-end encryption\.
+For a load\-balanced environment, you configure the load balancer to either [pass secure traffic through untouched](https-tcp-passthrough.md), or [decrypt and re\-encrypt](configuring-https-endtoend.md) for end\-to\-end encryption\.

@@ -26,7 +26,7 @@ Legacy platforms do not support the following features:
 
 ## Why are some container types marked legacy?<a name="using-features.migration.why"></a>
 
-Some older platform configurations do not support the latest Elastic Beanstalk features\. These configurations are marked **\(legacy\)** on the environment configuration page in the AWS Management Console\. 
+Some older platform configurations do not support the latest Elastic Beanstalk features\. These configurations are marked **\(legacy\)** on the environment configuration page in the AWS Management Console\. <a name="using-features.migration-proc"></a>
 
 **To check if you are using a legacy container type**
 

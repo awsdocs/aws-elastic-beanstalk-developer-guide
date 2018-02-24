@@ -1,18 +1,18 @@
 # Using the AWS Elastic Beanstalk PHP Platform<a name="create_deploy_PHP.container"></a>
 
-AWS Elastic Beanstalk supports a number of platforms for different versions of the PHP programming language\. These platforms support PHP web applications that can run alone or under Composer\. Learn more at the Supported Platforms topic\. 
+AWS Elastic Beanstalk supports a number of platforms for different versions of the PHP programming language\. These platforms support PHP web applications that can run alone or under Composer\. Learn more at the [Supported Platforms](concepts.platforms.md#concepts.platforms.PHP) topic\. 
 
-Elastic Beanstalk provides configuration options that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application, enable log rotation to Amazon S3, and set common PHP initialization settings\.
+Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application, enable log rotation to Amazon S3, and set common PHP initialization settings\.
 
-Platform\-specific configuration options are available in the AWS Management Console for modifying the configuration of a running environment\. To avoid losing your environment's configuration when you terminate it, you can use saved configurations to save your settings and later apply them to another environment\.
+Platform\-specific configuration options are available in the AWS Management Console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
 
-To save settings in your source code, you can include configuration files\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
+To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
 
-If you use Composer, you can include a `composer.json` file in your source bundle to install packages during deployment\.
+If you use Composer, you can [include a `composer.json` file](php-configuration-composer.md) in your source bundle to install packages during deployment\.
 
-For advanced PHP configuration and PHP settings that are not provided as configuration options, you can use configuration files to provide an `INI` file that can extend and override the default settings applied by Elastic Beanstalk, or install additional extensions\.
+For advanced PHP configuration and PHP settings that are not provided as configuration options, you can [use configuration files to provide an `INI` file](php-configuration-phpini.md) that can extend and override the default settings applied by Elastic Beanstalk, or install additional extensions\.
 
-Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment specific settings in the console\. For more information about precedence, and other methods of changing settings, see \.
+Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
 
 ## Configuring your PHP Environment<a name="php-console"></a>
 
@@ -22,7 +22,7 @@ You can use the AWS Management Console to enable log rotation to Amazon S3, conf
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -60,15 +60,15 @@ Inside the PHP environment running in Elastic Beanstalk, these values are writte
 $endpoint = $_SERVER['API_ENDPOINT'];
 ```
 
-See  for more information\.
+See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
 
 ## The aws:elasticbeanstalk:container:php:phpini Namespace<a name="php-namespaces"></a>
 
-You can use a configuration file to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
+You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
 The PHP platform defines options in the `aws:elasticbeanstalk:container:php:phpini` namespace, including one that is not available in the AWS Management Console\. `composer_options` sets custom options to use when installing dependencies using Composer through `composer.phar install`\. For more information including available options, go to [http://getcomposer\.org/doc/03\-cli\.md\#install](http://getcomposer.org/doc/03-cli.md#install)\.
 
-The following example configuration file shows settings for each of the options available in this namespace:
+The following example [configuration file](ebextensions.md) shows settings for each of the options available in this namespace:
 
 **Example \.ebextensions/php\-settings\.config**  
 
@@ -84,4 +84,4 @@ option_settings:
     composer_options: vendor/package
 ```
 
-Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See  for more information\.
+Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration Options](command-options.md) for more information\.

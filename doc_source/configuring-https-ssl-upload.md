@@ -2,7 +2,7 @@
 
 To use your certificate with your Elastic Beanstalk environment's load balancer, upload the certificate and private key to AWS Identity and Access Management \(IAM\)\. You can use a certificate stored in IAM with Elastic Load Balancing load balancers and CloudFront distributions\.
 
-You can use the AWS Command Line Interface \(AWS CLI\) to upload your certificate\. The following command uploads a self\-signed certificate named *https\-cert\.crt* with a private key named *private\-key\.pem*:
+You can use the [AWS Command Line Interface](chapter-devenv.md#devenv-awscli) \(AWS CLI\) to upload your certificate\. The following command uploads a self\-signed certificate named *https\-cert\.crt* with a private key named *private\-key\.pem*:
 
 ```
 $ aws iam upload-server-certificate --server-certificate-name elastic-beanstalk-x509 --certificate-body file://https-cert.crt --private-key file://private-key.pem

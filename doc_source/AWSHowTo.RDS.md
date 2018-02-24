@@ -1,9 +1,9 @@
 # Using Elastic Beanstalk with Amazon Relational Database Service<a name="AWSHowTo.RDS"></a>
 
-AWS Elastic Beanstalk provides support for running Amazon Relational Database Service \(Amazon RDS\) instances in your Elastic Beanstalk environment\. This works great for development and testing environments\. However, it isn't ideal for a production environment because it ties the lifecycle of the database instance to the lifecycle of your application's environment\.
+AWS Elastic Beanstalk provides support for [running Amazon Relational Database Service \(Amazon RDS\) instances in your Elastic Beanstalk environment](using-features.managing.db.md)\. This works great for development and testing environments\. However, it isn't ideal for a production environment because it ties the lifecycle of the database instance to the lifecycle of your application's environment\.
 
 **Note**  
-If you haven't used a DB instance with your application before, try adding one to a test environment with the Elastic Beanstalk console first\. This lets you verify that your application is able to read environment properties, construct a connection string, and connect to a DB instance before you add VPCs and security group configuration to the mix\. See  for details\.
+If you haven't used a DB instance with your application before, try adding one to a test environment with the Elastic Beanstalk console first\. This lets you verify that your application is able to read environment properties, construct a connection string, and connect to a DB instance before you add VPCs and security group configuration to the mix\. See [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md) for details\.
 
 To decouple your database instance from your environment, you can run a database instance in Amazon RDS and configure your application to connect to it on launch\. This enables you to connect multiple environments to a database, terminate an environment without affecting the database, and perform seamless updates with blue/green deployments\.
 
@@ -14,7 +14,7 @@ You can connect your environment to a database by adding a rule to your database
 
 After launching your database instance and configuring security groups, you can pass the connection information \(endpoint, password, etc\.\) to your application by using environment properties, the same mechanism that Elastic Beanstalk uses when you run a database instance in your environment\.
 
-For additional security, you can store your connection information in Amazon S3, and configure Elastic Beanstalk to retrieve it during deployment\. With configuration files \(`.ebextensions`\), you can configure the instances in your environment to securely retrieve files from Amazon S3 when you deploy your application\.
+For additional security, you can store your connection information in Amazon S3, and configure Elastic Beanstalk to retrieve it during deployment\. With [configuration files \(`.ebextensions`\)](ebextensions.md), you can configure the instances in your environment to securely retrieve files from Amazon S3 when you deploy your application\.
 
 
 + [Launching and Connecting to an External Amazon RDS Instance in a Default VPC](#rds-external-defaultvpc)
@@ -25,7 +25,7 @@ For additional security, you can store your connection information in Amazon S3,
 
 To use an external database with an application running in Elastic Beanstalk, first launch a DB instance with Amazon RDS\. Any instance that you launch with Amazon RDS is completely independent of Elastic Beanstalk and your Elastic Beanstalk environments, and is not dependent on Elastic Beanstalk for configuration\. This means that you can use any DB engine and instance type supported by Amazon RDS, even those not used by Elastic Beanstalk\.
 
-The following procedures describe the process for a [default VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html)\. The process is the same if you are using a custom VPC\. The only additional requirements are that your environment and DB instance are in the same subnet, or in subnets that are allowed to communicate with each other\. See  for details on configuring a custom VPC for use with Elastic Beanstalk\.
+The following procedures describe the process for a [default VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html)\. The process is the same if you are using a custom VPC\. The only additional requirements are that your environment and DB instance are in the same subnet, or in subnets that are allowed to communicate with each other\. See [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md) for details on configuring a custom VPC for use with Elastic Beanstalk\.
 
 **To launch an RDS DB instance in a default VPC**
 
@@ -103,7 +103,7 @@ In a custom VPC, use the security group's group ID instead of its group name\.
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -115,13 +115,13 @@ In a custom VPC, use the security group's group ID instead of its group name\.
 
 1. Read the warning, and then choose **Save**\.
 
-Next, pass the connection information to your environment by using environment properties\. When you add a DB instance to your environment with the Elastic Beanstalk console, Elastic Beanstalk uses environment properties like **RDS\_HOSTNAME** to pass connection information to your application\. You can use the same properties, which will let you use the same application code with both integrated DB instances and external DB instances, or choose your own property names\.
+Next, pass the connection information to your environment by using environment properties\. When you [add a DB instance to your environment](using-features.managing.db.md) with the Elastic Beanstalk console, Elastic Beanstalk uses environment properties like **RDS\_HOSTNAME** to pass connection information to your application\. You can use the same properties, which will let you use the same application code with both integrated DB instances and external DB instances, or choose your own property names\.
 
 **To configure environment properties for an Amazon RDS DB instance**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -154,19 +154,19 @@ Next, pass the connection information to your environment by using environment p
 
 If you haven't programmed your application to read environment properties and construct a connection string yet, see the following language\-specific topics for instructions:
 
-+ Java SE – 
++ Java SE – [Connecting to a Database \(Java SE Platforms\)](java-rds.md#java-rds-javase)
 
-+ Java with Tomcat – 
++ Java with Tomcat – [Connecting to a Database \(Tomcat Platforms\)](java-rds.md#java-rds-tomcat)
 
-+ Node\.js – 
++ Node\.js – [Connecting to a Database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
 
-+ \.NET – 
++ \.NET – [Connecting to a Database](create_deploy_NET.rds.md#dotnet-rds-connect)
 
-+ PHP – 
++ PHP – [Connecting to a Database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
 
-+ Python – 
++ Python – [Connecting to a Database](create-deploy-python-rds.md#python-rds-connect)
 
-+ Ruby – 
++ Ruby – [Connecting to a Database](create_deploy_Ruby.rds.md#ruby-rds-connect)
 
 Finally, depending on when your application reads environment variables, you might need to restart the application server on the instances in your environment\.
 
@@ -174,7 +174,7 @@ Finally, depending on when your application reads environment variables, you mig
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Actions**, and then choose **Restart App Server\(s\)**\.
 
@@ -255,7 +255,7 @@ Next, add the bridge security group to your running environment\. This procedure
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -267,13 +267,13 @@ Next, add the bridge security group to your running environment\. This procedure
 
 1. Read the warning, and then choose **Save**\.
 
-Next, pass the connection information to your environment by using environment properties\. When you add a DB instance to your environment with the Elastic Beanstalk console, Elastic Beanstalk uses environment properties like **RDS\_HOSTNAME** to pass connection information to your application\. You can use the same properties, which will let you use the same application code with both integrated DB instances and external DB instances, or choose your own property names\.
+Next, pass the connection information to your environment by using environment properties\. When you [add a DB instance to your environment](using-features.managing.db.md) with the Elastic Beanstalk console, Elastic Beanstalk uses environment properties like **RDS\_HOSTNAME** to pass connection information to your application\. You can use the same properties, which will let you use the same application code with both integrated DB instances and external DB instances, or choose your own property names\.
 
 **To configure environment properties**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -298,19 +298,19 @@ Next, pass the connection information to your environment by using environment p
 
 If you haven't programmed your application to read environment properties and construct a connection string yet, see the following language\-specific topics for instructions:
 
-+ Java SE – 
++ Java SE – [Connecting to a Database \(Java SE Platforms\)](java-rds.md#java-rds-javase)
 
-+ Java with Tomcat – 
++ Java with Tomcat – [Connecting to a Database \(Tomcat Platforms\)](java-rds.md#java-rds-tomcat)
 
-+ Node\.js – 
++ Node\.js – [Connecting to a Database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
 
-+ \.NET – 
++ \.NET – [Connecting to a Database](create_deploy_NET.rds.md#dotnet-rds-connect)
 
-+ PHP – 
++ PHP – [Connecting to a Database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
 
-+ Python – 
++ Python – [Connecting to a Database](create-deploy-python-rds.md#python-rds-connect)
 
-+ Ruby – 
++ Ruby – [Connecting to a Database](create_deploy_Ruby.rds.md#ruby-rds-connect)
 
 Finally, depending on when your application reads environment variables, you might need to restart the application server on the instances in your environment\.
 
@@ -318,13 +318,13 @@ Finally, depending on when your application reads environment variables, you mig
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Actions**, and then choose **Restart App Server\(s\)**\.
 
 ## Storing the Connection String in Amazon S3<a name="rds-external-credentials"></a>
 
-Providing connection information to your application with environment properties is a good way to keep passwords out of your code, but it's not a perfect solution\. Environment properties are discoverable in the environment management console, and can be viewed by any user that has permission to [describe configuration settings](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationSettings.html) on your environment\. Depending on the platform, environment properties may also appear in instance logs\.
+Providing connection information to your application with environment properties is a good way to keep passwords out of your code, but it's not a perfect solution\. Environment properties are discoverable in the [environment management console](environments-console.md), and can be viewed by any user that has permission to [describe configuration settings](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationSettings.html) on your environment\. Depending on the platform, environment properties may also appear in [instance logs](using-features.logging.md)\.
 
 You can lock down your connection information by storing it in an Amazon S3 bucket that you control\. The basic steps are as follows:
 
@@ -362,9 +362,9 @@ The highlighted portions of the URL correspond to the endpoint, port, DB name, u
 
 1. Follow the prompts to upload the file\.
 
-By default, your account owns the file and has permission to manage it, but IAM users and roles do not unless you grant them access explicitly\. Grant the instances in your Elastic Beanstalk environment by adding a policy to the instance profile\.
+By default, your account owns the file and has permission to manage it, but IAM users and roles do not unless you grant them access explicitly\. Grant the instances in your Elastic Beanstalk environment by adding a policy to the [instance profile](concepts-roles-instance.md)\.
 
-The default instance is named `aws-elasticbeanstalk-ec2-role`\. If you're not sure what your instance profile is named, you can find it on the **Configuration** page in the environment management console\.
+The default instance is named `aws-elasticbeanstalk-ec2-role`\. If you're not sure what your instance profile is named, you can find it on the **Configuration** page in the [environment management console](using-features.managing.ec2.md)\.
 
 **To add permissions to the instance profile**
 
@@ -398,7 +398,7 @@ The default instance is named `aws-elasticbeanstalk-ec2-role`\. If you're not su
 
    Replace the bucket and object names with the names of your bucket and object\.
 
-Next, add a configuration file to your source code that tells Elastic Beanstalk to download the file from Amazon S3 during deployment\.
+Next, add a [configuration file](ebextensions.md) to your source code that tells Elastic Beanstalk to download the file from Amazon S3 during deployment\.
 
 `~/my-app/.ebextensions/database.config`
 
@@ -427,16 +427,16 @@ Deploy your application with the configuration file in `.ebextensions` folder at
 
 Finally, add code to your application to read the JSON file and use the connection string to connect to the database\. See the following language\-specific topics for more information:
 
-+ Java SE – 
++ Java SE – [Connecting to a Database \(Java SE Platforms\)](java-rds.md#java-rds-javase)
 
-+ Java with Tomcat – 
++ Java with Tomcat – [Connecting to a Database \(Tomcat Platforms\)](java-rds.md#java-rds-tomcat)
 
-+ Node\.js – 
++ Node\.js – [Connecting to a Database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
 
-+ \.NET – 
++ \.NET – [Connecting to a Database](create_deploy_NET.rds.md#dotnet-rds-connect)
 
-+ PHP – 
++ PHP – [Connecting to a Database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
 
-+ Python – 
++ Python – [Connecting to a Database](create-deploy-python-rds.md#python-rds-connect)
 
-+ Ruby – 
++ Ruby – [Connecting to a Database](create_deploy_Ruby.rds.md#ruby-rds-connect)

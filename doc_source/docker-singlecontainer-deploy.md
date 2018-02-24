@@ -2,7 +2,7 @@
 
 Single container Docker environments can be launched from a Dockerfile \(which describes an image to build\), a Dockerrun\.aws\.json file \(which specifies an image to use and additional Elastic Beanstalk configuration options\), or both\. These configuration files can be bundled with source code and deployed in a ZIP file\.
 
-Get started with one of the following example applications, or see  for details on authoring Docker configuration files for a single container environment\.
+Get started with one of the following example applications, or see [Single Container Docker Configuration](create_deploy_docker_image.md) for details on authoring Docker configuration files for a single container environment\.
 
 **To launch an environment \(console\)**
 
@@ -20,7 +20,7 @@ Get started with one of the following example applications, or see  for details 
 
 1. Review the available settings and choose **Create app**\.
 
-For detailed instructions on configuring and using the EB CLI, see  and \.
+For detailed instructions on configuring and using the EB CLI, see [Configure the EB CLI](eb-cli3-configuration.md) and [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
 
 
 + [Sample PHP Application](#docker-singlecontainer-phpsample)

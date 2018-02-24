@@ -25,9 +25,9 @@ By default, regardless of the solution stack version of the environment from whi
 |  `--envvars`  |  Environment properties in a comma\-separated list with the format *name*=*value*\. Type: String Constraints: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-clone.html)  | 
 |  `--exact`  |  Prevents Elastic Beanstalk from updating the solution stack version for the new clone environment to the most recent version available \(for the original environment's platform\)\.  | 
 |  `--scale` *number*  |  The number of instances to run in the clone environment when it is launched\.  | 
-|  `--tags` *name*=*value*  |  Tags for the resources in your environment in a comma\-separated list with the format *name*=*value*\.  | 
+|  `--tags` *name*=*value*  |  [Tags](using-features.tagging.md) for the resources in your environment in a comma\-separated list with the format *name*=*value*\.  | 
 |  `--timeout`  |  The number of minutes before the command times out\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-cloneoutput"></a>
 

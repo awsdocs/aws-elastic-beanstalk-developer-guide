@@ -6,15 +6,15 @@ To create a custom platform, you build an Amazon Machine Image \(AMI\) from one 
 
 Elastic Beanstalk manages Packer as a separate built\-in platform, and you don't need to worry about Packer configuration and versions\.
 
-You create a platform by providing Elastic Beanstalk with a Packer template, and the scripts and files that the template invokes to build an AMI\. These components are packaged with a platform definition file, which specifies the template and metadata, into a ZIP archive called a platform definition archive\.
+You create a platform by providing Elastic Beanstalk with a Packer template, and the scripts and files that the template invokes to build an AMI\. These components are packaged with a [platform definition file](#custom-platform-creating), which specifies the template and metadata, into a ZIP archive called a [platform definition archive](custom-platforms-pda.md)\.
 
 When you create a custom platform, you launch a single instance environment without an Elastic IP that runs Packer\. Packer then launches another instance to build an image\. You can reuse this environment for multiple platforms and multiple versions of each platform\.
 
 **Note**  
 Custom platforms are region\-specific\. If you use Elastic Beanstalk in multiple regions, you must create your platforms separately in each region\.  
-In certain circumstances, instances launched by Packer are not cleaned up and have to be manually terminated\. To learn how to manually clean up these instances, see \.
+In certain circumstances, instances launched by Packer are not cleaned up and have to be manually terminated\. To learn how to manually clean up these instances, see [Packer Instance Cleanup](custom-platforms-packercleanup.md)\.
 
-Users in your account can use your custom platforms by specifying a platform ARN during environment creation\. These ARNs are returned by the `eb platform create` command that you used to create the custom platform\.
+Users in your account can use your custom platforms by specifying a [platform ARN](AWSHowTo.iam.policies.arn.md) during environment creation\. These ARNs are returned by the `eb platform create` command that you used to create the custom platform\.
 
 Each time you build your custom platform, Elastic Beanstalk creates a new platform version\. Users can specify a platform by name to get only the latest version of the platform, or include a version number to get a specific version\.
 
@@ -32,7 +32,7 @@ eb create -p MyCustomPlatformARN --version 2.1
 
 ## Creating a Custom Platform<a name="custom-platform-creating"></a>
 
-To create a custom platform, the root of your application must include a platform definition file, `platform.yaml`, which defines the type of builder used to create the custom platform\. The format of this file is described in the [Platform\.yaml File Format](platform-yaml-format.md) topic\. You can create your custom platform from scratch, or use one of the sample custom platforms as a starting point\.
+To create a custom platform, the root of your application must include a platform definition file, `platform.yaml`, which defines the type of builder used to create the custom platform\. The format of this file is described in the [Platform\.yaml File Format](platform-yaml-format.md) topic\. You can create your custom platform from scratch, or use one of the [sample custom platforms](#custom-platforms-sample) as a starting point\.
 
 ## Using a Sample Custom Platform<a name="custom-platforms-sample"></a>
 
@@ -131,17 +131,17 @@ The scripts and other files that you include in your platform definition archive
 
 + `01-install-nginx.sh` – Installs nginx\.
 
-+ `02-setup-platform.sh` – Installs `wget`, `tree`, and `git`\. Copies hooks and logging configurations to the instance, and creates the following directories:
++ `02-setup-platform.sh` – Installs `wget`, `tree`, and `git`\. Copies hooks and [logging configurations](using-features.logging.md) to the instance, and creates the following directories:
 
   + `/etc/SampleNodePlatform` – Where the container configuration file is uploaded during deployment\.
 
-  + `/opt/elasticbeanstalk/deploy/appsource/` – Where the `00-unzip.sh` script uploads application source code during deployment \(see the  section for information about this script\)\.
+  + `/opt/elasticbeanstalk/deploy/appsource/` – Where the `00-unzip.sh` script uploads application source code during deployment \(see the [Platform Scripts](custom-platforms-scripts.md) section for information about this script\)\.
 
   + `/var/app/staging/` – Where application source code is processed during deployment\.
 
   + `/var/app/current/` – Where application source code runs after processing\.
 
-  + `/var/log/nginx/healthd/` – Where the enhanced health agent writes logs\.
+  + `/var/log/nginx/healthd/` – Where the [enhanced health agent](health-enhanced.md#health-enhanced-agent) writes logs\.
 
   + `/var/nodejs` – Where the Node\.js files are uploaded during deployment\.
 
@@ -149,7 +149,7 @@ Use the EB CLI to create your first custom platform with the sample platform def
 
 **To create a custom platform**
 
-1. Install the EB CLI\.
+1. [Install the EB CLI](eb-cli3-install.md)\.
 
 1. Create a directory in which you will extract the sample custom platform\.
 
@@ -165,7 +165,7 @@ Use the EB CLI to create your first custom platform with the sample platform def
    ~/custom-platform$ cd NodePlatform_Ubuntu
    ```
 
-1. Run `eb platform init` and follow the prompts to initialize a platform repository\.
+1. Run [`eb platform init`](eb3-platform.md#eb3-platform-init) and follow the prompts to initialize a platform repository\.
 **Note**  
 You can shorten `eb platform` to `ebp`\.  
 Windows PowerShell uses `ebp` as a command alias\. If you're running the EB CLI in Windows PowerShell, use the long form of this command — `eb platform`\.
@@ -178,34 +178,34 @@ Windows PowerShell uses `ebp` as a command alias\. If you're running the EB CLI 
 
    By default, `ebp init` uses the name of the current folder as the name of the custom platform, which would be `custom-platform` in this example\.
 
-1. Run `eb platform create` to launch a Packer environment and get the ARN of the custom platform\. You'll need this value later when you create an environment from the custom platform\.
+1. Run [`eb platform create`](eb3-platform.md#eb3-platform-create) to launch a Packer environment and get the ARN of the custom platform\. You'll need this value later when you create an environment from the custom platform\.
 
    ```
    ~/custom-platform$ ebp create
    ...
    ```
 
-   By default, Elastic Beanstalk creates the instance profile `aws-elasticbeanstalk-custom-platform-ec2-role` for custom platforms\. If, instead, you want to use an existing instance profile, add the option `-ip INSTANCE_PROFILE` to the `eb platform create` command\.
+   By default, Elastic Beanstalk creates the instance profile `aws-elasticbeanstalk-custom-platform-ec2-role` for custom platforms\. If, instead, you want to use an existing instance profile, add the option `-ip INSTANCE_PROFILE` to the [`eb platform create`](eb3-platform.md#eb3-platform-create) command\.
 **Note**  
 Packer will fail to create a custom platform if you use the Elastic Beanstalk default instance profile `aws-elasticbeanstalk-ec2-role`\.
 
    The EB CLI shows event output of the Packer environment until the build is complete\. You can exit the event view by pressing **Ctrl\-C**\. 
 
-1. You can check the logs for errors using the `eb platform logs` command\.
+1. You can check the logs for errors using the [`eb platform logs`](eb3-platform.md#eb3-platform-logs) command\.
 
    ```
    ~/custom-platform$ ebp logs
    ...
    ```
 
-1. You can check on the process later with `eb platform events`\.
+1. You can check on the process later with [`eb platform events`](eb3-platform.md#eb3-platform-events)\.
 
    ```
    ~/custom-platform$ ebp events
    ...
    ```
 
-1. Check the status of your platform with `eb platform status`\.
+1. Check the status of your platform with [`eb platform status`](eb3-platform.md#eb3-platform-status)\.
 
    ```
    ~/custom-platform$ ebp status

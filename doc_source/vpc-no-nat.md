@@ -49,7 +49,7 @@ You'll need to select the VPC ID and subnet ID for your instance\. By default, V
 
 ### Deploying with the AWS Toolkits, AWS CLI, EB CLI, or Elastic Beanstalk API<a name="vpc-no-nat-new-options"></a>
 
-When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See  for more information\.
+When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md) for more information\.
 
 When you create your configuration file with your option settings, you need to specify the following configuration options:[aws:ec2:vpc](command-options-general.md#command-options-general-ec2vpc) Namespace:
 

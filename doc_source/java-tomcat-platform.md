@@ -1,18 +1,18 @@
 # Using the AWS Elastic Beanstalk Tomcat Platform<a name="java-tomcat-platform"></a>
 
-The AWS Elastic Beanstalk Tomcat platform is a set of environment configurations for Java web applications that can run in a Tomcat web container\. Each configuration corresponds to a major version of Tomcat, including *Java 8 with Tomcat 8* and *Java 7 with Tomcat 7*\.
+The AWS Elastic Beanstalk Tomcat platform is a set of [environment configurations](concepts.platforms.md#concepts.platforms.java) for Java web applications that can run in a Tomcat web container\. Each configuration corresponds to a major version of Tomcat, including *Java 8 with Tomcat 8* and *Java 7 with Tomcat 7*\.
 
-Platform\-specific configuration options are available in the AWS Management Console for modifying the configuration of a running environment\. To avoid losing your environment's configuration when you terminate it, you can use saved configurations to save your settings and later apply them to another environment\.
+Platform\-specific configuration options are available in the AWS Management Console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
 
-To save settings in your source code, you can include configuration files\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
+To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
 
-Elastic Beanstalk Tomcat platform configurations include a reverse proxy that forwards requests to your application\. The default server is [Apache HTTP Server \(version 2\.2\)](http://httpd.apache.org/docs/2.2/) but you can use configuration options to use nginx instead\. Elastic Beanstalk also provides configuration options to configure the proxy server to serve static assets from a folder in your source code to reduce the load on your application\. For advanced scenarios, you can include your own `.conf` files in your source bundle to extend Elastic Beanstalk's proxy configuration or overwrite it completely\.
+Elastic Beanstalk Tomcat platform configurations include a reverse proxy that forwards requests to your application\. The default server is [Apache HTTP Server \(version 2\.2\)](http://httpd.apache.org/docs/2.2/) but you can use configuration options to [use nginx](#java-tomcat-namespaces) instead\. Elastic Beanstalk also provides configuration options to configure the proxy server to serve static assets from a folder in your source code to reduce the load on your application\. For advanced scenarios, you can [include your own `.conf` files](java-tomcat-proxy.md) in your source bundle to extend Elastic Beanstalk's proxy configuration or overwrite it completely\.
 
-You must package Java applications in a web application archive \(WAR\) file with a specific structure\. For information on the required structure and how it relates to the structure of your project directory, see \.
+You must package Java applications in a web application archive \(WAR\) file with a specific structure\. For information on the required structure and how it relates to the structure of your project directory, see [Structuring your Project Folder](java-tomcat-platform-directorystructure.md)\.
 
-To run multiple applications on the same web server, you can bundle multiple WAR files into a single source bundle\. Each application in a multiple WAR source bundle runs at either the root path \(`ROOT.war` runs at `myapp.elasticbeanstalk.com/`\) or at a path directly beneath it \(`app2.war` runs at `myapp.elasticbeanstalk.com/app2/`, as determined by the name of the WAR\. In a single WAR source bundle, the application always runs at the root path\.
+To run multiple applications on the same web server, you can [bundle multiple WAR files](java-tomcat-multiple-war-files.md) into a single source bundle\. Each application in a multiple WAR source bundle runs at either the root path \(`ROOT.war` runs at `myapp.elasticbeanstalk.com/`\) or at a path directly beneath it \(`app2.war` runs at `myapp.elasticbeanstalk.com/app2/`, as determined by the name of the WAR\. In a single WAR source bundle, the application always runs at the root path\.
 
-Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment specific settings in the console\. For more information about precedence, and other methods of changing settings, see \.
+Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
 
 ## Configuring Your Tomcat Environment<a name="java-tomcat-options"></a>
 
@@ -24,7 +24,7 @@ You can use the AWS Management Console to enable log rotation to Amazon S3 and c
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -55,7 +55,7 @@ The Tomcat platform defines a placeholder property named `JDBC_CONNECTION_STRING
 
 **Note**  
 If you attach an RDS DB instance to your environment, construct the JDBC connection string dynamically from the RDS environment properties provided by Elastic Beanstalk\. Use JDBC\_CONNECTION\_STRING only for database instances that are not provisioned using Elastic Beanstalk\.  
-For more information about using Amazon Relational Database Service \(Amazon RDS\) with your Java application, see 
+For more information about using Amazon Relational Database Service \(Amazon RDS\) with your Java application, see [Adding an Amazon RDS DB Instance to Your Java Application Environment](java-rds.md)
 
 Inside the Tomcat environment running in Elastic Beanstalk, environment variables are accessible using the `System.getProperty()`\. For example, you could read a property named `API_ENDPOINT` to a variable with the following code:
 
@@ -63,13 +63,13 @@ Inside the Tomcat environment running in Elastic Beanstalk, environment variable
 String endpoint = System.getProperty("API_ENDPOINT");
 ```
 
-See  for more information\.
+See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
 
 ## Tomcat Configuration Namespaces<a name="java-tomcat-namespaces"></a>
 
-You can use a configuration file to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
+You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
-The Tomcat platform supports options in the following namespaces in addition to the options supported for all Elastic Beanstalk environments:
+The Tomcat platform supports options in the following namespaces in addition to the [options supported for all Elastic Beanstalk environments](command-options-general.md):
 
 + `aws:elasticbeanstalk:container:tomcat:jvmoptions` – Modify JVM settings\. Options in this namespace correspond to options in the management console as follows:
 
@@ -104,4 +104,4 @@ option_settings:
     /pub: public
 ```
 
-Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See  for more information\.
+Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration Options](command-options.md) for more information\.

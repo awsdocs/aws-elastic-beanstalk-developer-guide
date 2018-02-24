@@ -2,7 +2,47 @@
 
 This page lists the previous versions of AWS Elastic Beanstalk's \.NET platforms and the dates that each version was current\. Platform versions that you used to launch or update an environment in the last 30 days remain available \(to the using account, in the used region\) even after they are no longer current\.
 
-See the Supported Platforms page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
+See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
+
+## January 11, 2018 – February 14, 2018<a name="platform-history-2018-01-11"></a>
+
+The following Elastic Beanstalk platform configurations for \.NET were current during this date range:
+
+### Configuration basics<a name="concepts.platforms.net.basics"></a>
+
+
+****  
+
+|  Configuration  |  Solution Stack Name  |  Framework  |  Proxy Server  | 
+| --- | --- | --- | --- | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |   *64bit Windows Server 2016 v1\.2\.0 running IIS 10\.0*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |   *64bit Windows Server Core 2016 v1\.2\.0 running IIS 10\.0*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |   *64bit Windows Server 2012 R2 v1\.2\.0 running IIS 8\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |   *64bit Windows Server Core 2012 R2 v1\.2\.0 running IIS 8\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |   *64bit Windows Server 2012 v1\.2\.0 running IIS 8*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
+|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |   *64bit Windows Server 2008 R2 v1\.2\.0 running IIS 7\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
+|   **Windows Server 2012 R2 with IIS 8\.5**   |   *64bit Windows Server 2012 R2 running IIS 8\.5*   |  \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |   *64bit Windows Server Core 2012 R2 running IIS 8\.5*   |  \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 with IIS 8**   |   *64bit Windows Server 2012 running IIS 8*   |  \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
+|   **Windows Server 2008 R2 with IIS 7\.5**   |   *64bit Windows Server 2008 R2 running IIS 7\.5*   |  \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
+
+### More details<a name="concepts.platforms.net.details"></a>
+
+
+****  
+
+|  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
+| --- | --- | --- | --- | --- | --- | --- | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.01\.05  |  3\.15\.304\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.01\.05  |  3\.15\.304\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.01\.05  |  3\.15\.304\.0  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.01\.05  |  3\.15\.304\.0  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2017\.12\.13  |  3\.15\.277\.0  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |  2018\.01\.05  |  3\.15\.304\.0  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5**   |  2018\.01\.05  |  3\.15\.304\.0  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |  2018\.01\.05  |  3\.15\.304\.0  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 with IIS 8**   |  2017\.12\.13  |  3\.15\.277\.0  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2008 R2 with IIS 7\.5**   |  2018\.01\.05  |  3\.15\.304\.0  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
 
 ## December 19, 2017 – January 10, 2018<a name="platform-history-2017-12-19"></a>
 

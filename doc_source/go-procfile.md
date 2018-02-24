@@ -8,7 +8,7 @@ To specify custom commands to start a Go application, include a file called `Pro
 
 Each line in your Procfile must conform to the following regular expression: `^[A-Za-z0-9_]+:\s*.+$`\.
 
-Elastic Beanstalk expects processes run from the `Procfile` to run continuously\. Elastic Beanstalk monitors these applications and restarts any process that terminates\. For short\-running processes, use a Buildfile command\.
+Elastic Beanstalk expects processes run from the `Procfile` to run continuously\. Elastic Beanstalk monitors these applications and restarts any process that terminates\. For short\-running processes, use a [Buildfile](go-buildfile.md) command\.
 
 You can use any name for your Go application, as long as it conforms to the aforementioned regular expression\. You must call the main application `web`\.
 
@@ -26,7 +26,7 @@ Elastic Beanstalk uses the port number specified in the `PORT` option setting fo
 
 In the preceding example, the `PORT` environment variable for the `web` application is 5000, the `queue_process` application is 5100, and the `foo` application is 5200\. 
 
-You can specify the initial port by setting the `PORT` option with the aws:elasticbeanstalk:application:environment namespace, as shown in the following example\. 
+You can specify the initial port by setting the `PORT` option with the [aws:elasticbeanstalk:application:environment](command-options-general.md#command-options-general-elasticbeanstalkapplicationenvironment) namespace, as shown in the following example\. 
 
 ```
 option_settings:

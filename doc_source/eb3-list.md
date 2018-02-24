@@ -19,7 +19,7 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 | --- | --- | 
 |  `-a` or `--all`  |  Lists all environments from all applications\.  | 
 |  `-v` or `--verbose`  |  Provides more detailed information about all environments, including instances\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-listoutput"></a>
 

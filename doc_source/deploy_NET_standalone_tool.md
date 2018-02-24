@@ -5,7 +5,7 @@ The AWS Toolkit for Visual Studio includes a deployment tool, a command line too
 The deployment tool supports both initial deployments and redeployments\. If you previously deployed your application using the deployment tool, you can redeploy using the deployment wizard within Visual Studio\. Similarly, if you have deployed using the wizard, you can redeploy using the deployment tool\.
 
 **Note**  
-The deployment tool does not apply recommended values for configuration options like the console or EB CLI\. Use configuration files to ensure that any settings that you need are configured when you launch your environment\.
+The deployment tool does not apply [recommended values](command-options.md#configuration-options-recommendedvalues) for configuration options like the console or EB CLI\. Use [configuration files](ebextensions.md) to ensure that any settings that you need are configured when you launch your environment\.
 
 This chapter walks you through deploying a sample \.NET application to Elastic Beanstalk using the deployment tool, and then redeploying the application using an incremental deployment\. For a more in\-depth discussion about the deployment tool, including the parameter options, see [Deployment Tool](http://docs.aws.amazon.com/AWSToolkitVS/latest/UserGuide/tkv-deploy-beanstalk.html)\.
 

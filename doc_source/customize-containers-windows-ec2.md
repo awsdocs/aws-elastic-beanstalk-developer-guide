@@ -10,7 +10,7 @@ Configuration files support the following keys that affect the Windows server on
 Keys are processed in the following order\.
 
 **Note**  
-Older \(non\-versioned\) versions of \.NET platform configurations do not process configuration files in the correct order\. Learn more at \.
+Older \(non\-versioned\) versions of \.NET platform configurations do not process configuration files in the correct order\. Learn more at [Migrating to v1 Elastic Beanstalk Windows Server Platforms](dotnet-v2migration.md)\.
 
 
 + [Packages](#windows-packages)

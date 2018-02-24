@@ -19,4 +19,4 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 

@@ -4,10 +4,10 @@
 
 This command supports two different workspaces:
 
-Platform  
+[Platform](#eb3-platform-preconfigured)  
 Use this workspace to manage custom platforms\.
 
-Environment  
+[Environment](#eb3-platform-environment)  
 Use this workspace to select a default platform or show information about the current platform\.
 
 **Note**  
@@ -43,15 +43,15 @@ Lists the versions of the current platform and enables you to manage custom plat
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  `create [version] [options]`  | Build a new version of the platform\. Learn more\. | 
-|  `delete version [options]`  | Delete a platform version\. Learn more\. | 
-|  `events [version] [options]`  | Display the events from a platform version\. Learn more\. | 
-|  `init [platform] [options]`  | Initialize a platform repository\. Learn more\. | 
-|  `list [options]`  | List the versions of the current platform\. Learn more\. | 
-|  `logs [version] [options]`  | Display logs from the builder environment for a platform version\. Learn more\. | 
-|  `status [version] [options]`  | Display the status of the a platform version\. Learn more\. | 
-|  `use [platform] [options]`  | Select a different platform from which new versions are built\. Learn more\. | 
-|  Common options  |  | 
+|  `create [version] [options]`  | Build a new version of the platform\. [Learn more](#eb3-platform-create)\. | 
+|  `delete version [options]`  | Delete a platform version\. [Learn more](#eb3-platform-delete)\. | 
+|  `events [version] [options]`  | Display the events from a platform version\. [Learn more](#eb3-platform-events)\. | 
+|  `init [platform] [options]`  | Initialize a platform repository\. [Learn more](#eb3-platform-init)\. | 
+|  `list [options]`  | List the versions of the current platform\. [Learn more](#eb3-platform-list)\. | 
+|  `logs [version] [options]`  | Display logs from the builder environment for a platform version\. [Learn more](#eb3-platform-logs)\. | 
+|  `status [version] [options]`  | Display the status of the a platform version\. [Learn more](#eb3-platform-status)\. | 
+|  `use [platform] [options]`  | Select a different platform from which new versions are built\. [Learn more](#eb3-platform-use)\. | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ### Common Options<a name="eb3-platform-common"></a>
 

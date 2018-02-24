@@ -14,9 +14,9 @@ The EB CLI supports running single container, multicontainer, and preconfigured 
 
 + Linux OS or Mac OS X
 
-+ EB CLI version 3\.3 or greater
++ [EB CLI version 3\.3 or greater](eb-cli3-install.md)
 
-  Run `eb init` in your project directory to initialize an EB CLI repository\. If you haven't used the EB CLI before, see \.
+  Run `eb init` in your project directory to initialize an EB CLI repository\. If you haven't used the EB CLI before, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
 
 + [Docker version 1\.6 or greater](https://docs.docker.com/engine/installation/)
 
@@ -35,7 +35,7 @@ The EB CLI supports running single container, multicontainer, and preconfigured 
 
 + A Docker application
 
-  If you don't have a Docker application in a project folder on your local machine, see  for an introduction to using Docker with AWS Elastic Beanstalk\.
+  If you don't have a Docker application in a project folder on your local machine, see [Deploying Elastic Beanstalk Applications from Docker Containers](create_deploy_docker.md) for an introduction to using Docker with AWS Elastic Beanstalk\.
 
 + Docker profile \(optional\)
 
@@ -51,7 +51,7 @@ You can configure your local containers to connect to a database by passing the 
 
 ## Preparing a Docker Application for Use with the EB CLI<a name="create_deploy_docker-eblocal-prepare"></a>
 
-Prepare your Docker configuration file and source data as though you were deploying them to Elastic Beanstalk\. This topic uses the PHP and nginx proxy example from the Multicontainer Docker tutorial earlier in this guide as an example, but you can use the same commands with any single container, multicontainer, or preconfigured Docker application\.
+Prepare your Docker configuration file and source data as though you were deploying them to Elastic Beanstalk\. This topic uses the PHP and nginx proxy example from the [Multicontainer Docker tutorial](create_deploy_docker_ecstutorial.md) earlier in this guide as an example, but you can use the same commands with any single container, multicontainer, or preconfigured Docker application\.
 
 ## Running a Docker Application Locally<a name="create_deploy_docker-eblocal-localrun"></a>
 
@@ -81,7 +81,7 @@ To pass environment variables to the application containers, use the `envvars` o
 ```
 $ eb local run --envvars RDS_HOST=$RDS_HOST,RDS_DB=$RDS_DB,RDS_USER=$RDS_USER,RDS_PASS=$RDS_PASS
 ```
-Use environment variables to configure a database connection, set debug options, or pass secrets securely to your application\. For more information on the options supported by the `eb local` subcommands, see \.
+Use environment variables to configure a database connection, set debug options, or pass secrets securely to your application\. For more information on the options supported by the `eb local` subcommands, see [`eb local`](eb3-local.md)\.
 
 After the containers are up and running in Docker, they are ready to take requests from clients\. The `eb local` process stays open as long as the containers are running\. If you need to stop the process and containers, press **Ctrl\-C**\.
 

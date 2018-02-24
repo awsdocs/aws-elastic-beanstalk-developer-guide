@@ -14,7 +14,7 @@ web_foo: java -jar other.jar
 
 The command that runs the main JAR in your application must be called `web`, and it must be the first command listed in your `Procfile`\. The nginx server forwards all HTTP requests that it receives from your environment's load balancer to this application\.
 
-By default, Elastic Beanstalk configures the nginx proxy to forward requests to your application on port 5000\. You can override the default port by setting the `PORT` environment property to the port on which your main application listens\.
+By default, Elastic Beanstalk configures the nginx proxy to forward requests to your application on port 5000\. You can override the default port by setting the `PORT` [environment property](java-se-platform.md#java-se-options) to the port on which your main application listens\.
 
 **Note**  
 The port that your application listens on does not affect the port that the nginx server listens to receive requests from the load balancer\.
@@ -26,4 +26,4 @@ In the preceding example, the `web` application listens on port 5000, `cache` li
 
 Standard output and error streams from processes started with a `Procfile` are captured in log files named after the process and stored in `/var/log`\. For example, the `web` process in the preceding example generates logs named `web-1.log` and `web-1.error.log` for `stdout` and `stderr`, respectively\.
 
-Elastic Beanstalk assumes that all entries in the Procfile should run at all times and automatically restarts any application defined in the Procfile that terminates\. To run commands that will terminate and should not be restarted, use a `Buildfile`\.
+Elastic Beanstalk assumes that all entries in the Procfile should run at all times and automatically restarts any application defined in the Procfile that terminates\. To run commands that will terminate and should not be restarted, use a [`Buildfile`](java-se-buildfile.md)\.

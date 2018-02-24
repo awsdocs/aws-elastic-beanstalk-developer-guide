@@ -2,7 +2,7 @@
 
 **Event:** *CPU Utilization Exceeds 95\.00%*
 
-Try running more instances, or choose a different instance type\.
+Try [running more instances](using-features.managing.as.md), or [choose a different instance type](using-features.managing.ec2.md)\.
 
 **Event:** *Elastic Load Balancer awseb\-*myapp* Has Zero Healthy Instances*
 
@@ -10,7 +10,7 @@ If your application appears to be working, make sure that your application’s h
 
 **Event:** *Elastic Load Balancer awseb\-*myapp* Cannot Be Found*
 
-Your environment's load balancer may have been removed out\-of\-band\. Only make changes to your environment's resources with the configuration options and extensibility provided by Elastic Beanstalk\. Rebuild your environment or launch a new one\.
+Your environment's load balancer may have been removed out\-of\-band\. Only make changes to your environment's resources with the configuration options and [extensibility](ebextensions.md) provided by Elastic Beanstalk\. Rebuild your environment or launch a new one\.
 
 **Event:** *EC2 Instance Launch Failure\. Waiting for a New EC2 Instance to Launch\.\.\.*
 

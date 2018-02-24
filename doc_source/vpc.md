@@ -66,4 +66,4 @@ If you require direct access to your Amazon EC2 instances in a private subnet \(
 
 ### Extend your own network into AWS<a name="vpc-requirements-vpngateway"></a>
 
-If you wqant to extend your own network into the cloud and also directly access the Internet from your VPC, create a VPN gateway\. For more information about creating a VPN Gateway, see [Scenario 3: VPC with Public and Private Subnets and Hardware VPN Access](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario3.html) in the *Amazon VPC User Guide*\.
+If you want to extend your own network into the cloud and also directly access the Internet from your VPC, create a VPN gateway\. For more information about creating a VPN Gateway, see [Scenario 3: VPC with Public and Private Subnets and Hardware VPN Access](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario3.html) in the *Amazon VPC User Guide*\.

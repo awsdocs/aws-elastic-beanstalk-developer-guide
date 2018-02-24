@@ -1,6 +1,6 @@
 # Modifying the Resources that Elastic Beanstalk Creates for your Environment<a name="customize-containers-format-resources-eb"></a>
 
-The resources that Elastic Beanstalk creates for your environment have names\. You can use these names to get information about the resources with a function, or modify properties on the resources to customize their behavior\.
+The resources that Elastic Beanstalk creates for your environment have names\. You can use these names to get information about the resources with a [function](ebextensions-functions.md), or modify properties on the resources to customize their behavior\.
 
 Web server environments have the following resources\.
 

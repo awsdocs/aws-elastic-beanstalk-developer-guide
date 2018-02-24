@@ -20,7 +20,7 @@ If you have more than two environments that are undergoing a update, you are pro
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-abortoutput"></a>
 

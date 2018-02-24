@@ -7,7 +7,7 @@ Changes the environment configuration settings\. This command saves the environm
 If the root directory contains a `platform.yaml` file specifying a custom platform, this command also changes the builder configuration settings, based on the values set in `platform.yaml`\.
 
 **Note**  
-`eb config` does not show environment properties\. To set environment properties that you can read from within your application, use `eb setenv`
+`eb config` does not show environment properties\. To set environment properties that you can read from within your application, use [`eb setenv`](environment-configuration-methods-after.md#configuration-options-after-ebcli-ebsetenv)
 
 ## Syntax<a name="eb3-configsyntax"></a>
 
@@ -36,7 +36,7 @@ The following describes the syntax for using the `eb config` command to work wit
 | --- | --- | 
 |  `--cfg config-name`  |  The name to use for a saved configuration \(which you can later specify to create or update an environment from a saved configuration\)\.  | 
 |  `--timeout timeout`  |  The number of minutes before the command times out\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-configoutput"></a>
 

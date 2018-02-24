@@ -1,6 +1,6 @@
 # Configuring an Application Load Balancer<a name="environments-cfg-applicationloadbalancer"></a>
 
-If you've enabled load balancing, your environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Beanstalk supports a few Elastic Load Balancing types\. See the [Elastic Load Balancing User Guide](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/) to learn about them\. This topic describes the configuration of an Application Load Balancer\. To learn how to configure other load balancer types, see Classic Load Balancer and \.
+If you've [enabled load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Beanstalk supports a few Elastic Load Balancing types\. See the [Elastic Load Balancing User Guide](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/) to learn about them\. This topic describes the configuration of an Application Load Balancer\. To learn how to configure other load balancer types, see [Classic Load Balancer](using-features.managing.elb.md) and [Network Load Balancer](environments-cfg-nlb.md)\.
 
 ## Introduction<a name="environments-cfg-applicationloadbalancer-intro"></a>
 
@@ -22,15 +22,15 @@ Outside of Elastic Beanstalk, a target group maps to a group of instances\. A li
 
 A Classic Load Balancer uses a single health check path for the entire environment\. With an Application Load Balancer, each process has a separate health check path that is monitored by the load balancer and Elastic Beanstalk\-enhanced health monitoring\.
 
-To use an Application Load Balancer, your environment must be in a default or custom VPC, and must have a service role with the standard set of permissions\. If you have an older service role, you might need to update the permissions on it to include `elasticloadbalancing:DescribeTargetHealth` and `elasticloadbalancing:DescribeLoadBalancers`\. For more information about Application Load Balancers, see the [User Guide for Application Load Balancers](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/)\.
+To use an Application Load Balancer, your environment must be in a default or custom VPC, and must have a service role with the standard set of permissions\. If you have an older service role, you might need to [update the permissions](iam-instanceprofile.md#iam-instanceprofile-addperms) on it to include `elasticloadbalancing:DescribeTargetHealth` and `elasticloadbalancing:DescribeLoadBalancers`\. For more information about Application Load Balancers, see the [User Guide for Application Load Balancers](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/)\.
 
 **Note**  
-The Application Load Balancer health check doesn't take into account the Elastic Beanstalk health check path\. Instead, it uses the path provided in the `.ebextensions`, like the one in the example \.ebextensions/alb\-default\-process\.config\.
+The Application Load Balancer health check doesn't take into account the Elastic Beanstalk health check path\. Instead, it uses the path provided in the `.ebextensions`, like the one in the example [\.ebextensions/alb\-default\-process\.config](#alb-default-process.config)\.
 
 ## Getting Started<a name="environments-cfg-applicationloadbalancer-getstarted"></a>
 
 **Note**  
-You can set the load balancer type only during environment creation using the EB CLI, the Elastic Beanstalk APIs, or `.ebextensions`, such as the one in the example \.ebextensions/application\-load\-balancer\.config\. The console does not support this functionality\.
+You can set the load balancer type only during environment creation using the EB CLI, the Elastic Beanstalk APIs, or `.ebextensions`, such as the one in the example [\.ebextensions/application\-load\-balancer\.config](#application-load-balancer.config)\. The console does not support this functionality\.
 
 The EB CLI prompts you to choose a load balancer type when you run `eb create`\.
 
@@ -58,18 +58,18 @@ $ eb create test-env --elb-type application
 
 You can find settings related to Application Load Balancers in the following namespaces:
 
-+ `aws:elasticbeanstalk:environment` – Choose the load balancer type for the environment\. The value for an Application Load Balancer is `application`\.
++ `[aws:elasticbeanstalk:environment](command-options-general.md#command-options-general-elasticbeanstalkenvironment)` – Choose the load balancer type for the environment\. The value for an Application Load Balancer is `application`\.
 
-+ `aws:elbv2:loadbalancer` – Configure access logs and other settings that apply to the Application Load Balancer as a whole\.
++ `[aws:elbv2:loadbalancer](command-options-general.md#command-options-general-elbv2)` – Configure access logs and other settings that apply to the Application Load Balancer as a whole\.
 
-+ `aws:elbv2:listener` – Configure listeners on the Application Load Balancer\. These settings map to the settings in `aws:elb:listener` for Classic Load Balancers\.
++ `[aws:elbv2:listener](command-options-general.md#command-options-general-elbv2-listener)` – Configure listeners on the Application Load Balancer\. These settings map to the settings in `aws:elb:listener` for Classic Load Balancers\.
 
-+ `aws:elbv2:listenerrule` – Configure rules that route traffic to different processes, depending on the request path\. Rules are unique to Application Load Balancers\.
++ `[aws:elbv2:listenerrule](command-options-general.md#command-options-general-elbv2-listenerrule)` – Configure rules that route traffic to different processes, depending on the request path\. Rules are unique to Application Load Balancers\.
 
-+ `aws:elasticbeanstalk:environment:process` – Configure health checks and specify the port and protocol for the processes that run on your environment's instances\. The port and protocol settings map to the instance port and instance protocol settings in `aws:elb:listener` for a listener on a Classic Load Balancer\. Health check settings map to the settings in the `aws:elb:healthcheck` and `aws:elasticbeanstalk:application` namespaces\.
++ `[aws:elasticbeanstalk:environment:process](command-options-general.md#command-options-general-environmentprocess)` – Configure health checks and specify the port and protocol for the processes that run on your environment's instances\. The port and protocol settings map to the instance port and instance protocol settings in `aws:elb:listener` for a listener on a Classic Load Balancer\. Health check settings map to the settings in the `aws:elb:healthcheck` and `aws:elasticbeanstalk:application` namespaces\.
 
 **Example \.ebextensions/application\-load\-balancer\.config**  
-To get started with an Application Load Balancer, use a configuration file to set the load balancer type to `application`\.  
+To get started with an Application Load Balancer, use a [configuration file](ebextensions.md) to set the load balancer type to `application`\.  
 
 ```
 option_settings:

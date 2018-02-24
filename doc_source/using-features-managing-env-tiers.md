@@ -8,14 +8,14 @@ One option is to spawn a worker process locally, return success, and process the
 
 To avoid running long\-running tasks locally, you can use the AWS SDK for your programming language to send them to an Amazon Simple Queue Service \(Amazon SQS\) queue, and run the process that performs them on a separate set of instances\. The worker instances take items from the queue only when they have capacity to run them, preventing them from becoming overwhelmed\.
 
-Elastic Beanstalk simplifies this process by managing the Amazon SQS queue and running a daemon process on each instance that reads from the queue for you\. When the daemon pulls an item from the queue, it sends an HTTP POST request locally to `http://localhost/` with the contents of the queue message in the body\. All that your application needs to do is perform the long\-running task in response to the POST\. You can configure the daemon to post to a different path, use a MIME type other than application/JSON, connect to an existing queue, or customize connections, timeouts, and retries\.
+Elastic Beanstalk simplifies this process by managing the Amazon SQS queue and running a [daemon process](#worker-daemon) on each instance that reads from the queue for you\. When the daemon pulls an item from the queue, it sends an HTTP POST request locally to `http://localhost/` with the contents of the queue message in the body\. All that your application needs to do is perform the long\-running task in response to the POST\. You can [configure the daemon](#using-features-managing-env-tiers-worker-settings) to post to a different path, use a MIME type other than application/JSON, connect to an existing queue, or customize connections, timeouts, and retries\.
 
-![\[Elastic Beanstalk worker environment Amazon SQS message processing \]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-messageflow-worker.png)
+![\[Elastic Beanstalk worker environment Amazon SQS message processing\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-messageflow-worker.png)
 
-With periodic tasks, you can also configure the worker daemon to queue messages based on a cron schedule\. Each periodic task can POST to a different path\. Enable periodic tasks by including a YAML file in your source code that defines the schedule and path for each task\.
+With [periodic tasks](#worker-periodictasks), you can also configure the worker daemon to queue messages based on a cron schedule\. Each periodic task can POST to a different path\. Enable periodic tasks by including a YAML file in your source code that defines the schedule and path for each task\.
 
 **Note**  
-The \.NET on Windows Server platform doesn't support worker environments\.
+The [\.NET on Windows Server platform](create_deploy_NET.md) doesn't support worker environments\.
 
 
 + [The Worker Environment SQS Daemon](#worker-daemon)
@@ -26,16 +26,16 @@ The \.NET on Windows Server platform doesn't support worker environments\.
 
 ## The Worker Environment SQS Daemon<a name="worker-daemon"></a>
 
-Worker environments run a daemon process provided by Elastic Beanstalk\. This daemon is updated regularly to add features and fix bugs\. To get the latest version of the daemon, update to the latest platform version\.
+Worker environments run a daemon process provided by Elastic Beanstalk\. This daemon is updated regularly to add features and fix bugs\. To get the latest version of the daemon, update to the latest [platform version](concepts.platforms.md)\.
 
 
 ****  
 
 | Feature | Release Date | Description | 
 | --- | --- | --- | 
-| Enhanced Health Reporting | August 11, 2015 | Monitor environment health with more detail and accuracy\. | 
-| Periodic Tasks | February 17, 2015 | Run cron jobs that you configure in a `cron.yaml` file in your application source code\. | 
-| Dead Letter Queues | May 27, 2014 |  Send failed jobs to a dead letter queue for troubleshooting\. Changed the default visibility timeout from 30 seconds to 300 seconds\.  | 
+| [Enhanced Health Reporting](health-enhanced.md) | August 11, 2015 | Monitor environment health with more detail and accuracy\. | 
+| [Periodic Tasks](#worker-periodictasks) | February 17, 2015 | Run cron jobs that you configure in a `cron.yaml` file in your application source code\. | 
+| [Dead Letter Queues](#worker-deadletter) | May 27, 2014 |  Send failed jobs to a dead letter queue for troubleshooting\. Changed the default visibility timeout from 30 seconds to 300 seconds\.  | 
 
 When the application in the worker environment returns a `200 OK` response to acknowledge that it has received and successfully processed the request, the daemon sends a `DeleteMessage` call to the Amazon SQS queue so that the message will be deleted from the queue\. If the application returns any response other than `200 OK`, Elastic Beanstalk waits to put the message back in the queue after the configured `ErrorVisibilityTimeout` period\. If there is no response, Elastic Beanstalk waits to put the message back in the queue after the `InactivityTimeout` period so that the message is available for another attempt at processing\.
 
@@ -121,7 +121,7 @@ You can also set other CloudWatch alarms, as needed, by using the AWS Management
 
 ## Configuring Worker Environments<a name="using-features-managing-env-tiers-worker-settings"></a>
 
-You can manage a worker environment's configuration by editing the **Worker Configuration** card on the **Configuration** page in the environment management console\.
+You can manage a worker environment's configuration by editing the **Worker Configuration** card on the **Configuration** page in the [environment management console](environments-console.md)\.
 
 ![\[Elastic Beanstalk Worker Details configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-worker.png)
 
@@ -129,7 +129,7 @@ You can manage a worker environment's configuration by editing the **Worker Conf
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 

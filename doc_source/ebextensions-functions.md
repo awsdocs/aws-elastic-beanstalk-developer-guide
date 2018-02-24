@@ -19,7 +19,7 @@ Use `Ref`to retrieve the default string representation of an AWS resource\. The 
 **Note**  
 For details on each resource type, including the return value\(s\) of `Ref`, see [AWS Resource Types Reference](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html) in the *AWS CloudFormation User Guide*\.
 
-From the sample Auto Scaling lifecycle hook:
+From the sample [Auto Scaling lifecycle hook](environment-resources.md):
 
 ```
 Resources:
@@ -39,7 +39,7 @@ Use `Fn::GetAtt` to retrieve the value of an attribute on an AWS resource\.
 { "Fn::GetAtt" : [ "resource name", "attribute name"] }
 ```
 
-From the sample Auto Scaling lifecycle hook:
+From the sample [Auto Scaling lifecycle hook](environment-resources.md):
 
 ```
 Resources:
@@ -63,7 +63,7 @@ See [Fn::Join](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/int
 
 ## Fn::GetOptionSetting<a name="ebextensions-functions-getoptionsetting"></a>
 
-Use `Fn::GetOptionSetting` to retrieve the value of a configuration option setting applied to the environment\. 
+Use `Fn::GetOptionSetting` to retrieve the value of a [configuration option](command-options.md) setting applied to the environment\. 
 
 ```
 "Fn::GetOptionSetting":
@@ -72,7 +72,7 @@ Use `Fn::GetOptionSetting` to retrieve the value of a configuration option setti
   DefaultValue: "default value"
 ```
 
-From the storing private keys example:
+From the [storing private keys](https-storingprivatekeys.md) example:
 
 ```
 Resources:

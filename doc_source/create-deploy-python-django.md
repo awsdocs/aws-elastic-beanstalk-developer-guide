@@ -15,7 +15,7 @@ This tutorial walks through the deployment of a default [Django](https://www.dja
 
 To use any Amazon Web Service \(AWS\), including Elastic Beanstalk, you need to have an AWS account and credentials\. To learn more and to sign up, visit [https://aws\.amazon\.com/](https://aws.amazon.com/)\.
 
-To follow this tutorial, you should have all of the Common Prerequisites for Python installed, including the following packages:
+To follow this tutorial, you should have all of the [Common Prerequisites](create-deploy-python-common-steps.md) for Python installed, including the following packages:
 
 + Python 2\.7
 
@@ -28,7 +28,7 @@ To follow this tutorial, you should have all of the Common Prerequisites for Pyt
 The [Django](https://www.djangoproject.com/) framework will be installed as part of the tutorial\.
 
 **Note**  
-Creating environments with the EB CLI requires a service role\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
+Creating environments with the EB CLI requires a [service role](concepts-roles-service.md)\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
 
 ## Set Up a Python Virtual Environment with Django<a name="python-django-setup-venv"></a>
 
@@ -76,8 +76,8 @@ The remainder of these instructions show the Linux command prompt in your home d
    (eb-virt)~$ pip install django==1.9.12
    ```
 **Note**  
-The Django version you install must be compatible with the Python version on the Elastic Beanstalk Python configuration that you choose for deploying your application\. For deployment details, see  in this topic\.  
-For details on current Python configurations, see Python Configurations\.  
+The Django version you install must be compatible with the Python version on the Elastic Beanstalk Python configuration that you choose for deploying your application\. For deployment details, see [Deploy Your Site With the EB CLI](#python-django-deploy) in this topic\.  
+For details on current Python configurations, see [Python Configurations](concepts.platforms.md#concepts.platforms.python)\.  
 For Django version compatibility with Python, see [What Python version can I use with Django?](https://docs.djangoproject.com/en/1.11/faq/install/#faq-python-version-support)
 
 1. To verify that Django has been installed, type:
@@ -194,7 +194,7 @@ By default, Elastic Beanstalk looks for a file called `application.py` to start 
    (eb-virt) ~/ebdjango$ mkdir .ebextensions
    ```
 
-1. Within the `.ebextensions` directory, add a configuration file named `django.config` with the following text:  
+1. Within the `.ebextensions` directory, add a [configuration file](ebextensions.md) named `django.config` with the following text:  
 **Example \~/ebdjango/\.ebextensions/django\.config**  
 
    ```
@@ -276,7 +276,7 @@ If you see a "service role required" error message, run `eb create` interactivel
    This will open a browser window using the domain name created for your application\. You should see the same Django website that you created and tested locally\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/eb_django_deployed-1.png)
 
-If you don't see your application running, or get an error message, see Troubleshooting deployments for help with how to determine the cause of the error\.
+If you don't see your application running, or get an error message, see [Troubleshooting deployments](troubleshooting-deployments.md) for help with how to determine the cause of the error\.
 
 If you *do* see your application running, then congratulations, you've deployed your first Django application with Elastic Beanstalk\!
 
@@ -405,7 +405,7 @@ You can add commands to your `.ebextensions` script that will be run when your s
 
 **To add a migrate step when your application is deployed**
 
-1. Create a new configuration file named `db-migrate.config` with the following content:  
+1. Create a new [configuration file](ebextensions.md) named `db-migrate.config` with the following content:  
 **Example \~/ebdjango/\.ebextensions/db\-migrate\.config**  
 
    ```
@@ -434,7 +434,7 @@ To save instance hours and other AWS resources between development sessions, ter
 ~/ebdjango$ eb terminate django-env
 ```
 
-This command terminates the environment and all of the AWS resources that run within it\. It does not delete the application, however, so you can always create more environments with the same configuration by running `eb create` again\. For more information on EB CLI commands, see \. 
+This command terminates the environment and all of the AWS resources that run within it\. It does not delete the application, however, so you can always create more environments with the same configuration by running `eb create` again\. For more information on EB CLI commands, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\. 
 
 If you are done with the sample application, you can also remove the project folder and virtual environment:
 
@@ -445,4 +445,4 @@ If you are done with the sample application, you can also remove the project fol
 
 For more information about Django, including an in\-depth tutorial, visit [the official documentation](https://docs.djangoproject.com/en/1.9/)\.
 
-If you'd like to try out another Python web framework, check out \.
+If you'd like to try out another Python web framework, check out [Deploying a Flask Application to AWS Elastic Beanstalk](create-deploy-python-flask.md)\.

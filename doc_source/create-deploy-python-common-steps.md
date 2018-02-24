@@ -21,7 +21,7 @@ For all Python applications that you'll deploy with Elastic Beanstalk, these pre
 
 1. A working `ssh` installation\. This is used to connect with your running instances when you need to examine or debug a deployment\.
 
-For instructions on installing Python, pip, and the EB CLI, see \.
+For instructions on installing Python, pip, and the EB CLI, see [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md)\.
 
 ## Setting up a virtual Python environment<a name="python-common-setup-venv"></a>
 
@@ -61,7 +61,7 @@ You can use the Elastic Beanstalk CLI to prepare your Python applications for de
 
 **To configure a Python application for deployment with Elastic Beanstalk**
 
-1. From within your virtual environment, return to the top of your project's directory tree \(`python_eb_app`\), and type:
+1. From within your [virtual environment](#python-common-setup-venv), return to the top of your project's directory tree \(`python_eb_app`\), and type:
 
    ```
    pip freeze >requirements.txt
@@ -75,6 +75,6 @@ You can use the Elastic Beanstalk CLI to prepare your Python applications for de
 
    This allows Elastic Beanstalk to replicate your application's Python environment using the same packages and same versions that you used to develop and test your application\.
 
-1. Configure the EB CLI repository with the `eb init` command\. Follow the prompts to choose a region, platform and other options\. For detailed instructions, see \.
+1. Configure the EB CLI repository with the `eb init` command\. Follow the prompts to choose a region, platform and other options\. For detailed instructions, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
 
-By default, Elastic Beanstalk looks for a file called `application.py` to start your application\. If this doesn't exist in the Python project that you've created, some adjustment of your application's environment is necessary\. You will also need to set environment variables so that your application's modules can be loaded\. See  for more information\.
+By default, Elastic Beanstalk looks for a file called `application.py` to start your application\. If this doesn't exist in the Python project that you've created, some adjustment of your application's environment is necessary\. You will also need to set environment variables so that your application's modules can be loaded\. See [Using the AWS Elastic Beanstalk Python Platform](create-deploy-python-container.md) for more information\.

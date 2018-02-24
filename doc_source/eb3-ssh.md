@@ -14,7 +14,7 @@ If you have not previously configured SSH, you can use the EB CLI to create a ke
 
 This command temporarily opens port 22 in your environment's security group for incoming traffic from 0\.0\.0\.0/0 \(all IP addresses\) if no rules for port 22 are already in place\. If you have configured your environment's security group to open port 22 to a restricted CIDR range for increased security, the EB CLI will respect that setting and forgo any changes to the security group\. To override this behavior and force the EB CLI to open port 22 to all incoming traffic, use the `--force` option\.
 
-See  for information on configuring your environment's security group\.
+See [Security Groups](using-features.managing.ec2.md#using-features.managing.ec2.securitygroups) for information on configuring your environment's security group\.
 
 ## Syntax<a name="eb3-sshsyntax"></a>
 
@@ -36,7 +36,7 @@ See  for information on configuring your environment's security group\.
 |  `--custom`  |  Specify an SSH command to use instead of 'ssh \-i keyfile'\. Do not include the remote user and hostname\.  | 
 |  `--setup`  |  Change the key pair assigned to the environment's instances \(requires instances to be replaced\)\.  | 
 |  `--force`  |  Open port 22 to incoming traffic from 0\.0\.0\.0/0 in the environment's security group, even if the security group is already configured for SSH\. Use this option if your environment's security group is configured to open port 22 to a restricted CIDR range that does not include the IP address that you are trying to connect from\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-sshoutput"></a>
 

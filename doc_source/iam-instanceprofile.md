@@ -186,7 +186,7 @@ The permissions assigned to your default instance profile can vary depending on 
 
 ## Updating an Out\-of\-Date Default Instance Profile<a name="iam-instanceprofile-update"></a>
 
-If the default instance profile lacks the required permissions, you can update it by creating a new environment in the Elastic Beanstalk environment management console\.
+If the default instance profile lacks the required permissions, you can update it by [creating a new environment](using-features.environments.md) in the Elastic Beanstalk environment management console\.
 
 Alternatively, you can add the managed policies to the role attached to the default instance profile manually\.
 

@@ -8,7 +8,7 @@ If you are using Amazon RDS for the first time, add a DB instance to a test envi
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -38,7 +38,7 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
 
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
-For more information about configuring an internal DB instance, see \. For instructions on configuring an external database for use with Elastic Beanstalk, see \.
+For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\. For instructions on configuring an external database for use with Elastic Beanstalk, see [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)\.
 
 To connect to the database, add the appropriate driver JAR file to your application, load the driver class in your code, and create a connection object with the environment properties provided by Elastic Beanstalk\.
 
@@ -270,7 +270,7 @@ As an example, the preceding is acceptable\. But in actual applications, keep yo
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 

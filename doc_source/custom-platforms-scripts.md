@@ -36,7 +36,7 @@ This tool is available at `/opt/elasticbeanstalk/bin/get-config`\. You can use i
 
 You can test the previous commands by using SSH to connect to an instance in an Elastic Beanstalk environment running a Linux\-based platform\.
 
-See the following files in the sample platform definition archive for an example of `get-config` usage:
+See the following files in the [sample platform definition archive](custom-platforms.md#custom-platforms-sample) for an example of `get-config` usage:
 
 + `builder/platform-uploads/opt/elasticbeanstalk/hooks/configdeploy/enact/02-gen-envvars.sh` – Gets environment properties\.
 

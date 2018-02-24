@@ -200,7 +200,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
 }
 ```
 
-Alternatively, you can use an AWS managed policy to provide full access to Elastic Beanstalk\.
+Alternatively, you can use an AWS managed policy to [provide full access](AWSHowTo.iam.managed-policies.md) to Elastic Beanstalk\.
 
 ## Creating a Service\-Linked Role for Elastic Beanstalk<a name="create-service-linked-role"></a>
 
@@ -289,7 +289,7 @@ When you find out which Elastic Beanstalk environments are using the AWSServiceR
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Actions**, and then choose **Terminate Environment**\.
 

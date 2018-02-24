@@ -56,7 +56,7 @@ Now that you have selected the platform to use, the next step is to provide your
 
 + You can upload new code\. Select **Upload your code**, and then choose **Upload**\. You can upload new application code from a local file, or you can specify the URL for the Amazon S3 bucket that contains your application code\.
 **Note**  
-Depending on the platform configuration you selected, you can upload your application in a ZIP source bundle, a WAR file, or a plaintext Docker configuration\. The file size limit is 512 MB\.
+Depending on the platform configuration you selected, you can upload your application in a ZIP [source bundle](applications-sourcebundle.md), a [WAR file](java-tomcat-platform.md), or a [plaintext Docker configuration](docker-singlecontainer-deploy.md)\. The file size limit is 512 MB\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-environment-appcode.png)
 
@@ -66,17 +66,17 @@ You can now select **Create environment** to create your new environment\. Choos
 
 ## Configuration presets<a name="environments-create-wizard-presets"></a>
 
-Elastic Beanstalk provides configuration presets for low\-cost development and high availability use cases\. Each preset includes recommended values for several configuration options\.
+Elastic Beanstalk provides configuration presets for low\-cost development and high availability use cases\. Each preset includes recommended values for several [configuration options](command-options.md)\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-presets.png)
 
 The high availability preset includes a load balancer; the low cost preset does not\. Choose this option if you want a load\-balanced environment that can run multiple instances for high availability and scale in response to load\.
 
-The third preset, **Custom configuration**, removes all recommended values except role settings and uses the API defaults\. Choose this option if you are deploying a source bundle with configuration files that set configuration options\. **Custom configuration** is also selected automatically if you modify either the low cost or high availability configuration presets\.
+The third preset, **Custom configuration**, removes all recommended values except role settings and uses the API defaults\. Choose this option if you are deploying a source bundle with [configuration files](ebextensions.md) that set configuration options\. **Custom configuration** is also selected automatically if you modify either the low cost or high availability configuration presets\.
 
 ## Customize your configuration<a name="environments-create-wizard-customize"></a>
 
-In addition to \(or instead of\) choosing a configuration preset, you can fine\-tune configuration options in your environment\. When you choose **Configure more options**, the wizard shows several configuration cards\. Each configuration card displays a summary of values for a group of configuration settings\. Choose **Modify** to edit this group of settings\. In the following example you can see the **Capacity** configuration card\.
+In addition to \(or instead of\) choosing a configuration preset, you can fine\-tune [configuration options](command-options.md) in your environment\. When you choose **Configure more options**, the wizard shows several configuration cards\. Each configuration card displays a summary of values for a group of configuration settings\. Choose **Modify** to edit this group of settings\. In the following example you can see the **Capacity** configuration card\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-capacity.png)
 
@@ -86,13 +86,13 @@ Configure the instances in your environment to run the AWS X\-Ray daemon for deb
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-software.png)
 
-+ **AWS X\-Ray** – Enable **X\-Ray Daemon** to run the AWS X\-Ray daemon for debugging\.
++ **AWS X\-Ray** – Enable **X\-Ray Daemon** to run [the AWS X\-Ray daemon](environment-configuration-debugging.md) for debugging\.
 
 + **S3 log storage** – Enable **Rotate logs** to upload rotated logs from the instances in your environment to your Elastic Beanstalk storage bucket in Amazon S3\.
 
-+ **CloudWatch logs** – Enable **Log streaming** to stream logs from the instances in your environment to Amazon CloudWatch\.
++ **CloudWatch logs** – Enable **Log streaming** to stream logs from the instances in your environment to [Amazon CloudWatch](AWSHowTo.cloudwatch.md)\.
 
-+ **Environment properties** – Set environment properties that are passed to the application on\-instance as environment variables\.
++ **Environment properties** – Set [environment properties](environments-cfg-softwaresettings.md) that are passed to the application on\-instance as environment variables\.
 
 The way that properties are passed to applications varies by platform\. In general, properties are *not* visible if you connect to an instance and run `env`\.
 
@@ -106,7 +106,7 @@ Configure the Amazon EC2 instances that serve requests in your environment\.
 
   For more information about the Amazon EC2 instance types available for your Elastic Beanstalk environment, see [Instance Families and Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
 
-+ **AMI ID** – If you created a custom AMI, specify the AMI ID to use on your instances\.
++ **AMI ID** – If you created a [custom AMI](using-features.customenv.md), specify the AMI ID to use on your instances\.
 
 + **Root volume** – Specify the type, size, and input/output operations per second \(IOPS\) for your root volume\.
 
@@ -156,7 +156,7 @@ For more information on CloudWatch metrics and alarms, see [Amazon CloudWatch Co
 
 ### Load balancer<a name="environments-create-wizard-loadbalancer"></a>
 
-Your environment's load balancer is the entry point for all traffic headed for your application\. Elastic Beanstalk supports several types of load balancer\. When you create an environment using the Elastic Beanstalk console, a Classic Load Balancer is created for your environment\. For more details about load balancer types, see \.
+Your environment's load balancer is the entry point for all traffic headed for your application\. Elastic Beanstalk supports several types of load balancer\. When you create an environment using the Elastic Beanstalk console, a Classic Load Balancer is created for your environment\. For more details about load balancer types, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)\.
 
 By default, the load balancer serves HTTP traffic on port 80\. You can also configure a secure listener to accept secure connections using HTTPS\. If you use HTTPS to provide secure connections on port 443, you can disable the default listener to require users to connect securely\. 
 
@@ -164,7 +164,7 @@ By default, the load balancer serves HTTP traffic on port 80\. You can also conf
 
 + **ELB listener** – The default listener on the load balancer serves HTTP traffic from the Internet or, for an internal application, networks connected to your VPC\.
 
-+ **Secure ELB listener** – The secure listener terminates HTTPS connections using a TLS/SSL certificate and passes the decrypted traffic to your instances\. You can upload certificates with IAM, or [create a new certificate with AWS Certificate Manager](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html)for a domain that you own\.
++ **Secure ELB listener** – The secure listener terminates HTTPS connections using a TLS/SSL certificate and passes the decrypted traffic to your instances\. You can [upload certificates with IAM](configuring-https-ssl-upload.md), or [create a new certificate with AWS Certificate Manager](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html)for a domain that you own\.
 
 Use the remaining options to enable cross\-zone load balancing and connection draining\.
 
@@ -174,25 +174,25 @@ Use the remaining options to enable cross\-zone load balancing and connection dr
 
 + **Connection draining** – Allows time for active connections to complete before deregistering an instance from the load balancer during scaling operations, updates, and deployments\.
 
-You can use configuration files to configure more load balancer options, including advanced listener configuration, TCP passthrough, application load balancing, and backend authentication\. See  and  for more information\.
+You can use [configuration files](ebextensions.md) to configure more load balancer options, including advanced listener configuration, TCP passthrough, application load balancing, and backend authentication\. See [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md) and [Configuring HTTPS for your Elastic Beanstalk Environment](configuring-https.md) for more information\.
 
 ### Rolling updates and deployments<a name="environments-create-wizard-deployment-settings"></a>
 
- For single\-instance environments, choose a **Deployment policy** to configure how to deploy new application versions and changes to the software configuration for instances\. **All at once** completes deployments as quickly as possible, but can result in downtime\. **Immutable** deployments ensure the new instance passes health checks before switching over to the new version; otherwise the old version remains untouched\. See  for more information\.
+ For single\-instance environments, choose a **Deployment policy** to configure how to deploy new application versions and changes to the software configuration for instances\. **All at once** completes deployments as quickly as possible, but can result in downtime\. **Immutable** deployments ensure the new instance passes health checks before switching over to the new version; otherwise the old version remains untouched\. See [Deployment Policies and Settings](using-features.rolling-version-deploy.md) for more information\.
 
-For load\-balanced environments, choose a **Deployment policy** to configure how to deploy new application versions and changes to the software configuration for instances\. **All at once** completes deployments as quickly as possible, but can result in downtime\. Rolling deployments ensure that some instances remain in service during the entire deployment process\. See  for more information\.
+For load\-balanced environments, choose a **Deployment policy** to configure how to deploy new application versions and changes to the software configuration for instances\. **All at once** completes deployments as quickly as possible, but can result in downtime\. Rolling deployments ensure that some instances remain in service during the entire deployment process\. See [Deployment Policies and Settings](using-features.rolling-version-deploy.md) for more information\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-rolling.png)
 
-+ **Deployment policy** – **Rolling** deployments take one batch of instances out of service at a time to deploy a new version\. **Rolling with additional batch** launches a new batch first to ensure that capacity is not affected during the deployment\. **Immutable** performs an immutable update when you deploy\. 
++ **Deployment policy** – **Rolling** deployments take one batch of instances out of service at a time to deploy a new version\. **Rolling with additional batch** launches a new batch first to ensure that capacity is not affected during the deployment\. **Immutable** performs an [immutable update](environmentmgmt-updates-immutable.md) when you deploy\. 
 
 + **Batch size** – The number or percentage of instances to update in each batch\.
 
-Rolling updates occur when you change instance launch configuration settings or VPC settings, which require terminating and replacing the instances in your environment\. Other configuration changes are made in place without affecting capacity\. For more information, see \.
+[Rolling updates](using-features.rollingupdates.md) occur when you change instance launch configuration settings or VPC settings, which require terminating and replacing the instances in your environment\. Other configuration changes are made in place without affecting capacity\. For more information, see [Configuration Changes](environments-updating.md)\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-rolling-updates.png)
 
-+ **Rolling update type** – Time based, where AWS CloudFormation waits for the specified amount of time after new instances are registered before moving on to the next batch, or health based, where AWS CloudFormation waits for instances to pass health checks\. **Immutable** performs an immutable update when a configuration change would normally trigger a rolling update\.
++ **Rolling update type** – Time based, where AWS CloudFormation waits for the specified amount of time after new instances are registered before moving on to the next batch, or health based, where AWS CloudFormation waits for instances to pass health checks\. **Immutable** performs an [immutable update](environmentmgmt-updates-immutable.md) when a configuration change would normally trigger a rolling update\.
 
 + **Batch size** – The number of instances to replace in each batch\.
 
@@ -216,11 +216,11 @@ Choose an Amazon EC2 key pair to enable SSH or RDP access to the instances in yo
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-security.png)
 
-+ **Service role** – A service role grants Elastic Beanstalk permission to monitor the resources in your environment\.
++ **Service role** – A [service role](concepts-roles-service.md) grants Elastic Beanstalk permission to monitor the resources in your environment\.
 
 + **EC2 key pair** – Assign an SSH key to the instances in your environment to allow you to connect to them remotely for debugging\. For more information about Amazon EC2 key pairs, see [Using Credentials](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-credentials.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
-+ **IAM instance profile** – An instance profile grants the Amazon EC2 instances in your environment permissions to access AWS resources\. 
++ **IAM instance profile** – An [instance profile](concepts-roles-instance.md) grants the Amazon EC2 instances in your environment permissions to access AWS resources\. 
 
 The Elastic Beanstalk console looks for an instance profile named `aws-elasticbeanstalk-ec2-role` and a service role named `aws-elasticbeanstalk-service-role`\. If you don't have these roles, the console creates them for you\. For more information, see [Service Roles, Instance Profiles, and User Policies](concepts-roles.md)\.
 
@@ -232,11 +232,11 @@ Configure health checks for your load\-balanced environment\.
 
 + **Health check** – The path to send health check requests to\. If not set, the load balancer attempts to make a TCP connection on port 80 to verify health\. Set to another path to send an HTTP GET request to that path\. The path must start with `/` and is relative to the root of your application\. You can also include a protocol \(HTTP, HTTPS, TCP, or SSL\) and port before the path to check HTTPS connectivity or use a non\-default port\. For example, `HTTPS:443/health`\.
 
-+ **Health reporting** – Enhanced health reporting provides additional health information about the resources in your environment\. Select **Enhanced** to activate Enhanced health reporting\. The system provides the **EnvironmentHealth** metric free of charge\. Additional charges apply if you select more metrics from the list\.
++ **Health reporting** – [Enhanced health reporting](health-enhanced.md) provides additional health information about the resources in your environment\. Select **Enhanced** to activate Enhanced health reporting\. The system provides the **EnvironmentHealth** metric free of charge\. Additional charges apply if you select more metrics from the list\.
 
 ### Notifications<a name="environments-create-wizard-notifications"></a>
 
-Specify an email address to receive email notifications for important events from your environment\.
+Specify an email address to receive [email notifications](using-features.managing.sns.md) for important events from your environment\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-notifications.png)
 
@@ -244,7 +244,7 @@ Specify an email address to receive email notifications for important events fro
 
 ### Network<a name="environments-create-wizard-network"></a>
 
-If you have created a custom VPC, use these settings to configure your environment to use it\. If you do not choose a VPC, Elastic Beanstalk uses the default VPC and subnets\.
+If you have created a [custom VPC](using-features.managing.vpc.md), use these settings to configure your environment to use it\. If you do not choose a VPC, Elastic Beanstalk uses the default VPC and subnets\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-network.png)
 

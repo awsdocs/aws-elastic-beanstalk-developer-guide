@@ -88,7 +88,7 @@ For information about what Node\.js versions are supported, see [Elastic Beansta
 
 ## Step 3: Configure Elastic Beanstalk<a name="create_deploy_nodejs_geddy_eb_init-rds"></a>
 
-The following instructions use the Elastic Beanstalk command line interface \(EB CLI\) to configure an Elastic Beanstalk application repository in your local project directory\.
+The following instructions use the [Elastic Beanstalk command line interface](eb-cli3.md) \(EB CLI\) to configure an Elastic Beanstalk application repository in your local project directory\.
 
 **To configure Elastic Beanstalk**
 

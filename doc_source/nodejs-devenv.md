@@ -2,7 +2,7 @@
 
 Set up a Node\.js development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
-For common setup steps and tools that apply to all languages, see 
+For common setup steps and tools that apply to all languages, see [Configuring your development environment for use with AWS Elastic Beanstalk](chapter-devenv.md)
 
 
 + [Installing Node\.js](#nodejs-devenv-nodejs)
@@ -13,13 +13,13 @@ For common setup steps and tools that apply to all languages, see
 
 ## Installing Node\.js<a name="nodejs-devenv-nodejs"></a>
 
-Install Node\.js to run Node\.js applications locally\. If you don't have a preference, get the latest version supported by Elastic Beanstalk\. See Node\.js on the supported platforms page for a list of supported versions\.
+Install Node\.js to run Node\.js applications locally\. If you don't have a preference, get the latest version supported by Elastic Beanstalk\. See [Node\.js](concepts.platforms.md#concepts.platforms.nodejs) on the supported platforms page for a list of supported versions\.
 
 Download Node\.js at [nodejs\.org](https://nodejs.org/en/)\.
 
 **Note**  
-When support for the version of Node\.js that you are using is removed from the platform configuration, you must change or remove the version setting prior to doing a platform upgrade\. This may occur when a security vulnerability is identified for one or more versions of Node\.js  
-When this occurs, attempting to upgrade to a new version of the platform that does not support the configured NodeVersion fails\. To avoid needing to create a new environment, change the *NodeVersion* configuration option to a version that is supported by both the old configuration version and the new one, or remove the option setting, and then perform the platform upgrade\.
+When support for the version of Node\.js that you are using is removed from the platform configuration, you must change or remove the version setting prior to doing a [platform upgrade](using-features.platform.upgrade.md)\. This may occur when a security vulnerability is identified for one or more versions of Node\.js  
+When this occurs, attempting to upgrade to a new version of the platform that does not support the configured [NodeVersion](command-options-specific.md#command-options-nodejs) fails\. To avoid needing to create a new environment, change the *NodeVersion* configuration option to a version that is supported by both the old configuration version and the new one, or [remove the option setting](environment-configuration-methods-after.md), and then perform the platform upgrade\.
 
 ## Installing npm<a name="nodejs-devenv-npm"></a>
 

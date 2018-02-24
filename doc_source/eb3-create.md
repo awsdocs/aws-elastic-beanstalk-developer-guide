@@ -6,7 +6,7 @@ Creates a new environment and deploys an application version to it\.
 
 **Note**  
 To use eb create on a \.NET application, you must create a deployment package as described in [Creating a Source Bundle for a \.NET Application](applications-sourcebundle.md#using-features.deployment.source.dotnet), then set up the CLI configuration to deploy the package as an artifact as described in [Deploying an Artifact Instead of the Project Folder](eb-cli3-configuration.md#eb-cli3-artifact)\.
-Creating environments with the EB CLI requires a service role\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
+Creating environments with the EB CLI requires a [service role](concepts-roles-service.md)\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
 
 You can deploy the application version from a few sources:
 
@@ -22,13 +22,13 @@ You can deploy the application version from a few sources:
 
 `eb create environment-name`
 
-`eb create environment-name-1 environment-name-2` \(see Compose Environments\)
+`eb create environment-name-1 environment-name-2` \(see [Compose Environments](ebcli-compose.md)\)
 
 Environment names must be between 4 and 40 characters in length, and can only contain letters, numbers, and hyphens\. Environment names can't begin or end with a hyphen\.
 
 If you include an environment name in the command, the EB CLI doesn't prompt you to make any selections or create a service role\.
 
-If you run the command without parameters, it runs in an interactive flow, and prompts you to enter or select values for some settings\. In this interactive flow, in case you are deploying a sample application, the EB CLI also asks you if you want to download this sample application to your local project directory\. This enables you to use the EB CLI with the new environment later to run operations that require the application's code, like `eb deploy`\.
+If you run the command without parameters, it runs in an interactive flow, and prompts you to enter or select values for some settings\. In this interactive flow, in case you are deploying a sample application, the EB CLI also asks you if you want to download this sample application to your local project directory\. This enables you to use the EB CLI with the new environment later to run operations that require the application's code, like [`eb deploy`](eb3-deploy.md)\.
 
 ## Options<a name="eb3-createoptions"></a>
 
@@ -40,7 +40,7 @@ None of these options are required\. If you run `eb create` without any options,
 |  Name  |  Description  | 
 | --- | --- | 
 |  `-d` or `--branch_default`  |  Set the environment as the default environment for the current repository\.  | 
-|  `--cfg` *config\-name*  |  Use platform settings from a saved configuration in `.elasticbeanstalk/saved_configs/` or your Amazon S3 bucket\. Specify the name of the file only, without the `.cfg.yml` extension\.  | 
+|  `--cfg` *config\-name*  |  [Use platform settings from a saved configuration](environment-configuration-methods-during.md#configuration-options-during-ebcli-savedconfig) in `.elasticbeanstalk/saved_configs/` or your Amazon S3 bucket\. Specify the name of the file only, without the `.cfg.yml` extension\.  | 
 |  `-c` *subdomain\-name* or `--cname` *subdomain\-name*  |  The subdomain name to prefix the CNAME DNS entry that routes to your website\. Type: String Default: The environment name  | 
 |  `-db` or `--database`  |  Attaches a database to the environment\. If you run `eb create` with the `--database` option, but without the `--database.username` and `--database.password` options, EB CLI prompts you for the master database user name and password\.  | 
 |  `-db.engine` *engine* or `--database.engine` *engine*  |  The database engine type\. If you run `eb create` with this option, then EB CLI launches the environment with a database attached even if you didn't run the command with the `--database` option\. Type: String Valid values: `mysql`, `oracle-se1`, `postgres`, `sqlserver-ex`, `sqlserver-web`, `sqlserver-se`  | 
@@ -49,14 +49,14 @@ None of these options are required\. If you run `eb create` without any options,
 |  `-db.size` *number\_of\_gigabytes* or `--database.size` *number\_of\_gigabytes*  |  The number of gigabytes \(GB\) to allocate for database storage\. If you run `eb create` with this option, then EB CLI launches the environment with a database attached even if you didn't run the command with the `--database` option\. Type: Number Valid values: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-create.html)  | 
 |  `-db.user` *username* or `--database.username` *username*  |  The user name for the database\. If you run `eb create` with this option, then EB CLI launches the environment with a database attached even if you didn't run the command with the `--database` option\. If you run `eb create` with the `--database` option, but without the `--database.username` and `--database.password` options, then EB CLI prompts you for the master database user name and password\.  | 
 |  `-db.version` *version* or `--database.version` *version*  |  Allows you to specify the database engine version\. If this flag is present, the environment will launch with a database with the specified version number, even if the `--database` flag is not present\.  | 
-|  `--elb-type` *type*  |  The load balancer type\. Type: String Valid values: `classic`, `application`, `network` Default: `classic`  | 
-| \-\-env\-group\-suffix groupname | Group name to append to the environment name\. Only for use with Compose Environments\. | 
-|  `--envvars`  |  Environment properties in a comma\-separated list with the format *name*=*value*\. See  for limits\.  | 
+|  `--elb-type` *type*  |  The [load balancer type](using-features.managing.elb.md)\. Type: String Valid values: `classic`, `application`, `network` Default: `classic`  | 
+| \-\-env\-group\-suffix groupname | Group name to append to the environment name\. Only for use with [Compose Environments](ebcli-compose.md)\. | 
+|  `--envvars`  |  [Environment properties](environments-cfg-softwaresettings.md) in a comma\-separated list with the format *name*=*value*\. See [Configuring Environment Properties](environments-cfg-softwaresettings.md#environments-cfg-softwaresettings-console) for limits\.  | 
 |  `-ip` *profile\_name* or `--instance_profile` *profile\_name*  |  The instance profile with the IAM role with the temporary security credentials that your application needs to access AWS resources\.  | 
 |  `-i` or `--instance_type`  |  The type of Amazon EC2 instance to use in the environment\. Valid values: See [Option Values](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html)\.  | 
 |  `-k` *key\_name* or `--keyname` *key\_name*  |  The name of the Amazon EC2 key pair to use with the Secure Shell \(SSH\) client to securely log in to the Amazon EC2 instances running your Elastic Beanstalk application\. If you include this option with the `eb create` command, the value you provide overwrites any key name that you might have specified with `eb init`\. Valid values: An existing key name that is registered with Amazon EC2  | 
-|  `--modules` *component\-a component\-b*  | List of component environments to create\. Only for use with Compose Environments\. | 
-|  `-p` *platform\-configuration* or `--platform` *platform\-configuration*  |  The platform configuration to use\. You can specify a platform, platform configuration, or solution stack name\. For example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-create.html) Use `eb platform list` to get a list of available configurations\.  | 
+|  `--modules` *component\-a component\-b*  | List of component environments to create\. Only for use with [Compose Environments](ebcli-compose.md)\. | 
+|  `-p` *platform\-configuration* or `--platform` *platform\-configuration*  | The [platform configuration](concepts.platforms.md) to use\. You can specify a platform name, a platform name and version, a solution stack name, or a solution stack ARN\. For example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-create.html) Use [`eb platform list`](eb3-platform.md) to get a list of available configurations\. | 
 |  `-pr` or `--process`  |  Preprocess and validate the environment manifest and configuration files in the source bundle\. Validating configuration files can identify issues prior to deploying the application version to an environment\.  | 
 |  `-r` *region* or `--region` *region*  |  The AWS Region in which you want to deploy the application\. For the list of values you can specify for this option, see [AWS Elastic Beanstalk](http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region) in the [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html) topic in the *Amazon Web Services General Reference*\.  | 
 |  `--sample`  |  Deploy the sample application to the new environment instead of the code in your repository\.  | 
@@ -75,7 +75,7 @@ None of these options are required\. If you run `eb create` without any options,
 |  `--vpc.id ID`  |  Launches your environment in the specified VPC\.  | 
 |  `--vpc.publicip`  |  Launches your Amazon EC2 instances in a public subnet in your VPC\.  | 
 |  `--vpc.securitygroups securitygroup1,securitygroup2`  |  Specifies the security group ID or security group name\. Required when `--vpc.id` is specified\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-createoutput"></a>
 

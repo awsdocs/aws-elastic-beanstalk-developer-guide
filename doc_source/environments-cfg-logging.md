@@ -18,7 +18,7 @@ You can enable log rotation and log streaming in the Elastic Beanstalk console\.
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -44,6 +44,6 @@ After you enable log streaming, you can return to the configuration page to find
 
 Settings related to log viewing are in the following namespaces:
 
-+ `aws:elasticbeanstalk:hostmanager` – Configure uploading rotated logs to Amazon S3\.
++ [`aws:elasticbeanstalk:hostmanager`](command-options-general.md#command-options-general-elasticbeanstalkhostmanager) – Configure uploading rotated logs to Amazon S3\.
 
-+ `aws:elasticbeanstalk:cloudwatch:logs` – Configure log streaming to CloudWatch\.
++ [`aws:elasticbeanstalk:cloudwatch:logs`](command-options-general.md#command-options-general-cloudwatchlogs) – Configure log streaming to CloudWatch\.

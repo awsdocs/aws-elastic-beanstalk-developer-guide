@@ -8,7 +8,7 @@ To specify a custom build and configuration command for your Go application, inc
 
 The command in your `Buildfile` must match the following regular expression: `^[A-Za-z0-9_]+:\s*.+$`\.
 
-Elastic Beanstalk doesn't monitor the application that is run with a `Buildfile`\. Use a `Buildfile` for commands that run for short periods and terminate after completing their tasks\. For long\-running application processes that should not exit, use the Procfile instead\.
+Elastic Beanstalk doesn't monitor the application that is run with a `Buildfile`\. Use a `Buildfile` for commands that run for short periods and terminate after completing their tasks\. For long\-running application processes that should not exit, use the [Procfile](go-procfile.md) instead\.
 
 In the following example of a `Buildfile`, `build.sh` is a shell script that is located at the root of the source bundle:
 

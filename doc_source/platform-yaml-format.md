@@ -103,7 +103,7 @@ options_definitions:
 Optional\. Namespace of the option\.
 
 *option\-setting\-option\_name*  
-Optional\. Name of the option\. You can specify up to 50 options provided by Elastic Beanstalk\.
+Optional\. Name of the option\. You can specify up to 50 [options provided by Elastic Beanstalk](command-options-general.md)\.
 
 *option\-setting\-value*  
 Optional\. Value used when the user doesn't specify one\.  

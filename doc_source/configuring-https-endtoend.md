@@ -2,9 +2,9 @@
 
 Terminating secure connections at the load balancer and using HTTP on the backend may be sufficient for your application\. Network traffic between AWS resources cannot be listened to by instances that are not part of the connection, even if they are running under the same account\.
 
-However, if you are developing an application that needs to comply with strict external regulations, you may be required to secure all network connections\. You can use configuration files to make your Elastic Beanstalk environment's load balancer connect to backend instances securely to meet these requirements\.
+However, if you are developing an application that needs to comply with strict external regulations, you may be required to secure all network connections\. You can use [configuration files](ebextensions.md) to make your Elastic Beanstalk environment's load balancer connect to backend instances securely to meet these requirements\.
 
-First add a secure listener to your load balancer, if you haven't already:
+First [add a secure listener to your load balancer](configuring-https-elb.md), if you haven't already:
 
 **`.ebextensions/https-lbterminate.config`**
 
@@ -15,7 +15,7 @@ option_settings:
     ListenerProtocol: HTTPS
 ```
 
-You must also configure the instances in your environment to listen on the secure port and terminate HTTPS connections\. The configuration varies per platform\. See  for instructions\. You can use a self\-signed certificate for the EC2 instances without issue\.
+You must also configure the instances in your environment to listen on the secure port and terminate HTTPS connections\. The configuration varies per platform\. See [Configuring Your Application to Terminate HTTPS Connections at the Instance](https-singleinstance.md) for instructions\. You can use a [self\-signed certificate](configuring-https-ssl.md) for the EC2 instances without issue\.
 
 Next, configure the listener to forward traffic using HTTPS on the secure port used by your application\. You can also change the default health check to use this port and protocol to ensure that the load balancer is able to connect securely\. The following configuration file does both:
 
@@ -31,7 +31,7 @@ option_settings:
 ```
 
 **Note**  
-The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See  for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.
 
 The next part is a bit more complex\. You need to modify the load balancer's security group to allow traffic, but depending on whether you launch your environment in the default VPC or a custom VPC, the load balancer's security group will vary\. In a default VPC, Elastic Load Balancing provides a default security group that can be used by all load balancers\. In a VPC that you create, Elastic Beanstalk creates a security group for the load balancer to use\.
 

@@ -12,4 +12,4 @@ Use a `composer.json` file in the root of your project source to use composer to
 }
 ```
 
-When a `composer.json` file is present, Elastic Beanstalk runs `composer.phar install` to install dependencies\. You can add options to append to the command by setting the `composer_options` option in the `aws:elasticbeanstalk:container:php:phpini` namespace\.
+When a `composer.json` file is present, Elastic Beanstalk runs `composer.phar install` to install dependencies\. You can add options to append to the command by setting the [`composer_options` option](create_deploy_PHP.container.md#php-namespaces) in the `aws:elasticbeanstalk:container:php:phpini` namespace\.

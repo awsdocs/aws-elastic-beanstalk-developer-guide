@@ -1,7 +1,7 @@
 # Getting Set Up<a name="usingCLI"></a>
 
 **Note**  
- This tool, the Elastic Beanstalk API CLI, and its documentation have been replaced with the AWS CLI\. See the [AWS CLI User Guide ](http://docs.aws.amazon.com/cli/latest/userguide/) to get started with the AWS CLI\. Also try the EB CLI for a simplified, higher\-level command line experience\. 
+ This tool, the Elastic Beanstalk API CLI, and its documentation have been replaced with the AWS CLI\. See the [AWS CLI User Guide ](http://docs.aws.amazon.com/cli/latest/userguide/) to get started with the AWS CLI\. Also try the [EB CLI](eb-cli3.md) for a simplified, higher\-level command line experience\. 
 
  Elastic Beanstalk provides a command line interface \(CLI\) to access Elastic Beanstalk functionality without using the AWS Management Console or the APIs\. This section describes the prerequisites for running the CLI tools \(or command line tools\), where to get the tools, how to set up the tools and their environment, and includes a series of common examples of tool usage\.
 

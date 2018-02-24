@@ -10,7 +10,7 @@ You can configure the triggers that adjust the number of instances in your envir
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -41,7 +41,7 @@ You can configure the triggers that adjust the number of instances in your envir
 
 ## The aws:autoscaling:trigger Namespace<a name="environments-cfg-autoscaling-triggers-namespace"></a>
 
-Elastic Beanstalk provides configuration options for Auto Scaling settings in the `aws:autoscaling:trigger` namespace\. Settings in this namespace are organized by the resource that they apply to\.
+Elastic Beanstalk provides [configuration options](command-options.md) for Auto Scaling settings in the [`aws:autoscaling:trigger`](command-options-general.md#command-options-general-autoscalingtrigger) namespace\. Settings in this namespace are organized by the resource that they apply to\.
 
 ```
 option_settings:

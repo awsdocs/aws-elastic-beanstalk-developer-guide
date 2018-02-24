@@ -2,7 +2,7 @@
 
 The Tomcat platform uses a reverse proxy to relay requests from port 80 on the instance to your Tomcat web container listening on port 8080\. Elastic Beanstalk provides a default proxy configuration that you can either extend or override completely with your own configuration\.
 
-The Tomcat platform uses Apache 2\.2 for the proxy by default\. You can choose to use nginx by including a configuration file in your source code:
+The Tomcat platform uses Apache 2\.2 for the proxy by default\. You can choose to use nginx by including a [configuration file](ebextensions.md) in your source code:
 
 **Example \.ebextensions/nginx\-proxy\.config**  
 
@@ -60,7 +60,7 @@ To override Elastic Beanstalk's default Apache configuration completely, include
 `-- index.jsp
 ```
 
-If you override Elastic Beanstalk's Apache configuration, add the following lines to your `httpd.conf` to pull in Elastic Beanstalk's configurations for , response compression, and static files\.
+If you override Elastic Beanstalk's Apache configuration, add the following lines to your `httpd.conf` to pull in Elastic Beanstalk's configurations for [Enhanced Health Reporting and Monitoring](health-enhanced.md), response compression, and static files\.
 
 ```
 Include conf.d/*.conf
@@ -108,7 +108,7 @@ If you override Elastic Beanstalk's nginx configuration, add the following line 
 **Note**  
 To override the default listener on port 80, include a file named `00_application.conf` at `.ebextensions/nginx/conf.d/elasticbeanstalk/` to overwrite Elastic Beanstalk's configuration\.
 
-Also include the following line in your configuration's `http` block to pull in Elastic Beanstalk's configurations for  and logging\.
+Also include the following line in your configuration's `http` block to pull in Elastic Beanstalk's configurations for [Enhanced Health Reporting and Monitoring](health-enhanced.md) and logging\.
 
 ```
     include       conf.d/*.conf;

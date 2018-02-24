@@ -2,9 +2,9 @@
 
 You can publish the data gathered by AWS Elastic Beanstalk enhanced health reporting to Amazon CloudWatch as custom metrics\. Publishing metrics to CloudWatch lets you monitor changes in application performance over time and identify potential issues by tracking how resource usage and request latency scale with load\.
 
-By publishing metrics to CloudWatch, you also make them available for use with monitoring graphs and alarms\. One free metric, *EnvironmentHealth* is enabled automatically when you use enhanced health reporting\. Custom metrics other than *EnvironmentHealth* incur standard [CloudWatch charges](https://aws.amazon.com/cloudwatch/pricing/)\. 
+By publishing metrics to CloudWatch, you also make them available for use with [monitoring graphs](environment-health-console.md#environment-health-console-graphs) and [alarms](using-features.alarms.md)\. One free metric, *EnvironmentHealth* is enabled automatically when you use enhanced health reporting\. Custom metrics other than *EnvironmentHealth* incur standard [CloudWatch charges](https://aws.amazon.com/cloudwatch/pricing/)\. 
 
-To publish CloudWatch custom metrics for an environment, you must first enable enhanced health reporting on the environment\. See  for instructions\.
+To publish CloudWatch custom metrics for an environment, you must first enable enhanced health reporting on the environment\. See [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) for instructions\.
 
 
 + [Enhanced Health Reporting Metrics](#health-enhanced-cloudwatch-metrics)
@@ -14,10 +14,10 @@ To publish CloudWatch custom metrics for an environment, you must first enable e
 
 ## Enhanced Health Reporting Metrics<a name="health-enhanced-cloudwatch-metrics"></a>
 
-When you enabled enhanced health reporting in your environment, the enhanced health reporting system automatically publishes one [CloudWatch custom metric](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html), *EnvironmentHealth*\. To publish additional metrics to CloudWatch, configure your environment with the metrics that you want to publish using the AWS Management Console, the EB CLI, or \.ebextensions\.
+When you enabled enhanced health reporting in your environment, the enhanced health reporting system automatically publishes one [CloudWatch custom metric](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html), *EnvironmentHealth*\. To publish additional metrics to CloudWatch, configure your environment with the metrics that you want to publish using the [AWS Management Console](#health-enhanced-cloudwatch-console), the [EB CLI](#health-enhanced-cloudwatch-ebcli), or [\.ebextensions](command-options.md)\.
 
 `EnvironmentHealth`  
-Environment only\. This is the only CloudWatch metric that is published by the enhanced health system, unless you configure additional metrics\. Environment health is represented by one of seven statuses\. In the CloudWatch console, these statuses map to the following values:  
+Environment only\. This is the only CloudWatch metric that is published by the enhanced health system, unless you configure additional metrics\. Environment health is represented by one of seven [statuses](health-enhanced-status.md)\. In the CloudWatch console, these statuses map to the following values:  
 
 + 0 – OK
 
@@ -46,7 +46,7 @@ Instance and environment\. Indicates the average amount of time, in seconds, it 
 Instance only\. The average CPU load of the instance over the last minute\.
 
 `InstanceHealth`  
-Instance only\. Indicates the current health status of the instance\. Instance health is represented by one of seven statuses\. In the CloudWatch console, these statuses map to the following values:  
+Instance only\. Indicates the current health status of the instance\. Instance health is represented by one of seven [statuses](health-enhanced-status.md)\. In the CloudWatch console, these statuses map to the following values:  
 
 + 0 – OK
 
@@ -76,7 +76,7 @@ Use the AWS Management Console to configure your environment to publish enhanced
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -86,7 +86,7 @@ Use the AWS Management Console to configure your environment to publish enhanced
 
 1. Choose **Save**, and then choose **Apply**\.
 
-Enabling CloudWatch custom metrics adds them to the list of metrics available in the **Monitoring** page\.
+Enabling CloudWatch custom metrics adds them to the list of metrics available in the [**Monitoring** page](environment-health-console.md)\.
 
 ## Configuring CloudWatch Custom Metrics with the EB CLI<a name="health-enhanced-cloudwatch-ebcli"></a>
 
@@ -94,9 +94,9 @@ You can use the EB CLI to configure custom metrics by saving your environment's 
 
 **To configure CloudWatch custom metrics with the EB CLI and saved configurations**
 
-1. Initialize your project folder with `eb init`\.
+1. Initialize your project folder with [`eb init`](eb-cli3-configuration.md)\.
 
-1. Create an environment by running the `eb create` command\.
+1. Create an environment by running the [`eb create`](eb-cli3-getting-started.md) command\.
 
 1. Save a configuration template locally by running the `eb config save` command\. The following example uses the `--cfg` option to specify the name of the configuration\.
 

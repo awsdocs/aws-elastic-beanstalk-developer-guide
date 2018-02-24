@@ -1,6 +1,10 @@
 # Managing Multiple AWS Elastic Beanstalk Environments as a Group with the EB CLI<a name="ebcli-compose"></a>
 
-You can use the EB CLI to create groups of environments, each running a separate component of a service\-oriented architecture application by using the `Compose Environments` API\.
+You can use the EB CLI to create groups of environments, each running a separate component of a service\-oriented architecture application\. The EB CLI manages such groups by using the [ComposeEnvironments](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ComposeEnvironments.html) API\.
+
+**Note**  
+Environment groups are different than multiple containers in a Multicontainer Docker environment\. With environment groups, each component of your application runs in a separate Elastic Beanstalk environment, with its own dedicated set of Amazon EC2 instances\. Each component can scale separately\. With Multicontainer Docker, you combine several components of an application into a single environment\. All components share the same set of Amazon EC2 instances, with each instance running multiple Docker containers\. Choose one of these architectures according to your application's needs\.  
+For details about Multicontainer Docker, see [Multicontainer Docker Environments](create_deploy_docker_ecs.md)\.
 
 Organize your application components into the following folder structure:
 
@@ -12,7 +16,7 @@ Organize your application components into the following folder structure:
     `-- env.yaml
 ```
 
-Each subfolder contains the source code for an independent component of an application that will run in its own environment and an environment definition file named `env.yaml`\. For details on the `env.yaml` format, see \. 
+Each subfolder contains the source code for an independent component of an application that will run in its own environment and an environment definition file named `env.yaml`\. For details on the `env.yaml` format, see [Environment Manifest \(`env.yaml`\)](environment-cfg-manifest.md)\. 
 
 To use the `Compose Environments` API, first run `eb init` from the project folder, specifying each component by the name of the folder that contains it with the `--modules` option:
 
@@ -20,7 +24,7 @@ To use the `Compose Environments` API, first run `eb init` from the project fold
 ~/workspace/project-name$ eb init --modules component-a component-b
 ```
 
-The EB CLI prompts you to configure each component, and then creates the `.elasticbeanstalk` directory in each component folder\. EB CLI doesn't create configuration files in the parent directory\.
+The EB CLI prompts you to [configure each component](eb-cli3-configuration.md), and then creates the `.elasticbeanstalk` directory in each component folder\. EB CLI doesn't create configuration files in the parent directory\.
 
 ```
 ~/project-name

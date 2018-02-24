@@ -6,7 +6,7 @@ In this scenario, Example Corp\. is a software company with three teams responsi
 
 The following example policies provide the required permissions for each group\.
 
-**Example 1: Allow the Admins group to use all Elastic Beanstalk and related service APIs**  
+**Example 1: Allow the Admins group to use all Elastic Beanstalk and related service APIs**  <a name="admins_policy"></a>
 The following policy gives users permissions for all actions required to use Elastic Beanstalk\. This policy also allows Elastic Beanstalk to provision and manage resources on your behalf in the following services\. Elastic Beanstalk relies on these additional services to provision underlying resources when creating an environment\.   
 
 + Amazon Elastic Compute Cloud
@@ -49,7 +49,7 @@ Note that this policy is an example\. It gives a broad set of permissions to the
 }
 ```
 
-**Example 2: Allow the Developers group to perform all actions except highly privileged operations, such as creating applications and environments**  
+**Example 2: Allow the Developers group to perform all actions except highly privileged operations, such as creating applications and environments**  <a name="devs_policy"></a>
 The following policy denies permission to create applications and environments, but allows all other Elastic Beanstalk actions\.  
 Note that this policy is an example\. It gives a broad set of permissions to the AWS products that Elastic Beanstalk uses to manage applications and environments\. For example, `ec2:*` allows an IAM user to perform any action on any Amazon EC2 resource in the AWS account\. These permissions are not limited to the resources that you use with Elastic Beanstalk\. As a best practice, you should grant individuals only the permissions they need to perform their duties\.  
 
@@ -86,7 +86,7 @@ Note that this policy is an example\. It gives a broad set of permissions to the
 }
 ```
 
-**Example 3: Allow the Testers group to view all Elastic Beanstalk assets, but not to perform any actions**  
+**Example 3: Allow the Testers group to view all Elastic Beanstalk assets, but not to perform any actions**  <a name="testers_policy"></a>
 The following policy allows read\-only access to all applications, application versions, events, and environments\.  
 
 ```

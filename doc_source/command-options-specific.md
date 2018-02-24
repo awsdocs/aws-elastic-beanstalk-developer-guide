@@ -51,7 +51,7 @@ Map a path served by the proxy server to a folder in your source code that conta
 | --- | --- | 
 |  Path where the proxy server will serve the files\. Example: `/images` to serve files at `subdomain.eleasticbeanstalk.com/images`\.  |  Name of the folder containing the files\. Example: `staticimages` to serve files from a folder named `staticimages` at the top level of your source bundle\.  | 
 
-Run the AWS X\-Ray daemon to relay trace information from your X\-Ray integrated Java 8 application\.
+Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrated](environment-configuration-debugging.md) Java 8 application\.
 
 
 **Namespace: `aws:elasticbeanstalk:xray`**  
@@ -69,7 +69,7 @@ Run the AWS X\-Ray daemon to relay trace information from your X\-Ray integrated
 | --- | --- | --- | --- | 
 |  JDBC\_CONNECTION\_STRING  |  The connection string to an external database\.  |  n/a  |  n/a  | 
 
-See  for more information\.
+See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
 
 
 **Namespace: `aws:elasticbeanstalk:container:tomcat:jvmoptions`**  
@@ -101,7 +101,7 @@ Map a path served by the proxy server to a folder in your source code that conta
 | --- | --- | 
 |  Path where the proxy server will serve the files\. Example: `/images` to serve files at `subdomain.eleasticbeanstalk.com/images`\.  |  Name of the folder containing the files\. Example: `staticimages` to serve files from a folder named `staticimages` at the top level of your source bundle\.  | 
 
-Run the AWS X\-Ray daemon to relay trace information from your X\-Ray integrated Tomcat 8 application\.
+Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrated](environment-configuration-debugging.md) Tomcat 8 application\.
 
 
 **Namespace: `aws:elasticbeanstalk:xray`**  
@@ -120,7 +120,7 @@ Run the AWS X\-Ray daemon to relay trace information from your X\-Ray integrated
 |  Target Runtime  |  Choose the version of \.NET Framework for your application\.  |  `4.0`  |  `2.0` `4.0`  | 
 |  Enable 32\-bit Applications  |  Set to `True` to run 32\-bit applications\.  |  `False`  |  `True` `False`  | 
 
-Run the AWS X\-Ray daemon to relay trace information from your X\-Ray integrated \.NET application\.
+Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrated](environment-configuration-debugging.md) \.NET application\.
 
 
 **Namespace: `aws:elasticbeanstalk:xray`**  
@@ -137,7 +137,7 @@ Run the AWS X\-Ray daemon to relay trace information from your X\-Ray integrated
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
 |  NodeCommand  |  Command used to start the Node\.js application\. If an empty string is specified, `app.js` is used, then `server.js`, then `npm start` in that order\.  |  ""  |  n/a  | 
-|  NodeVersion  |  Version of Node\.js\. For example, `4.4.6` Supported Node\.js versions vary between versions of the Node\.js platform configuration\. See  on the supported platforms page for a list of the currently supported versions\.  When support for the version of Node\.js that you are using is removed from the platform configuration, you must change or remove the version setting prior to doing a platform upgrade\. This may occur when a security vulnerability is identified for one or more versions of Node\.js When this occurs, attempting to upgrade to a new version of the platform that does not support the configured NodeVersion fails\. To avoid needing to create a new environment, change the *NodeVersion* configuration option to a version that is supported by both the old configuration version and the new one, or remove the option setting, and then perform the platform upgrade\.   | varies | varies | 
+|  NodeVersion  |  Version of Node\.js\. For example, `4.4.6` Supported Node\.js versions vary between versions of the Node\.js platform configuration\. See [Node\.js](concepts.platforms.md#concepts.platforms.nodejs) on the supported platforms page for a list of the currently supported versions\.  When support for the version of Node\.js that you are using is removed from the platform configuration, you must change or remove the version setting prior to doing a [platform upgrade](using-features.platform.upgrade.md)\. This may occur when a security vulnerability is identified for one or more versions of Node\.js When this occurs, attempting to upgrade to a new version of the platform that does not support the configured [NodeVersion](#command-options-nodejs) fails\. To avoid needing to create a new environment, change the *NodeVersion* configuration option to a version that is supported by both the old configuration version and the new one, or [remove the option setting](environment-configuration-methods-after.md), and then perform the platform upgrade\.   | varies | varies | 
 |  GzipCompression  |  Specifies if gzip compression is enabled\. If ProxyServer is set to `none`, then gzip compression is disabled\.   |  `false`  |  `true` `false`  | 
 |  ProxyServer  |  Specifies which web server should be used to proxy connections to Node\.js\. If ProxyServer is set to `none`, then static file mappings doesn't take affect and gzip compression is disabled\.  |  `nginx`  |  `apache` `nginx` `none`  | 
 
@@ -155,7 +155,7 @@ Static file settings do not apply if `aws:elasticbeanstalk:container:nodejs::Pro
 | --- | --- | 
 |  Path where the proxy server will serve the files\. Example: `/images` to serve files at `subdomain.eleasticbeanstalk.com/images`\.  |  Name of the folder containing the files\. Example: `staticimages` to serve files from a folder named `staticimages` at the top level of your source bundle\.  | 
 
-Run the AWS X\-Ray daemon to relay trace information from your X\-Ray integrated Node\.js application\.
+Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrated](environment-configuration-debugging.md) Node\.js application\.
 
 
 **Namespace: `aws:elasticbeanstalk:xray`**  
@@ -171,13 +171,13 @@ Run the AWS X\-Ray daemon to relay trace information from your X\-Ray integrated
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  document\_root  |  Specify the child directory of your project that is treated as the public\-facing web root\.  |  `/`  |  A blank string is treated as `/`, or specify a string starting with `/`  | 
-|  memory\_limit  |  Amount of memory allocated to the PHP environment\.  |  `256M`  |  n/a  | 
-|  zlib\.output\_compression  |  Specifies whether or not PHP should use compression for output\.  |  `Off`  |  `On` `Off`  | 
-|  allow\_url\_fopen  |  Specifies if PHP's file functions are allowed to retrieve data from remote locations, such as websites or FTP servers\.  |  `On`  |  `On` `Off`  | 
-|  display\_errors  |  Specifies if error messages should be part of the output\.  |  `Off`  |  `On` `Off`  | 
-|  max\_execution\_time  |  Sets the maximum time, in seconds, a script is allowed to run before it is terminated by the environment\.  |  `60`  |  `0` to `9223372036854775807` \(PHP\_INT\_MAX\)  | 
-|  composer\_options  |  Sets custom options to use when installing dependencies using Composer through composer\.phar install\. For more information including available options, go to [http://getcomposer\.org/doc/03\-cli\.md\#install](http://getcomposer.org/doc/03-cli.md#install)\.  |  n/a  |  n/a  | 
+|  [document\_root](create_deploy_PHP.container.md)  |  Specify the child directory of your project that is treated as the public\-facing web root\.  |  `/`  |  A blank string is treated as `/`, or specify a string starting with `/`  | 
+|  [memory\_limit](create_deploy_PHP.container.md)  |  Amount of memory allocated to the PHP environment\.  |  `256M`  |  n/a  | 
+|  [zlib\.output\_compression](create_deploy_PHP.container.md)  |  Specifies whether or not PHP should use compression for output\.  |  `Off`  |  `On` `Off`  | 
+|  [allow\_url\_fopen](create_deploy_PHP.container.md)  |  Specifies if PHP's file functions are allowed to retrieve data from remote locations, such as websites or FTP servers\.  |  `On`  |  `On` `Off`  | 
+|  [display\_errors](create_deploy_PHP.container.md)  |  Specifies if error messages should be part of the output\.  |  `Off`  |  `On` `Off`  | 
+|  [max\_execution\_time](create_deploy_PHP.container.md)  |  Sets the maximum time, in seconds, a script is allowed to run before it is terminated by the environment\.  |  `60`  |  `0` to `9223372036854775807` \(PHP\_INT\_MAX\)  | 
+|  [composer\_options](create_deploy_PHP.container.md)  |  Sets custom options to use when installing dependencies using Composer through composer\.phar install\. For more information including available options, go to [http://getcomposer\.org/doc/03\-cli\.md\#install](http://getcomposer.org/doc/03-cli.md#install)\.  |  n/a  |  n/a  | 
 
 ## Python Platform Options<a name="command-options-python"></a>
 
@@ -188,7 +188,7 @@ Run the AWS X\-Ray daemon to relay trace information from your X\-Ray integrated
 | --- | --- | --- | --- | 
 |  DJANGO\_SETTINGS\_MODULE  |  Specifies which settings file to use\.  |  n/a  |  n/a  | 
 
-See  for more information\.
+See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
 
 
 **Namespace: `aws:elasticbeanstalk:container:python`**  
@@ -210,7 +210,7 @@ Map a path served by the proxy server to a folder in your source code that conta
 | --- | --- | 
 |  Path where the proxy server will serve the files\. Example: `/images` to serve files at `subdomain.eleasticbeanstalk.com/images`\.  |  Name of the folder containing the files\. Example: `staticimages` to serve files from a folder named `staticimages` at the top level of your source bundle\.  | 
 
-Run the AWS X\-Ray daemon to relay trace information from your X\-Ray integrated Python application\.
+Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrated](environment-configuration-debugging.md) Python application\.
 
 
 **Namespace: `aws:elasticbeanstalk:xray`**  
@@ -231,4 +231,4 @@ Run the AWS X\-Ray daemon to relay trace information from your X\-Ray integrated
 |  BUNDLE\_WITHOUT  |  A colon \(`:`\) separated list of groups to ignore when installing dependencies from a Gemfile\.  |  `test:development`  |  n/a  | 
 |  RACK\_ENV  |  Specifies what environment stage an application can be run in\. Examples of common environments include development, production, test\.  |  `production`  |  n/a  | 
 
-See  for more information\.
+See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.

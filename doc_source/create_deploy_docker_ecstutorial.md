@@ -92,7 +92,7 @@ This example configuration defines two containers, a PHP web site with an nginx 
 
 The volumes defined in the configuration correspond to the content that you will create next and upload as part of your application source bundle\. The containers access content on the host by mounting volumes in the `mountPoints` section of the container definitions\. 
 
-For more information on the format of `Dockerrun.aws.config` and its parameters, see \. 
+For more information on the format of `Dockerrun.aws.config` and its parameters, see [Container Definition Format](create_deploy_docker_v2config.md#create_deploy_docker_v2config_dockerrun_format)\. 
 
 ## Add Content<a name="create_deploy_docker_ecstutorial_code"></a>
 
@@ -153,7 +153,7 @@ Dockerrun.aws.json
 This is all you need to create the Elastic Beanstalk environment\. Create a `.zip` archive of the above files and folders \(not including the top\-level project folder\)\. To create the archive in Windows explorer, select the contents of the project folder, right\-click, select **Send To**, and then click **Compressed \(zipped\) Folder** 
 
 **Note**  
-For information on the required file structure and instructions for creating archives in other environments, see  
+For information on the required file structure and instructions for creating archives in other environments, see [Create an Application Source Bundle](applications-sourcebundle.md) 
 
 Next, upload the source bundle to Elastic Beanstalk and create your environment\. When you are prompted to select a platform, choose **Multi\-container Docker**\.
 

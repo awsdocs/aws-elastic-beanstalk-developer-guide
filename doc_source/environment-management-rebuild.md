@@ -12,7 +12,7 @@ You can rebuild an environment through the Elastic Beanstalk console or by using
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Actions**, and then choose **Rebuild environment**\.
 
@@ -32,9 +32,9 @@ You can rebuild and restore a terminated environment by using the Elastic Beanst
 
 **Note**  
 Unless you are using your own custom domain name with your terminated environment, the environment uses a subdomain of elasticbeanstalk\.com\. These subdomains are shared within an Elastic Beanstalk region\. Therefore, they can be used by any environment created by any customer in the same region\. While your environment was terminated, another environment could use its subdomain\. In this case, the rebuild would fail\.  
-You can avoid this issue by using a custom domain\. See  for details\.
+You can avoid this issue by using a custom domain\. See [Your Elastic Beanstalk Environment's Domain Name](customdomains.md) for details\.
 
-Recently terminated environments appear in the application overview for up to an hour\. During this time, you can view events for the environment in its dashboard, and use the **Restore environment** action to rebuild it\.
+Recently terminated environments appear in the application overview for up to an hour\. During this time, you can view events for the environment in its [dashboard](environments-console.md), and use the **Restore environment** [action](environments-console.md#environments-dashboard-actions) to rebuild it\.
 
 To rebuild an environment that is no longer visible, use the **Restore terminated environment** option from the application page\.
 
@@ -60,7 +60,7 @@ If you use the EB CLI to manage your environment, use the `eb restore` command t
 $ eb restore e-vdnftxubwq
 ```
 
-See `eb restore` for more information\.
+See [`eb restore`](eb3-restore.md) for more information\.
 
 To rebuild a terminated environment with the Elastic Beanstalk API, use the [http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html) action with the AWS CLI or the AWS SDK\.
 
