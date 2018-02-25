@@ -7,7 +7,7 @@ You must save the Procfile in your source bundle root\. The file name is case se
  **Procfile** 
 
 ```
-web: java -jar server.jar -Xmms:256m
+web: java -jar server.jar -Xms256m
 cache: java -jar mycache.jar
 web_foo: java -jar other.jar
 ```
