@@ -192,7 +192,7 @@ Select a different platform from which new versions are built\.
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  `platform`  | Specifies *platform* sa the active version for this workspace\. This value is required\. | 
+|  `platform`  | Specifies *platform* as the active version for this workspace\. This value is required\. | 
 
 ## Using eb platform for environments<a name="eb3-platform-environment"></a>
 
