@@ -17,7 +17,7 @@ Opens the public URL of your website in the default browser\.
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-openoutput"></a>
 

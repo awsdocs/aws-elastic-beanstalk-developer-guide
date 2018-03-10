@@ -6,11 +6,11 @@ You configure enhanced health reporting by setting the service role, the instanc
 
 To use the API, SDKs, or AWS command line interface \(CLI\) to create an environment that supports enhanced health, you must:
 
-+ Create a service role and instance profile with the appropriate permissions
++ Create a service role and instance profile with the appropriate [permissions](concepts-roles.md)
 
-+ Create a new environment with a solution stack for a new version of the platform configuration
++ Create a new environment with a solution stack for a new version of the [platform configuration](concepts.platforms.md)
 
-+ Set the health system type, instance profile, and service role configuration options
++ Set the health system type, instance profile, and service role [configuration options](command-options.md)
 
 Use the following configuration options in the `aws:elasticbeanstalk:healthreporting:system`, `aws:autoscaling:launchconfiguration`, and `aws:elasticbeanstalk:environment` namespaces to configure your environment for enhanced health reporting\. 
 
@@ -60,4 +60,4 @@ A JSON document that defines the and instance and environment metrics to publish
 ```
 
 **Note**  
-Config documents may require special formatting, such as escaping quotes, depending on how you provide them to Elastic Beanstalk\. See  for examples\.
+Config documents may require special formatting, such as escaping quotes, depending on how you provide them to Elastic Beanstalk\. See [Providing Custom Metric Config Documents](health-enhanced-cloudwatch.md#health-enhanced-cloudwatch-configdocument) for examples\.

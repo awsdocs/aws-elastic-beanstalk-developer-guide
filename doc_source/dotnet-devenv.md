@@ -2,7 +2,7 @@
 
 Set up a \.NET development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
-For common setup steps and tools that apply to all languages, see \.
+For common setup steps and tools that apply to all languages, see [Configuring your development environment for use with AWS Elastic Beanstalk](chapter-devenv.md)\.
 
 
 + [Installing an IDE](#dotnet-devenv-ide)
@@ -22,4 +22,4 @@ Visit the [Visual Studio Community homepage](https://www.visualstudio.com/en-us/
 
 ## Installing the AWS Toolkit for Visual Studio<a name="dotnet-devenv-toolkit"></a>
 
-The AWS Toolkit for Visual Studio is an open source plug\-in for the Visual Studio IDE that makes it easier for developers to develop, debug, and deploy \.NET applications using AWS\. Visit the [Toolkit for Visual Studio homepage](https://aws.amazon.com/visualstudio/) for installation instructions\.
+The [AWS Toolkit for Visual Studio](dotnet-toolkit.md) is an open source plug\-in for the Visual Studio IDE that makes it easier for developers to develop, debug, and deploy \.NET applications using AWS\. Visit the [Toolkit for Visual Studio homepage](https://aws.amazon.com/visualstudio/) for installation instructions\.

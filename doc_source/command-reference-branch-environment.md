@@ -1,7 +1,7 @@
 # Deploying a Git Branch to a Specific Environment<a name="command-reference-branch-environment"></a>
 
 **Note**  
- This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see \. 
+ This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md)\. 
 
 Developers often use branching in a project to manage code intended for different target environments\. For example, you might have a test branch where you perform component or integration testing and a prod branch where you manage the code for your live or production code\. With version 2\.3 and later of the eb command line interface and AWS DevTools, you can use the `eb init` command to configure the `eb push` command to push your current git branch to a specific Elastic Beanstalk environment\.
 

@@ -1,6 +1,6 @@
 # Terminating HTTPS on EC2 Instances Running Java SE<a name="https-singleinstance-java"></a>
 
-For Java SE container types, you enable HTTPS with an \.ebextensions configuration file, and an nginx configuration file that configures the nginx server to use HTTPS\.
+For Java SE container types, you enable HTTPS with an \.ebextensions [configuration file](ebextensions.md), and an nginx configuration file that configures the nginx server to use HTTPS\.
 
 Add the following snippet to your configuration file, replacing the certificate and private key placeholders as instructed, and save it in the `.ebextensions` directory\. The configuration file performs the following tasks:
 
@@ -82,7 +82,7 @@ server {
 }
 ```
 
-In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation function and adds a rule to it\.
+In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation [function](ebextensions-functions.md) and adds a rule to it\.
 
 **Example \.ebextensions/https\-instance\-single\.config**  
 
@@ -98,4 +98,4 @@ Resources:
       CidrIp: 0.0.0.0/0
 ```
 
-For a load\-balanced environment, you configure the load balancer to either pass secure traffic through untouched, or decrypt and re\-encrypt for end\-to\-end encryption\.
+For a load\-balanced environment, you configure the load balancer to either [pass secure traffic through untouched](https-tcp-passthrough.md), or [decrypt and re\-encrypt](configuring-https-endtoend.md) for end\-to\-end encryption\.

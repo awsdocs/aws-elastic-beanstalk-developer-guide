@@ -94,7 +94,7 @@ If you run into any issues installing CakePHP, visit the installation topic in t
 
 ## Create an Elastic Beanstalk Environment and Deploy Your Application<a name="php-cakephp-tutorial-deploy"></a>
 
-Create a source bundle containing the files created by Composer\. You can use any program to create the ZIP file, as long as it includes hidden files\. On the command line, use the `zip` command:
+Create a [source bundle](applications-sourcebundle.md) containing the files created by Composer\. You can use any program to create the ZIP file, as long as it includes hidden files\. On the command line, use the `zip` command:
 
 ```
 ~$ cd eb-cake
@@ -109,7 +109,7 @@ If you are working remotely in an Elastic Beanstalk environment, you can upload 
 ```
 ~$ aws s3 cp cake-default.zip s3://elasticbeanstalk-us-west-2-123456789012
 ```
-Elastic Beanstalk creates this bucket the first time you create an environment\. To upload files to Amazon S3, your environment's instance profile must have permission to write to the bucket\.
+Elastic Beanstalk creates this bucket the first time you create an environment\. To upload files to Amazon S3, your environment's [instance profile](concepts-roles-instance.md) must have permission to write to the bucket\.
 
 Use the AWS Management Console to create an Elastic Beanstalk environment running your application\. Choose the **PHP 5\.6** platform configuration and upload your source bundle when prompted:
 
@@ -143,7 +143,7 @@ Launch an Amazon RDS database instance in your Elastic Beanstalk environment\. Y
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -220,7 +220,7 @@ When the DB instance has finished launching, bundle up and deploy the updated ap
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Upload and Deploy**\.
 
@@ -234,13 +234,13 @@ Deploying a new version of your application takes less than a minute\. When the 
 
 ## Clean Up<a name="w3ab1c43c15c32"></a>
 
-When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as Amazon EC2 instances, database instances, load balancers, security groups, and alarms\. 
+When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 
 **To terminate your Elastic Beanstalk environment**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Actions**, and then choose **Terminate Environment**\.
 
@@ -274,8 +274,8 @@ In addition, you can terminate database resources that you created outside of yo
 
 For more information about CakePHP, read the book at [book\.cakephp\.org](http://book.cakephp.org/3.0/en/index.html)\.
 
-As you continue to develop your application, you'll probably want a way to manage environments and deploy your application without creating a ZIP file manually and uploading it to the Elastic Beanstalk console\. The Elastic Beanstalk Command Line Interface \(EB CLI\) provides easy to use commands for creating, configuring, and deploying to Elastic Beanstalk environments from the command line\.
+As you continue to develop your application, you'll probably want a way to manage environments and deploy your application without creating a ZIP file manually and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy to use commands for creating, configuring, and deploying to Elastic Beanstalk environments from the command line\.
 
-Running an Amazon RDS DB instance in your Elastic Beanstalk environment is great for development and testing, but it ties the lifecycle of your database to your environment\. See  for instructions on connecting to a database running outside of your environment\.
+Running an Amazon RDS DB instance in your Elastic Beanstalk environment is great for development and testing, but it ties the lifecycle of your database to your environment\. See [Adding an Amazon RDS DB Instance to Your PHP Application Environment](create_deploy_PHP.rds.md) for instructions on connecting to a database running outside of your environment\.
 
-Finally, if you plan on using your application in a production environment, you will want to configure a custom domain name for your environment and enable HTTPS for secure connections\.
+Finally, if you plan on using your application in a production environment, you will want to [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.

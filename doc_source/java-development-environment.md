@@ -2,7 +2,7 @@
 
 Set up a Java development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
-For common setup steps and tools that apply to all languages, see 
+For common setup steps and tools that apply to all languages, see [Configuring your development environment for use with AWS Elastic Beanstalk](chapter-devenv.md)
 
 
 + [Installing the Java Development Kit](#java-development-environment-jdk)
@@ -61,4 +61,4 @@ If you just want to begin coding and don't need all of the features of an IDE, c
 
 ## Installing the AWS Toolkit for Eclipse<a name="java-development-environment-toolkit"></a>
 
-The AWS Toolkit for Eclipse is an open source plug\-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using AWS\. Visit the [AWS Toolkit for Eclipse homepage](https://aws.amazon.com/eclipse/) for installation instructions\. 
+The [AWS Toolkit for Eclipse](java-eclipsetoolkit.md) is an open source plug\-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using AWS\. Visit the [AWS Toolkit for Eclipse homepage](https://aws.amazon.com/eclipse/) for installation instructions\. 

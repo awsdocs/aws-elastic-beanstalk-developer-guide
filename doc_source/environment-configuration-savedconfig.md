@@ -1,6 +1,6 @@
 # Using Elastic Beanstalk Saved Configurations<a name="environment-configuration-savedconfig"></a>
 
-You can save your environment's configuration as an object in Amazon S3 that can be applied to other environments during environment creation, or applied to a running environment\. *Saved configurations* are YAML formatted templates that define an environment's platform configuration, tier, configuration option settings, and tags\.
+You can save your environment's configuration as an object in Amazon S3 that can be applied to other environments during environment creation, or applied to a running environment\. *Saved configurations* are YAML formatted templates that define an environment's [platform configuration](concepts.platforms.md), [tier](concepts.md#concepts-tier), [configuration option](command-options.md) settings, and tags\.
 
 Create a saved configuration from the current state of your environment in the Elastic Beanstalk Management Console:
 
@@ -8,16 +8,16 @@ Create a saved configuration from the current state of your environment in the E
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Actions** and then choose **Save Configuration**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-saveconfiguration.png)
 
 1. Type a configuration name and description and then choose **Save**\.
 
-The saved configuration includes any settings that you have applied to the environment with the console or any other client that uses the Elastic Beanstalk API\. You can then apply the saved configuration to your environment at a later date to restore it to its previous state, or apply it to a new environment during environment creation\.
+The saved configuration includes any settings that you have applied to the environment with the console or any other client that uses the Elastic Beanstalk API\. You can then apply the saved configuration to your environment at a later date to restore it to its previous state, or apply it to a new environment during [environment creation](environments-create-wizard.md)\.
 
-You can download a configuration using the EB CLI [[ERROR] BAD/MISSING LINK TEXT](eb3-config.md) command, as shown in the following example, *NAME* is the name of your saved configuration\. 
+You can download a configuration using the EB CLI [`eb config`](eb3-config.md) command, as shown in the following example, *NAME* is the name of your saved configuration\. 
 
 ```
 eb config get NAME
@@ -35,7 +35,7 @@ eb config get NAME
 
 1. Proceed through the wizard to create your environment\.
 
-Saved configurations do not include settings applied with configuration files in your application's source code\. If the same setting is applied in both a configuration file and saved configuration, the setting in the saved configuration takes precedence\. Likewise, options specified in the AWS Management Console override options in saved configurations\. For more information, see \.
+Saved configurations do not include settings applied with [configuration files](ebextensions.md) in your application's source code\. If the same setting is applied in both a configuration file and saved configuration, the setting in the saved configuration takes precedence\. Likewise, options specified in the AWS Management Console override options in saved configurations\. For more information, see [Precedence](command-options.md#configuration-options-precedence)\.
 
 Saved configurations are stored in the Elastic Beanstalk S3 bucket in a folder named after your application\. For example, configurations for an application named `my-app` in the us\-west\-2 region for account number 0123456789012 can be found at `s3://elasticbeanstalk-us-west-2-0123456789012/resources/templates/my-app/`\.
 
@@ -89,13 +89,13 @@ The following keys are supported:
   AWSConfigurationTemplateVersion: 1.1.0.0
   ```
 
-+ **SolutionStack** – The full name of the solution stack used to create the environment:
++ **SolutionStack** – The full name of the [solution stack](concepts.platforms.md) used to create the environment:
 
   ```
   SolutionStack: 64bit Amazon Linux 2015.09 v2.0.6 running Multi-container Docker 1.7.1 (Generic)
   ```
 
-+ **OptionSettings** – Configuration option settings to apply to the environment\. For example, the following entry sets the instance type to t2\.micro:
++ **OptionSettings** – [Configuration option](command-options.md) settings to apply to the environment\. For example, the following entry sets the instance type to t2\.micro:
 
   ```
   OptionSettings:
@@ -141,12 +141,12 @@ The following keys are supported:
 
   The value of the link variable varies depending on the type of the linked environment\. For a web server environment, the link is the environment's CNAME\. For a worker environment, the link is the name of the environment's Amazon SQS queue\.
 
-The **CName**, **EnvironmentName** and **EnvironmentLinks** keys can be used to create environment groups and links to other environments\. These features are currently supported when using the EB CLI, AWS CLI or an SDK\. When using these features, you can include the saved configuration in your source code as an environment manifest instead of referencing a saved configuration stored in Amazon S3\. See the corresponding topics for more information\.
+The **CName**, **EnvironmentName** and **EnvironmentLinks** keys can be used to create [environment groups](environment-mgmt-compose.md) and [links to other environments](environment-cfg-links.md)\. These features are currently supported when using the EB CLI, AWS CLI or an SDK\. When using these features, you can include the saved configuration in your source code as an [environment manifest](environment-cfg-manifest.md) instead of referencing a saved configuration stored in Amazon S3\. See the corresponding topics for more information\.
 
 See the following topics for alternate methods of creating and applying saved configurations:
 
-+ 
++ [Setting Configuration Options Before Environment Creation](environment-configuration-methods-before.md)
 
-+ 
++ [Setting Configuration Options during Environment Creation](environment-configuration-methods-during.md)
 
-+ 
++ [Setting Configuration Options After Environment Creation](environment-configuration-methods-after.md)

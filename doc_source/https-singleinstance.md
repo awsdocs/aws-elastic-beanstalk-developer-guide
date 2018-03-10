@@ -1,6 +1,6 @@
 # Configuring Your Application to Terminate HTTPS Connections at the Instance<a name="https-singleinstance"></a>
 
-You can use configuration files to configure the proxy server that passes traffic to your application to terminate HTTPS connections\. This is useful if you want to use HTTPS with a single instance environment, or if you configure your load balancer to pass traffic through without decrypting it\.
+You can use [configuration files](ebextensions.md) to configure the proxy server that passes traffic to your application to terminate HTTPS connections\. This is useful if you want to use HTTPS with a single instance environment, or if you configure your load balancer to pass traffic through without decrypting it\.
 
 To enable HTTPS, you must allow incoming traffic on port 443 to the EC2 instance that your Elastic Beanstalk application is running on\. You do this by using the `Resources` key in the configuration file to add a rule for port 443 to the ingress rules for the AWSEBSecurityGroup security group\.
 
@@ -20,7 +20,7 @@ Resources:
       CidrIp: 0.0.0.0/0
 ```
 
-In a load balanced environment in a default VPC, you can modify this policy to only accept traffic from the load balancer\. See  for an example\.
+In a load balanced environment in a default VPC, you can modify this policy to only accept traffic from the load balancer\. See [Configuring End\-to\-End Encryption in a Load Balanced Elastic Beanstalk Environment](configuring-https-endtoend.md) for an example\.
 
 
 + [Terminating HTTPS on EC2 Instances Running Docker](https-singleinstance-docker.md)

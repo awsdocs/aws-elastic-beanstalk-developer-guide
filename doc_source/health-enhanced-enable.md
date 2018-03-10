@@ -1,8 +1,8 @@
 # Enabling AWS Elastic Beanstalk Enhanced Health Reporting<a name="health-enhanced-enable"></a>
 
-New environments created with the latest platform versions include the AWS Elastic Beanstalk health agent, which supports enhanced health reporting\. If you create your environment in the AWS Management Console or with the EB CLI, enhanced health is enabled by default\. You can also set your health reporting preference in your application's source code using configuration files\.
+New environments created with the latest [platform versions](concepts.platforms.md) include the AWS Elastic Beanstalk [health agent](health-enhanced.md#health-enhanced-agent), which supports enhanced health reporting\. If you create your environment in the AWS Management Console or with the EB CLI, enhanced health is enabled by default\. You can also set your health reporting preference in your application's source code using [configuration files](ebextensions.md)\.
 
-Enhanced health reporting requires an instance profile and service role with the standard set of permissions\. When you create an environment in the Elastic Beanstalk console, Elastic Beanstalk creates the required roles automatically\. See  for instructions on creating your first environment\.
+Enhanced health reporting requires an [instance profile](concepts-roles-instance.md) and [service role](concepts-roles-service.md) with the standard set of permissions\. When you create an environment in the Elastic Beanstalk console, Elastic Beanstalk creates the required roles automatically\. See [Getting Started Using Elastic Beanstalk](GettingStarted.md) for instructions on creating your first environment\.
 
 
 + [Enabling Enhanced Health Reporting with the AWS Management Console](#health-enhanced-enable-console)
@@ -15,7 +15,7 @@ Enhanced health reporting requires an instance profile and service role with the
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -24,7 +24,7 @@ Enhanced health reporting requires an instance profile and service role with the
 1. Under **Health reporting**, for **System**, choose **Enhanced**\.  
 ![\[Choosing Enhanced health reporting system\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-dashboard-option.png)
 **Note**  
-The options for enhanced health reporting don't appear if you are using an unsupported platform or version\.
+The options for enhanced health reporting don't appear if you are using an [unsupported platform or version](health-enhanced.md)\.
 
 1. Choose **Save**, and then choose **Apply**\.
 
@@ -34,9 +34,9 @@ The Elastic Beanstalk console defaults to enhanced health reporting when you cre
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Create an application or select an existing one\.
+1. [Create an application](applications.md) or select an existing one\.
 
-1. Create an environment\. On the **Create a new environment** page, before choosing **Create environment**, choose **Configure more options**\.
+1. [Create an environment](using-features.environments.md)\. On the **Create a new environment** page, before choosing **Create environment**, choose **Configure more options**\.
 
 1. On the **Monitoring** configuration card, choose **Modify**\.
 
@@ -53,7 +53,7 @@ You can specify a different service role by name with the `--service-role` optio
 
 If you have an environment running with basic health reporting on a version 2 platform configuration and want to switch to enhanced health, follow these steps\.
 
-**To enable enhanced health on a running environment using the EB CLI**
+**To enable enhanced health on a running environment using the [EB CLI](eb-cli3.md)**
 
 1. Use the `eb config` command to open the configuration file in the default text editor\.
 
@@ -61,7 +61,7 @@ If you have an environment running with basic health reporting on a version 2 pl
    ~/project$ eb config
    ```
 
-1. Locate the `aws:elasticbeanstalk:environment` namespace in the settings section\. Ensure that the value of `ServiceRole` is not null and that it matches the name of your service role\.
+1. Locate the `aws:elasticbeanstalk:environment` namespace in the settings section\. Ensure that the value of `ServiceRole` is not null and that it matches the name of your [service role](concepts-roles-service.md)\.
 
    ```
      aws:elasticbeanstalk:environment:
@@ -90,7 +90,7 @@ If you have an environment running with basic health reporting on a version 2 pl
 
 ## Enabling Enhanced Health Reporting with a Configuration File<a name="health-enhanced-enable-config"></a>
 
-You can enable enhanced health reporting by including a configuration file in your source bundle\. The following example shows a configuration file that enables enhanced health reporting and assigns the default service and instance profile to the environment:
+You can enable enhanced health reporting by including a [configuration file](ebextensions.md) in your source bundle\. The following example shows a configuration file that enables enhanced health reporting and assigns the default service and instance profile to the environment:
 
 **Example \.ebextensions/enhanced\-health\.config**  
 

@@ -12,7 +12,7 @@ You can create scheduled actions for your environment's Auto Scaling group in th
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -48,12 +48,12 @@ You can create scheduled actions for your environment's Auto Scaling group in th
 
 ## The aws:autoscaling:scheduledaction Namespace<a name="environments-cfg-autoscaling-scheduledactions-namespace"></a>
 
-If you need to configure a large number of scheduled actions, you can use configuration files or the Elastic Beanstalk API to apply the configuration option changes from a YAML or JSON file\. These methods also let you access the `Suspend` option to temporarily deactivate a recurrent scheduled action\.
+If you need to configure a large number of scheduled actions, you can use [configuration files](ebextensions.md) or [the Elastic Beanstalk API](environment-configuration-methods-after.md#configuration-options-after-awscli-commandline) to apply the configuration option changes from a YAML or JSON file\. These methods also let you access the [`Suspend` option](command-options-general.md#command-options-general-autoscalingscheduledaction) to temporarily deactivate a recurrent scheduled action\.
 
 **Note**  
 When working with scheduled action configuration options outside of the console, use ISO 8601 time format to specify start and end times in UTC\. For example, 2015\-04\-28T04:07:02Z\. For more information about ISO 8601 time format, see [Date and Time Formats](http://www.w3.org/TR/NOTE-datetime)\. The dates must be unique across all scheduled actions\.
 
-Elastic Beanstalk provides configuration options for scheduled action settings in the `aws:autoscaling:scheduledaction` namespace\. Use the `resource_name` field to specify the name of the scheduled action\.
+Elastic Beanstalk provides configuration options for scheduled action settings in the [`aws:autoscaling:scheduledaction`](command-options-general.md#command-options-general-autoscalingscheduledaction) namespace\. Use the `resource_name` field to specify the name of the scheduled action\.
 
 **Example scheduled\-scale\-up\-specific\-time\.config**  
 This configuration file instructs Elastic Beanstalk to scale out from five instances to 10 instances at 2015\-12\-12T00:00:00Z\.  

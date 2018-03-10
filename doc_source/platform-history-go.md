@@ -2,7 +2,16 @@
 
 This page lists the previous versions of AWS Elastic Beanstalk's Go platforms and the dates that each version was current\. Platform versions that you used to launch or update an environment in the last 30 days remain available \(to the using account, in the used region\) even after they are no longer current\.
 
-See the Supported Platforms page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
+See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
+
+The following Elastic Beanstalk platform configurations for Go were current between January 19, 2018 and February 21, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  Proxy Server  | 
+| --- | --- | --- | --- | 
+|   **Go 1\.9 version 2\.7\.5**   *64bit Amazon Linux 2017\.09 v2\.7\.5 running Go 1\.9*   |  2017\.09\.1  |  Go 1\.9\.1  |  nginx 1\.12\.1  | 
 
 The following Elastic Beanstalk platform configurations for Go were current between January 10, 2018 and January 18, 2018:
 

@@ -26,7 +26,7 @@ You can specify the value of the **sourceBundleUrl** parameter as an HTTP URL, b
 
 + **tierName** – Specify whether the environment supports a web application that processes web requests or a web application that runs background jobs\. For more information, see [AWS Elastic Beanstalk Worker Environments](using-features-managing-env-tiers.md)\. You can specify either `WebServer` or `Worker`,
 
-+ **instanceType** – Specify a server with the characteristics \(including memory size and CPU power\) that are most appropriate to your application\. To see the instance types that are available in your Elastic Beanstalk region, see InstanceType in [Configuration Options](command-options.md)\. To see the detailed specifications for each Amazon EC2 instance type, see [Instance Types](https://aws.amazon.com/ec2/instance-types/#instance-details)\.
++ **instanceType** – Specify a server with the characteristics \(including memory size and CPU power\) that are most appropriate to your application\. To see the instance types that are available in your Elastic Beanstalk region, see [InstanceType](command-options-general.md#option-instance-type) in [Configuration Options](command-options.md)\. To see the detailed specifications for each Amazon EC2 instance type, see [Instance Types](https://aws.amazon.com/ec2/instance-types/#instance-details)\.
 
 + **withVpc** – Specify whether to create the environment in an Amazon VPC\. You can specify either `true` or `false`\. For more information about using Elastic Beanstalk with Amazon VPC, see [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md)\.
 

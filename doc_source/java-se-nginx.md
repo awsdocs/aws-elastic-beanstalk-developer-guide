@@ -23,7 +23,7 @@ To override Elastic Beanstalk's default nginx configuration completely, include 
 `-- web.jar
 ```
 
-If you override Elastic Beanstalk's nginx configuration, add the following line to your `nginx.conf` to pull in Elastic Beanstalk's configurations for , automatic application mappings, and static files\.
+If you override Elastic Beanstalk's nginx configuration, add the following line to your `nginx.conf` to pull in Elastic Beanstalk's configurations for [Enhanced Health Reporting and Monitoring](health-enhanced.md), automatic application mappings, and static files\.
 
 ```
  include conf.d/elasticbeanstalk/*.conf;

@@ -1,6 +1,6 @@
 # What Is AWS Elastic Beanstalk?<a name="Welcome"></a>
 
-Amazon Web Services \(AWS\) comprises dozens of services, each of which exposes an area of functionality\. While the variety of services offers flexibility for how you want to manage your AWS infrastructure, it can be challenging to figure out which services to use and how to provision them\.
+Amazon Web Services \(AWS\) comprises over one hundred services, each of which exposes an area of functionality\. While the variety of services offers flexibility for how you want to manage your AWS infrastructure, it can be challenging to figure out which services to use and how to provision them\.
 
 With Elastic Beanstalk, you can quickly deploy and manage applications in the AWS Cloud without worrying about the infrastructure that runs those applications\. AWS Elastic Beanstalk reduces management complexity without restricting choice or control\. You simply upload your application, and Elastic Beanstalk automatically handles the details of capacity provisioning, load balancing, scaling, and application health monitoring\. Elastic Beanstalk uses highly reliable and scalable services that are available in the [AWS Free Tier](https://aws.amazon.com/free)\.
 

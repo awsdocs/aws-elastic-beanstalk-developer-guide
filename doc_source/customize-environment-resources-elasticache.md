@@ -79,7 +79,7 @@ option_settings:
      Engine : memcached
 ```
 
-These lines tell Elastic Beanstalk to get the values for the **CacheNodeType, NumCacheNodes, and Engine** properties from the **CacheNodeType, NumCacheNodes, and Engine** values in a config file \(options\.config in our example\) that contains an option\_settings section with an **aws:elasticbeanstalk:customoption** section that contains a name\-value pair that contains the actual value to use\. In the example above, this means cache\.m1\.small, 1, and memcached would be used for the values\. For more information about `Fn::GetOptionSetting`, see \.
+These lines tell Elastic Beanstalk to get the values for the **CacheNodeType, NumCacheNodes, and Engine** properties from the **CacheNodeType, NumCacheNodes, and Engine** values in a config file \(options\.config in our example\) that contains an option\_settings section with an **aws:elasticbeanstalk:customoption** section that contains a name\-value pair that contains the actual value to use\. In the example above, this means cache\.m1\.small, 1, and memcached would be used for the values\. For more information about `Fn::GetOptionSetting`, see [Functions](ebextensions-functions.md)\.
 
 ## EC2\-VPC \(Default\)<a name="customize-environment-resources-elasticache-defaultvpc"></a>
 
@@ -169,7 +169,7 @@ option_settings:
     CachePort : 6379
 ```
 
-These lines tell Elastic Beanstalk to get the values for the `CacheNodeType`, `NumCacheNodes`, `Engine`, and `CachePort` properties from the `CacheNodeType`, `NumCacheNodes`, `Engine`, and `CachePort` values in a config file \(`options.config` in our example\)\. That file includes an `aws:elasticbeanstalk:customoption` section \(under `option_settings`\) that contains name\-value pairs with the actual values to use\. In the preceding example, `cache.t1.micro`, `1`, `redis`, and `6379` would be used for the values\. For more information about `Fn::GetOptionSetting`, see \.
+These lines tell Elastic Beanstalk to get the values for the `CacheNodeType`, `NumCacheNodes`, `Engine`, and `CachePort` properties from the `CacheNodeType`, `NumCacheNodes`, `Engine`, and `CachePort` values in a config file \(`options.config` in our example\)\. That file includes an `aws:elasticbeanstalk:customoption` section \(under `option_settings`\) that contains name\-value pairs with the actual values to use\. In the preceding example, `cache.t1.micro`, `1`, `redis`, and `6379` would be used for the values\. For more information about `Fn::GetOptionSetting`, see [Functions](ebextensions-functions.md)\.
 
 ## EC2\-VPC \(Custom\)<a name="customize-environment-resources-elasticache-targetedvpc"></a>
 

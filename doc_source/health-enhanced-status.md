@@ -1,12 +1,12 @@
 # Health Colors and Statuses<a name="health-enhanced-status"></a>
 
-Enhanced health reporting represents instance and overall environment health with four colors, similar to basic health reporting\. Enhanced health reporting also provides seven health statuses, single word descriptors that provide a better indication of the state of your environment\.
+Enhanced health reporting represents instance and overall environment health with four colors, similar to [basic health reporting](using-features.healthstatus.md)\. Enhanced health reporting also provides seven health statuses, single word descriptors that provide a better indication of the state of your environment\.
 
 ## Instance Status and Environment Status<a name="health-enhanced-status-type"></a>
 
-Every time Elastic Beanstalk runs a health check on your environment, enhanced health reporting checks the health of each instance in your environment by analyzing all of the data available\. If any of the lower\-level checks fails, Elastic Beanstalk downgrades the health of the instance\.
+Every time Elastic Beanstalk runs a health check on your environment, enhanced health reporting checks the health of each instance in your environment by analyzing all of [the data](health-enhanced.md#health-enhanced-factors) available\. If any of the lower\-level checks fails, Elastic Beanstalk downgrades the health of the instance\.
 
-Elastic Beanstalk displays the health information for the overall environment \(color, status, and cause\) in the environment management console\. This information is also available in the EB CLI\. Health status and cause messages for individual instances are updated every ten seconds and are available from the EB CLI when you view health status with `eb health`\. 
+Elastic Beanstalk displays the health information for the overall environment \(color, status, and cause\) in the [environment management console](environments-console.md)\. This information is also available in the EB CLI\. Health status and cause messages for individual instances are updated every ten seconds and are available from the [EB CLI](eb-cli3.md) when you view health status with [`eb health`](health-enhanced-ebcli.md)\. 
 
 Elastic Beanstalk uses changes in instance health to evaluate environment health, but does not immediately change environment health status\. When an instance fails health checks at least three times in any one\-minute period, Elastic Beanstalk may downgrade the health of the environment\. Depending on the number of instances in the environment and the issue identified, one unhealthy instance may cause Elastic Beanstalk to display an informational message or to change the environment's health status from green \(OK\) to yellow \(Warning\) or red \(Degraded or Severe\)\.
 
@@ -64,7 +64,7 @@ Message \(Instance\): Performing application deployment \(running for 3 seconds\
 
 ## Pending \(Grey\)<a name="health-enhanced-status-pending"></a>
 
-An operation is in progress on an **instance** within the command timeout\.
+An operation is in progress on an **instance** within the [command timeout](health-enhanced.md#health-enhanced-factors-timeout)\.
 
 Example: You have recently created the environment and **instances** are being bootstrapped\.
 

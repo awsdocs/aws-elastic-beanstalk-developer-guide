@@ -4,7 +4,7 @@ Use the `aws:elasticbeanstalk:customoption` namespace to define options and valu
 
 For example, you may have a complex configuration file that defines a resource that can be configured by the user launching the environment\. If you use `Fn::GetOptionSetting` to retrieve the value of a custom option, you can put the definition of that option in a different configuration file, where it is more easily discovered and modified by the user\.
 
-Also, because they are configuration options, custom options can be set at the API level to override values set in a configuration file\. See Precedence for more information\.
+Also, because they are configuration options, custom options can be set at the API level to override values set in a configuration file\. See [Precedence](command-options.md#configuration-options-precedence) for more information\.
 
 Custom options are defined like any other option:
 
@@ -37,4 +37,4 @@ Resources:
           Protocol: email
 ```
 
-You can find more example snippets using `Fn::GetOptionSetting` at \.
+You can find more example snippets using `Fn::GetOptionSetting` at [Adding and Customizing Elastic Beanstalk Environment Resources](environment-resources.md)\.

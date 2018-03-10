@@ -4,7 +4,7 @@
 
 Add, delete, update, and list Elastic Beanstalk environment tags\.
 
-For details about environment tagging, see \.
+For details about environment tagging, see [Tagging Resources in Your Elastic Beanstalk Environment](using-features.tagging.md)\.
 
 ## Syntax<a name="eb3-tagsyntax"></a>
 
@@ -30,9 +30,9 @@ None of these options are required\. If you run `eb create` without any options,
 |  Name  |  Description  | 
 | --- | --- | 
 |  `-l` or `--list`  |  List all tags that are currently applied to the environment\.  | 
-|  `-﻿a key1=value1[,key2=value2 ...]` or `-﻿-﻿add key1=value1[,key2=value2 ...]`  |  Apply new tags to the environment\. Specify tags as a comma\-separated list of `key=value` pairs\. You can't specify keys of existing tags\. Valid values: See \.  | 
-|  `-﻿u key1=value1[,key2=value2 ...]` or `-﻿-﻿update key1=value1[,key2=value2 ...]`  |  Update the values of existing environment tags\. Specify tags as a comma\-separated list of `key=value` pairs\. You must specify keys of existing tags\. Valid values: See \.  | 
-|  `-﻿d key1[,key2 ...]` or `-﻿-﻿delete key1[,key2 ...]`  |  Delete existing environment tags\. Specify tags as a comma\-separated list of keys\. You must specify keys of existing tags\. Valid values: See \.  | 
+|  `-﻿a key1=value1[,key2=value2 ...]` or `-﻿-﻿add key1=value1[,key2=value2 ...]`  |  Apply new tags to the environment\. Specify tags as a comma\-separated list of `key=value` pairs\. You can't specify keys of existing tags\. Valid values: See [Tag an Environment](using-features.tagging.md)\.  | 
+|  `-﻿u key1=value1[,key2=value2 ...]` or `-﻿-﻿update key1=value1[,key2=value2 ...]`  |  Update the values of existing environment tags\. Specify tags as a comma\-separated list of `key=value` pairs\. You must specify keys of existing tags\. Valid values: See [Tag an Environment](using-features.tagging.md)\.  | 
+|  `-﻿d key1[,key2 ...]` or `-﻿-﻿delete key1[,key2 ...]`  |  Delete existing environment tags\. Specify tags as a comma\-separated list of keys\. You must specify keys of existing tags\. Valid values: See [Tag an Environment](using-features.tagging.md)\.  | 
 |  `-r` *region* or `--region` *region*  |  The AWS Region in which your environment is running\. Default: the configured default region\. For the list of values you can specify for this option, see [AWS Elastic Beanstalk](http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region) in [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html) in the *Amazon Web Services General Reference*\.  | 
 
 ## Output<a name="eb3-tagsoutput"></a>

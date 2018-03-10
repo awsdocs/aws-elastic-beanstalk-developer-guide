@@ -24,10 +24,10 @@ You can use the AWS X\-Ray SDK with the following Elastic Beanstalk platform con
 
 + **Windows Server** \- all configurations, starting December 9th, 2016
 
-On supported platforms, you can use a configuration option to run the X\-Ray daemon on the instances in your environment\. You can enable the daemon in the Elastic Beanstalk console or by using a configuration file\.
+On supported platforms, you can use a configuration option to run the X\-Ray daemon on the instances in your environment\. You can enable the daemon in the [Elastic Beanstalk console](#environment-configuration-debugging-console) or by using a [configuration file](#environment-configuration-debugging-namespace)\.
 
 **Note**  
-To upload data to X\-Ray, the X\-Ray daemon requires IAM permissions in the **AWSXrayWriteOnlyAccess** managed policy\. These permissions are included in the Elastic Beanstalk instance profile\. If you don't use the default instance profile, see [Giving the Daemon Permission to Send Data to X\-Ray](http://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html#xray-daemon-permissions)\.
+To upload data to X\-Ray, the X\-Ray daemon requires IAM permissions in the **AWSXrayWriteOnlyAccess** managed policy\. These permissions are included in [the Elastic Beanstalk instance profile](concepts-roles-instance.md)\. If you don't use the default instance profile, see [Giving the Daemon Permission to Send Data to X\-Ray](http://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html#xray-daemon-permissions)\.
 
 Debugging with AWS X\-Ray requires the use of the AWS X\-Ray SDK\. See the [AWS X\-Ray Developer Guide](http://docs.aws.amazon.com//xray/latest/devguide/xray-gettingstarted.html) for instructions and sample applications\.
 
@@ -45,7 +45,7 @@ You can enable the AWS X\-Ray daemon on a running environment in the Elastic Bea
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -55,13 +55,13 @@ You can enable the AWS X\-Ray daemon on a running environment in the Elastic Bea
 
 1. Choose **Save**, and then choose **Apply**\.
 
-You can also enable this option during environment creation\. For more information, see \.
+You can also enable this option during environment creation\. For more information, see [The Create New Environment Wizard](environments-create-wizard.md)\.
 
 ## The aws:elasticbeanstalk:xray Namespace<a name="environment-configuration-debugging-namespace"></a>
 
 You can use the `XRayEnabled` option in the `aws:elasticbeanstalk:xray` namespace to enable debugging\.
 
-To enable debugging automatically when you deploy your application, set the option in a configuration file in your source code, as follows\.
+To enable debugging automatically when you deploy your application, set the option in a [configuration file](ebextensions.md) in your source code, as follows\.
 
 **Example \.ebextensions/debugging\.config**  
 

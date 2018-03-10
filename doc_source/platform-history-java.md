@@ -2,7 +2,18 @@
 
 This page lists the previous versions of AWS Elastic Beanstalk's Tomcat platform configurations and the dates that each version was current\. Platform versions that you used to launch or update an environment in the last 30 days remain available \(to the using account, in the used region\) after they are no longer current\.
 
-See the Supported Platforms page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
+See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
+
+The following Elastic Beanstalk platform configurations for Tomcat were current between January 19, 2018 and February 21, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  AWS X‑Ray  |  Application Server  |  Proxy Server  | 
+| --- | --- | --- | --- | --- | --- | 
+|   **Java 8 with Tomcat 8 version 2\.7\.5**   *64bit Amazon Linux 2017\.09 v2\.7\.5 running Tomcat 8 Java 8*   |  2017\.09\.1  |  Java 1\.8\.0\_151  |  2\.0\.0  |  Tomcat 8\.0\.47  |  Apache 2\.2\.34  | 
+|   **Java 7 with Tomcat 7 version 2\.7\.5**   *64bit Amazon Linux 2017\.09 v2\.7\.5 running Tomcat 7 Java 7*   |  2017\.09\.1  |  Java 1\.7\.0\_161  |  2\.0\.0  |  Tomcat 7\.0\.82  |  Apache 2\.2\.34  | 
+|   **Java 6 with Tomcat 7 version 2\.7\.5**   *64bit Amazon Linux 2017\.09 v2\.7\.5 running Tomcat 7 Java 6*   |  2017\.09\.1  |  Java 1\.6\.0\_41  |  2\.0\.0  |  Tomcat 7\.0\.82  |  Apache 2\.2\.34  | 
 
 The following Elastic Beanstalk platform configurations for Tomcat were current between January 10, 2018 and January 18, 2018:
 

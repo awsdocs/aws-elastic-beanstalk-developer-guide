@@ -4,7 +4,7 @@ An instance profile is an IAM role that is applied to instances launched in your
 
 + Write logs to Amazon Simple Storage Service
 
-+ In AWS X\-Ray integrated environments, upload debugging data to X\-Ray
++ In [AWS X\-Ray integrated environments](environment-configuration-debugging.md), upload debugging data to X\-Ray
 
 + In multicontainer Docker environments, coordinate container deployments with Amazon Elastic Container Service
 
@@ -63,4 +63,4 @@ Elastic Beanstalk also provides managed policies named `AWSElasticBeanstalkWorke
 
 If your web application requires access to any other AWS services, add statements or managed policies to the instance profile that allow access to those services\.
 
-For more information about instance profiles, see \.
+For more information about instance profiles, see [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md)\.

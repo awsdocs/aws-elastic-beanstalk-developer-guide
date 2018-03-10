@@ -32,7 +32,7 @@ For the typographic conventions used in this tutorial, see [Document Conventions
 
 ## Rails Development Environment Setup<a name="create_deploy_Ruby_rails-devenv"></a>
 
- Read this section if you are setting up a Rails development environment from scratch\. If you have a development environment configured with Rails, Git and a working app, you can skip this section\. 
+ Read this section if you are setting up a Rails development environment from scratch\. If you have a development environment configured with Rails, Git and a working app, you can [skip this section](#create_deploy_Ruby_rails-install)\. 
 
 **Getting an Ubuntu EC2 Instance**  
  The following instructions were developed and tested using an Amazon EC2 instance running Ubuntu 14\.04\. For instructions on configuring and connecting to an EC2 instance using the AWS Management Console, read the [ Getting Started](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html) section of the *Amazon EC2 User Guide for Linux*\.   
@@ -129,7 +129,7 @@ With Pip you can install the EB CLI with a single command:
 
 ## Set Up Your Git Repository<a name="create_deploy_Ruby_rails_gitinit"></a>
 
- If your Rails project is already in a local Git repository, continue to \.
+ If your Rails project is already in a local Git repository, continue to [Configure the EB CLI](#create_deploy_Ruby_rails_ebinit)\.
 
 First, initiate the repository\. From within the Rails project directory, type `git init`\.
 
@@ -185,7 +185,7 @@ In addition to configuring the environment for deployment, `eb init` sets up som
 
 ## Create a Service Role and Instance Profile<a name="ruby-rails-tutorial-servicerole"></a>
 
-Newer platform versions require a service role and instance profile\. These roles allow Elastic Beanstalk to monitor the resources in your environment and the instances in your environment to upload log files to Amazon S3\. For more information, see \.
+Newer platform versions require a service role and instance profile\. These roles allow Elastic Beanstalk to monitor the resources in your environment and the instances in your environment to upload log files to Amazon S3\. For more information, see [Service Roles, Instance Profiles, and User Policies](concepts-roles.md)\.
 
 If you don't have a service role and instance profile already, use the Elastic Beanstalk Management Console to create them now\.
 

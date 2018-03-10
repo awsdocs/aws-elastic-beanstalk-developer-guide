@@ -1,9 +1,9 @@
 # Managing Elastic Beanstalk Environments with the EB CLI<a name="eb-cli3-getting-started"></a>
 
-After installing the EB CLI and configuring your project directory, you are ready to create an Elastic Beanstalk environment using the EB CLI, deploy source and configuration updates, and pull logs and events\.
+After [installing the EB CLI](eb-cli3-install.md) and [configuring your project directory](eb-cli3-configuration.md), you are ready to create an Elastic Beanstalk environment using the EB CLI, deploy source and configuration updates, and pull logs and events\.
 
 **Note**  
-Creating environments with the EB CLI requires a service role\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
+Creating environments with the EB CLI requires a [service role](concepts-roles-service.md)\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
 
 The following examples use an empty project folder named `eb` that was initialized with the EB CLI for use with a sample Docker application\.
 
@@ -20,7 +20,7 @@ The following examples use an empty project folder named `eb` that was initializ
 
 ## eb create<a name="ebcli3-basics-create"></a>
 
-To create your first environment, run eb create and follow the prompts\. If your project directory has source code in it, the EB CLI will bundle it up and deploy it to your environment\. Otherwise, a sample application will be used\.
+To create your first environment, run [eb create](eb3-create.md) and follow the prompts\. If your project directory has source code in it, the EB CLI will bundle it up and deploy it to your environment\. Otherwise, a sample application will be used\.
 
 ```
 ~/eb$ eb create
@@ -66,7 +66,7 @@ Environment details for: elasticBeanstalkExa-env
 
 ## eb health<a name="ebcli3-basics-health"></a>
 
-Use the `eb health` command to view health information about the instances in your environment and the state of your environment overall\. Use the `--refresh` option to view health in an interactive view that updates every 10 seconds\.
+Use the `eb health` command to view [health information](health-enhanced.md) about the instances in your environment and the state of your environment overall\. Use the `--refresh` option to view health in an interactive view that updates every 10 seconds\.
 
 ```
 ~/eb$ eb health
@@ -194,7 +194,7 @@ settings:
 ...
 ```
 
-This command populates a list of available configuration options in a text editor\. Many of the options shown have a `null` value, these are not set by default but can be modified to update the resources in your environment\. See  for more information about these options\.
+This command populates a list of available configuration options in a text editor\. Many of the options shown have a `null` value, these are not set by default but can be modified to update the resources in your environment\. See [Configuration Options](command-options.md) for more information about these options\.
 
 ## eb terminate<a name="ebcli3-basics-terminate"></a>
 
@@ -213,4 +213,4 @@ INFO: Waiting for EC2 instances to terminate. This may take a few minutes.
  -- Events -- (safe to Ctrl+C)
 ```
 
-For a full list of available EB CLI commands, check out the \.
+For a full list of available EB CLI commands, check out the [EB CLI Command Reference](eb3-cmd-commands.md)\.

@@ -1,6 +1,6 @@
 # Configuring Application Version Lifecycle Settings<a name="applications-lifecycle"></a>
 
-Each time you upload a new version of your application with the Elastic Beanstalk console or the EB CLI, Elastic Beanstalk creates an application version\. If you don't delete versions that you no longer use, you will eventually reach the [application version limit](http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_elastic_beanstalk) and be unable to create new versions of that application\.
+Each time you upload a new version of your application with the Elastic Beanstalk console or the EB CLI, Elastic Beanstalk creates an [application version](applications-versions.md)\. If you don't delete versions that you no longer use, you will eventually reach the [application version limit](http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_elastic_beanstalk) and be unable to create new versions of that application\.
 
 You can avoid hitting the limit by applying an *application version lifecycle policy* to your applications\. A lifecycle policy tells Elastic Beanstalk to delete application versions that are old, or to delete application versions when the total number of versions for an application exceeds a specified number\.
 
@@ -10,7 +10,7 @@ Elastic Beanstalk does not delete application versions that are currently being 
 
 The application version limit applies across all applications in a region\. If you have several applications, configure each application with a lifecycle policy appropriate to avoid reaching the limit\. Elastic Beanstalk only applies the policy if the application version creation succeeds, so if you have already reached the limit, you must delete some versions manually prior to creating a new version\.
 
-By default, Elastic Beanstalk leaves the application version's source bundle in Amazon S3 to prevent loss of data\. You can delete the source bundle to save space\.
+By default, Elastic Beanstalk leaves the application version's [source bundle](applications-sourcebundle.md) in Amazon S3 to prevent loss of data\. You can delete the source bundle to save space\.
 
 You can set the lifecycle settings through the Elastic Beanstalk CLI and APIs\. See [`eb appversion`](eb3-appversion.md), [CreateApplication](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplication.html) \(using the `ResourceLifecycleConfig` parameter\), and [UpdateApplicationResourceLifecycle](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplicationResourceLifecycle.html) for details\.
 

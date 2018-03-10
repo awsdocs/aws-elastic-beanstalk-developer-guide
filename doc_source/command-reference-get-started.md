@@ -1,7 +1,7 @@
 # Getting Started with Eb<a name="command-reference-get-started"></a>
 
 **Note**  
- This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see \. 
+ This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md)\. 
 
 Eb is a command line interface \(CLI\) tool that asks you a series of questions and uses your answers to deploy and manage Elastic Beanstalk applications\. This section provides an end\-to\-end walkthrough using eb to launch a sample application, view it, update it, and then delete it\.
 

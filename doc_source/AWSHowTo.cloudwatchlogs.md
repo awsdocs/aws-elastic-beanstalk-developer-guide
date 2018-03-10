@@ -19,7 +19,7 @@ Note also that once you enable CloudWatch logs, you'll see the **View in CloudWa
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/log-streaming-screen.png)
 
 **Note**  
-If you do not have the *AWSElasticBeanstalkWebTier* or *AWSElasticBeanstalkWorkerTier* Elastic Beanstalk managed policy in your Elastic Beanstalk instance profile, you must add the following to your profile to enable this feature\.  
+If you do not have the *AWSElasticBeanstalkWebTier* or *AWSElasticBeanstalkWorkerTier* Elastic Beanstalk managed policy in your [Elastic Beanstalk instance profile](concepts-roles-instance.md), you must add the following to your profile to enable this feature\.  
 
 ```
 {
@@ -63,13 +63,13 @@ Different platforms stream different logs\. The following table lists the logs, 
 |   `Ruby (Puma)`   |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.cloudwatchlogs.html)  | 
 |   `Ruby (passenger)`   |  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/AWSHowTo.cloudwatchlogs.html)  | 
 
-You can also enable CloudWatch logs using the  eb logs \-\-cloudwatch enable command\.
+You can also enable CloudWatch logs using the [ eb logs \-\-cloudwatch enable](eb3-logs.md) command\.
 
 ## Setting Up CloudWatch Logs Integration with Configuration Files<a name="AWSHowTo.cloudwatchlogs.files"></a>
 
 When you create or update an environment, you can use the sample configuration files in the following list to set up and configure integration with CloudWatch Logs\. You can include the `.zip` file that contains following configuration files or the extracted configuration files in the `.ebextensions` directory at the top level of your application source bundle\. Use the appropriate files for the web server for your platform\. For more information about the web server used by each platform, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
 
-Before you can configure integration with CloudWatch Logs using configuration files, you must set up IAM permissions to use with the CloudWatch Logs agent\. You can attach the following custom policy to the instance profile that you assign to your environment:
+Before you can configure integration with CloudWatch Logs using configuration files, you must set up IAM permissions to use with the CloudWatch Logs agent\. You can attach the following custom policy to the [instance profile](concepts-roles-instance.md) that you assign to your environment:
 
 ```
 {

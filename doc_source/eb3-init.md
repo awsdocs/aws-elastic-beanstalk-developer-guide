@@ -23,14 +23,14 @@ To use `eb init` to create a new key pair, you must have `ssh-keygen` installed 
 
 ****  
 
-|  Name  |  Description  | 
-| --- | --- | 
-|  `-i` `--interactive`  |  Forces EB CLI to prompt you to provide a value for every `eb init` command option\.  The `init` command prompts you to provide values for `eb init` command options that do not have a \(default\) value\. After the first time you run the `eb init` command in a directory, EB CLI might not prompt you about any command options\. Therefore, use the `--interactive` option when you want to change a setting that you previously set\.   | 
-|  `-k` *keyname* `--keyname` *keyname*  |  The name of the Amazon EC2 key pair to use with the Secure Shell \(SSH\) client to securely log in to the Amazon EC2 instances running your Elastic Beanstalk application\.  | 
-|  `--modules folder-1 folder-2`  |  List of child directories to initialize\. Only for use with Compose Environments\.  | 
-|  `-p` *platform\-name*  `--platform` *platform\-name*  |  Specify the platform to skip interactive configuration\. The platform name can include a version if the platform supports multiple configurations\. If you do not specify a configuration version, EB CLI uses the most recent configuration\. Use `eb platform list` to see a list of available platforms\. For example: `php`, `PHP`, `php5.5`, `"PHP 5.5"`, `node.js`, `"64bit Amazon Linux 2014.03 v1.0.7 running PHP 5.5"`  When you specify this option, then EB CLI does not prompt you for values for any other options\. Instead, it assumes default values for each option\. You can specify options for anything for which you do not want to use default values\.   | 
-|  `--source codecommit/repository-name/branch-name`  |  AWS CodeCommit repository and branch\. See [Using the EB CLI with AWS CodeCommit](eb-cli-codecommit.md)\.  | 
-|  Common options  |  | 
+|  Name  |  Description  |  | 
+| --- | --- | --- | 
+|  `-i` `--interactive`  |  Forces EB CLI to prompt you to provide a value for every `eb init` command option\.  The `init` command prompts you to provide values for `eb init` command options that do not have a \(default\) value\. After the first time you run the `eb init` command in a directory, EB CLI might not prompt you about any command options\. Therefore, use the `--interactive` option when you want to change a setting that you previously set\.   |  | 
+|  `-k` *keyname* `--keyname` *keyname*  |  The name of the Amazon EC2 key pair to use with the Secure Shell \(SSH\) client to securely log in to the Amazon EC2 instances running your Elastic Beanstalk application\.  |  | 
+|  `--modules folder-1 folder-2`  |  List of child directories to initialize\. Only for use with [Compose Environments](ebcli-compose.md)\.  |  | 
+|  `-p` *platform\-configuration*  `--platform` *platform\-configuration*  |  The [platform configuration](concepts.platforms.md) to use\. You can specify a platform name, a platform name and version, a solution stack name, or a solution stack ARN\. For example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-init.html) Use [`eb platform list`](eb3-platform.md) to get a list of available configurations\. Specify the `--platform` option to skip interactive configuration\.  When you specify this option, then EB CLI does not prompt you for values for any other options\. Instead, it assumes default values for each option\. You can specify options for anything for which you do not want to use default values\.   |  | 
+|  `--source codecommit/repository-name/branch-name`  |  AWS CodeCommit repository and branch\. See [Using the EB CLI with AWS CodeCommit](eb-cli-codecommit.md)\.  |  | 
+|  [Common options](eb3-cmd-options.md)  |  |  | 
 
 ## AWS CodeBuild Support<a name="eb3-init-codebuild"></a>
 
@@ -83,11 +83,13 @@ Select a default region
 8) ap-southeast-2 : Asia Pacific (Sydney)
 9) ap-northeast-1 : Asia Pacific (Tokyo)
 10) ap-northeast-2 : Asia Pacific (Seoul)
-11) sa-east-1 : South America (Sao Paulo)
+11) sa-east-1 : South America (São Paulo)
 12) cn-north-1 : China (Beijing)
-13) us-east-2 : US East (Columbus)
-14) ca-central-1 : Canada (Central)
-15) eu-west-2 : EU (London)
+13) cn-northwest-1 : China (Ningxia)
+14) us-east-2 : US East (Ohio)
+15) ca-central-1 : Canada (Central)
+16) eu-west-2 : EU (London)
+17) eu-west-3 : EU (Paris)
 (default is 3): 3
 
 Select an application to use

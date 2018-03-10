@@ -25,7 +25,7 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 |  `--instance instance-id`  |  Retrieve logs for the specified instance only\.  | 
 |  `--stream`  |  Stream deployment logs that were set up with CloudWatch\.  | 
 |  `--zip`  |  Retrieves all logs, compresses them into a `.zip` file, and then saves the file to the `.elasticbeanstalk/logs` directory\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-logsoutput"></a>
 

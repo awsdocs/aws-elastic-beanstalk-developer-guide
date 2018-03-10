@@ -2,13 +2,13 @@
 
 ## Description<a name="eb3-setenv-description"></a>
 
-Sets environment properties for the default environment\.
+Sets [environment properties](environments-cfg-softwaresettings.md) for the default environment\.
 
 ## Syntax<a name="eb3-setenv-syntax"></a>
 
 `eb setenv key=value` 
 
-You can include as many properties as you want, but the total size of all properties cannot exceed 4096 bytes\. You can delete a variable by leaving the value blank\. See  for limits\.
+You can include as many properties as you want, but the total size of all properties cannot exceed 4096 bytes\. You can delete a variable by leaving the value blank\. See [Configuring Environment Properties](environments-cfg-softwaresettings.md#environments-cfg-softwaresettings-console) for limits\.
 
 **Note**  
 If the `value` contains a [special character](http://tldp.org/LDP/abs/html/special-chars.html), you must escape that character by preceeding it with a `\` character\.
@@ -21,7 +21,7 @@ If the `value` contains a [special character](http://tldp.org/LDP/abs/html/speci
 |  Name  |  Description  | 
 | --- | --- | 
 |  \-\-timeout  |  The number of minutes before the command times out\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-setenv-output"></a>
 

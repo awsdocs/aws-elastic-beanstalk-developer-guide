@@ -137,7 +137,7 @@ An IAM policy contains policy statements that describe the permissions that you 
 
 + **Effect** specifies whether to allow or deny the actions in the statement\.
 
-+ **Action** specifies the [API operations](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_Operations.html) that you want to control\. For example, use `elasticbeanstalk:CreateEnvironment` to specify the `CreateEnvironment` operation\. Certain operations, such as creating an environment, require additional permissions to perform those actions\. For more information, see \. 
++ **Action** specifies the [API operations](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_Operations.html) that you want to control\. For example, use `elasticbeanstalk:CreateEnvironment` to specify the `CreateEnvironment` operation\. Certain operations, such as creating an environment, require additional permissions to perform those actions\. For more information, see [Resources and Conditions for Elastic Beanstalk Actions](AWSHowTo.iam.policies.actions.md)\. 
 **Note**  
 To use the [http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html) API operation, specify one of the following two virtual actions \(or both\) instead of the API operation name:  
 
@@ -147,9 +147,9 @@ Controls permission to call `UpdateTagsForResource` and pass a list of tags to a
 `elasticbeanstalk:RemoveTags`  
 Controls permission to call `UpdateTagsForResource` and pass a list of tag keys to remove in the `TagsToRemove` parameter\.
 
-+ **Resource** specifies the resources that you want to control access to\. To specify Elastic Beanstalk resources, list the Amazon Resource Name \(ARN\) of each resource\.
++ **Resource** specifies the resources that you want to control access to\. To specify Elastic Beanstalk resources, list the [Amazon Resource Name](AWSHowTo.iam.policies.arn.md) \(ARN\) of each resource\.
 
-+ \(optional\) **Condition** specifies restrictions on the permission granted in the statement\. For more information, see \.
++ \(optional\) **Condition** specifies restrictions on the permission granted in the statement\. For more information, see [Resources and Conditions for Elastic Beanstalk Actions](AWSHowTo.iam.policies.actions.md)\.
 
 The following example policy contains three statements that enable a user who has this policy to call the `CreateEnvironment` action to create an environment whose name begins with **Test** with the specified application and application version\.
 

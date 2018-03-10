@@ -14,7 +14,7 @@ This tutorial walks through the deployment of a simple [Flask](http://flask.poco
 
 To use any Amazon Web Service \(AWS\), including Elastic Beanstalk, you need to have an AWS account and credentials\. To learn more and to sign up, visit [https://aws\.amazon\.com/](https://aws.amazon.com/)\.
 
-To follow this tutorial, you should have all of the Common Prerequisites for Python installed, including the following packages:
+To follow this tutorial, you should have all of the [Common Prerequisites](create-deploy-python-common-steps.md) for Python installed, including the following packages:
 
 + Python 2\.7 or newer
 
@@ -27,7 +27,7 @@ To follow this tutorial, you should have all of the Common Prerequisites for Pyt
 The [Flask](http://flask.pocoo.org/) framework will be installed as part of the tutorial\.
 
 **Note**  
-Creating environments with the EB CLI requires a service role\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
+Creating environments with the EB CLI requires a [service role](concepts-roles-service.md)\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
 
 ## Set Up a Python Virtual Environment with Flask<a name="python-flask-setup-venv"></a>
 
@@ -240,7 +240,7 @@ If you see a "service role required" error message, run `eb create` interactivel
    This will open a browser window using the domain name created for your application\. You should see the same Flask website that you created and tested locally\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/eb_flask_deployed.png)
 
-If you don't see your application running, or get an error message, see Troubleshooting Deployments for help with how to determine the cause of the error\.
+If you don't see your application running, or get an error message, see [Troubleshooting Deployments](troubleshooting-deployments.md) for help with how to determine the cause of the error\.
 
 If you *do* see your application running, then congratulations, you've deployed your first Flask application with Elastic Beanstalk\!
 
@@ -252,7 +252,7 @@ To save instance hours and other AWS resources between development sessions, ter
 ~/eb-flask$ eb terminate flask-env
 ```
 
-This command terminates the environment and all of the AWS resources that run within it\. It does not delete the application, however, so you can always create more environments with the same configuration by running `eb create` again\. For more information on EB CLI commands, see \. 
+This command terminates the environment and all of the AWS resources that run within it\. It does not delete the application, however, so you can always create more environments with the same configuration by running `eb create` again\. For more information on EB CLI commands, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\. 
 
 If you are done with the sample application, you can also remove the project folder and virtual environment:
 
@@ -263,4 +263,4 @@ If you are done with the sample application, you can also remove the project fol
 
 For more information about Flask, including an in\-depth tutorial, visit [the official documentation](http://flask.pocoo.org/docs/0.10/)\.
 
-If you'd like to try out another Python web framework, check out \.
+If you'd like to try out another Python web framework, check out [Deploying a Django Application to Elastic Beanstalk](create-deploy-python-django.md)\.

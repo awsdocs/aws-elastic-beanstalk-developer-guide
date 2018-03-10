@@ -21,7 +21,7 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 | --- | --- | 
 |  `--force`  |  Upgrades without requiring you to confirm the environment name before starting the upgrade process\.  | 
 |  `--noroll`  |  Updates all instances without using rolling updates to keep some instances in service during the upgrade\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-upgradeoutput"></a>
 

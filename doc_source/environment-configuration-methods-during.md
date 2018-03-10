@@ -2,7 +2,7 @@
 
 When you create an AWS Elastic Beanstalk environment by using the AWS Management Console, EB CLI, AWS CLI, an SDK, or the Elastic Beanstalk API, you can provide values for configuration options to customize your environment and the AWS resources that are launched within it\.
 
-For anything other than a one\-off configuration change, you can store configuration files locally, in your source bundle, or in Amazon S3\.
+For anything other than a one\-off configuration change, you can [store configuration files](environment-configuration-methods-before.md) locally, in your source bundle, or in Amazon S3\.
 
 This topic includes procedures for all of the methods to set configuration options during environment creation\.
 
@@ -22,7 +22,7 @@ When you create an Elastic Beanstalk environment in the AWS Management Console, 
 
 ### Using Configuration Files \(`.ebextensions`\)<a name="configuration-options-during-console-ebextensions"></a>
 
-Include `.config` files in your application source bundle in a folder named `.ebextensions`\.
+Include `.config` files in your [application source bundle](applications-sourcebundle.md) in a folder named `.ebextensions`\.
 
 ```
 ~/workspace/my-app-v1.zip
@@ -33,13 +33,13 @@ Include `.config` files in your application source bundle in a folder named `.eb
 `-- styles.css
 ```
 
-Upload the source bundle to Elastic Beanstalk normally, during environment creation\.
+Upload the source bundle to Elastic Beanstalk normally, during [environment creation](using-features.environments.md)\.
 
-The Elastic Beanstalk console applies recommended values for some configuration options and has form fields for others\. Options configured by the Elastic Beanstalk console are applied directly to the environment and override settings in configuration files\.
+The Elastic Beanstalk console applies [recommended values](command-options.md#configuration-options-recommendedvalues) for some configuration options and has form fields for others\. Options configured by the Elastic Beanstalk console are applied directly to the environment and override settings in configuration files\.
 
 ### Using a Saved Configuration<a name="configuration-options-during-console-savedconfig"></a>
 
-When you create a new environment using the Elastic Beanstalk console, one of the first steps is to choose a configuration\. The configuration can be a **predefined configuration**, typically the latest version of a platform such as **PHP** or **Tomcat**, or it can be a **saved configuration**\.
+When you create a new environment using the Elastic Beanstalk console, one of the first steps is to choose a configuration\. The configuration can be a [**predefined configuration**](concepts.platforms.md), typically the latest version of a platform such as **PHP** or **Tomcat**, or it can be a **saved configuration**\.
 
 **To apply a saved configuration during environment creation \(AWS Management Console\)**
 
@@ -53,17 +53,17 @@ When you create a new environment using the Elastic Beanstalk console, one of th
 
 1. Proceed through the wizard to create your environment\.
 
-Saved configurations are application\-specific\. See  for details on creating saved configurations\.
+Saved configurations are application\-specific\. See [Saved Configurations](environment-configuration-methods-before.md#configuration-options-before-savedconfig) for details on creating saved configurations\.
 
 ### Using the New Environment Wizard<a name="configuration-options-during-console-wizard"></a>
 
-Most of the standard configuration options are presented on the **Configure more options** page of the Create New Environment wizard\. If you create an Amazon RDS database or configure a VPC for your environment, additional configuration options are available for those resources\.
+Most of the standard configuration options are presented on the **Configure more options** page of the [Create New Environment wizard](environments-create-wizard.md)\. If you create an Amazon RDS database or configure a VPC for your environment, additional configuration options are available for those resources\.
 
 **To set configuration options during environment creation \(AWS Management Console\)**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Choose or create an application\.
+1. Choose or [create](applications.md) an application\.
 
 1. In the **Actions** drop\-down menu, choose **Create environment**\.
 
@@ -73,7 +73,7 @@ Most of the standard configuration options are presented on the **Configure more
 
 1. When you are done making option selections, choose **Create environment**\.
 
-Any options that you set in the new environment wizard are set directly on the environment and override any option settings in saved configurations or configuration files \(`.ebextensions`\) that you apply\. You can remove settings after the environment is created using the EB CLI or AWS CLI to allow the settings in saved configurations or configuration files to surface\.
+Any options that you set in the new environment wizard are set directly on the environment and override any option settings in saved configurations or configuration files \(`.ebextensions`\) that you apply\. You can remove settings after the environment is created using the [EB CLI](environment-configuration-methods-after.md#configuration-options-after-ebcli) or [AWS CLI](environment-configuration-methods-after.md#configuration-options-after-awscli) to allow the settings in saved configurations or configuration files to surface\.
 
 For details about the new environment wizard, see [The Create New Environment Wizard](environments-create-wizard.md)\.
 
@@ -107,7 +107,7 @@ Create your environment and deploy your source code to it with `eb create`\.
 
 ### Using Saved Configurations<a name="configuration-options-during-ebcli-savedconfig"></a>
 
-To apply a saved configuration when you create an environment with `eb create`, use the `--cfg` option\.
+To apply a saved configuration when you create an environment with [`eb create`](eb3-create.md), use the `--cfg` option\.
 
 ```
 ~/workspace/my-app$ eb create --cfg savedconfig
@@ -127,11 +127,11 @@ You can store the saved configuration in your project folder or in your Elastic 
 `-- styles.css
 ```
 
-If the EB CLI does not find the configuration locally, it looks in the Elastic Beanstalk storage location in Amazon S3\. For details on creating, editing, and uploading saved configurations, see \.
+If the EB CLI does not find the configuration locally, it looks in the Elastic Beanstalk storage location in Amazon S3\. For details on creating, editing, and uploading saved configurations, see [Saved Configurations](environment-configuration-methods-before.md#configuration-options-before-savedconfig)\.
 
 ### Using Command Line Options<a name="configuration-options-during-ebcli-params"></a>
 
-The EB CLI `eb create` command has several options that you can use to set configuration options during environment creation\. You can use these options to add an RDS database to your environment, configure a VPC, or override recommended values\.
+The EB CLI `eb create` command has several [options](eb3-create.md#eb3-createoptions) that you can use to set configuration options during environment creation\. You can use these options to add an RDS database to your environment, configure a VPC, or override [recommended values](command-options.md#configuration-options-recommendedvalues)\.
 
 For example, the EB CLI uses the `t2.micro` instance type by default\. To choose a different instance type, use the `--instance_type` option\.
 
@@ -147,11 +147,11 @@ $ eb create --database.engine postgres --database.username dbuser
 
 If you leave out the environment name, database password, or any other parameters that are required to create your environment, the EB CLI prompts you to enter them\.
 
-See eb create for a full list of available options and usage examples\.
+See [eb create](eb3-create.md) for a full list of available options and usage examples\.
 
 ## Using the AWS CLI<a name="configuration-options-during-awscli"></a>
 
-When you use the `create-environment` command to create an Elastic Beanstalk environment with the AWS CLI, the AWS CLI does not apply any recommended values\. All configuration options are defined in configuration files in the source bundle that you specify\. 
+When you use the `create-environment` command to create an Elastic Beanstalk environment with the AWS CLI, the AWS CLI does not apply any [recommended values](command-options.md#configuration-options-recommendedvalues)\. All configuration options are defined in configuration files in the source bundle that you specify\. 
 
 
 + [Using Configuration Files \(`.ebextensions`\)](#configuration-options-during-awscli-ebextensions)

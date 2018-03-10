@@ -2,7 +2,7 @@
 
 When you launch an environment in the AWS Elastic Beanstalk environment management console, the console creates a default service role, named `aws-elasticbeanstalk-service-role`, and attaches managed policies with default permissions to it\. 
 
-Elastic Beanstalk provides a managed policy for enhanced health monitoring, and one with additional permissions required for managed platform updates\. The console assigns both of these policies to the default service role\. The managed service role policies follow\.
+Elastic Beanstalk provides a managed policy for [enhanced health monitoring](health-enhanced.md), and one with additional permissions required for [managed platform updates](environment-platform-update-managed.md)\. The console assigns both of these policies to the default service role\. The managed service role policies follow\.
 
 **Managed Service Role Policies**
 
@@ -172,9 +172,9 @@ To allow Elastic Beanstalk to assume the `aws-elasticbeanstalk-service-role` rol
 }
 ```
 
-When you launch an environment using the [[ERROR] BAD/MISSING LINK TEXT](eb3-create.md) command of the Elastic Beanstalk Command Line Interface \(EB CLI\) and don't specify a service role through the `--service-role` option, Elastic Beanstalk creates the default service role `aws-elasticbeanstalk-service-role`\. If the default service role already exists, Elastic Beanstalk uses it for the new environment\.
+When you launch an environment using the [`eb create`](eb3-create.md) command of the Elastic Beanstalk Command Line Interface \(EB CLI\) and don't specify a service role through the `--service-role` option, Elastic Beanstalk creates the default service role `aws-elasticbeanstalk-service-role`\. If the default service role already exists, Elastic Beanstalk uses it for the new environment\.
 
-If you use the `CreateEnvironment` action of the Elastic Beanstalk API to create an environment, specify a service role with the `ServiceRole` configuration option in the `aws:elasticbeanstalk:environment` namespace\. See  for details on using enhanced health monitoring with the Elastic Beanstalk API\. 
+If you use the `CreateEnvironment` action of the Elastic Beanstalk API to create an environment, specify a service role with the `ServiceRole` configuration option in the `aws:elasticbeanstalk:environment` namespace\. See [Using Enhanced Health Reporting with the AWS Elastic Beanstalk API](health-enhanced-api.md) for details on using enhanced health monitoring with the Elastic Beanstalk API\. 
 
 When you create an environment by using the Elastic Beanstalk API, and don't specify a service role, Elastic Beanstalk creates a service\-linked role\. This is a unique type of service role that is predefined by Elastic Beanstalk to include all the permissions that the service requires to call other AWS services on your behalf\. The service\-linked role is associated with your account\. Elastic Beanstalk creates it once, then reuses it when creating additional environments\. You can also use IAM to create your account's service\-linked role in advance\. When your account has a service\-linked role, you can use it to create an environment by using the Elastic Beanstalk API, the Elastic Beanstalk console, or the EB CLI\. For details about using service\-linked roles with Elastic Beanstalk environments, see [Using Service\-Linked Roles for Elastic Beanstalk](using-service-linked-roles.md)\.
 
@@ -201,7 +201,7 @@ The permissions granted by your default service role can vary depending on when 
 
 ## Updating an Out\-of\-Date Default Service Role<a name="iam-servicerole-update"></a>
 
-If the default service role lacks the required permissions, you can update it by creating a new environment in the Elastic Beanstalk environment management console\.
+If the default service role lacks the required permissions, you can update it by [creating a new environment](using-features.environments.md) in the Elastic Beanstalk environment management console\.
 
 Alternatively, you can add the managed policies to the default service role manually\.
 
@@ -257,4 +257,4 @@ If you can't use the default service role, create a service role\.
 
 1. Choose **Create Role**\.
 
-You can apply your custom service role when you create an environment in the environment creation wizard or with the `--service-role` option on the `eb create` command\.
+You can apply your custom service role when you create an environment in the [environment creation wizard](environments-create-wizard.md) or with the `--service-role` option on the `[eb create](eb3-create.md)` command\.

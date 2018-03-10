@@ -4,15 +4,15 @@ Because AWS Elastic Beanstalk performs an in\-place update when you update your 
 
 Blue/green deployments require that your environment runs independently of your production database, if your application uses one\. If your environment has an Amazon RDS DB instance attached to it, the data will not transfer over to your second environment, and will be lost if you terminate the original environment\.
 
-For details on configuring your application to connect to an external \(not managed by Elastic Beanstalk\) Amazon RDS instance, see \.
+For details on configuring your application to connect to an external \(not managed by Elastic Beanstalk\) Amazon RDS instance, see [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)\.
 
 **To perform a blue/green deployment**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Clone your current environment, or launch a new environment running the configuration you want\.
+1. [Clone your current environment](using-features.managing.clone.md), or launch a new environment running the configuration you want\.
 
-1. Deploy the new application version to the new environment\.
+1. [Deploy the new application version](using-features.deploy-existing-version.md#deployments-newversion) to the new environment\.
 
 1. Test the new version on the new environment\.
 

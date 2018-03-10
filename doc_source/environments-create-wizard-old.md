@@ -51,9 +51,9 @@ After you launch an environment with a specific configuration, you cannot change
 On the **Application Version** page, you can use the sample application, upload your own, or specify the URL for the Amazon S3 bucket that contains your application code\.
 
 **Note**  
-Depending on the platform configuration you selected, you can upload your application in a ZIP source bundle, a WAR file, or a plaintext Docker configuration\. You can include multiple `WAR` files inside a `ZIP` file to deploy multiple Tomcat applications to each instance in your environment\. The file size limit is 512 MB\.
+Depending on the platform configuration you selected, you can upload your application in a ZIP [source bundle](applications-sourcebundle.md), a WAR file, or a plaintext Docker configuration\. You can include multiple `WAR` files inside a `ZIP` file to deploy multiple Tomcat applications to each instance in your environment\. The file size limit is 512 MB\.
 
-For load\-balancing, automatically scaling environments, choose a **Deployment policy** to configure how new application versions and changes to software configurations for instances are deployed\. **All at once** completes deployments as quickly as possible, but can result in downtime\. Rolling deployments ensure that some instances remain in service during the entire deployment process\. The **Healthy threshold** option lets you lower the minimum status at which instances can pass health checks during rolling deployments and configuration updates\. See  for more information\.
+For load\-balancing, automatically scaling environments, choose a **Deployment policy** to configure how new application versions and changes to software configurations for instances are deployed\. **All at once** completes deployments as quickly as possible, but can result in downtime\. Rolling deployments ensure that some instances remain in service during the entire deployment process\. The **Healthy threshold** option lets you lower the minimum status at which instances can pass health checks during rolling deployments and configuration updates\. See [Deployment Policies and Settings](using-features.rolling-version-deploy.md) for more information\.
 
 ## Environment Info<a name="environments-create-wizard-old-environmentinfo"></a>
 
@@ -87,7 +87,7 @@ Elastic Beanstalk is free, but the AWS resources that it provisions might not be
 
 + Select an **EC2 key pair** to enable SSH or RDP access to the instances in your environment\. For more information about Amazon EC2 key pairs, see [Using Credentials](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-credentials.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
-+ Specify an **Email address** to receive notifications about important events emitted by your environment\. For more information, see \.
++ Specify an **Email address** to receive notifications about important events emitted by your environment\. For more information, see [Elastic Beanstalk Environment Notifications with Amazon SNS](using-features.managing.sns.md)\.
 
 + For load\-balancing, automatically scaling environments, **Application health check URL**, **Cross\-zone load balancing**, **Connection draining**, and **Connection draining timeout** let you configure the load balancer's behavior\. For more information, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)\. 
 
@@ -181,7 +181,7 @@ If you do not see the VPC information, then you have not created a VPC in the sa
 
 ## Permissions<a name="environments-create-wizard-old-permissions"></a>
 
-For **Permissions** window, select an instance profile and service role\. An instance profile grants the Amazon EC2 instances in your environment permissions to access AWS resources\. A service role grants Elastic Beanstalk permission to monitor the resources in your environment\. For more information, see [Service Roles, Instance Profiles, and User Policies](concepts-roles.md)\.\)
+For **Permissions** window, select an [instance profile](concepts-roles-instance.md) and [service role](concepts-roles-service.md)\. An instance profile grants the Amazon EC2 instances in your environment permissions to access AWS resources\. A service role grants Elastic Beanstalk permission to monitor the resources in your environment\. For more information, see [Service Roles, Instance Profiles, and User Policies](concepts-roles.md)\.\)
 
 If you've created a custom instance profile and service role, select them from the drop\-down menus\. If not, choose **Next** to use the default roles\.
 

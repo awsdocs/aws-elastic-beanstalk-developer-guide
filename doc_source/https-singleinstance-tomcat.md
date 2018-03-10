@@ -1,6 +1,6 @@
 # Terminating HTTPS on EC2 Instances Running Tomcat<a name="https-singleinstance-tomcat"></a>
 
-For Tomcat container types, you use a configuration file to enable the Apache HTTP Server to use HTTPS when acting as the reverse proxy for Tomcat\.
+For Tomcat container types, you use a [configuration file](ebextensions.md) to enable the Apache HTTP Server to use HTTPS when acting as the reverse proxy for Tomcat\.
 
 Add the following snippet to your configuration file, replacing the certificate and private key material as instructed, and save it in your source bundle's `.ebextensions` directory\. The configuration file performs the following tasks:
 
@@ -80,7 +80,7 @@ Your certificate vendor may include intermediate certificates that you can insta
 **Note**  
 Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)\.
 
-In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation function and adds a rule to it\.
+In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation [function](ebextensions-functions.md) and adds a rule to it\.
 
 **Example \.ebextensions/https\-instance\-single\.config**  
 
@@ -96,4 +96,4 @@ Resources:
       CidrIp: 0.0.0.0/0
 ```
 
-For a load\-balanced environment, you configure the load balancer to either pass secure traffic through untouched, or decrypt and re\-encrypt for end\-to\-end encryption\.
+For a load\-balanced environment, you configure the load balancer to either [pass secure traffic through untouched](https-tcp-passthrough.md), or [decrypt and re\-encrypt](configuring-https-endtoend.md) for end\-to\-end encryption\.

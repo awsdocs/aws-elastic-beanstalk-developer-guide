@@ -9,7 +9,7 @@ With environment links, you can specify the connections between your application
 
 For example, if your application consists of a frontend that collects email addresses and a worker that sends a welcome email to the email addresses collected by the frontend, you can create a link to the worker in your frontend and have the frontend automatically discover the endpoint \(queue URL\) for your worker\.
 
-Define links to other environments in an environment manifest, a YAML formatted file named `env.yaml` in the root of your application source\. The following manifest defines a link to an environment named worker:
+Define links to other environments in an [environment manifest](environment-cfg-manifest.md), a YAML formatted file named `env.yaml` in the root of your application source\. The following manifest defines a link to an environment named worker:
 
 **`~/workspace/my-app/frontend/env.yaml`**
 
@@ -19,7 +19,7 @@ EnvironmentLinks:
   "WORKERQUEUE": "worker"
 ```
 
-When you create an environment with an application version that includes the above environment manifest, Elastic Beanstalk looks for an environment named `worker` that belongs to the same application\. If that environment exists, Elastic Beanstalk creates an environment property named `WORKERQUEUE`\. The value of `WORKERQUEUE` is the Amazon SQS queue URL\. The frontend application can read this property in the same manner as an environment variable\. See  for details\.
+When you create an environment with an application version that includes the above environment manifest, Elastic Beanstalk looks for an environment named `worker` that belongs to the same application\. If that environment exists, Elastic Beanstalk creates an environment property named `WORKERQUEUE`\. The value of `WORKERQUEUE` is the Amazon SQS queue URL\. The frontend application can read this property in the same manner as an environment variable\. See [Using Elastic Beanstalk Saved Configurations](environment-configuration-savedconfig.md) for details\.
 
 To use environment links, add an environment manifest to your application source and upload it with the EB CLI, AWS CLI or an SDK\. If you use the AWS CLI or an SDK, set the `process` flag when you call `CreateApplicationVersion`: 
 

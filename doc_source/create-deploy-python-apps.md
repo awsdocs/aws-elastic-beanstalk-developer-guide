@@ -2,7 +2,7 @@
 
 This section provides tutorials and information about deploying Python applications using AWS Elastic Beanstalk\.
 
-The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the getting started tutorial to learn the basics\.
+The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
 
 + [Setting Up Your Python Development Environment](create-deploy-python-common-steps.md)

@@ -2,9 +2,9 @@
 
 If you don't want the load balancer in your AWS Elastic Beanstalk environment to decrypt HTTPS traffic, you can configure the secure listener to relay requests to backend instances as\-is\.
 
-First configure your environment's EC2 instances to terminate HTTPS\. Test the configuration on a single instance environment to make sure everything works before adding a load balancer to the mix\.
+First [configure your environment's EC2 instances to terminate HTTPS](https-singleinstance.md)\. Test the configuration on a single instance environment to make sure everything works before adding a load balancer to the mix\.
 
-Add a configuration file to your project to configure a listener on port 443 that passes TCP packets as\-is to port 443 on backend instances:
+Add a [configuration file](ebextensions.md) to your project to configure a listener on port 443 that passes TCP packets as\-is to port 443 on backend instances:
 
 **`.ebextensions/https-lb-passthrough.config`**
 

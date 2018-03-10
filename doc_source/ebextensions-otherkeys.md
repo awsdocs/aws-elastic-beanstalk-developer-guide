@@ -9,7 +9,7 @@ We've already introduced configuration file keys from AWS CloudFormation such as
 
 ## Parameters<a name="ebextensions-otherkeys-parameters"></a>
 
-Parameters are an alternative Elastic Beanstalk's own custom options that you can use to define values that you use in other places in your configuration files\. Like custom options, you can use parameters to gather user configurable values in one place\. Unlike custom options, you can not use Elastic Beanstalk's API to set parameter values, and the number of parameters you can define in a template is limited by AWS CloudFormation\.
+Parameters are an alternative Elastic Beanstalk's own [custom options](configuration-options-custom.md) that you can use to define values that you use in other places in your configuration files\. Like custom options, you can use parameters to gather user configurable values in one place\. Unlike custom options, you can not use Elastic Beanstalk's API to set parameter values, and the number of parameters you can define in a template is limited by AWS CloudFormation\.
 
 One reason you might want to use parameters is to make your configuration files double as AWS CloudFormation templates\. If you use parameters instead of custom options, you can use the configuration file to create the same resource in AWS CloudFormation as its own stack\. For example, you could have a configuration file that adds an Amazon EFS file system to your environment for testing, and then use the same file to create an independent file system that isn't tied to your environment's lifecycle for production use\.
 

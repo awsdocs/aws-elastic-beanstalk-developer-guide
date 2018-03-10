@@ -31,7 +31,7 @@ The following related resources can help you as you work with this service\.
 The following are download links to the sample applications that are deployed as part of [Getting Started Using Elastic Beanstalk](GettingStarted.md)\.
 
 **Note**  
-Some samples use features that may have been released since the release of the platform you are using\. If the sample fails to run, try updating your platform to a current version, as described in [[ERROR] BAD/MISSING LINK TEXT](concepts.platforms.md)\.
+Some samples use features that may have been released since the release of the platform you are using\. If the sample fails to run, try updating your platform to a current version, as described in [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
 
 + **Single Container Docker** – [docker\-singlecontainer\-v1\.zip](samples/docker-singlecontainer-v1.zip)
 

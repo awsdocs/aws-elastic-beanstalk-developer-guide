@@ -7,15 +7,15 @@ Elastic Beanstalk uses Amazon SNS for notifications\. For details about Amazon S
 
 When you configure notifications for your environment, Elastic Beanstalk creates an Amazon SNS topic for your environment\. To send messages to an Amazon SNS topic, Elastic Beanstalk must have the required permissions\. Elastic Beanstalk automatically attaches the required permissions to the topic's policy\.
 
-When a notable event occurs, Elastic Beanstalk sends a message to the topic\. Amazon SNS relays messages it receives to the topic's subscribers\. Notable events include environment creation errors and all changes in environment and instance health\. Events for Amazon EC2 Auto Scaling operations \(adding and removing instances from the environment\) and other informational events don't trigger notifications\.
+When a notable [event](using-features.events.md) occurs, Elastic Beanstalk sends a message to the topic\. Amazon SNS relays messages it receives to the topic's subscribers\. Notable events include environment creation errors and all changes in [environment and instance health](health-enhanced.md)\. Events for Amazon EC2 Auto Scaling operations \(adding and removing instances from the environment\) and other informational events don't trigger notifications\.
 
 ![\[Amazon SNS notification email\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/sns-notification-email.png)
 
-The Elastic Beanstalk console lets you enter an email address during or after environment creation to create an Amazon SNS topic and subscribe to it\. Elastic Beanstalk manages the lifecycle of the topic, and deletes it when your environment is terminated or when you remove your email address in the environment management console\.
+The Elastic Beanstalk console lets you enter an email address during or after environment creation to create an Amazon SNS topic and subscribe to it\. Elastic Beanstalk manages the lifecycle of the topic, and deletes it when your environment is terminated or when you remove your email address in the [environment management console](environments-console.md)\.
 
 The `aws:elasticbeanstalk:sns:topics` namespace provides options for configuring an Amazon SNS topic by using configuration files, or by using a CLI or SDK\. These methods let you configure the type of subscriber and the endpoint, so that the subscriber can be an Amazon SQS queue or HTTP URL\.
 
-You can only turn Amazon SNS notifications on or off\. Depending on the size and composition of your environment, the frequency of notifications sent to the topic can be high\. For notifications that are sent only under specific circumstances, you can configure your environment to publish custom metrics and set Amazon CloudWatch alarms to notify you when those metrics reach an unhealthy threshold\.
+You can only turn Amazon SNS notifications on or off\. Depending on the size and composition of your environment, the frequency of notifications sent to the topic can be high\. For notifications that are sent only under specific circumstances, you can [configure your environment to publish custom metrics](health-enhanced-cloudwatch.md) and [set Amazon CloudWatch alarms](using-features.alarms.md) to notify you when those metrics reach an unhealthy threshold\.
 
 ## Configuring Notifications<a name="configuration-notifications-console"></a>
 
@@ -25,7 +25,7 @@ The Elastic Beanstalk console lets you enter an email address to create an Amazo
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -40,7 +40,7 @@ When you enter an email address for notifications, Elastic Beanstalk creates an 
 
 ## The aws:elasticbeanstalk:sns:topics Namespace<a name="configuration-notifications-namespace"></a>
 
-Use the options in the aws:elasticbeanstalk:sns:topics`` namespace to configure Amazon SNS notifications for your environment\. You can set these options by using configuration files, a CLI, or an SDK\.
+Use the options in the [aws:elasticbeanstalk:sns:topics`` namespace](command-options-general.md#command-options-general-elasticbeanstalksnstopics) to configure Amazon SNS notifications for your environment\. You can set these options by using [configuration files](ebextensions.md), a CLI, or an SDK\.
 
 `Notification Endpoint` – Email address, Amazon SQS queue, or URL to send notifications to\. Setting this option creates an SQS queue and a subscription for the specified endpoint\. If the endpoint is not an email address, you must also set the `Notification Protocol` option\. SNS validates the value of `Notification Endpoint` based on the value of `Notification Protocol`\. Setting this option multiple times creates additional subscriptions to the topic\. Removing this option deletes the topic\.
 
@@ -81,4 +81,4 @@ If you attach an existing SNS topic to an environment with `Notification Topic N
 
 Changing this option also changes the `Notification Topic ARN`\. If a topic is already attached to the environment, Elastic Beanstalk deletes the old topic, and then creates a new topic and subscription\.
 
-The The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See  for details\.
+The The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.

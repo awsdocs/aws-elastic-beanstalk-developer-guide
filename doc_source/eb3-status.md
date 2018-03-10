@@ -20,7 +20,7 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 |  Name  |  Description  | 
 | --- | --- | 
 |  `-v` or `--verbose`  |  Provides more information about individual instances, such as their status with the Elastic Load Balancing load balancer\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-statusoutput"></a>
 

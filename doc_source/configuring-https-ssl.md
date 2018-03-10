@@ -3,9 +3,9 @@
 You can create an X509 certificate for your application with `OpenSSL`\. OpenSSL is a standard, open source library that supports a wide range of cryptographic functions, including the creation and signing of x509 certificates\. For more information about OpenSSL, visit [www\.openssl\.org](https://www.openssl.org/)\.
 
 **Note**  
-You only need to create a certificate locally if you want to use HTTPS in a single instance environment or re\-encrypt on the backend with a self\-signed certificate\. If you own a domain name, you can create a certificate in AWS and use it with a load balanced environment for free by using AWS Certificate Manager \(ACM\)\. See [Request a Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide* for instructions\.
+You only need to create a certificate locally if you want to [use HTTPS in a single instance environment](https-singleinstance.md) or [re\-encrypt on the backend](configuring-https-endtoend.md) with a self\-signed certificate\. If you own a domain name, you can create a certificate in AWS and use it with a load balanced environment for free by using AWS Certificate Manager \(ACM\)\. See [Request a Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide* for instructions\.
 
-Run `openssl version` at the command line to see if you already have OpenSSL installed\. If you don't, you can build and install the source code using the instructions at the [public GitHub repository](https://github.com/openssl/openssl), or use your favorite package manager\. OpenSSL is also installed on Elastic Beanstalk's Linux images, so a quick alternative is to connect to an EC2 instance in a running environment by using the EB CLI's `eb ssh` command:
+Run `openssl version` at the command line to see if you already have OpenSSL installed\. If you don't, you can build and install the source code using the instructions at the [public GitHub repository](https://github.com/openssl/openssl), or use your favorite package manager\. OpenSSL is also installed on Elastic Beanstalk's Linux images, so a quick alternative is to connect to an EC2 instance in a running environment by using the [EB CLI](eb-cli3.md)'s `eb ssh` command:
 
 ```
 ~/eb$ eb ssh
@@ -64,7 +64,7 @@ subject=/C=us/ST=washington/L=seattle/O=example corporation/OU=marketing/CN=www.
 Getting Private key
 ```
 
-Keep the private key and public certificate for later use\. You can discard the signing request\. Always store the private key in a secure location and avoid adding it to your source code\.
+Keep the private key and public certificate for later use\. You can discard the signing request\. Always [store the private key in a secure location](https-storingprivatekeys.md) and avoid adding it to your source code\.
 
 To use the certificate with the Windows Server platform, you must convert it to a PFX format\. Use the following command to create a PFX certificate from the private key and public certificate files:
 
@@ -74,4 +74,4 @@ Enter Export Password: password
 Verifying - Enter Export Password: password
 ```
 
-Now that you have a certificate, you can upload it to IAM for use with a load balancer, or configure the instances in your environment to terminate HTTPS\.
+Now that you have a certificate, you can [upload it to IAM](configuring-https-ssl-upload.md) for use with a load balancer, or [configure the instances in your environment to terminate HTTPS](https-singleinstance.md)\.

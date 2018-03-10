@@ -41,7 +41,7 @@ To use AWS CodeCommit with AWS Elastic Beanstalk, you need a local Git repositor
 
 ## Creating an AWS CodeCommit Repository with the EB CLI<a name="eb-cli-codecommit-create"></a>
 
-To get started with AWS CodeCommit, run `eb init`\. During repository configuration, the EB CLI prompts you to use AWS CodeCommit to store your code and speed up deployments\. Even if you previously configured your project with `eb init`, you can run it again to configure AWS CodeCommit\.
+To get started with AWS CodeCommit, run [`eb init`](eb3-init.md)\. During repository configuration, the EB CLI prompts you to use AWS CodeCommit to store your code and speed up deployments\. Even if you previously configured your project with `eb init`, you can run it again to configure AWS CodeCommit\.
 
 **To create an AWS CodeCommit repository with the EB CLI**
 
@@ -135,7 +135,7 @@ AWS CodeCommit configuration applies to a single branch\. You can use `eb use` a
 
 **To configure AWS CodeCommit integration with the EB CLI**
 
-1. To change the remote branch, use the `eb use` command's `--source` option\.
+1. To change the remote branch, use the [`eb use`](eb3-use.md) command's `--source` option\.
 
    ```
    ~/my-app$ eb use test-env --source my-app/test
@@ -150,7 +150,7 @@ AWS CodeCommit configuration applies to a single branch\. You can use `eb use` a
    ~/my-app$ eb use --source my-app/production production-env
    ```
 
-1. To configure AWS CodeCommit interactively, use `eb codesource codecommit`\.
+1. To configure AWS CodeCommit interactively, use [`eb codesource codecommit`](eb3-codesource.md)\.
 
    ```
    ~/my-app$ eb codesource codecommit
@@ -172,7 +172,7 @@ AWS CodeCommit configuration applies to a single branch\. You can use `eb use` a
    (default is 1): 1
    ```
 
-1. To disable AWS CodeCommit integration, use `eb codesource local`\.
+1. To disable AWS CodeCommit integration, use [`eb codesource local`](eb3-codesource.md)\.
 
    ```
    ~/my-app$ eb codesource local
@@ -216,11 +216,13 @@ If you already have an AWS CodeCommit repository and want to use it with Elastic
    8) ap-southeast-2 : Asia Pacific (Sydney)
    9) ap-northeast-1 : Asia Pacific (Tokyo)
    10) ap-northeast-2 : Asia Pacific (Seoul)
-   11) sa-east-1 : South America (Sao Paulo)
+   11) sa-east-1 : South America (São Paulo)
    12) cn-north-1 : China (Beijing)
-   13) us-east-2 : US East (Columbus)
-   14) ca-central-1 : Canada (Central)
-   15) eu-west-2 : EU (London)
+   13) cn-northwest-1 : China (Ningxia)
+   14) us-east-2 : US East (Ohio)
+   15) ca-central-1 : Canada (Central)
+   16) eu-west-2 : EU (London)
+   17) eu-west-3 : EU (Paris)
    (default is 3): 1
    ...
    Note: Elastic Beanstalk now supports AWS CodeCommit; a fully-managed source control service. To learn more, see Docs: https://aws.amazon.com/codecommit/
@@ -238,4 +240,4 @@ If you already have an AWS CodeCommit repository and want to use it with Elastic
    (default is 2): 2
    ```
 
-For more information about using `eb init`, see \.
+For more information about using `eb init`, see [Configure the EB CLI](eb-cli3-configuration.md)\.

@@ -45,7 +45,7 @@ You'll need to select the VPC ID and subnet ID for your instance\. By default, V
 
 ### Deploying with the AWS Toolkits, Eb, CLI, or API<a name="vpc-single-instance-new-options"></a>
 
-When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See  for more information\.[aws:ec2:vpc](command-options-general.md#command-options-general-ec2vpc) Namespace:
+When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md) for more information\.[aws:ec2:vpc](command-options-general.md#command-options-general-ec2vpc) Namespace:
 
 VPCId  
 The identifier of your VPC\.

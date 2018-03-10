@@ -1,6 +1,6 @@
 # Migrating to v1 Elastic Beanstalk Windows Server Platforms<a name="dotnet-v2migration"></a>
 
-Version 1\.0\.0 of AWS Elastic Beanstalk's Windows Server based platforms was released in October 2015\. This version changes the order in which Elastic Beanstalk processes commands in \(configuration files\) during environment creation and updates\.
+Version 1\.0\.0 of AWS Elastic Beanstalk's Windows Server based platforms was released in October 2015\. This version changes the order in which Elastic Beanstalk processes commands in \([configuration files](ebextensions.md)\) during environment creation and updates\.
 
 Previous platform versions do not have a version number in the solution stack name:
 
@@ -42,4 +42,4 @@ container_commands:
     command: aws s3 cp s3://my-bucket/dlls/large-dll.dll .\lib\
 ```
 
-For more information on using configuration files, see \.
+For more information on using configuration files, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.

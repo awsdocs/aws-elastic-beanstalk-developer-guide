@@ -19,4 +19,4 @@ When using Git, `eb use` sets the default environment for the current branch\. R
 | --- | --- | 
 |  `--source codecommit/repository-name/branch-name`  |  AWS CodeCommit repository and branch\. See [Using the EB CLI with AWS CodeCommit](eb-cli-codecommit.md)\.  | 
 |  `-r region` `--region region`  |  Change the region in which you create environments\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 

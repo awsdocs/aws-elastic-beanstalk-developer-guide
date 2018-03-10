@@ -1,6 +1,6 @@
 # Managing Application Versions<a name="applications-versions"></a>
 
-Elastic Beanstalk creates an application version whenever you upload source code\. This usually occurs when you create a new environment or upload and deploy code using the environment management console or EB CLI\. You can also upload a source bundle without deploying it from the application management console\.
+Elastic Beanstalk creates an application version whenever you upload source code\. This usually occurs when you create a new environment or upload and deploy code using the [environment management console](environments-console.md) or [EB CLI](eb-cli3.md)\. You can also upload a source bundle without deploying it from the [application management console](applications-console.md)\.
 
 **To create a new application version**
 
@@ -17,7 +17,7 @@ Elastic Beanstalk creates an application version whenever you upload source code
 
 1. \(Optional\) Enter a brief **Description** for this version\.
 
-1. Choose **Browse** to specify the location of the source bundle\.
+1. Choose **Browse** to specify the location of the [source bundle](applications-sourcebundle.md)\.
 **Note**  
 The file size limit is 512 MB\.
 
@@ -48,4 +48,4 @@ Deleting an application version doesn't have any effect on environments currentl
 
 If you configure application lifecycle settings, they are applied when you create new application versions\. For example, if you configure a maximum of 25 application versions, Elastic Beanstalk deletes the oldest version when you upload a 26th version\. If you set a maximum age of 90 days, any versions more than 90 days old are deleted when you upload a new version\. For details, see [Configuring Application Version Lifecycle Settings](applications-lifecycle.md)\.
 
-If you don't choose to delete the source bundle from Amazon S3, Elastic Beanstalk deletes the version from its records\. However, the source bundle is left in your Elastic Beanstalk storage bucket\. The application version limit applies only to versions Elastic Beanstalk tracks\. Therefore, if you need you can delete versions to stay within the limit, but retain all source bundles in Amazon S3\.
+If you don't choose to delete the source bundle from Amazon S3, Elastic Beanstalk deletes the version from its records\. However, the source bundle is left in your [Elastic Beanstalk storage bucket](AWSHowTo.S3.md)\. The application version limit applies only to versions Elastic Beanstalk tracks\. Therefore, if you need you can delete versions to stay within the limit, but retain all source bundles in Amazon S3\.

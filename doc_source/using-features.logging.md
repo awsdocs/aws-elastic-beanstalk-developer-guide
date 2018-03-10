@@ -9,7 +9,7 @@ Bundle logs are full logs for a wider range of log files, including logs from yu
 **Note**  
 Elastic Beanstalk Windows Server platforms do not support bundle logs\.
 
-To retrieve logs in the environment management console, navigate to **Logs**, choose **Request Logs**, and then choose the type of logs to retrieve\. To get tail logs, choose **Last 100 Lines**\. To get bundle logs, choose **Full Logs**\.
+To retrieve logs in the [environment management console](environments-console.md), navigate to **Logs**, choose **Request Logs**, and then choose the type of logs to retrieve\. To get tail logs, choose **Last 100 Lines**\. To get bundle logs, choose **Full Logs**\.
 
 ![\[Logs page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-logs.png)
 
@@ -19,11 +19,11 @@ Tail and bundle logs are removed from Amazon S3 15 minutes after they are create
 
 To enable log rotation to Amazon S3, follow the procedure in [Configuring Log Viewing](environments-cfg-logging.md#environments-cfg-logging-console)\. Instances in your environment will attempt to upload logs that have been rotated once per hour\.
 
-To upload rotated logs to Amazon S3, the instances in your environment must have an instance profile with permission to write to your Elastic Beanstalk Amazon S3 bucket\. These permissions are included in the default instance profile that Elastic Beanstalk prompts you to create when you launch an environment in the Elastic Beanstalk console for the first time\.
+To upload rotated logs to Amazon S3, the instances in your environment must have an [instance profile](concepts-roles-instance.md) with permission to write to your Elastic Beanstalk Amazon S3 bucket\. These permissions are included in the default instance profile that Elastic Beanstalk prompts you to create when you launch an environment in the Elastic Beanstalk console for the first time\.
 
-If your application generates logs in a location that is not part of the default configuration for your environment's platform, you can extend the default configuration by using configuration files \(`.ebextensions`\)\. You can add your application's log files to tail logs, bundle logs, or log rotation\.
+If your application generates logs in a location that is not part of the default configuration for your environment's platform, you can extend the default configuration by using configuration files \(`[\.ebextensions](ebextensions.md)`\)\. You can add your application's log files to tail logs, bundle logs, or log rotation\.
 
-For real\-time log streaming and long\-term storage, configure your environment to stream logs to Amazon CloudWatch Logs\.
+For real\-time log streaming and long\-term storage, configure your environment to [stream logs to Amazon CloudWatch Logs](#health-logs-cloudwatchlogs)\.
 
 
 + [Log Location On\-Instance](#health-logs-instancelocation)
@@ -48,7 +48,7 @@ Logs are stored in standard locations on the Amazon EC2 instances in your enviro
 
 + `C:\Program Files\Amazon\ElasticBeanstalk\logs\`
 
-These logs contain messages about deployment activities, including messages related to configuration files \(`.ebextensions`\)\.
+These logs contain messages about deployment activities, including messages related to configuration files \([`.ebextensions`](ebextensions.md)\)\.
 
 Each application and web server stores logs in its own folder:
 
@@ -87,7 +87,7 @@ For example, logs from instance `i-0a1fd158`, in Elastic Beanstalk environment `
   `s3://elasticbeanstalk-us-west-2-0123456789012/resources/environments/logs/publish/e-mpcwnwheky/i-0a1fd158`
 
 **Note**  
-You can find your environment ID in the environment management console\.
+You can find your environment ID in the [environment management console](environments-console.md)\.
 
 Elastic Beanstalk deletes tail and bundle logs from Amazon S3 automatically 15 minutes after they are created\. Rotated logs persist until you delete them or move them to Amazon Glacier\.
 
@@ -136,9 +136,9 @@ For example, the `eb-activity.conf` file on Linux adds two log files to the tail
 /var/log/eb-activity.log
 ```
 
-You can use environment configuration files \(`.ebextensions`\) to add your own `.conf` files to these folders\. A `.conf` file lists log files specific to your application, which Elastic Beanstalk adds to the log file tasks\.
+You can use environment configuration files \(`[\.ebextensions](ebextensions.md)`\) to add your own `.conf` files to these folders\. A `.conf` file lists log files specific to your application, which Elastic Beanstalk adds to the log file tasks\.
 
-Use the `files` section to add configuration files to the tasks that you want to modify\. For example, the following configuration text adds a log configuration file to each instance in your environment\. This log configuration file, `cloud-init.conf`, adds `/var/log/cloud-init.log` to tail logs\.
+Use the `[files](customize-containers-ec2.md#linux-files)` section to add configuration files to the tasks that you want to modify\. For example, the following configuration text adds a log configuration file to each instance in your environment\. This log configuration file, `cloud-init.conf`, adds `/var/log/cloud-init.log` to tail logs\.
 
 ```
 files:
@@ -175,13 +175,13 @@ files:
 **Note**  
 Log task configurations don't support wildcards on Windows platforms\.
 
-For more information about using configuration files, see \.
+For more information about using configuration files, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.
 
 Much like extending tail logs and bundle logs, you can extend log rotation using a configuration file\. Whenever Elastic Beanstalk rotates its own logs and uploads them to Amazon S3, it also rotates and uploads your additional logs\. Log rotation extension behaves differently depending on the platform's operating system\. The following sections describe the two cases\.
 
 ### Extending Log Rotation on Linux<a name="health-logs-extend-rotation-linux"></a>
 
-As explained in , Elastic Beanstalk uses `logrotate` to rotate logs on Linux platforms\. When you configure your application's log files for log rotation, the application doesn't need to create copies of log files\. Elastic Beanstalk configures `logrotate` to make a copy of your application's log files for each rotation\. Therefore, the application must keep log files unlocked when it isn't actively writing to them\.
+As explained in [Log Rotation Settings on Linux](#health-logs-logrotate), Elastic Beanstalk uses `logrotate` to rotate logs on Linux platforms\. When you configure your application's log files for log rotation, the application doesn't need to create copies of log files\. Elastic Beanstalk configures `logrotate` to make a copy of your application's log files for each rotation\. Therefore, the application must keep log files unlocked when it isn't actively writing to them\.
 
 ### Extending Log Rotation on Windows Server<a name="health-logs-extend-rotation-windows"></a>
 
@@ -193,15 +193,15 @@ For example: your application writes to a log file named `my_log.log`, and you s
 
 ## Amazon CloudWatch Logs<a name="health-logs-cloudwatchlogs"></a>
 
-You can configure your environment to stream logs to Amazon CloudWatch Logs in the AWS Management Console or by using configuration options\. With CloudWatch Logs, each instance in your environment streams logs to log groups that you can configure to be retained for weeks or years, even after your environment is terminated\.
+You can configure your environment to stream logs to Amazon CloudWatch Logs in the AWS Management Console or by using [configuration options](command-options.md)\. With CloudWatch Logs, each instance in your environment streams logs to log groups that you can configure to be retained for weeks or years, even after your environment is terminated\.
 
 The set of logs streamed varies per environment, but always includes eb\-activity\.log and access logs from the nginx or Apache proxy server that runs in front of your application\.
 
-You can configure log streaming in the AWS Management Console either during environment creation or for an existing environment\. In the following example, logs are saved for up to seven days, even when the environment has terminated\.
+You can configure log streaming in the AWS Management Console either [during environment creation](environments-create-wizard.md#environments-create-wizard-software) or [for an existing environment](environments-cfg-logging.md#environments-cfg-logging-console)\. In the following example, logs are saved for up to seven days, even when the environment has terminated\.
 
 ![\[CloudWatch logs settings\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/log-streaming-screen.png)
 
-The following configuration file enables log streaming with 180 days retention, even if the environment is terminated\.
+The following [configuration file](ebextensions.md) enables log streaming with 180 days retention, even if the environment is terminated\.
 
 **Example \.ebextensions/log\-streaming\.config**  
 

@@ -10,7 +10,7 @@ When you use the AWS Elastic Beanstalk console to deploy a new application or an
 
 If you want to deploy a worker application that processes periodic background tasks, your application source bundle must also include a `cron.yaml` file\. For more information, see [Periodic Tasks](using-features-managing-env-tiers.md#worker-periodictasks)\.
 
-If you are deploying your application with the Elastic Beanstalk Command Line Interface \(EB CLI\), the AWS Toolkit for Eclipse, or the AWS Toolkit for Visual Studio, the ZIP or WAR file will automatically be structured correctly\. For more information, see , , and \.
+If you are deploying your application with the Elastic Beanstalk Command Line Interface \(EB CLI\), the AWS Toolkit for Eclipse, or the AWS Toolkit for Visual Studio, the ZIP or WAR file will automatically be structured correctly\. For more information, see [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md), [Creating and Deploying Java Applications on AWS Elastic Beanstalk](create_deploy_Java.md), and [The AWS Toolkit for Visual Studio](dotnet-toolkit.md)\.
 
 
 + [Creating a Source Bundle from the Command Line](#using-features.deployment.source.commandline)
@@ -34,7 +34,7 @@ Create a source bundle using the `zip` command\. To include hidden files and fol
   adding: .ebextensions/xray.config (stored 0%)
 ```
 
-This ensures that Elastic Beanstalk configuration files and other files and folders that start with a period are included in the archive\.
+This ensures that Elastic Beanstalk [configuration files](ebextensions.md) and other files and folders that start with a period are included in the archive\.
 
 For Tomcat web applications, use `jar` to create a web archive\.
 
@@ -42,7 +42,7 @@ For Tomcat web applications, use `jar` to create a web archive\.
 ~/myapp$ jar -cvf myapp.war .
 ```
 
-The above commands include hidden files that may increase your source bundle size unnecessarily\. For more control, use a more detailed file pattern, or create your source bundle with Git\.
+The above commands include hidden files that may increase your source bundle size unnecessarily\. For more control, use a more detailed file pattern, or [create your source bundle with Git](#using-features.deployment.source.git)\.
 
 ## Creating a Source Bundle with Git<a name="using-features.deployment.source.git"></a>
 

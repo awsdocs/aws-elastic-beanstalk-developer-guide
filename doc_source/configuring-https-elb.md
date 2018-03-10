@@ -8,13 +8,13 @@ You can use the Elastic Beanstalk console to configure a secure listener and ass
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
 1. On the **Load balancer** configuration card, choose **Modify**\.
 **Note**  
-If the **Load balancer** configuration card doesn't have a **Modify** button, your environment doesn't have a load balancer\.
+If the **Load balancer** configuration card doesn't have a **Modify** button, your environment doesn't have a [load balancer](using-features-managing-env-types.md#using-features.managing.changetype)\.
 
 1. On the **Modify load balancer** page, choose your certificate from the **SSL certificate** drop\-down menu\.
 
@@ -22,7 +22,7 @@ If the **Load balancer** configuration card doesn't have a **Modify** button, yo
 
 ## Configuring a Secure Listener with a Configuration File<a name="https-loadbalancer-configurationfile"></a>
 
-You can configure a secure listener on your load balancer with a configuration file like the following\.
+You can configure a secure listener on your load balancer with a [configuration file](ebextensions.md) like the following\.
 
 **Example \.ebextensions/securelistener\.config**  
 
@@ -38,13 +38,13 @@ Replace the highlighted text with the ARN of your certificate\. The certificate 
 
 The previous example uses options in the `aws:elb:listener` namespace to configure an HTTPS listener on port 443 with the specified certificate, and to forward the decrypted traffic to the instances in your environment on port 80\.
 
-For more information about load balancer configuration options, see \.
+For more information about load balancer configuration options, see [Load Balancer Configuration Namespaces](using-features.managing.elb.md#environments-cfg-loadbalancer-namespace)\.
 
 ## Security Group Configuration<a name="https-update-security-group"></a>
 
 If you configure your load balancer to forward traffic to an instance port other than port 80, you must add a rule to your security group that allows inbound traffic over the instance port from your load balancer\. If you create your environment in a custom VPC, Elastic Beanstalk adds this rule for you\.
 
-You add this rule by adding a `Resources` key to a configuration file in the `.ebextensions` directory for your application\.
+You add this rule by adding a `Resources` key to a [configuration file](ebextensions.md) in the `.ebextensions` directory for your application\.
 
 The following example configuration file adds an ingress rule to the `AWSEBSecurityGroup` security group, which allows traffic on port 1000 from the load balancer's security group\.
 

@@ -1,7 +1,7 @@
 # EB CLI 2\.6 \(Deprecated\)<a name="eb-cli"></a>
 
 **Note**  
- This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see \. 
+ This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md)\. 
 
 This section describes how to set up EB CLI 2\.6 and how to create a sample application using EB CLI 2\.6\. This section also includes a command reference for Eb CLI 2\.6\.
 
@@ -39,7 +39,7 @@ Elastic Beanstalk has not only deprecated EB CLI 2\.6, but is also removing some
 
 If you have not done so already, create a code repository in AWS CodeCommit, as described in [Migrate to AWS CodeCommit](http://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository.html)\.
 
-Once you have installed and configured EB CLI, you have two opportunities to associate your application with your AWS CodeCommit repository, including a specific branch\. 
+Once you have [installed](eb-cli3-install.md) and [configured](eb-cli3-configuration.md) EB CLI, you have two opportunities to associate your application with your AWS CodeCommit repository, including a specific branch\. 
 
 + When executing `eb init`, such in the following example where *myRepo* is the name of your AWS CodeCommit repository and *myBranch* is the branch in AWS CodeCommit\.
 

@@ -22,7 +22,7 @@ Elastic Beanstalk provides a wide range of options for customizing the resources
 
 + **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
 
-This topic focuses on the resource configuration options available in the Elastic Beanstalk console\. The following topics show how to configure your environment in the console\. They also describe the underlying namespaces that correspond to the console options for use with configuration files or API configuration options\. You can learn more about advanced configuration methods in the next chapter\. 
+This topic focuses on the resource configuration options available in the Elastic Beanstalk console\. The following topics show how to configure your environment in the console\. They also describe the underlying namespaces that correspond to the console options for use with configuration files or API configuration options\. You can learn more about advanced configuration methods in the [next chapter](beanstalk-environment-configuration-advanced.md)\. 
 
 
 + [Your AWS Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.managing.ec2.md)

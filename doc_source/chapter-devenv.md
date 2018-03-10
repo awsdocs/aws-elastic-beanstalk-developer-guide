@@ -62,11 +62,11 @@ After you've created a remote repository for your project, attach it to your loc
 
 ## Installing the EB CLI<a name="devenv-ebcli"></a>
 
-Use the EB CLI to manage your Elastic Beanstalk environments and monitor health from the command line\. See Install the EB CLI for installation instructions\.
+Use the [EB CLI](eb-cli3.md) to manage your Elastic Beanstalk environments and monitor health from the command line\. See [Install the EB CLI](eb-cli3-install.md) for installation instructions\.
 
 By default, the EB CLI packages everything in your project folder and uploads it to Elastic Beanstalk as a source bundle\. When you use Git and the EB CLI together, you can prevent built class files from being committed to source with `.gitignore` and prevent source files from being deployed with `.ebignore`\.
 
-You can also configure the EB CLI to deploy a build artifact \(a WAR or ZIP file\) instead of the contents of your project folder\.
+You can also [configure the EB CLI to deploy a build artifact](eb-cli3-configuration.md#eb-cli3-artifact) \(a WAR or ZIP file\) instead of the contents of your project folder\.
 
 ## Installing the AWS CLI<a name="devenv-awscli"></a>
 

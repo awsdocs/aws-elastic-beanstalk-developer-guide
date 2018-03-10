@@ -17,7 +17,7 @@ Rebuilds a terminated environment, creating a new environment with the same name
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-restoreoutput"></a>
 

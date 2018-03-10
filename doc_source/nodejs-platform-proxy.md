@@ -2,7 +2,7 @@
 
 The Node\.js platform uses a reverse proxy to relay requests from port 80 on the instance to your application listening on port 8081\. Elastic Beanstalk provides a default proxy configuration that you can either extend or override completely with your own configuration\.
 
-To extend the default configuration, add `.conf` files to `/etc/nginx/conf.d` with a configuration file\. See  for an example\.
+To extend the default configuration, add `.conf` files to `/etc/nginx/conf.d` with a configuration file\. See [Terminating HTTPS on EC2 Instances Running Node\.js](https-singleinstance-nodejs.md) for an example\.
 
 The Node\.js platform sets the PORT environment variable to the port to which the proxy server passes traffic\. Read this variable in your code to configure your application's port\.
 
@@ -14,7 +14,7 @@ The Node\.js platform sets the PORT environment variable to the port to which th
     });
 ```
 
-The default nginx configuration forwards traffic to an upstream server named `nodejs` at `127.0.0.1:8081`\. It is possible to remove the default configuration and provide your own in a configuration file\.
+The default nginx configuration forwards traffic to an upstream server named `nodejs` at `127.0.0.1:8081`\. It is possible to remove the default configuration and provide your own in a [configuration file](ebextensions.md)\.
 
 **Example \.ebextensions/proxy\.config**  
 The following example removes the default configuration and adds a custom configuration that forwards traffic to port 5000 instead of 8081\.  
@@ -82,4 +82,4 @@ The `removeconfig` command removes the container's default configuration to make
 **Note**  
 The default configuration may change in future versions of the Node\.js platform\. Use the latest version of the configuration as a base for your customizations to ensure compatibility\.
 
-If you override the default configuration, you must define any static file mappings and gzip compression, as the platform will not be able to apply the standard settings\.
+If you override the default configuration, you must define any static file mappings and gzip compression, as the platform will not be able to apply the [standard settings](create_deploy_nodejs.container.md#nodejs-namespaces)\.

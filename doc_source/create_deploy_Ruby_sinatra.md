@@ -3,7 +3,7 @@
 This walkthrough shows how to deploy a simple [Sinatra](http://www.sinatrarb.com/) web application to AWS Elastic Beanstalk using the Elastic Beanstalk Command Line Interface \(EB CLI\)\.
 
 **Note**  
-Creating environments with the EB CLI requires a service role\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
+Creating environments with the EB CLI requires a [service role](concepts-roles-service.md)\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
 
 
 + [Prerequisites](#create_deploy_Ruby_sinatra-prereq)
@@ -48,7 +48,7 @@ The following tools are required to complete this walkthrough:
 
 ## Step 1: Set Up Your Project<a name="create_deploy_Ruby_sinatra-gitinit"></a>
 
-With the EB CLI, you can quickly create an Elastic Beanstalk environment and deploy applications to that environment from a [Git](http://git-scm.com/) repository\. Before starting your first project, set up the example project for the walkthrough\.
+With the EB CLI, you can quickly create an Elastic Beanstalk [environment](using-features.managing.md) and deploy applications to that environment from a [Git](http://git-scm.com/) repository\. Before starting your first project, set up the example project for the walkthrough\.
 
 **To set up the example project**
 
@@ -76,7 +76,7 @@ You do not need to have access to a remote repository, such as GitHub, for this 
 
 ## Step 2: Create an Application<a name="create_deploy_Ruby_eb_init"></a>
 
- Now create an application and its associated environment\.
+ Now create an application and its associated [environment](using-features.managing.md)\.
 
 **To create an application**
 
@@ -100,17 +100,19 @@ You do not need to have access to a remote repository, such as GitHub, for this 
    8) ap-southeast-2 : Asia Pacific (Sydney)
    9) ap-northeast-1 : Asia Pacific (Tokyo)
    10) ap-northeast-2 : Asia Pacific (Seoul)
-   11) sa-east-1 : South America (Sao Paulo)
+   11) sa-east-1 : South America (São Paulo)
    12) cn-north-1 : China (Beijing)
-   13) us-east-2 : US East (Columbus)
-   14) ca-central-1 : Canada (Central)
-   15) eu-west-2 : EU (London)
+   13) cn-northwest-1 : China (Ningxia)
+   14) us-east-2 : US East (Ohio)
+   15) ca-central-1 : Canada (Central)
+   16) eu-west-2 : EU (London)
+   17) eu-west-3 : EU (Paris)
    (default is 3): 3
    ```
 **Note**  
-If you have previously configured a default region with the EB CLI, the AWS CLI or an SDK, the EB CLI skips this step and creates the application in the default region unless you explicitly specify a region with the `--region` option\.
+If you have previously configured a default region with the EB CLI, the AWS CLI or an SDK, the EB CLI skips this step and creates the application in the default region unless you explicitly specify a region with the [`--region`](eb3-cmd-options.md) option\.
 
-1. Provide a set of AWS credentials with appropriate permissions\. If you have an appropriate set of stored credentials, the EB CLI uses them automatically and skips this step\. 
+1. Provide a set of AWS credentials with [appropriate permissions](AWSHowTo.iam.md)\. If you have an [appropriate set of stored credentials](eb-cli3-configuration.md#eb-cli3-credentials), the EB CLI uses them automatically and skips this step\. 
 **Important**  
 We strongly recommend that you do not provide your account's root credentials to Elastic Beanstalk\. Instead, create an AWS Identity and Access Management \(IAM\) user with appropriate permissions and provide those credentials\. For more information on managing AWS credentials, see [Best Practices for Managing AWS Access Keys](http://docs.aws.amazon.com/general/latest/gr/aws-access-keys-best-practices.html)\.
 
@@ -258,7 +260,7 @@ Create all of the application files in the following procedure in the applicatio
    ~/sinatraapp$ eb deploy
    ```
 
-   The `eb deploy` command creates a bundle of the application code in the master branch and deploys it to the environment, replacing the default application\. The second deployment should be much faster than the first because you have already created the environment's AWS resources\. 
+   The `eb deploy` command creates a [bundle](applications-sourcebundle.md) of the application code in the master branch and deploys it to the environment, replacing the default application\. The second deployment should be much faster than the first because you have already created the environment's AWS resources\. 
 
 1. Run the `eb status --verbose` command to check your environment status\. You should see output similar to the following\.
 
@@ -305,4 +307,4 @@ If you have attached an Amazon Relational Database Service \(Amazon RDS\) databa
 
 For more information about Git commands, see [Git \- Fast Version Control System](http://git-scm.com/)\.
 
-This walkthrough uses only a few of the EB CLI commands\. For a complete list run `eb --help` or see \.
+This walkthrough uses only a few of the EB CLI commands\. For a complete list run `eb --help` or see [EB CLI Command Reference](eb3-cmd-commands.md)\.

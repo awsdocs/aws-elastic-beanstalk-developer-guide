@@ -6,7 +6,7 @@ The AWS Management Console displays your environment's status and application he
 
 **To monitor an environment in the AWS Management Console**
 
-1. Navigate to the Environment Management Console for your environment
+1. Navigate to the [Environment Management Console](environments-console.md) for your environment
 
 1. In the left navigation, click **Monitoring**\.
 
@@ -42,7 +42,7 @@ To remove any of the existing items, click the ![\[Image NOT FOUND\]](http://doc
 
 1. Select a **Resource**\. The supported resources are your environment's Auto Scaling group, Elastic Load Balancing load balancer, and the environment itself\.
 
-1. Select a **CloudWatch metric** for the resource\. See  for a full list of supported metrics\.
+1. Select a **CloudWatch metric** for the resource\. See [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md) for a full list of supported metrics\.
 
 1. Select a **Statistic**\. The default statistic is the average value of the selected cloudwatch metric during the time range \(overview\) or between plot points \(graph\)\.
 
@@ -56,9 +56,9 @@ For more information about metrics and dimensions for each resource, see [Amazon
 
 [Elastic Load Balancing](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/elb-metricscollected.html) and [Amazon EC2](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/ec2-metricscollected.html) metrics are enabled for all environments\.
 
-With enhanced health, the EnvironmentHealth metric is enabled and a graph is added to the monitoring console automatically\. Additional metrics become available for use in the monitoring console when you enabled them in the environment configuration\. Enhanced health also adds the Health page to the management console\.
+With [enhanced health](health-enhanced.md), the EnvironmentHealth metric is enabled and a graph is added to the monitoring console automatically\. Additional metrics become available for use in the monitoring console when you enabled them in the environment configuration\. Enhanced health also adds the [Health page](health-enhanced-console.md#health-enhanced-console-healthpage) to the management console\.
 
 **Note**  
 When you enable additional CloudWatch metrics for your environment, it takes a few minutes for them to start being reported and appear in the list of metrics that you use to add graphs and overview stats\.
 
-See  for a list of available enhanced health metrics\.
+See [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md) for a list of available enhanced health metrics\.

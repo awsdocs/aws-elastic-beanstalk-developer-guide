@@ -6,7 +6,7 @@ You can use the Elastic Beanstalk Management Console to configure the software r
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -14,9 +14,9 @@ You can use the Elastic Beanstalk Management Console to configure the software r
 
 The Log Options section has two settings:
 
-+ **Instance profile** – Your environment's instance profile, which must have write access to your environment's Amazon S3 storage bucket in order to upload logs\.
++ **Instance profile** – Your environment's [instance profile](concepts-roles-instance.md), which must have write access to your environment's Amazon S3 storage bucket in order to upload logs\.
 
-+ **Enable log file rotation to Amazon S3** – Configure the instances in your environment to upload rotated logs\.
++ **Enable log file rotation to Amazon S3** – Configure the instances in your environment to [upload rotated logs](using-features.logging.md)\.
 
 The **Environment Properties** section lets you specify environment variables that you can read from your application code\.
 
@@ -37,11 +37,11 @@ Specify images by name in `Dockerrun.aws.json`\. Note these conventions:
 
 + Images in other online repositories are qualified further by a domain name \(for example, `quay.io/assemblyline/ubuntu` or `account-id.dkr.ecr.us-east-2.amazonaws.com/ubuntu:trusty`\)\. 
 
-For single container environments only, you can also build your own image during environment creation with a Dockerfile\. See  for details\.
+For single container environments only, you can also build your own image during environment creation with a Dockerfile\. See [Building Custom Images with a Dockerfile](create_deploy_docker_image.md#create_deploy_docker_image_dockerfile) for details\.
 
 ### Using Images from an Amazon ECR Repository<a name="docker-images-ecr"></a>
 
-You can store your custom Docker images in AWS with [Amazon Elastic Container Registry](https://aws.amazon.com/ecr) \(Amazon ECR\)\. When you store your Docker images in Amazon ECR, Elastic Beanstalk automatically authenticates to the Amazon ECR registry with your environment's instance profile, so you don't need to generate an authentication file and upload it to Amazon Simple Storage Service \(Amazon S3\)\.
+You can store your custom Docker images in AWS with [Amazon Elastic Container Registry](https://aws.amazon.com/ecr) \(Amazon ECR\)\. When you store your Docker images in Amazon ECR, Elastic Beanstalk automatically authenticates to the Amazon ECR registry with your environment's [instance profile](concepts-roles-instance.md), so you don't need to [generate an authentication file](#docker-images-private) and upload it to Amazon Simple Storage Service \(Amazon S3\)\.
 
 You do, however, need to provide your instances with permission to access the images in your Amazon ECR repository by adding permissions to your environment's instance profile\. You can attach the [AmazonEC2ContainerRegistryReadOnly](http://docs.aws.amazon.com/AmazonECR/latest/userguide/ecr_managed_policies.html#AmazonEC2ContainerRegistryReadOnly) managed policy to the instance profile to provide read\-only access to all Amazon ECR repositories in your account, or grant access to single repository by using the following template to create a custom policy:
 
@@ -81,7 +81,7 @@ You do, however, need to provide your instances with permission to access the im
 
 Replace the Amazon Resource Name \(ARN\) in the above policy with the ARN of your repository\.
 
-In your `Dockerrun.aws.json` file, refer to the image by URL\. For a single container configuration, the URL goes in the `Image` definition:
+In your `Dockerrun.aws.json` file, refer to the image by URL\. For a [single container configuration](create_deploy_docker_image.md), the URL goes in the `Image` definition:
 
 ```
   "Image": {
@@ -90,7 +90,7 @@ In your `Dockerrun.aws.json` file, refer to the image by URL\. For a single cont
   },
 ```
 
-For a multicontainer configuration, use the `image` key in a container definition object:
+For a [multicontainer configuration](create_deploy_docker_v2config.md), use the `image` key in a container definition object:
 
 ```
 "containerDefinitions": [
@@ -148,7 +148,7 @@ Upload the authentication file to a secure Amazon S3 bucket\. The Amazon S3 buck
 
 Include the Amazon S3 bucket information in the `Authentication` \(v1\) or `authentication` \(v2\) parameter in your `Dockerrun.aws.json` file\.
 
-For more information about the `Dockerrun.aws.json` format for single container environments, see \. For multicontainer environments, see \.
+For more information about the `Dockerrun.aws.json` format for single container environments, see [Single Container Docker Configuration](create_deploy_docker_image.md)\. For multicontainer environments, see [Multicontainer Docker Configuration](create_deploy_docker_v2config.md)\.
 
 For more information about the authentication file, see [ Store images on Docker Hub ](https://docs.docker.com/docker-hub/repos/) and [ docker login ](https://docs.docker.com/engine/reference/commandline/login/) on the Docker website\.
 
@@ -156,9 +156,9 @@ For more information about the authentication file, see [ Store images on Docker
 
 For improved performance, Elastic Beanstalk configures two Amazon EBS storage volumes for your Docker environment's EC2 instances\. In addition to the root volume provisioned for all Elastic Beanstalk environments, a second 12GB volume named `xvdcz` is provisioned for image storage on Docker environments\.
 
-If you need more storage space or increased IOPS for Docker images, you can customize the image storage volume by using the `BlockDeviceMapping` configuration option in the aws:autoscaling:launchconfiguration namespace\.
+If you need more storage space or increased IOPS for Docker images, you can customize the image storage volume by using the `BlockDeviceMapping` configuration option in the [aws:autoscaling:launchconfiguration](command-options-general.md#command-options-general-autoscalinglaunchconfiguration) namespace\.
 
-For example, the following configuration file increases the storage volume's size to 100 GB with 500 provisioned IOPS:
+For example, the following [configuration file](ebextensions.md) increases the storage volume's size to 100 GB with 500 provisioned IOPS:
 
 **Example \.ebextensions/blockdevice\-xvdcz\.config**  
 
@@ -178,7 +178,7 @@ option_settings:
     BlockDeviceMappings: /dev/xvdcz=:12:true:gp2,/dev/sdh=:24
 ```
 
-Note that when you change settings in this namespace, Elastic Beanstalk replaces all instances in your environment with instances running the new configuration\. See  for details\.
+Note that when you change settings in this namespace, Elastic Beanstalk replaces all instances in your environment with instances running the new configuration\. See [Configuration Changes](environments-updating.md) for details\.
 
 ## Reclaiming Docker Storage Space<a name="reclaim-docker-storage"></a>
 

@@ -9,7 +9,7 @@ The rest of this section presents instructions for creating, testing, deploying,
 **Note**  
 This platform does not support worker environments, enhanced health reporting, managed updates, bundle logs or immutable updates\.
 
-The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the getting started tutorial to learn the basics\.
+The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
 
 + [Getting Started with \.NET on Elastic Beanstalk](dotnet-getstarted.md)

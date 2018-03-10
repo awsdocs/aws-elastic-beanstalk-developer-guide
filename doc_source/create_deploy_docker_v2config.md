@@ -22,7 +22,7 @@ Specifies the version number as the value "2" for multicontainer Docker environm
 An array of container definitions, detailed below\.
 
 **volumes**  
-Creates volumes from folders in the Amazon EC2 container instance, or from your source bundle \(deployed to `/var/app/current`\)\. Mount these volumes to paths within your Docker containers using `mountPoints` in the container definition\.   
+Creates volumes from folders in the Amazon EC2 container instance, or from your source bundle \(deployed to `/var/app/current`\)\. Mount these volumes to paths within your Docker containers using `mountPoints` in the [container definition](#create_deploy_docker_v2config_dockerrun_format)\.   
  Elastic Beanstalk configures additional volumes for logs, one for each container\. These should be mounted by your Docker containers in order to write logs to the host instance\. See [Container Definition Format](#create_deploy_docker_v2config_dockerrun_format) for details\. 
  Volumes are specified in the following format:   
 
@@ -46,7 +46,7 @@ Creates volumes from folders in the Amazon EC2 container instance, or from your 
     "key": "mydockercfg"
   },
 ```
-See  for details\. 
+See [Using Images from a Private Repository](#docker-multicontainer-dockerrun-privaterepo) for details\. 
 
 The following snippet is an example that illustrates the syntax of the `Dockerrun.aws.json` file for an instance with two containers\.
 

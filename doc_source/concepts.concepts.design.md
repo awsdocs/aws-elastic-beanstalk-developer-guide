@@ -14,7 +14,7 @@ Elastic Beanstalk applications should also be as *stateless* as possible, using 
 
 Security on AWS is a [shared responsibility](https://aws.amazon.com/compliance/shared-responsibility-model/)\. AWS protects the physical resources in your environment and ensure that the cloud is a safe place for you to run applications\. You are responsible for the security of data coming in and out of your Elastic Beanstalk environment and the security of your application\.
 
-Configure SSL to protect information from your clients\. You will need a certificate from an external certification authority such as VeriSign or Entrust\. The public key included in the certificate authenticates your server to the browser and serves as the basis for creating the shared session key used to encrypt the data in both directions\. For instructions on creating, uploading, and assigning an SSL certificate to your environment, see \.
+Configure SSL to protect information from your clients\. You will need a certificate from an external certification authority such as VeriSign or Entrust\. The public key included in the certificate authenticates your server to the browser and serves as the basis for creating the shared session key used to encrypt the data in both directions\. For instructions on creating, uploading, and assigning an SSL certificate to your environment, see [Configuring HTTPS for your Elastic Beanstalk Environment](configuring-https.md)\.
 
 When you configure an SSL certificate for your environment, data is encrypted between the client and your environment's Elastic Load Balancing load balancer\. By default, encryption is terminated at the load balancer and traffic between the load balancer and Amazon EC2 instances is unencrypted\.
 
@@ -41,7 +41,7 @@ When users connect to your website, their requests may be routed through a numbe
 
 ## Software Updates and Patching<a name="concepts.concepts.design.updates"></a>
 
-Elastic Beanstalk periodically updates its platform configurations with new software and patches\. Elastic Beanstalk does not upgrade running environments to new configuration versions automatically, but you can initiate a platform upgrade to update your running environment in place\. Platform upgrades use rolling updates to keep your application available by applying changes in batches\.
+Elastic Beanstalk periodically updates its platform configurations with new software and patches\. Elastic Beanstalk does not upgrade running environments to new configuration versions automatically, but you can initiate a [platform upgrade](using-features.platform.upgrade.md) to update your running environment in place\. Platform upgrades use [rolling updates](using-features.rollingupdates.md) to keep your application available by applying changes in batches\.
 
 ## Connectivity<a name="concepts.concepts.design.connectivity"></a>
 

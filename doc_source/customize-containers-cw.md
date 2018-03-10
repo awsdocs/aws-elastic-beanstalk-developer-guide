@@ -5,7 +5,7 @@ Amazon CloudWatch is a web service that enables you to monitor, manage, and publ
 The Amazon CloudWatch Monitoring Scripts for Linux are available to demonstrate how to produce and consume Amazon CloudWatch custom metrics\. The scripts comprise a fully functional example that reports memory, swap, and disk space utilization metrics for an Amazon Elastic Compute Cloud \(Amazon EC2\) Linux instance\. For more information about the Amazon CloudWatch Monitoring Scripts, go to [Amazon CloudWatch Monitoring Scripts for Linux](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/mon-scripts.html) in the *Amazon CloudWatch Developer Guide*\.
 
 **Note**  
-Elastic Beanstalk Enhanced Health Reporting has native support for publishing a wide range of instance and environment metrics to CloudWatch\. See  for details\.
+Elastic Beanstalk [Enhanced Health Reporting](health-enhanced.md) has native support for publishing a wide range of instance and environment metrics to CloudWatch\. See [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md) for details\.
 
 
 + [\.ebextensions Configuration File](#customize-containers-cw-update-roles)
@@ -16,7 +16,7 @@ Elastic Beanstalk Enhanced Health Reporting has native support for publishing a 
 
 This example uses commands and option settings in an \.ebextensions configuration file to download, install, and run monitoring scripts provided by Amazon CloudWatch\.
 
-To use this sample, save it to a file named `cloudwatch.config` in a directory named `.ebextensions` at the top level of your project directory, then deploy your application using the AWS Management Console \(include the \.ebextensions directory in your source bundle\) or the EB CLI\.
+To use this sample, save it to a file named `cloudwatch.config` in a directory named `.ebextensions` at the top level of your project directory, then deploy your application using the AWS Management Console \(include the \.ebextensions directory in your [source bundle](applications-sourcebundle.md)\) or the [EB CLI](eb-cli3.md)\.
 
 For more information about configuration files, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.
 
@@ -55,7 +55,7 @@ After you verify the configuration file works, you can conserve disk usage by ch
 
 ## Permissions<a name="customize-containers-cw-policy"></a>
 
-In order to publish custom Amazon CloudWatch metrics, the instances in your environment need permission to use CloudWatch\. You can grant permissions to your environment's instances by adding them to the environment's instance profile\. You can add permissions to the instance profile before or after deploying your application\.
+In order to publish custom Amazon CloudWatch metrics, the instances in your environment need permission to use CloudWatch\. You can grant permissions to your environment's instances by adding them to the environment's [instance profile](concepts-roles-instance.md)\. You can add permissions to the instance profile before or after deploying your application\.
 
 **To grant permissions to publish CloudWatch metrics**
 
@@ -63,7 +63,7 @@ In order to publish custom Amazon CloudWatch metrics, the instances in your envi
 
 1. In the navigation pane, choose **Roles**\.
 
-1. Choose your environment's instance profile role\. By default, when you create an environment with the AWS Management Console or EB CLI, this is `aws-elasticbeanstalk-ec2-role`\.
+1. Choose your environment's instance profile role\. By default, when you create an environment with the AWS Management Console or [EB CLI](eb-cli3.md), this is `aws-elasticbeanstalk-ec2-role`\.
 
 1. Choose the **Permissions** tab\.
 

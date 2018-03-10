@@ -93,7 +93,7 @@ Using the `--verbose` switch provides information about the status of your runni
      i-8b2cf575    Deployed   1    Sample Application   1 hour
    ```
 
-   The above example shows an environment with five instances where the deployment of version "v2" failed on the third instance\. After a failed deployment, the expected version is reset to the last version that succeeded, which in this case is "Sample Application" from the first deployment\. See  for more information\.
+   The above example shows an environment with five instances where the deployment of version "v2" failed on the third instance\. After a failed deployment, the expected version is reset to the last version that succeeded, which in this case is "Sample Application" from the first deployment\. See [Using the EB CLI to Monitor Environment Health](health-enhanced-ebcli.md) for more information\.
 
 1. Run `eb logs` to download and view the logs associated with your application deployment\.
 

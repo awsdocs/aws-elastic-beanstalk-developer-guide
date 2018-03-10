@@ -71,7 +71,7 @@ Configure your environment's EC2 instances\.
 
 ## aws:autoscaling:scheduledaction<a name="command-options-general-autoscalingscheduledaction"></a>
 
-Configure scheduled actions for your environment's Auto Scaling group\. For each action, specify a `resource_name` in addition to the option name, namespace, and value for each setting\. See  for examples\.
+Configure [scheduled actions](environments-cfg-autoscaling-scheduledactions.md) for your environment's Auto Scaling group\. For each action, specify a `resource_name` in addition to the option name, namespace, and value for each setting\. See [The aws:autoscaling:scheduledaction Namespace](environments-cfg-autoscaling-scheduledactions.md#environments-cfg-autoscaling-scheduledactions-namespace) for examples\.
 
 
 **Namespace: `aws:autoscaling:scheduledaction`**  
@@ -117,7 +117,7 @@ Configure rolling updates your environment's Auto Scaling group\.
 |  MaxBatchSize  |  The number of instances included in each batch of the rolling update\.  |  One\-third of the minimum size of the autoscaling group, rounded to the next highest integer\.  |  `1` to `10000`  | 
 |  MinInstancesInService  |  The minimum number of instances that must be in service within the autoscaling group while other instances are terminated\.  |  The minimum size of the AutoScaling group or one less than the maximum size of the autoscaling group, whichever is lower\.  |  `0` to `9999`  | 
 |  RollingUpdateEnabled  |  If `true`, enables rolling updates for an environment\. Rolling updates are useful when you need to make small, frequent updates to your Elastic Beanstalk software application and you want to avoid application downtime\. Setting this value to true automatically enables the `MaxBatchSize`, `MinInstancesInService`, and `PauseTime` options\. Setting any of those options also automatically sets the `RollingUpdateEnabled` option value to `true`\. Setting this option to `false` disables rolling updates\.  |   `false`   |   `true`   `false`   | 
-|  RollingUpdateType  | Time\-based rolling updates apply a PauseTime between batches\. Health\-based rolling updates wait for new instances to pass health checks before moving on to the next batch\. Immutable updates launch a full set of instances in a new AutoScaling group\. |   `Time`   |   `Time`   `Health`  `Immutable`  | 
+|  RollingUpdateType  | Time\-based rolling updates apply a PauseTime between batches\. Health\-based rolling updates wait for new instances to pass health checks before moving on to the next batch\. [Immutable updates](environmentmgmt-updates-immutable.md) launch a full set of instances in a new AutoScaling group\. |   `Time`   |   `Time`   `Health`  `Immutable`  | 
 |  PauseTime  |  The amount of time the Elastic Beanstalk service will wait after it has completed updates to one batch of instances before it continues on to the next batch\.  |  Automatically computed based on instance type and container\.  |  `PT0S`\* \(0 seconds\) to `PT1H` \(1 hour\)  | 
 |  Timeout  |  Maximum amount of time to wait for all instances in a batch of instances to pass health checks before canceling the update\.  |  `PT30M` \(30 minutes\)  |  `PT5M`\* \(5 minutes\) to `PT1H` \(1 hour\) \*[ISO8601 duration](http://en.wikipedia.org/wiki/ISO_8601#Durations) format: `PT#H#M#S` where each \# is the number of hours, minutes, and/or seconds, respectively\.  | 
 
@@ -148,7 +148,7 @@ Configure a health check path for your application\.
 | --- | --- | --- | --- | 
 |  Application Healthcheck URL  |  The path to which to send health check requests\. If not set, the load balancer attempts to make a TCP connection on port 80 to verify health\. Set to a path starting with `/` to send an HTTP GET request to that path\. You can also include a protocol \(HTTP, HTTPS, TCP, or SSL\) and port prior to the path to check HTTPS connectivity or use a non\-default port\.  |  None  |  `/` \(HTTP GET to root path\) `/health` `HTTPS:443/` `HTTPS:443/health` etc  | 
 
-The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See  for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.
 
 ## aws:elasticbeanstalk:application:environment<a name="command-options-general-elasticbeanstalkapplicationenvironment"></a>
 
@@ -161,7 +161,7 @@ Configure environment properties for your application\.
 | --- | --- | --- | --- | 
 |  Any environment variable name\.  |  Pass in key\-value pairs\.  |  None  |  Any environment variable value\.  | 
 
-See  for more information\.
+See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
 
 ## aws:elasticbeanstalk:cloudwatch:logs<a name="command-options-general-cloudwatchlogs"></a>
 
@@ -185,10 +185,10 @@ Configure rolling deployments for your application code\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  DeploymentPolicy  |  Choose a deployment policy for application version deployments\.  |  `AllAtOnce`  |  `AllAtOnce` `Rolling` `RollingWithAdditionalBatch` `Immutable`  | 
+|  DeploymentPolicy  |  Choose a [deployment policy](using-features.rolling-version-deploy.md) for application version deployments\.  |  `AllAtOnce`  |  `AllAtOnce` `Rolling` `RollingWithAdditionalBatch` `Immutable`  | 
 |  Timeout  |  Number of seconds to wait for an instance to complete executing commands\.  |   `"600"`   |  `"1"` to `"3600"`  | 
 |  BatchSizeType  |  The type of number that is specified in **BatchSize**\.  |   `Percentage`   |  `Percentage`  `Fixed`   | 
-|  BatchSize  |  Percentage or fixed number of Amazon EC2 instances in the Auto Scaling group on which to simultaneously perform deployments\. Valid values vary per **BatchSizeType** setting\.  |   `100`   |  `1` to `100` \(`Percentage`\)\. `1` to aws:autoscaling:asg::MaxSize \(`Fixed`\)  | 
+|  BatchSize  |  Percentage or fixed number of Amazon EC2 instances in the Auto Scaling group on which to simultaneously perform deployments\. Valid values vary per **BatchSizeType** setting\.  |   `100`   |  `1` to `100` \(`Percentage`\)\. `1` to [aws:autoscaling:asg::MaxSize](#command-options-general-autoscalingasg) \(`Fixed`\)  | 
 |  IgnoreHealthCheck  |  Do not cancel a deployment due to failed health checks\.  |  false  |   `true`   `false`   | 
 
 ## aws:elasticbeanstalk:environment<a name="command-options-general-elasticbeanstalkenvironment"></a>
@@ -257,7 +257,7 @@ Configure enhanced health reporting for your environment\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  SystemType  | Health reporting system \(basic or enhanced\)\. Enhanced health reporting requires a service role and a version 2 platform configuration\. |   `basic`   |   `basic`   `enhanced`   | 
+|  SystemType  | Health reporting system \([basic](using-features.healthstatus.md) or [enhanced](health-enhanced.md)\)\. Enhanced health reporting requires a [service role](concepts-roles-service.md) and a version 2 [platform configuration](concepts.platforms.md)\. |   `basic`   |   `basic`   `enhanced`   | 
 | ConfigDocument | A JSON document describing the environment and instance metrics to publish to CloudWatch\. | None |  | 
 |  HealthCheckSuccessThreshold  | Lower the threshold for instances to pass health checks\. |  `Ok`  |  `Ok` `Warning` `Degraded` `Severe`  | 
 
@@ -281,7 +281,7 @@ Configure managed platform updates for your environment\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  ManagedActionsEnabled  |  Enable managed platform updates\. When you set this to `true`, you must also specify a `PreferredStartTime` and `UpdateLevel`\.  |   `true`   |   `true`   `false`   | 
+|  ManagedActionsEnabled  |  Enable [managed platform updates](environment-platform-update-managed.md#environment-platform-update-managed-namespace)\. When you set this to `true`, you must also specify a `PreferredStartTime` and `[UpdateLevel](#command-options-general-elasticbeanstalkmanagedactionsplatformupdate)`\.  |   `true`   |   `true`   `false`   | 
 |  PreferredStartTime  |  Configure a maintenance window for managed actions in UTC\. For example, `"Tue:09:00"`\.  | None | Day and time in *day*:*hour*:*minute* format\. | 
 
 ## aws:elasticbeanstalk:managedactions:platformupdate<a name="command-options-general-elasticbeanstalkmanagedactionsplatformupdate"></a>
@@ -354,13 +354,13 @@ Configure healthchecks for a classic load balancer\.
 |  Interval  |  The interval at which Elastic Load Balancing will check the health of your application's Amazon EC2 instances\.  |   `10`   |  `5` to `300`  | 
 |  Timeout  |  Number of seconds Elastic Load Balancing will wait for a response before it considers the instance nonresponsive\.  |   `5`   |  `2` to `60`  | 
 |  UnhealthyThreshold  |  Consecutive unsuccessful requests before Elastic Load Balancing changes the instance health status\.  |   `5`   |  `2` to `10`  | 
-|  \(deprecated\) Target  |  Destination on backend instance to which to send health checks\. Use `Application Healthcheck URL` in the `aws:elasticbeanstalk:application` namespace instead\.  |   `TCP:80`   |  Target in the format *PROTOCOL*:*PORT**/PATH*  | 
+|  \(deprecated\) Target  |  Destination on backend instance to which to send health checks\. Use `Application Healthcheck URL` in the [`aws:elasticbeanstalk:application`](#command-options-general-elasticbeanstalkapplication) namespace instead\.  |   `TCP:80`   |  Target in the format *PROTOCOL*:*PORT**/PATH*  | 
 
 ## aws:elb:loadbalancer<a name="command-options-general-elbloadbalancer"></a>
 
 Configure your environment's classic load balancer\.
 
-Several of the options in this namespace have been deprecated in favor of listener\-specific options in the  namespace\. The deprecated options only let you configure two listeners \(one secure and one unsecure\) on standard ports\.
+Several of the options in this namespace have been deprecated in favor of listener\-specific options in the [aws:elb:listener](#command-options-general-elblistener) namespace\. The deprecated options only let you configure two listeners \(one secure and one unsecure\) on standard ports\.
 
 
 **Namespace: `aws:elb:loadbalancer`**  
@@ -452,9 +452,9 @@ Configure the default listener \(port 80\) on an application load balancer or a 
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  DefaultProcess  |  Name of the process to which to forward traffic when no rules match\.  |  `default`  |  A process name\.  | 
+|  DefaultProcess  |  Name of the [process](#command-options-general-environmentprocess) to which to forward traffic when no rules match\.  |  `default`  |  A process name\.  | 
 |  ListenerEnabled  |  Set to `false` to disable the listener\. You can use this option to disable the default listener on port 80\.  |  `true`  |  `true` `false`  | 
-|  Rules  |  List of rules to apply to the listener This option is only applicable to environments with an application load balancer\.  |  None  |  Comma separated list of rule names\.  | 
+|  Rules  |  List of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener This option is only applicable to environments with an application load balancer\.  |  None  |  Comma separated list of rule names\.  | 
 
 ## aws:elbv2:listener:listener\_port<a name="command-options-general-elbv2-listener"></a>
 
@@ -465,10 +465,10 @@ Configure additional listeners on an application load balancer or a network load
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  DefaultProcess  |  Name of the process where traffic is forwarded when no rules match\.  |  `default`  |  A process name\.  | 
+|  DefaultProcess  |  Name of the [process](#command-options-general-environmentprocess) where traffic is forwarded when no rules match\.  |  `default`  |  A process name\.  | 
 |  ListenerEnabled  |  Set to `false` to disable the listener\. You can use this option to disable the default listener on port 80\.  |  `true`  |  `true` `false`  | 
 |  Protocol  |  Protocol of traffic to process\.  |  With application load balancer: `HTTP` With network load balancer: `TCP`  |  With application load balancer: `HTTP`, `HTTPS` With network load balancer: `TCP`  | 
-|  Rules  |  List of rules to apply to the listener This option is only applicable to environments with an application load balancer\.  |  None  |  Comma separated list of rule names\.  | 
+|  Rules  |  List of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener This option is only applicable to environments with an application load balancer\.  |  None  |  Comma separated list of rule names\.  | 
 |  SSLCertificateArns  |  The ARN of the SSL certificate to bind to the listener\. This option is only applicable to environments with an application load balancer\.  |  None  |  The ARN of a certificate stored in IAM or ACM\.  | 
 |  SSLPolicy  |  Specify a security policy to apply to the listener\. This option is only applicable to environments with an application load balancer\.  | None \(ELB default\) |  The name of a load balancer security policy\.  | 
 
@@ -486,7 +486,7 @@ This namespace isn't applicable to environments with a network load balancer\.
 | --- | --- | --- | --- | 
 |  PathPatterns  |  List of path patterns to match\. For example, `/img/*`\. This option is only applicable to environments with an application load balancer\.  |  None  |   | 
 |  Priority  |  Precedence of this rule when multiple rules match\. The lower number takes precedence\. No two rules can have the same priority\.  |  `1`  |  `1` to `1000`  | 
-|  Process  |  Name of the process to which to forward traffic when this rule matches the request\.  |  `default`  |  A process name\.  | 
+|  Process  |  Name of the [process](#command-options-general-environmentprocess) to which to forward traffic when this rule matches the request\.  |  `default`  |  A process name\.  | 
 
 ## aws:elbv2:loadbalancer<a name="command-options-general-elbv2"></a>
 

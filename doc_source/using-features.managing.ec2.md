@@ -2,7 +2,7 @@
 
 When you create a web server environment, Elastic Beanstalk creates one or more Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machines configured to run web apps on the platform that you choose\.
 
-The Auto Scaling Group in your environment manages the EC2 instances that run your application\. Changes to the Auto Scaling Group's launch configuration require replacement of all instances and will trigger a rolling update or immutable update, depending on which one is configured\. For details about configuring the environment's Auto Scaling Group, see [Configuring Your Environment's Auto Scaling Group](using-features.managing.as.md#environments-cfg-autoscaling-console)\.
+The Auto Scaling Group in your environment manages the EC2 instances that run your application\. Changes to the Auto Scaling Group's launch configuration require [replacement of all instances](environments-updating.md) and will trigger a [rolling update](using-features.rollingupdates.md) or [immutable update](environmentmgmt-updates-immutable.md), depending on which one is configured\. For details about configuring the environment's Auto Scaling Group, see [Configuring Your Environment's Auto Scaling Group](using-features.managing.as.md#environments-cfg-autoscaling-console)\.
 
 
 + [Configuring Your Environment's EC2 Instances](#using-features.managing.ec2.console)
@@ -16,7 +16,7 @@ You can modify your Elastic Beanstalk environment's Auto Scaling Group configura
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the management page for your environment\.
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Configuration**\.
 
@@ -46,13 +46,13 @@ For more information about EC2 instance families and types, see [Instance Types]
 
 The Amazon Machine Image \(AMI\) is the Amazon Linux or Windows Server machine image that AWS Elastic Beanstalk uses to launch EC2 instances in your environment\. Elastic Beanstalk provides machine images that contain the tools and resources required to run your application\.
 
-Elastic Beanstalk selects a default AMI for your environment based on the region, platform, and instance type that you choose\. If you have created a custom AMI, replace the default AMI ID with yours\.
+Elastic Beanstalk selects a default AMI for your environment based on the region, platform, and instance type that you choose\. If you have created a [custom AMI](using-features.customenv.md), replace the default AMI ID with yours\.
 
 ### Monitoring Interval<a name="using-features.managing.ec2.monitoring-interval"></a>
 
-By default, the instances in your environment publish basic health metrics to CloudWatch at five\-minute intervals at no additional cost\.
+By default, the instances in your environment publish [basic health metrics](using-features.healthstatus.md) to CloudWatch at five\-minute intervals at no additional cost\.
 
-For more detailed reporting, you can set the **Monitoring interval** to **1 minute** to increase the frequency with which the resources in your environment publish basic health metrics to CloudWatch\. Amazon CloudWatch service charges apply for one\-minute interval metrics\. See [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) for more information\.
+For more detailed reporting, you can set the **Monitoring interval** to **1 minute** to increase the frequency with which the resources in your environment publish [basic health metrics](using-features.healthstatus.md#monitoring-basic-cloudwatch) to CloudWatch\. Amazon CloudWatch service charges apply for one\-minute interval metrics\. See [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) for more information\.
 
 ### Root Volume \(Boot Device\)<a name="using-features.managing.ec2.rootvolume"></a>
 
@@ -76,9 +76,9 @@ For more information on Amazon EC2 security groups, see [Amazon EC2 Security Gro
 
 ## The aws:autoscaling:launchconfiguration Namespace<a name="using-features.managing.ec2.namespace"></a>
 
-You can use the configuration options in the `aws:autoscaling:launchconfiguration` namespace to configure your Auto Scaling Group, including additional options that are not available in the console\.
+You can use the [configuration options](command-options.md) in the `[aws:autoscaling:launchconfiguration](command-options-general.md#command-options-general-autoscalinglaunchconfiguration)` namespace to configure your Auto Scaling Group, including additional options that are not available in the console\.
 
-The following configuration file configures the basic options shown in this topic, the options `EC2KeyName` and `IamInstanceProfile` discussed in [Security](using-features.managing.security.md), and an additional option, `BlockDeviceMappings`, which isn't available in the console\.
+The following [configuration file](ebextensions.md) configures the basic options shown in this topic, the options `EC2KeyName` and `IamInstanceProfile` discussed in [Security](using-features.managing.security.md), and an additional option, `BlockDeviceMappings`, which isn't available in the console\.
 
 ```
 option_settings:
@@ -94,4 +94,4 @@ option_settings:
 
 `BlockDeviceMappings` lets you configure additional block devices for your instances\. For more information, see [Block Device Mapping](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html) in the *Amazon Elastic Cloud Computer User Guide*\.
 
-The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See  for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.

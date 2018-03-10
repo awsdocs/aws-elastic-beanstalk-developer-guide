@@ -1,12 +1,12 @@
 # Basic Health Reporting<a name="using-features.healthstatus"></a>
 
-AWS Elastic Beanstalk uses information from multiple sources to determine if your environment is available and processing requests from the Internet\. An environment's health is represented by one of four colors, which is displayed in the environment dashboard, and is also available from the [DescribeEnvironments](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html) API and by calling `eb status` with the EB CLI\.
+AWS Elastic Beanstalk uses information from multiple sources to determine if your environment is available and processing requests from the Internet\. An environment's health is represented by one of four colors, which is displayed in the [environment dashboard](environments-console.md), and is also available from the [DescribeEnvironments](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html) API and by calling `eb status` with the [EB CLI](eb-cli3.md)\.
 
 Prior to version 2 Linux platform configurations, the only health reporting system was basic health\. The basic health reporting system provides information about the health of instances in an Elastic Beanstalk environment based on health checks performed by Elastic Load Balancing for load balanced environments or Amazon Elastic Compute Cloud for single instance environments\.
 
 In addition to checking the health of your EC2 instances, Elastic Beanstalk also monitors the other resources in your environment and reports missing or incorrectly configured resources that can cause your environment to become unavailable to users\.
 
-Metrics gathered by the resources in your environment is published to Amazon CloudWatch in five minute intervals\. This includes operating system metrics from EC2, request metrics from Elastic Load Balancing\. You can view graphs based on these CloudWatch metrics on the Monitoring page of the environment console\. For basic health, these metrics are not used to determine an environment's health\.
+Metrics gathered by the resources in your environment is published to Amazon CloudWatch in five minute intervals\. This includes operating system metrics from EC2, request metrics from Elastic Load Balancing\. You can view graphs based on these CloudWatch metrics on the [Monitoring page](environment-health-console.md) of the environment console\. For basic health, these metrics are not used to determine an environment's health\.
 
 
 + [Health Colors](#using-features.healthstatus.colors)
@@ -29,7 +29,7 @@ Elastic Beanstalk reports the health of a web server environment depending on ho
 |  Yellow  |  Your environment has failed one or more health checks\. Some requests to your environment are failing\.  | 
 |  Red  |  Your environment has failed three or more health checks, or an environment resource has become unavailable\. Requests are consistently failing\.  | 
 
-These descriptions only apply to environments using basic health reporting\. See  for details related to enhanced health\.
+These descriptions only apply to environments using basic health reporting\. See [Health Colors and Statuses](health-enhanced-status.md) for details related to enhanced health\.
 
 ## Elastic Load Balancing Health Check<a name="using-features.healthstatus.understanding"></a>
 
@@ -42,7 +42,7 @@ If a health check URL is configured, Elastic Load Balancing expects a GET reques
 For more information about Elastic Load Balancing health checks, see [Health Check](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/TerminologyandKeyConcepts.html#healthcheck) in the *Elastic Load Balancing User Guide*\.
 
 **Note**  
-Configuring a health check URL does not change the health check behavior of an environment's Auto Scaling group\. An unhealthy instance is removed from the load balancer, but is not automatically replaced by Amazon EC2 Auto Scaling unless you configure Amazon EC2 Auto Scaling to use the Elastic Load Balancing health check as a basis for replacing instances\. To configure Amazon EC2 Auto Scaling to replace instances that fail an Elastic Load Balancing health check, see \.
+Configuring a health check URL does not change the health check behavior of an environment's Auto Scaling group\. An unhealthy instance is removed from the load balancer, but is not automatically replaced by Amazon EC2 Auto Scaling unless you configure Amazon EC2 Auto Scaling to use the Elastic Load Balancing health check as a basis for replacing instances\. To configure Amazon EC2 Auto Scaling to replace instances that fail an Elastic Load Balancing health check, see [Auto Scaling Health Check Setting](environmentconfig-autoscaling-healthchecktype.md)\.
 
 ## Single Instance Environment Health Check<a name="monitoring-basic-healthcheck-singleinstance"></a>
 
@@ -64,7 +64,7 @@ In addition to Elastic Load Balancing health checks, Elastic Beanstalk monitors 
 
 ## Amazon CloudWatch Metrics<a name="monitoring-basic-cloudwatch"></a>
 
-With basic health reporting, the Elastic Beanstalk service does not publish any metrics to Amazon CloudWatch\. The CloudWatch metrics used to produce graphs on the Monitoring page of the environment console are published by the resources in your environment\.
+With basic health reporting, the Elastic Beanstalk service does not publish any metrics to Amazon CloudWatch\. The CloudWatch metrics used to produce graphs on the [Monitoring page](environment-health-console.md) of the environment console are published by the resources in your environment\.
 
 For example, EC2 publishes the following metrics for the instances in your environment's Auto Scaling group:
 

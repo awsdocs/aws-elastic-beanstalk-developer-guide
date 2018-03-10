@@ -18,7 +18,7 @@ Scales the environment to always run on a specified number of instances, setting
 |  Name  |  Description  | 
 | --- | --- | 
 |  \-\-timeout  |  The number of minutes before the command times out\.  | 
-|  Common options  |  | 
+|  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-scaleoutput"></a>
 

@@ -12,7 +12,7 @@ Add a file named `Buildfile` \(case sensitive\) to the root of your source bundl
 build: mvn assembly:assembly -DdescriptorId=jar-with-dependencies
 ```
 
-The above example runs Apache Maven to build a web application from source code\. Check out the Java web application samples for a sample application that uses this feature\.
+The above example runs Apache Maven to build a web application from source code\. Check out the [Java web application samples](java-getstarted.md#java-getstarted-samples) for a sample application that uses this feature\.
 
 The Java SE platform includes the following build tools, which you can invoke from your build script:
 

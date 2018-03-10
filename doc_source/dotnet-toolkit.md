@@ -25,7 +25,7 @@ Visual Studio makes it easy for you to test your application locally\. To test o
 After testing your application, you are ready to deploy it to Elastic Beanstalk\.
 
 **Note**  
-Configuration file needs to be part of the project to be included in the archive\. Alternatively, instead of including the configuration files in the project, you can use Visual Studio to deploy all files in the project folder\. In **Solution Explorer**, right\-click the project name, and then click **Properties**\. Click the **Package/Publish Web** tab\. In the **Items to deploy** section, select **All Files in the Project Folder** in the drop\-down list\.
+[Configuration file](ebextensions.md) needs to be part of the project to be included in the archive\. Alternatively, instead of including the configuration files in the project, you can use Visual Studio to deploy all files in the project folder\. In **Solution Explorer**, right\-click the project name, and then click **Properties**\. Click the **Package/Publish Web** tab\. In the **Items to deploy** section, select **All Files in the Project Folder** in the drop\-down list\.
 
 **To deploy your application to Elastic Beanstalk using the AWS Toolkit for Visual Studio**
 
