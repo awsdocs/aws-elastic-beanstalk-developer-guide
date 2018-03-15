@@ -149,11 +149,11 @@ To prepare to deploy WordPress using AWS Elastic Beanstalk, you must copy the Wo
 
 8. Create a ZIP file from the files and folders in the `wordpress-beanstalk` folder \(not the parent directory\), using one of the following methods, depending on your operating system:
 
-9. Windows — In Windows Explorer, select the files and folders, right\-click, and then choose **Send to**, **Compressed \(zipped\) Folder**\. Name the file `wordpress-x.y.z.zip`, where `x.y.z` is the version of WordPress\.
+   * Windows — In Windows Explorer, select the files and folders, right\-click, and then choose **Send to**, **Compressed \(zipped\) Folder**\. Name the file `wordpress-x.y.z.zip`, where `x.y.z` is the version of WordPress\.
 
    \-\-OR\-\-
 
-   Mac OS X and Linux — Use the following command, where `x.y.z` is the version of WordPress:
+   * Mac OS X and Linux — Use the following command, where `x.y.z` is the version of WordPress:
 
    ```
    zip -r ../wordpress-x.y.z.zip .
