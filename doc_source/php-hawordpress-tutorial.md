@@ -25,19 +25,19 @@ Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosin
 
 1. Open the [RDS console](https://console.aws.amazon.com/rds/home)\.
 
-1. Choose **Instances** in the navigation pane\.
+2. Choose **Instances** in the navigation pane\.
 
-1. Choose **Launch DB Instance**\.
+3. Choose **Launch DB Instance**\.
 
-1. Choose a **DB Engine** and preset configuration\.
+4. Choose a **DB Engine** and preset configuration\.
 
-1. Under **Specify DB Details**, choose a **DB Instance Class**\. For high availability, set **Multi\-AZ Deployment** to **Yes**\.
+5. Under **Specify DB Details**, choose a **DB Instance Class**\. For high availability, set **Multi\-AZ Deployment** to **Yes**\.
 
-1. Under **Settings**, enter values for **DB Instance Identifier**, **Master Username**, and **Master Password** \(and **Confirm Password**\)\. Note the values that you entered for later\.
+6. Under **Settings**, enter values for **DB Instance Identifier**, **Master Username**, and **Master Password** \(and **Confirm Password**\)\. Note the values that you entered for later\.
 
-1. Choose **Next**\.
+7. Choose **Next**\.
 
-1. For **Network and Security** settings, choose the following:
+8. For **Network and Security** settings, choose the following:
 
    + **VPC** – **Default VPC**
 
@@ -49,13 +49,13 @@ Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosin
 
    + **VPC Security Groups** – **Default VPC Security Group**
 
-1. For **Database Name**, type **ebdb**, and verify the default settings for the remaining options\. Note the values of the following options:
+9. For **Database Name**, type **ebdb**, and verify the default settings for the remaining options\. Note the values of the following options:
 
    + **Database Name**
 
    + **Database Port**
 
-1. Choose **Launch DB Instance**\.
+10. Choose **Launch DB Instance**\.
 
 Next, modify the security group attached to your DB instance to allow inbound traffic on the appropriate port\. This is the same security group that you will attach to your Elastic Beanstalk environment later, so the rule that you add will grant ingress permission to other resources in the same security group\.
 
@@ -63,13 +63,13 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 
 1. Open the [Amazon RDS console](https://console.aws.amazon.com/rds/home)\.
 
-1. Choose **Instances**\.
+2. Choose **Instances**\.
 
-1. Choose the arrow next to the entry for your DB instance to expand the view\.
+3. Choose the arrow next to the entry for your DB instance to expand the view\.
 
-1. Choose the **Details** tab\.
+4. Choose the **Details** tab\.
 
-1. In the **Security and Network** section, the security group associated with the DB instance is shown\. Open the link to view the security group in the Amazon EC2 console\.  
+5. In the **Security and Network** section, the security group associated with the DB instance is shown\. Open the link to view the security group in the Amazon EC2 console\.  
 ![\[Details tab of a DB instance page in the Amazon RDS console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup.png)
 **Note**  
 While you have the **Details** tab open, note the **Endpoint** and security group name shown on this page for use later\.  
@@ -77,16 +77,16 @@ The security group name is the first value of the link shown in **Security Group
 
 1. In the security group details, choose the **Inbound** tab\.
 
-1. Choose **Edit**\.
+2. Choose **Edit**\.
 
-1. Choose **Add Rule**\.
+3. Choose **Add Rule**\.
 
-1. For **Type**, choose the DB engine that your application uses\.
+4. For **Type**, choose the DB engine that your application uses\.
 
-1. For **Source**, choose **Custom**, and then type the group ID of the security group\. This allows resources in the security group to receive traffic on the database port from other resources in the same group\.  
+5. For **Source**, choose **Custom**, and then type the group ID of the security group\. This allows resources in the security group to receive traffic on the database port from other resources in the same group\.  
 ![\[Edit inbound rules page for a security group in the Amazon EC2 console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/ec2-securitygroup-rds.png)
 
-1. Choose **Save**\.
+6. Choose **Save**\.
 
 Creating a DB instance takes about 10 minutes\. In the meantime, download WordPress and launch your Elastic Beanstalk environment\.
 
@@ -98,19 +98,17 @@ To prepare to deploy WordPress using AWS Elastic Beanstalk, you must copy the Wo
 
 1. Open [http://wordpress\.org/download/](http://wordpress.org/download/)\.
 
-1. Download the latest release\.
+2. Download the latest release\.
 
-1. Extract the WordPress files from the download to a folder on your local computer, which you should rename to `wordpress-beanstalk`\. 
+3. Extract the WordPress files from the download to a folder on your local computer, which you should rename to `wordpress-beanstalk`\. 
 
-1. Download the configuration files in the following repository:
+4. Download the configuration files in the following repository:
 
-   ```
-   [https://github\.com/awslabs/eb\-php\-wordpress/releases/download/v1\.0/eb\-php\-wordpress\-v1\.zip](https://github.com/awslabs/eb-php-wordpress/releases/download/v1.0/eb-php-wordpress-v1.zip)
-   ```
+   [https://github.com/awslabs/eb-php-wordpress/releases/download/v1.0/eb-php-wordpress-v1.zip](https://github.com/awslabs/eb-php-wordpress/releases/download/v1.0/eb-php-wordpress-v1.zip)
+   
+5. Extract the configuration files into your `wordpress-beanstalk` folder\.
 
-1. Extract the configuration files into your `wordpress-beanstalk` folder\.
-
-1. Verify that the structure of your `wordpress-beanstalk` folder is correct\.
+6. Verify that the structure of your `wordpress-beanstalk` folder is correct\.
 
    ```
    ├── .ebextensions
@@ -143,19 +141,19 @@ To prepare to deploy WordPress using AWS Elastic Beanstalk, you must copy the Wo
    │ └── widgets
    ```
 
-1. Modify the configuration files in the `.ebextensions` folder with the IDs of your default VPC and subnets, and your public IP address\.
+7. Modify the configuration files in the `.ebextensions` folder with the IDs of your default VPC and subnets, and your public IP address\.
 
-1. The `.ebextensions/efs-create.config` file creates an EFS file system and mount points in each Availability Zone/subnet in your VPC\. Identify your default VPC and subnet IDs in the Amazon VPC console\.
+   * The `.ebextensions/efs-create.config` file creates an EFS file system and mount points in each Availability Zone/subnet in your VPC\. Identify your default VPC and subnet IDs in the Amazon VPC console\.
 
-   The `.ebextensions/dev.config` file restricts access to your environment to your IP address to protect it during the WordPress installation process\. Replace the placeholder IP address near the top of the file with your public IP address\.
+   * The `.ebextensions/dev.config` file restricts access to your environment to your IP address to protect it during the WordPress installation process\. Replace the placeholder IP address near the top of the file with your public IP address\.
 
-1. Create a ZIP file from the files and folders in the `wordpress-beanstalk` folder \(not the parent directory\), using one of the following methods, depending on your operating system:
+8. Create a ZIP file from the files and folders in the `wordpress-beanstalk` folder \(not the parent directory\), using one of the following methods, depending on your operating system:
 
-1. Windows — In Windows Explorer, select the files and folders, right\-click, and then choose **Send to**, **Compressed \(zipped\) Folder**\. Name the file `wordpress-x.y.z.zip`, where `x.y.z` is the version of WordPress\.
+   * Windows — In Windows Explorer, select the files and folders, right\-click, and then choose **Send to**, **Compressed \(zipped\) Folder**\. Name the file `wordpress-x.y.z.zip`, where `x.y.z` is the version of WordPress\.
 
    \-\-OR\-\-
 
-   Mac OS X and Linux — Use the following command, where `x.y.z` is the version of WordPress:
+   * Mac OS X and Linux — Use the following command, where `x.y.z` is the version of WordPress:
 
    ```
    zip -r ../wordpress-x.y.z.zip .
@@ -167,21 +165,21 @@ Use the AWS Management Console to launch an Elastic Beanstalk environment\.
 
 1. Open the Elastic Beanstalk console with this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=wordpress\-beanstalk&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=wordpress-beanstalk&environmentType=LoadBalanced)
 
-1. For **Platform**, choose **PHP**\.
+2. For **Platform**, choose **PHP**\.
 
-1. For **App code**, choose **Upload your code**\.
+3. For **App code**, choose **Upload your code**\.
 
-1. Choose **Upload** and navigate to the ZIP file you created for your WordPress files\.
+4. Choose **Upload** and navigate to the ZIP file you created for your WordPress files\.
 
-1. Choose **Upload** to select your application code\.
+5. Choose **Upload** to select your application code\.
 
-1. Choose **Configure more options**\.
+6. Choose **Configure more options**\.
 
-1. For **Configuration presets**, select **Custom configuration**\.
+7. For **Configuration presets**, select **Custom configuration**\.
 
-1. Choose **Change platform configuration** and select **64bit Amazon Linux 2016\.09 v2\.3\.1 running PHP 5\.6** from the drop down menu and then choose **Save**\.
+8. Choose **Change platform configuration** and select **64bit Amazon Linux 2016\.09 v2\.3\.1 running PHP 5\.6** from the drop down menu and then choose **Save**\.
 
-1. Review all options and once you are satisfied with those options choose **Create app**\.
+9. Review all options and once you are satisfied with those options choose **Create app**\.
 
 Environment creation takes about 5 minutes\.
 
@@ -193,17 +191,17 @@ Next, add the DB instance's security group to your running environment\. This pr
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+2. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Choose **Configuration**\.
+3. Choose **Configuration**\.
 
-1. On the **Security** configuration card, choose **Modify**\.
+4. On the **Security** configuration card, choose **Modify**\.
 
-1. For **EC2 security groups**, type a comma after the name of the autogenerated security group, followed by the name of the Amazon RDS DB instance's security group\. It's the name you noted while configuring the security group earlier\.
+5. For **EC2 security groups**, type a comma after the name of the autogenerated security group, followed by the name of the Amazon RDS DB instance's security group\. It's the name you noted while configuring the security group earlier\.
 
-1. Choose **Save**, and then choose **Apply**\.
+6. Choose **Save**, and then choose **Apply**\.
 
-1. Read the warning, and then choose **Save**\.
+7. Read the warning, and then choose **Save**\.
 
 Next, pass the connection information to your environment by using environment properties\. The sample application uses a default set of properties that match the ones that Elastic Beanstalk configures when you provision a database within your environment\.
 
@@ -211,13 +209,13 @@ Next, pass the connection information to your environment by using environment p
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+2. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Choose **Configuration**\.
+3. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+4. On the **Software** configuration card, choose **Modify**\.
 
-1. In the **Environment Properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following:
+5. In the **Environment Properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following:
 
    + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
@@ -240,7 +238,7 @@ Next, pass the connection information to your environment by using environment p
    Choose the plus symbol \(\+\) to add more properties\.  
 ![\[Environment Properties section\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
 
-1. Choose **Save**, and then choose **Apply**\.
+6. Choose **Save**, and then choose **Apply**\.
 
 ## Install WordPress<a name="php-hawordpress-tutorial-install"></a>
 
@@ -248,11 +246,11 @@ Next, pass the connection information to your environment by using environment p
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+2. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Choose the environment URL to open your site in a browser\. You are redirected to a WordPress installation wizard because the site has not been configured yet\.
+3. Choose the environment URL to open your site in a browser\. You are redirected to a WordPress installation wizard because the site has not been configured yet\.
 
-1. Perform a standard installation\. The `wp-config.php` file is already present in the source code and configured to read the database connection information from the environment, so you shouldn't be prompted to configure the connection\.
+4. Perform a standard installation\. The `wp-config.php` file is already present in the source code and configured to read the database connection information from the environment, so you shouldn't be prompted to configure the connection\.
 
 Installation takes about a minute to complete\.
 
@@ -266,13 +264,13 @@ The hash salt can be any value but it should not be stored in source control\. U
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+2. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. On the navigation pane, choose `Configuration`\.
+3. On the navigation pane, choose `Configuration`\.
 
-1. For `Software Configuration`, choose the gear icon\.
+4. For `Software Configuration`, choose the gear icon\.
 
-1. For `Environment Properties`, define the following authentication settings:
+5. For `Environment Properties`, define the following authentication settings:
 
    + **AUTH\_KEY** — The value chosen for AUTH\_KEY\.
 
@@ -300,9 +298,9 @@ This tutorial includes a configuration file \(`loadbalancer-sg.config`\) that cr
 
 1. On your local computer, delete the `.ebextensions/loadbalancer-sg-config` file from the `wordpress-beanstalk` folder\.
 
-1. Create a ZIP file from the files and folders in the `wordpress-beanstalk` folder \(not the parent directory\), using one of the following methods, depending on your operating system:
+2. Create a ZIP file from the files and folders in the `wordpress-beanstalk` folder \(not the parent directory\), using one of the following methods, depending on your operating system:
 
-1. Windows — In Windows Explorer, select the files and folders, right\-click, and then choose **Send to**, **Compressed \(zipped\) Folder**\. Name the file using the following format, where `x.y.z` is the version of WordPress\.
+3. Windows — In Windows Explorer, select the files and folders, right\-click, and then choose **Send to**, **Compressed \(zipped\) Folder**\. Name the file using the following format, where `x.y.z` is the version of WordPress\.
 
    ```
    wordpress-x.y.z-v2.zip
@@ -316,17 +314,17 @@ This tutorial includes a configuration file \(`loadbalancer-sg.config`\) that cr
    zip -r ../wordpress-x.y.z-v2.zip .
    ```
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+4. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+5. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Choose **Upload and Deploy**\.
+6. Choose **Upload and Deploy**\.
 
-1. Choose **Choose File** and navigate to the ZIP file you created for your WordPress files\.
+7. Choose **Choose File** and navigate to the ZIP file you created for your WordPress files\.
 
-1. Enter a **Version label** that distinguishes this updated version from your previous version\.
+8. Enter a **Version label** that distinguishes this updated version from your previous version\.
 
-1. Choose **Deploy**\.
+9. Choose **Deploy**\.
 
 ## Configure Autoscaling<a name="php-hawordpress-tutorial-autoscaling"></a>
 
@@ -336,15 +334,15 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+2. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Choose **Configuration**\.
+3. Choose **Configuration**\.
 
-1. On the **Capacity** configuration card, choose **Modify**\.
+4. On the **Capacity** configuration card, choose **Modify**\.
 
-1. In the **Auto Scaling Group** section, set **Min instances** to **2** and the **Max instances** to a value greater than **2**\.
+5. In the **Auto Scaling Group** section, set **Min instances** to **2** and the **Max instances** to a value greater than **2**\.
 
-1. Choose **Save**, and then choose **Apply**\.
+6. Choose **Save**, and then choose **Apply**\.
 
 ## Review<a name="php-hawordpress-tutorial-review"></a>
 
@@ -383,11 +381,11 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+2. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Choose **Actions**, and then choose **Terminate Environment**\.
+3. Choose **Actions**, and then choose **Terminate Environment**\.
 
-1. In the **Confirm Termination** dialog box, type the environment name, and then choose **Terminate**\.
+4. In the **Confirm Termination** dialog box, type the environment name, and then choose **Terminate**\.
 
 In addition, you can terminate database resources that you created outside of your Elastic Beanstalk environment\. When you terminate an Amazon RDS database instance, you can take a snapshot and restore the data to another instance later\.
 
@@ -395,23 +393,23 @@ In addition, you can terminate database resources that you created outside of yo
 
 1. Open the [Amazon RDS console](https://console.aws.amazon.com/rds)\.
 
-1. Choose **Instances**\.
+2. Choose **Instances**\.
 
-1. Choose your DB instance\.
+3. Choose your DB instance\.
 
-1. Choose **Instance Actions**, and then choose **Delete**\.
+4. Choose **Instance Actions**, and then choose **Delete**\.
 
-1. Choose whether to create a snapshot, and then choose **Delete**\.
+5. Choose whether to create a snapshot, and then choose **Delete**\.
 
 **To delete a DynamoDB table**
 
 1. Open the [Tables page](https://console.aws.amazon.com/dynamodb/home?#tables:) in the DynamoDB console\.
 
-1. Select a table\.
+2. Select a table\.
 
-1. Choose **Actions**, and then choose **Delete table**\.
+3. Choose **Actions**, and then choose **Delete table**\.
 
-1. Choose **Delete**\.
+4. Choose **Delete**\.
 
 ## Next Steps<a name="php-hawordpress-tutorial-nextsteps"></a>
 
