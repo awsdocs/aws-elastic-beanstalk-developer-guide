@@ -160,7 +160,7 @@ The EB CLI looks for credentials and configuration settings in the following ord
 
 1. **The [AWS CLI configuration file](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-files)** – Located at `~/.aws/config` on Linux and OS X systems or `C:\Users\USERNAME\.aws\config` on Windows systems\. This file can contain a default profile, [named profiles](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles), and AWS CLI–specific configuration parameters for each\.
 
-1. **Legacy EB CLI configuration file** – Located at `~/.elasticbeanstalk/config` on Linux and OS X systems or `C:\Users\USERNAME\.elasticbeanstalk/config` on Windows systems\.
+1. **Legacy EB CLI configuration file** – Located at `~/.elasticbeanstalk/config` on Linux and OS X systems or `C:\Users\USERNAME\.elasticbeanstalk\config` on Windows systems\.
 
 1. **Instance profile credentials** – These credentials can be used on Amazon EC2 instances with an assigned instance role, and are delivered through the Amazon EC2 metadata service\. The [instance profile](concepts-roles-instance.md) must have permission to use Elastic Beanstalk\.
 
