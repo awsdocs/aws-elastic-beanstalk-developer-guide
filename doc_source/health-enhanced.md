@@ -16,7 +16,7 @@ Enhanced health reporting requires a version 2 or newer [ platform configuration
 
 The first time you create an environment with a version 2 platform configuration in the AWS Management Console, Elastic Beanstalk prompts you to create the required roles and enables enhanced health reporting by default\. Continue reading for details on how enhanced health reporting works, or go to [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) to get started using it right away\.
 
-
+**Topics**
 + [The Elastic Beanstalk Health Agent](#health-enhanced-agent)
 + [Factors in Determining Instance and Environment Health](#health-enhanced-factors)
 + [Enhanced Health Roles](#health-enhanced-roles)

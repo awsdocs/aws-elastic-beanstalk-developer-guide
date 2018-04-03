@@ -6,7 +6,7 @@ A `Dockerrun.aws.json` file is an Elastic Beanstalk–specific JSON file that de
 
 A `Dockerrun.aws.json` file can be used on its own or zipped up with additional source code in a single archive\. Source code that is archived with a `Dockerrun.aws.json` is deployed to Amazon EC2 container instances and accessible in the `/var/app/current/` directory\. Use the `volumes` section of the config to provide file volumes for the Docker containers running on the host instance\. Use the `mountPoints` section of the embedded container definitions to map these volumes to mount points that applications on the Docker containers can use\.
 
-
+**Topics**
 + [Dockerrun\.aws\.json v2](#create_deploy_docker_v2config_dockerrun)
 + [Using Images from a Private Repository](#docker-multicontainer-dockerrun-privaterepo)
 + [Container Definition Format](#create_deploy_docker_v2config_dockerrun_format)
@@ -141,11 +141,8 @@ The name of the container\. See [Standard Container Definition Parameters](http:
 
 **image**  
 The name of a Docker image in an online Docker repository from which you're building a Docker container\. Note these conventions:   
-
 +  Images in official repositories on Docker Hub use a single name \(for example, `ubuntu` or `mongo`\)\.
-
 + Images in other repositories on Docker Hub are qualified with an organization name \(for example, `amazon/amazon-ecs-agent`\.
-
 + Images in other online repositories are qualified further by a domain name \(for example, `quay.io/assemblyline/ubuntu`\)\.
 
 **environment**  

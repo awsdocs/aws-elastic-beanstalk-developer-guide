@@ -8,7 +8,7 @@ In addition to the two roles that you assign to your environment, you can also c
 
 You can create your own instance profiles and user policies for advanced scenarios\. If your instances need to access services that are not included in the default policies, you can add additional policies to the default or create a new one\. You can also create more restrictive user policies if the managed policy is too permissive\. See the [AWS Identity and Access Management User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMGettingStarted.html) for in\-depth coverage of AWS permissions\.
 
-
+**Topics**
 + [Elastic Beanstalk Service Role](concepts-roles-service.md)
 + [Elastic Beanstalk Instance Profile](concepts-roles-instance.md)
 + [Elastic Beanstalk User Policy](concepts-roles-user.md)

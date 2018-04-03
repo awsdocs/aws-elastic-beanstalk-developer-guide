@@ -4,7 +4,7 @@ New environments created with the latest [platform versions](concepts.platforms.
 
 Enhanced health reporting requires an [instance profile](concepts-roles-instance.md) and [service role](concepts-roles-service.md) with the standard set of permissions\. When you create an environment in the Elastic Beanstalk console, Elastic Beanstalk creates the required roles automatically\. See [Getting Started Using Elastic Beanstalk](GettingStarted.md) for instructions on creating your first environment\.
 
-
+**Topics**
 + [Enabling Enhanced Health Reporting with the AWS Management Console](#health-enhanced-enable-console)
 + [Enabling Enhanced Health Reporting with the EB CLI](#health-enhanced-enable-ebcli)
 + [Enabling Enhanced Health Reporting with a Configuration File](#health-enhanced-enable-config)

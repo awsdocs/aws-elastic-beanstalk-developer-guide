@@ -6,6 +6,6 @@ For an end\-to\-end walkthrough about deploying an application to Elastic Beanst
 
 For more information about supported platforms for preconfigured Docker containers, see [Preconfigured Docker](concepts.platforms.md#concepts.platforms.dockerpreconfig)\.
 
-
+**Topics**
 + [Getting Started with Preconfigured Docker Containers](create_deploy_dockerpreconfig.walkthrough.md)
 + [Example: Using a Dockerfile to Customize and Configure a Preconfigured Docker Platform](create_deploy_dockerpreconfig.dockerfile.md)

@@ -7,7 +7,7 @@ The Amazon CloudWatch Monitoring Scripts for Linux are available to demonstrate 
 **Note**  
 Elastic Beanstalk [Enhanced Health Reporting](health-enhanced.md) has native support for publishing a wide range of instance and environment metrics to CloudWatch\. See [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md) for details\.
 
-
+**Topics**
 + [\.ebextensions Configuration File](#customize-containers-cw-update-roles)
 + [Permissions](#customize-containers-cw-policy)
 + [Viewing Metrics in the CloudWatch Console](#customize-containers-cw-console)

@@ -8,7 +8,7 @@ To connect to a database, [add the driver](#php-rds-drivers) to your application
 
 For production environments, create a DB instance outside of your Elastic Beanstalk environment to decouple your environment resources from your database resources\. Using an external DB instance lets you connect to the same database from multiple environments and perform blue\-green deployments\. For instructions, see [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)\.
 
-
+**Topics**
 + [Adding a DB Instance to Your Environment](#php-rds-create)
 + [Downloading a Driver](#php-rds-drivers)
 + [Connecting to a Database with a PDO or MySQLi](#php-rds-connect)
@@ -30,23 +30,18 @@ For production environments, create a DB instance outside of your Elastic Beanst
 1. Choose **Save**, and then choose **Apply**\.
 
 Adding a DB instance takes about 10 minutes\. When the environment update is complete, the DB instance's hostname and other connection information are available to your application through the following environment properties:
-
 + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
   Amazon RDS console label – **Endpoint** \(this is the hostname\)
-
 + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
 
   Amazon RDS console label – **Port**
-
 + **RDS\_DB\_NAME** – The database name, `ebdb`\.
 
   Amazon RDS console label – **DB Name**
-
 + **RDS\_USERNAME** – The user name that you configured for your database\.
 
   Amazon RDS console label – **Username**
-
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
 For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
@@ -54,13 +49,9 @@ For more information about configuring an internal DB instance, see [Adding a Da
 ## Downloading a Driver<a name="php-rds-drivers"></a>
 
 To use PHP Data Objects \(PDO\) to connect to the database, install the driver that matches the database engine that you chose\.
-
 + **MySQL** – [http://php.net/manual/en/ref.pdo-mysql.php](http://php.net/manual/en/ref.pdo-mysql.php)
-
 + **PostgreSQL** – [http://php.net/manual/en/ref.pdo-pgsql.php](http://php.net/manual/en/ref.pdo-pgsql.php)
-
 + **Oracle** – [http://php.net/manual/en/ref.pdo-oci.php](http://php.net/manual/en/ref.pdo-oci.php)
-
 + **SQL Server** – [http://php.net/manual/en/ref.pdo-sqlsrv.php](http://php.net/manual/en/ref.pdo-sqlsrv.php)
 
 For more information, see [php\.net/manual/en/pdo\.installation\.php](http://www.php.net/manual/en/pdo.installation.php)\.

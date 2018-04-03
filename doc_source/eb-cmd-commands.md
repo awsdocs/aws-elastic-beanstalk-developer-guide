@@ -5,7 +5,7 @@
 
 You can use the EB command line interface to perform a wide variety of operations\.
 
-
+**Topics**
 + [branch](branch.md)
 + [delete](delete.md)
 + [events](eb-events.md)

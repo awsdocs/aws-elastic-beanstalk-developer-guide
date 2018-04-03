@@ -4,7 +4,7 @@ This tutorial and [sample application](https://github.com/awslabs/eb-node-expres
 
 The tutorial's sample application uses a DynamoDB table to store user\-provided text data\. The sample application uses [configuration files](ebextensions.md) to create the table and an Amazon Simple Notification Service topic\. It also shows how to use a [package\.json file](nodejs-platform-packagejson.md) to install packages during deployment\.
 
-
+**Topics**
 + [Prerequisites](#nodejs-dynamodb-tutorial-prereqs)
 + [Launch an Elastic Beanstalk Environment](#nodejs-dynamodb-tutorial-launch)
 + [Add Permissions to Your Environment's Instances](#nodejs-dynamodb-tutorial-role)
@@ -16,9 +16,7 @@ The tutorial's sample application uses a DynamoDB table to store user\-provided 
 + [Next Steps](#nodejs-dynamodb-tutorial-nextsteps)
 
 ## Prerequisites<a name="nodejs-dynamodb-tutorial-prereqs"></a>
-
 + Before you start, download the sample application source bundle from GitHub: [eb\-node\-express\-sample\-v1\.1\.zip](https://github.com/awslabs/eb-node-express-sample/releases/download/v1.1/eb-node-express-sample-v1.1.zip)\.
-
 + You will also need a command line terminal or shell to run the commands in the procedures\. Example commands are preceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
 
   ```
@@ -27,7 +25,6 @@ The tutorial's sample application uses a DynamoDB table to store user\-provided 
   ```
 **Note**  
 You can run all commands in this tutorial on a Linux virtual machine, and OS X machine, or an Amazon EC2 instance running Amazon Linux\. If you need a development environment, you can launch a single\-instance Elastic Beanstalk environment and connect to it with SSH\.
-
 + This tutorial uses a command line ZIP utility to create a source bundle that you can deploy to Elastic Beanstalk\. To use the `zip` command in Windows, you can install `UnxUtils`, a lightweight collection of useful command\-line utilities like `zip` and `ls`\. \(Alternatively, you can [use Windows Explorer](applications-sourcebundle.md#using-features.deployment.source.gui) or any other ZIP utility to create source bundle archives\.\)
 
 **To install UnxUtils**
@@ -37,6 +34,18 @@ You can run all commands in this tutorial on a Linux virtual machine, and OS X m
   1. Extract the archive to a local directory\. For example, `C:\Program Files (x86)`\.
 
   1. Add the path to the binaries to your Windows PATH user variable\. For example, `C:\Program Files (x86)\UnxUtils\usr\local\wbin`\.
+
+     1. Press the Windows key, and then type **environment variables**\.
+
+     1. Choose **Edit environment variables for your account**\.
+
+     1. Choose **PATH**, and then choose **Edit**\.
+
+     1. Add paths to the **Variable value** field, separated by semicolons\. For example: `C:\existing\path;C:\new\path`
+
+     1. Choose **OK** twice to apply the new settings\.
+
+     1. Close any running command prompts and reopen\.
 
   1. Open a new command prompt window and run the `zip` command to verify that it works:
 
@@ -61,28 +70,19 @@ You use the Elastic Beanstalk console to launch an Elastic Beanstalk environment
 
 1. Choose **Review and launch**\.
 
-1. Review all options\. When you're satisfied with them, choose **Create app**\.
+1. Review the available options\. When you're satisfied with them, choose **Create app**\.
 
 Elastic Beanstalk takes about five minutes to create the environment with the following resources:
-
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
   Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination thereof\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
-
 + **Instance security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
-
 + **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
-
 + **Load balancer security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
-
 + **Auto Scaling group** – An Auto Scaling group configured to replace an instance if it is terminated or becomes unavailable\.
-
 + **Amazon S3 bucket** – A storage location for your source code, logs, and other artifacts that are created when you use Elastic Beanstalk\.
-
 + **Amazon CloudWatch alarms** – Two CloudWatch alarms that monitor the load on the instances in your environment and are triggered if the load is too high or too low\. When an alarm is triggered, your Auto Scaling group scales up or down in response\.
-
 + **AWS CloudFormation stack** – Elastic Beanstalk uses AWS CloudFormation to launch the resources in your environment and propagate configuration changes\. The resources are defined in a template that you can view in the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation)\.
-
 + **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
 
 Elastic Beanstalk manages all of these resources\. When you terminate your environment, Elastic Beanstalk terminates all of the resources that it contains\.
@@ -95,9 +95,7 @@ The S3 bucket that Elastic Beanstalk creates is shared between environments and 
 Your application runs on one or more EC2 instances behind a load balancer, serving HTTP requests from the Internet\. When it receives a request that requires it to use AWS services, the application uses the permissions of the instance it runs on to access those services\.
 
 The sample application uses instance permissions to write data to a DynamoDB table, and to send notifications to an Amazon SNS topic with the SDK for JavaScript in Node\.js\. Add the following managed policies to the default [instance profile](concepts-roles-instance.md) to grant the EC2 instances in your environment permission to access DynamoDB and Amazon SNS:
-
 + **AmazonDynamoDBFullAccess**
-
 + **AmazonSNSFullAccess**
 
 **To add policies to the default instance profile**
@@ -168,11 +166,8 @@ The sample application includes [configuration files](ebextensions.md) that crea
 To use an external DynamoDB table with an application running in Elastic Beanstalk, first create a table in DynamoDB\. When you create a table outside of Elastic Beanstalk, it is completely independent of Elastic Beanstalk and your Elastic Beanstalk environments, and will not be terminated by Elastic Beanstalk\.
 
 Create a table with the following settings:
-
 + **Table name** – **nodejs\-tutorial**
-
 + **Primary key** – **email**
-
 + Primary key type – **String**
 
 **To create a DynamoDB table**
@@ -202,9 +197,7 @@ Update the [configuration files](ebextensions.md) in the application source to u
    ```
 
 1. Open `.ebextensions/options.config` and change the values of the following settings:
-
    + **NewSignupEmail** – Your email address\.
-
    + **STARTUP\_SIGNUP\_TABLE** – **nodejs\-tutorial**  
 **Example \.ebextensions/options\.config**  
 

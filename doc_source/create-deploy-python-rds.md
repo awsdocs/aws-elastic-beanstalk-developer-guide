@@ -8,7 +8,7 @@ To connect to a database, [add the driver](#python-rds-drivers) to your applicat
 
 For production environments, create a DB instance outside of your Elastic Beanstalk environment to decouple your environment resources from your database resources\. Using an external DB instance lets you connect to the same database from multiple environments and perform blue\-green deployments\. For instructions, see [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)\.
 
-
+**Topics**
 + [Adding a DB Instance to Your Environment](#python-rds-create)
 + [Downloading a Driver](#python-rds-drivers)
 + [Connecting to a Database](#python-rds-connect)
@@ -30,23 +30,18 @@ For production environments, create a DB instance outside of your Elastic Beanst
 1. Choose **Save**, and then choose **Apply**\.
 
 Adding a DB instance takes about 10 minutes\. When the environment update is complete, the DB instance's hostname and other connection information are available to your application through the following environment properties:
-
 + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
   Amazon RDS console label – **Endpoint** \(this is the hostname\)
-
 + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
 
   Amazon RDS console label – **Port**
-
 + **RDS\_DB\_NAME** – The database name, `ebdb`\.
 
   Amazon RDS console label – **DB Name**
-
 + **RDS\_USERNAME** – The user name that you configured for your database\.
 
   Amazon RDS console label – **Username**
-
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
 For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
@@ -58,18 +53,14 @@ Add the database driver to your project's [requirements file](python-configurati
 **Example requirements\.txt – Django with MySQL**  
 
 ```
-Django==1.4.1
-MySQL-python==1.2.3
+Django==2.0.3
+mysqlclient==1.3.12
 ```
 
 **Common Driver Packages for Python**
-
-+ **MySQL** – `MySQL-python`
-
++ **MySQL** – `MySQL-python` \(Python 2\) , `mysqlclient` \(Python 3\)
 + **PostgreSQL** – `psycopg2`
-
 + **Oracle** – `cx_Oracle`
-
 + **SQL Server** – `adodbapi`
 
 ## Connecting to a Database<a name="python-rds-connect"></a>

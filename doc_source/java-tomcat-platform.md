@@ -42,9 +42,7 @@ The *permanent generation* is a section of the JVM heap that stores class defini
 ### Log Options<a name="java-tomcat-options-logs"></a>
 
 The Log Options section has two settings:
-
 + **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
-
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
 ### Environment Properties<a name="java-tomcat-options-properties"></a>
@@ -70,19 +68,12 @@ See [Environment Properties and Other Software Settings](environments-cfg-softwa
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
 The Tomcat platform supports options in the following namespaces in addition to the [options supported for all Elastic Beanstalk environments](command-options-general.md):
-
 + `aws:elasticbeanstalk:container:tomcat:jvmoptions` – Modify JVM settings\. Options in this namespace correspond to options in the management console as follows:
-
   + `Xms` – **JVM command line options**
-
   + `Xmx` – **JVM command line options**
-
   + `XX:MaxPermSize` – **Maximum JVM permanent generation size**
-
   + `JVM Options` – **JVM command line options**
-
 + `aws:elasticbeanstalk:environment:proxy` – Choose the proxy server and configure response compression\.
-
 + `aws:elasticbeanstalk:environment:proxy:staticfiles` – Configure the proxy to serve static assets from a path in your source bundle\.
 
 The following example configuration file shows the use of the Tomcat\-specific configuration options:

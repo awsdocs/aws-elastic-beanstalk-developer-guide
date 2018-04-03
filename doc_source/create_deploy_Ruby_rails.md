@@ -19,7 +19,7 @@ You can use the Elastic Beanstalk Command Line Interface \(EB CLI\) and Git to d
 
 For the typographic conventions used in this tutorial, see [Document Conventions](http://docs.aws.amazon.com/general/latest/gr/docconventions.html) in the General Reference\.
 
-
+**Topics**
 + [Rails Development Environment Setup](#create_deploy_Ruby_rails-devenv)
 + [Install the EB CLI](#create_deploy_Ruby_rails-install)
 + [Set Up Your Git Repository](#create_deploy_Ruby_rails_gitinit)
@@ -248,17 +248,11 @@ INFO: createEnvironment is starting.
 If you see a "service role required" error message, run `eb create` interactively \(without specifying an environment name\) and the EB CLI creates the role for you\.
 
  With just one command, the EB CLI sets up all of the resources our application needs to run in AWS, including the following: 
-
 + An Amazon S3 bucket to store environment data
-
 + A load balancer to distribute traffic to the web server\(s\)
-
 + A security group to allow incoming web traffic
-
 + An Auto Scaling group to adjust the number of servers in response to load changes
-
 + Amazon CloudWatch alarms that notify the Auto Scaling group when load is low or high
-
 + An Amazon EC2 instance hosting our application
 
  When the process is complete, the EB CLI outputs the public DNS name of the application server\. Use `eb open` to open the website in the default browser\. In our Ubuntu environment the default browser is a text based browser called W3M\.
@@ -426,7 +420,6 @@ If you no longer want to run your application, you can clean up by terminating y
 Use the `terminate` command to terminate your environment and the `delete` command to delete your application\. 
 
 **To terminate your environment and delete the application**
-
 + From the directory where you created your local repository, run `eb terminate`\.
 
   ```

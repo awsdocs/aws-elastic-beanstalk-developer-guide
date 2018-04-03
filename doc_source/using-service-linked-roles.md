@@ -21,23 +21,12 @@ The permissions policy of the AWSServiceRoleForElasticBeanstalk service\-linked 
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Sid": "AllowPassRoleToElasticBeanstalk",
+            "Sid": "AllowCloudformationReadOperationsOnElasticBeanstalkStacks",
             "Effect": "Allow",
             "Action": [
-                "iam:PassRole"
-            ],
-            "Resource": "*",
-            "Condition": {
-                "StringLikeIfExists": {
-                    "iam:PassedToService": "elasticbeanstalk.amazonaws.com"
-                }
-            }
-        },
-        {
-            "Sid": "AllowCloudformationOperationsOnElasticBeanstalkStacks",
-            "Effect": "Allow",
-            "Action": [
-                "cloudformation:*"
+                "cloudformation:DescribeStackResource",
+                "cloudformation:DescribeStackResources",
+                "cloudformation:DescribeStacks"
             ],
             "Resource": [
                 "arn:aws:cloudformation:*:*:stack/awseb-*",
@@ -45,103 +34,26 @@ The permissions policy of the AWSServiceRoleForElasticBeanstalk service\-linked 
             ]
         },
         {
-            "Sid": "AllowDeleteCloudwatchLogGroups",
-            "Effect": "Allow",
-            "Action": [
-                "logs:DeleteLogGroup"
-            ],
-            "Resource": [
-                "arn:aws:logs:*:*:log-group:/aws/elasticbeanstalk*"
-            ]
-        },
-        {
-            "Sid": "AllowS3OperationsOnElasticBeanstalkBuckets",
-            "Effect": "Allow",
-            "Action": [
-                "s3:*"
-            ],
-            "Resource": [
-                "arn:aws:s3:::elasticbeanstalk-*",
-                "arn:aws:s3:::elasticbeanstalk-*/*"
-            ]
-        },
-        {
             "Sid": "AllowOperations",
             "Effect": "Allow",
             "Action": [
-                "autoscaling:AttachInstances",
-                "autoscaling:CreateAutoScalingGroup",
-                "autoscaling:CreateLaunchConfiguration",
-                "autoscaling:DeleteLaunchConfiguration",
-                "autoscaling:DeleteAutoScalingGroup",
-                "autoscaling:DeleteScheduledAction",
-                "autoscaling:DescribeAccountLimits",
                 "autoscaling:DescribeAutoScalingGroups",
                 "autoscaling:DescribeAutoScalingInstances",
-                "autoscaling:DescribeLaunchConfigurations",
-                "autoscaling:DescribeLoadBalancers",
                 "autoscaling:DescribeNotificationConfigurations",
                 "autoscaling:DescribeScalingActivities",
-                "autoscaling:DescribeScheduledActions",
-                "autoscaling:DetachInstances",
-                "autoscaling:PutScheduledUpdateGroupAction",
-                "autoscaling:ResumeProcesses",
-                "autoscaling:SetDesiredCapacity",
-                "autoscaling:SuspendProcesses",
-                "autoscaling:TerminateInstanceInAutoScalingGroup",
-                "autoscaling:UpdateAutoScalingGroup",
-                "cloudwatch:PutMetricAlarm",
+                "autoscaling:PutNotificationConfiguration",
+                "ec2:DescribeInstanceStatus",
                 "ec2:AssociateAddress",
-                "ec2:AllocateAddress",
-                "ec2:AuthorizeSecurityGroupEgress",
-                "ec2:AuthorizeSecurityGroupIngress",
-                "ec2:CreateSecurityGroup",
-                "ec2:DeleteSecurityGroup",
-                "ec2:DescribeAccountAttributes",
                 "ec2:DescribeAddresses",
-                "ec2:DescribeImages",
                 "ec2:DescribeInstances",
-                "ec2:DescribeKeyPairs",
                 "ec2:DescribeSecurityGroups",
-                "ec2:DescribeSubnets",
-                "ec2:DescribeVpcs",
-                "ec2:DisassociateAddress",
-                "ec2:ReleaseAddress",
-                "ec2:RevokeSecurityGroupEgress",
-                "ec2:RevokeSecurityGroupIngress",
-                "ec2:TerminateInstances",
-                "ecs:CreateCluster",
-                "ecs:DeleteCluster",
-                "ecs:DescribeClusters",
-                "ecs:RegisterTaskDefinition",
-                "elasticbeanstalk:*",
-                "elasticloadbalancing:ApplySecurityGroupsToLoadBalancer",
-                "elasticloadbalancing:ConfigureHealthCheck",
-                "elasticloadbalancing:CreateLoadBalancer",
-                "elasticloadbalancing:DeleteLoadBalancer",
-                "elasticloadbalancing:DeregisterInstancesFromLoadBalancer",
                 "elasticloadbalancing:DescribeInstanceHealth",
                 "elasticloadbalancing:DescribeLoadBalancers",
                 "elasticloadbalancing:DescribeTargetHealth",
-                "elasticloadbalancing:RegisterInstancesWithLoadBalancer",
                 "elasticloadbalancing:DescribeTargetGroups",
-                "elasticloadbalancing:RegisterTargets",
-                "elasticloadbalancing:DeregisterTargets",
-                "iam:ListRoles",
-                "logs:CreateLogGroup",
-                "logs:PutRetentionPolicy",
-                "rds:DescribeDBInstances",
-                "rds:DescribeOrderableDBInstanceOptions",
-                "rds:DescribeDBEngineVersions",
-                "sns:ListTopics",
-                "sns:GetTopicAttributes",
-                "sns:ListSubscriptionsByTopic",
                 "sqs:GetQueueAttributes",
                 "sqs:GetQueueUrl",
-                "codebuild:CreateProject",
-                "codebuild:DeleteProject",
-                "codebuild:BatchGetBuilds",
-                "codebuild:StartBuild"
+                "sns:Publish"
             ],
             "Resource": [
                 "*"

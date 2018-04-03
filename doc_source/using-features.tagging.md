@@ -5,11 +5,8 @@
 AWS Elastic Beanstalk provides support for you to specify tags to apply to resources in your environment\. Tags are key\-value pairs\. They help you identify environments in cost allocation reports\. This is especially useful if you manage many environments\. You can also use tags to manage permissions at the resource level\. For more information, see [Tagging Your Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 By default, Elastic Beanstalk applies three tags:
-
 + `elasticbeanstalk:environment-name` – The name of the environment\. 
-
 + `elasticbeanstalk:environment-id` – The environment ID\.
-
 + `Name` – Also the name of the environment\. `Name` is used in the Amazon EC2 dashboard to identify and sort resources\.
 
 You can't edit these default tags\.
@@ -17,15 +14,10 @@ You can't edit these default tags\.
 You can specify tags when you create the Elastic Beanstalk environment\. In an existing environment, you can add or remove tags, and you can update the values of existing tags\. In addition to the default tags, you can add up to 47 additional tags to each environment\.
 
 **Constraints**
-
 + Keys and values can contain letters, numbers, white space, and the following symbols: `_ . : / = + - @`
-
 + Keys can contain up to 128 characters\. Values can contain up to 256 characters\.
-
 + Keys are case\-sensitive\.
-
 + Keys cannot begin with `aws:` or `elasticbeanstalk:`\.
-
 + Values cannot match the environment name\.
 
 You can use cost allocation reports to track your usage of AWS resources\. The reports include both tagged and untagged resources, but they aggregate costs according to tags\. For information about how cost allocation reports use tags, see [Use Cost Allocation Tags for Custom Billing Reports](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation.html) in the *AWS Billing and Cost Management User Guide*\.
@@ -66,11 +58,8 @@ However, you can't edit the default tags that Elastic Beanstalk applies to your 
 ![\[Tag management page shows tags for the environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-manage-tags.png)
 
 1. Add, update, or delete tags:
-
    + To add a tag, type it into the empty boxes at the bottom of the list\.
-
    + To update a tag's key or value, edit the respective box in the tag's row\.
-
    + To delete a tag, choose ![\[Remove tag\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/x.png) next to the tag's value box\.
 
 1. Choose **Apply**\.

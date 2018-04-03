@@ -8,7 +8,7 @@ You can remove option settings from an environment with EB CLI or AWS CLI comman
 
 Settings in saved configurations and configuration files can be overridden by setting the same option directly on the environment with one of the other configuration methods\. However, these can only be removed completely by applying an updated saved configuration or configuration file\. When an option is not set in a saved configuration, in a configuration file, or directly on an environment, the default value applies, if there is one\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
 
-
+**Topics**
 + [The Elastic Beanstalk console](#configuration-options-after-console)
 + [The EB CLI](#configuration-options-after-ebcli)
 + [The AWS CLI](#configuration-options-after-awscli)
@@ -17,7 +17,7 @@ Settings in saved configurations and configuration files can be overridden by se
 
 You can update configuration option settings in the AWS Management Console by deploying an application source bundle that contains configuration files, applying a saved configuration, or modifying the environment directly with the **Configuration** page in the environment management console\.
 
-
+**Topics**
 + [Using Configuration Files \(`.ebextensions`\)](#configuration-options-after-console-ebextensions)
 + [Using a Saved Configuration](#configuration-options-after-console-savedconfig)
 + [Using the Environment Management Console](#configuration-options-after-console-configpage)
@@ -89,7 +89,7 @@ For details about changing configuration options on a running environment using 
 
 You can update configuration option settings with the EB CLI by deploying source code that contains configuration files, applying settings from a saved configuration, or modifying the environment configuration directly with the `eb config` command\.
 
-
+**Topics**
 + [Using Configuration Files \(`.ebextensions`\)](#configuration-options-after-ebcli-ebextensions)
 + [Using a Saved Configuration](#configuration-options-after-ebcli-savedconfig)
 + [Using `eb config`](#configuration-options-after-ebcli-ebconfig)
@@ -138,11 +138,8 @@ When you run `eb config`, the EB CLI shows settings applied to your environment 
 `eb config` does not show environment properties\. To set environment properties that you can read from within your application, use [`eb setenv`](#configuration-options-after-ebcli-ebsetenv)\.
 
 The following example shows settings applied in the `aws:autoscaling:launchconfiguration` namespace\. These settings include:
-
 + Two recommended values, for `IamInstanceProfile` and `InstanceType`, applied by the EB CLI during environment creation\.
-
 + The option `EC2KeyName`, set directly on the environment during creation based on repository configuration\.
-
 + API default values for the other options\.
 
 ```
@@ -239,7 +236,7 @@ View environment properties set on your environment with `eb printenv`\.
 
 You can update configuration option settings with the AWS CLI by deploying a source bundle that contains configuration files, applying a remotely stored saved configuration, or modifying the environment directly with the `aws elasticbeanstalk update-environment` command\.
 
-
+**Topics**
 + [Using Configuration Files \(`.ebextensions`\)](#configuration-options-after-awscli-ebextensions)
 + [Using a Saved Configuration](#configuration-options-after-awscli-savedconfig)
 + [Using Command Line Options](#configuration-options-after-awscli-commandline)
@@ -293,7 +290,6 @@ You can apply a saved configuration to a running environment with the `--templat
 The saved configuration must be in your Elastic Beanstalk bucket in a path named after your application under `resources/templates`\. For example, the `v1` template for the `my-app` application in the US West \(Oregon\) Region \(us\-west\-2\) for account 0123456789012 is located at `s3://elasticbeanstalk-us-west-2-0123456789012/resources/templates/my-app/v1`
 
 **To apply a saved configuration to a running environment \(AWS CLI\)**
-
 + Specify the saved configuration in an `update-environment` call with the `--template-name` option\.
 
   ```
@@ -344,7 +340,6 @@ Setting configuration options with `update-environment` overrides settings from 
 You can also remove options from your environment with `update-environment`\.<a name="configuration-options-remove-awscli"></a>
 
 **To remove configuration options \(AWS CLI\)**
-
 + Run the `update-environment` command with the `--settings-to-remove` option\.
 
   ```

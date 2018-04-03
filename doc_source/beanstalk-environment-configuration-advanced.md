@@ -8,7 +8,7 @@ You can easily customize your environment at the same time that you deploy your 
 
 When deploying your applications, you may want to customize and configure the software that your application depends on\. These files could be either dependencies required by the application—for example, additional packages from the yum repository—or they could be configuration files such as a replacement for httpd\.conf to override specific settings that are defaulted by AWS Elastic Beanstalk\.
 
-
+**Topics**
 + [Configuration Options](command-options.md)
 + [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)
 + [Using Elastic Beanstalk Saved Configurations](environment-configuration-savedconfig.md)

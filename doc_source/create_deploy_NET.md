@@ -11,7 +11,7 @@ This platform does not support worker environments, enhanced health reporting, m
 
 The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
-
+**Topics**
 + [Getting Started with \.NET on Elastic Beanstalk](dotnet-getstarted.md)
 + [Setting Up your \.NET Development Environment](dotnet-devenv.md)
 + [Using the AWS Elastic Beanstalk \.NET Platform](create_deploy_NET.container.console.md)

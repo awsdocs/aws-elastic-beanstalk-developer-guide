@@ -105,7 +105,7 @@ For single\-instance environments, load balancing, autoscaling, and the health c
 
       For a single\-instance environment, your VPC only needs a public subnet for the instance\. Selecting a subnet for the load balancer is not applicable because the environment doesn't have a load balancer\. For more information, see [Environment Types](using-features-managing-env-types.md)\.
 
-   1. For a load\-balanced, autoscaled environment, select the security group you created for your instances, if applicable\. For more information, see [Create a Security Group for Your Instances](vpc-basic.md#create-instance-sg)\.
+   1. For a load\-balanced, autoscaled environment, select the security group you created for your instances, if applicable\.
 
       For a single\-instance environment, you don't need a NAT device\. Select the default security group\. Elastic Beanstalk assigns an Elastic IP address to the instance that lets the instance access the Internet\.
 

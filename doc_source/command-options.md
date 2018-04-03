@@ -5,11 +5,8 @@ Elastic Beanstalk defines a large number of configuration options that you can u
 The Elastic Beanstalk console and EB CLI set configuration options when you create an environment, including options that you set explicitly, and [recommended values](#configuration-options-recommendedvalues) defined by the client\. You can also set configuration options in saved configurations and configuration files\. If the same option is set in multiple locations, the value used is determined by the [order of precedence](#configuration-options-precedence)\.
 
 Configuration option settings can be composed in text format and saved prior to environment creation, applied during environment creation using any supported client, and added, modified or removed after environment creation\. For a detailed breakdown of all of the available methods for working with configuration options at each of these three stages, read the following topics:
-
 + [Setting Configuration Options Before Environment Creation](environment-configuration-methods-before.md)
-
 + [Setting Configuration Options during Environment Creation](environment-configuration-methods-during.md)
-
 + [Setting Configuration Options After Environment Creation](environment-configuration-methods-after.md)
 
 For a complete list of namespaces and options, including default and supported values for each, see [General Options for All Environments](command-options-general.md) and [Platform Specific Options](command-options-specific.md)\.
@@ -17,15 +14,11 @@ For a complete list of namespaces and options, including default and supported v
 ## Precedence<a name="configuration-options-precedence"></a>
 
 During environment creation, configuration options are applied from multiple sources with the following precedence, from highest to lowest:
-
 + **Settings applied directly to the environment** – Settings specified during a create environment or update environment operation on the Elastic Beanstalk API by any client, including the AWS Management Console, EB CLI, AWS CLI, and SDKs\. The AWS Management Console and EB CLI also apply [recommended values](#configuration-options-recommendedvalues) for some options that apply at this level unless overridden\.
-
 + **Saved Configurations** – Settings for any options that are not applied directly to the environment are loaded from a saved configuration, if specified\.
-
 + **Configuration Files \(\.ebextensions\)** – Settings for any options that are not applied directly to the environment, and also not specified in a saved configuration, are loaded from configuration files in the `.ebextensions` folder at the root of the application source bundle\.
 
   Configuration files are executed in alphabetical order\. For example, `.ebextensions/01run.config` is executed before `.ebextensions/02do.config`\.
-
 + **Default Values** – If a configuration option has a default value, it only applies when the option is not set at any of the above levels\.
 
 If the same configuration option is defined in more than one location, the setting with the highest precedence is applied\. When a setting is applied from a saved configuration or settings applied directly to the environment, the setting is stored as part of the environment's configuration\. These settings can be removed [with the AWS CLI](environment-configuration-methods-after.md#configuration-options-remove-awscli) or [with the EB CLI](environment-configuration-methods-after.md#configuration-options-remove-ebcli)\.
@@ -45,73 +38,56 @@ For example, both the EB CLI and Elastic Beanstalk console set the configuration
 Because the recommended values are set at the API level, they will override values for the same options that you set in configuration files or saved configurations\. The following options are set:
 
 **Elastic Beanstalk console**
-
 + Namespace: `aws:autoscaling:launchconfiguration`
 
   Option Names: `IamInstanceProfile`, `EC2KeyName`, `InstanceType`
-
 + Namespace: `aws:autoscaling:updatepolicy:rollingupdate`
 
   Option Names: `RollingUpdateType` and `RollingUpdateEnabled`
-
 + Namespace: `aws:elasticbeanstalk:application`
 
   Option Name: `Application Healthcheck URL`
-
 + Namespace: `aws:elasticbeanstalk:command`
 
   Option Name: `DeploymentPolicy`, `BatchSize` and `BatchSizeType`
-
 + Namespace: `aws:elasticbeanstalk:environment`
 
   Option Name: `ServiceRole`
-
 + Namespace: `aws:elasticbeanstalk:healthreporting:system`
 
   Option Name: `SystemType` and `HealthCheckSuccessThreshold`
-
 + Namespace: `aws:elasticbeanstalk:sns:topics`
 
   Option Name: `Notification Endpoint`
-
 + Namespace: `aws:elasticbeanstalk:sqsd`
 
   Option Name: `HttpConnections`
-
 + Namespace: `aws:elb:loadbalancer`
 
   Option Name: `CrossZone`
-
 + Namespace: `aws:elb:policies`
 
   Option Names: `ConnectionDrainingTimeout` and `ConnectionDrainingEnabled`
 
 **EB CLI**
-
 + Namespace: `aws:autoscaling:launchconfiguration`
 
   Option Names: `IamInstanceProfile`, `InstanceType`
-
 + Namespace: `aws:autoscaling:updatepolicy:rollingupdate`
 
   Option Names: `RollingUpdateType` and `RollingUpdateEnabled`
-
 + Namespace: `aws:elasticbeanstalk:command`
 
   Option Name: `BatchSize` and `BatchSizeType`
-
 + Namespace: `aws:elasticbeanstalk:environment`
 
   Option Name: `ServiceRole`
-
 + Namespace: `aws:elasticbeanstalk:healthreporting:system`
 
   Option Name: `SystemType`
-
 + Namespace: `aws:elb:loadbalancer`
 
   Option Name: `CrossZone`
-
 + Namespace: `aws:elb:policies`
 
   Option Names: `ConnectionDrainingEnabled`

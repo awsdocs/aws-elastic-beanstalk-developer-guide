@@ -8,21 +8,13 @@ The following example policies provide the required permissions for each group\.
 
 **Example 1: Allow the Admins group to use all Elastic Beanstalk and related service APIs**  <a name="admins_policy"></a>
 The following policy gives users permissions for all actions required to use Elastic Beanstalk\. This policy also allows Elastic Beanstalk to provision and manage resources on your behalf in the following services\. Elastic Beanstalk relies on these additional services to provision underlying resources when creating an environment\.   
-
 + Amazon Elastic Compute Cloud
-
 + Elastic Load Balancing
-
 + Auto Scaling
-
 + Amazon CloudWatch
-
 + Amazon Simple Storage Service
-
 + Amazon Simple Notification Service
-
 + Amazon Relational Database Service
-
 + AWS CloudFormation
 Note that this policy is an example\. It gives a broad set of permissions to the AWS services that Elastic Beanstalk uses to manage applications and environments\. For example, `ec2:*` allows an AWS Identity and Access Management \(IAM\) user to perform any action on any Amazon EC2 resource in the AWS account\. These permissions are not limited to the resources that you use with Elastic Beanstalk\. As a best practice, you should grant individuals only the permissions they need to perform their duties\.  
 

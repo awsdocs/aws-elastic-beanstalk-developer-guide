@@ -39,13 +39,9 @@ You can define a scaling trigger for your Elastic Beanstalk application using AW
 Amazon EC2 Auto Scaling triggers work by watching a specific Amazon CloudWatch metric for an instance\. Triggers include CPU utilization, network traffic, and disk activity\. Use the **Trigger Measurement** setting to select a metric for your trigger\.
 
 The following list describes the trigger parameters you can configure using the AWS Management Console\.
-
 + You can specify which statistic the trigger should use\. You can select **Minimum**, **Maximum**, **Sum**, or **Average** for **Trigger Statistic**\.
-
 + For **Unit of Measurement**, specify the unit for the trigger measurement\.
-
 + The value in the **Measurement Period** box specifies how frequently Amazon CloudWatch measures the metrics for your trigger\. The **Breach Duration** is the amount of time a metric can be beyond its defined limit \(as specified for the **Upper Threshold** and **Lower Threshold**\) before the trigger fires\.
-
 + For **Upper Breach Scale Increment** and **Lower Breach Scale Increment**, specify how many Amazon EC2 instances to add or remove when performing a scaling activity\. 
 
 For more information on Amazon EC2 Auto Scaling, see the *Amazon EC2 Auto Scaling* section on [Amazon Elastic Compute Cloud Documentation](https://aws.amazon.com/documentation/ec2/)\.

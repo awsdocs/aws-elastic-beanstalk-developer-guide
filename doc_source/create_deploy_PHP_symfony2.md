@@ -2,7 +2,7 @@
 
 This section walks you through deploying a sample application to Elastic Beanstalk using the Elastic Beanstalk Command Line Interface \(EB CLI\) and Git, and then updating the application to use the [Symfony2](http://symfony.com/) framework\. 
 
-
+**Topics**
 + [Set Up Your Symfony2 Development Environment](#create_deploy_PHP_symfony2_setup)
 + [Configure Elastic Beanstalk](#create_deploy_PHP_eb_init)
 + [View the Application](#create_deploy_PHP_symfony2_update-view)
@@ -56,33 +56,23 @@ You may need to set the date\.timezone in the php\.ini to successfully complete 
 
    When prompted, accept all defaults\. For more information, go to [Creating Pages in Symfony2](http://symfony.com/doc/current/book/page_creation.html)\.
 
-Next, set some configuration options\. Composer dependencies require that you set the HOME or COMPOSER\_HOME environment variable\. Also configure Composer to self\-update so that you always use the latest version\.
-
-In addition, set the root directory for your application\.
+Next, set some configuration options\. Composer dependencies require that you set the HOME or COMPOSER\_HOME environment variable\. Also set the root directory for your application\.
 
 **To configure Composer and the root directory**
++ Create a folder named `.ebextensions` in the folder source code\.
 
-1. Create a configuration file with the extension **\.config** \(e\.g\., `composer.config`\) and place it in an `.ebextensions` directory at the top level of your source bundle\. You can have multiple configuration files in your `.ebextensions` directory\. For information about the file format of configuration files, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.
-**Note**  
-Configuration files should conform to YAML or JSON formatting standards\. For more information, go to [http://www\.yaml\.org/start\.html](http://www.yaml.org/start.html) or [http://www\.json\.org](http://www.json.org), respectively\.
+  Add a [configuration file](ebextensions.md) named `composer.config` with the following content\.  
+**Example \.ebextensions/composer\.config**  
 
-1. In the **\.config** file, type the following\.
-
-   ```
-   commands:
-     01updateComposer:
-       command: export COMPOSER_HOME=/root && /usr/bin/composer.phar self-update 1.0.0-alpha11
-   
-   option_settings:
-     - namespace: aws:elasticbeanstalk:application:environment
-       option_name: COMPOSER_HOME
-       value: /root
-     - namespace: aws:elasticbeanstalk:container:php:phpini
-       option_name: document_root
-       value: /web
-   ```
-
-   Replace *1\.0\.0\-alpha11* with your preferred version of composer\. See [getcomposer\.org/download](https://getcomposer.org/download/) for a list of available versions\.
+  ```
+  option_settings:
+    - namespace: aws:elasticbeanstalk:application:environment
+      option_name: COMPOSER_HOME
+      value: /root
+    - namespace: aws:elasticbeanstalk:container:php:phpini
+      option_name: document_root
+      value: /web
+  ```
 
 ## Configure Elastic Beanstalk<a name="create_deploy_PHP_eb_init"></a>
 
@@ -142,7 +132,6 @@ After configuring Elastic Beanstalk, you are ready to deploy a sample applicatio
 To update your Elastic Beanstalk configuration, you can use the **init** command again\. When prompted, you can update your configuration options\. To keep any previous settings, press the **Enter** key\. 
 
 **To deploy a sample application**
-
 + From the directory where you created your local repository, type the following command\.
 
   ```
@@ -154,7 +143,6 @@ To update your Elastic Beanstalk configuration, you can use the **init** command
 ## View the Application<a name="create_deploy_PHP_symfony2_update-view"></a>
 
 **To view the application**
-
 + To open your application in a browser window, type the following:
 
   ```
@@ -194,7 +182,6 @@ If you no longer want to run your application, you can clean up by terminating y
 Use the `terminate` command to terminate your environment and the `delete` command to delete your application\. 
 
 **To terminate your environment and delete the application**
-
 + From the directory where you created your local repository, run `eb terminate`\.
 
   ```

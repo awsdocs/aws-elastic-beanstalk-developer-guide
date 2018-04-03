@@ -15,11 +15,7 @@ build: mvn assembly:assembly -DdescriptorId=jar-with-dependencies
 The above example runs Apache Maven to build a web application from source code\. Check out the [Java web application samples](java-getstarted.md#java-getstarted-samples) for a sample application that uses this feature\.
 
 The Java SE platform includes the following build tools, which you can invoke from your build script:
-
 + `javac` – Java compiler
-
 + `ant` – Apache Ant
-
 + `mvn` – Apache Maven
-
 + `gradle` – Gradle

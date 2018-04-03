@@ -4,7 +4,7 @@ Set up a Node\.js development environment to test your application locally prior
 
 For common setup steps and tools that apply to all languages, see [Configuring your development environment for use with AWS Elastic Beanstalk](chapter-devenv.md)
 
-
+**Topics**
 + [Installing Node\.js](#nodejs-devenv-nodejs)
 + [Installing npm](#nodejs-devenv-npm)
 + [Installing the AWS SDK for Node\.js](#nodejs-devenv-awssdk)

@@ -31,17 +31,11 @@ In the [environment management console](environments-console.md), enable and con
 1. Choose **Save**, and then choose **Apply**\.
 
 The **Application Deployments** section of the **Rolling updates and deployments** page has the following options for rolling updates:
-
 + **Deployment policy** – Choose from the following deployment options:
-
   + **All at once** – Deploy the new version to all instances simultaneously\. All instances in your environment are out of service for a short time while the deployment occurs\.
-
   + **Rolling** – Deploy the new version in batches\. Each batch is taken out of service during the deployment phase, reducing your environment's capacity by the number of instances in a batch\.
-
   + **Rolling with additional batch** – Deploy the new version in batches, but first launch a new batch of instances to ensure full capacity during the deployment process\.
-
   + **Immutable** – Deploy the new version to a fresh group of instances by performing an [immutable update](environmentmgmt-updates-immutable.md)\.
-
 + **Batch size** – The size of the set of instances to deploy in each batch\.
 
   Choose **Percentage** to configure a percentage of the total number of EC2 instances in the Auto Scaling group \(up to 100 percent\), or choose **Fixed** to configure a fixed number of instances \(up to the maximum instance count in your environment's Auto Scaling configuration\)\.
@@ -49,11 +43,8 @@ The **Application Deployments** section of the **Rolling updates and deployments
 ![\[Elastic Beanstalk Application Deployment Configuration Page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-rollingdeployments.png)
 
 The **Deployment preferences** section contains options related to health checks\.
-
 + **Ignore health check** – Prevents a deployment from rolling back when a batch fails to become healthy within the **Command timeout**\.
-
 + **Healthy threshold** – Lowers the threshold at which an instance is considered healthy during rolling deployments, rolling updates and immutable updates\.
-
 + **Command timeout** – The number of seconds to wait for an instance to become healthy before canceling the deployment or, if **Ignore health check** is set, to continue to the next batch\.
 
 ![\[Elastic Beanstalk Application deployments configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-healthchecks.png)
@@ -75,13 +66,9 @@ If a deployment fails after one or more batches completed successfully, the comp
 You can also use the [configuration options](command-options.md) in the [`aws:elasticbeanstalk:command`](command-options-general.md#command-options-general-elasticbeanstalkcommand) namespace to configure rolling deployments\.
 
 Use the `DeploymentPolicy` option to set the deployment type\. The following values are supported:
-
 + `AllAtOnce` disables rolling deployments and always deploy to all instances simultaneously\.
-
 + `Rolling` enables standard rolling deployments\.
-
 + `RollingWithAdditionalBatch` launches an extra batch of instances, prior to starting the deployment, to maintain full capacity\.
-
 + `Immutable` performs an [immutable update](environmentmgmt-updates-immutable.md) for every deployment\.
 
 When you enable rolling deployments, set the `BatchSize` and `BatchSizeType` options to configure the size of each batch\. For example, to deploy twenty\-five percent of all instances in each batch, specify the following options and values\.

@@ -19,30 +19,25 @@ If you are using Amazon RDS for the first time, add a DB instance to a test envi
 1. Choose **Save**, and then choose **Apply**\.
 
 Adding a DB instance takes about 10 minutes\. When the environment update is complete, the DB instance's hostname and other connection information are available to your application through the following environment properties:
-
 + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
   Amazon RDS console label – **Endpoint** \(this is the hostname\)
-
 + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
 
   Amazon RDS console label – **Port**
-
 + **RDS\_DB\_NAME** – The database name, `ebdb`\.
 
   Amazon RDS console label – **DB Name**
-
 + **RDS\_USERNAME** – The user name that you configured for your database\.
 
   Amazon RDS console label – **Username**
-
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
 For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\. For instructions on configuring an external database for use with Elastic Beanstalk, see [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)\.
 
 To connect to the database, add the appropriate driver JAR file to your application, load the driver class in your code, and create a connection object with the environment properties provided by Elastic Beanstalk\.
 
-
+**Topics**
 + [Downloading the JDBC Driver](#java-rds-drivers)
 + [Connecting to a Database \(Java SE Platforms\)](#java-rds-javase)
 + [Connecting to a Database \(Tomcat Platforms\)](#java-rds-tomcat)
@@ -53,13 +48,9 @@ To connect to the database, add the appropriate driver JAR file to your applicat
 You will need the JAR file of the JDBC driver for the DB engine that you choose\. Save the JAR file in your source code and include it in your classpath when you compile the class that creates connections to the database\.
 
 You can find the latest driver for your DB engine in the following locations:
-
 + **MySQL** – [MySQL Connector/J](https://dev.mysql.com/downloads/connector/j/)
-
 + **Oracle SE\-1** – [Oracle JDBC Driver](http://www.oracle.com/technetwork/database/features/jdbc/index-091264.html)
-
 + **Postgres** – [PostgreSQL JDBC Driver](https://jdbc.postgresql.org/)
-
 + **SQL Server** – [Microsoft JDBC Driver](https://msdn.microsoft.com/en-us/sqlserver/aa937724.aspx)
 
 To use the JDBC driver, call `Class.forName()` to load it before creating the connection with `DriverManager.getConnection()` in your code\.
@@ -71,19 +62,12 @@ jdbc:driver://hostname:port/dbName?user=userName&password=password
 ```
 
 You can retrieve the hostname, port, database name, user name, and password from the environment variables that Elastic Beanstalk provides to your application\. The driver name is specific to your database type and driver version\. The following are example driver names:
-
 + `mysql` for MySQL
-
 + `postgresql` for PostgreSQL
-
 + `oracle:thin` for Oracle Thin
-
 + `oracle:oci` for Oracle OCI
-
 + `oracle:oci8` for Oracle OCI 8
-
 + `oracle:kprb` for Oracle KPRB
-
 + `sqlserver` for SQL Server
 
 ## Connecting to a Database \(Java SE Platforms\)<a name="java-rds-javase"></a>

@@ -12,7 +12,7 @@ For full customization, you can [write your own deployment scripts](#dotnet-mani
 
 Deployment manifests and related features require a Windows Server platform configuration [version 1\.2\.0 or newer](dotnet-v2migration.md)\.
 
-
+**Topics**
 + [\.NET Core Apps](#dotnet-manifest-dotnetcore)
 + [Run Multiple Applications](#dotnet-manifest-multiapp)
 + [Configure Application Pools](#dotnet-manifest-apppool)
@@ -140,9 +140,7 @@ The following deployment manifest runs a \.NET Standard web application at the r
 ```
 
 A sample application with multiple applications is available here:
-
 + **Deployable source bundle** \- [dotnet\-multiapp\-sample\-bundle\-v1\.zip](samples/dotnet-multiapp-sample-bundle-v1.zip)
-
 + **Source code** \- [dotnet\-multiapp\-sample\-source\-v1\.zip](samples/dotnet-multiapp-sample-source-v1.zip)
 
 ## Configure Application Pools<a name="dotnet-manifest-apppool"></a>

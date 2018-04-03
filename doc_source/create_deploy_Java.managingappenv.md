@@ -1,6 +1,6 @@
 # Managing Elastic Beanstalk Application Environments<a name="create_deploy_Java.managingappenv"></a>
 
-
+**Topics**
 + [Changing Environment Configuration Settings](#create_deploy_Java.managingappenv.env)
 + [Changing Environment Type](create_deploy_Java.managingappenv.envtype.md)
 + [Configuring EC2 Server Instances Using AWS Toolkit for Eclipse](create_deploy_Java.managingappenv.ec2.md)
@@ -26,17 +26,11 @@ When you deploy your application, Elastic Beanstalk configures a number of AWS c
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-eclipse-overview.png)
 
    You can now configure settings for the following:
-
    + EC2 server instances
-
    + Load balancer
-
    + Autoscaling
-
    + Notifications
-
    + Environment types
-
    + Environment properties
 
 ## Setting System Properties with AWS Toolkit for Eclipse<a name="create_deploy_Java.managing.customenv.eclipse"></a>

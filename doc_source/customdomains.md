@@ -2,7 +2,7 @@
 
 Your environment is available to users at a subdomain of elasticbeanstalk\.com\. When you [create an environment](using-features.environments.md), you can choose a unique subdomain that represents your application\. To route users to your environment, Elastic Beanstalk registers a CNAME record that points to your environment's load balancer\. You can see the current value of the CNAME in the [environment Dashboard](environments-console.md#environments-dashboard), as shown\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-dashboard-url.png)
+![\[Environment URL with CNAME showing on the Elastic Beanstalk console's environment dashboard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-dashboard-url.png)
 
 You can change the CNAME on your environment by swapping it with the CNAME of another environment\. For instructions, see [Blue/Green Deployments with AWS Elastic Beanstalk](using-features.CNAMESwap.md)\.
 
@@ -13,6 +13,9 @@ To use a custom domain name, first create a hosted zone for your domain\. A host
 **To create a hosted zone in Route 53**
 
 1. Open the [Route 53 console](https://console.aws.amazon.com/route53/home)\.
+
+1. If you get to the Route 53 console's landing page shown in the following image, choose **Get started now** under **DNS management**\.  
+![\[Route 53 console's landing page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-route53-console-landing.png)
 
 1. Choose **Hosted Zones**\.
 

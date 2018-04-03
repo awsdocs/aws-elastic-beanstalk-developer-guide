@@ -1,6 +1,6 @@
 # Creating Links Between AWS Elastic Beanstalk Environments<a name="environment-cfg-links"></a>
 
-As your application grows in size and complexity, you may want to split it into components that have different development and operational lifecycles\. This allows you to manage and scale each component independently providing you with greater agility\. One of the challenges of this approach is the requirement for sharing connection information between components\. This can be solved with AWS Elastic Beanstalk environment links\.
+As your application grows in size and complexity, you may want to split it into components that have different development and operational lifecycles\. By running smaller services that interact with each other over a well defined interface, teams can work independently and deployments can be lower risk\. Elastic Beanstalk lets you link your environments to share information between components that depend on one another\.
 
 **Note**  
 Elastic Beanstalk currently supports environment links for all platforms except Multicontainer Docker\.

@@ -7,7 +7,7 @@ Creating environments with the EB CLI requires a [service role](concepts-roles-s
 
 The following examples use an empty project folder named `eb` that was initialized with the EB CLI for use with a sample Docker application\.
 
-
+**Topics**
 + [eb create](#ebcli3-basics-create)
 + [eb status](#ebcli3-basics-status)
 + [eb health](#ebcli3-basics-health)

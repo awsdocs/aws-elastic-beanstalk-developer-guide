@@ -43,12 +43,12 @@ Elastic Load Balancing supports the HTTPS/TLS protocol to enable traffic encrypt
 
 **To turn on the HTTPS port**
 
-1. Create and upload a certificate and key to the AWS Identity and Access Management \(IAM\) service\. The IAM service will store the certificate and provide an Amazon Resource Name \(ARN\) for the SSL certificate you've uploaded\. For more information about creating and uploading certificates, see the [Managing Server Certificates](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) section of *Using AWS Identity and Access Management*\.
+1. Create a new certificate using AWS Certificate Manager \(ACM\) or upload a certificate and key to AWS Identity and Access Management \(IAM\)\. For more information about requesting an ACM certificate, see [Request a Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide*\. For more information about importing third\-party certificates into ACM, see [Importing Certificates](http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\. If ACM is not [available in your region](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region), use AWS Identity and Access Management \(IAM\) to upload a third\-party certificate\. The ACM and IAM services store the certificate and provide an Amazon Resource Name \(ARN\) for the SSL certificate\. For more information about creating and uploading certificates to IAM, see [Working with Server Certificates](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in *IAM User Guide*\.
 
 1. Specify the HTTPS port by selecting a port for **HTTPS Listener Port**\.  
 ![\[Elastic Beanstalk Elastic Load Balancing configuration - SSL\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-elb-ssl.png)
 
-1. For **SSL Certificate ID**, enter the Amazon Resources Name \(ARN\) of your SSL certificate \(e\.g\., **arn:aws:iam::123456789012:server\-certificate/abc/certs/build**\)\. Use the SSL certificate that you created and uploaded in step 1\. For information on viewing the certificate's ARN, see [Verify the Certificate Object](http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?InstallCert.html) topic in the *Creating and Uploading Server Certificates* section of the *Using IAM Guide*\.
+1. For **SSL Certificate ID**, enter the Amazon Resources Name \(ARN\) of your SSL certificate\. For example, **arn:aws:iam::123456789012:server\-certificate/abc/certs/build** or **arn:aws:acm:us\-west\-2:123456789012:certificate/12345678\-12ab\-34cd\-56ef\-12345678**\. Use the SSL certificate that you created or uploaded in step 1\.
 
 To turn off the HTTPS port, select **OFF** for **HTTPS Listener Port**\.
 
@@ -63,11 +63,8 @@ The health check definition includes a URL to be queried for instance health\. B
 The health check definition includes a URL to be queried for instance health\. Override the default URL to match an existing resource in your application \(e\.g\., `/myapp/index.jsp`\) by entering it in the **Application Health Check URL** box\. 
 
 The following list describes the health check parameters you can set for your application\. 
-
 + For **Health Check Interval \(seconds\)**, enter the number of seconds Elastic Load Balancing waits between health checks for your application's Amazon EC2 instances\.
-
 +  For **Health Check Timeout \(seconds\)**, specify the number of seconds Elastic Load Balancing waits for a response before it considers the instance unresponsive\.
-
 + For **Healthy Check Count Threshold** and **Unhealthy Check Count Threshold**, specify the number of consecutive successful or unsuccessful URL probes before Elastic Load Balancing changes the instance health status\. For example, specifying **5** for **Unhealthy Check Count Threshold** means that the URL would have to return an error message or timeout five consecutive times before Elastic Load Balancing considers the health check failed\.
 
 ## Sessions<a name="create_deploy_NET.managing.elb.sessions"></a>

@@ -12,7 +12,7 @@ Keys are processed in the following order\.
 **Note**  
 Older \(non\-versioned\) versions of \.NET platform configurations do not process configuration files in the correct order\. Learn more at [Migrating to v1 Elastic Beanstalk Windows Server Platforms](dotnet-v2migration.md)\.
 
-
+**Topics**
 + [Packages](#windows-packages)
 + [Sources](#windows-sources)
 + [Files](#windows-files)
@@ -104,7 +104,7 @@ files:
 
 `encoding`  
 \(Optional\) The encoding format\. This option is only used for a provided content key value\. The default value is `plain`\.  
-Valid values: `plain` | `base64`
+Valid values: `plain` \| `base64`
 
 `authentication`  
 \(Optional\) The name of a [AWS CloudFormation authentication method](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html) to use\. You can add authentication methods to the autoscaling group metadata with the Resources key\.

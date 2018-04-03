@@ -5,7 +5,7 @@
 
 This section contains a reference for the old Elastic Beanstalk API command line interface\. This tool's functionality has been replaced by the AWS CLI, which provides API equivalent commands for all AWS services\. See [Installing the AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) to get started with the AWS CLI\.
 
-
+**Topics**
 + [Converting Elastic Beanstalk API CLI Scripts](#apicli-vs-awscli)
 + [Getting Set Up](usingCLI.md)
 + [Common Options](CLTRG-common-args-api.md)

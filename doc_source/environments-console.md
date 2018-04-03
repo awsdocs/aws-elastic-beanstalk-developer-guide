@@ -4,7 +4,7 @@
 
 ![\[Elastic Beanstalk environment management console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-dashboard.png)
 
-
+**Topics**
 + [Environment Dashboard](#environments-dashboard)
 + [Environment Management Actions](#environments-dashboard-actions)
 + [Configuration](#environments-console-configuration)

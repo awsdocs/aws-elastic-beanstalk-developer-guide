@@ -12,6 +12,5 @@ You cannot stop Elastic Beanstalk from rolling back to the previous environment 
 For more information about rolling updates, see [Elastic Beanstalk Rolling Environment Configuration Updates](using-features.rollingupdates.md)\. For more information about batched application version deployments, see [Deployment Policies and Settings](using-features.rolling-version-deploy.md)\.
 
 **To cancel an update**
-
 + On the environment dashboard, click **Actions**, and then click **Abort Current Operation**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-dashboard-abort.png)

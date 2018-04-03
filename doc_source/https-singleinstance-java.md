@@ -3,7 +3,6 @@
 For Java SE container types, you enable HTTPS with an \.ebextensions [configuration file](ebextensions.md), and an nginx configuration file that configures the nginx server to use HTTPS\.
 
 Add the following snippet to your configuration file, replacing the certificate and private key placeholders as instructed, and save it in the `.ebextensions` directory\. The configuration file performs the following tasks:
-
 + The `files` key creates the following files on the instance:  
 `/etc/pki/tls/certs/server.crt`  
 Creates the certificate file on the instance\. Replace *certificate file contents* with the contents of your certificate\.  
@@ -23,7 +22,6 @@ If you have intermediate certificates, include them in `server.crt` after your s
   ```  
 `/etc/pki/tls/certs/server.key`  
 Creates the private key file on the instance\. Replace *private key contents* with the contents of the private key used to create the certificate request or self\-signed certificate\. 
-
 + The `container_commands` key restarts the nginx server after everything is configured so that the server loads the nginx configuration file\.
 
 **Example \.ebextensions/https\-instance\.config**  

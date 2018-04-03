@@ -58,11 +58,8 @@ You can install the latest version of Python and `pip` and then use them to inst
       $ ls -a ~
       .  ..  .bash_logout  .bash_profile  .bashrc  Desktop  Documents  Downloads
       ```
-
       + **Bash** – `.bash_profile`, `.profile`, or `.bash_login`\.
-
       + **Zsh** – `.zshrc`
-
       + **Tcsh** – `.tcshrc`, `.cshrc` or `.login`\.
 
    1. Add an export command to your profile script\. The following example adds the path represented by *LOCAL\_PATH* to the current PATH variable\.

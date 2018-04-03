@@ -2,7 +2,7 @@
 
 Elastic Beanstalk provides several options that control the security of your environment and of the Amazon EC2 instances in it\. This topic discusses the configuration of these options\.
 
-
+**Topics**
 + [Configuring Your Environment Security](#using-features.managing.security.console)
 + [Environment Security Configuration Namespaces](#using-features.managing.security.namespaces)
 
@@ -22,7 +22,7 @@ You can modify your Elastic Beanstalk environment security configuration in the 
 
 The following settings are available\.
 
-
+**Topics**
 + [Service role](#using-features.managing.security.servicerole)
 + [EC2 key pair](#using-features.managing.security.keypair)
 + [IAM Instance Profile](#using-features.managing.security.profile)
@@ -50,9 +50,7 @@ The first time you create an environment in the Elastic Beanstalk console, Elast
 ## Environment Security Configuration Namespaces<a name="using-features.managing.security.namespaces"></a>
 
 Elastic Beanstalk provides [configuration options](command-options.md) in the following namespaces to enable you to customize the security of your environment:
-
 + [`aws:elasticbeanstalk:environment`](command-options-general.md#command-options-general-elasticbeanstalkenvironment) – Configure the environment's service role using the `ServiceRole` option\.
-
 + [`aws:autoscaling:launchconfiguration`](command-options-general.md#command-options-general-autoscalinglaunchconfiguration) – Configure permissions for the environment's Amazon EC2 instances using the `EC2KeyName` and `IamInstanceProfile` options\.
 
 The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.

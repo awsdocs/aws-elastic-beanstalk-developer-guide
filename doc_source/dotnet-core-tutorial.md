@@ -10,7 +10,7 @@ Elastic Beanstalk uses a [deployment manifest](dotnet-manifest.md) to configure 
 The application source code is available here: [dotnet\-core\-tutorial\-source\.zip](samples/dotnet-core-tutorial-source.zip)  
 The deployable source bundle is available here: [dotnet\-core\-tutorial\-bundle\.zip](samples/dotnet-core-tutorial-bundle.zip)
 
-
+**Topics**
 + [Prerequisites](#dotnet-core-tutorial-prereqs)
 + [Generate a \.NET Core Project](#dotnet-core-tutorial-generate)
 + [Launch an Elastic Beanstalk Environment](#dotnet-core-tutorial-launch)
@@ -24,7 +24,6 @@ The deployable source bundle is available here: [dotnet\-core\-tutorial\-bundle\
 This tutorial uses the \.NET Core SDK to generate a basic \.NET Core application, run it locally, and build a deployable package\.
 
 **Requirements**
-
 + \.NET Core \(x64\) 1\.0\.1, 2\.0\.0, or newer 
 
 **To install the \.NET Core SDK**
@@ -42,6 +41,18 @@ This tutorial uses a command line ZIP utility to create a source bundle that you
 1. Extract the archive to a local directory\. For example, `C:\Program Files (x86)`\.
 
 1. Add the path to the binaries to your Windows PATH user variable\. For example, `C:\Program Files (x86)\UnxUtils\usr\local\wbin`\.
+
+   1. Press the Windows key, and then type **environment variables**\.
+
+   1. Choose **Edit environment variables for your account**\.
+
+   1. Choose **PATH**, and then choose **Edit**\.
+
+   1. Add paths to the **Variable value** field, separated by semicolons\. For example: `C:\existing\path;C:\new\path`
+
+   1. Choose **OK** twice to apply the new settings\.
+
+   1. Close any running command prompts and reopen\.
 
 1. Open a new command prompt window and run the `zip` command to verify that it works:
 
@@ -114,7 +125,7 @@ Use the AWS Management Console to launch an Elastic Beanstalk environment\. Choo
 
 1. Choose **Review and launch**\.
 
-1. Review all options\. When you're satisfied with them, choose **Create app**\.
+1. Review the available options\. When you're satisfied with them, choose **Create app**\.
 
 Environment creation takes about 10 minutes\. During this time you can update your source code\.
 
@@ -234,7 +245,6 @@ Next, you install the new dependencies and run the ASP\.NET website locally\.
 To run the application on a web server, you need to bundle the compiled source code with a `web.config` configuration file and runtime dependencies\. The `dotnet` tool provides a `publish` command that gathers these files in a directory based on the configuration in `dotnet-core-tutorial.csproj`\.
 
 **To build your website**
-
 + Use the `dotnet publish` command to output compiled code and dependencies to a folder named `site`\.
 
   ```
@@ -348,25 +358,16 @@ The application simply writes `Hello from ASP.NET Core!` to the response and ret
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dotnet-core-tutorial-site.png)
 
 Launching an environment creates the following resources:
-
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
   Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination thereof\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
-
 + **Instance security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
-
 + **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
-
 + **Load balancer security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
-
 + **Auto Scaling group** – An Auto Scaling group configured to replace an instance if it is terminated or becomes unavailable\.
-
 + **Amazon S3 bucket** – A storage location for your source code, logs, and other artifacts that are created when you use Elastic Beanstalk\.
-
 + **Amazon CloudWatch alarms** – Two CloudWatch alarms that monitor the load on the instances in your environment and are triggered if the load is too high or too low\. When an alarm is triggered, your Auto Scaling group scales up or down in response\.
-
 + **AWS CloudFormation stack** – Elastic Beanstalk uses AWS CloudFormation to launch the resources in your environment and propagate configuration changes\. The resources are defined in a template that you can view in the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation)\.
-
 + **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
 
 All of these resources are managed by Elastic Beanstalk\. When you terminate your environment, Elastic Beanstalk terminates all the resources that it contains\.

@@ -22,7 +22,7 @@ Get started with one of the following example applications, or see [Single Conta
 
 For detailed instructions on configuring and using the EB CLI, see [Configure the EB CLI](eb-cli3-configuration.md) and [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
 
-
+**Topics**
 + [Sample PHP Application](#docker-singlecontainer-phpsample)
 + [Sample Python Application](#docker-singlecontainer-pythonsample)
 + [Sample Dockerfile Application](#docker-singlecontainer-dockerfilesample)
@@ -35,7 +35,6 @@ GitHub link: [awslabs/eb\-demo\-php\-simple\-app](https://github.com/awslabs/eb-
 This sample is a PHP application that runs on a custom Ubuntu image defined in a Dockerfile\.
 
 The PHP sample application uses Amazon RDS\. You may be charged for using these services\. If you are a new customer, you can make use of the AWS Free Usage Tier\. For more information about pricing, see the following:
-
 + [Amazon Relational Database Service \(RDS\) Pricing](https://aws.amazon.com/rds/pricing/)
 
 ## Sample Python Application<a name="docker-singlecontainer-pythonsample"></a>
@@ -45,11 +44,8 @@ GitHub link: [awslabs/eb\-py\-flask\-signup](https://github.com/awslabs/eb-py-fl
 This sample is a Python application that runs on a custom Ubuntu image defined in a `Dockerfile`\. It also includes a `Dockerrun.aws.json` file that maps a storage volume on the container to a matching path on the host instance\.
 
 The Python sample application uses Amazon DynamoDB, Amazon SQS, and Amazon SNS\. You may be charged for using these services\. If you are a new customer, you can make use of the AWS Free Usage Tier\. For more information about pricing, see the following:
-
 + [Amazon DynamoDB Pricing](https://aws.amazon.com/dynamodb/pricing/)
-
 + [Amazon SQS Pricing](https://aws.amazon.com/sqs/pricing/)
-
 + [Amazon SNS Pricing](https://aws.amazon.com/sns/pricing/)
 
 ## Sample Dockerfile Application<a name="docker-singlecontainer-dockerfilesample"></a>

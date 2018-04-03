@@ -2,7 +2,7 @@
 
 The topics in this chapter discusses the integration of Elastic Beanstalk with resources from other AWS services that are not managed by Elastic Beanstalk as part of your environment\.
 
-
+**Topics**
 + [Architectural Overview](#AWSHowTo.architecture)
 + [Using Elastic Beanstalk with Amazon CloudFront](AWSHowTo.cloudfront.md)
 + [Logging Elastic Beanstalk API Calls with AWS CloudTrail](AWSHowTo.cloudtrail.md)

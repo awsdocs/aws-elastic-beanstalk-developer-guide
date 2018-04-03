@@ -20,7 +20,7 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 |  Name  |  Description  | 
 | --- | --- | 
 |  `-a` or `--all`  |  Retrieves all logs and saves them to the `.elasticbeanstalk/logs` directory\.  | 
-|  `-cw [enable | disable]` or `--cloudwatch [enable | disable]`  |  Enables or disables CloudWatch Logs\. If no argument is supplied, the logs are enabled\.  | 
+|  `-cw [enable \| disable]` or `--cloudwatch [enable \| disable]`  |  Enables or disables CloudWatch Logs\. If no argument is supplied, the logs are enabled\.  | 
 |  `-g log-group` or `--log-group log-group`  |  Specifies the location where Elastic Beanstalk stores CloudWatch Logs\. CloudWatch Logs must be enabled for this option to take effect\. If you enable CloudWatch Logs, but do not specify a location, the default location is `/aws/elasticbeanstalk/env-name/var/log/eb-activity.log`\. Elastic Beanstalk emits an error if the location does not exist\.  | 
 |  `--instance instance-id`  |  Retrieve logs for the specified instance only\.  | 
 |  `--stream`  |  Stream deployment logs that were set up with CloudWatch\.  | 

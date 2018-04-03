@@ -33,23 +33,15 @@ Elastic Beanstalk supports multiple [configurations](concepts.platforms.md) for 
 1. For **App code**, choose **Sample application**\.
 
 1. If you want to further customize your environment, choose **Configure more options**\. The following options can be set only during environment creation:
-
    + Environment name
-
    + Domain name
-
    + Platform configuration
-
    + VPC
-
    + Tier
 
    The following settings can be changed after environment creation, but require new instances or other resources to be provisioned and can take a long time to apply:
-
    + Instance type, root volume, key pair, and IAM role
-
    + Internal Amazon RDS database
-
    + Load balancer
 
    For details on all available settings, see [The Create New Environment Wizard](environments-create-wizard.md)\.
@@ -58,7 +50,7 @@ Elastic Beanstalk supports multiple [configurations](concepts.platforms.md) for 
 
 While Elastic Beanstalk creates your environment, you are redirected to the [The AWS Elastic Beanstalk Environment Management Console](environments-console.md)\. Once the environment health turns green, click on the URL next to the environment name to view the running application\. This URL is generally accessible from the Internet unless you configure your environment to use a [custom VPC with an internal load balancer](environments-create-wizard.md#environments-create-wizard-network)\.
 
-
+**Topics**
 + [The Create New Environment Wizard](environments-create-wizard.md)
 + [Clone an Elastic Beanstalk Environment](using-features.managing.clone.md)
 + [Terminate an Elastic Beanstalk Environment](using-features.terminating.md)

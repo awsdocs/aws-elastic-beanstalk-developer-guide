@@ -3,11 +3,8 @@
 This configuration file sets up the DynamoDB table as a session handler for a PHP\-based application using the AWS SDK for PHP 2\. To use this example, you must have an IAM instance profile, which is added to the instances in your environment and used to access the DynamoDB table\.
 
 You can download the sample that we'll use in this step at [DynamoDB Session Support Example](https://s3.amazonaws.com/elasticbeanstalk/extensions/PHP-DynamoDB-Session-Support.zip)\. The sample contains the following files:
-
 + The sample application, `index.php`
-
 + A configuration file, `dynamodb.config`, to create and configure a DynamoDB table and other AWS resources as well as install software on the EC2 instances that host the application in an Elastic Beanstalk environment
-
 + An configuration file, `options.config`, that overrides the defaults in `dynamodb.config` with specific settings for this particular installation
 
 **`index.php`**
@@ -239,9 +236,6 @@ Subscription:
 These lines that tell Elastic Beanstalk to get the value for the **Endpoint** property from the **SessionAlarmEmail** value in a config file \(`options.config` in our sample application\) that contains an option\_settings section with an **aws:elasticbeanstalk:customoption** section that contains a name\-value pair that contains the actual value to use\. In the example above, this means **SessionAlarmEmail** would be assigned the value `nobody@amazon.com`\.
 
 For more information about the CloudFormation resources used in this example, see the following references:
-
 + [AWS::DynamoDB::Table](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html)
-
 + [AWS::CloudWatch::Alarm](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html)
-
 + [AWS::SNS::Topic](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html)

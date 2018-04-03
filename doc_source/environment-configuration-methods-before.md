@@ -13,7 +13,7 @@ Options can also be specified in a JSON document and provided directly to Elasti
 
 For a full list of available options, see [Configuration Options](command-options.md)\.
 
-
+**Topics**
 + [Configuration Files \(`.ebextensions`\)](#configuration-options-before-ebextensions)
 + [Saved Configurations](#configuration-options-before-savedconfig)
 + [JSON Document](#configuration-options-before-json)
@@ -74,7 +74,7 @@ Configuration files support several sections in addition to `option_settings` fo
 
 Create a saved configuration to save settings that you have applied to an existing environment during or after environment creation by using the AWS Management Console, EB CLI, or AWS CLI\. Saved configurations belong to an application and can be applied to new or existing environments for that application\.
 
-
+**Topics**
 + [Elastic Beanstalk Console](#configuration-options-before-savedconfig-console)
 + [EB CLI](#configuration-options-before-savedconfig-ebcli)
 + [AWS CLI](#configuration-options-before-savedconfig-awscli)

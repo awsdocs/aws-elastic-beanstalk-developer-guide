@@ -5,7 +5,6 @@ An instance profile is a container for an AWS Identity and Access Management \(I
 Elastic Beanstalk provides three managed policies: one for the web server tier, one for the worker tier, and one with additional permissions required for multicontainer Docker environments\. The console assigns all of these policies to the role attached to the default instance profile\. The policies follow\.
 
 **Managed Instance Profile Policies**
-
 + **AWSElasticBeanstalkWebTier** – Grants permissions for the application to upload logs to Amazon S3 and debugging information to AWS X\-Ray\.
 
   ```
@@ -50,7 +49,6 @@ Elastic Beanstalk provides three managed policies: one for the web server tier, 
     ]
   }
   ```
-
 + **AWSElasticBeanstalkWorkerTier** – Grants permissions for log uploads, debugging, metric publication, and worker instance tasks, including queue management, leader election, and periodic tasks\.
 
   ```
@@ -118,7 +116,6 @@ Elastic Beanstalk provides three managed policies: one for the web server tier, 
     ]
   }
   ```
-
 + **AWSElasticBeanstalkMulticontainerDocker** – Grants permissions for the Amazon Elastic Container Service to coordinate cluster tasks\.
 
   ```
@@ -164,7 +161,7 @@ To allow the EC2 instances in your environment to assume the `aws-elasticbeansta
 
 To customize permissions, you can add policies to the role attached to the default instance profile or create your own instance profile with a restricted set of permissions\.
 
-
+**Topics**
 + [Verifying the Permissions Assigned to the Default Instance Profile](#iam-instanceprofile-verify)
 + [Updating an Out\-of\-Date Default Instance Profile](#iam-instanceprofile-update)
 + [Adding Permissions to the Default Instance Profile](#iam-instanceprofile-addperms)
@@ -201,11 +198,8 @@ Alternatively, you can add the managed policies to the role attached to the defa
 1. Type **AWSElasticBeanstalk** to filter the policies\.
 
 1. Select the following policies, and then choose **Attach Policies**:
-
    + `AWSElasticBeanstalkWebTier`
-
    + `AWSElasticBeanstalkWorkerTier`
-
    + `AWSElasticBeanstalkMulticontainerDocker`
 
 ## Adding Permissions to the Default Instance Profile<a name="iam-instanceprofile-addperms"></a>

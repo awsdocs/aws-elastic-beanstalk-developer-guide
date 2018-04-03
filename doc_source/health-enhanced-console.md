@@ -2,7 +2,7 @@
 
 When you have enabled enhanced health reporting in AWS Elastic Beanstalk, you can monitor environment health in the [environment management console](environments-console.md)\.
 
-
+**Topics**
 + [Environment Dashboard](#health-enhanced-console-overview)
 + [Environment Health Page](#health-enhanced-console-healthpage)
 + [Monitoring Page](#health-enhanced-console-monitoringpage)
@@ -53,13 +53,9 @@ For information about the last [deployment](using-features.deploy-existing-versi
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-deployment.png)
 
 Deployment information includes the following:
-
 + **Deployment ID**—The unique identifier for the [deployment](using-features.deploy-existing-version.md)\. Deployment IDs starts at 1 and increase by one each time you deploy a new application version or change configuration settings that affect the software or operating system running on the instances in your environment\.
-
 + **Version**—The version label of the application source code used in the deployment\.
-
 + **Status**—The status of the deployment, which can be `In Progress`, `Deployed`, or `Failed`\.
-
 + **Time**— For in\-progress deployments, the time that the deployment started\. For completed deployments, the time that the deployment ended\.
 
 The other categories provide detailed information about the results and latency of requests served by each instance, and load and CPU utilization information for each instance\. For details on these metrics, see [Instance Metrics](health-enhanced-metrics.md)\.

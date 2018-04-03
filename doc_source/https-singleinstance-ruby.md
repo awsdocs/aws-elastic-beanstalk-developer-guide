@@ -2,7 +2,7 @@
 
 For Ruby container types, the way you enable HTTPS depends on the type of application server used\.
 
-
+**Topics**
 + [Configure HTTPS for Ruby with Puma](#Puma)
 + [Configure HTTPS for Ruby with Passenger](#Passenger)
 
@@ -11,7 +11,6 @@ For Ruby container types, the way you enable HTTPS depends on the type of applic
 For Ruby container types that use Puma as the application server, you use a [configuration file](ebextensions.md) to enable HTTPS\.
 
 Add the following snippet to your configuration file, replacing the certificate and private key material as instructed, and save it in your source bundle's `.ebextensions` directory\. The configuration file performs the following tasks:
-
 + The `files` key creates the following files on the instance:  
 `/etc/nginx/conf.d/https.conf`  
 Configures the nginx server\. This file is loaded when the nginx service starts\.  
@@ -33,7 +32,6 @@ If you have intermediate certificates, include them in `server.crt` after your s
   ```  
 `/etc/pki/tls/certs/server.key`  
 Creates the private key file on the instance\. Replace *private key contents* with the contents of the private key used to create the certificate request or self\-signed certificate\. 
-
 + The `container_commands` key restarts the nginx server after everything is configured so that the server uses the new `https.conf` file\.
 
 **Example \.ebextensions/https\-instance\.config**  
@@ -126,7 +124,6 @@ For Ruby container types that use Passenger as the application server, you use b
 **To configure HTTPS for Ruby with Passenger**
 
 1. Add the following snippet to your configuration file, replacing the certificate and private key material as instructed, and save it in your source bundle's `.ebextensions` directory\. The configuration file performs the following tasks:
-
    + The `files` key creates the following files on the instance:  
 `/etc/pki/tls/certs/server.crt`  
 Creates the certificate file on the instance\. Replace *certificate file contents* with the contents of your certificate\.  

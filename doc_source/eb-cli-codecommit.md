@@ -8,7 +8,7 @@ To deploy your changes, AWS CodeCommit integration requires you to commit change
 Some regions don't offer AWS CodeCommit\. The integration between Elastic Beanstalk and AWS CodeCommit doesn't work in these regions\.  
 For information about the AWS services offered in each region, see [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)\.
 
-
+**Topics**
 + [Prerequisites](#eb-cli-codecommit-prereqs)
 + [Creating an AWS CodeCommit Repository with the EB CLI](#eb-cli-codecommit-create)
 + [Deploying from Your AWS CodeCommit Repository](#eb-cli-codecommit-deploy)

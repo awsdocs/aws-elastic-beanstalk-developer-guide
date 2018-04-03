@@ -37,15 +37,10 @@ For **Availability Zones**, specify the number of Availability Zones you want yo
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-eclipse-as-trigger.png)
 
  You can configure the following list of trigger parameters in the **Scaling Trigger** section of the **Configuration** tab for your environment inside the Toolkit for Eclipse\.
-
 + For **Trigger Measurement**, specify the metric for your trigger\. 
-
 + For **Trigger Statistic**, specify which statistic the trigger will use—**Minimum**, **Maximum**, **Sum**, or **Average**\. 
-
 + For **Unit of Measurement**, specify the units for the trigger measurement\. 
-
 + For **Measurement Period**, specify how frequently Amazon CloudWatch measures the metrics for your trigger\. For **Breach Duration**, specify the amount of time a metric can be beyond its defined limit \(as specified for **Upper Threshold** and **Lower Threshold**\) before the trigger fires\.
-
 + For **Scale\-up Increment** and **Scale\-down Increment**, specify how many Amazon EC2 instances to add or remove when performing a scaling activity\. 
 
 For more information on Amazon EC2 Auto Scaling, see the *Amazon EC2 Auto Scaling* section on [Amazon Elastic Compute Cloud Documentation](https://aws.amazon.com/documentation/ec2/)\.

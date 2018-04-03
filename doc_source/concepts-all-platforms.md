@@ -1,6 +1,6 @@
 # Elastic Beanstalk Platforms<a name="concepts-all-platforms"></a>
 
-
+**Topics**
 + [Elastic Beanstalk Supported Platforms](concepts.platforms.md)
 + [Custom Platforms](custom-platforms.md)
 

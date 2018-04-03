@@ -2,7 +2,7 @@
 
 The following tasks help you get started with AWS Elastic Beanstalk to create, view, deploy, and update your application, and edit and terminate your environment\. You use the AWS Management Console, a point\-and\-click web\-based interface, to complete these tasks\. 
 
-
+**Topics**
 + [Step 1: Sign up for the Service](#GettingStarted.Walkthrough.Signup)
 + [Step 2: Create an Application](#GettingStarted.Walkthrough.CreateApp)
 + [Step 3: View Information about Your Environment](#GettingStarted.Walkthrough.ViewApp)
@@ -35,27 +35,17 @@ Elastic Beanstalk is free to use, but the AWS resources that it provides are liv
 ![\[New environment wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-wizard.png)
 
 To run a sample application on AWS resources, Elastic Beanstalk takes the following actions\. These take about five minutes to complete:
-
 + Creates an Elastic Beanstalk application named **getting\-started\-app**\.
-
 + Launches an environment named **GettingStartedApp\-env** with the following AWS resources:
-
   + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform you choose\.
 
     Each platform runs a different set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination thereof\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
-
   + **Instance security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic is not allowed on other ports\.
-
   + **Amazon S3 bucket** – A storage location for your source code, logs, and other artifacts that are created when you use Elastic Beanstalk\.
-
   + **Amazon CloudWatch alarms** – Two CloudWatch alarms that monitor the load on the instances in your environment and are triggered if the load is too high or too low\. When an alarm is triggered, your Auto Scaling group scales up or down in response\.
-
   + **AWS CloudFormation stack** – Elastic Beanstalk uses AWS CloudFormation to launch the resources in your environment and propagate configuration changes\. The resources are defined in a template that you can view in the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation)\.
-
   + **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
-
 + Creates a new application version named **Sample Application**, which refers to the default Elastic Beanstalk sample application file\.
-
 + Deploys the sample application code to **GettingStartedApp\-env**\.
 
 During the environment creation process, the console tracks its progress and displays events, as shown\.
@@ -84,15 +74,10 @@ The dashboard shows a subset of useful information about your environment\. This
 ![\[Environment dashboard.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-dashboard.png)
 
 On the left side of the console is a navigation pane that links to other pages, which contain more detailed information about your environment and provide access to additional features\. Explore the following pages to see the current state of your environment:
-
 + The **Configuration** page shows the resources provisioned for this environment, such as Amazon EC2 instances that host your application\. This page also lets you configure some of the provisioned resources\.
-
 + The **Health** page shows the status and detailed health information about the EC2 instances running your application\.
-
 + The **Monitoring** page shows the statistics for the environment, such as average latency and CPU utilization\. You also use this page to create alarms for the metrics that you are monitoring\.
-
 + The **Events** page shows any informational or error messages from services that this environment is using\.
-
 + The **Tags** page shows tags — key\-value pairs that are applied to resources in the environment\. You use this page to manage your environment's tags\.
 
 ## Step 4: Deploy a New Application Version<a name="GettingStarted.Walkthrough.DeployApp"></a>
@@ -104,34 +89,20 @@ The application version you are running now is labeled **Sample Application**\.
 **To update your application version**
 
 1. Download one of the following sample applications that match the configuration for your environment:
-
    + **Single Container Docker** – [docker\-singlecontainer\-v1\.zip](samples/docker-singlecontainer-v1.zip)
-
    + **Multicontainer Docker** – [docker\-multicontainer\-v2\.zip](samples/docker-multicontainer-v2.zip)
-
    + **Preconfigured Docker \(Glassfish\)** – [docker\-glassfish\-v1\.zip](samples/docker-glassfish-v1.zip)
-
    + **Preconfigured Docker \(Python 3\)** – [docker\-python\-v1\.zip](samples/docker-python-v1.zip)
-
    + **Preconfigured Docker \(Go\)** – [docker\-golang\-v1\.zip](samples/docker-golang-v1.zip)
-
    + **Go** – [go\-v1\.zip](samples/go-v1.zip)
-
    + **Java SE** – [java\-se\-jetty\-gradle\-v3\.zip](samples/java-se-jetty-gradle-v3.zip)
-
    + **Tomcat** – [java\-tomcat\-v3\.zip](samples/java-tomcat-v3.zip)
-
    + **\.NET** – [dotnet\-asp\-v1\.zip](samples/dotnet-asp-v1.zip)
-
    + **Node\.js** – [nodejs\-v1\.zip](samples/nodejs-v1.zip) 
-
    + **PHP** – [php\-v1\.zip](samples/php-v1.zip)
-
    + **Python** – [python\-v1\.zip](samples/python-v1.zip)
-
-   + **Ruby \(Passenger Standalone\)** – [ruby\-passenger\-v2\.zip](samples/ruby-passenger-v2.zip)
-
-   + **Ruby \(Puma\)** – [ruby\-puma\-v2\.zip](samples/ruby-puma-v2.zip)
+   + **Ruby \(Passenger Standalone\)** – [ruby\-passenger\-v3\.zip](samples/ruby-passenger-v3.zip)
+   + **Ruby \(Puma\)** – [ruby\-puma\-v3\.zip](samples/ruby-puma-v3.zip)
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
@@ -242,7 +213,7 @@ Now that you have learned about Elastic Beanstalk and how to access it, we recom
 
 In addition to the AWS Management Console, you can also use the following tools to create and manage Elastic Beanstalk environments\.
 
-
+**Topics**
 + [The EB CLI](#GettingStarted.UsingAEB.cli)
 + [AWS SDK for Java](#GettingStarted.UsingAEB.JavaSDK)
 + [AWS Toolkit for Eclipse](#GettingStarted.UsingAEB.eclipse)

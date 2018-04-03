@@ -32,7 +32,7 @@ If you do not have the *AWSElasticBeanstalkWebTier* or *AWSElasticBeanstalkWorke
       "logs:CreateLogStream"
     ],
     "Resource": [
-    "arn:aws:logs:*:*:log-group:/aws/elasticbeanstalk*"
+    "*"
     ]
   }
   ]
@@ -87,7 +87,7 @@ Before you can configure integration with CloudWatch Logs using configuration fi
         "logs:PutRetentionPolicy"
       ],
       "Resource": [
-        "arn:aws:logs:us-west-2:*:*"
+        "*"
       ]
     }
   ]
@@ -97,19 +97,14 @@ Before you can configure integration with CloudWatch Logs using configuration fi
 Replace the region in the above policy with the region in which you launch your environment\.
 
 You can download the configuration files at the following locations:
-
 + [Tomcat \(Java\) configuration files](samples/aws_eb_cloudwatchlogs-apache-tomcat.zip)
-
 + [Apache \(PHP and Python\) configuration files](samples/aws_eb_cloudwatchlogs-apache.zip)
-
 + [nginx \(Go, Ruby, Node\.js, and Docker\) configuration files](samples/aws_eb_cloudwatchlogs-nginx.zip)
 
 Each `.zip` file contains the following configuration files:
-
 + `cwl-setup.config` – This file installs the CloudWatch Logs agent on each Amazon EC2 instance in your environment and then configures the agent\. This file also creates the `general.conf` file when Elastic Beanstalk launches the instance\. You can use the `cwl-setup.config` file without any modifications\. 
 
   If you prefer, you can manually set up the CloudWatch Logs agent on a new instance as explained in either [Quick Start: Install and Configure the CloudWatch Logs Agent on a New EC2 Instance](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/EC2NewInstanceCWL.html) \(for new instances\) or [Quick Start: Install and Configure the CloudWatch Logs Agent on an Existing EC2 Instance](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/QuickStartEC2Instance.html) \(for existing instances\) in the *Amazon CloudWatch Developer Guide*\.
-
 + `cwl-webrequest-metrics.config` – This file specifies which logs the CloudWatch Logs agent monitors\. The file also specifies the metric filters the CloudWatch Logs agent applies to each log that it monitors\. Metric filters include filter patterns that map to the space\-delimited entries in your log files\. \(If you have custom logs, update or replace the example filter patterns in this example configuration file as needed\.\)
 
   Metric filters also include metric transformations that specify what metric name and value to use when the CloudWatch Logs agent sends metric data points to the CloudWatch service\. The CloudWatch Logs agent sends metric data points based on whether any entries in the web server access log file match the filter patterns\.
@@ -117,15 +112,11 @@ Each `.zip` file contains the following configuration files:
   Finally, the configuration file also includes an alarm action to send a message to an Amazon Simple Notification Service topic, if you created one for your environment, when the alarm conditions specified in the `cwl-setup.config` file are met\. For more information about filter patterns, see [Filter and Pattern Syntax](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/FilterAndPatternSyntax.html) in the *Amazon CloudWatch Developer Guide*\. For more information about Amazon SNS, go to the [Amazon Simple Notification Service Developer Guide](http://docs.aws.amazon.com/sns/latest/dg/welcome.html)\. For more information about managing alarms from the Elastic Beanstalk management console, see [Manage Alarms](using-features.alarms.md)\.
 **Note**  
 CloudWatch costs are applied to your AWS account for any alarms that you use\.
-
 + `eb-logs.config` – This file sets up the CloudWatch Logs log files for the CloudWatch Logs agent\. This configuration file also ensures that log files are copied to Amazon S3 as part of log rotation\. You can use this file without any modifications\.
 
 ## Troubleshooting CloudWatch Logs Integration<a name="AWSHowTo.cloudwatchlogs.troubleshoot"></a>
 
 If Elastic Beanstalk cannot launch your environment when you try to integrate Elastic Beanstalk with CloudWatch Logs, you can investigate the following common issues:
-
 + Your IAM role lacks the required IAM permissions\.
-
 + You attempted to launch an environment in a region where CloudWatch Logs is not supported\.
-
 + Access logs do not exist at the path specified in the `cwl-webrequest-metrics.config` file \(/var/log/httpd/elasticbeanstalk\-access\_log\)\.

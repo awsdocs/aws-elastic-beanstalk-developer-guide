@@ -25,17 +25,13 @@ You can use the AWS Management Console to enable log rotation to Amazon S3, conf
 1. On the **Software** configuration card, choose **Modify**\.
 
 ### Container Options<a name="dotnet-console-framework"></a>
-
 + **Target \.NET runtime** – Set to `2.0` to run CLR v2\.
-
 + **Enable 32\-bit applications** – Set to `True` to run 32\-bit applications\.
 
 ### Log Options<a name="dotnet-console-logs"></a>
 
 The Log Options section has two settings:
-
 + **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
-
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
 ### Environment Properties<a name="dotnet-console-properties"></a>

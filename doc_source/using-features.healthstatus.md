@@ -8,7 +8,7 @@ In addition to checking the health of your EC2 instances, Elastic Beanstalk also
 
 Metrics gathered by the resources in your environment is published to Amazon CloudWatch in five minute intervals\. This includes operating system metrics from EC2, request metrics from Elastic Load Balancing\. You can view graphs based on these CloudWatch metrics on the [Monitoring page](environment-health-console.md) of the environment console\. For basic health, these metrics are not used to determine an environment's health\.
 
-
+**Topics**
 + [Health Colors](#using-features.healthstatus.colors)
 + [Elastic Load Balancing Health Check](#using-features.healthstatus.understanding)
 + [Single Instance Environment Health Check](#monitoring-basic-healthcheck-singleinstance)
@@ -53,13 +53,9 @@ For more information on Amazon EC2 instance status checks, see [Monitoring Insta
 ## Additional Checks<a name="monitoring-basic-additionalchecks"></a>
 
 In addition to Elastic Load Balancing health checks, Elastic Beanstalk monitors resources in your environment and changes health status to red if they fail to deploy, are not configured correctly, or become unavailable\. These checks confirm that:
-
 + The environment's Auto Scaling group is available and has a minimum of at least one instance\.
-
 + The environment's security group is available and is configured to allow incoming traffic on port 80\.
-
 + The environment CNAME exists and is pointing to the right load balancer\.
-
 + In a worker environment, the Amazon Simple Queue Service \(Amazon SQS\) queue is being polled at least once every three minutes\.
 
 ## Amazon CloudWatch Metrics<a name="monitoring-basic-cloudwatch"></a>

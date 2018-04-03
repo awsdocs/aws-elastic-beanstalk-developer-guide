@@ -2,7 +2,7 @@
 
 This tutorial walks through the deployment of a simple [Flask](http://flask.pocoo.org/) website to an Elastic Beanstalk environment running Python 2\.7 or newer\. The tutorial uses the EB CLI as a deployment mechanism, but you can also use the AWS Management Console to deploy a ZIP file containing your project's contents\. The EB CLI is an interactive command line interface written in Python that uses the Python SDK for AWS \(boto\)\.
 
-
+**Topics**
 + [Prerequisites](#python-flask-prereq)
 + [Set Up a Python Virtual Environment with Flask](#python-flask-setup-venv)
 + [Create a Flask Application](#python-flask-create-app)
@@ -15,13 +15,9 @@ This tutorial walks through the deployment of a simple [Flask](http://flask.poco
 To use any Amazon Web Service \(AWS\), including Elastic Beanstalk, you need to have an AWS account and credentials\. To learn more and to sign up, visit [https://aws\.amazon\.com/](https://aws.amazon.com/)\.
 
 To follow this tutorial, you should have all of the [Common Prerequisites](create-deploy-python-common-steps.md) for Python installed, including the following packages:
-
 + Python 2\.7 or newer
-
 + pip
-
 + virtualenv
-
 + awsebcli
 
 The [Flask](http://flask.pocoo.org/) framework will be installed as part of the tutorial\.

@@ -6,7 +6,7 @@ By publishing metrics to CloudWatch, you also make them available for use with [
 
 To publish CloudWatch custom metrics for an environment, you must first enable enhanced health reporting on the environment\. See [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) for instructions\.
 
-
+**Topics**
 + [Enhanced Health Reporting Metrics](#health-enhanced-cloudwatch-metrics)
 + [Configuring CloudWatch Metrics in the AWS Management Console](#health-enhanced-cloudwatch-console)
 + [Configuring CloudWatch Custom Metrics with the EB CLI](#health-enhanced-cloudwatch-ebcli)
@@ -18,19 +18,12 @@ When you enabled enhanced health reporting in your environment, the enhanced hea
 
 `EnvironmentHealth`  
 Environment only\. This is the only CloudWatch metric that is published by the enhanced health system, unless you configure additional metrics\. Environment health is represented by one of seven [statuses](health-enhanced-status.md)\. In the CloudWatch console, these statuses map to the following values:  
-
 + 0 – OK
-
 + 1 – Info
-
 + 5 – Unknown
-
 + 10 – No data
-
 + 15 – Warning
-
 + 20 – Degraded
-
 + 25 – Severe
 
 `InstancesSevere``InstancesDegraded``InstancesWarning``InstancesInfo``InstancesOk``InstancesPending``InstancesUnknown``InstancesNoData`  
@@ -47,19 +40,12 @@ Instance only\. The average CPU load of the instance over the last minute\.
 
 `InstanceHealth`  
 Instance only\. Indicates the current health status of the instance\. Instance health is represented by one of seven [statuses](health-enhanced-status.md)\. In the CloudWatch console, these statuses map to the following values:  
-
 + 0 – OK
-
 + 1 – Info
-
 + 5 – Unknown
-
 + 10 – No data
-
 + 15 – Warning
-
 + 20 – Degraded
-
 + 25 – Severe
 
 `RootFilesystemUtil`  

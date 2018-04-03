@@ -12,11 +12,8 @@ The [`Resources` section](environment-resources.md) lets you further customize t
 The other sections of a configuration file \(`packages`, `sources`, `files`, `users`, `groups`, `commands`, `container_commands`, and `services`\) let you configure the EC2 instances that are launched in your environment\. Whenever a server is launched in your environment, Elastic Beanstalk runs the operations defined in these sections to prepare the operating system and storage system for your application\.
 
 **Requirements**
-
 + **Location** – Place all of your configuration files in a single folder, named `.ebextensions`, in the root of your source bundle\. Folders starting with a dot can be hidden by file browsers, so make sure that the folder is added when you create your source bundle\. See [Create an Application Source Bundle](applications-sourcebundle.md) for instructions\.
-
 + **Naming** – Configuration files must have the `.config` file extension\.
-
 + **Formatting** – Configuration files must conform to YAML formatting requirements\. Always use spaces to indent and don't use the same key twice in the same file\.
 **Warning**  
 If you use a key \(for example, `option_settings`\) twice in the same configuration file, one of the sections will be dropped\. Combine duplicate sections into a single section, or place them in separate configuration files\.
@@ -24,14 +21,11 @@ If you use a key \(for example, `option_settings`\) twice in the same configurat
   For more information about YAML, see [YAML Ain't Markup Language \(YAML™\) Version 1\.1](http://yaml.org/spec/current.html)\.
 
 The process for deploying varies slightly depending on the client that you use to manage your environments\. See the following sections for details:
-
 + [Elastic Beanstalk Console](environment-configuration-methods-during.md#configuration-options-during-console-ebextensions)
-
 + [EB CLI](environment-configuration-methods-during.md#configuration-options-during-ebcli-ebextensions)
-
 + [AWS CLI](environment-configuration-methods-during.md#configuration-options-during-awscli-ebextensions)
 
-
+**Topics**
 + [Option Settings](ebextensions-optionsettings.md)
 + [Customizing Software on Linux Servers](customize-containers-ec2.md)
 + [Customizing Software on Windows Servers](customize-containers-windows-ec2.md)

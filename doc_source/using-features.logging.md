@@ -25,7 +25,7 @@ If your application generates logs in a location that is not part of the default
 
 For real\-time log streaming and long\-term storage, configure your environment to [stream logs to Amazon CloudWatch Logs](#health-logs-cloudwatchlogs)\.
 
-
+**Topics**
 + [Log Location On\-Instance](#health-logs-instancelocation)
 + [Log Location in Amazon S3](#health-logs-s3location)
 + [Log Rotation Settings on Linux](#health-logs-logrotate)
@@ -37,35 +37,23 @@ For real\-time log streaming and long\-term storage, configure your environment 
 Logs are stored in standard locations on the Amazon EC2 instances in your environment\. Elastic Beanstalk generates the following logs\.
 
 **Linux**
-
 + `/var/log/eb-activity.log`
-
 + `/var/log/eb-commandprocessor.log`
-
 + `/var/log/eb-version-deployment.log`
 
 **Windows Server**
-
 + `C:\Program Files\Amazon\ElasticBeanstalk\logs\`
 
 These logs contain messages about deployment activities, including messages related to configuration files \([`.ebextensions`](ebextensions.md)\)\.
 
 Each application and web server stores logs in its own folder:
-
 + **Apache** – `/var/log/httpd/`
-
 + **IIS** – `C:\inetpub\wwwroot\`
-
 + **Node\.js** – `/var/log/nodejs/`
-
 + **nginx** – `/var/log/nginx/`
-
 + **Passenger** – `/var/app/support/logs/`
-
 + **Puma** – `/var/log/puma/`
-
 + **Python** – `/opt/python/log/`
-
 + **Tomcat** – `/var/log/tomcat8/`
 
 ## Log Location in Amazon S3<a name="health-logs-s3location"></a>
@@ -73,15 +61,12 @@ Each application and web server stores logs in its own folder:
 When you request tail or bundle logs from your environment, or when instances upload rotated logs, they're stored in your Elastic Beanstalk bucket in Amazon S3\. Elastic Beanstalk creates a bucket named `elasticbeanstalk-region-account-id` for each region in which you create environments\. Within this bucket, logs are stored under the path `resources/environments/logs/logtype/environment-id/instance-id`\. 
 
 For example, logs from instance `i-0a1fd158`, in Elastic Beanstalk environment `e-mpcwnwheky` in region `us-west-2` in account `0123456789012`, are stored in the following locations:
-
 + **Tail Logs** –
 
   `s3://elasticbeanstalk-us-west-2-0123456789012/resources/environments/logs/tail/e-mpcwnwheky/i-0a1fd158`
-
 + **Bundle Logs** –
 
   `s3://elasticbeanstalk-us-west-2-0123456789012/resources/environments/logs/bundle/e-mpcwnwheky/i-0a1fd158`
-
 + **Rotated Logs** –
 
   `s3://elasticbeanstalk-us-west-2-0123456789012/resources/environments/logs/publish/e-mpcwnwheky/i-0a1fd158`
@@ -104,25 +89,20 @@ The configuration files are invoked by cron jobs in `/etc/cron.hourly/`\. For mo
 Elastic Beanstalk uses files in subfolders of `/opt/elasticbeanstalk/tasks` \(Linux\) or `C:\Program Files\Amazon\ElasticBeanstalk\config` \(Windows Server\) on the EC2 instance to configure tasks for tail logs, bundle logs, and log rotation\.
 
 **On Linux:**
-
 + **Tail Logs** –
 
   `/opt/elasticbeanstalk/tasks/taillogs.d/`
-
 + **Bundle Logs** –
 
   `/opt/elasticbeanstalk/tasks/bundlelogs.d/`
-
 + **Rotated Logs** –
 
   `/opt/elasticbeanstalk/tasks/publishlogs.d/`
 
 **On Windows Server:**
-
 + **Tail Logs** –
 
   `c:\Program Files\Amazon\ElasticBeanstalk\config\taillogs.d\`
-
 + **Rotated Logs** –
 
   `c:\Program Files\Amazon\ElasticBeanstalk\config\publogs.d\`

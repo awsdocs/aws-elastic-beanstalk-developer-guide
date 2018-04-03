@@ -6,7 +6,7 @@ For anything other than a one\-off configuration change, you can [store configur
 
 This topic includes procedures for all of the methods to set configuration options during environment creation\.
 
-
+**Topics**
 + [In the AWS Management Console](#configuration-options-during-console)
 + [Using the EB CLI](#configuration-options-during-ebcli)
 + [Using the AWS CLI](#configuration-options-during-awscli)
@@ -15,7 +15,7 @@ This topic includes procedures for all of the methods to set configuration optio
 
 When you create an Elastic Beanstalk environment in the AWS Management Console, you can provide configuration options using configuration files, saved configurations, and forms in the **Create New Environment** wizard\.
 
-
+**Topics**
 + [Using Configuration Files \(`.ebextensions`\)](#configuration-options-during-console-ebextensions)
 + [Using a Saved Configuration](#configuration-options-during-console-savedconfig)
 + [Using the New Environment Wizard](#configuration-options-during-console-wizard)
@@ -79,7 +79,7 @@ For details about the new environment wizard, see [The Create New Environment Wi
 
 ## Using the EB CLI<a name="configuration-options-during-ebcli"></a>
 
-
+**Topics**
 + [Using Configuration Files \(`.ebextensions`\)](#configuration-options-during-ebcli-ebextensions)
 + [Using Saved Configurations](#configuration-options-during-ebcli-savedconfig)
 + [Using Command Line Options](#configuration-options-during-ebcli-params)
@@ -153,7 +153,7 @@ See [eb create](eb3-create.md) for a full list of available options and usage ex
 
 When you use the `create-environment` command to create an Elastic Beanstalk environment with the AWS CLI, the AWS CLI does not apply any [recommended values](command-options.md#configuration-options-recommendedvalues)\. All configuration options are defined in configuration files in the source bundle that you specify\. 
 
-
+**Topics**
 + [Using Configuration Files \(`.ebextensions`\)](#configuration-options-during-awscli-ebextensions)
 + [Using a Saved Configuration](#configuration-options-during-awscli-savedconfig)
 + [Using Command Line Options](#configuration-options-during-awscli-params)

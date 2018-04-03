@@ -25,25 +25,15 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 ## Output<a name="eb3-statusoutput"></a>
 
 If successful, the command returns the following information about the environment:
-
 + Environment name
-
 + Application name
-
 + Deployed application version
-
 + Environment ID
-
 + Platform
-
 + Environment tier
-
 + CNAME
-
 + Time the environment was last updated
-
 + Status
-
 + Health
 
 If you use verbose mode, EB CLI also provides you with the number of running Amazon EC2 instances\.

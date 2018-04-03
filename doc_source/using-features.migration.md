@@ -5,23 +5,14 @@ If you have deployed an Elastic Beanstalk application that uses a legacy contain
 ## What new features are legacy containers missing?<a name="using-features.migration.missing"></a>
 
 Legacy platforms do not support the following features:
-
 + Configuration files, as described in the [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md) topic
-
 + ELB health checks, as described in the [Basic Health Reporting](using-features.healthstatus.md) topic
-
 + Instance Profiles, as described in the [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md) topic
-
 + VPCs, as described in the [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md) topic
-
 + Data Tiers, as described in the [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md) topic
-
 + Worker Tiers, as described in the [Worker Environments](concepts-worker.md) topic
-
 + Single Instance Environments, as described in the [Environment Types](using-features-managing-env-types.md) topic
-
 + Tags, as described in the [Tagging Resources in Your Elastic Beanstalk Environment](using-features.tagging.md) topic
-
 + Rolling Updates, as described in the [Elastic Beanstalk Rolling Environment Configuration Updates](using-features.rollingupdates.md) topic
 
 ## Why are some container types marked legacy?<a name="using-features.migration.why"></a>

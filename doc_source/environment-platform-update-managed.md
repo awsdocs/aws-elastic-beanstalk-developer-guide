@@ -32,7 +32,7 @@ Use the Elastic Beanstalk environment management console to enable managed platf
 
 Managed platform updates depend on [enhanced health reporting](health-enhanced.md) to determine that your application is healthy enough to consider the platform update successful\. See [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) for instructions\.
 
-
+**Topics**
 + [Permissions Required to Perform Managed Platform Updates](#environment-platform-update-managed-perms)
 + [The Managed Update Maintenance Window](#environment-platform-update-managed-window)
 + [Minor and Patch Version Updates](#environment-platform-update-managed-versioning)
@@ -102,11 +102,8 @@ You can choose to apply a scheduled update immediately, instead of waiting until
 When you apply a managed platform update outside of the maintenance window, Elastic Beanstalk performs an immutable update\. If you update the environment's platform from the [Dashboard](environments-console.md#environments-dashboard), or by using a different client, Elastic Beanstalk uses the update type that you have selected for [configuration changes](environments-updating.md)\.
 
 If you don't have a managed update scheduled, your environment may already be running the latest version\. Other reasons for not having an update scheduled include:
-
 + a [minor version](#environment-platform-update-managed-versioning) update is available, but your environment is configured to automatically apply only patch version updates\.
-
 + your environment hasn't been scanned since the update was released\. Elastic Beanstalk typically checks for updates every hour\.
-
 + an update is pending or already in progress\.
 
 When your maintenance window starts or when you choose **Apply now**, scheduled updates goes into pending status prior to execution\. 

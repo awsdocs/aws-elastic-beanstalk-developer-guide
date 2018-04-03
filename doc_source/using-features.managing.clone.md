@@ -17,9 +17,7 @@ Elastic Beanstalk doesn't include any unmanaged changes to resources in the clon
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-app-page-env.png)
 
 1. On the environment dashboard, choose **Actions**, and then do one of the following: 
-
    + Choose **Clone Environment** to clone the environment without any changes to the solution stack version\.
-
    + Choose **Clone with Latest Platform** to clone the environment, but with a newer version of the original environment's solution stack\.  
 ![\[Actions menu on the Dashboard page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-dashboard-action.png)
 

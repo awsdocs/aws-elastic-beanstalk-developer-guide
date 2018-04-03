@@ -3,7 +3,6 @@
 Elastic Beanstalk installs the shell script `get-config` that you can use to get environment variables and other information in hooks that run on\-instance in environments launched with your custom platform\.
 
 This tool is available at `/opt/elasticbeanstalk/bin/get-config`\. You can use it in the following ways:
-
 + `get-config optionsettings` – Returns a JSON object listing the configuration options set on the environment, organized by namespace\.
 
   ```
@@ -17,7 +16,6 @@ This tool is available at `/opt/elasticbeanstalk/bin/get-config`\. You can use i
   $ /opt/elasticbeanstalk/bin/get-config optionsettings -n aws:elasticbeanstalk:container:php:phpini -o memory_limit
   256M
   ```
-
 + `get-config environment` – Returns a JSON object containing a list of environment properties, including both user\-configured properties and those provided by Elastic Beanstalk\.
 
   ```
@@ -37,9 +35,7 @@ This tool is available at `/opt/elasticbeanstalk/bin/get-config`\. You can use i
 You can test the previous commands by using SSH to connect to an instance in an Elastic Beanstalk environment running a Linux\-based platform\.
 
 See the following files in the [sample platform definition archive](custom-platforms.md#custom-platforms-sample) for an example of `get-config` usage:
-
 + `builder/platform-uploads/opt/elasticbeanstalk/hooks/configdeploy/enact/02-gen-envvars.sh` – Gets environment properties\.
-
 + `builder/platform-uploads/opt/SampleNodePlatform/bin/createPM2ProcessFile.js` – Parses the output\.
 
 Elastic Beanstalk installs the shell script `download-source-bundle` that you can use to download your application source code during the deployment of your custom platform\. This tool is available at `/opt/elasticbeanstalk/bin/download-source-bundle`\. See the sample script `00-unzip.sh`, which is in the `appdeploy/pre` folder, for an example of how to use `download-source-bundle` to download application source code to the `/opt/elasticbeanstalk/deploy/appsource` folder during deployment\.

@@ -5,40 +5,39 @@ When you launch an environment in the AWS Elastic Beanstalk environment manageme
 Elastic Beanstalk provides a managed policy for [enhanced health monitoring](health-enhanced.md), and one with additional permissions required for [managed platform updates](environment-platform-update-managed.md)\. The console assigns both of these policies to the default service role\. The managed service role policies follow\.
 
 **Managed Service Role Policies**
-
 + **AWSElasticBeanstalkEnhancedHealth** – Grants permissions for Elastic Beanstalk to monitor instance and environment health\.
 
   ```
   {
-    "Version": "2012-10-17",
-    "Statement": [
-      {
-        "Effect": "Allow",
-        "Action": [
-          "elasticloadbalancing:DescribeInstanceHealth",
-          "elasticloadbalancing:DescribeLoadBalancers",
-          "elasticloadbalancing:DescribeTargetHealth",
-          "ec2:DescribeInstances",
-          "ec2:DescribeInstanceStatus",
-          "ec2:GetConsoleOutput",
-          "ec2:AssociateAddress",
-          "ec2:DescribeAddresses",
-          "ec2:DescribeSecurityGroups",
-          "sqs:GetQueueAttributes",
-          "sqs:GetQueueUrl",
-          "autoscaling:DescribeAutoScalingGroups",
-          "autoscaling:DescribeAutoScalingInstances",
-          "autoscaling:DescribeScalingActivities",
-          "autoscaling:DescribeNotificationConfigurations"
-        ],
-        "Resource": [
-          "*"
-        ]
-      }
-    ]
+      "Version": "2012-10-17",
+      "Statement": [
+          {
+              "Effect": "Allow",
+              "Action": [
+                  "elasticloadbalancing:DescribeInstanceHealth",
+                  "elasticloadbalancing:DescribeLoadBalancers",
+                  "elasticloadbalancing:DescribeTargetHealth",
+                  "ec2:DescribeInstances",
+                  "ec2:DescribeInstanceStatus",
+                  "ec2:GetConsoleOutput",
+                  "ec2:AssociateAddress",
+                  "ec2:DescribeAddresses",
+                  "ec2:DescribeSecurityGroups",
+                  "sqs:GetQueueAttributes",
+                  "sqs:GetQueueUrl",
+                  "autoscaling:DescribeAutoScalingGroups",
+                  "autoscaling:DescribeAutoScalingInstances",
+                  "autoscaling:DescribeScalingActivities",
+                  "autoscaling:DescribeNotificationConfigurations",
+                  "sns:Publish"
+              ],
+              "Resource": [
+                  "*"
+              ]
+          }
+      ]
   }
   ```
-
 + **AWSElasticBeanstalkService** – Grants permissions for Elastic Beanstalk to update environments on your behalf to perform managed updates\.
 
   ```
@@ -176,9 +175,12 @@ When you launch an environment using the [`eb create`](eb3-create.md) command of
 
 If you use the `CreateEnvironment` action of the Elastic Beanstalk API to create an environment, specify a service role with the `ServiceRole` configuration option in the `aws:elasticbeanstalk:environment` namespace\. See [Using Enhanced Health Reporting with the AWS Elastic Beanstalk API](health-enhanced-api.md) for details on using enhanced health monitoring with the Elastic Beanstalk API\. 
 
-When you create an environment by using the Elastic Beanstalk API, and don't specify a service role, Elastic Beanstalk creates a service\-linked role\. This is a unique type of service role that is predefined by Elastic Beanstalk to include all the permissions that the service requires to call other AWS services on your behalf\. The service\-linked role is associated with your account\. Elastic Beanstalk creates it once, then reuses it when creating additional environments\. You can also use IAM to create your account's service\-linked role in advance\. When your account has a service\-linked role, you can use it to create an environment by using the Elastic Beanstalk API, the Elastic Beanstalk console, or the EB CLI\. For details about using service\-linked roles with Elastic Beanstalk environments, see [Using Service\-Linked Roles for Elastic Beanstalk](using-service-linked-roles.md)\.
+When you create an environment by using the Elastic Beanstalk API, and don't specify a service role, Elastic Beanstalk creates a service\-linked role for your account, if it doesn't already exist, and uses it for the new environment\. A service\-linked role is a unique type of service role that is predefined by Elastic Beanstalk to include all the permissions that the service requires to call other AWS services on your behalf\. The service\-linked role is associated with your account\. Elastic Beanstalk creates it once, then reuses it when creating additional environments\. You can also use IAM to create your account's service\-linked role in advance\. When your account has a service\-linked role, you can use it to create an environment by using the Elastic Beanstalk API, the Elastic Beanstalk console, or the EB CLI\. For details about using service\-linked roles with Elastic Beanstalk environments, see [Using Service\-Linked Roles for Elastic Beanstalk](using-service-linked-roles.md)\.
 
+**Note**  
+When Elastic Beanstalk tries to create a service\-linked role for your account when you create an environment, you must have the `iam:CreateServiceLinkedRole` permission\. If you don't have this permission, environment creation fails, and you see a message explaining the issue\.
 
+**Topics**
 + [Verifying the Default Service Role's Permissions](#iam-servicerole-verify)
 + [Updating an Out\-of\-Date Default Service Role](#iam-servicerole-update)
 + [Adding Permissions to the Default Service Role](#iam-servicerole-addperms)
@@ -216,9 +218,7 @@ Alternatively, you can add the managed policies to the default service role manu
 1. Type **AWSElasticBeanstalk** to filter the policies\.
 
 1. Select the following policies, and then choose **Attach Policies**:
-
    + `AWSElasticBeanstalkEnhancedHealth`
-
    + `AWSElasticBeanstalkService`
 
 ## Adding Permissions to the Default Service Role<a name="iam-servicerole-addperms"></a>

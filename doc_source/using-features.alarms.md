@@ -32,25 +32,15 @@ For more information about monitoring specific metrics, see [Basic Health Report
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-alarm-create.png)
 
 1. Enter details about the alarm:
-
    + **Name**: A name for this alarm\.
-
    + **Description** \(optional\): A short description of what this alarm is\.
-
    + **Period**: The time interval between readings\.
-
    + **Threshold**: Describes the behavior and value that the metric must exceed in order to trigger an alarm\.
-
    + **Change state after**: The amount a time after a threshold has been exceed that triggers a change in state of the alarm\.
-
    + **Notify**: The Amazon SNS topic that is notified when an alarm changes state\.
-
    + **Notify when state changes to**:
-
      + **OK**: The metric is within the defined threshold\.
-
      + **Alarm**: The metric exceeded the defined threshold\.
-
      + **Insufficient data**: The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state\. 
 
 1. Click **Add**\. The environment status changes to gray while the environment updates\. You can view the alarm that you created by going to the **Alarms** page\.

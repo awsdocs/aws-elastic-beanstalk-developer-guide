@@ -1,11 +1,8 @@
 # Example Snippets: ElastiCache<a name="customize-environment-resources-elasticache"></a>
 
 The following samples add an Amazon ElastiCache cluster to EC2\-Classic and EC2\-VPC \(both default and custom VPC\) platforms\. For more information about these platforms and how you can determine which ones EC2 supports for your region and your AWS account, see [http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html)\. Then refer to the section in this topic that applies to your platform\.
-
 + [EC2\-Classic Platforms](#customize-environment-resources-elasticache-classic)
-
 + [EC2\-VPC \(Default\)](#customize-environment-resources-elasticache-defaultvpc)
-
 + [EC2\-VPC \(Custom\)](#customize-environment-resources-elasticache-targetedvpc)
 
 ## EC2\-Classic Platforms<a name="customize-environment-resources-elasticache-classic"></a>
@@ -62,11 +59,8 @@ Resources:
 ```
 
 For more information about the resources used in this example configuration file, see the following references: 
-
 + [AWS::ElastiCache::CacheCluster](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html)
-
 + [AWS::ElastiCache::SecurityGroup](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html)
-
 + [AWS::ElastiCache:SecurityGroupIngress](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html)
 
 Create a separate configuration file called `options.config` and define the custom option settings\. 
@@ -153,9 +147,7 @@ Outputs:
 ```
 
 For more information about the resources used in this example configuration file, see the following references: 
-
 + [AWS::ElastiCache::CacheCluster](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html)
-
 + [AWS::EC2::SecurityGroup](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html)
 
 Next, name the options configuration file `options.config` and define the custom option settings\. 
@@ -254,11 +246,8 @@ Outputs:
 ```
 
 For more information about the resources used in this example configuration file, see the following references: 
-
 + [AWS::ElastiCache::CacheCluster](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html)
-
 + [AWS::EC2::SecurityGroup](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html)
-
 + [AWS::ElastiCache::SubnetGroup](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html)
 
 Next, name the options configuration file `options.config` and define the custom option settings\.

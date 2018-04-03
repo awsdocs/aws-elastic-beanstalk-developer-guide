@@ -95,11 +95,8 @@ AWS\_EB\_PLATFORM\_VERSION
 The version of the custom platform\.
 
 The sample `custom_platform.json` file uses these values to define the following values that it uses in the scripts:
-
 + `platform_name`, which is set by `platform.yaml`
-
 + `platform_version`, which is set by `platform.yaml`
-
 + `platform_arn`, which is set by the main build script, `builder.sh`, which is shown at the end of the sample `custom_platform.json` file\.
 
 **Example custom\_platform\.json**  
@@ -126,23 +123,14 @@ The sample `custom_platform.json` file uses these values to define the following
 ```
 
 The scripts and other files that you include in your platform definition archive will vary greatly depending on the modifications that you want to make to the instance\. The sample platform includes the following scripts:
-
 + `00-sync-apt.sh` – Commented out: `apt -y update`\. We commented out the command because it prompts the user for input, which breaks the automated package update\. This might be an Ubuntu issue\. However, running `apt -y update` is still recommended as best practice\. For this reason, we left the command in the sample script for reference\.
-
 + `01-install-nginx.sh` – Installs nginx\.
-
 + `02-setup-platform.sh` – Installs `wget`, `tree`, and `git`\. Copies hooks and [logging configurations](using-features.logging.md) to the instance, and creates the following directories:
-
   + `/etc/SampleNodePlatform` – Where the container configuration file is uploaded during deployment\.
-
   + `/opt/elasticbeanstalk/deploy/appsource/` – Where the `00-unzip.sh` script uploads application source code during deployment \(see the [Platform Scripts](custom-platforms-scripts.md) section for information about this script\)\.
-
   + `/var/app/staging/` – Where application source code is processed during deployment\.
-
   + `/var/app/current/` – Where application source code runs after processing\.
-
   + `/var/log/nginx/healthd/` – Where the [enhanced health agent](health-enhanced.md#health-enhanced-agent) writes logs\.
-
   + `/var/nodejs` – Where the Node\.js files are uploaded during deployment\.
 
 Use the EB CLI to create your first custom platform with the sample platform definition archive\.

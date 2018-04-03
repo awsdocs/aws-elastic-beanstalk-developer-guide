@@ -3,13 +3,9 @@
 This section walks through a use case for controlling user permissions for Elastic Beanstalk actions that access specific Elastic Beanstalk resources\. We'll walk through the sample policies that support the use case\. For more information policies on Elastic Beanstalk resources, see [Creating a Custom User Policy](AWSHowTo.iam.managed-policies.md#AWSHowTo.iam.policies)\. For information about attaching policies to users and groups, go to [Managing IAM Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html) in *Using AWS Identity and Access Management*\. 
 
 In our use case, Example Corp\. is a small consulting firm developing applications for two different customers\. John is the development manager overseeing the development of the two Elastic Beanstalk applications, app1 and app2\. John does development and some testing on the two applications, and only he can update the production environment for the two applications\. These are the permissions that he needs for app1 and app2:
-
 + View application, application versions, environments, and configuration templates
-
 + Create application versions and deploy them to the staging environment
-
 + Update the production environment
-
 + Create and terminate environments
 
 Jill is a tester who needs access to view the following resources in order to monitor and test the two applications: applications, application versions, environments, and configuration templates\. However, she should not be able to make changes to any Elastic Beanstalk resources\.

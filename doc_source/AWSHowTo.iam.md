@@ -6,7 +6,7 @@ For an overview of permissions, see [Service Roles, Instance Profiles, and User 
 
 The [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMGettingStarted.html) provides in\-depth coverage of AWS permissions\.
 
-
+**Topics**
 + [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md)
 + [Managing Elastic Beanstalk Service Roles](iam-servicerole.md)
 + [Controlling Access to Elastic Beanstalk](AWSHowTo.iam.managed-policies.md)

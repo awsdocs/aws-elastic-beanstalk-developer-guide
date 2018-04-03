@@ -13,7 +13,7 @@ When you launch an environment, you choose a platform configuration\. We update 
 
 As your application grows in complexity, you can split it into multiple components, each running in a separate environment\. For long\-running workloads, you can launch [worker environments](using-features-managing-env-tiers.md) that process jobs from an Amazon Simple Queue Service \(Amazon SQS\) queue\.
 
-
+**Topics**
 + [The AWS Elastic Beanstalk Environment Management Console](environments-console.md)
 + [Creating an AWS Elastic Beanstalk Environment](using-features.environments.md)
 + [Deploying Applications to AWS Elastic Beanstalk Environments](using-features.deploy-existing-version.md)

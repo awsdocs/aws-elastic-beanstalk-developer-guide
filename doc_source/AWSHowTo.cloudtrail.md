@@ -17,11 +17,8 @@ When CloudTrail logging is enabled in your AWS account, API calls made to Elasti
 All Elastic Beanstalk actions are logged by CloudTrail and are documented in the [Elastic Beanstalk API Reference](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/)\. For example, calls to the **CreateEnvironment**, **UpdateEnvironment** and **TerminateEnvironment** sections generate entries in the CloudTrail log files\. 
 
 Every log entry contains information about who generated the request\. The user identity information in the log entry helps you determine the following: 
-
 + Whether the request was made with root or IAM user credentials
-
 + Whether the request was made with temporary security credentials for a role or federated user
-
 + Whether the request was made by another AWS service
 
 For more information, see the [CloudTrail userIdentity Element](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html)\.

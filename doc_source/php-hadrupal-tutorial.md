@@ -2,7 +2,7 @@
 
 This tutorial walks you through the process of [launching an RDS DB instance](AWSHowTo.RDS.md) external to AWS Elastic Beanstalk, and configuring a high\-availability environment running a Drupal website to connect to it\. Running a DB instance external to Elastic Beanstalk decouples the database from the lifecycle of your environment, and lets you connect to the same database from multiple environments, swap out one database for another, or perform a blue/green deployment without affecting your database\.
 
-
+**Topics**
 + [Launch a DB Instance in Amazon RDS](#php-hadrupal-tutorial-database)
 + [Download Drupal](#php-hadrupal-tutorial-download)
 + [Launch an Elastic Beanstalk Environment](#php-hadrupal-tutorial-launch)
@@ -37,21 +37,14 @@ Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosin
 1. Choose **Next**\.
 
 1. For **Network and Security** settings, choose the following:
-
    + **VPC** – **Default VPC**
-
    + **Subnet Group** – **default**
-
    + **Publicly Accessible** – **No**
-
    + **Availability Zone** – ** No Preference**
-
    + **VPC Security Groups** – **Default VPC Security Group**
 
 1. For **Database Name**, type **ebdb**, and verify the default settings for the remaining options\. Note the values of the following options:
-
    + **Database Name**
-
    + **Database Port**
 
 1. Choose **Launch DB Instance**\.
@@ -225,23 +218,18 @@ Next, pass the connection information to your environment by using environment p
 1. On the **Software** configuration card, choose **Modify**\.
 
 1. In the **Environment Properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following:
-
    + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
      Amazon RDS console label – **Endpoint** \(this is the hostname\)
-
    + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
 
      Amazon RDS console label – **Port**
-
    + **RDS\_DB\_NAME** – The database name, `ebdb`\.
 
      Amazon RDS console label – **DB Name**
-
    + **RDS\_USERNAME** – The user name that you configured for your database\.
 
      Amazon RDS console label – **Username**
-
    + **RDS\_PASSWORD** – The password that you configured for your database\.
 
    Choose the plus symbol \(\+\) to add more properties\.  
@@ -260,11 +248,8 @@ Next, pass the connection information to your environment by using environment p
 1. Choose the environment URL to open your site in a browser\. You are redirected to a Drupal installation wizard because the site has not been configured yet\.
 
 1. Perform a standard installation with the following settings for the database:
-
    + **Database name** – The **DB Name** shown in the Amazon RDS console\.
-
    + **Database username and password** – The **Master Username** and **Master Password** values you entered when creating your database\.
-
    + **Advanced Options > Host** – The **Endpoint** of the DB instance shown in the Amazon RDS console\.
 
 Installation takes about a minute to complete\.
@@ -326,25 +311,16 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 ## Review<a name="php-hadrupal-tutorial-review"></a>
 
 Launching an environment creates the following resources:
-
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
   Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination thereof\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
-
 + **Instance security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
-
 + **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
-
 + **Load balancer security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
-
 + **Auto Scaling group** – An Auto Scaling group configured to replace an instance if it is terminated or becomes unavailable\.
-
 + **Amazon S3 bucket** – A storage location for your source code, logs, and other artifacts that are created when you use Elastic Beanstalk\.
-
 + **Amazon CloudWatch alarms** – Two CloudWatch alarms that monitor the load on the instances in your environment and are triggered if the load is too high or too low\. When an alarm is triggered, your Auto Scaling group scales up or down in response\.
-
 + **AWS CloudFormation stack** – Elastic Beanstalk uses AWS CloudFormation to launch the resources in your environment and propagate configuration changes\. The resources are defined in a template that you can view in the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation)\.
-
 + **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
 
 All of these resources are managed by Elastic Beanstalk\. When you terminate your environment, Elastic Beanstalk terminates all the resources that it contains\. The RDS DB instance that you launched is outside of your environment, so you are responsible for managing its lifecycle\.

@@ -4,7 +4,7 @@ When you create a web server environment, Elastic Beanstalk creates one or more 
 
 The Auto Scaling Group in your environment manages the EC2 instances that run your application\. Changes to the Auto Scaling Group's launch configuration require [replacement of all instances](environments-updating.md) and will trigger a [rolling update](using-features.rollingupdates.md) or [immutable update](environmentmgmt-updates-immutable.md), depending on which one is configured\. For details about configuring the environment's Auto Scaling Group, see [Configuring Your Environment's Auto Scaling Group](using-features.managing.as.md#environments-cfg-autoscaling-console)\.
 
-
+**Topics**
 + [Configuring Your Environment's EC2 Instances](#using-features.managing.ec2.console)
 + [The aws:autoscaling:launchconfiguration Namespace](#using-features.managing.ec2.namespace)
 
@@ -25,7 +25,7 @@ You can modify your Elastic Beanstalk environment's Auto Scaling Group configura
 
 The following settings are available\.
 
-
+**Topics**
 + [Instance Type](#using-features.managing.ec2.instancetypes)
 + [AMI ID](#using-features.managing.ec2.customami)
 + [Monitoring Interval](#using-features.managing.ec2.monitoring-interval)

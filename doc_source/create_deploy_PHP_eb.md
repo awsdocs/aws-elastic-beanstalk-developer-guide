@@ -4,7 +4,7 @@ Elastic Beanstalk for PHP makes it easy to deploy, manage, and scale your PHP we
 
 The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
-
+**Topics**
 + [Using the AWS Elastic Beanstalk PHP Platform](create_deploy_PHP.container.md)
 + [Deploying a Laravel Application to Elastic Beanstalk](php-laravel-tutorial.md)
 + [Deploying a CakePHP Application to Elastic Beanstalk](php-cakephp-tutorial.md)

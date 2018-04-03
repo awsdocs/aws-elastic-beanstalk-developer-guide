@@ -16,7 +16,7 @@ After launching your database instance and configuring security groups, you can 
 
 For additional security, you can store your connection information in Amazon S3, and configure Elastic Beanstalk to retrieve it during deployment\. With [configuration files \(`.ebextensions`\)](ebextensions.md), you can configure the instances in your environment to securely retrieve files from Amazon S3 when you deploy your application\.
 
-
+**Topics**
 + [Launching and Connecting to an External Amazon RDS Instance in a Default VPC](#rds-external-defaultvpc)
 + [Launching and Connecting to an External Amazon RDS Instance in EC2 Classic](#rds-external-ec2classic)
 + [Storing the Connection String in Amazon S3](#rds-external-credentials)
@@ -44,21 +44,14 @@ The following procedures describe the process for a [default VPC](http://docs.aw
 1. Choose **Next**\.
 
 1. For **Network and Security** settings, choose the following:
-
    + **VPC** – **Default VPC**
-
    + **Subnet Group** – **default**
-
    + **Publicly Accessible** – **No**
-
    + **Availability Zone** – ** No Preference**
-
    + **VPC Security Groups** – **Default VPC Security Group**
 
 1. For **Database Name**, type **ebdb**, and verify the default settings for the remaining options\. Note the values of the following options:
-
    + **Database Name**
-
    + **Database Port**
 
 1. Choose **Launch DB Instance**\.
@@ -128,23 +121,18 @@ Next, pass the connection information to your environment by using environment p
 1. On the **Software** configuration card, choose **Modify**\.
 
 1. In the **Environment Properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following:
-
    + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
      Amazon RDS console label – **Endpoint** \(this is the hostname\)
-
    + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
 
      Amazon RDS console label – **Port**
-
    + **RDS\_DB\_NAME** – The database name, `ebdb`\.
 
      Amazon RDS console label – **DB Name**
-
    + **RDS\_USERNAME** – The user name that you configured for your database\.
 
      Amazon RDS console label – **Username**
-
    + **RDS\_PASSWORD** – The password that you configured for your database\.
 
    Choose the plus symbol \(\+\) to add more properties\.  
@@ -153,19 +141,12 @@ Next, pass the connection information to your environment by using environment p
 1. Choose **Save**, and then choose **Apply**\.
 
 If you haven't programmed your application to read environment properties and construct a connection string yet, see the following language\-specific topics for instructions:
-
 + Java SE – [Connecting to a Database \(Java SE Platforms\)](java-rds.md#java-rds-javase)
-
 + Java with Tomcat – [Connecting to a Database \(Tomcat Platforms\)](java-rds.md#java-rds-tomcat)
-
 + Node\.js – [Connecting to a Database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
-
 + \.NET – [Connecting to a Database](create_deploy_NET.rds.md#dotnet-rds-connect)
-
 + PHP – [Connecting to a Database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
-
 + Python – [Connecting to a Database](create-deploy-python-rds.md#python-rds-connect)
-
 + Ruby – [Connecting to a Database](create_deploy_Ruby.rds.md#ruby-rds-connect)
 
 Finally, depending on when your application reads environment variables, you might need to restart the application server on the instances in your environment\.
@@ -191,23 +172,16 @@ You can add rules to a DB security group that allow ingress from EC2 security gr
 1. Choose **Launch a DB Instance**\.
 
 1. Proceed through the wizard until you reach the **Advanced Settings** page\. Note the values that you enter for the following options:
-
    + **Master Username**
-
    + **Master Password**
 
 1. For **Network and Security** settings, choose the following:
-
    + **VPC** – **Not in VPC**\. If this option isn't available, your account might not support [EC2\-Classic](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html), or you may have chosen an [instance type that is only available in VPC](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types)\.
-
    + **Availability Zone** – **No Preference**
-
    + **DB Security Group\(s\)** – **Create new Security Group**
 
 1. Configure the remaining options and choose **Launch DB Instance**\. Note the values that you enter for the following options:
-
    + **Database Name**
-
    + **Database Port**
 
 In EC2\-Classic, your DB instance will have a DB security group instead of a VPC security group\. You can't attach a DB security group to your Elastic Beanstalk environment, so you need to create a new security group that you can authorize to access the DB instance and attach to your environment\. We will refer to this as a *bridge security group* and name it **webapp\-bridge**\.
@@ -280,15 +254,10 @@ Next, pass the connection information to your environment by using environment p
 1. On the **Software** configuration card, choose **Modify**\.
 
 1. In the **Environment Properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS instance, use the following:
-
    + **RDS\_DB\_NAME** – The **DB Name** shown in the Amazon RDS console\.
-
    + **RDS\_USERNAME** – The **Master Username** that you enter when you add the database to your environment\.
-
    + **RDS\_PASSWORD** – The **Master Password** that you enter when you add the database to your environment\.
-
    + **RDS\_HOSTNAME** – The **Endpoint** of the DB instance shown in the Amazon RDS console\. 
-
    + **RDS\_PORT** – The **Port** shown in the Amazon RDS console\.
 
    Choose the plus symbol to add additional properties\.  
@@ -297,19 +266,12 @@ Next, pass the connection information to your environment by using environment p
 1. Choose **Apply**
 
 If you haven't programmed your application to read environment properties and construct a connection string yet, see the following language\-specific topics for instructions:
-
 + Java SE – [Connecting to a Database \(Java SE Platforms\)](java-rds.md#java-rds-javase)
-
 + Java with Tomcat – [Connecting to a Database \(Tomcat Platforms\)](java-rds.md#java-rds-tomcat)
-
 + Node\.js – [Connecting to a Database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
-
 + \.NET – [Connecting to a Database](create_deploy_NET.rds.md#dotnet-rds-connect)
-
 + PHP – [Connecting to a Database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
-
 + Python – [Connecting to a Database](create-deploy-python-rds.md#python-rds-connect)
-
 + Ruby – [Connecting to a Database](create_deploy_Ruby.rds.md#ruby-rds-connect)
 
 Finally, depending on when your application reads environment variables, you might need to restart the application server on the instances in your environment\.
@@ -327,13 +289,9 @@ Finally, depending on when your application reads environment variables, you mig
 Providing connection information to your application with environment properties is a good way to keep passwords out of your code, but it's not a perfect solution\. Environment properties are discoverable in the [environment management console](environments-console.md), and can be viewed by any user that has permission to [describe configuration settings](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationSettings.html) on your environment\. Depending on the platform, environment properties may also appear in [instance logs](using-features.logging.md)\.
 
 You can lock down your connection information by storing it in an Amazon S3 bucket that you control\. The basic steps are as follows:
-
 + Upload a file that contains your connection string to an Amazon S3 bucket\.
-
 + Grant the EC2 instance profile permission to read the file\.
-
 + Configure your application to download the file during deployment\.
-
 + Read the file in your application code\.
 
 First, create a bucket to store the file that contains your connection string\. For this example, we will use a JSON file that has a single key and value\. The value is a JDBC connection string for a PostgreSQL DB instance in Amazon RDS\.
@@ -426,17 +384,10 @@ This configuration file does two things\. The `Resources` key adds an authentica
 Deploy your application with the configuration file in `.ebextensions` folder at the root of your source code\. If you configured permissions correctly, the deployment will succeed and the file will be downloaded to all of the instances in your environment\. If not, the deployment will fail\.
 
 Finally, add code to your application to read the JSON file and use the connection string to connect to the database\. See the following language\-specific topics for more information:
-
 + Java SE – [Connecting to a Database \(Java SE Platforms\)](java-rds.md#java-rds-javase)
-
 + Java with Tomcat – [Connecting to a Database \(Tomcat Platforms\)](java-rds.md#java-rds-tomcat)
-
 + Node\.js – [Connecting to a Database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
-
 + \.NET – [Connecting to a Database](create_deploy_NET.rds.md#dotnet-rds-connect)
-
 + PHP – [Connecting to a Database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
-
 + Python – [Connecting to a Database](create-deploy-python-rds.md#python-rds-connect)
-
 + Ruby – [Connecting to a Database](create_deploy_Ruby.rds.md#ruby-rds-connect)

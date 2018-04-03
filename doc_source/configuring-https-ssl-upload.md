@@ -2,6 +2,9 @@
 
 To use your certificate with your Elastic Beanstalk environment's load balancer, upload the certificate and private key to AWS Identity and Access Management \(IAM\)\. You can use a certificate stored in IAM with Elastic Load Balancing load balancers and CloudFront distributions\.
 
+**Note**  
+AWS Certificate Manager \(ACM\) is the preferred tool to provision, manage, and deploy your server certificates\. For more information about requesting an ACM certificate, see [Request a Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide*\. For more information about importing third\-party certificates into ACM, see [Importing Certificates](http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\. Use IAM to upload a certificate only if ACM is not [available in your region](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region)\.
+
 You can use the [AWS Command Line Interface](chapter-devenv.md#devenv-awscli) \(AWS CLI\) to upload your certificate\. The following command uploads a self\-signed certificate named *https\-cert\.crt* with a private key named *private\-key\.pem*:
 
 ```
@@ -28,4 +31,4 @@ $ aws iam upload-server-certificate --server-certificate-name elastic-beanstalk-
 
 Make note of the Amazon Resource Name \(ARN\) for your certificate\. You will use it when you update your load balancer configuration settings to use HTTPS\.
 
-To see sample certificates that are valid with IAM, go to [Sample Certificates](http://docs.aws.amazon.com/IAM/latest/UserGuide/InstallCert.html) in the *AWS Identity and Access Management Using IAM User Guide*\.
+For sample certificates that are valid with IAM, see [http://docs.aws.amazon.com/IAM/latest/UserGuide/InstallCert.html](http://docs.aws.amazon.com/IAM/latest/UserGuide/InstallCert.html) go to [Working with Server Certificates](http://docs.aws.amazon.com/IAM/latest/UserGuide/InstallCert.html) in the *IAM User Guide*\.

@@ -9,11 +9,8 @@ To use eb create on a \.NET application, you must create a deployment package as
 Creating environments with the EB CLI requires a [service role](concepts-roles-service.md)\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
 
 You can deploy the application version from a few sources:
-
 + By default: from the application source code in the local project directory\.
-
 + Using the `--version` option: from an application version that already exists in your application\.
-
 + When your project directory doesn't have application code, or when using the `--sample` option: from a sample application, specific to your environment's platform\.
 
 ## Syntax<a name="eb3-createsyntax"></a>

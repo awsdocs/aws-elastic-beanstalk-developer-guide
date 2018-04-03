@@ -2,7 +2,7 @@
 
 We've already introduced configuration file keys from AWS CloudFormation such as `Resources`, `files`, and `packages`\. Elastic Beanstalk adds the contents of configurations files to the AWS CloudFormation template that supports your environment, so you can use other AWS CloudFormation sections to perform advanced tasks in your configuration files\.
 
-
+**Topics**
 + [Parameters](#ebextensions-otherkeys-parameters)
 + [Outputs](#ebextensions-otherkeys-outputs)
 + [Mappings](#ebextensions-otherkeys-mappings)
@@ -15,7 +15,7 @@ One reason you might want to use parameters is to make your configuration files 
 
 The following example shows the use of parameters to gather user\-configurable values at the top of a configuration file\.
 
-**Example [loadbalancer\-accesslogs\-existingbucket\.config](https://github.com/awslabs/elastic-beanstalk-docs/tree/master/configuration-files/aws-provided/resource-configuration/loadbalancer-accesslogs-existingbucket.config) – Parameters**  
+**Example [loadbalancer\-accesslogs\-existingbucket\.config](https://github.com/awslabs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/resource-configuration/loadbalancer-accesslogs-existingbucket.config) – Parameters**  
 
 ```
 Parameters:
@@ -35,7 +35,7 @@ You can use an `Outputs` block to export information about created resources to 
 
 The following example creates an Amazon SNS topic and exports its ARN to AWS CloudFormation with the name `NotificationTopicArn`\.
 
-**Example [sns\-topic\.config](https://github.com/awslabs/elastic-beanstalk-docs/tree/master/configuration-files/aws-provided/resource-configuration/sns-topic.config)**  
+**Example [sns\-topic\.config](https://github.com/awslabs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/resource-configuration/sns-topic.config)**  
 
 ```
 Resources:
@@ -64,7 +64,7 @@ option_settings:
 
 You can use a mapping to store key\-value pairs organized by namespace\. A mapping can help you organize values that you use throughout your configs, or change a parameter value depending on another value\. For example, the following configuration sets the value of an account ID parameter based on the current region\.
 
-**Example [loadbalancer\-accesslogs\-newbucket\.config](https://github.com/awslabs/elastic-beanstalk-docs/tree/master/configuration-files/aws-provided/resource-configuration/loadbalancer-accesslogs-newbucket.config) – mappings**  
+**Example [loadbalancer\-accesslogs\-newbucket\.config](https://github.com/awslabs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/resource-configuration/loadbalancer-accesslogs-newbucket.config) – mappings**  
 
 ```
 Mappings: 

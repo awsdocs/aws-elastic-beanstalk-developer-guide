@@ -9,7 +9,7 @@ If you haven't used a DB instance with your application before, try [adding one 
 
 To deploy an Elastic Beanstalk application with Amazon RDS inside a VPC using a NAT gateway, you need to complete the following:
 
-
+**Topics**
 + [Create a VPC with a Public and Private Subnet](#vpc-rds-create)
 + [Create a DB Subnet Group](#vpc-rds-subnet)
 + [Deploy to Elastic Beanstalk](#vpc-rds-create-env)
@@ -96,21 +96,15 @@ You can view your subnet IDs by choosing **Subnets** in the [Amazon VPC console]
 When deploying your application to Elastic Beanstalk using the AWS toolkits, EB CLI, AWS CLI, or API, you can specify your VPC option settings in a file and deploy it with your source bundle\. See [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md) for more information\.
 
 When you update the option settings, you will need to specify at least the following:
-
 + **VPCId**–Contains the ID of the VPC\. 
-
 + **Subnets**–Contains the ID of the Auto Scaling group subnet\. In this example, this is the ID of the private subnet\. 
-
 + **ELBSubnets**–Contains the ID of the subnet for the elastic load balancer\. In this example, this is the ID of the public subnet\.
-
 + **SecurityGroups**–Contains the ID of the security groups\.
-
 + **DBSubnets**–Contains the ID of the DB subnets\. 
 **Note**  
 When using DBSubnets, you need to create additional subnets in your VPC to cover all the Availability Zones in the region\. 
 
 Optionally, you can also specify the following information:
-
 + **ELBScheme** — Specify `internal` if you want to create an internal load balancer inside your VPC so that your Elastic Beanstalk application cannot be accessed from outside your VPC\.
 
 The following is an example of the option settings you could use when deploying your Elastic Beanstalk application inside a VPC\. For more information about VPC option settings \(including examples for how to specify them, default values, and valid values\), see the **aws:ec2:vpc** namespace table in [Configuration Options](command-options.md)\.

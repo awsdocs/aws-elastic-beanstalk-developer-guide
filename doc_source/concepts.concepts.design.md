@@ -14,9 +14,11 @@ Elastic Beanstalk applications should also be as *stateless* as possible, using 
 
 Security on AWS is a [shared responsibility](https://aws.amazon.com/compliance/shared-responsibility-model/)\. AWS protects the physical resources in your environment and ensure that the cloud is a safe place for you to run applications\. You are responsible for the security of data coming in and out of your Elastic Beanstalk environment and the security of your application\.
 
-Configure SSL to protect information from your clients\. You will need a certificate from an external certification authority such as VeriSign or Entrust\. The public key included in the certificate authenticates your server to the browser and serves as the basis for creating the shared session key used to encrypt the data in both directions\. For instructions on creating, uploading, and assigning an SSL certificate to your environment, see [Configuring HTTPS for your Elastic Beanstalk Environment](configuring-https.md)\.
+To protect information flowing between your application and clients, configure SSL\. To do this, you need a free certificate from AWS Certificate Manager \(ACM\)\. If you already have a certificate from an external certificate authority \(CA\), you can use ACM to import that certificate programmatically or using the AWS CLI\.
 
-When you configure an SSL certificate for your environment, data is encrypted between the client and your environment's Elastic Load Balancing load balancer\. By default, encryption is terminated at the load balancer and traffic between the load balancer and Amazon EC2 instances is unencrypted\.
+If ACM is not [available in your region](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region), you can purchase a certificate from an external CA such as VeriSign or Entrust\. Then, use the AWS CLI to upload a third\-party or self\-signed certificate and private key to \(AWS Identity and Access Management \(IAM\)\. The certificate’s public key authenticates your server to the browser\. It also serves as the basis for creating the shared session key that encrypts the data in both directions\. For instructions on creating, uploading, and assigning an SSL certificate to your environment, see [Configuring HTTPS for your Elastic Beanstalk Environment](configuring-https.md)\.
+
+When you configure an SSL certificate for your environment, data is encrypted between the client and your environment's Elastic Load Balancing load balancer\. By default, encryption is terminated at the load balancer, and traffic between the load balancer and Amazon EC2 instances is unencrypted\.
 
 ## Persistent Storage<a name="concepts.concepts.design.storage"></a>
 
@@ -46,19 +48,12 @@ Elastic Beanstalk periodically updates its platform configurations with new soft
 ## Connectivity<a name="concepts.concepts.design.connectivity"></a>
 
 Elastic Beanstalk needs to be able to connect to the instances in your environment to complete deployments\. When you deploy an Elastic Beanstalk application inside an Amazon VPC, the configuration required to enable connectivity depends on the type of Amazon VPC environment you create:
-
 + For single\-instance environments, no additional configuration is required because Elastic Beanstalk assigns each Amazon EC2 instance a public Elastic IP address that enables the instance to communicate directly with the Internet\.
-
 + For load\-balancing, autoscaling environments in an Amazon VPC with both public and private subnets, you must do the following: 
-
   + Create a load balancer in the public subnet to route inbound traffic from the Internet to the Amazon EC2 instances\.
-
   + Create a network address translation \(NAT\) device to route outbound traffic from the Amazon EC2 instances to the Internet\.
-
   + Create inbound and outbound routing rules for the Amazon EC2 instances inside the private subnet\.
-
   + If using a NAT instance, configure the security groups for the NAT instance and Amazon EC2 instances to enable Internet communication\.
-
 + For a load\-balancing, autoscaling environment in an Amazon VPC that has one public subnet, no additional configuration is required because the Amazon EC2 instances are configured with a public IP address that enables the instances to communicate with the Internet\.
 
 For more information about using Elastic Beanstalk with Amazon VPC, see [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md)\.

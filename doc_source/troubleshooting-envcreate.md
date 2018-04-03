@@ -10,7 +10,7 @@ Your application may take a long time to deploy if you use configuration files t
 
 **Event:** *The following resource\(s\) failed to create: \[AWSEBInstanceLaunchWaitCondition\]*
 
-This message indicates that your environment's Amazon EC2 instances did not communicate to Elastic Beanstalk that they were launched successfully\. This can occur if the instances do not have Internet connectivity\. If you configured your environment to launch instances in a private VPC subnet, [ensure that the subnet has a NAT](vpc-basic.md) to allow the instances to connect to Elastic Beanstalk\.
+This message indicates that your environment's Amazon EC2 instances did not communicate to Elastic Beanstalk that they were launched successfully\. This can occur if the instances do not have Internet connectivity\. If you configured your environment to launch instances in a private VPC subnet, [ensure that the subnet has a NAT](vpc.md) to allow the instances to connect to Elastic Beanstalk\.
 
 **Event:** *A Service Role is required in this region\. Please add a Service Role option to the environment\.*
 

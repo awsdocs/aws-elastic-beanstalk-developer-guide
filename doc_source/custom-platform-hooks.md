@@ -3,15 +3,10 @@
 Elastic Beanstalk uses a standardized directory structure for hooks, which are scripts that are run during lifecycle events and in response to management operations: when instances in your environment are launched, or when a user initiates a deployment or uses the restart application server feature\.
 
 Hooks are organized into the following folders:
-
 + `appdeploy` — Scripts run during an application deployment\. Elastic Beanstalk performs an application deployment when new instances are launched and when a client initiates a new version deployment\.
-
 + `configdeploy` — Scripts run when a client performs a configuration update that affects the software configuration on\-instance, for example, by setting environment properties or enabling log rotation to Amazon S3\.
-
 + `restartappserver` — Scripts run when a client performs a restart app server operation\.
-
 + `preinit` — Scripts run during instance bootstrapping\.
-
 + `postinit` — Scripts run after instance bootstrapping\.
 
 The `appdeploy`, `configdeploy`, and `restartappserver` folders contain `pre`, `enact`, and `post` subfolders\. In each phase of an operation, all scripts in the `pre` folder are run in alphabetical order, then the `enact` folder, then the `post` folder\.

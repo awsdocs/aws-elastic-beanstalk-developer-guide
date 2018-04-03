@@ -8,7 +8,7 @@ To connect to a database, [add the driver](#dotnet-rds-drivers) to your applicat
 
 For production environments, create a DB instance outside of your Elastic Beanstalk environment to decouple your environment resources from your database resources\. Using an external DB instance lets you connect to the same database from multiple environments and perform blue\-green deployments\. For instructions, see [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)\.
 
-
+**Topics**
 + [Adding a DB Instance to Your Environment](#dotnet-rds-create)
 + [Downloading a Driver](#dotnet-rds-drivers)
 + [Connecting to a Database](#dotnet-rds-connect)
@@ -30,23 +30,18 @@ For production environments, create a DB instance outside of your Elastic Beanst
 1. Choose **Save**, and then choose **Apply**\.
 
 Adding a DB instance takes about 10 minutes\. When the environment update is complete, the DB instance's hostname and other connection information are available to your application through the following environment properties:
-
 + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
   Amazon RDS console label – **Endpoint** \(this is the hostname\)
-
 + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
 
   Amazon RDS console label – **Port**
-
 + **RDS\_DB\_NAME** – The database name, `ebdb`\.
 
   Amazon RDS console label – **DB Name**
-
 + **RDS\_USERNAME** – The user name that you configured for your database\.
 
   Amazon RDS console label – **Username**
-
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
 For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
@@ -56,11 +51,8 @@ For more information about configuring an internal DB instance, see [Adding a Da
 Download and install the `EntityFramework` package and a database driver for your development environment with `NuGet`\.
 
 **Common Entity Framework Database Providers for \.NET**
-
 + **SQL Server** – `Microsoft.EntityFrameworkCore.SqlServer`
-
 + **MySQL** – `Pomelo.EntityFrameworkCore.MySql`
-
 + **PostgreSQL** – `Npgsql.EntityFrameworkCore.PostgreSQL`
 
 ## Connecting to a Database<a name="dotnet-rds-connect"></a>

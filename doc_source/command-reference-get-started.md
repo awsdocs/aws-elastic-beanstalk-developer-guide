@@ -16,19 +16,13 @@ Eb is a command line interface that you can use with Git to deploy applications 
 1. Install the following software onto your local computer:
 
    1. Linux/Unix/Mac
-
       + Download and unzip the Elastic Beanstalk command line tools package at the [AWS Sample Code & Libraries](https://aws.amazon.com/code/6752709412171743) website\.
-
       + Git 1\.6\.6 or later\. To download Git, go to [http://git\-scm\.com/](http://git-scm.com/)\.
-
       + Python 2\.7 or 3\.0\.
 
    1. Windows
-
       + Download and unzip the Elastic Beanstalk command line tools package at the [AWS Sample Code & Libraries](https://aws.amazon.com/code/6752709412171743) website\.
-
       + Git 1\.6\.6 or later\. To download Git, go to [http://git\-scm\.com/](http://git-scm.com/)\. 
-
       + PowerShell 2\.0\. 
 **Note**  
 Windows 7 and Windows Server 2008 R2 come with PowerShell 2\.0\. If you are running an earlier version of Windows, you can download PowerShell 2\.0\. Visit [http://technet\.microsoft\.com/en\-us/scriptcenter/dd742419\.aspx](http://technet.microsoft.com/en-us/scriptcenter/dd742419.aspx) for more details\.
@@ -42,17 +36,11 @@ Windows 7 and Windows Server 2008 R2 come with PowerShell 2\.0\. If you are runn
 ## Step 2: Configure Elastic Beanstalk<a name="command-reference-get-started-init"></a>
 
 Elastic Beanstalk needs the following information to deploy an application: 
-
 + AWS access key ID
-
 + AWS secret key
-
 + Service region
-
 + Application name
-
 + Environment name
-
 + Solution stack
 
 When you use the `init` command, Elastic Beanstalk will prompt you to enter this information\. If a default value or current setting is available, and you want to use it, press `Enter`\.
@@ -145,19 +133,12 @@ If you have a space in your application name, be sure you do not have a space in
 1. When you are prompted to create a snapshot if you delete the Amazon RDS DB instance, type **y** or **n**\. For this example, we'll type **n**\. If you type **n**, then your RDS DB instance will be deleted and your data will be lost if you terminate your environment\.
 
    By default, eb sets the following default values for Amazon RDS\.
-
    + **Database engine** — MySQL
-
    + **Default version: ** — 5\.5
-
    + **Database name: ** — ebdb
-
    + **Allocated storage** — 5GB
-
    + **Instance class** — db\.t2\.micro \(db\.m1\.large for an environment not running in an Amazon VPC\)
-
    + **Deletion policy** — delete
-
    + **Master username** — ebroot
 
 1. When you are prompted to enter your instance profile name, you can choose to create a default instance profile or use an existing instance profile\. Using an instance profile enables IAM users and AWS services to gain access to temporary security credentials to make AWS API calls\. Using instance profiles prevents you from having to store long\-term security credentials on the EC2 instance\. For more information about instance profiles, see [Service Roles, Instance Profiles, and User Policies](concepts-roles.md)\. For this example, we'll use **Create a default instance profile**\.
@@ -174,17 +155,13 @@ You can set up multiple directories for use with eb—each with its own Elastic 
 ## Step 3: Create the Application<a name="command-reference-get-started-create"></a>
 
 Next, you need to create and deploy a sample application\. For this step, you use a sample application that is already prepared\. Elastic Beanstalk uses the configuration information you specified in the previous step to do the following: 
-
 + Create an application using the application name you specified\.
-
 + Launch an environment using the environment name you specified that provisions the AWS resources to host the application\.
-
 + Deploy the application into the newly created environment\.
 
 Use the `start` command to create and deploy a sample application\.
 
 **To create the application**
-
 + From the directory where you created your local repository, type the following command:
 
   ```

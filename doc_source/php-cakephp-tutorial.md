@@ -2,7 +2,7 @@
 
 CakePHP is an open source, MVC framework for PHP\. This tutorial walks you through the process of generating a CakePHP project, deploying it to an Elastic Beanstalk environment, and configuring it to connect to an Amazon RDS database instance\.
 
-
+**Topics**
 + [Prerequisites](#php-cakephp-tutorial-prereqs)
 + [Install Composer](#php-cakephp-tutorial-composer)
 + [Install CakePHP and Generate a Website](#php-cakephp-tutorial-generate)

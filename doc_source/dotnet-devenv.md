@@ -4,7 +4,7 @@ Set up a \.NET development environment to test your application locally prior to
 
 For common setup steps and tools that apply to all languages, see [Configuring your development environment for use with AWS Elastic Beanstalk](chapter-devenv.md)\.
 
-
+**Topics**
 + [Installing an IDE](#dotnet-devenv-ide)
 + [Installing the AWS Toolkit for Visual Studio](#dotnet-devenv-toolkit)
 

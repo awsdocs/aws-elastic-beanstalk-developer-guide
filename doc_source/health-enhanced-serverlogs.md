@@ -31,17 +31,11 @@ The following example shows a log in the machine\-readable format\.
 ```
 
 The enhanced health log format includes the following information:
-
 + The time of the request, in Unix time\.
-
 + The path of the request\.
-
 + The HTTP status code for the result\.
-
 + The request time\.
-
 + The upstream time\.
-
 + The `X-Forwarded-For` HTTP header\.
 
 For nginx proxies, times are printed in floating\-point seconds, with three decimal places\. For Apache, whole milliseconds are used\.
@@ -107,13 +101,8 @@ server {
 ## Generating Logs for Enhanced Health Reporting<a name="w3ab1c25c11c57b7"></a>
 
 To provide logs to the health agent, you must do the following:
-
 + Output logs in the correct format, as shown in the previous section
-
 + Output logs to `/var/log/nginx/healthd/`
-
 + Name logs using the following format: `application.log.$year-$month-$day-$hour`
-
 + Rotate logs once per hour
-
 + Do not truncate logs

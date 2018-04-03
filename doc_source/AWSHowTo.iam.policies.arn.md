@@ -7,13 +7,9 @@ arn:aws:elasticbeanstalk:region:accountid:resourcetype/resourcepath
 ```
 
 Where:
-
 + `region` is the region the resource resides in \(for example, **us\-west\-2**\)\.
-
 + `accountid` is the AWS account ID, with no hyphens \(for example, **123456789012**\)
-
 + `resourcetype` identifies the type of the Elastic Beanstalk resource—for example, `environment`\. See the table below for a list of all Elastic Beanstalk resource types\.
-
 + `resourcepath` is the portion that identifies the specific resource\. An Elastic Beanstalk resource has a path that uniquely identifies that resource\. See the table below for the format of the resource path for each resource type\. For example, an environment is always associated with an application\. The resource path for the environment **myEnvironment** in the application **myApp** would look like this:
 
   ```

@@ -68,11 +68,8 @@ Outputs :
 ```
 
 For more information about the resources used in this example configuration file, see the following references: 
-
 + [AWS::SQS::Queue](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sqs-queues.html)
-
 + [AWS::SNS::Topic](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html)
-
 + [AWS::CloudWatch::Alarm](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html)
 
 Create a separate configuration file called `options.config` and define the custom option settings\.

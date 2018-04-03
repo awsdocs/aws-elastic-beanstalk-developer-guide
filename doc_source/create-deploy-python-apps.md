@@ -4,7 +4,7 @@ This section provides tutorials and information about deploying Python applicati
 
 The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
-
+**Topics**
 + [Setting Up Your Python Development Environment](create-deploy-python-common-steps.md)
 + [Using the AWS Elastic Beanstalk Python Platform](create-deploy-python-container.md)
 + [Deploying a Flask Application to AWS Elastic Beanstalk](create-deploy-python-flask.md)

@@ -10,9 +10,7 @@ Maps a Git branch to a new or existing Elastic Beanstalk environment and configu
 To map a Git branch, first run `git checkout <branch>`, specifying the name of the Git branch you want to map\. Then run `eb branch`\. If the branch has never been mapped to an Elastic Beanstalk environment, you'll have the option to copy the most current environment settings to the new environment\.
 
 Consider the following additional information about using `branch`:
-
 + If you run `eb init` on an existing repository and change the application name, region, or solution stack, the command resets all existing branch mappings\. Run `branch` again to map each branch to an environment\.
-
 + You can map different Git branches to the same Elastic Beanstalk environment but in most cases maintain one\-to\-one relationships between branches and environments\.
 
 For a tutorial that describes how to use eb to deploy a Git branch to Elastic Beanstalk, see [Deploying a Git Branch to a Specific Environment](command-reference-branch-environment.md)\.

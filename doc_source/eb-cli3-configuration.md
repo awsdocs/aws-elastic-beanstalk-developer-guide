@@ -91,7 +91,7 @@ The following example shows the configuration steps when running `eb init` for t
 
 Your EB CLI installation is now configured and ready to use\. See [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md) for instructions on creating and working with an Elastic Beanstalk environment\.
 
-
+**Topics**
 + [Ignoring Files Using \.ebignore](#eb-cli3-ebignore)
 + [Using Named Profiles](#eb-cli3-profile)
 + [Deploying an Artifact Instead of the Project Folder](#eb-cli3-artifact)

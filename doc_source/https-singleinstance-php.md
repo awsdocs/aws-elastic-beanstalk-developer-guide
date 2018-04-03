@@ -5,9 +5,7 @@ For PHP container types, you use a [configuration file](ebextensions.md) to enab
 Add the following snippet to your configuration file, replacing the certificate and private key material as instructed, and save it in your source bundle's `.ebextensions` directory\.
 
 The configuration file performs the following tasks:
-
 + The `packages` key uses yum to install `mod24_ssl`\.
-
 + The `files` key creates the following files on the instance:  
 `/etc/httpd/conf.d/ssl.conf`  
 Configures the Apache server\. This file loads when the Apache service starts\.  

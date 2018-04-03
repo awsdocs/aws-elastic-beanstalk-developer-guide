@@ -4,7 +4,7 @@ You can launch a cluster of multicontainer instances in a single\-instance or au
 
 The containers, a PHP application and an nginx proxy, run side by side on each of the Amazon EC2 instances in an Elastic Beanstalk environment\. After creating the environment and verifying that the applications are running, you'll connect to a container instance to see how it all fits together\.
 
-
+**Topics**
 + [Define Docker Containers](#create_deploy_docker_ecstutorial_config)
 + [Add Content](#create_deploy_docker_ecstutorial_code)
 + [Deploy to Elastic Beanstalk](#create_deploy_docker_ecstutorial_deploy)
@@ -184,13 +184,9 @@ First, identify the instance and note its public IP address, which is available 
 Next, use an SSH client and your private key file to connect to the instance\. Use the following settings: 
 
 **SSH Settings**
-
 + **Address** – The public IP address or DNS name of the EC2 instance\.
-
 + **Port** – **22**\. This port is opened for ingress by Elastic BeanstalkBeanstalk when you select an Amazon EC2 key pair during environment configuration\.
-
 + **User Name** – **ec2\-user**\. This is the default user name for EC2 instances running Amazon Linux\.
-
 + **Private Key** – Your private key file\.
 
 For full instructions on using SSH to connect to an EC2 instance, see [ Connecting to Your Linux Instance Using SSH ](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
@@ -271,13 +267,9 @@ For more information, make an HTTP get request to information is available at `h
 ```
 
 This structure describes the task that is run to deploy the two docker containers from this tutorial's example project\. The following information is displayed: 
-
 + **KnownStatus** – The `RUNNING` status indicates that the containers are still active\.
-
 + **Family** – The name of the task definition that Elastic Beanstalk created from `Dockerrun.aws.json`\.
-
 + **Version** – The version of the task definition\. This is incremented each time the task definition file is updated\.
-
 + **Containers** – Information about the containers running on the instance\.
 
 Even more information is available from the Amazon ECS service itself, which you can call using the AWS Command Line Interface\. For instructions on using the AWS CLI with Amazon ECS, and information about Amazon ECS in general, see the [ Amazon ECS User Guide](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ECS_GetStarted.html)\. 

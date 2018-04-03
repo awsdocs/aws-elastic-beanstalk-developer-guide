@@ -32,7 +32,7 @@ You can use the Elastic Beanstalk console to configure a Classic Load Balancer's
 
 1. On the **Load balancer** configuration card, choose **Modify**\.
 
-
+**Topics**
 + [Ports and Cross\-Zone Load Balancing](#using-features.managing.elb.ports)
 + [Connection Draining](#using-features.managing.elb.draining)
 + [Sessions](#using-features.managing.elb.sessions)
@@ -50,9 +50,9 @@ For HTTPS, you can add a secure listener with the **port** and **protocol** opti
 
 **To turn on the secure listener port**
 
-1. Create and upload a certificate and key to AWS Identity and Access Management \(IAM\)\.
+1. Create a new certificate using AWS Certificate Manager \(ACM\) or upload a certificate and key to AWS Identity and Access Management \(IAM\)\. For more information about requesting an ACM certificate, see [Request a Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide*\. For more information about importing third\-party certificates into ACM, see [Importing Certificates](http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\. If ACM is not [available in your region](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region), upload your existing certificate and key to IAM\.
 
-   For more information about creating and uploading certificates, see [Managing Server Certificates](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in *Using AWS Identity and Access Management*\.
+   For more information about creating and uploading certificates to IAM, see [Working with Server Certificates](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in *IAM User Guide*\.
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
@@ -64,7 +64,7 @@ For HTTPS, you can add a secure listener with the **port** and **protocol** opti
 
 1. In the **Secure ELB listener** section, select a port from the **Port** list to specify the secure listener port\.
 
-1. For **SSL Certificate**, choose the ARN of your SSL certificate\. For example, `arn:aws:iam::123456789012:server-certificate/abc/certs/build`\)\.
+1. For **SSL Certificate**, choose the ARN of your SSL certificate\. For example, `arn:aws:iam::123456789012:server-certificate/abc/certs/build`, or `arn:aws:acm:us-west-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678.`\.
 
 1. \(Optional\) Set **Port** in the **ELB listener** section to **Off** to disable the standard listener\.
 
@@ -100,15 +100,10 @@ For more information about health checks and how they influence your environment
 ## Load Balancer Configuration Namespaces<a name="environments-cfg-loadbalancer-namespace"></a>
 
 Elastic Beanstalk provides additional [configuration options](command-options.md) in the following namespaces that enable you to further customize the load balancer in your environment:
-
 + [`aws:elb:healthcheck`](command-options-general.md#command-options-general-elbhealthcheck) – Configure the thresholds, check interval, and timeout for ELB health checks\.
-
 + [`aws:elasticbeanstalk:application`](command-options-general.md#command-options-general-elasticbeanstalkapplication) – Configure the health check URL\.
-
 + [`aws:elb:loadbalancer`](command-options-general.md#command-options-general-elbloadbalancer) – Enable cross\-zone load balancing\. Assign security groups to the load balancer and override the default security group that Elastic Beanstalk creates\. This namespace also includes deprecated options for configuring the standard and secure listeners that have been replaced by options in the `aws:elb:listener` namespace\.
-
 + [`aws:elb:listener`](command-options-general.md#command-options-general-elblistener) – Configure the default listener on port 80, a secure listener on 443, or additional listeners for any protocol on any port\.
-
 + [`aws:elb:policies`](command-options-general.md#command-options-general-elbpolicies) – Configure additional settings for your load balancer\. You can use options in this namespace to configure listeners on arbitrary ports, modify additional sticky session settings, and configure the load balancer to connect to EC2 instances securely\.
 
 ### `aws:elb:listener`<a name="environments-cfg-loadbalancer-namespace-listener"></a>
@@ -123,7 +118,7 @@ The following example configuration file creates an HTTPS listener on port 443, 
 option_settings:
   aws:elb:listener:443:
     ListenerProtocol: HTTPS
-    SSLCertificateId: arn:aws:iam::123456789012:server-certificate/elastic-beanstalk-x509
+    SSLCertificateId: arn:aws:acm:us-west-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678
     InstancePort: 80
     InstanceProtocol: HTTP
   aws:elb:listener:80:

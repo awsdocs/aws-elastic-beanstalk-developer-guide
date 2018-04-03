@@ -7,57 +7,35 @@ This tutorial uses a sample ASP\.NET Web application that you can download [here
 
 ## Create the Environment<a name="aws-elastic-beanstalk-tutorial-step-1-create-environment"></a>
 
-First, use the Create New Application wizard in the Elastic Beanstalk console to create the application environment\.
+First, use the Create New Application wizard in the Elastic Beanstalk console to create the application environment\. For **Platform**, choose **\.NET**\.
 
-**To create the environment**
+**To launch an environment \(console\)**
+
+1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
+
+1. For **Platform**, choose the platform that matches the language used by your application\.
+
+1. For **Application code**, choose **Sample application**\.
+
+1. Choose **Review and launch**\.
+
+1. Review the available options\. When you're satisfied with them, choose **Create app**\.
+
+When the environmentis up and running, add an Amazon RDS database instance that the application uses to store data\. For **DB engine**, choose **sqlserver\-ex**\.
+
+**To add a DB instance to your environment**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
-**Note**  
-If the New Environment wizard does not show the screens described below, see [The Old New Environment Wizard](environments-create-wizard-old.md)\.
 
-1. Choose **Create New Application**\.  
-![\[Elastic Beanstalk .NET tutorial create new application wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-create-new-application.png)
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. On the **Application Information** page, enter an **Application name**, and then choose **Next**\.  
-![\[Elastic Beanstalk .NET tutorial enter application name\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-enter-application-name.png)
+1. Choose **Configuration**\.
 
-1. On the **New Environment** page, choose **Create web server**\.  
-![\[Elastic Beanstalk .NET tutorial create web server\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-create-web-server.png)
+1. On the **Database** configuration card, choose **Modify**\.
 
-1. On the **Environment Type** page, for **Predefined configuration**, choose **IIS**\.  
-![\[Elastic Beanstalk .NET tutorial environment type IIS\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-environment-type-iis.png)
+1. Choose a DB engine, and enter a user name and password\.
 
-1. For **Environment type**, accept the default, **Load balancing, auto scaling**, and then choose **Next**\.  
-![\[Elastic Beanstalk .NET tutorial environment type load balancing auto scaling\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-environment-type-load-balancing-auto-scaling.png)
-
-1. On the **Application Version** page, for **Source**, choose **Sample application**, and then choose **Next**\.  
-![\[Elastic Beanstalk .NET tutorial application version sample application\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-application-version.png)
-
-1. On the **Environment Information** page, accept all defaults, and then choose **Next**\.  
-![\[Elastic Beanstalk .NET tutorial environment information\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-environment-information.png)
-
-1. On the **Additional Resources** page, choose **Create an RDS DB instance with this environment**, and then choose **Next**\.  
-![\[Elastic Beanstalk .NET tutorial create RDS database instance\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-create-rds-db-instance.png)
-
-1. On the **Configuration Details** page, for **Instance type**, choose **t2\.micro**\.
-
-   Accept the default values for the other fields, and then choose **Next**\.  
-![\[Elastic Beanstalk .NET tutorial configuration details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-configuration-details.png)
-
-1. On the **Environment Tags** page, leave both the **Key** and the **Value** fields blank, and then choose **Next**\.  
-![\[Elastic Beanstalk .NET tutorial Environment Tags\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-environment-tags.png)
-
-1. Choose **Next** on the **Permissions** page\. If you don't have a default [instance profile and service role](concepts-roles.md), Elastic Beanstalk creates them for you\.
-
-1. On the **RDS Configuration** page, for **DB engine**, choose **sqlserver\-ex**\. For **Instance class**, choose **db\.t2\.micro**, and then increase the **Allocated storage** to **20 GB**\.  
-![\[Elastic Beanstalk .NET tutorial RDS configuration\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-rds-configuration.png)
-
-1. Create a **Username** and **Password**, and then choose **Next**\.
-
-1. On the **Review Information** page, review the settings, and then choose **Launch**\.
-
-   To check launch status, see the **Dashboard** page in the Elastic Beanstalk console\.  
-![\[Elastic Beanstalk .NET tutorial Launching environment status page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-launching-environment.png)
+1. Choose **Save**, and then choose **Apply**\.
 
 ## Publish Your Application to Elastic Beanstalk<a name="aws-elastic-beanstalk-tutorial-step-2-publish-application"></a>
 

@@ -13,15 +13,10 @@ AWS X\-Ray provides an SDK that you can use to instrument your application code,
 **Supported platforms**
 
 You can use the AWS X\-Ray SDK with the following Elastic Beanstalk platform configurations:
-
 + **Java 8** \- version 2\.3\.0 and later
-
 + **Java 8 with Tomcat 8** \- version 2\.4\.0 and later
-
 + **Node\.js** \- version 3\.2\.0 and later
-
 + **Python** \- version 2\.5\.0 and later
-
 + **Windows Server** \- all configurations, starting December 9th, 2016
 
 On supported platforms, you can use a configuration option to run the X\-Ray daemon on the instances in your environment\. You can enable the daemon in the [Elastic Beanstalk console](#environment-configuration-debugging-console) or by using a [configuration file](#environment-configuration-debugging-namespace)\.
@@ -33,7 +28,7 @@ Debugging with AWS X\-Ray requires the use of the AWS X\-Ray SDK\. See the [AWS 
 
 If you use a platform configuration that doesn't include the daemon, you can still run it with a script in a configuration file\. For more information, see [ Downloading and Running the X\-Ray Daemon Manually \(Advanced\)](http://docs.aws.amazon.com//xray/latest/devguide/xray-daemon-beanstalk.html#xray-daemon-beanstalk-manual) in the *AWS X\-Ray Developer Guide*\.
 
-
+**Topics**
 + [Configuring Debugging](#environment-configuration-debugging-console)
 + [The aws:elasticbeanstalk:xray Namespace](#environment-configuration-debugging-namespace)
 

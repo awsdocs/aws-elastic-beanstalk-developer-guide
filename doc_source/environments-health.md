@@ -2,7 +2,7 @@
 
 When you are running a production website, it is important to know that your application is available and responding to requests\. To assist with monitoring your application’s responsiveness, Elastic Beanstalk provides features that monitor statistics about your application and create alerts that trigger when thresholds are exceeded\.
 
-
+**Topics**
 + [Monitoring Environment Health in the AWS Management Console](environment-health-console.md)
 + [Basic Health Reporting](using-features.healthstatus.md)
 + [Enhanced Health Reporting and Monitoring](health-enhanced.md)

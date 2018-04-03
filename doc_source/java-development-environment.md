@@ -4,7 +4,7 @@ Set up a Java development environment to test your application locally prior to 
 
 For common setup steps and tools that apply to all languages, see [Configuring your development environment for use with AWS Elastic Beanstalk](chapter-devenv.md)
 
-
+**Topics**
 + [Installing the Java Development Kit](#java-development-environment-jdk)
 + [Installing a Web Container](#java-development-environment-tomcat)
 + [Downloading Libraries](#java-development-environment-libraries)
@@ -21,9 +21,7 @@ The JDK includes the Java compiler, which you can use to build your source files
 ## Installing a Web Container<a name="java-development-environment-tomcat"></a>
 
 If you don't already have another web container or framework, install the appropriate version of Tomcat:
-
 +  [Download Tomcat 8 \(requires Java 7 or later\)](http://tomcat.apache.org/download-80.cgi) 
-
 +  [Download Tomcat 7 \(requires Java 6 or later\)](http://tomcat.apache.org/download-70.cgi) 
 
 ## Downloading Libraries<a name="java-development-environment-libraries"></a>
@@ -33,11 +31,8 @@ Elastic Beanstalk platform configurations include few libraries by default\. Dow
 If you've installed Tomcat locally, you can copy the servlet API and JavaServer Pages \(JSP\) API libraries from the installation folder\. If you deploy to a Tomcat platform configuration, you don't need to include these files in your source bundle, but you do need to have them in your `classpath` to compile any classes that use them\.
 
 JUnit, Google Guava, and Apache Commons provide several useful libraries\. Visit their homepages to learn more:
-
 +  [Download JUnit](https://github.com/junit-team/junit/wiki/Download-and-Install) 
-
 +  [Download Google Guava](https://code.google.com/p/guava-libraries/) 
-
 +  [Download Apache Commons](http://commons.apache.org/downloads/) 
 
 ## Installing the AWS SDK for Java<a name="java-development-environment-sdk"></a>
@@ -49,9 +44,7 @@ Visit the [AWS SDK for Java homepage](https://aws.amazon.com/sdk-for-java/) for 
 ## Installing an IDE or Text Editor<a name="java-development-environment-ide"></a>
 
 Integrated development environments \(IDEs\) provide a wide range of features that facilitate application development\. If you haven't used an IDE for Java development, try Eclipse and IntelliJ and see which works best for you\.
-
 +  [Install Eclipse IDE for Java EE Developers](https://www.eclipse.org/downloads/) 
-
 +  [Install IntelliJ](https://www.jetbrains.com/idea/) 
 
 **Note**  

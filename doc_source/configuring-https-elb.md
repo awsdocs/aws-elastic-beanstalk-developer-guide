@@ -17,6 +17,8 @@ You can use the Elastic Beanstalk console to configure a secure listener and ass
 If the **Load balancer** configuration card doesn't have a **Modify** button, your environment doesn't have a [load balancer](using-features-managing-env-types.md#using-features.managing.changetype)\.
 
 1. On the **Modify load balancer** page, choose your certificate from the **SSL certificate** drop\-down menu\.
+**Note**  
+If the drop\-down menu doesn't show any certificates, you should create or upload a certificate in [AWS Certificate Manager \(ACM\)](http://docs.aws.amazon.com/acm/latest/userguide/) \(preferred\), or upload a certificate to IAM with the AWS CLI\.
 
 1. Choose **Save**, and then choose **Apply**\.
 
@@ -34,7 +36,7 @@ option_settings:
     InstancePort: 80
 ```
 
-Replace the highlighted text with the ARN of your certificate\. The certificate can be one that you created in AWS Certificate Manager or one that you uploaded to IAM with the AWS CLI\.
+Replace the highlighted text with the ARN of your certificate\. The certificate can be one that you created or uploaded in AWS Certificate Manager \(ACM\) \(preferred\), or one that you uploaded to IAM with the AWS CLI\.
 
 The previous example uses options in the `aws:elb:listener` namespace to configure an HTTPS listener on port 443 with the specified certificate, and to forward the decrypted traffic to the instances in your environment on port 80\.
 

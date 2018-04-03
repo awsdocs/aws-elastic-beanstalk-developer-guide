@@ -4,20 +4,17 @@ You can use the Elastic Beanstalk Command Line Interface \(EB CLI\) to run the D
 
 The EB CLI supports running single container, multicontainer, and preconfigured container applications locally\.
 
-
+**Topics**
 + [Prerequisites for Running Docker Applications Locally](#create_deploy_docker-eblocal-prereqs)
 + [Preparing a Docker Application for Use with the EB CLI](#create_deploy_docker-eblocal-prepare)
 + [Running a Docker Application Locally](#create_deploy_docker-eblocal-localrun)
 + [Cleaning Up After Running a Docker Application Locally](#create_deploy_docker-eblocal-cleanup)
 
 ## Prerequisites for Running Docker Applications Locally<a name="create_deploy_docker-eblocal-prereqs"></a>
-
 + Linux OS or Mac OS X
-
 + [EB CLI version 3\.3 or greater](eb-cli3-install.md)
 
   Run `eb init` in your project directory to initialize an EB CLI repository\. If you haven't used the EB CLI before, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
-
 + [Docker version 1\.6 or greater](https://docs.docker.com/engine/installation/)
 
   Add yourself to the `docker` group, log out, and then log back in to ensure that you can run Docker commands without `sudo`:
@@ -32,15 +29,12 @@ The EB CLI supports running single container, multicontainer, and preconfigured 
   $ docker ps
   CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
   ```
-
 + A Docker application
 
   If you don't have a Docker application in a project folder on your local machine, see [Deploying Elastic Beanstalk Applications from Docker Containers](create_deploy_docker.md) for an introduction to using Docker with AWS Elastic Beanstalk\.
-
 + Docker profile \(optional\)
 
   If your application uses Docker images that are in a private repository, run `docker login` and follow the prompts to create an authentication profile\.
-
 + w3m \(optional\)
 
   W3m is a web browser that you can use to view your running web application within a command line terminal with `eb local run`\. If you are using the command line in a desktop environment, you don't need w3m\.

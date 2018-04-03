@@ -3,9 +3,7 @@
 For Tomcat container types, you use a [configuration file](ebextensions.md) to enable the Apache HTTP Server to use HTTPS when acting as the reverse proxy for Tomcat\.
 
 Add the following snippet to your configuration file, replacing the certificate and private key material as instructed, and save it in your source bundle's `.ebextensions` directory\. The configuration file performs the following tasks:
-
 + The `packages` key uses yum to install `mod_ssl`\.
-
 + The `files` key creates the following files on the instance:  
 `/etc/pki/tls/certs/server.crt`  
 Creates the certificate file on the instance\. Replace *certificate file contents* with the contents of your certificate\.  
@@ -51,7 +49,6 @@ files:
 ```
 
 Your certificate vendor may include intermediate certificates that you can install for better compatibility with mobile clients\. Configure Apache with an intermediate certificate authority \(CA\) bundle by adding the following to your SSL configuration file \(see [Extending the Default Apache Configuration](java-tomcat-proxy.md#java-tomcat-proxy-apache) for the location\):
-
 + In the `ssl.conf` file contents, specify the chain file:
 
   ```
@@ -59,7 +56,6 @@ Your certificate vendor may include intermediate certificates that you can insta
   SSLCertificateChainFile "/etc/pki/tls/certs/gd_bundle.crt"
   SSLCipherSuite        EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH
   ```
-
 + Add a new entry to the `files` key with the contents of the intermediate certificates:
 
   ```

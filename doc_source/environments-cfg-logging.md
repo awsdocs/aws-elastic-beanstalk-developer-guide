@@ -1,9 +1,7 @@
 # Viewing Logs from Your Elastic Beanstalk Environment's Amazon EC2 Instances<a name="environments-cfg-logging"></a>
 
 AWS Elastic Beanstalk provides two ways for you to regularly view logs from the Amazon EC2 instances that run your application:
-
 + You can configure your Elastic Beanstalk environment to upload rotated instance logs to the environment's Amazon S3 bucket\.
-
 + You can configure the environment to stream instance logs to Amazon CloudWatch Logs\.
 
 When you configure CloudWatch Logs, Elastic Beanstalk creates log groups for proxy and deployment logs on the Amazon EC2 instances and transfers these log files to CloudWatch Logs in real time\.
@@ -27,11 +25,8 @@ You can enable log rotation and log streaming in the Elastic Beanstalk console\.
 1. Under **S3 log storage**, choose **Rotate logs** to enable uploading rotated logs to Amazon S3\.
 
 1. Under **CloudWatch logs**, configure the following settings\.
-
    + **Log streaming** – Choose to enable log streaming\.
-
    + **Retention** – Specify the number of days to retain logs in CloudWatch Logs\.
-
    + **Lifecycle** – Set to **Delete logs upon termination** to delete logs from CloudWatch Logs immediately if the environment is terminated, instead of waiting for them to expire\.
 
 1. Choose **Apply**\.
@@ -43,7 +38,5 @@ After you enable log streaming, you can return to the configuration page to find
 ## Log Viewing Namespaces<a name="environments-cfg-logging-namespaces"></a>
 
 Settings related to log viewing are in the following namespaces:
-
 + [`aws:elasticbeanstalk:hostmanager`](command-options-general.md#command-options-general-elasticbeanstalkhostmanager) – Configure uploading rotated logs to Amazon S3\.
-
 + [`aws:elasticbeanstalk:cloudwatch:logs`](command-options-general.md#command-options-general-cloudwatchlogs) – Configure log streaming to CloudWatch\.

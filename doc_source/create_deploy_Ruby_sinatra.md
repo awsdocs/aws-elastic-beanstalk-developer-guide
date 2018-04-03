@@ -5,7 +5,7 @@ This walkthrough shows how to deploy a simple [Sinatra](http://www.sinatrarb.com
 **Note**  
 Creating environments with the EB CLI requires a [service role](concepts-roles-service.md)\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
 
-
+**Topics**
 + [Prerequisites](#create_deploy_Ruby_sinatra-prereq)
 + [Step 1: Set Up Your Project](#create_deploy_Ruby_sinatra-gitinit)
 + [Step 2: Create an Application](#create_deploy_Ruby_eb_init)
@@ -17,25 +17,20 @@ Creating environments with the EB CLI requires a [service role](concepts-roles-s
 ## Prerequisites<a name="create_deploy_Ruby_sinatra-prereq"></a>
 
 This walkthrough requires a Linux, Windows or OS X workstation\. Performing the walkthrough will modify your workstation's Git and EB CLI configuration\. If you do not want to modify your workstation's configuration for the walkthrough, you can use one of the following:
-
 + An instance running in a virtual machine on your workstation\.
 
   This walkthrough was prepared using [Vagrant](https://www.vagrantup.com/) to run a Ubuntu 14\.04 LTS instance in [VirtualBox](https://www.virtualbox.org/)\.
-
 + An Amazon Elastic Compute Cloud \(Amazon EC2\) instance\.
 
   [Use SSH](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) to log in to the instance\. You can perform the entire walkthrough from the command line\. When you have finished, you can terminate the instance\.
 
 The following tools are required to complete this walkthrough:
-
 + The EB CLI, installed as described in [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md)\. 
 
   This topic also describes how to sign up for an AWS account, if you do not have one\.
-
 + AWS credentials that have permissions to create the AWS resources that make up the application's environment on your system\.
 
   These credentials allow the EB CLI to act on your behalf to create the environment's resources\. If you do not have stored credentials, the EB CLI prompts you for credentials when you create the application\. For more information on how to store credentials and how the EB CLI handles stored credentials, see [Configuration Settings and Precedence](eb-cli3-configuration.md#eb-cli3-credentials)\. For more information on the required permissions, see [Using Elastic Beanstalk with AWS Identity and Access Management](AWSHowTo.iam.md)\.
-
 + Git
 
   For Linux systems, you can use the package manager to install Git\. For example, the following command installs Git on Debian\-family Linux systems, such as Ubuntu\.
@@ -183,17 +178,11 @@ Next, create an Elastic Beanstalk environment and deploy a sample application to
 If you see a "service role required" error message, run `eb create` interactively \(without specifying an environment name\) and the EB CLI creates the role for you\.
 
  With just one command, the EB CLI sets up all of the resources our application needs to run in AWS, including the following: 
-
 + An Amazon S3 bucket to store environment data
-
 + A load balancer to distribute traffic to the web server\(s\)
-
 + A security group to allow incoming web traffic
-
 + An Auto Scaling group to adjust the number of servers in response to load changes
-
 + Amazon CloudWatch alarms that notify the Auto Scaling group when load is low or high
-
 + An Amazon EC2 instance hosting our application
 
  When the process is complete, the EB CLI outputs the public DNS name of the application server\. Use `eb open` to open the website in the default browser:

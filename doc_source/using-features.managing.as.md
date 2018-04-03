@@ -10,7 +10,7 @@ To optimize your environment's use of Amazon EC2 instances through predictable p
 
 Amazon EC2 Auto Scaling monitors the health of each Amazon EC2 instance that it launches\. If any instance terminates unexpectedly, Amazon EC2 Auto Scaling detects the termination and launches a replacement instance\. To configure the group to use the load balancer's health check mechanism, see [Auto Scaling Health Check Setting](environmentconfig-autoscaling-healthchecktype.md)\.
 
-
+**Topics**
 + [Configuring Your Environment's Auto Scaling Group](#environments-cfg-autoscaling-console)
 + [The aws:autoscaling:asg Namespace](#environments-cfg-autoscaling-namespace)
 + [Auto Scaling Triggers](environments-cfg-autoscaling-triggers.md)
@@ -33,21 +33,15 @@ You can configure how Amazon EC2 Auto Scaling works by editing **Capacity** on t
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-capacity.png)
 
 1. In the **Auto Scaling Group** section, configure the following settings\.
-
    + **Environment type** – Select **Load balanced**\.
-
    + **Min instances** – The minimum number of EC2 instances that the group should contain at any time\. The group starts with the minimum count and adds instances when the scale\-up trigger condition is met\.
-
    + **Max instances** – The maximum number of EC2 instances that the group should contain at any time\.
 **Note**  
 If you use rolling updates, be sure that the maximum instance count is higher than the [**Minimum instances in service** setting](using-features.rollingupdates.md#rollingupdates-configure) for rolling updates\.
-
    + **Availability Zones** – Choose the number of Availability Zones to spread your environment's instances across\. By default, the Auto Scaling group launches instances evenly across all usable zones\. To concentrate your instances in fewer zones, choose the number of zones to use\. For production environments, use at least two zones to ensure that your application is available in case one Availability Zone goes out\.
-
    + **Placement** \(optional\) – Choose the Availability Zones to use\. Use this setting if your instances need to connect to resources in specific zones, or if you have purchased [reserved instances](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html), which are zone\-specific\. If you also set the number of zones, you must choose at least that many custom zones\.
 
      If you launch your environment in a custom VPC, you cannot configure this option\. In a custom VPC, you choose Availability Zones for the subnets that you assign to your environment\.
-
    + **Scaling cooldown** – The amount of time, in seconds, to wait for instances to launch or terminate after scaling, before continuing to evaluate triggers\. For more information, see [Scaling Cooldowns](http://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html)\.  
 ![\[Elastic Beanstalk Auto Scaling Configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-autoscaling.png)
 

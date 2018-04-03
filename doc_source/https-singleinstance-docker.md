@@ -3,7 +3,6 @@
 For Docker containers, you use a [configuration file](ebextensions.md) to enable HTTPS\.
 
 Add the following snippet to your configuration file, replacing the certificate and private key material as instructed, and save it in your source bundle's `.ebextensions` directory\. The configuration file performs the following tasks:
-
 + The `files` key creates the following files on the instance:  
 `/etc/nginx/conf.d/https.conf`  
 Configures the nginx server\. This file is loaded when the nginx service starts\.  

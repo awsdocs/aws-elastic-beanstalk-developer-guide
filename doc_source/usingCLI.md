@@ -52,7 +52,6 @@ $ chmod 600 <the file created above>
 With the credentials file set up, you'll need to set the AWS\_CREDENTIAL\_FILE environment variable so that the Elastic Beanstalk CLI tools can find your information\.
 
  **To set the AWS\_CREDENTIAL\_FILE environment variable** 
-
 + Set the environment variable using the following command:  
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/usingCLI.html)
@@ -62,7 +61,6 @@ With the credentials file set up, you'll need to set the AWS\_CREDENTIAL\_FILE e
 By default, AWS Elastic Beanstalk uses the US East \(N\. Virginia\) region \(us\-east\-1\) with the elasticbeanstalk\.us\-east\-1\.amazonaws\.com service endpoint URL\. This section describes how to specify a different region by setting the service endpoint URL\. For information about this product's regions, go to [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html?r=1166) in the *Amazon Web Services General Reference*\. 
 
 **To set the service endpoint URL**
-
 + Set the environment variable using the following command:  
 ****    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/usingCLI.html)

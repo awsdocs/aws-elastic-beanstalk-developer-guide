@@ -17,23 +17,14 @@ You can configure the triggers that adjust the number of instances in your envir
 1. On the **Capacity** configuration card, choose **Modify**\.
 
 1. In the **Scaling triggers** section, configure the following settings:
-
    + **Metric** – Metric used for your Auto Scaling trigger\.
-
    + **Statistic** – Statistic calculation the trigger should use, such as `Average`\.
-
    + **Unit** – Unit for the trigger metric, such as **Bytes**\.
-
    + **Period** – Specifies how frequently Amazon CloudWatch measures the metrics for your trigger\.
-
    + **Breach duration** – Amount of time, in minutes, a metric can be outside of the upper and lower thresholds before triggering a scaling operation\.
-
    + **Upper threshold** – If the metric exceeds this number for the breach duration, a scaling operation is triggered\. 
-
    + **Scale up increment** – The number of Amazon EC2 instances to add when performing a scaling activity\.
-
    + **Lower threshold** – If the metric falls below this number for the breach duration, a scaling operation is triggered\. 
-
    + **Scale down increment** – The number of Amazon EC2 instances to remove when performing a scaling activity\.  
 ![\[Elastic Beanstalk Auto Scaling triggers configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-autoscaling-triggers.png)
 

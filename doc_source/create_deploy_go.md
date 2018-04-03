@@ -4,6 +4,6 @@ AWS Elastic Beanstalk supports applications that are developed using the Go prog
 
 The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
-
+**Topics**
 + [Using the AWS Elastic Beanstalk Go Platform](go-environment.md)
 + [Using the Elastic Beanstalk Docker\-based Go Platform](go_docker_platform.md)

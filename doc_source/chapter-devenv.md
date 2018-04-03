@@ -1,6 +1,6 @@
 # Configuring your development environment for use with AWS Elastic Beanstalk<a name="chapter-devenv"></a>
 
-
+**Topics**
 + [Creating a Project Folder](#devenv-project-folder)
 + [Setting Up Source Control](#devenv-git)
 + [Configuring a Remote Repository](#devenv-git-backup)

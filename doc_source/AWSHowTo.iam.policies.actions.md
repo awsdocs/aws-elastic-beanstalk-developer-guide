@@ -30,7 +30,7 @@ In addition, you can specify the environment configuration with a solution stack
 }
 ```
 
-
+**Topics**
 + [Policy Information for Elastic Beanstalk Actions](#AWSHowTo.iam.policies.actions.table)
 + [Condition Keys for Elastic Beanstalk Actions](#AWSHowTo.iam.policies.conditions)
 

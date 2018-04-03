@@ -1,16 +1,13 @@
 # Single Container Docker Configuration<a name="create_deploy_docker_image"></a>
 
 This section describes how to prepare your Docker image and container for uploading to Elastic Beanstalk\. Any web application that you deploy to Elastic Beanstalk in single\-container Docker container must include a `Dockerfile`, which defines a custom image, a `Dockerrun.aws.json` file, which specifies an existing image to use and environment configuration, or both\. You can deploy your web application from a Docker container to Elastic Beanstalk by doing one of the following:
-
 + Create a `Dockerfile` to customize an image and to deploy a Docker container to Elastic Beanstalk\.
-
 + Create a `Dockerrun.aws.json` file to deploy a Docker container from an existing Docker image to Elastic Beanstalk\.
-
 + Create a `.zip` file containing your application files, any application file dependencies, the `Dockerfile`, and the `Dockerrun.aws.json` file\.
 
   If you use only a `Dockerfile` or only a `Dockerrun.aws.json` file to deploy your application, you do not need to compress the file into a \.zip file\.
 
-
+**Topics**
 + [Dockerrun\.aws\.json v1](#create_deploy_docker_image_dockerrun)
 + [Using Images from a Private Repository](#docker-singlecontainer-dockerrun-privaterepo)
 + [Building Custom Images with a Dockerfile](#create_deploy_docker_image_dockerfile)

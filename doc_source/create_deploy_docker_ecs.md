@@ -8,7 +8,7 @@
 Some regions don't offer Amazon ECS\. Multicontainer Docker environments aren't supported in these regions\.  
 For information about the AWS services offered in each region, see [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)\.
 
-
+**Topics**
 + [Multicontainer Docker Platform](#create_deploy_docker_ecs_platform)
 + [Dockerrun\.aws\.json File](#create_deploy_docker_ecs_dockerrun)
 + [Docker Images](#create_deploy_docker_ecs_images)
@@ -44,11 +44,8 @@ The following diagram shows an example Elastic Beanstalk environment configured 
  Building custom images during deployment with a `Dockerfile` is not supported by the multicontainer Docker platform on Elastic Beanstalk\. Build your images and deploy them to an online repository before creating an Elastic Beanstalk environment\. 
 
  Specify images by name in `Dockerrun.aws.json`\. Note these conventions:
-
 +  Images in official repositories on Docker Hub use a single name \(for example, `ubuntu` or `mongo`\)\.
-
 + Images in other repositories on Docker Hub are qualified with an organization name \(for example, `amazon/amazon-ecs-agent`\)\.
-
 + Images in other online registries are qualified further by a domain name \(for example, `quay.io/assemblyline/ubuntu`\)\. 
 
  To configure Elastic Beanstalk to authenticate to a private repository, include the `authentication` parameter in your `Dockerrun.aws.json` file\. 
@@ -86,15 +83,10 @@ If you create your own instance profile, you can attach the `AWSElasticBeanstalk
 ## Amazon ECS Resources Created by Elastic Beanstalk<a name="create_deploy_docker_ecs_resources"></a>
 
  When you create an environment using the multicontainer Docker platform, Elastic Beanstalk automatically creates and configures several Amazon Elastic Container Service resources while building the environment in order to create the necessary containers on each Amazon EC2 instance\. 
-
 + **Amazon ECS Cluster** – Container instances in Amazon ECS are organized into clusters\. When used with Elastic Beanstalk, one cluster is always created for each multicontainer Docker environment\. 
-
 + **Amazon ECS Task Definition** – Elastic Beanstalk uses the `Dockerrun.aws.json` file in your project to generate the Amazon ECS task definition that is used to configure container instances in the environment\. 
-
 + **Amazon ECS Task** – Elastic Beanstalk communicates with Amazon ECS to run a task on every instance in the environment to coordinate container deployment\. In an autoscaling environment, Elastic Beanstalk initiates a new task whenever an instance is added to the cluster\. In rare cases you may have to increase the amount of space reserved for containers and images\. Learn more in the [Configuring Docker Environments](create_deploy_docker.container.console.md) section\.
-
 + **Amazon ECS Container Agent** – The agent runs in a Docker container on the instances in your environment\. The agent polls the Amazon ECS service and waits for a task to run\. 
-
 + **Amazon ECS Data Volumes** – Elastic Beanstalk inserts volume definitions \(in addition to the volumes that you define in `Dockerrun.aws.json`\) into the task definition to facilitate log collection\. 
 
    Elastic Beanstalk creates log volumes on the container instance, one for each container, at `/var/log/containers/containername`\. These volumes are named `awseb-logs-containername` and are provided for containers to mount\. See [Container Definition Format](create_deploy_docker_v2config.md#create_deploy_docker_v2config_dockerrun_format) for details on how to mount them\. 

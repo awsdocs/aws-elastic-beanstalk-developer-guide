@@ -43,11 +43,11 @@ Elastic Load Balancing supports the HTTPS/TLS protocol to enable traffic encrypt
 
 **To turn on the HTTPS port**
 
-1. Create and upload a certificate and key to the AWS Identity and Access Management \(IAM\) service\. The IAM service will store the certificate and provide an Amazon Resource Name \(ARN\) for the SSL certificate you've uploaded\. For more information on creating and uploading certificates, see the [Managing Server Certificates](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) section of *Using AWS Identity and Access Management*\.
+1. Create a new certificate using AWS Certificate Manager \(ACM\) or upload a certificate and key to AWS Identity and Access Management \(IAM\)\. For more information about requesting an ACM certificate, see [Request a Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide*\. For more information about importing third\-party certificates into ACM, see [Importing Certificates](http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\. If ACM is not [available in your region](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region), use AWS Identity and Access Management \(IAM\) to upload a third\-party certificate\. The ACM and IAM services store the certificate and provide an Amazon Resource Name \(ARN\) for the SSL certificate\. For more information about creating and uploading certificates to IAM, see [Working with Server Certificates](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in *IAM User Guide*\.
 
 1. Specify the HTTPS port by selecting a port from the **HTTPS Listener Port** drop\-down list\.
 
-1. In the **SSL Certificate ID** text box, enter the Amazon Resources Name \(ARN\) of your SSL certificate \(e\.g\., `arn:aws:iam::123456789012:server-certificate/abc/certs/build`\)\. Use the SSL certificate that you created and uploaded in step 1\. For information on viewing the certificate's ARN, see [Verify the Certificate Object](http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?InstallCert.html) topic in the *Creating and Uploading Server Certificates* section of the *Using IAM Guide*\.
+1. In the **SSL Certificate ID** text box, enter the Amazon Resources Name \(ARN\) of your SSL certificate\. For example, **arn:aws:iam::123456789012:server\-certificate/abc/certs/build** or **arn:aws:acm:us\-west\-2:123456789012:certificate/12345678\-12ab\-34cd\-56ef\-12345678**\. Use the SSL certificate that you created and uploaded in step 1\.
 
 To turn off the HTTPS port, select **OFF** for **HTTPS Listener Port**\.
 
@@ -58,13 +58,9 @@ You can control the settings for the health check using the **EC2 Instance Healt
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-eclipse-lb-healthcheck.png)
 
 The following list describes the health check parameters you can set for your application\. 
-
 + To determine instance health, Elastic Beanstalk looks for a 200 response code on a URL it queries\. By default, Elastic Beanstalk checks TCP:80 for nonlegacy containers and HTTP:80 for legacy containers\. You can override to match an existing resource in your application \(e\.g\., **/myapp/index\.jsp**\) by entering it in the **Application Health Check URL** box\. If you override the default URL, Elastic Beanstalk uses HTTP to query the resource\. To check if you are using a legacy container type, see [Why are some container types marked legacy?](using-features.migration.md#using-features.migration.why)\. 
-
 + For **Health Check Interval \(seconds\)**, enter the number of seconds between your application's Amazon EC2 instances health checks\. 
-
 + For **Health Check Timeout**, specify the number of seconds for Elastic Load Balancing to wait for a response before it considers an instance unresponsive\. 
-
 + Use the **Healthy Check Count Threshold** and **Unhealthy Check Count Threshold** boxes, specify the number of consecutive successful or unsuccessful URL probes before Elastic Load Balancing changes the instance health status\. For example, specifying 5 in the **Unhealthy Check Count Threshold** text box means that the URL would have to return an error message or timeout five consecutive times before Elastic Load Balancing considers the health check "failed\." 
 
 ## Sessions<a name="create_deploy_Java.managingappenv.elb.sessions"></a>

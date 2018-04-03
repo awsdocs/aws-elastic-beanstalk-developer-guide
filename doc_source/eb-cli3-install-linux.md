@@ -13,19 +13,16 @@ The EB CLI requires Python 2\.7 or 3\.4\+\. If your distribution didn't come wit
 If your Linux distribution came with Python, you might need to install the Python developer package to get the headers and libraries required to compile extensions and install the EB CLI\. Install the developer package \(typically named python\-dev or python\-devel\) using your package manager\.
 
 1. If Python 2\.7 or later is not installed, install Python 3\.4 with your distribution's package manager\. The command and package name varies:
-
    + On Debian derivatives such as Ubuntu, use `APT`\.
 
      ```
      $ sudo apt-get install python3.4
      ```
-
    + On Red Hat and derivatives, use `yum`\.
 
      ```
      $ sudo yum install python34
      ```
-
    + On SUSE and derivatives, use `zypper`\.
 
      ```
@@ -77,11 +74,8 @@ Install `pip` by using the script provided by the Python Packaging Authority, an
       $ ls -a ~
       .  ..  .bash_logout  .bash_profile  .bashrc  Desktop  Documents  Downloads
       ```
-
       + **Bash** – `.bash_profile`, `.profile`, or `.bash_login`\.
-
       + **Zsh** – `.zshrc`
-
       + **Tcsh** – `.tcshrc`, `.cshrc` or `.login`\.
 
    1. Add an export command to your profile script\. The following example adds the path represented by *LOCAL\_PATH* to the current PATH variable\.

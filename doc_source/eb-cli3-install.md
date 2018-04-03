@@ -22,7 +22,6 @@ If you already have `pip` and a supported version of Python, use the following p
 If you encounter issues when you attempt to install the EB CLI with `pip`, you can [install the EB CLI in a virtual environment](eb-cli3-install-virtualenv.md) to isolate the tool and its dependencies, or use a different version of Python than you normally do\.
 
 1. Add the path to the executable file to your PATH variable:
-
    + On Linux and macOS:
 
      **Linux** – `~/.local/bin`
@@ -37,11 +36,8 @@ If you encounter issues when you attempt to install the EB CLI with `pip`, you c
         $ ls -a ~
         .  ..  .bash_logout  .bash_profile  .bashrc  Desktop  Documents  Downloads
         ```
-
         + **Bash** – `.bash_profile`, `.profile`, or `.bash_login`\.
-
         + **Zsh** – `.zshrc`
-
         + **Tcsh** – `.tcshrc`, `.cshrc` or `.login`\.
 
      1. Add an export command to your profile script\. The following example adds the path represented by *LOCAL\_PATH* to the current PATH variable\.
@@ -55,7 +51,6 @@ If you encounter issues when you attempt to install the EB CLI with `pip`, you c
         ```
         $ source ~/PROFILE_SCRIPT
         ```
-
    + On Windows:
 
      **Python 3\.6** – `%USERPROFILE%\AppData\Roaming\Python\Python36\Scripts`
@@ -99,7 +94,7 @@ $ pip uninstall awsebcli
 
 If you don't have Python and `pip`, use the procedure for your operating system\.
 
-
+**Topics**
 + [Install Python, pip, and the EB CLI on Linux](eb-cli3-install-linux.md)
 + [Install Python, pip, and the EB CLI on Windows](eb-cli3-install-windows.md)
 + [Install the EB CLI on macOS](eb-cli3-install-osx.md)

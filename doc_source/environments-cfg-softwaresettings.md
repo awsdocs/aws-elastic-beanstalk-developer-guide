@@ -8,34 +8,23 @@ In most cases, environment properties are passed to your application as *environ
 In addition to the standard set of options available for all environments, most Elastic Beanstalk platforms let you specify language\-specific or framework\-specific settings\. These can take the following forms\.
 
 **Platform\-Specific Settings**
-
 + **Preset environment properties** – The Ruby platform uses environment properties for framework settings, such as `RACK_ENV` and `BUNDLE_WITHOUT`\.
-
 + **Placeholder environment properties** – The Tomcat platform defines an environment property named `JDBC_CONNECTION_STRING` that is not set to any value\. This type of setting was more common on older platform versions\.
-
 + **Configuration options** – Most platforms define [configuration options](command-options.md) in platform\-specific or shared namespaces, such as `aws:elasticbeanstalk:xray` or `aws:elasticbeanstalk:container:python`\.
 
 For information about platform\-specific options, see the platform topic for your language or framework:
-
 + Go – [Using the AWS Elastic Beanstalk Go Platform](go-environment.md)
-
 + Java SE – [Using the AWS Elastic Beanstalk Java SE Platform](java-se-platform.md)
-
 + Tomcat – [Using the AWS Elastic Beanstalk Tomcat Platform](java-tomcat-platform.md)
-
 + \.NET – [Using the AWS Elastic Beanstalk \.NET Platform](create_deploy_NET.container.console.md)
-
 + Node\.js – [Using the AWS Elastic Beanstalk Node\.js Platform](create_deploy_nodejs.container.md)
-
 + PHP – [Using the AWS Elastic Beanstalk PHP Platform](create_deploy_PHP.container.md)
-
 + Python – [Using the AWS Elastic Beanstalk Python Platform](create-deploy-python-container.md)
-
 + Ruby – [Using the AWS Elastic Beanstalk Ruby Platform](create_deploy_Ruby.container.md)
 
 Also, when you [add a database to your environment](using-features.managing.db.md), Elastic Beanstalk sets environment properties, such as `RDS_HOSTNAME`, that you can read in your application code to construct a connection object or string\.
 
-
+**Topics**
 + [Configuring Environment Properties](#environments-cfg-softwaresettings-console)
 + [Software Setting Namespaces](#environments-cfg-softwaresettings-configfiles)
 + [Accessing Environment Properties](#environments-cfg-softwaresettings-accessing)
@@ -61,19 +50,14 @@ Environment properties appear in the Elastic Beanstalk console under **Software 
 1. Choose **Save**, and then choose **Apply**\.
 
 **Environment Property Limits**
-
 + **Keys** can contain any alphanumeric characters and the following symbols: `_ . : / + \ - @`
 
   The symbols listed are valid for environment property keys, but might not be valid for environment variable names on your environment's platform\. For compatibility with all platforms, limit environment properties to the following pattern: `[A-Z_][A-Z0-9_]*`
-
 + **Values** can contain any alphanumeric characters, white space, and the following symbols: `_ . : / = + \ - @ ' "`
 **Note**  
 Single and double quotation marks in values must be escaped\.
-
 + **Keys** can contain up to 128 characters\. **Values** can contain up to 256 characters\.
-
 + **Keys** and **values** are case sensitive\.
-
 + The combined size of all environment properties cannot exceed 4,096 bytes when stored as strings with the format *key*=*value*\.
 
 ## Software Setting Namespaces<a name="environments-cfg-softwaresettings-configfiles"></a>
@@ -115,21 +99,13 @@ option_settings:
 ```
 
 Most Elastic Beanstalk platforms define additional namespaces with options for configuring software that runs on the instance, such as the reverse proxy that relays requests to your application\. For more information about the namespaces available for your platform, see the following:
-
 + Go – [The aws:elasticbeanstalk:container:golang:staticfiles Namespace](go-environment.md#go-namespaces)
-
 + Java SE – [The aws:elasticbeanstalk:container:java:staticfiles Namespace](java-se-platform.md#java-se-namespaces)
-
 + Tomcat – [Tomcat Configuration Namespaces](java-tomcat-platform.md#java-tomcat-namespaces)
-
 + \.NET – [The aws:elasticbeanstalk:container:dotnet:apppool Namespace](create_deploy_NET.container.console.md#dotnet-namespaces)
-
 + Node\.js – [Node\.js Configuration Namespaces](create_deploy_nodejs.container.md#nodejs-namespaces)
-
 + PHP – [The aws:elasticbeanstalk:container:php:phpini Namespace](create_deploy_PHP.container.md#php-namespaces)
-
 + Python – [Python Configuration Namespaces](create-deploy-python-container.md#python-namespaces)
-
 + Ruby – [Ruby Configuration Namespaces](create_deploy_Ruby.container.md#ruby-namespaces)
 
 Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration Options](command-options.md) for more information\.
@@ -137,51 +113,43 @@ Elastic Beanstalk provides many configuration options for customizing your envir
 ## Accessing Environment Properties<a name="environments-cfg-softwaresettings-accessing"></a>
 
 In most cases, you access environment properties in your application code like an environment variable\. In general, however, environment properties are passed only to the application and can't be viewed by connecting an instance in your environment and running `env`\.
-
 + [Go](go-environment.md#go-options-properties) – `os.Getenv`
 
   ```
   endpoint := os.Getenv("API_ENDPOINT")
   ```
-
 + [Java SE](java-se-platform.md#java-se-options-properties) – `System.getenv`
 
   ```
   String endpoint = System.getenv("API_ENDPOINT");
   ```
-
 + [Tomcat](java-tomcat-platform.md#java-tomcat-options-properties) – `System.getProperty`
 
   ```
   String endpoint = System.getProperty("API_ENDPOINT");
   ```
-
 + [\.NET](create_deploy_NET.container.console.md#dotnet-console-properties) – `appConfig`
 
   ```
   NameValueCollection appConfig = ConfigurationManager.AppSettings;
   string endpoint = appConfig["API_ENDPOINT"];
   ```
-
 + [Node\.js](create_deploy_nodejs.container.md#nodejs-platform-console-envprops) – `process.env`
 
   ```
   var endpoint = process.env.API_ENDPOINT
   ```
-
 + [PHP](create_deploy_PHP.container.md#php-console-properties) – `$_SERVER`
 
   ```
   $endpoint = $_SERVER['API_ENDPOINT'];
   ```
-
 + [Python](create-deploy-python-container.md#create-deploy-python-custom-container-envprop) – `os.environ`
 
   ```
   import os
   endpoint = os.environ['API_ENDPOINT']
   ```
-
 + [Ruby](create_deploy_Ruby.container.md#create_deploy_Ruby.env.console.ruby.envprops) – `ENV`
 
   ```

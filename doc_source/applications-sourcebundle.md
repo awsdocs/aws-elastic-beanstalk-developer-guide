@@ -1,18 +1,15 @@
 # Create an Application Source Bundle<a name="applications-sourcebundle"></a>
 
 When you use the AWS Elastic Beanstalk console to deploy a new application or an application version, you'll need to upload a source bundle\. Your source bundle must meet the following requirements: 
-
 + Consist of a single `ZIP` file or `WAR` file \(you can include multiple `WAR` files inside your `ZIP` file\)
-
 + Not exceed 512 MB
-
 + Not include a parent folder or top\-level directory \(subdirectories are fine\)
 
 If you want to deploy a worker application that processes periodic background tasks, your application source bundle must also include a `cron.yaml` file\. For more information, see [Periodic Tasks](using-features-managing-env-tiers.md#worker-periodictasks)\.
 
 If you are deploying your application with the Elastic Beanstalk Command Line Interface \(EB CLI\), the AWS Toolkit for Eclipse, or the AWS Toolkit for Visual Studio, the ZIP or WAR file will automatically be structured correctly\. For more information, see [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md), [Creating and Deploying Java Applications on AWS Elastic Beanstalk](create_deploy_Java.md), and [The AWS Toolkit for Visual Studio](dotnet-toolkit.md)\.
 
-
+**Topics**
 + [Creating a Source Bundle from the Command Line](#using-features.deployment.source.commandline)
 + [Creating a Source Bundle with Git](#using-features.deployment.source.git)
 + [Zipping Files in Mac OS X Finder or Windows Explorer](#using-features.deployment.source.gui)
@@ -101,11 +98,9 @@ This sample file structure is used throughout this topic to illustrate how to zi
 If you use Visual Studio, you can use the deployment tool included in the AWS Toolkit for Visual Studio to deploy your \.NET application to Elastic Beanstalk\. For more information, see [Deploying Elastic Beanstalk Applications in \.NET Using the Deployment Tool](deploy_NET_standalone_tool.md)\.
 
 If you need to manually create a source bundle for your \.NET application, you cannot simply create a `ZIP` file that contains the project directory\. You must create a web deployment package for your project that is suitable for deployment to Elastic Beanstalk\. There are several methods you can use to create a deployment package:
-
 + Create the deployment package using the **Publish Web** wizard in Visual Studio\. For more information, go to [How to: Create a Web Deployment Package in Visual Studio](http://msdn.microsoft.com/en-us/library/dd465323.aspx)\.
 **Important**  
 When creating the web deployment package, you must start the **Site name** with `Default Web Site`\.
-
 + It you have a \.NET project, you can create the deployment package using the msbuild command as shown in the following example\. 
 **Important**  
 The `DeployIisAppPath` parameter must begin with `Default Web Site`\.
@@ -113,7 +108,6 @@ The `DeployIisAppPath` parameter must begin with `Default Web Site`\.
   ```
   C:/> msbuild <web_app>.csproj /t:Package /p:DeployIisAppPath="Default Web Site"
   ```
-
 + If you have a website project, you can use the IIS Web Deploy tool to create the deployment package\. For more information, go to [Packaging and Restoring a Web site](http://www.iis.net/learn/publish/using-web-deploy/packaging-and-restoring-a-web-site)\.
 **Important**  
 The `apphostconfig` parameter must begin with `Default Web Site`\.

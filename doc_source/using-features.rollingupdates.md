@@ -48,19 +48,12 @@ You can enable and configure rolling updates in the Elastic Beanstalk console\.
 1. Choose **Save**, and then choose **Apply**\.
 
 The **Configuration Updates** section of the **Rolling updates and deployments** page has the following options for rolling updates:
-
 + **Rolling update type** – Elastic Beanstalk waits after it finishes updating a batch of instances before moving on to the next batch, to allow those instances to finish bootstrapping and start serving traffic\. Choose from the following options:
-
   + **Rolling based on Health** – Wait until instances in the current batch are healthy before placing instances in service and starting the next batch\.
-
   + **Rolling based on Time** – Specify an amount of time to wait between launching new instances and placing them in service before starting the next batch\.
-
   + **Immutable** – Apply the configuration change to a fresh group of instances by performing an [immutable update](environmentmgmt-updates-immutable.md)\.
-
 + **Batch size** – The number of instances to replace in each batch, between **1** and **10000**\. By default, this value is one\-third of the minimum size of the Auto Scaling group, rounded up\.
-
 + **Minimum capacity** – The minimum number of instances to keep running while other instances are updated, between **0** and **9999**\. The default value is either the minimum size of the autoscaling group or one less than the maximum size of the autoscaling group, whichever number is lower\.
-
 + **Pause time** \(time\-based only\) – The amount of time to wait after a batch is updated before moving on to the next batch, to allow your application to start receiving traffic\. Between 0 seconds and 1 hour\.
 
 ## The aws:autoscaling:updatepolicy:rollingupdate namespace<a name="rollingupdate-namespace"></a>
@@ -68,11 +61,8 @@ The **Configuration Updates** section of the **Rolling updates and deployments**
 You can also use the [configuration options](command-options.md) in the `[aws:autoscaling:updatepolicy:rollingupdate](command-options-general.md#command-options-general-autoscalingupdatepolicyrollingupdate)` namespace to configure rolling updates\. 
 
 Use the `RollingUpdateEnabled` option to enable rolling updates, and `RollingUpdateType` to choose the update type\. The following values are supported for `RollingUpdateType`:
-
 + `Health` – Wait until instances in the current batch are healthy before placing instances in service and starting the next batch\.
-
 + `Time` – Specify an amount of time to wait between launching new instances and placing them in service before starting the next batch\.
-
 + `Immutable` – Apply the configuration change to a fresh group of instances by performing an [immutable update](environmentmgmt-updates-immutable.md)\.
 
 When you enable rolling updates, set the `MaxBatchSize` and `MinInstancesInService` options to configure the size of each batch\. For time\-based and health\-based rolling updates, you can also configure a `PauseTime` and `Timeout`, respectively\.

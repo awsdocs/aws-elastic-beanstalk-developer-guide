@@ -1,7 +1,6 @@
 # Using the AWS Elastic Beanstalk Go Platform<a name="go-environment"></a>
 
 You can use AWS Elastic Beanstalk to run, build, and configure Go\-based applications\. For simple Go applications, there are two ways to deploy your application:
-
 + Provide a source bundle with a source file at the root called `application.go` that contains the main package for your application\. Elastic Beanstalk builds the binary using the following command:
 
   ```
@@ -9,15 +8,12 @@ You can use AWS Elastic Beanstalk to run, build, and configure Go\-based applica
   ```
 
   After the application is built, Elastic Beanstalk starts it on port 5000\.
-
 + Provide a source bundle with a binary file called `application`\. The binary file can be located either at the root of the source bundle or in the `bin/` directory of the source bundle\. If you place the `application` binary file in both locations, Elastic Beanstalk uses the file in the `bin/` directory\.
 
   Elastic Beanstalk launches this application on port 5000\.
 
 For more complex Go applications, there are two ways to deploy your application:
-
 + Provide a source bundle that includes your application source files, along with a [Buildfile](go-buildfile.md) and a [Procfile](go-procfile.md)\. The Buildfile includes a command to build the application, and the Procfile includes instructions to run the application\.
-
 + Provide a source bundle that includes your application binary files, along with a Procfile\. The Procfile includes instructions to run the application\.
 
 **Execution Order**  
@@ -47,9 +43,7 @@ You can use the AWS Management Console to enable log rotation to Amazon S3 and c
 ### Log Options<a name="go-options-logs"></a>
 
 The Log Options section has two settings:
-
 + **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
-
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
 ### Environment Properties<a name="go-options-properties"></a>

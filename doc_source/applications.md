@@ -25,7 +25,7 @@ Deleting an application terminates all associated environments and deletes all a
 
 1. Choose **Delete Application**
 
-
+**Topics**
 + [The AWS Elastic Beanstalk Application Management Console](applications-console.md)
 + [Managing Application Versions](applications-versions.md)
 + [Configuring Application Version Lifecycle Settings](applications-lifecycle.md)

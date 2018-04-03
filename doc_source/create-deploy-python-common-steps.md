@@ -2,7 +2,7 @@
 
 AWS Elastic Beanstalk provides a consistent interface for deploying Python applications, so there are common procedures to follow regardless of the application framework you're using, or whether you're using one at all\.
 
-
+**Topics**
 + [Common Prerequisites](#python-common-prereq)
 + [Setting up a virtual Python environment](#python-common-setup-venv)
 + [Configuring a Python project for Elastic Beanstalk](#python-common-configuring)

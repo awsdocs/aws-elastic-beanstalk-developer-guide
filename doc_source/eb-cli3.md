@@ -23,7 +23,7 @@ With the AWS CLI you have direct access to the Elastic Beanstalk API\. The AWS C
 
 For information about installing the EB CLI, configuring a repository, and working with environments, see the following topics:
 
-
+**Topics**
 + [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md)
 + [Configure the EB CLI](eb-cli3-configuration.md)
 + [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)

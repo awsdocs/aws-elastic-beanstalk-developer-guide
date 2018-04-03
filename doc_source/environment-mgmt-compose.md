@@ -62,7 +62,7 @@ After [creating an application version](applications-versions.md) for the front\
 
 ```
 # Create application versions for each component: 
-~$ aws elasticbeanstalk create-application-version --application-name media-library --version-label front-v1 --source-bundle S3Bucket="my-bucket",S3Key="front-v1.zip"
+~$ aws elasticbeanstalk create-application-version --application-name media-library --version-label front-v1 --process --source-bundle S3Bucket="my-bucket",S3Key="front-v1.zip"
   {
     "ApplicationVersion": {
         "ApplicationName": "media-library",
@@ -76,7 +76,7 @@ After [creating an application version](applications-versions.md) for the front\
         }
     }
   }
-~$ aws elasticbeanstalk create-application-version --application-name media-library --version-label worker-v1 --source-bundle S3Bucket="my-bucket",S3Key="worker-v1.zip"
+~$ aws elasticbeanstalk create-application-version --application-name media-library --version-label worker-v1 --process --source-bundle S3Bucket="my-bucket",S3Key="worker-v1.zip"
   {
     "ApplicationVersion": {
         "ApplicationName": "media-library",

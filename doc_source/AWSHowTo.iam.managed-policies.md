@@ -3,7 +3,6 @@
 AWS Elastic Beanstalk provides two managed policies that enable you to assign full access or read\-only access to all Elastic Beanstalk resources\. You can attach the policies to AWS Identity and Access Management \(IAM\) users or groups\.
 
 **Managed User Policies**
-
 + **AWSElasticBeanstalkFullAccess** – Allows the user to create, modify, and delete Elastic Beanstalk applications, application versions, configuration settings, environments, and their underlying resources\.
 
   ```
@@ -73,7 +72,6 @@ AWS Elastic Beanstalk provides two managed policies that enable you to assign fu
       ]
   }
   ```
-
 + **AWSElasticBeanstalkReadOnlyAccess** – Allows the user to view applications and environments, but not to perform operations on them\. It provides read\-only access to all Elastic Beanstalk resources\. Note that read\-only access does not enable actions such as downloading Elastic Beanstalk logs so that you can read them\. See the example at the end of this topic for information on how to enable read\-only access to Elastic Beanstalk logs\.
 
   ```
@@ -134,9 +132,7 @@ You can use managed policies to grant full access or read\-only access to Elasti
 You can create your own IAM policy to allow or deny specific Elastic Beanstalk API actions on specific Elastic Beanstalk resources\. For more information about attaching a policy to a user or group, see [Working with Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html) in *Using AWS Identity and Access Management*\.
 
 An IAM policy contains policy statements that describe the permissions that you want to grant\. When you create a policy statement for Elastic Beanstalk, you need to understand how to use the following four parts of a policy statement:
-
 + **Effect** specifies whether to allow or deny the actions in the statement\.
-
 + **Action** specifies the [API operations](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_Operations.html) that you want to control\. For example, use `elasticbeanstalk:CreateEnvironment` to specify the `CreateEnvironment` operation\. Certain operations, such as creating an environment, require additional permissions to perform those actions\. For more information, see [Resources and Conditions for Elastic Beanstalk Actions](AWSHowTo.iam.policies.actions.md)\. 
 **Note**  
 To use the [http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateTagsForResource.html) API operation, specify one of the following two virtual actions \(or both\) instead of the API operation name:  
@@ -146,9 +142,7 @@ Controls permission to call `UpdateTagsForResource` and pass a list of tags to a
 
 `elasticbeanstalk:RemoveTags`  
 Controls permission to call `UpdateTagsForResource` and pass a list of tag keys to remove in the `TagsToRemove` parameter\.
-
 + **Resource** specifies the resources that you want to control access to\. To specify Elastic Beanstalk resources, list the [Amazon Resource Name](AWSHowTo.iam.policies.arn.md) \(ARN\) of each resource\.
-
 + \(optional\) **Condition** specifies restrictions on the permission granted in the statement\. For more information, see [Resources and Conditions for Elastic Beanstalk Actions](AWSHowTo.iam.policies.actions.md)\.
 
 The following example policy contains three statements that enable a user who has this policy to call the `CreateEnvironment` action to create an environment whose name begins with **Test** with the specified application and application version\.

@@ -1,6 +1,6 @@
 # Configuring Docker Environments<a name="create_deploy_docker.container.console"></a>
 
-You can use the Elastic Beanstalk Management Console to configure the software running on your environment's EC2 instances\.
+You can use the Elastic Beanstalk console to configure the software running on your environment's EC2 instances\.
 
 **To access the software configuration for your Elastic Beanstalk environment**
 
@@ -13,28 +13,24 @@ You can use the Elastic Beanstalk Management Console to configure the software r
 1. On the **Software** configuration card, choose **Modify**\.
 
 The Log Options section has two settings:
-
 + **Instance profile** – Your environment's [instance profile](concepts-roles-instance.md), which must have write access to your environment's Amazon S3 storage bucket in order to upload logs\.
-
 + **Enable log file rotation to Amazon S3** – Configure the instances in your environment to [upload rotated logs](using-features.logging.md)\.
 
 The **Environment Properties** section lets you specify environment variables that you can read from your application code\.
 
-
+**Topics**
 + [Docker Images](#docker-images)
 + [Configuring Additional Storage Volumes](#docker-volumes)
 + [Reclaiming Docker Storage Space](#reclaim-docker-storage)
++ [Configuring Managed Updates for Docker Environments](#docker-managed-updates)
 
 ## Docker Images<a name="docker-images"></a>
 
 The single container and multicontainer Docker configuration for Elastic Beanstalk support the use of Docker images stored in a public or private online image repository\.
 
 Specify images by name in `Dockerrun.aws.json`\. Note these conventions:
-
 + Images in official repositories on Docker Hub use a single name \(for example, `ubuntu` or `mongo`\)\.
-
 + Images in other repositories on Docker Hub are qualified with an organization name \(for example, `amazon/amazon-ecs-agent`\)\.
-
 + Images in other online repositories are qualified further by a domain name \(for example, `quay.io/assemblyline/ubuntu` or `account-id.dkr.ecr.us-east-2.amazonaws.com/ubuntu:trusty`\)\. 
 
 For single container environments only, you can also build your own image during environment creation with a Dockerfile\. See [Building Custom Images with a Dockerfile](create_deploy_docker_image.md#create_deploy_docker_image_dockerfile) for details\.
@@ -189,3 +185,24 @@ One solution is to increase the size of the application storage space, as descri
 ```
 docker ps -q | xargs docker inspect --format='{{ .State.Pid }}' | xargs -IZ sudo fstrim /proc/Z/root/
 ```
+
+## Configuring Managed Updates for Docker Environments<a name="docker-managed-updates"></a>
+
+With [managed platform updates](environment-platform-update-managed.md), you can configure your environment to automatically upgrade to the latest version of a platform on a schedule\.
+
+In the case of Docker environments, you might want to decide if an automatic platform update should happen across Docker versions—when the new platform configuration version includes a new Docker version\. Elastic Beanstalk supports managed platform updates across Docker versions when updating from an environment running a Docker configuration version newer than 2\.9\.0\. When a new platform configuration version includes a new version of Docker, Elastic Beanstalk increments the minor update version number\. Therefore, to allow managed platform updates across Docker versions, enable managed platform updates for both minor and patch version updates\. To prevent managed platform updates across Docker versions, enable managed platform updates to apply patch version updates only\.
+
+For example, the following [configuration file](ebextensions.md) enables managed platform updates at 9:00 AM UTC each Tuesday for both minor and patch version updates, thereby allowing for managed updates across Docker versions:
+
+**Example \.ebextensions/managed\-platform\-update\.config**  
+
+```
+option_settings:
+  aws:elasticbeanstalk:managedactions:
+    ManagedActionsEnabled: true
+    PreferredStartTime: "Tue:09:00"
+  aws:elasticbeanstalk:managedactions:platformupdate:
+    UpdateLevel: minor
+```
+
+For environments running Docker configuration versions 2\.9\.0 or earlier, Elastic Beanstalk never performs managed platform updates if the new platform configuration version includes a new Docker version\.

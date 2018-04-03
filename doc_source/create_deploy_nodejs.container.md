@@ -31,24 +31,18 @@ The Node\.js settings lets you fine\-tune the behavior of your Amazon EC2 instan
 ### Container Options<a name="nodejs-platform-console-settings"></a>
 
 On the configuration page, specify the following:
-
 + **Proxy Server**– Specifies which web server to use to proxy connections to Node\.js\. By default, nginx is used\. If you select **none**, static file mappings do not take effect, and gzip compression is disabled\.
-
 + **Node Version**– Specifies the version of Node\.js\. For information about what versions are supported, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
 **Note**  
 When support for the version of Node\.js that you are using is removed from the platform configuration, you must change or remove the version setting prior to doing a [platform upgrade](using-features.platform.upgrade.md)\. This may occur when a security vulnerability is identified for one or more versions of Node\.js  
 When this occurs, attempting to upgrade to a new version of the platform that does not support the configured [NodeVersion](command-options-specific.md#command-options-nodejs) fails\. To avoid needing to create a new environment, change the *NodeVersion* configuration option to a version that is supported by both the old configuration version and the new one, or [remove the option setting](environment-configuration-methods-after.md), and then perform the platform upgrade\.
-
 + **Gzip Compression**– Specifies whether gzip compression is enabled\. By default, gzip compression is enabled\.
-
 + **Node Command**–Lets you enter the command used to start the Node\.js application\. An empty string \(the default\) means Elastic Beanstalk will use `app.js`, then `server.js`, and then `npm start` in that order\.
 
 ### Log Options<a name="nodejs-platform-console-logging"></a>
 
 The Log Options section has two settings:
-
 + **Instance profile**– Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
-
 + **Enable log file rotation to Amazon S3**–Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
 ### Static Files<a name="nodejs-platform-console-staticfiles"></a>

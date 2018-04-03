@@ -28,7 +28,6 @@ When you terminate your environment, the CNAME associated with the terminated en
 ## CLI<a name="using-features.terminating.CLI"></a>
 
 **To terminate an environment**
-
 + Run the following command\.
 
   ```
@@ -38,7 +37,6 @@ When you terminate your environment, the CNAME associated with the terminated en
 ## API<a name="using-features.terminating.API"></a>
 
 **To terminate an environment**
-
 + Call `TerminateEnvironment` with the following parameter:
 
   `EnvironmentName` = `SampleAppEnv`

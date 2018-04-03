@@ -2,7 +2,7 @@
 
 This tutorial walks through the deployment of a default [Django](https://www.djangoproject.com/) website to an Elastic Beanstalk environment running Python 2\.7\. The tutorial uses the EB CLI as a deployment mechanism, but you can also use the AWS Management Console to deploy a ZIP file containing your project's contents\. The EB CLI is an interactive command line interface written in Python that uses the Python SDK for AWS \(boto\)\.
 
-
+**Topics**
 + [Prerequisites](#python-django-prereq)
 + [Set Up a Python Virtual Environment with Django](#python-django-setup-venv)
 + [Create a Django Project](#python-django-create-app)
@@ -16,13 +16,9 @@ This tutorial walks through the deployment of a default [Django](https://www.dja
 To use any Amazon Web Service \(AWS\), including Elastic Beanstalk, you need to have an AWS account and credentials\. To learn more and to sign up, visit [https://aws\.amazon\.com/](https://aws.amazon.com/)\.
 
 To follow this tutorial, you should have all of the [Common Prerequisites](create-deploy-python-common-steps.md) for Python installed, including the following packages:
-
 + Python 2\.7
-
 + pip
-
 + virtualenv
-
 + awsebcli
 
 The [Django](https://www.djangoproject.com/) framework will be installed as part of the tutorial\.
@@ -238,7 +234,7 @@ Next, you'll create your application environment and deploy your configured appl
 1. Initialize your EB CLI repository with the `eb init` command:
 
    ```
-   ~/ebdjango$ eb init -p python2.7 django-tutorial
+   ~/ebdjango$ eb init -p python-2.7 django-tutorial
    Application django-tutorial has been created.
    ```
 

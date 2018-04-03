@@ -6,6 +6,33 @@ For Single Container Docker platform configurations that were current earlier th
 
 See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
+The following Elastic Beanstalk platform configurations for Single Container Docker were current between March 22, 2018 and April 1, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Docker Version  |  Proxy Server  | 
+| --- | --- | --- | --- | 
+|   **Single Container Docker 17\.12 version 2\.9\.1**   *64bit Amazon Linux 2017\.09 v2\.9\.1 running Docker 17\.12\.0\-ce*   |  2017\.09\.1  |  17\.12\.0\-ce  |  nginx 1\.12\.1  | 
+
+The following Elastic Beanstalk platform configurations for Single Container Docker were current between March 19, 2018 and March 21, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Docker Version  |  Proxy Server  | 
+| --- | --- | --- | --- | 
+|   **Single Container Docker 17\.12 version 2\.9\.0**   *64bit Amazon Linux 2017\.09 v2\.9\.0 running Docker 17\.12\.0\-ce*   |  2017\.09\.1  |  17\.12\.0\-ce  |  nginx 1\.12\.1  | 
+
+The following Elastic Beanstalk platform configurations for Single Container Docker were current between January 19, 2018 and March 18, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Docker Version  |  Proxy Server  | 
+| --- | --- | --- | --- | 
+|   **Single Container Docker 17\.09 version 2\.8\.4**   *64bit Amazon Linux 2017\.09 v2\.8\.4 running Docker 17\.09\.1\-ce*   |  2017\.09\.1  |  17\.09\.1\-ce  |  nginx 1\.12\.1  | 
+
 The following Elastic Beanstalk platform configurations for Single Container Docker were current between January 10, 2018 and January 18, 2018:
 
 

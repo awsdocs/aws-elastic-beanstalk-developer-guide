@@ -3,7 +3,7 @@
 **Note**  
  This tool, the Elastic Beanstalk API CLI, and its documentation have been replaced with the AWS CLI\. See the [AWS CLI User Guide ](http://docs.aws.amazon.com/cli/latest/userguide/) to get started with the AWS CLI\. Also try the [EB CLI](eb-cli3.md) for a simplified, higher\-level command line experience\. 
 
-
+**Topics**
 + [elastic\-beanstalk\-check\-dns\-availability](#CLIReference-cmd-CheckDNSAvailability)
 + [elastic\-beanstalk\-create\-application](#CLIReference-cmd-CreateApplication)
 + [elastic\-beanstalk\-create\-application\-version](#CLIReference-cmd-CreateApplicationVersion)
@@ -56,9 +56,7 @@ Checks if the specified CNAME is available\.
 ### Output<a name="CLIReference-cmd-CheckDNSAvailability-Response"></a>
 
 The command returns a table with the following information:
-
 + **Available—**Shows `true` if the CNAME is available; otherwise, shows `false`\.
-
 + **FullyQualifiedCNAME—**Shows the fully qualified CNAME if it is available; otherwise shows N/A\.
 
 ### Examples<a name="CLIReference-cmd-CheckDNSAvailability-Examples"></a>
@@ -97,17 +95,11 @@ The `default` configuration template is for a 32\-bit version of the Amazon Linu
 ### Output<a name="CLIReference-cmd-CreateApplication-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application\. If no application is found with this name, and `AutoCreateApplication` is `false`, Elastic Beanstalk returns an `InvalidParameterValue` error\.
-
 + **ConfigurationTemplates—**A list of the configuration templates used to create the application\.
-
 + **DateCreated—**The date the application was created\.
-
 + **DateUpdated—**The date the application was last updated\.
-
 + **Description—**The description of the application\.
-
 + **Versions—**The versions of the application\.
 
 ### Examples<a name="CLIReference-cmd-CreateApplication-Examples"></a>
@@ -141,7 +133,7 @@ Creates an application version for the specified application\.
 | Name | Description | Required | 
 | --- | --- | --- | 
 |   `-a`   `--application-name` *name*   |  The name of the application\. If no application is found with this name, and `AutoCreateApplication` is `false`, Elastic Beanstalk returns an `InvalidParameterValue` error\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
-|   `-c`   `--auto-create`   |  Determines how the system behaves if the specified application for this version does not already exist:  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/OperationList-cmd.html) Type: Boolean Valid Values: `true` | `false` Default: `false`  |  No  | 
+|   `-c`   `--auto-create`   |  Determines how the system behaves if the specified application for this version does not already exist:  [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/OperationList-cmd.html) Type: Boolean Valid Values: `true` \| `false` Default: `false`  |  No  | 
 |   `-d`   `--description` *desc*   |  The description of the version\. Type: String Default: None Length Constraints: Minimum value of 0\. Maximum value of 200\.  |  No  | 
 |   `-l`   `--version-label` *label*   |  A label identifying this version\. Type: String Default: None Constraint: Must be unique per application\. If an application version already exists with this label for the specified application, Elastic Beanstalk returns an `InvalidParameterValue` error\.  Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
 |   `-s`   `--source-location` *location*   |  The name of the Amazon S3 bucket and key that identify the location of the source bundle for this version, in the format `bucketname/key`\.  If data found at the Amazon S3 location exceeds the maximum allowed source bundle size, Elastic Beanstalk returns an `InvalidParameterCombination` error\. Type: String Default: If not specified, Elastic Beanstalk uses a sample application\. If only partially specified \(for example, a bucket is provided but not the key\) or if no data is found at the Amazon S3 location, Elastic Beanstalk returns an `InvalidParameterCombination` error\.   |  No  | 
@@ -149,17 +141,11 @@ Creates an application version for the specified application\.
 ### Output<a name="CLIReference-cmd-CreateApplicationVersion-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application\.
-
 + **DateCreated—**The date the application was created\.
-
 + **DateUpdated—**The date the application was last updated\.
-
 + **Description—**The description of the application\.
-
 + **SourceBundle—**The location where the source bundle is located for this version\. 
-
 + **VersionLabel—**A label uniquely identifying the version for the associated application\. 
 
 ### Examples<a name="CLIReference-cmd-CreateApplicationVersion-Examples"></a>
@@ -201,31 +187,18 @@ Creates a configuration template\. Templates are associated with a specific appl
 ### Output<a name="CLIReference-cmd-CreateConfigurationTemplate-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application associated with the configuration set\.
-
 + **DateCreated—**The date \(in UTC time\) when this configuration set was created\.
-
 + **DateUpdated—**The date \(in UTC time\) when this configuration set was last modified\.
-
 + **DeploymentStatus—**If this configuration set is associated with an environment, the deployment status parameter indicates the deployment status of this configuration set:
-
   + `null`: This configuration is not associated with a running environment\.
-
   + `pending`: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying\.
-
   + `deployed`: This is the configuration that is currently deployed to the associated running environment\.
-
   + `failed`: This is a draft configuration that failed to successfully deploy\. 
-
 + **Description—**The description of the configuration set\.
-
 + **EnvironmentName—**If not `null`, the name of the environment for this configuration set\. 
-
 + **OptionSettings—**A list of configuration options and their values in this configuration set\. 
-
 + **SolutionStackName—**The name of the solution stack this configuration set uses\. 
-
 + **TemplateNamel—**If not `null`, the name of the configuration template for this configuration set\. 
 
 ### Examples<a name="CLIReference-cmd-CreateConfigurationTemplate-Examples"></a>
@@ -239,11 +212,8 @@ This example shows how to create a basic configuration template\. For a list of 
 ```
 
 ### Related Operations<a name="CLIReference-cmd-CreateConfigurationTemplate-Related"></a>
-
 +  [elastic\-beanstalk\-describe\-configuration\-options](#CLIReference-cmd-DescribeConfigurationOptions) 
-
 +  [elastic\-beanstalk\-describe\-configuration\-settings](#CLIReference-cmd-DescribeConfigurationSettings) 
-
 +  [elastic\-beanstalk\-list\-available\-solution\-stacks](#CLIReference-cmd-ListAvailableSolutionStacks) 
 
 ## elastic\-beanstalk\-create\-environment<a name="CLIReference-cmd-CreateEnvironment"></a>
@@ -254,7 +224,7 @@ Launches an environment for the specified application using the specified config
 
 ### Syntax<a name="CLIReference-cmd-CreateEnvironment-Syntax"></a>
 
- ** elastic\-beanstalk\-create\-environment \-a \[*name*\] \-l \[*label*\] \-e \[*name*\] \[\-t \[*name*\] | \-s \[*stack*\]\] \-c \[*prefix*\] \-d \[*desc*\] \-f\[*filename*\] \-F \[*filename*\] ** 
+ ** elastic\-beanstalk\-create\-environment \-a \[*name*\] \-l \[*label*\] \-e \[*name*\] \[\-t \[*name*\] \| \-s \[*stack*\]\] \-c \[*prefix*\] \-d \[*desc*\] \-f\[*filename*\] \-F \[*filename*\] ** 
 
 ### Options<a name="CLIReference-cmd-CreateEnvironment-Request"></a>
 
@@ -276,51 +246,28 @@ Launches an environment for the specified application using the specified config
 ### Output<a name="CLIReference-cmd-CreateEnvironment-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application associated with this environment\.
-
 + **CNAME—**The URL to the CNAME for this environment\.
-
 + **DateCreated—**The date the environment was created\.
-
 + **DateUpdated—**The date the environment was last updated\.
-
 + **Description—**The description of the environment\.
-
 + **EndpointURL—**The URL to the load balancer for this environment\. 
-
 + **EnvironmentID—**The ID of this environment\. 
-
 + **EnvironmentName—**The name of this environment\. 
-
 + **Health—**Describes the health status of the environment\. Elastic Beanstalk indicates the failure levels for a running environment:
-
   + `Red`: Indicates the environment is not responsive\. Occurs when three or more consecutive failures occur for an environment\.
-
   + `Yellow`: Indicates that something is wrong\. Occurs when two consecutive failures occur for an environment\.
-
   + `Green`: Indicates the environment is healthy and fully functional\.
-
   + `Gray`: Default health for a new environment\. The environment is not fully launched and health checks have not started or health checks are suspended during an `UpdateEnvironment` or `RestartEnvironment`request\.
-
 + **Resources—**A list of AWS resources used in this environment\. 
-
 + **SolutionStackName—**The name of the solution stack deployed with this environment\.
-
 + **Status—**The current operational status of the environment:
-
   + `Launching`: Environment is in the process of initial deployment\.
-
   + `Updating`: Environment is in the process of updating its configuration settings or application version\.
-
   + `Ready`: Environment is available to have an action performed on it, such as update or terminate\.
-
   + `Terminating`: Environment is in the shut\-down process\.
-
   + `Terminated`: Environment is not running\.
-
 + **TemplateName—**The name of the configuration template used to originally launch this environment\.
-
 + **VersionLabel—**The application version deployed in this environment\.
 
 ### Examples<a name="CLIReference-cmd-CreateEnvironment-Examples"></a>
@@ -404,7 +351,7 @@ Deletes the specified application along with all associated versions and configu
 | Name | Description | Required | 
 | --- | --- | --- | 
 |   `-a`   `--application-name` *name*   |  The name of the application to delete\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
-|   `-f`   `--force-terminate-env`   |  Determines if all running environments should be deleted before deleting the application\.  Type: Boolean Valid Values: `true | false` Default: `false`  |  No  | 
+|   `-f`   `--force-terminate-env`   |  Determines if all running environments should be deleted before deleting the application\.  Type: Boolean Valid Values: `true \| false` Default: `false`  |  No  | 
 
 ### Output<a name="CLIReference-cmd-DeleteApplication-Response"></a>
 
@@ -442,7 +389,7 @@ Deletes the specified version from the specified application\.
 | --- | --- | --- | 
 |   `-a`   `--application-name` *name*   |  The name of the application to delete releases from\. Type: String Default: None  |  Yes  | 
 |   `-l`   `--version-label`   |  The label of the version to delete\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  Yes  | 
-|   `-d`   `--delete-source-bundle`   |  Indicates whether to delete the associated source bundle from Amazon S3\. `true`: An attempt is made to delete the associated Amazon S3 source bundle specified at time of creation\. `false`: No action is taken on the Amazon S3 source bundle specified at time of creation\. Type: Boolean Valid Values: `true` | `false` Default: `false`  |  No  | 
+|   `-d`   `--delete-source-bundle`   |  Indicates whether to delete the associated source bundle from Amazon S3\. `true`: An attempt is made to delete the associated Amazon S3 source bundle specified at time of creation\. `false`: No action is taken on the Amazon S3 source bundle specified at time of creation\. Type: Boolean Valid Values: `true` \| `false` Default: `false`  |  No  | 
 
 ### Output<a name="CLIReference-cmd-DeleteApplicationVersion-Response"></a>
 
@@ -563,17 +510,11 @@ Returns information about existing application versions\.
 ### Output<a name="CLIReference-cmd-DescribeApplicationVersions-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application associated with this release\.
-
 + **DateCreated—**The date the application was created\.
-
 + **DateUpdated—**The date the application version was last updated\.
-
 + **Description—**The description of the application version\.
-
 + **SourceBundle—**The location where the source bundle is located for this version\. 
-
 + **VersionLabel—**A label uniquely identifying the version for the associated application\. 
 
 ### Examples<a name="CLIReference-cmd-DescribeApplicationVersions-Examples"></a>
@@ -624,17 +565,11 @@ Returns descriptions about existing applications\.
 ### Output<a name="CLIReference-cmd-DescribeApplications-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application\.
-
 + **ConfigurationTemplates—**A list of the configuration templates used to create the application\.
-
 + **DateCreated—**The date the application was created\.
-
 + **DateUpdated—**The date the application was last updated\.
-
 + **Description—**The description of the application\.
-
 + **Versions—**The names of the versions for this application\.
 
 ### Examples<a name="CLIReference-cmd-DescribeApplications-Examples"></a>
@@ -681,9 +616,7 @@ Describes the configuration options that are used in a particular configuration 
 ### Output<a name="CLIReference-cmd-DescribeConfigurationOptions-Response"></a>
 
 The command returns a table with the following information:
-
 + **Options—**A list of the configuration options\.
-
 + **SolutionStackName—**The name of the `SolutionStack` these configuration options belong to\.
 
 ### Examples<a name="CLIReference-cmd-DescribeConfigurationOptions-Examples"></a>
@@ -706,7 +639,7 @@ When describing the settings for the configuration set associated with a running
 
 ### Syntax<a name="CLIReference-cmd-DescribeConfigurationSettings-Syntax"></a>
 
- ** elastic\-beanstalk\-describe\-configuration\-settings \-a \[*name*\] \[\-t \[*name*\] | \-e \[*name*\]\] ** 
+ ** elastic\-beanstalk\-describe\-configuration\-settings \-a \[*name*\] \[\-t \[*name*\] \| \-e \[*name*\]\] ** 
 
 ### Options<a name="CLIReference-cmd-DescribeConfigurationSettings-Request"></a>
 
@@ -722,7 +655,6 @@ When describing the settings for the configuration set associated with a running
 ### Output<a name="CLIReference-cmd-DescribeConfigurationSettings-Response"></a>
 
 The command returns a table with the following information:
-
 + **ConfigurationSettings—**A list of the configuration settings\.
 
 ### Examples<a name="CLIReference-cmd-DescribeConfigurationSettings-Examples"></a>
@@ -736,7 +668,6 @@ This example shows how to describe the configuration options for an environment\
 ```
 
 ### Related Operations<a name="CLIReference-cmd-DescribeConfigurationSettings-Related"></a>
-
 +  [elastic\-beanstalk\-delete\-environment\-configuration](#CLIReference-cmd-DeleteEnvironmentConfiguration) 
 
 ## elastic\-beanstalk\-describe\-environment\-resources<a name="CLIReference-cmd-DescribeEnvironmentResources"></a>
@@ -747,7 +678,7 @@ This example shows how to describe the configuration options for an environment\
 
 ### Syntax<a name="CLIReference-cmd-DescribeEnvironmentResources-Syntax"></a>
 
- ** elastic\-beanstalk\-describe\-environment\-resources \[\-e \[*name*\] | \-E \[*id*\]\] ** 
+ ** elastic\-beanstalk\-describe\-environment\-resources \[\-e \[*name*\] \| \-E \[*id*\]\] ** 
 
 ### Options<a name="CLIReference-cmd-DescribeEnvironmentResources-Request"></a>
 
@@ -762,17 +693,11 @@ This example shows how to describe the configuration options for an environment\
 ### Output<a name="CLIReference-cmd-DescribeEnvironmentResources-Response"></a>
 
 The command returns a table with the following information:
-
 + **AutoScalingGroups—**A list of AutoScaling groups used by this environment\.
-
 + **EnvironmentName—**The name of the environment\.
-
 + **Instances—**The Amazon EC2 instances used by this environment\.
-
 + **LaunchConfigurations—**The Auto Scaling launch configurations in use by this environment\.
-
 + **LoadBalancers—**The load balancers in use by this environment\.
-
 + **Triggers—**The Auto Scaling triggers in use by this environment\.
 
 ### Examples<a name="CLIReference-cmd-DescribeEnvironmentResources-Examples"></a>
@@ -812,51 +737,28 @@ This example shows how to describe environment resources for an environment\.
 ### Output<a name="CLIReference-cmd-DescribeEnvironments-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application associated with this environment\.
-
 + **CNAME—**The URL to the CNAME for this environment\.
-
 + **DateCreated—**The date the environment was created\.
-
 + **DateUpdated—**The date the environment was last updated\.
-
 + **Description—**The description of the environment\.
-
 + **EndpointURL—**The URL to the load balancer for this environment\. 
-
 + **EnvironmentID—**The ID of this environment\. 
-
 + **EnvironmentName—**The name of this environment\. 
-
 + **Health—**Describes the health status of the environment\. Elastic Beanstalk indicates the failure levels for a running environment:
-
   + `Red`: Indicates the environment is not responsive\. Occurs when three or more consecutive failures occur for an environment\.
-
   + `Yellow`: Indicates that something is wrong\. Occurs when two consecutive failures occur for an environment\.
-
   + `Green`: Indicates the environment is healthy and fully functional\.
-
   + `Gray`: Default health for a new environment\. The environment is not fully launched and health checks have not started or health checks are suspended during an `UpdateEnvironment` or `RestartEnvironment`request\.
-
 + **Resources—**A list of AWS resources used in this environment\. 
-
 + **SolutionStackName—**The name of the `SolutionStack` deployed with this environment\.
-
 + **Status—**The current operational status of the environment:
-
   + `Launching`: Environment is in the process of initial deployment\.
-
   + `Updating`: Environment is in the process of updating its configuration settings or application version\.
-
   + `Ready`: Environment is available to have an action performed on it, such as update or terminate\.
-
   + `Terminating`: Environment is in the shut\-down process\.
-
   + `Terminated`: Environment is not running\.
-
 + **TemplateName—**The name of the configuration template used to originally launch this environment\.
-
 + **VersionLabel—**The application version deployed in this environment\.
 
 ### Examples<a name="CLIReference-cmd-DescribeEnvironments-Examples"></a>
@@ -897,28 +799,20 @@ This action returns the most recent 1,000 events from the specified `NextToken`\
 |   `-m`   `--max-records` *count*   |  Specifies the maximum number of events that can be returned, beginning with the most recent event\.  Type: Integer Default: None  |  No  | 
 |   `-n`   `--next-token` *token*   |  Pagination token\. Used to return the next batch of results\. Type: String Default: None  |  No  | 
 |   `-r`   `--request-id` *id*   |  The request ID\. Type: String Default: None  |  No  | 
-|   `-s`   `--severity ` *level*   |  If specified, a list of events with the specified severity level or higher is returned\. Type: String Valid Values: `TRACE` | `DEBUG` | `INFO` | `WARN` | `ERROR` | `FATAL` Default: None  |  No  | 
+|   `-s`   `--severity ` *level*   |  If specified, a list of events with the specified severity level or higher is returned\. Type: String Valid Values: `TRACE` \| `DEBUG` \| `INFO` \| `WARN` \| `ERROR` \| `FATAL` Default: None  |  No  | 
 |   `-S`   `--start-time` *timestamp*   |  If specified, a list of events that occurred after the specified time is returned\. Type: Date Time Default: None  |  No  | 
 |   `-t`   `--template-name` *name*   |  The name of the configuration template\. Type: String Default: None Length Constraints: Minimum value of 1\. Maximum value of 100\.  |  No  | 
 
 ### Output<a name="CLIReference-cmd-DescribeEvents-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application associated with the event\.
-
 + **EnvironmentName—**The name of the environment associated with the event\. 
-
 + **EventDate—**The date of the event\.
-
 + **Message—**The event's message\. 
-
 + **RequestID—**The web service request ID for the activity of this event\.
-
 + **Severity—**The severity level of the event\. 
-
 + **TemplateName—**The name of the configuration associated with this event\.
-
 + **VersionLabel—**The release label for the application version associated with this event\.
 
 ### Examples<a name="CLIReference-cmd-DescribeEvents-Examples"></a>
@@ -963,7 +857,7 @@ Deletes and recreates all of the AWS resources \(for example: the Auto Scaling g
 
 ### Syntax<a name="CLIReference-cmd-RebuildEnvironment-Syntax"></a>
 
- ** elastic\-beanstalk\-rebuild\-environment \[\-e \[*name*\] | \-E \[*id*\]\]** 
+ ** elastic\-beanstalk\-rebuild\-environment \[\-e \[*name*\] \| \-E \[*id*\]\]** 
 
 ### Options<a name="CLIReference-cmd-RebuildEnvironment-Request"></a>
 
@@ -999,7 +893,7 @@ Setting the InfoType to `tail` compiles the last lines from the application serv
 
 ### Syntax<a name="CLIReference-cmd-RequestEnvironmentInfo-Syntax"></a>
 
- ** elastic\-beanstalk\-request\-environment\-info \[\-e \[*name*\] | \-E \[*id*\]\] \-i \[*type*\] ** 
+ ** elastic\-beanstalk\-request\-environment\-info \[\-e \[*name*\] \| \-E \[*id*\]\] \-i \[*type*\] ** 
 
 ### Options<a name="CLIReference-cmd-RequestEnvironmentInfo-Request"></a>
 
@@ -1023,7 +917,6 @@ This example shows how to request environment information\.
 ```
 
 ### Related Operations<a name="CLIReference-cmd-RequestEnvironmentInfo-Related"></a>
-
 +  [elastic\-beanstalk\-retrieve\-environment\-info](#CLIReference-cmd-RetrieveEnvironmentInfo) 
 
 ## elastic\-beanstalk\-restart\-app\-server<a name="CLIReference-cmd-RestartAppServer"></a>
@@ -1034,7 +927,7 @@ Causes the environment to restart the application container server running on ea
 
 ### Syntax<a name="CLIReference-cmd-RestartAppServer-Syntax"></a>
 
- ** elastic\-beanstalk\-restart\-app\-server \[\-e \[*name*\] | \-E \[*id*\]\] ** 
+ ** elastic\-beanstalk\-restart\-app\-server \[\-e \[*name*\] \| \-E \[*id*\]\] ** 
 
 ### Options<a name="CLIReference-cmd-RestartAppServer-Request"></a>
 
@@ -1064,7 +957,7 @@ Retrieves the compiled information from a `RequestEnvironmentInfo` request\.
 
 ### Syntax<a name="CLIReference-cmd-RetrieveEnvironmentInfo-Syntax"></a>
 
- ** elastic\-beanstalk\-retrieve\-environment\-info \[\-e \[*name*\] | \-E \[*id*\]\] \-i \[*type*\] ** 
+ ** elastic\-beanstalk\-retrieve\-environment\-info \[\-e \[*name*\] \| \-E \[*id*\]\] \-i \[*type*\] ** 
 
 ### Options<a name="CLIReference-cmd-RetrieveEnvironmentInfo-Request"></a>
 
@@ -1080,13 +973,9 @@ Retrieves the compiled information from a `RequestEnvironmentInfo` request\.
 ### Output<a name="CLIReference-cmd-RetrieveEnvironmentInfo-Response"></a>
 
 The command returns a table with the following information:
-
 + **EC2InstanceId—**The Amazon EC2 instance ID for this information\.
-
 + **InfoType—**The type of information retrieved\. 
-
 + **Message—**The retrieved information\.
-
 + **SampleTimestamp—**The time stamp when this information was retrieved\. 
 
 ### Examples<a name="CLIReference-cmd-RetrieveEnvironmentInfo-Examples"></a>
@@ -1100,7 +989,6 @@ This example shows how to retrieve environment information\.
 ```
 
 ### Related Operations<a name="CLIReference-cmd-RetrieveEnvironmentInfo-Related"></a>
-
 +  [elastic\-beanstalk\-request\-environment\-info](#CLIReference-cmd-RequestEnvironmentInfo) 
 
 ## elastic\-beanstalk\-swap\-environment\-cnames<a name="CLIReference-cmd-SwapEnvironmentCNAMEs"></a>
@@ -1111,7 +999,7 @@ This example shows how to retrieve environment information\.
 
 ### Syntax<a name="CLIReference-cmd-SwapEnvironmentCNAMEs-Syntax"></a>
 
- ** elastic\-beanstalk\-swap\-environment\-cnames \[\-s \[*name*\] | \-S \[*desc*\]\] \[\-d \[*desc*\] | \-D \[*desc*\]\] ** 
+ ** elastic\-beanstalk\-swap\-environment\-cnames \[\-s \[*name*\] \| \-S \[*desc*\]\] \[\-d \[*desc*\] \| \-D \[*desc*\]\] ** 
 
 ### Options<a name="CLIReference-cmd-SwapEnvironmentCNAMEs-Request"></a>
 
@@ -1143,7 +1031,7 @@ Terminates the specified environment\.
 
 ### Syntax<a name="CLIReference-cmd-TerminateEnvironment-Syntax"></a>
 
- ** elastic\-beanstalk\-terminate\-environment \[\-e \[*name*\] | \-E \[*id*\]\] \-t ** 
+ ** elastic\-beanstalk\-terminate\-environment \[\-e \[*name*\] \| \-E \[*id*\]\] \-t ** 
 
 ### Options<a name="CLIReference-cmd-TerminateEnvironment-Request"></a>
 
@@ -1154,56 +1042,33 @@ Terminates the specified environment\.
 | --- | --- | --- | 
 |   `-e`   `--environment-name` *name*   |  The name of the environment to terminate\. Type: String Default: None Length Constraints: Minimum value of 4\. Maximum value of 23\.  |  Conditional  | 
 |   `-E`   `--environment-id` *id*   |  The ID of the environment to terminate\. Type: String Default: None  |  Conditional  | 
-|   `-t`   `--terminate-resources`   |  Indicates whether the associated AWS resources should shut down when the environment is terminated: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/OperationList-cmd.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/OperationList-cmd.html) Type: Boolean Valid Values: `true` | `false` Default: true  You can specify this parameter \(`-t`\) only for legacy environments because only legacy environments can have resources running when you terminate the environment\.   |  No  | 
+|   `-t`   `--terminate-resources`   |  Indicates whether the associated AWS resources should shut down when the environment is terminated: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/OperationList-cmd.html) [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/OperationList-cmd.html) Type: Boolean Valid Values: `true` \| `false` Default: true  You can specify this parameter \(`-t`\) only for legacy environments because only legacy environments can have resources running when you terminate the environment\.   |  No  | 
 
 ### Output<a name="CLIReference-cmd-TerminateEnvironment-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application associated with this environment\.
-
 + **CNAME—**The URL to the CNAME for this environment\.
-
 + **DateCreated—**The date the environment was created\.
-
 + **DateUpdated—**The date the environment was last updated\.
-
 + **Description—**The description of the environment\.
-
 + **EndpointURL—**The URL to the load balancer for this environment\. 
-
 + **EnvironmentID—**The ID of this environment\. 
-
 + **EnvironmentName—**The name of this environment\. 
-
 + **Health—**Describes the health status of the environment\. Elastic Beanstalk indicates the failure levels for a running environment:
-
   + `Red`: Indicates the environment is not responsive\. Occurs when three or more consecutive failures occur for an environment\.
-
   + `Yellow`: Indicates that something is wrong\. Occurs when two consecutive failures occur for an environment\.
-
   + `Green`: Indicates the environment is healthy and fully functional\.
-
   + `Gray`: Default health for a new environment\. The environment is not fully launched, and health checks have not started or health checks are suspended during an `UpdateEnvironment` or `RestartEnvironment` request\.
-
 + **Resources—**A list of AWS resources used in this environment\. 
-
 + **SolutionStackName—**The name of the `SolutionStack` deployed with this environment\.
-
 + **Status—**The current operational status of the environment:
-
   + `Launching`: Environment is in the process of initial deployment\.
-
   + `Updating`: Environment is in the process of updating its configuration settings or application version\.
-
   + `Ready`: Environment is available to have an action performed on it, such as update or terminate\.
-
   + `Terminating`: Environment is in the shutdown process\.
-
   + `Terminated`: Environment is not running\.
-
 + **TemplateName—**The name of the configuration template used to originally launch this environment\.
-
 + **VersionLabel—**The application version deployed in this environment\.
 
 ### Examples<a name="CLIReference-cmd-TerminateEnvironment-Examples"></a>
@@ -1242,17 +1107,11 @@ If a property \(for example, `description`\) is not provided, the value remains 
 ### Output<a name="CLIReference-cmd-UpdateApplication-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application\.
-
 + **ConfigurationTemplate—**The names of the configuration templates associated with this application\.
-
 + **DateCreated—**The date the environment was created\.
-
 + **DateUpdated—**The date the environment was last updated\.
-
 + **Description—**The description of the environment\.
-
 + **Versions—**The names of the versions for this application\.
 
 ### Examples<a name="CLIReference-cmd-UpdateApplication-Examples"></a>
@@ -1292,17 +1151,11 @@ If a property \(for example, `description`\) is not provided, the value remains 
 ### Output<a name="CLIReference-cmd-UpdateApplicationVersion-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application associated with this release\.
-
 + **DateCreated—**The creation date of the application version\.
-
 + **DateUpdated—**The last modified date of the application version\.
-
 + **Description—**The description of this application version\.
-
 + **SourceBundle—**The location where the source bundle is located for this version\.
-
 + **VersionLabel—**A label identifying the version for the associated application\.
 
 ### Examples<a name="CLIReference-cmd-UpdateApplicationVersion-Examples"></a>
@@ -1344,31 +1197,18 @@ If a property \(for example, `ApplicationName`\) is not provided, its value rema
 ### Output<a name="CLIReference-cmd-UpdateConfigurationTemplate-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application associated with this configuration set\.
-
 + **DateCreated—**The date \(in UTC time\) when this configuration set was created\.
-
 + **DateUpdated—**The date \(in UTC time\) when this configuration set was last modified\.
-
 + **DeploymentStatus—**If this configuration set is associated with an environment, the *DeploymentStatus* parameter indicates the deployment status of this configuration set:
-
   + `null`: This configuration is not associated with a running environment\.
-
   + `pending`: This is a draft configuration that is not deployed to the associated environment but is in the process of deploying\.
-
   + `deployed`: This is the configuration that is currently deployed to the associated running environment\.
-
   + `failed`: This is a draft configuration that failed to successfully deploy\.
-
 + **Description—**The description of the configuration set\.
-
 + **EnvironmentName—**If not null, the name of the environment for this configuration set\.
-
 + **OptionSettings—**A list of configuration options and their values in this configuration set\.
-
 + **SolutionStackName—**The name of the solution stack this configuration set uses\.
-
 + **TemplateName—**If not null, the name of the configuration template for this configuration set\.
 
 ### Examples<a name="CLIReference-cmd-UpdateConfigurationTemplate-Examples"></a>
@@ -1399,7 +1239,6 @@ This example shows how to update a configuration template\. For a list of config
 ```
 
 ### Related Operations<a name="CLIReference-cmd-UpdateConfigurationTemplate-Related"></a>
-
 +  [elastic\-beanstalk\-describe\-configuration\-options](#CLIReference-cmd-DescribeConfigurationOptions) 
 
 ## elastic\-beanstalk\-update\-environment<a name="CLIReference-cmd-UpdateEnvironment"></a>
@@ -1414,7 +1253,7 @@ When updating the configuration settings to a new template or individual setting
 
 ### Syntax<a name="CLIReference-cmd-UpdateEnvironment-Syntax"></a>
 
- ** elastic\-beanstalk\-update\-environment \[\-e \[*name*\] | \-E \[*id*\]\] \-l \[*label*\] \-t \[*name*\] \-d \[*desc*\] \-f \[*filename*\] \-F \[*filename*\] ** 
+ ** elastic\-beanstalk\-update\-environment \[\-e \[*name*\] \| \-E \[*id*\]\] \-l \[*label*\] \-t \[*name*\] \-d \[*desc*\] \-f \[*filename*\] \-F \[*filename*\] ** 
 
 ### Options<a name="CLIReference-cmd-UpdateEnvironment-Request"></a>
 
@@ -1434,51 +1273,28 @@ When updating the configuration settings to a new template or individual setting
 ### Output<a name="CLIReference-cmd-UpdateEnvironment-Response"></a>
 
 The command returns a table with the following information:
-
 + **ApplicationName—**The name of the application associated with this environment\.
-
 + **CNAME—**The URL to the CNAME for this environment\.
-
 + **DateCreated—**The date the environment was created\.
-
 + **DateUpdated—**The date the environment was last updated\.
-
 + **Description—**The description of the environment\.
-
 + **EndpointURL—**The URL to the load balancer for this environment\. 
-
 + **EnvironmentID—**The ID of this environment\. 
-
 + **EnvironmentName—**The name of this environment\. 
-
 + **Health—**Describes the health status of the environment\. Elastic Beanstalk indicates the failure levels for a running environment:
-
   + `Red`: Indicates the environment is not responsive\. Occurs when three or more consecutive failures occur for an environment\.
-
   + `Yellow`: Indicates that something is wrong\. Occurs when two consecutive failures occur for an environment\.
-
   + `Green`: Indicates the environment is healthy and fully functional\.
-
   + `Gray`: Default health for a new environment\. The environment is not fully launched, and health checks have not started or health checks are suspended during an `UpdateEnvironment` or `RestartEnvironment`request\.
-
 + **Resources—**A list of AWS resources used in this environment\. 
-
 + **SolutionStackName—**The name of the `SolutionStack` deployed with this environment\.
-
 + **Status—**The current operational status of the environment:
-
   + `Launching`: Environment is in the process of initial deployment\.
-
   + `Updating`: Environment is in the process of updating its configuration settings or application version\.
-
   + `Ready`: Environment is available to have an action performed on it, such as update or terminate\.
-
   + `Terminating`: Environment is in the shutdown process\.
-
   + `Terminated`: Environment is not running\.
-
 + **TemplateName—**The name of the configuration template used to originally launch this environment\.
-
 + **VersionLabel—**The application version deployed in this environment\.
 
 ### Examples<a name="CLIReference-cmd-UpdateEnvironment-Examples"></a>
@@ -1540,17 +1356,11 @@ This action returns a list of messages indicating any errors or warnings associa
 ### Output<a name="CLIReference-cmd-ValidateConfigurationSettings-Response"></a>
 
 The command returns a table with the following information:
-
 + **Message—**A message describing the error or warning\.
-
 + **Namespace**
-
 + **OptionName**
-
 + **Severity—**An indication of the severity of this message:
-
   + `error`: This message indicates that this is not a valid setting for an option\.
-
   + `warning`: This message provides information you should consider\.
 
 ### Examples<a name="CLIReference-cmd-ValidateConfigurationSettings-Examples"></a>

@@ -41,15 +41,11 @@ $ eb create test-env --elb-type network
 ## Network Load Balancer Namespaces<a name="environments-cfg-nlb-namespaces"></a>
 
 You can find settings related to Network Load Balancers in the following namespaces:
-
 + `[aws:elasticbeanstalk:environment](command-options-general.md#command-options-general-elasticbeanstalkenvironment)` – Choose the load balancer type for the environment\. The value for a Network Load Balancer is `network`\.
-
 + `[aws:elbv2:loadbalancer](command-options-general.md#command-options-general-elbv2)` – Configure access logs and other settings that apply to the Network Load Balancer as a whole\.
 **Note**  
 The `ManagedSecurityGroup` and `SecurityGroups` settings in this namespace don't apply to a Network Load Balancer\.
-
 + `[aws:elbv2:listener](command-options-general.md#command-options-general-elbv2-listener)` – Configure listeners on the Network Load Balancer\. These settings map to the settings in `aws:elb:listener` for Classic Load Balancers\.
-
 + `[aws:elasticbeanstalk:environment:process](command-options-general.md#command-options-general-environmentprocess)` – Configure health checks and specify the port and protocol for the processes that run on your environment's instances\. The port and protocol settings map to the instance port and instance protocol settings in `aws:elb:listener` for a listener on a Classic Load Balancer\. Health check settings map to the settings in the `aws:elb:healthcheck` and `aws:elasticbeanstalk:application` namespaces\.
 
 **Example \.ebextensions/network\-load\-balancer\.config**  

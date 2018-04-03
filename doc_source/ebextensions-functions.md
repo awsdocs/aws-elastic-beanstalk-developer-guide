@@ -2,7 +2,7 @@
 
 You can use functions in your configuration files to populate values for resource properties with information from other resources or from Elastic Beanstalk configuration option settings\. Elastic Beanstalk supports AWS CloudFormation functions \(`Ref`, `Fn::GetAtt`, `Fn::Join`\), and one Elastic Beanstalk\-specific function, `Fn::GetOptionSetting`\.
 
-
+**Topics**
 + [Ref](#ebextensions-functions-ref)
 + [Fn::GetAtt](#ebextensions-functions-getatt)
 + [Fn::Join](#ebextensions-functions-join)

@@ -28,26 +28,18 @@ You can use the AWS Management Console to enable log rotation to Amazon S3, conf
 
 1. On the **Software** configuration card, choose **Modify**\.
 
-### PHP Settings<a name="w3ab1c43c11c33b7"></a>
-
+### PHP Settings<a name="php-console-settings"></a>
 + **Document root** – The folder that contains your site's default page\. If your welcome page is not at the root of your source bundle, specify the folder that contains it relative to the root path\. For example, `/public` if the welcome page is in a folder named `public`\.
-
 + **Memory limit** – The maximum amount of memory that a script is allowed to allocate\. For example, `512M`\.
-
 + **Zlib output compression** – Set to `On` to compress responses\.
-
 + **Allow URL fopen** – Set to `Off` to prevent scripts from downloading files from remote locations\.
-
 + **Display errors** – Set to `On` to show internal error messages for debugging\.
-
 + **Max execution time** – The maximum time in seconds that a script is allowed to run before the environment terminates it\.
 
 ### Log Options<a name="php-console-logs"></a>
 
 The Log Options section has two settings:
-
 + **Instance profile**– Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
-
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
 ### Environment Properties<a name="php-console-properties"></a>

@@ -18,6 +18,6 @@ Configuration changes that modify the [launch configuration](command-options-gen
 |  Rolling Based on Time  |  ✓  |  ☓  |  ✓  | 
 |  Immutable  |  ✓  |  ✓  |  ☓  | 
 
-
+**Topics**
 + [Elastic Beanstalk Rolling Environment Configuration Updates](using-features.rollingupdates.md)
 + [Immutable Environment Updates](environmentmgmt-updates-immutable.md)

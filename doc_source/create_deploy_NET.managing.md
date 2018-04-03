@@ -7,17 +7,11 @@ With the AWS Toolkit for Visual Studio and the AWS Management Console, you can c
 When you deploy your application, Elastic Beanstalk configures a number of AWS cloud computing services\. You can control how these individual services are configured using the AWS Toolkit for Visual Studio\.
 
 **To edit an application's environment settings**
-
 + Expand the Elastic Beanstalk node and your application node\. Then right\-click your Elastic Beanstalk environment in **AWS Explorer**\. Select **View Status**\. 
 
   You can now configure settings for the following:
-
   + Server
-
   + Load balancing
-
   + Autoscaling
-
   + Notifications
-
   + Environment properties

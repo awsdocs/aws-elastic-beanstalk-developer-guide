@@ -2,7 +2,7 @@
 
 Laravel is an open source, model\-view\-controller \(MVC\) framework for PHP\. This tutorial walks you through the process of generating a Laravel application, deploying it to an AWS Elastic Beanstalk environment, and configuring it to connect to an Amazon Relational Database Service \(Amazon RDS\) database instance\.
 
-
+**Topics**
 + [Prerequisites](#php-laravel-tutorial-prereqs)
 + [Install Composer](#php-laravel-tutorial-composer)
 + [Install Laravel and Generate a Website](#php-laravel-tutorial-generate)

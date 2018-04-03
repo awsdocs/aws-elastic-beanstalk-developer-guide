@@ -1,6 +1,6 @@
 # General Options for All Environments<a name="command-options-general"></a>
 
-
+**Topics**
 + [aws:autoscaling:asg](#command-options-general-autoscalingasg)
 + [aws:autoscaling:launchconfiguration](#command-options-general-autoscalinglaunchconfiguration)
 + [aws:autoscaling:scheduledaction](#command-options-general-autoscalingscheduledaction)
@@ -474,7 +474,7 @@ Configure additional listeners on an application load balancer or a network load
 
 ## aws:elbv2:listenerrule:rule\_name<a name="command-options-general-elbv2-listenerrule"></a>
 
-Add listener rules to an application load balancer\.
+Define listener rules for an application load balancer\. If a request matches the host names or paths in a rule, the load balancer forwards it to the specified process\. To use a rule, add it to a listener with the `Rules` option in the [`aws:elbv2:listener:listener_port`](#command-options-general-elbv2-listener) namespace\.
 
 **Note**  
 This namespace isn't applicable to environments with a network load balancer\.
@@ -484,7 +484,8 @@ This namespace isn't applicable to environments with a network load balancer\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  PathPatterns  |  List of path patterns to match\. For example, `/img/*`\. This option is only applicable to environments with an application load balancer\.  |  None  |   | 
+|  HostHeaders  |  List of host names to match\. For example, `my.example.com`\.  |  None  |  Each name can be up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and up to three wildcard characters \(\* matches zero or more characters; ? matches exactly one character\)  | 
+|  PathPatterns  |  List of path patterns to match\. For example, `/img/*`\. This option is only applicable to environments with an application load balancer\.  |  None  |  Each pattern can be up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and up to three wildcard characters \(\* matches zero or more characters; ? matches exactly one character\)  | 
 |  Priority  |  Precedence of this rule when multiple rules match\. The lower number takes precedence\. No two rules can have the same priority\.  |  `1`  |  `1` to `1000`  | 
 |  Process  |  Name of the [process](#command-options-general-environmentprocess) to which to forward traffic when this rule matches the request\.  |  `default`  |  A process name\.  | 
 

@@ -14,7 +14,7 @@ If the command line is more your style, install the [Elastic Beanstalk Command L
 
 The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
-
+**Topics**
 + [Getting Started with Java on Elastic Beanstalk](java-getstarted.md)
 + [Setting Up your Java Development Environment](java-development-environment.md)
 + [Using the AWS Elastic Beanstalk Tomcat Platform](java-tomcat-platform.md)

@@ -39,9 +39,7 @@ You can use the AWS Management Console to enable log rotation to Amazon S3 and c
 ### Log Options<a name="java-se-options-logs"></a>
 
 The Log Options section has two settings:
-
 + **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
-
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
 ### Environment Properties<a name="java-se-options-properties"></a>

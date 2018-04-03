@@ -1,6 +1,6 @@
 # Platform History<a name="platform-history"></a>
 
-
+**Topics**
 + [Packer Platform History](platform-history-packer.md)
 + [Single Container Docker Platform History](platform-history-docker-single.md)
 + [Multicontainer Docker Platform History](platform-history-docker-multi.md)

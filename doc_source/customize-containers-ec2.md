@@ -9,7 +9,7 @@ This section describes the type of information you can include in a configuratio
 
 Configuration files support the following keys that affect the Linux server your application runs on\.
 
-
+**Topics**
 + [Packages](#linux-packages)
 + [Groups](#linux-groups)
 + [Users](#linux-users)
@@ -194,7 +194,7 @@ URL of a file to download\. Specify either `content` or `source`, but not both\.
 
 `encoding`  
 The encoding format of the string specified with the `content` option\.  
-Valid values: `plain` | `base64`
+Valid values: `plain` \| `base64`
 
 `group`  
 Linux group that owns the file\.

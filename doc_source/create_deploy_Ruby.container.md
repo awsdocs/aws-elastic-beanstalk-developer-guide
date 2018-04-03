@@ -29,9 +29,7 @@ You can use the AWS Management Console to enable log rotation to Amazon S3 and c
 ### Log Options<a name="create_deploy_Ruby.container.console.logoptions"></a>
 
 The Log Options section has two settings:
-
 + **Instance profile**– Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
-
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
 ### Environment Properties<a name="create_deploy_Ruby.env.console.ruby.envprops"></a>
@@ -39,13 +37,9 @@ The Log Options section has two settings:
 The **Environment Properties** section lets you specify environment configuration settings on the Amazon EC2 instances that are running your application\. Environment properties are passed in as key\-value pairs to the application\.
 
 The Ruby platform defines the following properties for environment configuration:
-
 +  **BUNDLE\_WITHOUT** – A colon\-separated list of groups to ignore when [installing dependencies](http://bundler.io/bundle_install.html) from a [Gemfile](http://bundler.io/v1.15/man/gemfile.5.html)\.
-
 +  **RAILS\_SKIP\_ASSET\_COMPILATION** – Set to `true` to skip running [http://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets](http://guides.rubyonrails.org/asset_pipeline.html#precompiling-assets) during deployment\.
-
 +  **RAILS\_SKIP\_MIGRATIONS** – Set to `true` to skip running [http://guides.rubyonrails.org/active_record_migrations.html#running-migrations](http://guides.rubyonrails.org/active_record_migrations.html#running-migrations) during deployment\.
-
 +  **RACK\_ENV** – Specify the environment stage for Rack\. For example, `development`, `production`, or `test`\.
 
 Inside the Ruby environment running in Elastic Beanstalk, environment variables are accessible using the `ENV` object\. For example, you could read a property named `API_ENDPOINT` to a variable with the following code:

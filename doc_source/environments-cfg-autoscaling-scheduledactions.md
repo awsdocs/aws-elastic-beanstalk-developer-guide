@@ -22,19 +22,12 @@ You can create scheduled actions for your environment's Auto Scaling group in th
 ![\[Elastic Beanstalk Auto Scaling Scheduled Actions Configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-autoscaling-scheduledactions.png)
 
 1. Fill in the following scheduled action settings:
-
    + **Name** – Specify a unique name of up to 255 alphanumeric characters, with no spaces\.
-
    + **Instances** – Choose the minimum and maximum instance count to apply to the Auto Scaling group\.
-
    + **Desired capacity** \(optional\) – Set the initial desired capacity for the Auto Scaling group\. After the scheduled action is applied, triggers adjust the desired capacity based on their settings\.
-
    + **Occurrence** – Choose **Recurring** to repeat the scaling action on a schedule\.
-
    + **Start time** – For one\-time actions, choose the date and time to run the action\. For recurrent actions, choose when to activate the action\.
-
    + **Recurrence** – Use a [Cron](http://en.wikipedia.org/wiki/Cron#CRON_expression) expression to specify the frequency with which you want the scheduled action to occur\. For example, `30 6 * * 2` runs the action every Tuesday at 6:30 AM UTC\.
-
    + **End time** \(optional\) – For recurrent actions, choose when to deactivate the action\. If you don't specify an **EndTime**, the action recurs according to the `Recurrence` expression\.
 
      When a scheduled action ends, Amazon EC2 Auto Scaling doesn't automatically go back to its previous settings\. Configure a second scheduled action to return Amazon EC2 Auto Scaling to the original settings as needed\.
@@ -98,7 +91,7 @@ option_settings:
   ScheduledScaleDownSpecificTime.aws:autoscaling:scheduledaction:
     MinSize: '1'
     MaxSize: '1'
-    DesiredCapacity: '4'
+    DesiredCapacity: '1'
     StartTime: '2015-12-12T07:00:00Z'
 ```
 

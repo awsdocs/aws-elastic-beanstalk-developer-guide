@@ -12,7 +12,7 @@ option_settings:
     ProxyServer: nginx
 ```
 
-
+**Topics**
 + [Extending the Default Apache Configuration](#java-tomcat-proxy-apache)
 + [Extending the Default nginx Configuration](#java-tomcat-proxy-nginx)
 
