@@ -33,7 +33,7 @@ You can specify the value of the **sourceBundleUrl** parameter as an HTTP URL, b
 + **rdsMultiAZDatabase** – Specify whether Elastic Beanstalk needs to create the database instance across multiple Availability Zones\. You can specify either `true` or `false`\. For more information about multiple Availability Zone deployments with Amazon RDS, go to [Regions and Availability Zones](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html) in the * Amazon Relational Database Service User Guide*\.
 + **rdsDBDeletionPolicy** – Specify whether to delete or snapshot the database instance on environment termination\. You can specify either `Delete` or `Snapshot`\.
 
-## Example<a name="w3ab1c19c35c30c11"></a>
+## Example<a name="w3ab1c19c35c31c11"></a>
 
 The following is an example Launch Now URL\. After you construct your own, you can give it to your users\. For example, you might want to embed the URL on a webpage or in training materials\. When users create an application using the Launch Now URL, the Elastic Beanstalk Create an Application wizard requires no additional input\.
 

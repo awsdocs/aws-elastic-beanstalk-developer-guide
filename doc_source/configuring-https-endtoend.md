@@ -2,24 +2,17 @@
 
 Terminating secure connections at the load balancer and using HTTP on the backend may be sufficient for your application\. Network traffic between AWS resources cannot be listened to by instances that are not part of the connection, even if they are running under the same account\.
 
-However, if you are developing an application that needs to comply with strict external regulations, you may be required to secure all network connections\. You can use [configuration files](ebextensions.md) to make your Elastic Beanstalk environment's load balancer connect to backend instances securely to meet these requirements\.
+However, if you are developing an application that needs to comply with strict external regulations, you may be required to secure all network connections\. You can use the Elastic Beanstalk console or [configuration files](ebextensions.md) to make your Elastic Beanstalk environment's load balancer connect to backend instances securely to meet these requirements\. The following procedure focuses on configuration files\.
 
-First [add a secure listener to your load balancer](configuring-https-elb.md), if you haven't already:
-
-**`.ebextensions/https-lbterminate.config`**
-
-```
-option_settings:
-  aws:elb:listener:443:
-    SSLCertificateId: arn:aws:acm:us-east-2:#############:certificate/####################################
-    ListenerProtocol: HTTPS
-```
+First, [add a secure listener to your load balancer](configuring-https-elb.md), if you haven't already\.
 
 You must also configure the instances in your environment to listen on the secure port and terminate HTTPS connections\. The configuration varies per platform\. See [Configuring Your Application to Terminate HTTPS Connections at the Instance](https-singleinstance.md) for instructions\. You can use a [self\-signed certificate](configuring-https-ssl.md) for the EC2 instances without issue\.
 
-Next, configure the listener to forward traffic using HTTPS on the secure port used by your application\. You can also change the default health check to use this port and protocol to ensure that the load balancer is able to connect securely\. The following configuration file does both:
+Next, configure the listener to forward traffic using HTTPS on the secure port used by your application\. Use one of the following configuration file, according to the type of load balancer that your environment uses\.
 
-**`.ebextensions/https-reencrypt.config`**
+**`.ebextensions/https-reencrypt-clb.config`**
+
+Use this configuration file with a Classic Load Balancer\. In addition to configuring the load balancer, the configuration file also changes the default health check to use port 443 and HTTPS, to ensure that the load balancer is able to connect securely\.
 
 ```
 option_settings:
@@ -28,6 +21,19 @@ option_settings:
     InstanceProtocol: HTTPS
   aws:elasticbeanstalk:application:
     Application Healthcheck URL: HTTPS:443/
+```
+
+**`.ebextensions/https-reencrypt-alb.config`**
+
+Use this configuration file with an Application Load Balancer\.
+
+```
+option_settings:
+  aws:elbv2:listener:443:
+    DefaultProcess: https
+  aws:elasticbeanstalk:environment:process:https:
+    Port: '443'
+    Protocol: HTTPS
 ```
 
 **Note**  

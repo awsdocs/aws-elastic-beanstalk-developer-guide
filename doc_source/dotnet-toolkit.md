@@ -115,7 +115,7 @@ For single\-instance environments, load balancing, autoscaling, and the health c
 
    1. For Target framework, select **\.NET Framework 4\.0**\. 
 
-   1. Elastic Load Balancing uses a health check to determine whether the Amazon EC2 instances running your application are healthy\. The health check determines an instance's health status by probing a specified URL at a set interval\. You can override the default URL to match an existing resource in your application \(e\.g\., `/myapp/index.aspx`\) by entering it in the **Application health check URL** box\. For more information about application health checks, see [Health Check](using-features.managing.elb.md#using-features.managing.elb.healthchecks)\. 
+   1. Elastic Load Balancing uses a health check to determine whether the Amazon EC2 instances running your application are healthy\. The health check determines an instance's health status by probing a specified URL at a set interval\. You can override the default URL to match an existing resource in your application \(e\.g\., `/myapp/index.aspx`\) by entering it in the **Application health check URL** box\. For more information about application health checks, see [Health Check](environments-cfg-clb.md#using-features.managing.elb.healthchecks)\. 
 
    1. Type an email address if you want to receive Amazon Simple Notification Service \(Amazon SNS\) notifications of important events affecting your application\.
 

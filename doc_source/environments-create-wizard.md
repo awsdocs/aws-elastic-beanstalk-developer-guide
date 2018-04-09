@@ -141,21 +141,11 @@ For more information on CloudWatch metrics and alarms, see [Amazon CloudWatch Co
 
 ### Load balancer<a name="environments-create-wizard-loadbalancer"></a>
 
-Your environment's load balancer is the entry point for all traffic headed for your application\. Elastic Beanstalk supports several types of load balancer\. When you create an environment using the Elastic Beanstalk console, a Classic Load Balancer is created for your environment\. For more details about load balancer types, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)\.
+In load\-balanced environments, your environment's load balancer is the entry point for all traffic headed for your application\. Elastic Beanstalk supports several types of load balancer\. Use the **Load balancer** configuration card to select a load balancer type and to configure settings for it\. By default, the Elastic Beanstalk console creates a Classic Load Balancer and configures it to serve HTTP traffic on port 80\.
 
-By default, the load balancer serves HTTP traffic on port 80\. You can also configure a secure listener to accept secure connections using HTTPS\. If you use HTTPS to provide secure connections on port 443, you can disable the default listener to require users to connect securely\. 
+For more details about load balancer types and settings, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md) and [Configuring HTTPS for your Elastic Beanstalk Environment](configuring-https.md)\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-loadbalancer.png)
-+ **ELB listener** – The default listener on the load balancer serves HTTP traffic from the Internet or, for an internal application, networks connected to your VPC\.
-+ **Secure ELB listener** – The secure listener terminates HTTPS connections using a TLS/SSL certificate and passes the decrypted traffic to your instances\. You can [upload certificates with IAM](configuring-https-ssl-upload.md), or [create a new certificate with AWS Certificate Manager](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html)for a domain that you own\.
-
-Use the remaining options to enable cross\-zone load balancing and connection draining\.
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-loadbalancer-etc.png)
-+ **Cross\-zone load balancing** – Ensures traffic is balanced correctly when the number of instances in each availability zone is not uniform, and prevents issues due to DNS caching on clients\.
-+ **Connection draining** – Allows time for active connections to complete before deregistering an instance from the load balancer during scaling operations, updates, and deployments\.
-
-You can use [configuration files](ebextensions.md) to configure more load balancer options, including advanced listener configuration, TCP passthrough, application load balancing, and backend authentication\. See [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md) and [Configuring HTTPS for your Elastic Beanstalk Environment](configuring-https.md) for more information\.
+![\[Load balancer configuration during environment creation.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-elb-type-chooser.png)
 
 ### Rolling updates and deployments<a name="environments-create-wizard-deployment-settings"></a>
 

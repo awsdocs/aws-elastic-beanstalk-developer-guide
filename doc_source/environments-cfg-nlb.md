@@ -1,22 +1,26 @@
 # Configuring a Network Load Balancer<a name="environments-cfg-nlb"></a>
 
-If you've [enabled load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Beanstalk supports a few Elastic Load Balancing types\. See the [Elastic Load Balancing User Guide](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/) to learn about them\. This topic describes the configuration of a Network Load Balancer\. To learn how to configure other load balancer types, see [Classic Load Balancer](using-features.managing.elb.md) and [Application Load Balancer](environments-cfg-applicationloadbalancer.md)\.
+When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports a few load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. 
+
+This topic describes the configuration of a [Network Load Balancer](http://docs.aws.amazon.com/elasticloadbalancing/latest/network/)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)\.
+
+**Note**  
+You can choose the type of load balancer that your environment uses only during environment creation\. You can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.
 
 ## Introduction<a name="environments-cfg-nlb-intro"></a>
 
 With a Network Load Balancer, the default listener accepts TCP requests on port 80 and distributes them to the instances in your environment\. You can configure health check behavior, push access logs from the load balancer to an Amazon Simple Storage Service \(Amazon S3\) bucket, configure the listener port, or add a listener on another port\.
 
 **Note**  
-Unlike a Classic Load Balancer or an Application Load Balancer, a Network Load Balancer cannot have HTTP or HTTPS listeners\. It only supports TCP listeners\. Web traffic in both HTTP and HTTPS protocols at layer 7 uses the TCP protocol at layer 4, so a Network Load Balancer listens to all web traffic on configured TCP ports\. For secure HTTPS traffic that travels on a different port \(typically 443\), you can configure a separate listener for this port and direct the traffic to a different target process\.
+Unlike a Classic Load Balancer or an Application Load Balancer, a Network Load Balancer can't have application layer \(layer 7\) HTTP or HTTPS listeners\. It only supports TCP listeners\. Web traffic in both HTTP and HTTPS protocols at layer 7 uses the TCP protocol at layer 4, so a Network Load Balancer listens to all web traffic on configured TCP ports\. To handle secure HTTPS traffic that travels on a different port \(typically 443\), you can configure a separate listener for this port and direct the traffic to a different target process\.
 
 A Network Load Balancer supports active health checks\. These checks are based on messages to configured health check paths, similarly to the other load balancer types\. In addition, a Network Load Balancer supports passive health checks\. It automatically detects faulty backend instances and routes traffic only to healthy instances\.
 
-## Getting Started<a name="environments-cfg-nlb-getstarted"></a>
+You can set the load balancer type during environment creation using the EB CLI, the Elastic Beanstalk APIs, or `.ebextensions`, such as the one in the example [\.ebextensions/network\-load\-balancer\.config](#network-load-balancer.config)\. The console doesn't support this functionality\.
 
-**Note**  
-You can set the load balancer type only during environment creation using the EB CLI, the Elastic Beanstalk APIs, or `.ebextensions`, such as the one in the example [\.ebextensions/network\-load\-balancer\.config](#network-load-balancer.config)\. The console does not support this functionality\.
+## Configuring a Network Load Balancer Using the EB CLI<a name="environments-cfg-nlb-ebcli"></a>
 
-The EB CLI prompts you to choose a load balancer type when you run `eb create`\.
+The EB CLI prompts you to choose a load balancer type when you run [`eb create`](eb3-create.md)\.
 
 ```
 $ eb create
@@ -85,5 +89,5 @@ option_settings:
   aws:elasticbeanstalk:environment:process:https:
     Port: '443'
 ```
-The `DefaultProcess` option is named this way because of Application Load Balancers, which can have non\-default listeners on the same port for traffic to specific paths \(see [Application Load Balancer](environments-cfg-applicationloadbalancer.md) for details\)\. For a Network Load Balancer the option specifies the only target process for this listener\.  
-In this example, we named the process `https` because it listens to secure \(HTTPS\) traffic\. The listener sends traffic to the process on the designated port using the TCP protocol, because a Network Load Balancer works only with TCP\. This is OK, because HTTP and HTTPS network traffic is implemented on top of TCP\.
+The `DefaultProcess` option is named this way because of Application Load Balancers, which can have non\-default listeners on the same port for traffic to specific paths \(see [Application Load Balancer](environments-cfg-alb.md) for details\)\. For a Network Load Balancer the option specifies the only target process for this listener\.  
+In this example, we named the process `https` because it listens to secure \(HTTPS\) traffic\. The listener sends traffic to the process on the designated port using the TCP protocol, because a Network Load Balancer works only with TCP\. This is OK, because network traffic for HTTP and HTTPS is implemented on top of TCP\.

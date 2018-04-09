@@ -222,7 +222,7 @@ Configure your environment's default process\.
 |  Port  |  Port on which the process listens\.  |  `80`  |  `1` to `65535`  | 
 |  Protocol  |  Protocol that the process uses\. With an application load balancer, you can only set this option to `HTTP` or `HTTPS`\. With a network load balancer, you can only set this option to `TCP`\.  |  With classic or application load balancer: `HTTP` With network load balancer: `TCP`  |  `TCP` `HTTP` `HTTPS`  | 
 |  StickinessEnabled  |  Set to true to enable sticky sessions\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `'false'`  |  `'false'` `'true'`  | 
-|  StickinessLBCookieDuration  |  Lifetime, in seconds, of the sticky session cookie\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `86400`  |  `1` to `604800`  | 
+|  StickinessLBCookieDuration  |  Lifetime, in seconds, of the sticky session cookie\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `86400` \(one day\)  |  `1` to `604800`  | 
 |  StickinessType  |  Set to `lb_cookie` to use cookies for sticky sessions\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `lb_cookie`  |  `lb_cookie`  | 
 |  UnhealthyThresholdCount  |  Consecutive unsuccessful requests before Elastic Load Balancing changes the instance health status\.  |  `5`  |  `2` to `10`  | 
 
@@ -244,7 +244,7 @@ Configure additional processes for your environment\.
 |  Port  |  Port on which the process listens\.  |  `80`  |  `1` to `65535`  | 
 |  Protocol  |  Protocol that the process uses\. With an application load balancer, you can only set this option to `HTTP` or `HTTPS`\. With a network load balancer, you can only set this option to `TCP`\.  |  With classic or application load balancer: `HTTP` With network load balancer: `TCP`  |  `TCP` `HTTP` `HTTPS`  | 
 |  StickinessEnabled  |  Set to true to enable sticky sessions\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `'false'`  |  `'false'` `'true'`  | 
-|  StickinessLBCookieDuration  |  Lifetime, in seconds, of the sticky session cookie\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `86400`  |  `1` to `604800`  | 
+|  StickinessLBCookieDuration  |  Lifetime, in seconds, of the sticky session cookie\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `86400` \(one day\)  |  `1` to `604800`  | 
 |  StickinessType  |  Set to `lb_cookie` to use cookies for sticky sessions\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `lb_cookie`  |  `lb_cookie`  | 
 |  UnhealthyThresholdCount  |  Consecutive unsuccessful requests before Elastic Load Balancing changes the instance health status\.  |  `5`  |  `2` to `10`  | 
 
@@ -386,8 +386,8 @@ Configure the default listener \(port 80\) on a classic load balancer\.
 | Name | Description | Default | Valid Values | 
 | --- | --- | --- | --- | 
 | ListenerProtocol | The protocol used by the listener\. |  HTTP  |  HTTP TCP  | 
-| InstancePort | The port that this listener uses to communicate with the EC2 instances\. | The same as listener\_port\. | 1 to 65535 | 
-| InstanceProtocol | The protocol that this listener uses to communicate with the EC2 instances\. |  `HTTP` when `ListenerProtocol` is `HTTP` `TCP` when `ListenerProtocol` is `TCP`  | HTTP or HTTPS when ListenerProtocol is HTTP or HTTPS `TCP` or `SSL` when `ListenerProtocol` is `TCP` or `SSL` | 
+| InstancePort | The port that this listener uses to communicate with the EC2 instances\. | 80 | 1 to 65535 | 
+| InstanceProtocol |  The protocol that this listener uses to communicate with the EC2 instances\. It must be at the same internet protocol layer as the `ListenerProtocol`\. It also must have the same security level as any other listener using the same `InstancePort` as this listener\. For example, if `ListenerProtocol` is `HTTPS` \(application layer, using a secure connection\), you can set `InstanceProtocol` to `HTTP` \(also at the application layer, using an insecure connection\)\. If, in addition, you set `InstancePort` to `80`, you must set `InstanceProtocol` to `HTTP` in all other listeners with `InstancePort` set to `80`\.  |  `HTTP` when `ListenerProtocol` is `HTTP` `TCP` when `ListenerProtocol` is `TCP`  | HTTP or HTTPS when ListenerProtocol is HTTP or HTTPS `TCP` or `SSL` when `ListenerProtocol` is `TCP` or `SSL` | 
 | PolicyNames | A comma\-separated list of policy names to apply to the port for this listener\. We suggest that you use the LoadBalancerPorts option of the [aws:elb:policies](#command-options-general-elbpolicies) namespace instead\. | None |  | 
 | ListenerEnabled | Specifies whether this listener is enabled\. If you specify false, the listener is not included in the load balancer\.  | true |  `true` `false`  | 
 
@@ -402,7 +402,7 @@ Configure additional listeners on a classic load balancer\.
 | --- | --- | --- | --- | 
 |  ListenerProtocol  | The protocol used by the listener\. |  HTTP  |  HTTP HTTPS TCP SSL  | 
 |  InstancePort  | The port that this listener uses to communicate with the EC2 instances\. | The same as listener\_port\. | 1 to 65535 | 
-|  InstanceProtocol  | The protocol that this listener uses to communicate with the EC2 instances\. |  `HTTP` when `ListenerProtocol` is `HTTP` or `HTTPS` `TCP` when `ListenerProtocol` is `TCP` or `SSL`  | HTTP or HTTPS when ListenerProtocol is HTTP or HTTPS `TCP` or `SSL` when `ListenerProtocol` is `TCP` or `SSL` | 
+|  InstanceProtocol  |  The protocol that this listener uses to communicate with the EC2 instances\. It must be at the same internet protocol layer as the `ListenerProtocol`\. It also must have the same security level as any other listener using the same `InstancePort` as this listener\. For example, if `ListenerProtocol` is `HTTPS` \(application layer, using a secure connection\), you can set `InstanceProtocol` to `HTTP` \(also at the application layer, using an insecure connection\)\. If, in addition, you set `InstancePort` to `80`, you must set `InstanceProtocol` to `HTTP` in all other listeners with `InstancePort` set to `80`\.  |  `HTTP` when `ListenerProtocol` is `HTTP` or `HTTPS` `TCP` when `ListenerProtocol` is `TCP` or `SSL`  | HTTP or HTTPS when ListenerProtocol is HTTP or HTTPS `TCP` or `SSL` when `ListenerProtocol` is `TCP` or `SSL` | 
 |  PolicyNames  | A comma\-separated list of policy names to apply to the port for this listener\. We suggest that you use the LoadBalancerPorts option of the [aws:elb:policies](#command-options-general-elbpolicies) namespace instead\. | None |  | 
 |  SSLCertificateId  | ARN of an SSL certificate to bind to the listener\. |  None  |  | 
 |  ListenerEnabled  | Specifies whether this listener is enabled\. If you specify false, the listener is not included in the load balancer\.  | true if any other option is set\. false otherwise\. |  true false  | 
@@ -454,7 +454,10 @@ Configure the default listener \(port 80\) on an application load balancer or a 
 | --- | --- | --- | --- | 
 |  DefaultProcess  |  Name of the [process](#command-options-general-environmentprocess) to which to forward traffic when no rules match\.  |  `default`  |  A process name\.  | 
 |  ListenerEnabled  |  Set to `false` to disable the listener\. You can use this option to disable the default listener on port 80\.  |  `true`  |  `true` `false`  | 
+|  Protocol  |  Protocol of traffic to process\.  |  With application load balancer: `HTTP` With network load balancer: `TCP`  |  With application load balancer: `HTTP`, `HTTPS` With network load balancer: `TCP`  | 
 |  Rules  |  List of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener This option is only applicable to environments with an application load balancer\.  |  None  |  Comma separated list of rule names\.  | 
+|  SSLCertificateArns  |  The ARN of the SSL certificate to bind to the listener\. This option is only applicable to environments with an application load balancer\.  |  None  |  The ARN of a certificate stored in IAM or ACM\.  | 
+|  SSLPolicy  |  Specify a security policy to apply to the listener\. This option is only applicable to environments with an application load balancer\.  | None \(ELB default\) |  The name of a load balancer security policy\.  | 
 
 ## aws:elbv2:listener:listener\_port<a name="command-options-general-elbv2-listener"></a>
 
