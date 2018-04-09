@@ -30,7 +30,7 @@ The Application Load Balancer health check doesn't take into account the Elastic
 ## Getting Started<a name="environments-cfg-applicationloadbalancer-getstarted"></a>
 
 **Note**  
-You can set the load balancer type only during environment creation using the EB CLI, the Elastic Beanstalk APIs, or `.ebextensions`, such as the one in the example [\.ebextensions/application\-load\-balancer\.config](#application-load-balancer.config)\. The console does not support this functionality\.
+You can set the load balancer type only during environment creation using the EB CLI, the Elastic Beanstalk APIs, or `.ebextensions`, such as the one in the example [\.ebextensions/application\-load\-balancer\.config](#application-load-balancer.config)\. Now, you can create an Application Load Balancer from the Beanstalk console\.
 
 The EB CLI prompts you to choose a load balancer type when you run `eb create`\.
 
