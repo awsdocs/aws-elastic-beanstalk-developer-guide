@@ -8,7 +8,7 @@ You can use an [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonV
   + **Private Subnet** – Instances use a NAT device to access the Internet\.
 
   Elastic Beanstalk does not support proxy settings like `HTTPS_PROXY` for configuring a web proxy\.
-+ **NTP** – Instances in your Elastic Beanstalk environment use Network Time Protocol \(NTP\) to syncronize the system clock\. If instances are unable to communicate on UDP port 123, the clock may go out of sync, causing issues with Elastic Beanstalk health reporting\. Ensure that your VPC security groups and network ACLs allow inbound and outbound UDP traffic on port 123 to avoid these issues\.
++ **NTP** – Instances in your Elastic Beanstalk environment use Network Time Protocol \(NTP\) to synchronize the system clock\. If instances are unable to communicate on UDP port 123, the clock may go out of sync, causing issues with Elastic Beanstalk health reporting\. Ensure that your VPC security groups and network ACLs allow inbound and outbound UDP traffic on port 123 to avoid these issues\.
 
 The [elastic\-beanstalk\-samples](https://github.com/awslabs/elastic-beanstalk-samples/) repository provides AWS CloudFormation templates that you can use to create a VPC for use with your Elastic Beanstalk environments\.
 

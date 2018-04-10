@@ -38,8 +38,6 @@ For **DB instance identifier**, type **wordpress\-beanstalk**, and for **Master 
    If prompted to select **Use case**, choose **Production** for Multi\-AZ deployment or choose **Dev/Test** to consume only Free Tier resources\. Then choose **Next**\.
 
 1. Under **Specify DB details**, for **Instance specifications**, choose the following and then keep the default settings for the remaining options:
-
-    
    + **DB instance class** – Computation and memory capacity \(if unsure, [learn which option is right for you ](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide//Concepts.DBInstanceClass.html)\) 
    + **Multi\-AZ deployment** – For high availability, set to **Create replica in different zone**\.
 
@@ -50,8 +48,6 @@ For **DB instance identifier**, type **wordpress\-beanstalk**, and for **Master 
 1. Choose **Next**\.
 
 1. Under **Configure advanced settings**, for **Network & Security**, choose the following:
-
-    
    + **Virtual Private Cloud \(VPC\)** – Keep default value 
    + **Subnet group** – **Default**
    + **Public accessibility** – **No**
@@ -161,7 +157,7 @@ To prepare to deploy WordPress using AWS Elastic Beanstalk, you must copy the Wo
 
    1. Go to **Details**\.
 
-   1. Under **Security and network**, Copy the value for the **VPC** and the values for **Subnets** to the `.ebextensions/efs-create.config` file\.
+   1. Under **Security and network**, copy the value for the **VPC** and the values for **Subnets** to the `.ebextensions/efs-create.config` file\.
 
    The `.ebextensions/dev.config` file restricts access to your environment to your IP address to protect it during the WordPress installation process\. Replace the placeholder IP address near the top of the file with your public IP address, followed by **/32**\.
 
@@ -278,8 +274,6 @@ The hash salt can be any value, but you should not store it in source control\. 
 1. For `Software Configuration`, choose the gear icon\.
 
 1. For `Environment Properties`, define the following authentication settings:
-
-    
    + **AUTH\_KEY** – The value chosen for AUTH\_KEY\.
    + **SECURE\_AUTH\_KEY** – The value chosen for SECURE\_AUTH\_KEY\.
    + **LOGGED\_IN\_KEY** – The value chosen for LOGGED\_IN\_KEY\.
