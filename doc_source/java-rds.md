@@ -22,7 +22,7 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
 + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
   Amazon RDS console label – **Endpoint** \(this is the hostname\)
-+ **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
++ **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies among DB engines\.
 
   Amazon RDS console label – **Port**
 + **RDS\_DB\_NAME** – The database name, `ebdb`\.

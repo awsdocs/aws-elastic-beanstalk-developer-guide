@@ -57,10 +57,15 @@ $ eb create test-env --elb-type application
 ## Application Load Balancer Namespaces<a name="environments-cfg-applicationloadbalancer-namespaces"></a>
 
 You can find settings related to Application Load Balancers in the following namespaces:
+
 + `[aws:elasticbeanstalk:environment](command-options-general.md#command-options-general-elasticbeanstalkenvironment)` – Choose the load balancer type for the environment\. The value for an Application Load Balancer is `application`\.
+
 + `[aws:elbv2:loadbalancer](command-options-general.md#command-options-general-elbv2)` – Configure access logs and other settings that apply to the Application Load Balancer as a whole\.
+
 + `[aws:elbv2:listener](command-options-general.md#command-options-general-elbv2-listener)` – Configure listeners on the Application Load Balancer\. These settings map to the settings in `aws:elb:listener` for Classic Load Balancers\.
+
 + `[aws:elbv2:listenerrule](command-options-general.md#command-options-general-elbv2-listenerrule)` – Configure rules that route traffic to different processes, depending on the request path\. Rules are unique to Application Load Balancers\.
+
 + `[aws:elasticbeanstalk:environment:process](command-options-general.md#command-options-general-environmentprocess)` – Configure health checks and specify the port and protocol for the processes that run on your environment's instances\. The port and protocol settings map to the instance port and instance protocol settings in `aws:elb:listener` for a listener on a Classic Load Balancer\. Health check settings map to the settings in the `aws:elb:healthcheck` and `aws:elasticbeanstalk:application` namespaces\.
 
 **Example \.ebextensions/application\-load\-balancer\.config**  
@@ -130,9 +135,6 @@ option_settings:
     Protocol: HTTPS
     Rules: admin
     SSLCertificateArns: arn:aws:acm:us-east-2:0123456789012:certificate/21324896-0fa4-412b-bf6f-f362d6eb6dd7
-  aws:elasticbeanstalk:environment:process:https:
-    Port: '443'
-    Protocol: HTTPS
   aws:elasticbeanstalk:environment:process:admin:
     HealthCheckPath: /admin
     Port: '4443'

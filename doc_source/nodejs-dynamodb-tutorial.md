@@ -326,7 +326,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. On the **Capacity** configuration card, choose **Modify**\.
 
-1. In the **Auto Scaling Group** section, set **Min instances** to **2** and the **Max instances** to a value greater than **2**\.
+1. In the **Auto Scaling Group** section, set **Min instances** to **2** and **Max instances** to a value greater than **2**\.
 
 1. Choose **Save**, and then choose **Apply**\.
 
@@ -354,7 +354,7 @@ In addition, you can terminate database resources that you created outside of yo
 
 1. Choose your DB instance\.
 
-1. Choose **Instance Actions**, and then choose **Delete**\.
+1. Choose **Instance actions**, and then choose **Delete**\.
 
 1. Choose whether to create a snapshot, and then choose **Delete**\.
 

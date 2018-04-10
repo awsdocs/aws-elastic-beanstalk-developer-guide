@@ -1,6 +1,6 @@
 # Using the AWS Elastic Beanstalk Ruby Platform<a name="create_deploy_Ruby.container"></a>
 
-The AWS Elastic Beanstalk Ruby platform is a set of [environment configurations](concepts.platforms.md#concepts.platforms.ruby) for Ruby web applications that can run behind an nginx proxy server under a Puma or Passenger application server\. Each configuration corresponds to a version of Ruby.
+The AWS Elastic Beanstalk Ruby platform is a set of [environment configurations](concepts.platforms.md#concepts.platforms.ruby) for Ruby web applications that can run behind an nginx proxy server under a Puma or Passenger application server\. Each configuration corresponds to a version of Ruby\.
 
 Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application and enable log rotation to Amazon S3\. The platform also predefines some common environment variables related to Rails and Rack for ease of discovery and use\.
 

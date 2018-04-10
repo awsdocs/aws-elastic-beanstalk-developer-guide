@@ -399,7 +399,7 @@ In addition, you can terminate database resources that you created outside of yo
 
 1. Choose your DB instance\.
 
-1. Choose **Instance Actions**, and then choose **Delete**\.
+1. Choose **Instance actions**, and then choose **Delete**\.
 
 1. Choose whether to create a snapshot, and then choose **Delete**\.
 

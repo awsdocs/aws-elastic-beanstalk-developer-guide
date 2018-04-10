@@ -31,48 +31,57 @@ Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosin
 
 1. Choose **Instances** in the navigation pane\.
 
-1. Choose **Launch DB Instance**\.
+1. Choose **Launch DB instance**\.
 
-1. Choose a **DB Engine** and preset configuration\.
+1. Under **Engine options**, choose the engine that will meet your needs, and then choose **Next**\.
 
-1. Under **Specify DB Details**, choose a **DB Instance Class**\. For high availability, set **Multi\-AZ Deployment** to **Yes**\.
+   If prompted to select **Use case**, choose **Production** for Multi\-AZ deployment or choose **Dev/Test** to consume only Free Tier resources\. Then choose **Next**\.
 
-1. Under **Settings**, enter values for **DB Instance Identifier**, **Master Username**, and **Master Password** \(and **Confirm Password**\)\. Note the values that you entered for later\.
+1. Under **Specify DB details**, for **Instance specifications**, choose the following and then keep the default settings for the remaining options:
+
+    
+   + **DB instance class** – Computation and memory capacity \(if unsure, [learn which option is right for you ](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide//Concepts.DBInstanceClass.html)\) 
+   + **Multi\-AZ deployment** – For high availability, set to **Create replica in different zone**\.
+
+1. Under **Estimated monthly costs**, review the total\. Adjust **Use case** and **DB instance class** to fit your budget as needed\.
+
+1. Under **Settings**, enter values for **DB instance identifier**, **Master username**, **Master password**, and **Confirm password**\. Make a note of these settings because you'll use them later\. 
 
 1. Choose **Next**\.
 
-1. For **Network and Security** settings, choose the following:
-   + **VPC** – **Default VPC**
-   + **Subnet Group** – **default**
-   + **Publicly Accessible** – **No**
+1. Under **Configure advanced settings**, for **Network & Security**, choose the following:
+
+    
+   + **Virtual Private Cloud \(VPC\)** – Keep default value 
+   + **Subnet group** – **Default**
+   + **Public accessibility** – **No**
    + **Availability Zone** – ** No Preference**
-   + **VPC Security Groups** – **Default VPC Security Group**
+   + **VPC security groups** – **Create new VPC Security Group**
 
-1. For **Database Name**, type **ebdb**, and verify the default settings for the remaining options\. Note the values of the following options:
-   + **Database Name**
-   + **Database Port**
+1. Under **Database options**, for **Database name**, type **ebdb**, and verify the default settings for the remaining options\. Make a note of the **Database port** value for use later\.
 
-1. Choose **Launch DB Instance**\.
+1. Verify the default settings for the remaining options, and choose **Launch DB instance**\.
 
 Next, modify the security group attached to your DB instance to allow inbound traffic on the appropriate port\. This is the same security group that you will attach to your Elastic Beanstalk environment later, so the rule that you add will grant ingress permission to other resources in the same security group\.
 
 **To modify the ingress rules on your RDS instance's security group**
 
-1. Open the [Amazon RDS console](https://console.aws.amazon.com/rds/home)\.
+1. Open the [ Amazon RDS console](https://console.aws.amazon.com/rds/home)\.
 
 1. Choose **Instances**\.
 
-1. Choose the arrow next to the entry for your DB instance to expand the view\.
+1. Choose the name of your recently created DB instance to view its details\.
 
-1. Choose the **Details** tab\.
+1. Go to the **Details** section\.
 
-1. In the **Security and Network** section, the security group associated with the DB instance is shown\. Open the link to view the security group in the Amazon EC2 console\.  
-![\[Details tab of a DB instance page in the Amazon RDS console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup.png)
+1. In the **Details** section, note the **Subnets**, **Security groups**, and **Endpoint** shown on this page so you can use this information later\.
 **Note**  
-While you have the **Details** tab open, note the **Endpoint** and security group name shown on this page for use later\.  
-The security group name is the first value of the link shown in **Security Groups**, before the parentheses\. The second value, in parentheses, is the security group ID\.
+The security group name is the first value of the link text shown in **Security groups**, before the value in parentheses\. This second value, in parentheses, is the security group ID\.
 
-1. In the security group details, choose the **Inbound** tab\.
+1. Under **Security and network**, you can see the security group associated with the DB instance\. Open the link to view the security group in the Amazon EC2 console\.  
+![\[Details section of a DB instance page in the Amazon RDS console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup.png)
+
+1. In the security group details, choose the **Inbound** view\.
 
 1. Choose **Edit**\.
 
@@ -81,7 +90,7 @@ The security group name is the first value of the link shown in **Security Group
 1. For **Type**, choose the DB engine that your application uses\.
 
 1. For **Source**, choose **Custom**, and then type the group ID of the security group\. This allows resources in the security group to receive traffic on the database port from other resources in the same group\.  
-![\[Edit inbound rules page for a security group in the Amazon EC2 console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/ec2-securitygroup-rds.png)
+![\[Edit the inbound rules for a security group in the Amazon EC2 console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/ec2-securitygroup-rds.png)
 
 1. Choose **Save**\.
 
@@ -137,11 +146,11 @@ Next, use environment properties to pass the connection information to your envi
 
 1. On the **Software** configuration card, choose **Modify**\.
 
-1. In the **Environment Properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following:
+1. In the **Environment Properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following\. Choose the plus symbol \(\+\) to add more properties\.
    + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
      Amazon RDS console label – **Endpoint** \(this is the hostname\)
-   + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies between DB engines\.
+   + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies among DB engines\.
 
      Amazon RDS console label – **Port**
    + **RDS\_DB\_NAME** – The database name, `ebdb`\.
@@ -150,10 +159,8 @@ Next, use environment properties to pass the connection information to your envi
    + **RDS\_USERNAME** – The user name that you configured for your database\.
 
      Amazon RDS console label – **Username**
-   + **RDS\_PASSWORD** – The password that you configured for your database\.
-
-   Choose the plus symbol \(\+\) to add more properties\.  
-![\[Environment Properties section\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
+   + **RDS\_PASSWORD** – The password that you configured for your database\.  
+![\[Environment Properties section with RDS properties added\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
 
 1. Choose **Save**, and then choose **Apply**\.
 
@@ -169,7 +176,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. On the **Capacity** configuration card, choose **Modify**\.
 
-1. In the **Auto Scaling Group** section, set **Min instances** to **2** and the **Max instances** to a value greater than **2**\.
+1. In the **Auto Scaling Group** section, set **Min instances** to **2** and **Max instances** to a value greater than **2**\.
 
 1. Choose **Save**, and then choose **Apply**\.
 
@@ -240,7 +247,7 @@ In addition, you can terminate database resources that you created outside of yo
 
 1. Choose your DB instance\.
 
-1. Choose **Instance Actions**, and then choose **Delete**\.
+1. Choose **Instance actions**, and then choose **Delete**\.
 
 1. Choose whether to create a snapshot, and then choose **Delete**\.
 
