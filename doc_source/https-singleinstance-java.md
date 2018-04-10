@@ -50,7 +50,7 @@ Avoid committing a configuration file that contains your private key to source c
 
 Place the following in a file with the `.conf` extension in the `.ebextensions/nginx/conf.d/` directory of your source bundle \(e\.g\., `.ebextensions/nginx/conf.d/https.conf`\)\. Replace *app\_port* with the port number that your application listens on\. This example configures the nginx server to listen on port 443 using SSL\. For more information about these configuration files on the Java SE platform, see [Configuring the Reverse Proxy](java-se-nginx.md)\.
 
-**Example ebextensions/nginx/conf\.d/https\.conf**  
+**Example \.ebextensions/nginx/conf\.d/https\.conf**  
 
 ```
 # HTTPS server
