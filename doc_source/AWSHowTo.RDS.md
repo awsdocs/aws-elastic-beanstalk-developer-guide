@@ -163,7 +163,7 @@ Finally, depending on when your application reads environment variables, you mig
 
 If you use EC2 Classic \(no VPC\) with AWS Elastic Beanstalk, the procedure changes slightly due to differences in how security groups work\. In EC2 Classic, DB instances can't use EC2 security groups, so they get a DB security group that works only with Amazon RDS\.
 
-You can add rules to a DB security group that allow ingress from EC2 security groups, but you cannot attach a DB security group to your environment's Auto Scaling group\. To avoid creating a dependency between the DB security group and your environment, you must create a third security group in Amazon EC2, grant it ingress from the DB security group, and then assign it to the Auto Scaling group in your Elastic Beanstalk environment\.
+You can add rules to a DB security group that allow ingress from EC2 security groups, but you cannot attach a DB security group to your environment's Auto Scaling group\. To avoid creating a dependency between the DB security group and your environment, you must create a third security group in Amazon EC2, add a rule to grant it ingress in the DB security group, and then assign it to the Auto Scaling group in your Elastic Beanstalk environment\.
 
 **To launch an RDS instance in EC2 Classic \(no VPC\)**
 
