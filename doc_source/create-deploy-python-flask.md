@@ -198,7 +198,7 @@ Next, you'll create your application environment and deploy your configured appl
 1. Initialize your EB CLI repository with the `eb init` command:
 
    ```
-   ~/eb-flask$ eb init -p python2.7 flask-tutorial
+   ~/eb-flask$ eb init -p python-2.7 flask-tutorial
    Application flask-tutorial has been created.
    ```
 

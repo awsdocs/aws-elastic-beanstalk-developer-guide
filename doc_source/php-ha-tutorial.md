@@ -7,17 +7,17 @@ The tutorial uses a [sample PHP application](https://github.com/awslabs/eb-demo-
 **Topics**
 + [Prerequisites](#php-hawrds-tutorial-prereqs)
 + [Launch a DB Instance in Amazon RDS](#php-hawrds-tutorial-database)
-+ [Launch an Elastic Beanstalk Environment](#php-hawrds-tutorial-launch)
++ [Create an Elastic Beanstalk Environment](#php-hawrds-tutorial-create)
 + [Configure Security Groups, Environment Properties, and Scaling](#php-hawrds-tutorial-configure)
 + [Deploy the Sample Application](#php-hawrds-tutorial-deploy)
-+ [Clean Up](#w3ab1c43c19c38)
++ [Clean Up](#w3ab1c43c23c38)
 + [Next Steps](#php-hawrds-tutorial-nextsteps)
 
 ## Prerequisites<a name="php-hawrds-tutorial-prereqs"></a>
 
 Before you start, download the sample application source bundle from GitHub: [eb\-demo\-php\-simple\-app\-1\.1\.zip](https://github.com/awslabs/eb-demo-php-simple-app/releases/download/v1.1/eb-demo-php-simple-app-v1.1.zip)
 
-The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default VPC\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
+The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
 
 ## Launch a DB Instance in Amazon RDS<a name="php-hawrds-tutorial-database"></a>
 
@@ -25,7 +25,7 @@ To use an external database with an application running in Elastic Beanstalk, fi
 
 Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosing a Multi\-AZ deployment ensures that your database will fail over and continue to be available if the master DB instance goes out of service\.
 
-**To launch an RDS DB instance in a default VPC**
+**To launch an RDS DB instance in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\)**
 
 1. Open the [RDS console](https://console.aws.amazon.com/rds/home)\.
 
@@ -90,11 +90,11 @@ The security group name is the first value of the link text shown in **Security 
 
 1. Choose **Save**\.
 
-Creating a DB instance takes about 10 minutes\. In the meantime, launch your Elastic Beanstalk environment\.
+Creating a DB instance takes about 10 minutes\. In the meantime, create your Elastic Beanstalk environment\.
 
-## Launch an Elastic Beanstalk Environment<a name="php-hawrds-tutorial-launch"></a>
+## Create an Elastic Beanstalk Environment<a name="php-hawrds-tutorial-create"></a>
 
-Use the AWS Management Console to launch an Elastic Beanstalk environment\. Choose the **PHP 5\.6** platform configuration and accept the default settings and sample code\. After you configure the environment to connect to the database, you deploy the sample application that you downloaded from GitHub\.
+Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP 5\.6** platform configuration and accept the default settings and sample code\. After you configure the environment to connect to the database, you deploy the sample application that you downloaded from GitHub\.
 
 **To launch an environment \(console\)**
 
@@ -108,7 +108,23 @@ Use the AWS Management Console to launch an Elastic Beanstalk environment\. Choo
 
 1. Review the available options\. When you're satisfied with them, choose **Create app**\.
 
-Environment creation takes about 5 minutes\.
+Environment creation takes about 5 minutes and creates the following resources:
++ **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
+
+  Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination thereof\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
++ **Instance security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
++ **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
++ **Load balancer security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
++ **Auto Scaling group** – An Auto Scaling group configured to replace an instance if it is terminated or becomes unavailable\.
++ **Amazon S3 bucket** – A storage location for your source code, logs, and other artifacts that are created when you use Elastic Beanstalk\.
++ **Amazon CloudWatch alarms** – Two CloudWatch alarms that monitor the load on the instances in your environment and are triggered if the load is too high or too low\. When an alarm is triggered, your Auto Scaling group scales up or down in response\.
++ **AWS CloudFormation stack** – Elastic Beanstalk uses AWS CloudFormation to launch the resources in your environment and propagate configuration changes\. The resources are defined in a template that you can view in the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation)\.
++ **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
+
+All of these resources are managed by Elastic Beanstalk\. When you terminate your environment, Elastic Beanstalk terminates all the resources that it contains\. The RDS DB instance that you launched is outside of your environment, so you are responsible for managing its lifecycle\.
+
+**Note**  
+The Amazon S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)\.
 
 ## Configure Security Groups, Environment Properties, and Scaling<a name="php-hawrds-tutorial-configure"></a>
 
@@ -201,25 +217,7 @@ The site collects user comments and uses a MySQL database to store the data\. To
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-ha-tutorial-app.png)
 
-Launching an environment creates the following resources:
-+ **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
-
-  Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination thereof\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
-+ **Instance security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
-+ **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
-+ **Load balancer security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
-+ **Auto Scaling group** – An Auto Scaling group configured to replace an instance if it is terminated or becomes unavailable\.
-+ **Amazon S3 bucket** – A storage location for your source code, logs, and other artifacts that are created when you use Elastic Beanstalk\.
-+ **Amazon CloudWatch alarms** – Two CloudWatch alarms that monitor the load on the instances in your environment and are triggered if the load is too high or too low\. When an alarm is triggered, your Auto Scaling group scales up or down in response\.
-+ **AWS CloudFormation stack** – Elastic Beanstalk uses AWS CloudFormation to launch the resources in your environment and propagate configuration changes\. The resources are defined in a template that you can view in the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation)\.
-+ **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
-
-All of these resources are managed by Elastic Beanstalk\. When you terminate your environment, Elastic Beanstalk terminates all the resources that it contains\. The RDS DB instance that you launched is outside of your environment, so you are responsible for managing its lifecycle\.
-
-**Note**  
-The Amazon S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)\.
-
-## Clean Up<a name="w3ab1c43c19c38"></a>
+## Clean Up<a name="w3ab1c43c23c38"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 

@@ -1,6 +1,6 @@
-# Configuring VPC with Elastic Beanstalk<a name="using-features.managing.vpc"></a>
+# Configuring Amazon Virtual Private Cloud \(Amazon VPC\) with Elastic Beanstalk<a name="using-features.managing.vpc"></a>
 
-Amazon Virtual Private Cloud \(Amazon VPC\) is the networking service that routes traffic securely to the EC2 instances that run your application in Elastic Beanstalk\. If you don't configure a VPC when you launch your environment, Elastic Beanstalk uses the default VPC\.
+[Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\) is the networking service that routes traffic securely to the EC2 instances that run your application in Elastic Beanstalk\. If you don't configure a VPC when you launch your environment, Elastic Beanstalk uses the default VPC\.
 
 You can launch your environment in a custom VPC to customize networking and security settings\. Elastic Beanstalk lets you choose which subnets to use for your resources, and how to configure IP addresses for the instances and load balancer in your environment\. An environment is locked to a VPC when you create it, but you can change subnet and IP address settings on a running environment\.
 

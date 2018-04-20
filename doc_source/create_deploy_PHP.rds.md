@@ -12,6 +12,7 @@ For production environments, create a DB instance outside of your Elastic Beanst
 + [Adding a DB Instance to Your Environment](#php-rds-create)
 + [Downloading a Driver](#php-rds-drivers)
 + [Connecting to a Database with a PDO or MySQLi](#php-rds-connect)
++ [Connecting to a Database with Symfony](#php-rds-symfony)
 
 ## Adding a DB Instance to Your Environment<a name="php-rds-create"></a>
 
@@ -88,3 +89,31 @@ For MySQLi, pass the hostname, user name, password, database name, and port to t
 ```
 $link = mysqli_connect($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
 ```
+
+## Connecting to a Database with Symfony<a name="php-rds-symfony"></a>
+
+For Symfony version 3\.2 and newer, you can use `%env(PROPERTY_NAME)%` to set database parameters in a configuration file based on the environment properties set by Elastic Beanstalk\.
+
+**Example app/config/parameters\.yml**  
+
+```
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     '%env(RDS_HOSTNAME)%'
+    database_port:     '%env(RDS_PORT)%'
+    database_name:     '%env(RDS_DB_NAME)%'
+    database_user:     '%env(RDS_USERNAME)%'
+    database_password: '%env(RDS_PASSWORD)%'
+```
+
+See [External Parameters \(Symfony 3\.4\)](http://symfony.com/doc/3.4/configuration/external_parameters.html) for more information\.
+
+For earlier versions of Symfony, environment variables are only accessible if they start with `SYMFONY__`\. This means that the Elastic Beanstalk\-defined environment properties are not accessible, and you must define your own environment properties to pass the connection information to Symfony\.
+
+To connect to a database with Symfony 2, [create an environment property](create_deploy_PHP.container.md#php-console-properties) for each parameter\. Then, use `%property.name%` to access the Symfony\-transformed variable in a configuration file\. For example, an environment property named `SYMFONY__DATABASE__USER` is accessible as `database.user`\.
+
+```
+    database_user:     "%database.user%"
+```
+
+See [External Parameters \(Symfony 2\.8\)](http://symfony.com/doc/2.8/configuration/external_parameters.html) for more information\.

@@ -3,7 +3,7 @@
 AWS Elastic Beanstalk provides support for [running Amazon Relational Database Service \(Amazon RDS\) instances in your Elastic Beanstalk environment](using-features.managing.db.md)\. This works great for development and testing environments\. However, it isn't ideal for a production environment because it ties the lifecycle of the database instance to the lifecycle of your application's environment\.
 
 **Note**  
-If you haven't used a DB instance with your application before, try adding one to a test environment with the Elastic Beanstalk console first\. This lets you verify that your application is able to read environment properties, construct a connection string, and connect to a DB instance before you add VPCs and security group configuration to the mix\. See [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md) for details\.
+If you haven't used a DB instance with your application before, try adding one to a test environment with the Elastic Beanstalk console first\. This lets you verify that your application is able to read environment properties, construct a connection string, and connect to a DB instance before you add [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\) and security group configuration to the mix\. See [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md) for details\.
 
 To decouple your database instance from your environment, you can run a database instance in Amazon RDS and configure your application to connect to it on launch\. This enables you to connect multiple environments to a database, terminate an environment without affecting the database, and perform seamless updates with blue/green deployments\.
 
@@ -27,7 +27,7 @@ To use an external database with an application running in Elastic Beanstalk, fi
 
 The following procedures describe the process for a [default VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html)\. The process is the same if you are using a custom VPC\. The only additional requirements are that your environment and DB instance are in the same subnet, or in subnets that are allowed to communicate with each other\. See [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md) for details on configuring a custom VPC for use with Elastic Beanstalk\.
 
-**To launch an RDS DB instance in a default VPC**
+**To launch an RDS DB instance in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\)**
 
 1. Open the [RDS console](https://console.aws.amazon.com/rds/home)\.
 

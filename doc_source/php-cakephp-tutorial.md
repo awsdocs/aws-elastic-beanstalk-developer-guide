@@ -8,7 +8,7 @@ CakePHP is an open source, MVC framework for PHP\. This tutorial walks you throu
 + [Install CakePHP and Generate a Website](#php-cakephp-tutorial-generate)
 + [Create an Elastic Beanstalk Environment and Deploy Your Application](#php-cakephp-tutorial-deploy)
 + [Add a Database to Your Environment](#php-cakephp-tutorial-database)
-+ [Clean Up](#w3ab1c43c15c32)
++ [Clean Up](#w3ab1c43c19c32)
 + [Next Steps](#php-cakephp-tutorial-nextsteps)
 
 ## Prerequisites<a name="php-cakephp-tutorial-prereqs"></a>
@@ -232,7 +232,7 @@ Deploying a new version of your application takes less than a minute\. When the 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-cakephp-defaultwdb.png)
 
-## Clean Up<a name="w3ab1c43c15c32"></a>
+## Clean Up<a name="w3ab1c43c19c32"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 

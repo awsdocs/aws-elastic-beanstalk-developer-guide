@@ -12,7 +12,7 @@ This tutorial describes how you [launch an Amazon RDS DB instance](AWSHowTo.RDS.
 + [Step 7: Update the Environment](#php-hawordpress-tutorial-updateenv)
 + [Step 8: Configure Your Auto Scaling Group](#php-hawordpress-tutorial-autoscaling)
 + [Review](#php-hawordpress-tutorial-review)
-+ [Clean Up](#w3ab1c43c21c50)
++ [Clean Up](#w3ab1c43c25c50)
 + [Next Steps](#php-hawordpress-tutorial-nextsteps)
 
 ## Step 1: Launch a DB Instance in Amazon RDS<a name="php-hawordpress-tutorial-database"></a>
@@ -25,7 +25,7 @@ Under **Engine options**, choose **MySQL**\. Under **Use case**, choose **Produc
 
 For **DB instance identifier**, type **wordpress\-beanstalk**, and for **Master username**, type **not\_wp\_admin**\. 
 
-**To launch an RDS DB instance in a default VPC**
+**To launch an RDS DB instance in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\)**
 
 1. Open the [RDS console](https://console.aws.amazon.com/rds/home)\.
 
@@ -145,7 +145,7 @@ To prepare to deploy WordPress using AWS Elastic Beanstalk, you must copy the Wo
    │ └── widgets
    ```
 
-1. Modify the configuration files in the `.ebextensions` folder with the IDs of your default Amazon VPC and subnets, and your public IP address\.
+1. Modify the configuration files in the `.ebextensions` folder with the IDs of your default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\) and subnets, and your public IP address\.
 
    Open the `.ebextensions/efs-create.config` file\. This file creates an Amazon EFS file system and mount points in each Availability Zone or subnet in your Amazon VPC\. Identify your default VPC and subnet IDs in the Amazon VPC console\.
 
@@ -355,7 +355,7 @@ Elastic Beanstalk manages all of these resources\. When you terminate your envir
 **Note**  
 The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)\.
 
-## Clean Up<a name="w3ab1c43c21c50"></a>
+## Clean Up<a name="w3ab1c43c25c50"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 

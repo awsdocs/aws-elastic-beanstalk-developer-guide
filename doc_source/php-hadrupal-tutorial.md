@@ -11,7 +11,7 @@ This tutorial walks you through the process of [launching an RDS DB instance](AW
 + [Update the Environment](#php-hadrupal-tutorial-updateenv)
 + [Configure Autoscaling](#php-hadrupal-tutorial-autoscaling)
 + [Review](#php-hadrupal-tutorial-review)
-+ [Clean Up](#w3ab1c43c23c46)
++ [Clean Up](#w3ab1c43c27c46)
 + [Next Steps](#php-hadrupal-tutorial-nextsteps)
 
 ## Launch a DB Instance in Amazon RDS<a name="php-hadrupal-tutorial-database"></a>
@@ -20,7 +20,7 @@ To use an external database with an application running in Elastic Beanstalk, fi
 
 Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosing a Multi\-AZ deployment ensures that your database will failover and continue to be available if the master DB instance goes out of service\.
 
-**To launch an RDS DB instance in a default VPC**
+**To launch an RDS DB instance in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\)**
 
 1. Open the [RDS console](https://console.aws.amazon.com/rds/home)\.
 
@@ -146,9 +146,9 @@ To prepare to deploy Drupal using AWS Elastic Beanstalk, you must copy the Drupa
    │ └── zendframework
    ```
 
-1. Modify the configuration files in the `.ebextensions` folder with the IDs of your default VPC and subnets, and your public IP address\.
+1. Modify the configuration files in the `.ebextensions` folder with the IDs of your default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\) and subnets, and your public IP address\.
 
-1. The `.ebextensions/efs-create.config` file creates an EFS file system and mount points in each Availability Zone/subnet in your VPC\. Identify your default VPC and subnet IDs in the Amazon VPC console\.
+1. The `.ebextensions/efs-create.config` file creates an EFS file system and mount points in each Availability Zone/subnet in your Amazon VPC\. Identify your default VPC and subnet IDs in the Amazon VPC console\.
 
    \-\-OR\-\-
 
@@ -331,7 +331,7 @@ All of these resources are managed by Elastic Beanstalk\. When you terminate you
 **Note**  
 The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)\.
 
-## Clean Up<a name="w3ab1c43c23c46"></a>
+## Clean Up<a name="w3ab1c43c27c46"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 

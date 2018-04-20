@@ -16,7 +16,7 @@ option_settings:
     InstanceProtocol: TCP
 ```
 
-In a default VPC, you also need to add a rule to the instances' security group to allow inbound traffic on 443 from the load balancer:
+In a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\), you also need to add a rule to the instances' security group to allow inbound traffic on 443 from the load balancer:
 
 **`.ebextensions/https-instance-securitygroup.config`**
 

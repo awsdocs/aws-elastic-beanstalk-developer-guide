@@ -18,7 +18,7 @@ Visit the [AWS SDK for \.NET homepage](https://aws.amazon.com/sdk-for-net/) for 
 
 Integrated development environments \(IDEs\) provide a wide range of features that facilitate application development\. If you haven't used an IDE for \.NET development, try Visual Studio Community to get started\.
 
-Visit the [Visual Studio Community homepage](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx) to download and install Visual Studio Community\.
+Visit the [Visual Studio Community](https://www.visualstudio.com/vs/community/) page to download and install Visual Studio Community\.
 
 ## Installing the AWS Toolkit for Visual Studio<a name="dotnet-devenv-toolkit"></a>
 

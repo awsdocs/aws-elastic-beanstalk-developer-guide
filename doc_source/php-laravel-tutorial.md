@@ -8,7 +8,7 @@ Laravel is an open source, model\-view\-controller \(MVC\) framework for PHP\. T
 + [Install Laravel and Generate a Website](#php-laravel-tutorial-generate)
 + [Create an Elastic Beanstalk Environment and Deploy Your Application](#php-laravel-tutorial-deploy)
 + [Add a Database to Your Environment](#php-laravel-tutorial-database)
-+ [Clean Up](#w3ab1c43c13c32)
++ [Clean Up](#w3ab1c43c17c32)
 + [Next Steps](#php-laravel-tutorial-nextsteps)
 
 ## Prerequisites<a name="php-laravel-tutorial-prereqs"></a>
@@ -22,8 +22,7 @@ To follow the procedures in this guide, you will need a command line terminal or
 this is output
 ```
 
-**Note**  
-You can run all commands in this tutorial on a Linux virtual machine, OS X, or an Amazon Linux EC2 instance\. If you need a development environment, you can launch a single\-instance Elastic Beanstalk environment and connect to it with SSH\.
+On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
 Laravel requires PHP 5\.5\.9 or later and the `mbstring` extension for PHP\. In this tutorial we use PHP 5\.6 and the corresponding Elastic Beanstalk platform configuration\.
 
@@ -260,7 +259,7 @@ Deploying a new version of your application takes less than a minute\. When the 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-laravel-defaultwdb.png)
 
-## Clean Up<a name="w3ab1c43c13c32"></a>
+## Clean Up<a name="w3ab1c43c17c32"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 

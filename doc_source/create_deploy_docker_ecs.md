@@ -107,7 +107,7 @@ option_settings:
     InstancePort: 8080
 ```
 
-If your environment is running in a custom VPC that you created, Elastic Beanstalk takes care of the rest\. In a default VPC, you need to configure your instance's security group to allow ingress from the load balancer\. Add a second configuration file that adds an ingress rule to the security group:
+If your environment is running in a custom [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\) that you created, Elastic Beanstalk takes care of the rest\. In a default VPC, you need to configure your instance's security group to allow ingress from the load balancer\. Add a second configuration file that adds an ingress rule to the security group:
 
 **`.ebextensions/elb-ingress.config`**
 

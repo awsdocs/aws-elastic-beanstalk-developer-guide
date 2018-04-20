@@ -24,5 +24,5 @@ This topic focuses on the resource configuration options available in the Elasti
 + [Tagging Resources in Your Elastic Beanstalk Environment](using-features.tagging.md)
 + [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md)
 + [Elastic Beanstalk Environment Notifications with Amazon SNS](using-features.managing.sns.md)
-+ [Configuring VPC with Elastic Beanstalk](using-features.managing.vpc.md)
++ [Configuring Amazon Virtual Private Cloud \(Amazon VPC\) with Elastic Beanstalk](using-features.managing.vpc.md)
 + [Your Elastic Beanstalk Environment's Domain Name](customdomains.md)
