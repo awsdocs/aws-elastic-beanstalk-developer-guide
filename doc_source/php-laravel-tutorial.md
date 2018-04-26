@@ -4,11 +4,12 @@ Laravel is an open source, model\-view\-controller \(MVC\) framework for PHP\. T
 
 **Topics**
 + [Prerequisites](#php-laravel-tutorial-prereqs)
-+ [Install Composer](#php-laravel-tutorial-composer)
++ [Launch an Elastic Beanstalk Environment](#php-laravel-tutorial-launch)
 + [Install Laravel and Generate a Website](#php-laravel-tutorial-generate)
-+ [Create an Elastic Beanstalk Environment and Deploy Your Application](#php-laravel-tutorial-deploy)
++ [Deploy Your Application](#php-laravel-tutorial-deploy)
++ [Configure Composer Settings](#php-laravel-tutorial-configure)
 + [Add a Database to Your Environment](#php-laravel-tutorial-database)
-+ [Clean Up](#w3ab1c43c17c32)
++ [Cleanup](#php-laravel-tutorial-cleanup)
 + [Next Steps](#php-laravel-tutorial-nextsteps)
 
 ## Prerequisites<a name="php-laravel-tutorial-prereqs"></a>
@@ -24,63 +25,62 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Laravel requires PHP 5\.5\.9 or later and the `mbstring` extension for PHP\. In this tutorial we use PHP 5\.6 and the corresponding Elastic Beanstalk platform configuration\.
+Laravel requires PHP 5\.5\.9 or later and the `mbstring` extension for PHP\. In this tutorial we use PHP 7\.0 and the corresponding Elastic Beanstalk platform configuration\. Install PHP and Composer by following the instructions at [Setting Up your PHP Development Environment](php-development-environment.md)\.
 
-Install PHP 5\.6 and the required extensions\. Depending on your platform and package manager, the steps will vary\.
+## Launch an Elastic Beanstalk Environment<a name="php-laravel-tutorial-launch"></a>
 
-On Amazon Linux, use yum:
+Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\.
 
-```
-$ sudo yum install php56 --skip-broken
-$ sudo yum install php56-mbstring
-```
+**To launch an environment \(console\)**
 
-On OS X, use Homebrew:
+1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
-```
-$ brew install php56
-```
+1. For **Platform**, choose the platform that matches the language used by your application\.
 
-On Windows, go to the download page at [windows\.php\.net](http://windows.php.net/download/) to get PHP, and read the [Windows extensions page](http://php.net/manual/en/install.windows.legacy.index.php#install.windows.legacy.extensions) for information about extensions\.
+1. For **Application code**, choose **Sample application**\.
 
-After installing PHP, reopen your terminal and run `php --version` to ensure that the new version has been installed and is the default\.
+1. Choose **Review and launch**\.
 
-## Install Composer<a name="php-laravel-tutorial-composer"></a>
+1. Review the available options\. When you're satisfied with them, choose **Create app**\.
 
-Composer is a dependency management tool for PHP\. It is the preferred tool for installing Laravel and its dependencies and generating a Laravel application\.
+Environment creation takes about 5 minutes and creates the following resources:
++ **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
-Install Composer by downloading the installer and running it with PHP\. The installer generates a Phar file that you can invoke with PHP to generate a Laravel project n the current directory\.
+  Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination thereof\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
++ **Instance security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
++ **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
++ **Load balancer security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
++ **Auto Scaling group** – An Auto Scaling group configured to replace an instance if it is terminated or becomes unavailable\.
++ **Amazon S3 bucket** – A storage location for your source code, logs, and other artifacts that are created when you use Elastic Beanstalk\.
++ **Amazon CloudWatch alarms** – Two CloudWatch alarms that monitor the load on the instances in your environment and are triggered if the load is too high or too low\. When an alarm is triggered, your Auto Scaling group scales up or down in response\.
++ **AWS CloudFormation stack** – Elastic Beanstalk uses AWS CloudFormation to launch the resources in your environment and propagate configuration changes\. The resources are defined in a template that you can view in the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation)\.
++ **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
 
-```
-~$ curl -s https://getcomposer.org/installer | php
-All settings correct for using Composer
-Downloading...
+All of these resources are managed by Elastic Beanstalk\. When you terminate your environment, Elastic Beanstalk terminates all the resources that it contains\.
 
-Composer successfully installed to: /home/ec2-user/composer.phar
-Use it: php composer.phar
-```
-
-If you run into issues installing Composer, go to the official documentation: [https://getcomposer\.org/](https://getcomposer.org/)
+**Note**  
+The Amazon S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)\.
 
 ## Install Laravel and Generate a Website<a name="php-laravel-tutorial-generate"></a>
 
 Composer can install Laravel and create a working project with one command:
 
 ```
-~$ php composer.phar create-project --prefer-dist laravel/laravel eb-laravel
-Installing laravel/laravel (v5.2.15)
-  - Installing laravel/laravel (v5.2.15)
-    Downloading: 100%
-
+~$ composer create-project --prefer-dist laravel/laravel eb-laravel
+Installing laravel/laravel (v5.5.28)
+  - Installing laravel/laravel (v5.5.28): Downloading (100%)
 Created project in eb-laravel
-> php -r "copy('.env.example', '.env');"
+> @php -r "file_exists('.env') || copy('.env.example', '.env');"
 Loading composer repositories with package information
-Installing dependencies (including require-dev)
-  - Installing vlucas/phpdotenv (v2.2.0)
-    Downloading: 100%
+Updating dependencies (including require-dev)
 
-  - Installing symfony/polyfill-mbstring (v1.1.0)
-    Loading from cache
+Package operations: 70 installs, 0 updates, 0 removals
+  - Installing symfony/thanks (v1.0.7): Downloading (100%)
+  - Installing hamcrest/hamcrest-php (v2.0.0): Downloading (100%)
+  - Installing mockery/mockery (1.0): Downloading (100%)
+  - Installing vlucas/phpdotenv (v2.4.0): Downloading (100%)
+  - Installing symfony/css-selector (v3.4.8): Downloading (100%)
+  - Installing tijsverkoyen/css-to-inline-styles (2.2.1): Downloading (100%)
 ...
 ```
 
@@ -88,50 +88,42 @@ Composer installs Laravel and its dependencies, and generates a default project\
 
 If you run into any issues installing Laravel, go to the installation topic in the official documentation: [https://laravel\.com/docs/5\.2](https://laravel.com/docs/5.2)
 
-## Create an Elastic Beanstalk Environment and Deploy Your Application<a name="php-laravel-tutorial-deploy"></a>
+## Deploy Your Application<a name="php-laravel-tutorial-deploy"></a>
 
-Create a [source bundle](applications-sourcebundle.md) containing the files created by Composer\. You can use any program to create the \.zip file, as long as it allows hidden files\. On the command line, use the `zip` command:
+Create a [source bundle](applications-sourcebundle.md) containing the files created by Composer\. The following command creates a source bundle named `laravel-default.zip`\. It excludes files in the `vendor` folder, which take up a lot of space and are not necessary for deploying your application to Elastic Beanstalk\.
 
 ```
-~$ cd eb-laravel
-~/eb-laravel$ zip ../laravel-default.zip -r * .[^.]*
+eb-laravel zip ../laravel-default.zip -r * .[^.]* -x "vendor/*"
 ```
 
-Save the \.zip archive in a location that you can access\. This is the source bundle that you will upload to Elastic Beanstalk when you create an environment\.
+Upload the source bundle to Elastic Beanstalk to deploy Laravel to your environment\.
+
+**To deploy a source bundle**
+
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+
+1. Navigate to the [management page](environments-console.md) for your environment\.
+
+1. Choose **Upload and Deploy**\.
+
+1. Choose **Choose File** and use the dialog box to select the source bundle\.
+
+1. Choose **Deploy**\.
+
+1. When the deployment completes, choose the site URL to open your website in a new tab\.
 
 **Note**  
-If you are working remotely in an Elastic Beanstalk environment, you can upload the archive to your Elastic Beanstalk storage bucket in Amazon Simple Storage Service \(Amazon S3\) with the AWS CLI `aws cp` command:  
+To optimize the source bundle further, initialize a Git repository and use the [`git archive` command](applications-sourcebundle.md#using-features.deployment.source.git) to create the source bundle\. The default Laravel project includes a `.gitignore` file that tells Git to exclude the `vendor` folder and other files that are not required for deployment\.
 
-```
-~$ aws s3 cp laravel-default.zip s3://elasticbeanstalk-us-west-2-123456789012
-```
-Elastic Beanstalk creates this bucket the first time you create an environment\. To upload files to Amazon S3, you have to give your environment's [instance profile](concepts-roles-instance.md) permission to write to the bucket\.
+## Configure Composer Settings<a name="php-laravel-tutorial-configure"></a>
 
-Use the AWS Management Console to create an Elastic Beanstalk environment running your application\. Choose the **PHP 5\.6** platform configuration and upload your source bundle when prompted:
-
-**To launch an environment \(console\)**
-
-1. Open the Elastic Beanstalk console with this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
-
-1. For **Platform**, choose the platform that matches the language used by your application\.
-
-1. For **App code**, choose **Upload**\.
-
-1. Choose **Local file**, choose **Browse**, and open the source bundle\.
-
-1. Choose **Upload**\.
-
-1. Choose **Review and launch**\.
-
-1. Review the available settings and choose **Create app**\.
-
-Environment creation takes about 5 minutes\. When the process completes, click the URL to open your Laravel application in the browser:
+When the deployment completes, click the URL to open your Laravel application in the browser:
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-laravel-403.png)
 
 What's this? By default, Elastic Beanstalk serves the root of your project at the root path of the web site\. In this case, though, the default page \(`index.php`\) is one level down in the `public` folder\. You can verify this by adding `/public` to the URL\. For example, `http://laravel.us-east-2.elasticbeanstalk.com/public`\.
 
-To allow access to this folder, use the Elastic Beanstalk console to configure the *document root* for the web site\.
+To serve the Laravel application at the root path, use the Elastic Beanstalk console to configure the *document root* for the web site\.
 
 **To configure your web site's document root**
 
@@ -176,23 +168,7 @@ Launch an RDS DB instance in your Elastic Beanstalk environment\. You can use My
 
 Creating a database instance takes about 10 minutes\. In the meantime, you can update your source code to read connection information from the environment\. Elastic Beanstalk provides connection details using environment variables, such as `RDS_HOSTNAME`, that you can access from your application\.
 
-Laravel's database configuration is stored in a file named `database.php` in the `config` folder in your project code\. Open this file and add code that reads the environment variables from `$_SERVER` and assigns them to local variables by inserting the highlighted lines in the following example after the first line \(`<?php`\):
-
-**Example \~/eb\-laravel/config/database\.php**  
-
-```
-<?php
-if (!defined('RDS_HOSTNAME')) {
-  define('RDS_HOSTNAME', $_SERVER['RDS_HOSTNAME']);
-  define('RDS_USERNAME', $_SERVER['RDS_USERNAME']);
-  define('RDS_PASSWORD', $_SERVER['RDS_PASSWORD']);
-  define('RDS_DB_NAME', $_SERVER['RDS_DB_NAME']);
-}
-return [
-...
-```
-
-The database connection is configured further down in `database.php` file\. Find the following section and modify the default datasources configuration with the name of the driver that matches your database engine \(`Mysql`, `Sqlserver`, or `Postgres`\), and set the `host`, `database`, `username`, `and password` variables to read the corresponding values from Elastic Beanstalk:
+Laravel's database configuration is stored in a file named `database.php` in the `config` folder in your project code\. Find the `mysql` and modify the the `host`, `database`, `username`, `and password` variables to read the corresponding values from Elastic Beanstalk:
 
 **Example \~/eb\-laravel/config/database\.php**  
 
@@ -201,22 +177,24 @@ The database connection is configured further down in `database.php` file\. Find
     'connections' => [
 
         'sqlite' => [
-            'driver'   => 'sqlite',
-            'database' => database_path('database.sqlite'),
-            'prefix'   => '',
+            'driver' => 'sqlite',
+            'database' => env('DB_DATABASE', database_path('database.sqlite')),
+            'prefix' => '',
         ],
 
         'mysql' => [
-            'driver'    => 'mysql',
-            'host'      => RDS_HOSTNAME,
-            'database'  => RDS_DB_NAME,
-            'username'  => RDS_USERNAME,
-            'password'  => RDS_PASSWORD,
-            'charset'   => 'utf8',
-            'collation' => 'utf8_unicode_ci',
-            'prefix'    => '',
-            'strict'    => false,
-            'engine'    => null,
+            'driver' => 'mysql',
+            'host' => env('RDS_HOSTNAME', '127.0.0.1'),
+            'port' => env('RDS_PORT', '3306'),
+            'database' => env('RDS_DB_NAME', 'forge'),
+            'username' => env('RDS_USERNAME', 'forge'),
+            'password' => env('RDS_PASSWORD', ''),
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => true,
+            'engine' => null,
         ],
 ...
 ```
@@ -242,7 +220,7 @@ When the DB instance has finished launching, bundle and deploy the updated appli
 1. Create a new source bundle:
 
    ```
-   ~/eb-laravel$ zip ../laravel-v2-rds.zip -r * .[^.]*
+   ~/eb-laravel$ zip ../laravel-v2-rds.zip -r * .[^.]* -x "vendor/*"
    ```
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
@@ -259,7 +237,7 @@ Deploying a new version of your application takes less than a minute\. When the 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-laravel-defaultwdb.png)
 
-## Clean Up<a name="w3ab1c43c17c32"></a>
+## Cleanup<a name="php-laravel-tutorial-cleanup"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 
@@ -272,6 +250,8 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 1. Choose **Actions**, and then choose **Terminate Environment**\.
 
 1. In the **Confirm Termination** dialog box, type the environment name, and then choose **Terminate**\.
+
+With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 
 In addition, you can terminate database resources that you created outside of your Elastic Beanstalk environment\. When you terminate an Amazon RDS database instance, you can take a snapshot and restore the data to another instance later\.
 
@@ -287,24 +267,24 @@ In addition, you can terminate database resources that you created outside of yo
 
 1. Choose whether to create a snapshot, and then choose **Delete**\.
 
-**To delete a DynamoDB table**
-
-1. Open the [Tables page](https://console.aws.amazon.com/dynamodb/home?#tables:) in the DynamoDB console\.
-
-1. Select a table\.
-
-1. Choose **Actions**, and then choose **Delete table**\.
-
-1. Choose **Delete**\.
-
 ## Next Steps<a name="php-laravel-tutorial-nextsteps"></a>
+
+For more information about Laravel, go to the tutorial at [laravel\.com](https://laravel.com/docs/5.2/quickstart)\.
 
 As you continue to develop your application, you'll probably want a way to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
 
-In this tutorial, you configured a document root for your application\. When you launch more environments, it's impractical to manually configure this setting on each environment\. You can use [configuration files](ebextensions.md) to store this and other settings in your source code, so that they are applied automatically\.
+In this tutorial, you used the Elastic Beanstalk console to configure composer options\. To make this configuration part of your application source, you can use a configuration file like the following\.
 
-Running an RDS DB instance in your Elastic Beanstalk environment is great for development and testing, but it ties the life cycle of your database to your environment\. For instructions on connecting to a database running outside of your environment, see [Adding an Amazon RDS DB Instance to Your PHP Application Environment](create_deploy_PHP.rds.md) \.
+**Example \.ebextensions/composer\.config**  
+
+```
+option_settings:
+  aws:elasticbeanstalk:container:php:phpini:
+    document_root: /public
+```
+
+For more information, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.
+
+Running an Amazon RDS DB instance in your Elastic Beanstalk environment is great for development and testing, but it ties the lifecycle of your database to your environment\. See [Adding an Amazon RDS DB Instance to Your PHP Application Environment](create_deploy_PHP.rds.md) for instructions on connecting to a database running outside of your environment\.
 
 Finally, if you plan on using your application in a production environment, you will want to [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.
-
-For more information about Laravel, go to the tutorial at [laravel\.com](https://laravel.com/docs/5.2/quickstart)\.

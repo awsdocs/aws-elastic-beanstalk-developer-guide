@@ -82,7 +82,7 @@ Configure [scheduled actions](environments-cfg-autoscaling-scheduledactions.md) 
 |  EndTime  |  A date and time in the future \(in the UTC/GMT time zone\) when you want the scheduled scaling action to stop repeating\. If you don't specify an **EndTime**, the action recurs according to the `Recurrence` expression\. Example: `2015-04-28T04:07:2Z` When a scheduled action ends, Amazon EC2 Auto Scaling does not automatically go back to its previous settings\. Configure a second scheduled action to return to the original settings as needed\.  |  None  |  A [ISO\-8601 timestamp](http://www.w3.org/TR/NOTE-datetime) unique across all scheduled scaling actions\.  | 
 |  MaxSize  |  The maximum instance count to apply when the action runs\.  |  None  |  `0` to `10000`  | 
 |  MinSize  |  The minimum instance count to apply when the action runs\.  |  None  |  `0` to `10000`  | 
-|  DesiredCapacity  |  Set the initial desired capacity for the Auto Scaling group\. After the scheduled action is applied, triggers will adjust the desired capacity based on their settings\.  |  None  |  `1` to `10000`  | 
+|  DesiredCapacity  |  Set the initial desired capacity for the Auto Scaling group\. After the scheduled action is applied, triggers will adjust the desired capacity based on their settings\.  |  None  |  `0` to `10000`  | 
 |  Recurrence  |  The frequency with which you want the scheduled action to occur\. If you do not specify a recurrence, then the scaling action will occur only once, as specified by the `StartTime`\.  |  None  |  A [Cron](http://en.wikipedia.org/wiki/Cron) expression\.  | 
 |  Suspend  |  Set to `true` to deactivate a recurrent scheduled action temporarily\.  |   `false`   |   `true`   `false`   | 
 

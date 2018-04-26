@@ -10,7 +10,7 @@ The tutorial uses a [sample PHP application](https://github.com/awslabs/eb-demo-
 + [Create an Elastic Beanstalk Environment](#php-hawrds-tutorial-create)
 + [Configure Security Groups, Environment Properties, and Scaling](#php-hawrds-tutorial-configure)
 + [Deploy the Sample Application](#php-hawrds-tutorial-deploy)
-+ [Clean Up](#w3ab1c43c23c38)
++ [Cleanup](#php-hawrds-tutorial-cleanup)
 + [Next Steps](#php-hawrds-tutorial-nextsteps)
 
 ## Prerequisites<a name="php-hawrds-tutorial-prereqs"></a>
@@ -217,7 +217,7 @@ The site collects user comments and uses a MySQL database to store the data\. To
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-ha-tutorial-app.png)
 
-## Clean Up<a name="w3ab1c43c23c38"></a>
+## Cleanup<a name="php-hawrds-tutorial-cleanup"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 
@@ -230,6 +230,8 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 1. Choose **Actions**, and then choose **Terminate Environment**\.
 
 1. In the **Confirm Termination** dialog box, type the environment name, and then choose **Terminate**\.
+
+With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 
 In addition, you can terminate database resources that you created outside of your Elastic Beanstalk environment\. When you terminate an Amazon RDS database instance, you can take a snapshot and restore the data to another instance later\.
 
@@ -244,16 +246,6 @@ In addition, you can terminate database resources that you created outside of yo
 1. Choose **Instance actions**, and then choose **Delete**\.
 
 1. Choose whether to create a snapshot, and then choose **Delete**\.
-
-**To delete a DynamoDB table**
-
-1. Open the [Tables page](https://console.aws.amazon.com/dynamodb/home?#tables:) in the DynamoDB console\.
-
-1. Select a table\.
-
-1. Choose **Actions**, and then choose **Delete table**\.
-
-1. Choose **Delete**\.
 
 ## Next Steps<a name="php-hawrds-tutorial-nextsteps"></a>
 

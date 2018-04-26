@@ -4,7 +4,7 @@
 
 **Topics**
 + [Prerequisites](#php-symfony-tutorial-prereqs)
-+ [Create an Elastic Beanstalk Environment](#php-symfony-tutorial-create)
++ [Launch an Elastic Beanstalk Environment](#php-symfony-tutorial-launch)
 + [Install Symfony and Generate a Website](#php-symfony-tutorial-generate)
 + [Deploy Your Application](#php-symfony-tutorial-deploy)
 + [Configure Composer Settings](#php-symfony-tutorial-configure)
@@ -26,7 +26,7 @@ On Linux and macOS, use your preferred shell and package manager\. On Windows 10
 
 Symfony 3 requires PHP 5\.5\.9 or later and the `intl` extension for PHP\. In this tutorial we use PHP 7\.0 and the corresponding Elastic Beanstalk platform configuration\. Install PHP and Composer by following the instructions at [Setting Up your PHP Development Environment](php-development-environment.md)\.
 
-## Create an Elastic Beanstalk Environment<a name="php-symfony-tutorial-create"></a>
+## Launch an Elastic Beanstalk Environment<a name="php-symfony-tutorial-launch"></a>
 
 Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\.
 
@@ -85,7 +85,7 @@ If you run into any issues installing Symfony, go to the installation topic in t
 Create a [source bundle](applications-sourcebundle.md) containing the files created by Composer\. The following command creates a source bundle named `symfony-default.zip`\. It excludes files in the `vendor` folder, which take up a lot of space and are not necessary for deploying your application to Elastic Beanstalk\.
 
 ```
-eb-symfony$ zip ../symfony-default.zip -r * .[^.]* -x vendor/**\*
+eb-symfony$ zip ../symfony-default.zip -r * .[^.]* -x "vendor/*"
 ```
 
 Upload the source bundle to Elastic Beanstalk to deploy Symfony to your environment\.
@@ -105,11 +105,11 @@ Upload the source bundle to Elastic Beanstalk to deploy Symfony to your environm
 1. When the deployment completes, choose the site URL to open your website in a new tab\.
 
 **Note**  
-To optimize the source bundle further, initialize a Git repository and use the `git archive` command to create the source bundle\. The default Symfony project includes a `.gitignore` file that tells Git to exclude the `vendor` folder and other files that are not required for deployment\.
+To optimize the source bundle further, initialize a Git repository and use the [`git archive` command](applications-sourcebundle.md#using-features.deployment.source.git) to create the source bundle\. The default Symfony project includes a `.gitignore` file that tells Git to exclude the `vendor` folder and other files that are not required for deployment\.
 
 ## Configure Composer Settings<a name="php-symfony-tutorial-configure"></a>
 
-When the deployment process completes, click the URL to open your Symfony application in the browser:
+When the deployment completes, click the URL to open your Symfony application in the browser:
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-symfony-403.png)
 
@@ -140,7 +140,7 @@ To serve the Symfony application at the root path, use the Elastic Beanstalk con
 
 ## Cleanup<a name="php-symfony-tutorial-cleanup"></a>
 
-When you finish working with Elastic Beanstalk, you can terminate your environment to avoid running AWS resources that you don't need\.
+When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 
 **To terminate your Elastic Beanstalk environment**
 
@@ -150,11 +150,15 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 1. Choose **Actions**, and then choose **Terminate Environment**\.
 
-1. In the **Confirm termination** dialog box, type the environment name, and then choose **Terminate**\.
+1. In the **Confirm Termination** dialog box, type the environment name, and then choose **Terminate**\.
 
 With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 
 ## Next Steps<a name="php-symfony-tutorial-nextsteps"></a>
+
+For more information about Symfony, see [What is Symfony?](https://symfony.com/what-is-symfony) at symfony\.com\.
+
+As you continue to develop your application, you'll probably want a way to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
 
 In this tutorial, you used the Elastic Beanstalk console to configure composer options\. To make this configuration part of your application source, you can use a configuration file like the following\.
 
@@ -171,5 +175,3 @@ For more information, see [Advanced Environment Customization with Configuration
 Symfony uses its own configuration files to configure database connections\. For instructions on connecting to a database with Symfony, see [Connecting to a Database with Symfony](create_deploy_PHP.rds.md#php-rds-symfony)\.
 
 Finally, if you plan on using your application in a production environment, you will want to [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.
-
-For more information about Symfony, see [What is Symfony?](https://symfony.com/what-is-symfony) at symfony\.com\.

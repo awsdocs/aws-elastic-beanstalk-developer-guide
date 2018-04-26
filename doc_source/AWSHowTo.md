@@ -1,6 +1,6 @@
 # Using Elastic Beanstalk with Other AWS Services<a name="AWSHowTo"></a>
 
-The topics in this chapter discusses the integration of Elastic Beanstalk with resources from other AWS services that are not managed by Elastic Beanstalk as part of your environment\.
+To implement your application's environments, Elastic Beanstalk manages resources of other AWS services or uses their functionality\. In addition, Elastic Beanstalk integrates with AWS services that it doesn't use directly as part of your environments\. The topics in this section describe many ways you can use these additional services with your Elastic Beanstalk application\.
 
 **Topics**
 + [Architectural Overview](#AWSHowTo.architecture)
@@ -8,6 +8,7 @@ The topics in this chapter discusses the integration of Elastic Beanstalk with r
 + [Logging Elastic Beanstalk API Calls with AWS CloudTrail](AWSHowTo.cloudtrail.md)
 + [Using Elastic Beanstalk with Amazon CloudWatch](AWSHowTo.cloudwatch.md)
 + [Using Elastic Beanstalk with Amazon CloudWatch Logs](AWSHowTo.cloudwatchlogs.md)
++ [Finding and Tracking Elastic Beanstalk Resources with AWS Config](AWSHowTo.config.md)
 + [Using Elastic Beanstalk with DynamoDB](AWSHowTo.dynamoDB.md)
 + [Using Elastic Beanstalk with Amazon ElastiCache](AWSHowTo.ElastiCache.md)
 + [Using Elastic Beanstalk with Amazon Elastic File System](services-efs.md)

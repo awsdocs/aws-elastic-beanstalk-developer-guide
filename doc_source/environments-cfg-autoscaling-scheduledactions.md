@@ -48,7 +48,7 @@ When working with scheduled action configuration options outside of the console,
 
 Elastic Beanstalk provides configuration options for scheduled action settings in the [`aws:autoscaling:scheduledaction`](command-options-general.md#command-options-general-autoscalingscheduledaction) namespace\. Use the `resource_name` field to specify the name of the scheduled action\.
 
-**Example scheduled\-scale\-up\-specific\-time\.config**  
+**Example scheduled\-scale\-up\-specific\-time\-long\.config**  
 This configuration file instructs Elastic Beanstalk to scale out from five instances to 10 instances at 2015\-12\-12T00:00:00Z\.  
 
 ```
@@ -107,6 +107,20 @@ option_settings:
     StartTime: '2015-05-14T07:00:00Z'
     EndTime: '2016-01-12T07:00:00Z'
     Recurrence: 0 9 * * *
+```
+
+**Example scheduled\-periodic\-scale\-down\.config**  
+This configuration file instructs Elastic Beanstalk to scale in to no running instance every day at 6PM\. If you know that your application is mostly idle outside of business hours, you can create a similar scheduled action\. If your application must be down outside of business hours, change `MaxSize` to `0`\.  
+
+```
+option_settings:
+  ScheduledPeriodicScaleUp.aws:autoscaling:scheduledaction:
+    MinSize: '0'
+    MaxSize: '1'
+    DesiredCapacity: '0'
+    StartTime: '2015-05-14T07:00:00Z'
+    EndTime: '2016-01-12T07:00:00Z'
+    Recurrence: 0 18 * * *
 ```
 
 **Example scheduled\-weekend\-scale\-down\.config**  

@@ -145,6 +145,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Logging Elastic Beanstalk API Calls with AWS CloudTrail](AWSHowTo.cloudtrail.md)
    + [Using Elastic Beanstalk with Amazon CloudWatch](AWSHowTo.cloudwatch.md)
    + [Using Elastic Beanstalk with Amazon CloudWatch Logs](AWSHowTo.cloudwatchlogs.md)
+   + [Finding and Tracking Elastic Beanstalk Resources with AWS Config](AWSHowTo.config.md)
    + [Using Elastic Beanstalk with DynamoDB](AWSHowTo.dynamoDB.md)
    + [Using Elastic Beanstalk with Amazon ElastiCache](AWSHowTo.ElastiCache.md)
    + [Using Elastic Beanstalk with Amazon Elastic File System](services-efs.md)

@@ -12,7 +12,7 @@ The tutorial's sample application uses a DynamoDB table to store user\-provided 
 + [Create a DynamoDB Table](#nodejs-dynamodb-tutorial-database)
 + [Update the Application's Configuration Files](#nodejs-dynamodb-tutorial-update)
 + [Configure Your Environment for High Availability](#nodejs-dynamodb-tutorial-configure)
-+ [Clean Up](#w3ab1c41c31c44)
++ [Cleanup](#nodejs-dynamodb-tutorial-cleanup)
 + [Next Steps](#nodejs-dynamodb-tutorial-nextsteps)
 
 ## Prerequisites<a name="nodejs-dynamodb-tutorial-prereqs"></a>
@@ -330,7 +330,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. Choose **Save**, and then choose **Apply**\.
 
-## Clean Up<a name="w3ab1c41c31c44"></a>
+## Cleanup<a name="nodejs-dynamodb-tutorial-cleanup"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 
@@ -344,19 +344,9 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 1. In the **Confirm Termination** dialog box, type the environment name, and then choose **Terminate**\.
 
-In addition, you can terminate database resources that you created outside of your Elastic Beanstalk environment\. When you terminate an Amazon RDS database instance, you can take a snapshot and restore the data to another instance later\.
+With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 
-**To terminate your RDS DB instance**
-
-1. Open the [Amazon RDS console](https://console.aws.amazon.com/rds)\.
-
-1. Choose **Instances**\.
-
-1. Choose your DB instance\.
-
-1. Choose **Instance actions**, and then choose **Delete**\.
-
-1. Choose whether to create a snapshot, and then choose **Delete**\.
+You can also delete the external DynamoDB tables that you created\.
 
 **To delete a DynamoDB table**
 

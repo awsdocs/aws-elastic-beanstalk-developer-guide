@@ -26,6 +26,8 @@ On Ubuntu, use apt:
 
 ```
 $ sudo apt install php-all-dev
+$ sudo apt install php-intl
+$ sudo apt install php-mbstring
 ```
 
 On OS\-X, use brew:

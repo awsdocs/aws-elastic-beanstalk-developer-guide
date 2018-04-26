@@ -16,7 +16,7 @@ The deployable source bundle is available here: [dotnet\-core\-tutorial\-bundle\
 + [Launch an Elastic Beanstalk Environment](#dotnet-core-tutorial-launch)
 + [Update the Source Code](#dotnet-core-tutorial-update)
 + [Deploy Your Application](#dotnet-core-tutorial-deploy)
-+ [Clean Up](#w3ab1c39c31c44)
++ [Cleanup](#dotnet-core-tutorial-cleanup)
 + [Next Steps](#dotnet-core-tutorial-nextsteps)
 
 ## Prerequisites<a name="dotnet-core-tutorial-prereqs"></a>
@@ -375,7 +375,7 @@ All of these resources are managed by Elastic Beanstalk\. When you terminate you
 **Note**  
 The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)\.
 
-## Clean Up<a name="w3ab1c39c31c44"></a>
+## Cleanup<a name="dotnet-core-tutorial-cleanup"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 
@@ -389,29 +389,7 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 1. In the **Confirm Termination** dialog box, type the environment name, and then choose **Terminate**\.
 
-In addition, you can terminate database resources that you created outside of your Elastic Beanstalk environment\. When you terminate an Amazon RDS database instance, you can take a snapshot and restore the data to another instance later\.
-
-**To terminate your RDS DB instance**
-
-1. Open the [Amazon RDS console](https://console.aws.amazon.com/rds)\.
-
-1. Choose **Instances**\.
-
-1. Choose your DB instance\.
-
-1. Choose **Instance actions**, and then choose **Delete**\.
-
-1. Choose whether to create a snapshot, and then choose **Delete**\.
-
-**To delete a DynamoDB table**
-
-1. Open the [Tables page](https://console.aws.amazon.com/dynamodb/home?#tables:) in the DynamoDB console\.
-
-1. Select a table\.
-
-1. Choose **Actions**, and then choose **Delete table**\.
-
-1. Choose **Delete**\.
+With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 
 ## Next Steps<a name="dotnet-core-tutorial-nextsteps"></a>
 
