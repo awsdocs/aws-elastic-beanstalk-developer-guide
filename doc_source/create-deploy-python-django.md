@@ -263,7 +263,29 @@ If you see a "service role required" error message, run `eb create` interactivel
 
    This command creates a load balanced Elastic Beanstalk environment named `django-env`\. Creating an environment takes about 5 minutes\. As Elastic Beanstalk creates the resources necessary to run your application, it outputs informational messages that the EB CLI relays to your terminal\.
 
-1. When the environment creation process completes, open your web site with `eb open`:
+1. When the environment creation process completes, you'll also need to add the URL that Beanstalk created for your environment to Django's configuration. This is a Django security requirement to prevent HTTP Host header attacks \(see [Host header validation](https://docs.djangoproject.com/en/2.0/topics/security/#host-headers-virtual-hosting) for more details\.\). Find out the URL of your new environment by looking at the `CNAME` property of `eb status`:
+
+  ```
+  ~/ebdjango$ eb status
+  Environment details for: django-env
+  Application name: django-tutorial
+  ...
+  CNAME: eb-django-app-dev.elasticbeanstalk.com
+  ...
+  ```
+
+1. Add the URL to the `settings.py` file, under the `ALLOWED_HOSTS` setting  
+**Example \~/ebdjango/ebdjango/settings\.py** 
+
+  ```
+  ...
+  ALLOWED_HOSTS = ['eb-django-app-dev.elasticbeanstalk.com']
+  ```
+  
+  Save the file and deploy this change by running `eb deploy`\.
+  
+
+1. When the environment update process completes, open your web site with `eb open`:
 
    ```
    ~/ebdjango$ eb open
