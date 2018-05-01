@@ -257,6 +257,6 @@ If you are done with the sample application, you can also remove the project fol
 ~$ rm -rf ~/eb-flask
 ```
 
-For more information about Flask, including an in\-depth tutorial, visit [the official documentation](http://flask.pocoo.org/docs/0.10/)\.
+For more information about Flask, including an in\-depth tutorial, see [Flask documentation](http://flask.pocoo.org/docs/)\.
 
 If you'd like to try out another Python web framework, check out [Deploying a Django Application to Elastic Beanstalk](create-deploy-python-django.md)\.

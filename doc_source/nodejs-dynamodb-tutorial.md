@@ -326,7 +326,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. On the **Capacity** configuration card, choose **Modify**\.
 
-1. In the **Auto Scaling Group** section, set **Min instances** to **2** and **Max instances** to a value greater than **2**\.
+1. In the **Auto Scaling Group** section, set **Min instances** to **2**\.
 
 1. Choose **Save**, and then choose **Apply**\.
 

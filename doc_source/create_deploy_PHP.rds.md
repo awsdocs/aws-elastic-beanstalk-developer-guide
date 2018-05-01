@@ -55,7 +55,7 @@ To use PHP Data Objects \(PDO\) to connect to the database, install the driver t
 + **Oracle** – [http://php.net/manual/en/ref.pdo-oci.php](http://php.net/manual/en/ref.pdo-oci.php)
 + **SQL Server** – [http://php.net/manual/en/ref.pdo-sqlsrv.php](http://php.net/manual/en/ref.pdo-sqlsrv.php)
 
-For more information, see [php\.net/manual/en/pdo\.installation\.php](http://www.php.net/manual/en/pdo.installation.php)\.
+For more information, see [http://php.net/manual/en/pdo.installation.php](http://php.net/manual/en/pdo.installation.php)\.
 
 ## Connecting to a Database with a PDO or MySQLi<a name="php-rds-connect"></a>
 

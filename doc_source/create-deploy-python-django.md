@@ -229,6 +229,8 @@ You've added everything you need to deploy your application on Elastic Beanstalk
 
 Next, you'll create your application environment and deploy your configured application with Elastic Beanstalk\.
 
+Immediately after deployment, you'll edit Django's configuration to add the domain name that Elastic Beanstalk assigned to your application to Django's `ALLOWED_HOSTS`, and then you'll redeploy your application\. This is a Django security requirement, designed to prevent HTTP Host header attacks\. For details, see [Host header validation](https://docs.djangoproject.com/en/2.0/topics/security/#host-headers-virtual-hosting)\.
+
 **To create an environment and deploy your Django application**
 
 1. Initialize your EB CLI repository with the `eb init` command:
@@ -263,27 +265,31 @@ If you see a "service role required" error message, run `eb create` interactivel
 
    This command creates a load balanced Elastic Beanstalk environment named `django-env`\. Creating an environment takes about 5 minutes\. As Elastic Beanstalk creates the resources necessary to run your application, it outputs informational messages that the EB CLI relays to your terminal\.
 
-1. When the environment creation process completes, you'll also need to add the URL that Beanstalk created for your environment to Django's configuration. This is a Django security requirement to prevent HTTP Host header attacks \(see [Host header validation](https://docs.djangoproject.com/en/2.0/topics/security/#host-headers-virtual-hosting) for more details\.\). Find out the URL of your new environment by looking at the `CNAME` property of `eb status`:
+1. When the environment creation process completes, find the domain name of your new environment by running `eb status`:
 
-  ```
-  ~/ebdjango$ eb status
-  Environment details for: django-env
-  Application name: django-tutorial
-  ...
-  CNAME: eb-django-app-dev.elasticbeanstalk.com
-  ...
-  ```
+   ```
+   ~/ebdjango$ eb status
+   Environment details for: django-env
+     Application name: django-tutorial
+     ...
+     CNAME: eb-django-app-dev.elasticbeanstalk.com
+     ...
+   ```
 
-1. Add the URL to the `settings.py` file, under the `ALLOWED_HOSTS` setting  
-**Example \~/ebdjango/ebdjango/settings\.py** 
+   Your environment's domain name is the value of the `CNAME` property\.
 
-  ```
-  ...
-  ALLOWED_HOSTS = ['eb-django-app-dev.elasticbeanstalk.com']
-  ```
-  
-  Save the file and deploy this change by running `eb deploy`\.
-  
+1. Edit the `settings.py` file in the `ebdjango` directory, locate the `ALLOWED_HOSTS` setting, and then add your application's domain name that you found in the previous step to the setting's value\. If you can't find this setting in the file, add it to a new line\.
+
+   ```
+   ...
+   ALLOWED_HOSTS = ['eb-django-app-dev.elasticbeanstalk.com']
+   ```
+
+1. Save the file, and then deploy your application by running `eb deploy`:
+
+   ```
+   ~/ebdjango$ eb deploy
+   ```
 
 1. When the environment update process completes, open your web site with `eb open`:
 

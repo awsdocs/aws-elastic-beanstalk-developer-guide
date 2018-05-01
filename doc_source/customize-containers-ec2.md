@@ -20,7 +20,9 @@ Configuration files support the following keys that affect the Linux server your
 + [Container Commands](#linux-container-commands)
 + [Example: Using Custom Amazon CloudWatch Metrics](customize-containers-cw.md)
 
-Keys are processed in the order that they are listed above\.
+Keys are processed in the order that they are listed here\.
+
+Watch your environment's [events](using-features.events.md) while developing and testing configuration files\. Elastic Beanstalk ignores a configuration file that contains validation errors, like an invalid key, and doesn't process any of the other keys in the same file\. When this happens, Elastic Beanstalk adds a warning event to the event log\.
 
 ## Packages<a name="linux-packages"></a>
 
@@ -283,7 +285,35 @@ commands:
 ### Options<a name="linux-commands-options"></a>
 
 `command`  
-Either an array or a string specifying the command to run\. If you use an array, you do not need to escape space characters or enclose command parameters in quotes\.
+Either an array \([block sequence collection](http://yaml.org/spec/1.2/spec.html#id2759963) in YAML syntax\) or a string specifying the command to run\. Some important notes:  
++ If you use a string, you don't need to enclose the entire string in quotes\. If you do use quotes, escape literal occurrences of the same type of quote\.
++ If you use an array, you don't need to escape space characters or enclose command parameters in quotes\. Each array element is a single command argument\. Don't use an array to specify multiple commands\.
+The following examples are all equivalent:  
+
+```
+commands:
+  command1:
+    command: git commit -m "This is a comment."
+  command2:
+    command: "git commit -m \"This is a comment.\""
+  command3:
+    command: 'git commit -m "This is a comment."'
+  command4:
+    command:
+      - git
+      - commit
+      - -m
+      - This is a comment.
+```
+To specify multiple commands, use a [literal block scalar](http://yaml.org/spec/1.2/spec.html#id2760844), as shown in the following example\.  
+
+```
+commands:
+  command block:
+    command: |
+      git commit -m "This is a comment."
+      git push
+```
 
 `env`  
 \(Optional\) Sets environment variables for the command\. This property overwrites, rather than appends, the existing environment\.

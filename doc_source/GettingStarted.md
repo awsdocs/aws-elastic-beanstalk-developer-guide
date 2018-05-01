@@ -69,9 +69,11 @@ If you are not currently viewing the dashboard, return to it now\.
 1. Choose **GettingStartedApp\-env**\.  
 ![\[Elastic beanstalk console showing list of applications and environments.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-chooseenvironment.png)
 
-The dashboard shows a subset of useful information about your environment\. This includes its current health status, the name of the currently deployed application version, its five most recent events, and the platform configuration on which the application runs\.
+The dashboard shows a subset of useful information about your environment\. This includes its URL, its current health status, the name of the currently deployed application version, its five most recent events, and the platform configuration on which the application runs\.
 
 ![\[Environment dashboard.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-dashboard.png)
+
+At the top right corner of the dashboard, next to the **Actions** menu, you can find the environment's **URL**\. This is the URL of the web application that the environment runs\. Choose this URL to get to the application's *Congratulations* page\.
 
 On the left side of the console is a navigation pane that links to other pages, which contain more detailed information about your environment and provide access to additional features\. Explore the following pages to see the current state of your environment:
 + The **Configuration** page shows the resources provisioned for this environment, such as Amazon EC2 instances that host your application\. This page also lets you configure some of the provisioned resources\.
@@ -264,7 +266,7 @@ For more information, see [AWS SDK for JavaScript in Node\.js](https://aws.amazo
 
 The AWS SDK for PHP enables you to build applications on top of AWS infrastructure services\. With the AWS SDK for PHP, you can get started in minutes with a single, downloadable package that includes the AWS PHP library, code samples, and documentation\. 
 
-The AWS SDK for PHP requires [PHP 5\.2 or later](http://www.php.net/)\. 
+The AWS SDK for PHP requires PHP 5\.2 or later\. For download details, see [http://php.net/](http://php.net/)\.
 
 For more information, see [AWS SDK for PHP](https://aws.amazon.com/sdk-for-php/)\. 
 

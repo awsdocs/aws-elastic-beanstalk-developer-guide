@@ -25,7 +25,7 @@ To use an external database with an application running in Elastic Beanstalk, fi
 
 Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosing a Multi\-AZ deployment ensures that your database will fail over and continue to be available if the master DB instance goes out of service\.
 
-**To launch an RDS DB instance in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\)**
+**To launch an RDS DB instance in a default VPC**
 
 1. Open the [RDS console](https://console.aws.amazon.com/rds/home)\.
 
@@ -33,28 +33,18 @@ Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosin
 
 1. Choose **Launch DB instance**\.
 
-1. Under **Engine options**, choose the engine that will meet your needs, and then choose **Next**\.
+1. Choose a database engine\. Choose **Next**\.
 
-   If prompted to select **Use case**, choose **Production** for Multi\-AZ deployment or choose **Dev/Test** to consume only Free Tier resources\. Then choose **Next**\.
+1. Choose a use case, if prompted\.
 
-1. Under **Specify DB details**, for **Instance specifications**, choose the following and then keep the default settings for the remaining options:
-   + **DB instance class** – Computation and memory capacity \(if unsure, [learn which option is right for you ](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide//Concepts.DBInstanceClass.html)\) 
+1. Under **Specify DB details**, review the default settings and adjust as necessary\. Pay attention to the following options:
+   + **DB instance class** – Choose an instance size that has an appropriate amount of memory and CPU power for your workload\.
    + **Multi\-AZ deployment** – For high availability, set to **Create replica in different zone**\.
-
-1. Under **Estimated monthly costs**, review the total\. Adjust **Use case** and **DB instance class** to fit your budget as needed\.
-
-1. Under **Settings**, enter values for **DB instance identifier**, **Master username**, **Master password**, and **Confirm password**\. Make a note of these settings because you'll use them later\. 
+   + **Master username** and **Master password** – The database username and password\. Make a note of these settings because you'll use them later\.
 
 1. Choose **Next**\.
 
-1. Under **Configure advanced settings**, for **Network & Security**, choose the following:
-   + **Virtual Private Cloud \(VPC\)** – Keep default value 
-   + **Subnet group** – **Default**
-   + **Public accessibility** – **No**
-   + **Availability Zone** – ** No Preference**
-   + **VPC security groups** – **Create new VPC Security Group**
-
-1. Under **Database options**, for **Database name**, type **ebdb**, and verify the default settings for the remaining options\. Make a note of the **Database port** value for use later\.
+1. Under **Database options**, for **Database name**, type **ebdb**\. Make a note of the **Database port** value for use later\.
 
 1. Verify the default settings for the remaining options, and choose **Launch DB instance**\.
 
@@ -66,18 +56,14 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 
 1. Choose **Instances**\.
 
-1. Choose the name of your recently created DB instance to view its details\.
+1. Choose the name of your DB instance to view its details\.
 
-1. Go to the **Details** section\.
-
-1. In the **Details** section, note the **Subnets**, **Security groups**, and **Endpoint** shown on this page so you can use this information later\.
-**Note**  
-The security group name is the first value of the link text shown in **Security groups**, before the value in parentheses\. This second value, in parentheses, is the security group ID\.
+1. Under **Details** section, note the **Subnets**, **Security groups**, and **Endpoint** shown on this page so you can use this information later\.
 
 1. Under **Security and network**, you can see the security group associated with the DB instance\. Open the link to view the security group in the Amazon EC2 console\.  
 ![\[Details section of a DB instance page in the Amazon RDS console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup.png)
 
-1. In the security group details, choose the **Inbound** view\.
+1. In the security group details, choose **Inbound**\.
 
 1. Choose **Edit**\.
 
@@ -85,7 +71,7 @@ The security group name is the first value of the link text shown in **Security 
 
 1. For **Type**, choose the DB engine that your application uses\.
 
-1. For **Source**, choose **Custom**, and then type the group ID of the security group\. This allows resources in the security group to receive traffic on the database port from other resources in the same group\.  
+1. For **Source**, type **sg\-** to view a list of available security groups\. Choose the current security group to allow resources in the security group to receive traffic on the database port from other resources in the same group\.  
 ![\[Edit the inbound rules for a security group in the Amazon EC2 console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/ec2-securitygroup-rds.png)
 
 1. Choose **Save**\.
@@ -94,7 +80,7 @@ Creating a DB instance takes about 10 minutes\. In the meantime, create your Ela
 
 ## Create an Elastic Beanstalk Environment<a name="php-hawrds-tutorial-create"></a>
 
-Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP 5\.6** platform configuration and accept the default settings and sample code\. After you configure the environment to connect to the database, you deploy the sample application that you downloaded from GitHub\.
+Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\. After you configure the environment to connect to the database, you deploy the sample application that you downloaded from GitHub\.
 
 **To launch an environment \(console\)**
 
@@ -128,7 +114,7 @@ The Amazon S3 bucket that Elastic Beanstalk creates is shared between environmen
 
 ## Configure Security Groups, Environment Properties, and Scaling<a name="php-hawrds-tutorial-configure"></a>
 
-Next, add the security group of your DB instance to your running environment\. This procedure causes Elastic Beanstalk to reprovision all instances in your environment with the additional security group attached\.
+Add the security group of your DB instance to your running environment\. This procedure causes Elastic Beanstalk to reprovision all instances in your environment with the additional security group attached\.
 
 **To add a security group to your environment**
 
@@ -158,7 +144,7 @@ Next, use environment properties to pass the connection information to your envi
 
 1. On the **Software** configuration card, choose **Modify**\.
 
-1. In the **Environment Properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following\. Choose the plus symbol \(\+\) to add more properties\.
+1. In the **Environment properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following\.
    + **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
      Amazon RDS console label – **Endpoint** \(this is the hostname\)
@@ -188,7 +174,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. On the **Capacity** configuration card, choose **Modify**\.
 
-1. In the **Auto Scaling Group** section, set **Min instances** to **2** and **Max instances** to a value greater than **2**\.
+1. In the **Auto Scaling Group** section, set **Min instances** to **2**\.
 
 1. Choose **Save**, and then choose **Apply**\.
 
@@ -249,7 +235,7 @@ In addition, you can terminate database resources that you created outside of yo
 
 ## Next Steps<a name="php-hawrds-tutorial-nextsteps"></a>
 
-As you continue to develop your application, you'll probably want to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
+As you continue to develop your application, you'll probably want a way to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
 
 The sample application uses configuration files to configure PHP settings and create a table in the database if it doesn't already exist\. You can also use a configuration file to configure the security group settings of your instances during environment creation to avoid time\-consuming configuration updates\. See [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md) for more information\.
 
@@ -257,4 +243,4 @@ For development and testing, you might want to use the Elastic Beanstalk functio
 
 If you need a high\-performance database, consider using [Amazon Aurora](https://aws.amazon.com/rds/aurora/)\. Amazon Aurora is a MySQL\-compatible database engine that offers commercial database features at low cost\. To connect your application to a different database, repeat the [security group configuration](#php-hawrds-tutorial-database) steps and [update the RDS\-related environment properties](#php-hawrds-tutorial-configure)\. 
 
-Finally, if you plan on using your application in a production environment, [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.
+Finally, if you plan on using your application in a production environment, you will want to [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.

@@ -7,11 +7,6 @@ YAML relies on consistent indentation\. Match the indentation level when replaci
 
 Configuration files support the following keys that affect the Windows server on which your application runs\.
 
-Keys are processed in the following order\.
-
-**Note**  
-Older \(non\-versioned\) versions of \.NET platform configurations do not process configuration files in the correct order\. Learn more at [Migrating to v1 Elastic Beanstalk Windows Server Platforms](dotnet-v2migration.md)\.
-
 **Topics**
 + [Packages](#windows-packages)
 + [Sources](#windows-sources)
@@ -19,6 +14,13 @@ Older \(non\-versioned\) versions of \.NET platform configurations do not proces
 + [Commands](#windows-commands)
 + [Services](#windows-services)
 + [Container Commands](#windows-container-commands)
+
+Keys are processed in the order that they are listed here\.
+
+**Note**  
+Older \(non\-versioned\) versions of \.NET platform configurations do not process configuration files in the correct order\. Learn more at [Migrating to v1 Elastic Beanstalk Windows Server Platforms](dotnet-v2migration.md)\.
+
+Watch your environment's [events](using-features.events.md) while developing and testing configuration files\. Elastic Beanstalk ignores a configuration file that contains validation errors, like an invalid key, and doesn't process any of the other keys in the same file\. When this happens, Elastic Beanstalk adds a warning event to the event log\.
 
 ## Packages<a name="windows-packages"></a>
 
