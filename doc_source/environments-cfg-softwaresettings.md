@@ -45,7 +45,7 @@ Environment properties appear in the Elastic Beanstalk console under **Software 
 
 1. On the **Software** configuration card, choose **Modify**\.
 
-1. Under **Environment Properties**, enter key\-value pairs\.
+1. Under **Environment properties**, enter key\-value pairs\.
 
 1. Choose **Save**, and then choose **Apply**\.
 
@@ -134,6 +134,8 @@ In most cases, you access environment properties in your application code like a
   NameValueCollection appConfig = ConfigurationManager.AppSettings;
   string endpoint = appConfig["API_ENDPOINT"];
   ```
+**Note**  
+Elastic Beanstalk doesn't support passing environment variables to \.NET Core applications and multiple\-application IIS deployments that use a [deployment manifest](dotnet-manifest.md)\.
 + [Node\.js](create_deploy_nodejs.container.md#nodejs-platform-console-envprops) – `process.env`
 
   ```

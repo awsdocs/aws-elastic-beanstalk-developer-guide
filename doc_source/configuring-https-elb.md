@@ -2,9 +2,14 @@
 
 To update your AWS Elastic Beanstalk environment to use HTTPS, you need to configure an HTTPS listener for the load balancer in your environment\. Two types of load balancer support an HTTPS listener: Classic Load Balancer and Application Load Balancer\.
 
-You can use the Elastic Beanstalk console to configure a secure listener and assign the certificate\.
+You can use either the Elastic Beanstalk console or a configuration file to configure a secure listener and assign the certificate\.
 
-**To assign a certificate to your environment's load balancer \(Elastic Beanstalk console\)**
+**Note**  
+Single\-instance environments don't have a load balancer and don't support HTTPS termination at the load balancer\.
+
+## Configuring a Secure Listener Using the Elastic Beanstalk Console<a name="configuring-https-elb.console"></a>
+
+**To assign a certificate to your environment's load balancer**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
@@ -46,7 +51,7 @@ If the drop\-down menu doesn't show any certificates, you should create or uploa
 
 1. Choose **Save**, and then choose **Apply**\.
 
-## Configuring a Secure Listener with a Configuration File<a name="https-loadbalancer-configurationfile"></a>
+## Configuring a Secure Listener Using a Configuration File<a name="configuring-https-elb.configurationfile"></a>
 
 You can configure a secure listener on your load balancer with one of the following [configuration files](ebextensions.md)\.
 
@@ -75,7 +80,7 @@ option_settings:
     SSLCertificateArns: arn:aws:acm:us-east-2:1234567890123:certificate/####################################
 ```
 
-## Security Group Configuration<a name="https-update-security-group"></a>
+## Configuring a Security Group<a name="configuring-https-elb.security-group"></a>
 
 If you configure your load balancer to forward traffic to an instance port other than port 80, you must add a rule to your security group that allows inbound traffic over the instance port from your load balancer\. If you create your environment in a custom VPC, Elastic Beanstalk adds this rule for you\.
 

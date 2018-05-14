@@ -38,7 +38,7 @@ For the typographic conventions used in this tutorial, see [Document Conventions
  The following instructions were developed and tested using an Amazon EC2 instance running Ubuntu 14\.04\. For instructions on configuring and connecting to an EC2 instance using the AWS Management Console, read the [ Getting Started](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html) section of the *Amazon EC2 User Guide for Linux*\.   
  If you don't have access to the AWS Management Console or prefer to use the command line, check out the [AWS CLI User Guide](http://docs.aws.amazon.com/cli/latest/userguide/tutorial-ec2-ubuntu.html) for instructions on installing the AWS CLI and using it to configure security groups, create a key pair, and launch instances with the same credentials that you will use with the EB CLI\. 
 
-### Install Rails<a name="w3ab1c47c11c11b6"></a>
+### Install Rails<a name="w3ab1c47c11c11b7"></a>
 
  RVM, a popular version manager for Ruby, provides an option to install RVM, Ruby, and Rails with just a few commands: 
 
@@ -57,7 +57,7 @@ Install nodejs to allow the Rails server to run locally:
 **Note**  
 For help installing rails on other operating systems, try [http://installrails.com/](http://installrails.com/)\.
 
-### Create a New Rails Project<a name="w3ab1c47c11c11b8"></a>
+### Create a New Rails Project<a name="w3ab1c47c11c11b9"></a>
 
 Use `rails new` with the name of the application to create a new Rails project\.
 
@@ -67,7 +67,7 @@ Use `rails new` with the name of the application to create a new Rails project\.
 
 Rails creates a directory with the name specified, generates all of the files needed to run a sample project locally, and then runs bundler to install all of the dependencies \(Gems\) defined in the project's Gemfile\. 
 
-### Run the Project Locally<a name="w3ab1c47c11c11c10"></a>
+### Run the Project Locally<a name="w3ab1c47c11c11c11"></a>
 
  Test your Rails installation by running the default project locally\. 
 
@@ -97,7 +97,7 @@ The Puma application requires that you add **gem "puma"** to your `Gemfile` for 
 **Note**  
  Using Git or another form of revision control is recommended but also entirely optional when using the EB CLI\. Any of the steps in this tutorial that use Git can be skipped\. 
 
-### Install Git, Python Development Libraries and Pip<a name="w3ab1c47c11c13b6"></a>
+### Install Git, Python Development Libraries and Pip<a name="w3ab1c47c11c13b7"></a>
 
 This tutorial uses Git for revision control and Pip to manage the EB CLI installation\. In your Ubuntu development environment, you can install all of them with the following sequence of commands: 
 
@@ -111,7 +111,7 @@ This tutorial uses Git for revision control and Pip to manage the EB CLI install
 **Windows Users**  
  Install [Python 3\.4](https://www.python.org/download/releases/3.4.0/), which includes pip\. 
 
-### Install the EB CLI<a name="w3ab1c47c11c13b8"></a>
+### Install the EB CLI<a name="w3ab1c47c11c13b9"></a>
 
 With Pip you can install the EB CLI with a single command:
 

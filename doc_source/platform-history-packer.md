@@ -4,6 +4,15 @@ This page lists the previous versions of AWS Elastic Beanstalk's Packer platform
 
 See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
+The following Elastic Beanstalk platform configurations for Packer were current between February 22, 2018 and May 10, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Packer Version  | 
+| --- | --- | --- | 
+|   **Elastic Beanstalk Packer Builder version 2\.4\.5**   *64bit Amazon Linux 2017\.09 v2\.4\.5 running Packer 1\.0\.3*   |  2017\.09\.1  |  1\.0\.3  | 
+
 The following Elastic Beanstalk platform configurations for Packer were current between January 19, 2018 and February 21, 2018:
 
 

@@ -7,7 +7,7 @@ Elastic Beanstalk for \.NET makes it easier to deploy, manage, and scale your AS
 The rest of this section presents instructions for creating, testing, deploying, and redeploying your ASP\.NET web application to Elastic Beanstalk using the AWS Toolkit for Visual Studio\. The second part explains how to manage and configure your applications and environments using the AWS Toolkit for Visual Studio\. For more information about prerequisites, installation instructions, and running code samples, go to the [AWS Toolkit for Microsoft Visual Studio](https://aws.amazon.com/visualstudio/)\. This site also provides useful information about tools, how\-to topics, and additional resources for ASP\.NET developers\.
 
 **Note**  
-This platform does not support worker environments, enhanced health reporting, managed updates, bundle logs or immutable updates\.
+This platform doesn't support worker environments, enhanced health reporting, managed updates, bundle logs or immutable updates\.
 
 The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 

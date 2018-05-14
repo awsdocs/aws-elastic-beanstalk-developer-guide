@@ -30,8 +30,6 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Before you start, download the sample code from GitHub: [eb\-php\-wordpress\-v1\.zip](https://github.com/aws-samples/eb-php-wordpress/releases/download/v1.0/eb-php-wordpress-v1.zip)
-
 The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
 
 This tutorial was developed with WordPress version 4\.9\.5 and PHP 7\.0\.
@@ -97,7 +95,7 @@ Creating a DB instance takes about 10 minutes\. In the meantime, download WordPr
 
 ## Download WordPress<a name="php-hawordpress-tutorial-download"></a>
 
-To prepare to deploy WordPress using AWS Elastic Beanstalk, you must copy the WordPress files to your computer and provide some configuration information\. AWS Elastic Beanstalk requires a source bundle, in the format of a \.zip or \.war file\.
+To prepare to deploy WordPress using AWS Elastic Beanstalk, you must copy the WordPress files to your computer and provide some configuration information\.
 
 **To create a WordPress project**
 
@@ -138,7 +136,7 @@ To prepare to deploy WordPress using AWS Elastic Beanstalk, you must copy the Wo
 
 ## Launch an Elastic Beanstalk Environment<a name="php-hawordpress-tutorial-launch"></a>
 
-Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\. After you configure the environment to connect to the database, you deploy the sample application that you downloaded from GitHub\.
+Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\. After you configure the environment to connect to the database, you deploy the WordPress code to the environment\.
 
 **To launch an environment \(console\)**
 
@@ -265,7 +263,7 @@ The configuration files require modification to work with your account\. Replace
 1. Create a [source bundle](applications-sourcebundle.md) containing the files in your project folder\. The following command creates a source bundle named `wordpress-beanstalk.zip`\.
 
    ```
-   eb-wordpress zip ../wordpress-beanstalk.zip -r * .[^.]*
+   ~/eb-wordpress$ zip ../wordpress-beanstalk.zip -r * .[^.]*
    ```
 
 Upload the source bundle to Elastic Beanstalk to deploy WordPress to your environment\.
@@ -345,7 +343,7 @@ Now that you've installed WordPress, remove the configuration file to open the s
 1. Create a source bundle\.
 
    ```
-   eb-wordpress zip ../wordpress-beanstalk-v2.zip -r * .[^.]*
+   ~/eb-wordpress$ zip ../wordpress-beanstalk-v2.zip -r * .[^.]*
    ```
 
 Upload the source bundle to Elastic Beanstalk to deploy WordPress to your environment\.

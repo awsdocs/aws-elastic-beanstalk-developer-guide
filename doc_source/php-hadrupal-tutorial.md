@@ -3,16 +3,33 @@
 This tutorial walks you through the process of [launching an RDS DB instance](AWSHowTo.RDS.md) external to AWS Elastic Beanstalk, and configuring a high\-availability environment running a Drupal website to connect to it\. Running a DB instance external to Elastic Beanstalk decouples the database from the lifecycle of your environment, and lets you connect to the same database from multiple environments, swap out one database for another, or perform a blue/green deployment without affecting your database\.
 
 **Topics**
++ [Prerequisites](#php-hadrupal-tutorial-prereqs)
 + [Launch a DB Instance in Amazon RDS](#php-hadrupal-tutorial-database)
-+ [Download Drupal](#php-hadrupal-tutorial-download)
 + [Launch an Elastic Beanstalk Environment](#php-hadrupal-tutorial-launch)
-+ [Configure Security Groups and Environment Properties](#php-hadrupal-tutorial-configure)
++ [Configure Security Settings and Environment Properties](#php-hadrupal-tutorial-configure)
++ [Configure and Deploy Your Application](#php-hadrupal-tutorial-deploy)
 + [Install Drupal](#php-hadrupal-tutorial-install)
-+ [Update the Environment](#php-hadrupal-tutorial-updateenv)
++ [Update Drupal Configuration and Remove Access Restrictions](#php-hadrupal-tutorial-updateenv)
 + [Configure Autoscaling](#php-hadrupal-tutorial-autoscaling)
-+ [Review](#php-hadrupal-tutorial-review)
 + [Cleanup](#php-hadrupal-tutorial-cleanup)
 + [Next Steps](#php-hadrupal-tutorial-nextsteps)
+
+## Prerequisites<a name="php-hadrupal-tutorial-prereqs"></a>
+
+This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
+
+To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings proceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
+
+```
+~/eb-project$ this is a command
+this is output
+```
+
+On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
+
+The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
+
+This tutorial was developed with Drupal version 8\.5\.3 and PHP 7\.0\.
 
 ## Launch a DB Instance in Amazon RDS<a name="php-hadrupal-tutorial-database"></a>
 
@@ -71,114 +88,45 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 
 1. Choose **Save**\.
 
-Creating a DB instance takes about 10 minutes\. In the meantime, download Drupal and launch your Elastic Beanstalk environment\.
-
-## Download Drupal<a name="php-hadrupal-tutorial-download"></a>
-
-To prepare to deploy Drupal using AWS Elastic Beanstalk, you must copy the Drupal files to your computer and provide some configuration information\. AWS Elastic Beanstalk requires a source bundle, in the format of a ZIP or WAR file\.
-
-**To download Drupal and create a source bundle**
-
-1. Open [https://www\.drupal\.org/download](https://www.drupal.org/download)\.
-
-1. Download the latest release\.
-
-1. Extract the Drupal files from the download to a folder on your local computer, which you should rename to `drupal-beanstalk`\.
-
-1. Download the configuration files in the following repository:
-
-   ```
-   [https://github\.com/awslabs/eb\-php\-drupal/releases/download/v1\.0/eb\-php\-drupal\-v1\.zip](https://github.com/awslabs/eb-php-drupal/releases/download/v1.0/eb-php-drupal-v1.zip)
-   ```
-
-1. Extract the configuration files into your `drupal-beanstalk` folder\.
-
-1. Verify that the structure of your `drupal-beanstalk` folder is correct\.
-
-   ```
-   ├── .ebextensions
-   ├── core
-   │ ├── assets
-   │ ├── config
-   │ ├── includes
-   │ ├── lib
-   │ ├── misc
-   │ ├── modules
-   │ ├── profiles
-   │ ├── scripts
-   │ ├── tests
-   │ └── themes
-   ├── modules
-   ├── profiles
-   ├── sites
-   │ └── default
-   ├── themes
-   ├── vendor
-   │ ├── asm89
-   │ ├── composer
-   │ ├── doctrine
-   │ ├── easyrdf
-   │ ├── egulias
-   │ ├── guzzlehttp
-   │ ├── ircmaxwell
-   │ ├── masterminds
-   │ ├── paragonie
-   │ ├── psr
-   │ ├── stack
-   │ ├── symfony
-   │ ├── symfony-cmf
-   │ ├── twig
-   │ ├── wikimedia
-   │ └── zendframework
-   ```
-
-1. Modify the configuration files in the `.ebextensions` folder with the IDs of your default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\) and subnets, and your public IP address\.
-
-1. The `.ebextensions/efs-create.config` file creates an EFS file system and mount points in each Availability Zone/subnet in your Amazon VPC\. Identify your default VPC and subnet IDs in the Amazon VPC console\.
-
-   \-\-OR\-\-
-
-   The `.ebextensions/dev.config` file restricts access to your environment to your IP address to protect it during the Drupal installation process\. Replace the placeholder IP address near the top of the file with your public IP address\.
-
-1. Create a ZIP file from the files and folders in the `drupal-beanstalk` folder \(not the parent directory\), using one of the following methods, depending on your operating system:
-
-1. Windows — In Windows Explorer, select the files and folders, right\-click, and then choose **Send to**, **Compressed \(zipped\) Folder**\. Name the file `drupal-x.y.z.zip`, where `x.y.z` is the version of Drupal\.
-
-   \-\-OR\-\-
-
-   Mac OS X and Linux — Use the following command, where `x.y.z` is the version of Drupal:
-
-   ```
-   zip -r ../drupal-x.y.z.zip .
-   ```
+Creating a DB instance takes about 10 minutes\. In the meantime, launch your Elastic Beanstalk environment\.
 
 ## Launch an Elastic Beanstalk Environment<a name="php-hadrupal-tutorial-launch"></a>
 
-Use the AWS Management Console to launch an Elastic Beanstalk environment\.
+Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\. After you configure the environment to connect to the database, you deploy the Drupal code to the environment\.
 
-1. Open the Elastic Beanstalk console with this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=drupal\-beanstalk&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=drupal-beanstalk&environmentType=LoadBalanced)
+**To launch an environment \(console\)**
 
-1. For **Platform**, choose **PHP**\.
+1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
-1. For **App code**, choose **Upload your code**\.
+1. For **Platform**, choose the platform that matches the language used by your application\.
 
-1. Choose **Upload** and navigate to the ZIP file you created for your Drupal files\.
+1. For **Application code**, choose **Sample application**\.
 
-1. Choose **Upload** to select your application code\.
+1. Choose **Review and launch**\.
 
-1. Choose **Configure more options**\.
+1. Review the available options\. When you're satisfied with them, choose **Create app**\.
 
-1. For **Configuration presets**, select **Custom configuration**\.
+Environment creation takes about 5 minutes and creates the following resources:
++ **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
-1. Choose **Change platform configuration** and select **64bit Amazon Linux 2016\.09 v2\.3\.1 running PHP 5\.6** from the drop down menu and then choose **Save**\.
+  Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination thereof\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
++ **Instance security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
++ **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
++ **Load balancer security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
++ **Auto Scaling group** – An Auto Scaling group configured to replace an instance if it is terminated or becomes unavailable\.
++ **Amazon S3 bucket** – A storage location for your source code, logs, and other artifacts that are created when you use Elastic Beanstalk\.
++ **Amazon CloudWatch alarms** – Two CloudWatch alarms that monitor the load on the instances in your environment and are triggered if the load is too high or too low\. When an alarm is triggered, your Auto Scaling group scales up or down in response\.
++ **AWS CloudFormation stack** – Elastic Beanstalk uses AWS CloudFormation to launch the resources in your environment and propagate configuration changes\. The resources are defined in a template that you can view in the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation)\.
++ **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
 
-1. Review all options and once you are satisfied with those options choose **Create app**\.
+All of these resources are managed by Elastic Beanstalk\. When you terminate your environment, Elastic Beanstalk terminates all the resources that it contains\. The RDS DB instance that you launched is outside of your environment, so you are responsible for managing its lifecycle\.
 
-Environment creation takes about 5 minutes\.
+**Note**  
+The Amazon S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)\.
 
-## Configure Security Groups and Environment Properties<a name="php-hadrupal-tutorial-configure"></a>
+## Configure Security Settings and Environment Properties<a name="php-hadrupal-tutorial-configure"></a>
 
-Next, add the DB instance's security group to your running environment\. This procedure causes Elastic Beanstalk to reprovision all instances in your environment with the additional security group attached\.
+Add the security group of your DB instance to your running environment\. This procedure causes Elastic Beanstalk to reprovision all instances in your environment with the additional security group attached\.
 
 **To add a security group to your environment**
 
@@ -196,7 +144,7 @@ Next, add the DB instance's security group to your running environment\. This pr
 
 1. Read the warning, and then choose **Confirm**\.
 
-Next, pass the connection information to your environment by using environment properties\. The sample application uses a default set of properties that match the ones that Elastic Beanstalk configures when you provision a database within your environment\.
+Next, use environment properties to pass the connection information to your environment\. The sample application uses a default set of properties that match the ones that Elastic Beanstalk configures when you provision a database within your environment\.
 
 **To configure environment properties for an Amazon RDS DB instance**
 
@@ -226,6 +174,133 @@ Next, pass the connection information to your environment by using environment p
 
 1. Choose **Save**, and then choose **Apply**\.
 
+After installing Drupal, you need to connect to the instance with SSH to retrieve some configuration details\. Assign an SSH key to your environment's instances\.
+
+**To configure SSH**
+
+1. If you haven't previously created a key pair, open the [key pairs page](https://console.aws.amazon.com/ec2/v2/home#KeyPairs) of the Amazon EC2 console and follow the instructions to create one\.
+
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+
+1. Navigate to the [management page](environments-console.md) for your environment\.
+
+1. Choose **Configuration**\.
+
+1. Under **Security**, choose **Modify**\.
+
+1. For **EC2 key pair**, choose your key pair\.
+
+1. Choose **Save**, and then choose **Apply**\.
+
+## Configure and Deploy Your Application<a name="php-hadrupal-tutorial-deploy"></a>
+
+To create a Drupal project for Elastic Beanstalk, download the Drupal source code and combine it with the files in the [aws\-samples/eb\-php\-drupal](https://github.com/aws-samples/eb-php-drupal) repository on GitHub\.
+
+**To create a Drupal project**
+
+1. Download Drupal from [https://www\.drupal\.org/download](https://www.drupal.org/download)\.
+
+   ```
+   ~$ curl https://ftp.drupal.org/files/projects/drupal-8.5.3.tar.gz -o drupal.tar.gz
+   ```
+
+1. Download the configuration files from the sample repository:
+
+   ```
+   ~$ wget https://github.com/aws-samples/eb-php-drupal/releases/download/v1.1/eb-php-drupal-v1.zip
+   ```
+
+1. Extract Drupal and change the name of the folder\.
+
+   ```
+    ~$ tar -xvf drupal.tar.gz
+    ~$ mv drupal-8.5.3 drupal-beanstalk
+    ~$ cd drupal-beanstalk
+   ```
+
+1. Extract the configuration files over the Drupal installation\.
+
+   ```
+    ~/drupal-beanstalk$ unzip ../eb-php-drupal-v1.zip
+     creating: .ebextensions/
+     inflating: .ebextensions/dev.config
+     inflating: .ebextensions/drupal.config
+     inflating: .ebextensions/efs-create.config
+     inflating: .ebextensions/efs-filesystem.template
+     inflating: .ebextensions/efs-mount.config
+     inflating: .ebextensions/loadbalancer-sg.config
+     inflating: LICENSE
+     inflating: README.md
+     inflating: beanstalk-settings.php
+   ```
+
+Verify that the structure of your `drupal-beanstalk` folder is correct, as shown\.
+
+```
+drupal-beanstalk$ tree -aL 1
+.
+├── autoload.php
+├── beanstalk-settings.php
+├── composer.json
+├── composer.lock
+├── core
+├── .csslintrc
+├── .ebextensions
+├── .ebextensions
+├── .editorconfig
+├── .eslintignore
+├── .eslintrc.json
+├── example.gitignore
+├── .gitattributes
+├── .htaccess
+├── .ht.router.php
+├── index.php
+├── LICENSE
+├── LICENSE.txt
+├── modules
+├── profiles
+├── README.md
+├── README.txt
+├── robots.txt
+├── sites
+├── themes
+├── update.php
+├── vendor
+└── web.config
+```
+
+The `beanstalk-settings.php` file from the project repo uses the environment variables that you defined in the previous step to configure the database connection\. The `.ebextensions` folder contains configuration files that create additional resources within your Elastic Beanstalk environment\.
+
+The configuration files require modification to work with your account\. Replace the placeholder values in the files with the appropriate IDs and create a source bundle\.
+
+**To update configuration files and create a source bundle\.**
+
+1. Modify the configuration files as follows\.
+   + `.ebextensions/dev.config` – restricts access to your environment to your IP address to protect it during the Drupal installation process\. Replace the placeholder IP address near the top of the file with your public IP address\.
+   + `.ebextensions/efs-create.config` – creates an EFS file system and mount points in each Availability Zone / subnet in your VPC\. Identify your default VPC and subnet IDs in the [Amazon VPC console](https://console.aws.amazon.com/vpc/home#subnets:filter=default)\.
+
+1. Create a [source bundle](applications-sourcebundle.md) containing the files in your project folder\. The following command creates a source bundle named `drupal-beanstalk.zip`\. It excludes files in the `vendor` folder, which take up a lot of space and are not necessary for deploying your application to Elastic Beanstalk\.
+
+   ```
+   ~/eb-drupal$ zip ../drupal-beanstalk.zip -r * .[^.]* -x "vendor/*"
+   ```
+
+Upload the source bundle to Elastic Beanstalk to deploy Drupal to your environment\.
+
+**To deploy a source bundle**
+
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+
+1. Navigate to the [management page](environments-console.md) for your environment\.
+
+1. Choose **Upload and Deploy**\.
+
+1. Choose **Choose File** and use the dialog box to select the source bundle\.
+
+1. Choose **Deploy**\.
+
+1. When the deployment completes, choose the site URL to open your website in a new tab\.
+
 ## Install Drupal<a name="php-hadrupal-tutorial-install"></a>
 
 **To complete your Drupal installation**
@@ -243,29 +318,78 @@ Next, pass the connection information to your environment by using environment p
 
 Installation takes about a minute to complete\.
 
-## Update the Environment<a name="php-hadrupal-tutorial-updateenv"></a>
+## Update Drupal Configuration and Remove Access Restrictions<a name="php-hadrupal-tutorial-updateenv"></a>
 
-This tutorial includes a configuration file \(`loadbalancer-sg.config`\) that creates a security group and assigns it to the environment's load balancer, using the IP address that you configured in `dev.config` to restrict HTTP access over port 80 to connections from your network\. This prevents an outside party from potentially connecting to your site before you have completed your Drupal installation and configured your admin account\. To remove this restriction from your load balancer configuration and open the site to the Internet you can use the following steps\.
+The Drupal installation process created a file named `settings.php` in the `sites/default` folder on the instance\. You need this file in your source code to avoid resetting your site on subsequent deployments, but the file currently contains secrets that you don't want to commit to source\. Connect to the application instance to retrieve information from the settings file\.
 
-**To remove the restriction and update your environment**
+**To connect to your application instance with SSH**
 
-1. On your local computer, delete the `.ebextensions/loadbalancer-sg-config` file from the `drupal-beanstalk` folder\.
+1. Open the [instances page](https://console.aws.amazon.com/ec2/v2/home#Instances:sort=tag:Name) of the Amazon EC2 console\.
 
-1. Create a ZIP file from the files and folders in the `drupal-beanstalk` folder \(not the parent directory\), using one of the following methods, depending on your operating system:
+1. Choose the application instance\. It is the one named after your Elastic Beanstalk environment\.
 
-1. Windows — In Windows Explorer, select the files and folders, right\-click, and then choose **Send to**, **Compressed \(zipped\) Folder**\. Name the file using the following format, where `x.y.z` is the version of Drupal\.
+1. Choose **Connect**\.
 
-   ```
-   drupal-x.y.z-v2.zip
-   ```
-
-   \-\-OR\-\-
-
-   Mac OS X and Linux — Use the following command, where `x.y.z` is the version of Drupal:
+1. Follow the instructions to connect the instance with SSH\. The command looks similar to the following\.
 
    ```
-   zip -r ../drupal-x.y.z-v2.zip .
+   $ ssh -i ~/.ssh/mykey ec2-user@ec2-00-55-33-222.us-west-2.compute.amazonaws.com
    ```
+
+Get the sync directory id from the last line of the settings file\.
+
+```
+[ec2-user ~]$ tail -n 1 /var/app/current/sites/default/settings.php
+$config_directories['sync'] = 'sites/default/files/config_4ccfX2sPQm79p1mk5IbUq9S_FokcENO4mxyC-L18-4g_xKj_7j9ydn31kDOYOgnzMu071Tvc4Q/sync';
+```
+
+The file also contains the sites current hash key, but you can ignore the current value and use your own\.
+
+Assign the sync directory path and hash key to environment properties\. The customized settings file from the project repo reads these properties to configure the site during deployment, in addition to the database connection properties that you set earlier\.
+
+**Drupal Configuration Properties**
++ `SYNC_DIR` – The path to the sync directory\.
++ `HASH_KEY` – Any string value that meets [environment property requirements](environments-cfg-softwaresettings.md#environments-cfg-softwaresettings-console)\.
+
+**To configure environment properties in the Elastic Beanstalk console**
+
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+
+1. Navigate to the [management page](environments-console.md) for your environment\.
+
+1. Choose **Configuration**\.
+
+1. On the **Software** configuration card, choose **Modify**\.
+
+1. Under **Environment properties**, enter key\-value pairs\.
+
+1. Choose **Save**, and then choose **Apply**\.
+
+Finally, the sample project includes a configuration file \(`loadbalancer-sg.config`\) that creates a security group and assigns it to the environment's load balancer, using the IP address that you configured in `dev.config` to restrict HTTP access on port 80 to connections from your network\. Otherwise, an outside party could potentially connect to your site before you have installed Drupal and configured your admin account\.
+
+**To update Drupal's configuration and remove access restrictions**
+
+1. Delete the `.ebextensions/loadbalancer-sg.config` file from your project directory\.
+
+   ```
+   ~/drupal-beanstalk$ rm .ebextensions/loadbalancer-sg.config
+   ```
+
+1. Copy the customized `settings.php` file into the sites folder\.
+
+   ```
+   ~/drupal-beanstalk$ cp beanstalk-settings.php sites/default/settings.php
+   ```
+
+1. Create a source bundle\.
+
+   ```
+   ~/eb-drupal$ zip ../drupal-beanstalk-v2.zip -r * .[^.]* -x "vendor/*"
+   ```
+
+Upload the source bundle to Elastic Beanstalk to deploy Drupal to your environment\.
+
+**To deploy a source bundle**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
@@ -273,11 +397,11 @@ This tutorial includes a configuration file \(`loadbalancer-sg.config`\) that cr
 
 1. Choose **Upload and Deploy**\.
 
-1. Choose **Choose File** and navigate to the ZIP file you created for your Drupal files\.
-
-1. Enter a **Version label** that distinguishes this updated version from your previous version\.
+1. Choose **Choose File** and use the dialog box to select the source bundle\.
 
 1. Choose **Deploy**\.
+
+1. When the deployment completes, choose the site URL to open your website in a new tab\.
 
 ## Configure Autoscaling<a name="php-hadrupal-tutorial-autoscaling"></a>
 
@@ -297,25 +421,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. Choose **Save**, and then choose **Apply**\.
 
-## Review<a name="php-hadrupal-tutorial-review"></a>
-
-Launching an environment creates the following resources:
-+ **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
-
-  Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination thereof\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
-+ **Instance security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
-+ **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
-+ **Load balancer security group** – An Amazon EC2 security group configured to allow ingress on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
-+ **Auto Scaling group** – An Auto Scaling group configured to replace an instance if it is terminated or becomes unavailable\.
-+ **Amazon S3 bucket** – A storage location for your source code, logs, and other artifacts that are created when you use Elastic Beanstalk\.
-+ **Amazon CloudWatch alarms** – Two CloudWatch alarms that monitor the load on the instances in your environment and are triggered if the load is too high or too low\. When an alarm is triggered, your Auto Scaling group scales up or down in response\.
-+ **AWS CloudFormation stack** – Elastic Beanstalk uses AWS CloudFormation to launch the resources in your environment and propagate configuration changes\. The resources are defined in a template that you can view in the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation)\.
-+ **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
-
-All of these resources are managed by Elastic Beanstalk\. When you terminate your environment, Elastic Beanstalk terminates all the resources that it contains\. The RDS DB instance that you launched is outside of your environment, so you are responsible for managing its lifecycle\.
-
-**Note**  
-The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)\.
+To support content uploads across multiple instances, the sample project uses Amazon Elastic File System to create a shared file system\. Create a post on the site and upload content to store it on the shared file system\. View the post and refresh the page multiple times to hit both instances and verify that the shared file system is working\.
 
 ## Cleanup<a name="php-hadrupal-tutorial-cleanup"></a>
 
@@ -349,12 +455,12 @@ In addition, you can terminate database resources that you created outside of yo
 
 ## Next Steps<a name="php-hadrupal-tutorial-nextsteps"></a>
 
-As you continue to develop your application, you'll probably want to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
+As you continue to develop your application, you'll probably want a way to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
 
 The sample application uses configuration files to configure PHP settings and create a table in the database if it doesn't already exist\. You can also use a configuration file to configure your instances' security group settings during environment creation to avoid time\-consuming configuration updates\. See [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md) for more information\.
 
-For development and testing, you might want to use Elastic Beanstalk's functionality for adding a managed DB instance directly to your environment\. For instructions on setting up a database inside your environment, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
+For development and testing, you might want to use the Elastic Beanstalk functionality for adding a managed DB instance directly to your environment\. For instructions on setting up a database inside your environment, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
 
-If you need a high\-performance database, consider using [Amazon Aurora](https://aws.amazon.com/rds/aurora/)\. Amazon Aurora is a MySQL\-compatible database engine that offers commercial database features at low cost\. To connect your application to a different database, repeat the [security group configuration](#php-hadrupal-tutorial-database) steps and [update the RDS\-related environment properties](#php-hadrupal-tutorial-configure)\. 
+If you need a high\-performance database, consider using [Amazon Aurora](https://aws.amazon.com/rds/aurora/)\. Amazon Aurora is a MySQL\-compatible database engine that offers commercial database features at low cost\. To connect your application to a different database, repeat the [security group configuration](php-ha-tutorial.md#php-hawrds-tutorial-database) steps and [update the RDS\-related environment properties](php-ha-tutorial.md#php-hawrds-tutorial-configure)\. 
 
-Finally, if you plan on using your application in a production environment, [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.
+Finally, if you plan on using your application in a production environment, you will want to [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.

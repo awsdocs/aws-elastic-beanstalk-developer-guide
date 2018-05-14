@@ -44,7 +44,7 @@ Select your VPC\.
 
 1. In the list of security groups, select the check box for the security group you just created for your bastion host\.
 
-1. On the **Inbound** tab, choose **Edit**\.
+1. On the **Inbound Rules** tab, choose **Edit**\.
 
 1. If needed, choose **Add another rule**\.
 
@@ -54,6 +54,27 @@ Select your VPC\.
 
 1. Enter the desired source CIDR range in the **Source** field and choose **Save**\.  
 ![\[Bastion Host Security Group\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/vpc-bh-sg-inbound.png)
+
+1. On the **Outbound Rules** tab, choose **Edit**\.
+
+1. If needed, choose **Add another rule**\.
+
+1. Under **Type**, select the type that you specified for the inbound rule\.
+
+1. In the **Source** field, enter the CIDR range of the subnet of the hosts in the VPC's private subnet\.
+
+   To find it:
+
+   1. Open the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+
+   1. In the navigation pane, choose **Subnets**\.
+
+   1. Note the value under **IPv4 CIDR** for each **Availability Zone** in which you have hosts that you want the bastion host to bridge to\.
+**Note**  
+If you have hosts in multiple availability zones, create an outbound rule for each one of these availability zones\.  
+![\[VPC subnets\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/vpc-subnets.png)
+
+1. Choose **Save**\.
 
 ## Update the Instance Security Group<a name="vpc-bastion-update-instance-sg"></a>
 

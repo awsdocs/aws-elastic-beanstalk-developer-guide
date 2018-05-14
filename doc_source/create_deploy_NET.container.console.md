@@ -43,6 +43,9 @@ NameValueCollection appConfig = ConfigurationManager.AppSettings;
 string endpoint = appConfig["API_ENDPOINT"];
 ```
 
+**Note**  
+Elastic Beanstalk doesn't support passing environment variables to \.NET Core applications and multiple\-application IIS deployments that use a [deployment manifest](dotnet-manifest.md)\.
+
 See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
 
 ## The aws:elasticbeanstalk:container:dotnet:apppool Namespace<a name="dotnet-namespaces"></a>

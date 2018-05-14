@@ -7,11 +7,11 @@ Creating environments with the EB CLI requires a [service role](concepts-roles-s
 
 **Topics**
 + [Prerequisites](#create_deploy_Ruby_sinatra-prereq)
-+ [Step 1: Set Up Your Project](#create_deploy_Ruby_sinatra-gitinit)
-+ [Step 2: Create an Application](#create_deploy_Ruby_eb_init)
-+ [Step 3: Create an Environment](#create_deploy_Ruby_eb_env)
-+ [Step 4: Deploy a Simple Sinatra Application](#create_deploy_Ruby_sinatra_update)
-+ [Step 5: Clean Up](#create_deploy_Ruby_sinatra_delete)
++ [Set Up Your Project](#create_deploy_Ruby_sinatra-gitinit)
++ [Create an Application](#create_deploy_Ruby_eb_init)
++ [Create an Environment](#create_deploy_Ruby_eb_env)
++ [Deploy a Simple Sinatra Application](#create_deploy_Ruby_sinatra_update)
++ [Clean Up](#create_deploy_Ruby_sinatra_delete)
 + [Related Resources](#create_deploy_Ruby_sinatra_resources)
 
 ## Prerequisites<a name="create_deploy_Ruby_sinatra-prereq"></a>
@@ -41,7 +41,7 @@ The following tools are required to complete this walkthrough:
 
   For Red Hat\-family systems, you can use the same command, but you use the package manager name `yum`\. For more information, including directions for installing Git on OS X systems, see [git](http://git-scm.com/)\.
 
-## Step 1: Set Up Your Project<a name="create_deploy_Ruby_sinatra-gitinit"></a>
+## Set Up Your Project<a name="create_deploy_Ruby_sinatra-gitinit"></a>
 
 With the EB CLI, you can quickly create an Elastic Beanstalk [environment](using-features.managing.md) and deploy applications to that environment from a [Git](http://git-scm.com/) repository\. Before starting your first project, set up the example project for the walkthrough\.
 
@@ -69,7 +69,7 @@ You do not need to have access to a remote repository, such as GitHub, for this 
    $ git config --global user.name "Username"
    ```
 
-## Step 2: Create an Application<a name="create_deploy_Ruby_eb_init"></a>
+## Create an Application<a name="create_deploy_Ruby_eb_init"></a>
 
  Now create an application and its associated [environment](using-features.managing.md)\.
 
@@ -166,7 +166,7 @@ We strongly recommend that you do not provide your account's root credentials to
    (y/n): n
    ```
 
-## Step 3: Create an Environment<a name="create_deploy_Ruby_eb_env"></a>
+## Create an Environment<a name="create_deploy_Ruby_eb_env"></a>
 
 Next, create an Elastic Beanstalk environment and deploy a sample application to it with `eb create`:
 
@@ -191,7 +191,7 @@ If you see a "service role required" error message, run `eb create` interactivel
 ~/sinatraapp$ eb open
 ```
 
-## Step 4: Deploy a Simple Sinatra Application<a name="create_deploy_Ruby_sinatra_update"></a>
+## Deploy a Simple Sinatra Application<a name="create_deploy_Ruby_sinatra_update"></a>
 
 You can now create and deploy a Sinatra application\. This step describes how to implement a simple Sinatra application and deploy it to the environment that you created in the preceding step\. Our example implements a classic application that prints a simple text string, `Hello World!`\. You can easily extend this example to implement more complex classic applications or [modular applications](http://www.sinatrarb.com/intro.html#Sinatra::Base%20-%20Middleware,%20Libraries,%20and%20Modular%20Apps)\.
 
@@ -275,7 +275,7 @@ Create all of the application files in the following procedure in the applicatio
 **Note**  
 For a detailed description of the deployment, you can display the deployment log by running `eb logs`\.
 
-## Step 5: Clean Up<a name="create_deploy_Ruby_sinatra_delete"></a>
+## Clean Up<a name="create_deploy_Ruby_sinatra_delete"></a>
 
 When you have finished, you can terminate the application's environment by running the following command from the root directory, `sinatraapp`\.
 

@@ -101,7 +101,7 @@ You can use the EB CLI to configure custom metrics by saving your environment's 
      aws:elasticbeanstalk:healthreporting:system:
        ConfigDocument:
          CloudWatchMetrics:
-           Environment
+           Environment:
              ApplicationRequests5xx: 60
              ApplicationRequests4xx: 60
            Instance:
