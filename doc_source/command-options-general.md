@@ -10,6 +10,7 @@
 + [aws:elasticbeanstalk:application](#command-options-general-elasticbeanstalkapplication)
 + [aws:elasticbeanstalk:application:environment](#command-options-general-elasticbeanstalkapplicationenvironment)
 + [aws:elasticbeanstalk:cloudwatch:logs](#command-options-general-cloudwatchlogs)
++ [aws:elasticbeanstalk:cloudwatch:logs:health](#command-options-general-cloudwatchlogs-health)
 + [aws:elasticbeanstalk:command](#command-options-general-elasticbeanstalkcommand)
 + [aws:elasticbeanstalk:environment](#command-options-general-elasticbeanstalkenvironment)
 + [aws:elasticbeanstalk:environment:process:default](#command-options-general-environmentprocess)
@@ -165,16 +166,29 @@ See [Environment Properties and Other Software Settings](environments-cfg-softwa
 
 ## aws:elasticbeanstalk:cloudwatch:logs<a name="command-options-general-cloudwatchlogs"></a>
 
-Configure log streaming for your application\.
+Configure instance log streaming for your application\.
 
 
 **Namespace: `aws:elasticbeanstalk:cloudwatch:logs`**  
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  StreamLogs  |  Whether to create groups in CloudWatch logs for proxy and deployment logs, and stream logs from each instance in your environment\.  |  `false`  |  `true` `false`  | 
-|  DeleteOnTerminate  |  Whether to delete the log groups when the environment is terminated\. If `false`, the logs are kept `RetentionDays` days\.  |  `false`  |  `true` `false`  | 
+|  StreamLogs  |  Whether to create groups in CloudWatch Logs for proxy and deployment logs, and stream logs from each instance in your environment\.  |  `false`  |  `true` `false`  | 
+|  DeleteOnTerminate  |  Whether to delete the log groups when the environment is terminated\. If `false`, the logs are kept `RetentionInDays` days\.  |  `false`  |  `true` `false`  | 
 |  RetentionInDays  |  The number of days to keep log events before they expire\.  |  7  |  1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 3653  | 
+
+## aws:elasticbeanstalk:cloudwatch:logs:health<a name="command-options-general-cloudwatchlogs-health"></a>
+
+Configure environment health log streaming for your application\.
+
+
+**Namespace: `aws:elasticbeanstalk:cloudwatch:logs:health`**  
+
+|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+| --- | --- | --- | --- | 
+|  HealthStreamingEnabled  |  For environments with enhanced health reporting enabled, whether to create a group in CloudWatch Logs for environment health and archive Elastic Beanstalk environment health data\. For information about enabling enhanced health, see [`aws:elasticbeanstalk:healthreporting:system`](#command-options-general-elasticbeanstalkhealthreporting)\.  |  `false`  |  `true` `false`  | 
+|  DeleteOnTerminate  |  Whether to delete the log group when the environment is terminated\. If `false`, the health data is kept `RetentionInDays` days\.  |  `false`  |  `true` `false`  | 
+|  RetentionInDays  |  The number of days to keep the archived health data before it expires\.  |  7  |  1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, 3653  | 
 
 ## aws:elasticbeanstalk:command<a name="command-options-general-elasticbeanstalkcommand"></a>
 

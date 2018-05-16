@@ -17,7 +17,7 @@ When Elastic Beanstalk finishes retrieving your logs, choose **Download**\.
 
 Tail and bundle logs are removed from Amazon S3 15 minutes after they are created\. To persist logs, you can configure your environment to publish logs to Amazon S3 automatically after they are rotated\.
 
-To enable log rotation to Amazon S3, follow the procedure in [Configuring Log Viewing](environments-cfg-logging.md#environments-cfg-logging-console)\. Instances in your environment will attempt to upload logs that have been rotated once per hour\.
+To enable log rotation to Amazon S3, follow the procedure in [Configuring Instance Log Viewing](environments-cfg-logging.md#environments-cfg-logging-console)\. Instances in your environment will attempt to upload logs that have been rotated once per hour\.
 
 To upload rotated logs to Amazon S3, the instances in your environment must have an [instance profile](concepts-roles-instance.md) with permission to write to your Elastic Beanstalk Amazon S3 bucket\. These permissions are included in the default instance profile that Elastic Beanstalk prompts you to create when you launch an environment in the Elastic Beanstalk console for the first time\.
 

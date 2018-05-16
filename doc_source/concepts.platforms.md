@@ -112,8 +112,8 @@ Elastic Beanstalk supports the following Java SE configurations\.
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  Tools  |  AWS X‑Ray  |  Proxy Server  | 
 | --- | --- | --- | --- | --- | --- | 
-|   **Java 8 version 2\.6\.8**   *64bit Amazon Linux 2017\.09 v2\.6\.8 running Java 8*   |  2017\.09\.1  |  Java 1\.8\.0\_161  |  Ant 1\.9\.6, Gradle 2\.7, Maven 3\.3\.3  |  2\.0\.0  |  nginx 1\.12\.1  | 
-|   **Java 7 version 2\.6\.8**   *64bit Amazon Linux 2017\.09 v2\.6\.8 running Java 7*   |  2017\.09\.1  |  Java 1\.7\.0\_171  |  Ant 1\.9\.6, Gradle 2\.7, Maven 3\.3\.3  |  2\.0\.0  |  nginx 1\.12\.1  | 
+|   **Java 8 version 2\.7\.1**   *64bit Amazon Linux 2018\.03 v2\.7\.1 running Java 8*   |  2018\.03\.0  |  Java 1\.8\.0\_171  |  Ant 1\.9\.6, Gradle 2\.7, Maven 3\.3\.3  |  2\.0\.0  |  nginx 1\.12\.1  | 
+|   **Java 7 version 2\.7\.1**   *64bit Amazon Linux 2018\.03 v2\.7\.1 running Java 7*   |  2018\.03\.0  |  Java 1\.7\.0\_181  |  Ant 1\.9\.6, Gradle 2\.7, Maven 3\.3\.3  |  2\.0\.0  |  nginx 1\.12\.1  | 
 
 For information about previous configurations, see [Java SE Platform History](platform-history-javase.md)\.
 
@@ -137,7 +137,7 @@ For information about previous configurations, see [Tomcat Platform History](pla
 You can get started in minutes using the [AWS Toolkit for Visual Studio](http://aws.amazon.com/visualstudio/)\. The toolkit includes the AWS libraries, project templates, code samples, and documentation\. The AWS SDK for \.NET supports the development of applications using \.NET Framework 2\.0 or later\. 
 
 **Note**  
-This platform does not support worker environments, enhanced health reporting, managed updates, bundle logs or immutable updates\.
+This platform doesn't support worker environments, enhanced health reporting, managed updates, bundle logs, and immutable updates\.
 
 To learn how to get started deploying a \.NET application using the AWS Toolkit for Visual Studio, see [Creating and Deploying Elastic Beanstalk Applications in \.NET Using AWS Toolkit for Visual Studio](create_deploy_NET.md)\.
 

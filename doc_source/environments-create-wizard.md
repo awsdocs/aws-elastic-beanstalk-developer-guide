@@ -93,7 +93,7 @@ Configure the instances in your environment to run the AWS X\-Ray daemon for deb
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-software.png)
 + **AWS X\-Ray** – Enable **X\-Ray Daemon** to run [the AWS X\-Ray daemon](environment-configuration-debugging.md) for debugging\.
 + **S3 log storage** – Enable **Rotate logs** to upload rotated logs from the instances in your environment to your Elastic Beanstalk storage bucket in Amazon S3\.
-+ **CloudWatch logs** – Enable **Log streaming** to stream logs from the instances in your environment to [Amazon CloudWatch](AWSHowTo.cloudwatch.md)\.
++ **Instance log streaming to CloudWatch Logs** – Enable **Log streaming** to stream logs from the instances in your environment to [Amazon CloudWatch Logs](AWSHowTo.cloudwatchlogs.md)\.
 + **Environment properties** – Set [environment properties](environments-cfg-softwaresettings.md) that are passed to the application on\-instance as environment variables\.
 
 The way that properties are passed to applications varies by platform\. In general, properties are *not* visible if you connect to an instance and run `env`\.
@@ -190,6 +190,7 @@ Configure health checks for your load\-balanced environment\.
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-monitoring.png)
 + **Health check** – The path to send health check requests to\. If not set, the load balancer attempts to make a TCP connection on port 80 to verify health\. Set to another path to send an HTTP GET request to that path\. The path must start with `/` and is relative to the root of your application\. You can also include a protocol \(HTTP, HTTPS, TCP, or SSL\) and port before the path to check HTTPS connectivity or use a non\-default port\. For example, `HTTPS:443/health`\.
 + **Health reporting** – [Enhanced health reporting](health-enhanced.md) provides additional health information about the resources in your environment\. Select **Enhanced** to activate Enhanced health reporting\. The system provides the **EnvironmentHealth** metric free of charge\. Additional charges apply if you select more metrics from the list\.
++ **Health event streaming to CloudWatch Logs** – Enable **Log streaming** to stream log events about your environment health to [Amazon CloudWatch Logs](AWSHowTo.cloudwatchlogs.envhealth.md)\.
 
 ### Notifications<a name="environments-create-wizard-notifications"></a>
 

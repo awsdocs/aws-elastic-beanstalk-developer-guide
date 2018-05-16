@@ -4,6 +4,16 @@ This page lists the previous versions of AWS Elastic Beanstalk's Java platforms 
 
 See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
+The following Elastic Beanstalk platform configurations for Java SE were current between April 2, 2018 and May 14, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  Tools  |  AWS X‑Ray  |  Proxy Server  | 
+| --- | --- | --- | --- | --- | --- | 
+|   **Java 8 version 2\.6\.8**   *64bit Amazon Linux 2017\.09 v2\.6\.8 running Java 8*   |  2017\.09\.1  |  Java 1\.8\.0\_161  |  Ant 1\.9\.6, Gradle 2\.7, Maven 3\.3\.3  |  2\.0\.0  |  nginx 1\.12\.1  | 
+|   **Java 7 version 2\.6\.8**   *64bit Amazon Linux 2017\.09 v2\.6\.8 running Java 7*   |  2017\.09\.1  |  Java 1\.7\.0\_171  |  Ant 1\.9\.6, Gradle 2\.7, Maven 3\.3\.3  |  2\.0\.0  |  nginx 1\.12\.1  | 
+
 The following Elastic Beanstalk platform configurations for Java SE were current between February 22, 2018 and April 1, 2018:
 
 

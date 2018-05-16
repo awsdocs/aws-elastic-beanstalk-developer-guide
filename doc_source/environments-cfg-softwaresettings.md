@@ -29,7 +29,7 @@ Also, when you [add a database to your environment](using-features.managing.db.m
 + [Software Setting Namespaces](#environments-cfg-softwaresettings-configfiles)
 + [Accessing Environment Properties](#environments-cfg-softwaresettings-accessing)
 + [Configuring AWS X\-Ray Debugging](environment-configuration-debugging.md)
-+ [Viewing Logs from Your Elastic Beanstalk Environment's Amazon EC2 Instances](environments-cfg-logging.md)
++ [Viewing Your Elastic Beanstalk Environment Logs](environments-cfg-logging.md)
 
 ## Configuring Environment Properties<a name="environments-cfg-softwaresettings-console"></a>
 
