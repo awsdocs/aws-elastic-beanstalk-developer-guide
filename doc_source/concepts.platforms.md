@@ -137,7 +137,7 @@ For information about previous configurations, see [Tomcat Platform History](pla
 You can get started in minutes using the [AWS Toolkit for Visual Studio](http://aws.amazon.com/visualstudio/)\. The toolkit includes the AWS libraries, project templates, code samples, and documentation\. The AWS SDK for \.NET supports the development of applications using \.NET Framework 2\.0 or later\. 
 
 **Note**  
-This platform does not support worker environments, enhanced health reporting, managed updates, bundle logs, immutable updates, or log streaming\.
+This platform does not support worker environments, enhanced health reporting, managed updates, bundle logs or immutable updates\.
 
 To learn how to get started deploying a \.NET application using the AWS Toolkit for Visual Studio, see [Creating and Deploying Elastic Beanstalk Applications in \.NET Using AWS Toolkit for Visual Studio](create_deploy_NET.md)\.
 
