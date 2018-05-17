@@ -9,7 +9,8 @@ For a production environment, you can [launch a database instance outside of you
 **Topics**
 + [Adding an Amazon RDS DB Instance to Your Environment](#environments-cfg-rds-create)
 + [Connecting to the database](#environments-cfg-rds-connect)
-+ [Configuring an Integrated RDS DB Instance](#using-features.managing.db.CON)
++ [Configuring an Integrated RDS DB Instance Using the Console](#using-features.managing.db.CON)
++ [Configuring an Integrated RDS DB Instance Using Configuration Files](#using-features.managing.db.namespace)
 
 ## Adding an Amazon RDS DB Instance to Your Environment<a name="environments-cfg-rds-create"></a>
 
@@ -68,9 +69,9 @@ Use the connectivity information to connect to your DB from inside your applicat
 + Python – [Connecting to a Database](create-deploy-python-rds.md#python-rds-connect)
 + Ruby – [Connecting to a Database](create_deploy_Ruby.rds.md#ruby-rds-connect)
 
-## Configuring an Integrated RDS DB Instance<a name="using-features.managing.db.CON"></a>
+## Configuring an Integrated RDS DB Instance Using the Console<a name="using-features.managing.db.CON"></a>
 
-You can view and modify configuration settings for your DB instance in the **Data Tier** section on the environment's **Configuration** page in the [environment management console](environments-console.md)\.
+You can view and modify configuration settings for your DB instance in the **Database** section on the environment's **Configuration** page in the [Elastic Beanstalk console](environments-console.md)\.
 
 **To configure your environment's DB instance in the Elastic Beanstalk console**
 
@@ -82,6 +83,33 @@ You can view and modify configuration settings for your DB instance in the **Dat
 
 1. On the **Database** configuration card, choose **Modify**\.
 
-You can modify the **Instance class**, ****Storage**, Password**, **Retention**, and **Availability** settings after database creation\. If you change the instance class, Elastic Beanstalk reprovisions the DB instance\.
+You can modify the **Instance class**, ****Storage**, Password**, **Retention**, and **Availability** settings after database creation\. If you change the instance class, Elastic Beanstalk re\-provisions the DB instance\.
 
-Do not modify settings on the DB instance outside of the functionality provided by Elastic Beanstalk \(for example, in the Amazon RDS console\)\.
+**Warning**  
+Don't modify settings on the DB instance outside of the functionality provided by Elastic Beanstalk \(for example, in the Amazon RDS console\)\. If you do, your Amazon RDS DB configuration might be out of sync with your environment's definition\. When you update or restart your environment, the settings specified in the environment override any settings you made outside of Elastic Beanstalk\.  
+If you need to modify settings that Elastic Beanstalk doesn't directly support, use Elastic Beanstalk [configuration files](#using-features.managing.db.namespace)\.
+
+## Configuring an Integrated RDS DB Instance Using Configuration Files<a name="using-features.managing.db.namespace"></a>
+
+You can configure your environment's DB instance using [configuration files](ebextensions.md)\. Use the options in the [`aws:rds:dbinstance`](command-options-general.md#command-options-general-rdsdbinstance) namespace\. The following example modifies the allocated database storage size to 100 GB\.
+
+**Example \.ebextensions/db\-instance\-options\.config**  
+
+```
+option_settings:
+  aws:rds:dbinstance:
+    DBAllocatedStorage: 100
+```
+
+If you need to configure DB instance properties that Elastic Beanstalk doesn't support, you can still use a configuration file, and specify your settings using the `resources` key\. The following example sets values to the `StorageType` and `Iops` Amazon RDS properties\.
+
+**Example \.ebextensions/db\-instance\-properties\.config**  
+
+```
+Resources:
+  AWSEBRDSDatabase:
+    Type: AWS::RDS::DBInstance
+    Properties:
+      StorageType:io1
+      Iops: 1000
+```
