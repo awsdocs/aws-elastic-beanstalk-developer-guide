@@ -9,12 +9,12 @@ To implement your application's environments, Elastic Beanstalk manages resource
 + [Using Elastic Beanstalk with Amazon CloudWatch](AWSHowTo.cloudwatch.md)
 + [Using Elastic Beanstalk with Amazon CloudWatch Logs](AWSHowTo.cloudwatchlogs.md)
 + [Finding and Tracking Elastic Beanstalk Resources with AWS Config](AWSHowTo.config.md)
-+ [Using Elastic Beanstalk with DynamoDB](AWSHowTo.dynamoDB.md)
++ [Using Elastic Beanstalk with Amazon DynamoDB](AWSHowTo.dynamoDB.md)
 + [Using Elastic Beanstalk with Amazon ElastiCache](AWSHowTo.ElastiCache.md)
 + [Using Elastic Beanstalk with Amazon Elastic File System](services-efs.md)
 + [Using Elastic Beanstalk with AWS Identity and Access Management](AWSHowTo.iam.md)
 + [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)
-+ [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)
++ [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)
 + [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md)
 
 ## Architectural Overview<a name="AWSHowTo.architecture"></a>

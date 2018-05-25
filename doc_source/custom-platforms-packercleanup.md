@@ -20,4 +20,4 @@ In certain circumstances, such as killing the Packer builder process before it h
 
 1. Select any instances that match the query\.
 
-1. If the **Instance State** is **running**, select **Actions**, **Instance State**, **Stop**, then **Actions**, **Instance State**, **Terminate**\.
+1. If the **Instance State** is **running**, select **Actions**, **Instance State**, **Stop**, and then **Actions**, **Instance State**, **Terminate**\.

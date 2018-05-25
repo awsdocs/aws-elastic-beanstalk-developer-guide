@@ -23,11 +23,11 @@ Elastic Beanstalk has several types of resources you can specify in a policy\. T
 
 | Resource Type | Format for ARN | 
 | --- | --- | 
-|  `application`  |  `arn:aws:elasticbeanstalk:region:accountid:application/applicationname` Example: **arn:aws:elasticbeanstalk:us\-west\-2:123456789012:application/My App**   | 
-|  `applicationversion`  |  `arn:aws:elasticbeanstalk:region:accountid:applicationversion/applicationname/versionlabel` Example: **arn:aws:elasticbeanstalk:us\-west\-2:123456789012:applicationversion/My App/My Version**   | 
-|  `configurationtemplate`  |  `arn:aws:elasticbeanstalk:region:accountid:configurationtemplate/applicationname/templatename` Example: **arn:aws:elasticbeanstalk:us\-west\-2:123456789012:configurationtemplate/My App/My Template**   | 
-|  `environment`  |  `arn:aws:elasticbeanstalk:region:accountid:environment/applicationname/environmentname` Example: **arn:aws:elasticbeanstalk:us\-west\-2:123456789012:environment/My App/MyEnvironment**   | 
-|  `platform`  |  `arn:aws:elasticbeanstalk:REGION:ACCOUNT_ID:platform/PLATFORM_NAME/PLATFORM_VERSION` Example: **arn:aws:elasticbeanstalk:us\-west\-2:123456789:platform/MyPlatform/1\.0**   | 
-|  `solutionstack`  |  `arn:aws:elasticbeanstalk:region::solutionstack/solutionstackname` Example: **arn:aws:elasticbeanstalk:us\-west\-2::solutionstack/32bit Amazon Linux running Tomcat 7**   | 
+|  `application`  |  `arn:aws:elasticbeanstalk:region:accountid:application/applicationname` Example: **arn:aws:elasticbeanstalk:us\-east\-2:123456789012:application/My App**   | 
+|  `applicationversion`  |  `arn:aws:elasticbeanstalk:region:accountid:applicationversion/applicationname/versionlabel` Example: **arn:aws:elasticbeanstalk:us\-east\-2:123456789012:applicationversion/My App/My Version**   | 
+|  `configurationtemplate`  |  `arn:aws:elasticbeanstalk:region:accountid:configurationtemplate/applicationname/templatename` Example: **arn:aws:elasticbeanstalk:us\-east\-2:123456789012:configurationtemplate/My App/My Template**   | 
+|  `environment`  |  `arn:aws:elasticbeanstalk:region:accountid:environment/applicationname/environmentname` Example: **arn:aws:elasticbeanstalk:us\-east\-2:123456789012:environment/My App/MyEnvironment**   | 
+|  `platform`  |  `arn:aws:elasticbeanstalk:REGION:ACCOUNT_ID:platform/PLATFORM_NAME/PLATFORM_VERSION` Example: **arn:aws:elasticbeanstalk:us\-east\-2:123456789:platform/MyPlatform/1\.0**   | 
+|  `solutionstack`  |  `arn:aws:elasticbeanstalk:region::solutionstack/solutionstackname` Example: **arn:aws:elasticbeanstalk:us\-east\-2::solutionstack/32bit Amazon Linux running Tomcat 7**   | 
 
 An environment, application version, and configuration template are always contained within a specific application\. You'll notice that these resources all have an application name in their resource path so that they are uniquely identified by their resource name and the containing application\. Although solution stacks are used by configuration templates and environments, solution stacks are not specific to an application or AWS account and do not have the application or AWS account in their ARNs\.

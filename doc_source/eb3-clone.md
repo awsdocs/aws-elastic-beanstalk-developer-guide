@@ -60,8 +60,8 @@ INFO: Created security group named: awseb-e-vjvrqnn5pv-stack-AWSEBSecurityGroup-
 INFO: Created Auto Scaling launch configuration named: awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingLaunchConfiguration-FDUWRSZZ6L3Z
 INFO: Waiting for EC2 instances to launch. This may take a few minutes.
 INFO: Created Auto Scaling group named: awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingGroup-69DN6PO5TISM
-INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:11122223333:scalingPolicy:addb18d0-7088-402f-90ae-43be7c8d40cb:autoScalingGroupName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingGroup-69DN6PO5TISM:policyName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingScaleDownPolicy-I8GFGQ8T8MOV
-INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:11122223333:scalingPolicy:fdcee817-e687-4fce-adc3-376995b3fef5:autoScalingGroupName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingGroup-69DN6PO5TISM:policyName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingScaleUpPolicy-1R312293DFY24
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-2:11122223333:scalingPolicy:addb18d0-7088-402f-90ae-43be7c8d40cb:autoScalingGroupName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingGroup-69DN6PO5TISM:policyName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingScaleDownPolicy-I8GFGQ8T8MOV
+INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-2:11122223333:scalingPolicy:fdcee817-e687-4fce-adc3-376995b3fef5:autoScalingGroupName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingGroup-69DN6PO5TISM:policyName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingScaleUpPolicy-1R312293DFY24
 INFO: Created CloudWatch alarm named: awseb-e-vjvrqnn5pv-stack-AWSEBCloudwatchAlarmLow-1M67HXZH1U9K3
 INFO: Created CloudWatch alarm named: awseb-e-vjvrqnn5pv-stack-AWSEBCloudwatchAlarmHigh-1K5CI7RVGV8ZJ
 INFO: Added EC2 instance 'i-cf30e1c5' to Auto Scaling Group 'awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingGroup-69DN6PO5TISM'.

@@ -88,7 +88,7 @@ Elastic Beanstalk takes about five minutes to create the environment with the fo
 Elastic Beanstalk manages all of these resources\. When you terminate your environment, Elastic Beanstalk terminates all of the resources that it contains\.
 
 **Note**  
-The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)\.
+The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)\.
 
 ## Add Permissions to Your Environment's Instances<a name="nodejs-dynamodb-tutorial-role"></a>
 

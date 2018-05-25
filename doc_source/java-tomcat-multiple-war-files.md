@@ -2,9 +2,9 @@
 
 If your web app comprises multiple web application components, you can simplify deployments and reduce operating costs by running components in a single environment, instead of running a separate environment for each component\. This strategy is effective for lightweight applications that don't require a lot of resources, and for development and test environments\.
 
-To deploy multiple web applications to your environment, combine each components web application archive \(WAR\) files into a single [source bundle](applications-sourcebundle.md)\.
+To deploy multiple web applications to your environment, combine each component's web application archive \(WAR\) files into a single [source bundle](applications-sourcebundle.md)\.
 
-To create an application source bundle that contains multiple WAR files, organize the WAR files using the following structure:
+To create an application source bundle that contains multiple WAR files, organize the WAR files using the following structure\.
 
 ```
 MyApplication.zip
@@ -14,7 +14,7 @@ MyApplication.zip
 └── ROOT.war
 ```
 
-When you deploy a source bundle containing multiple WAR files to an AWS Elastic Beanstalk environment, each application is accessible from a different path off of the root domain name\. The preceding example includes three applications: `foo`, `bar`, and `ROOT`\. `ROOT.war` is a special filename that tells Elastic Beanstalk to run that application at the root domain, so that the three applications are available at `http://MyApplication.elasticbeanstalk.com/foo`, `http://MyApplication.elasticbeanstalk.com/bar`, and `http://MyApplication.elasticbeanstalk.com`\.
+When you deploy a source bundle containing multiple WAR files to an AWS Elastic Beanstalk environment, each application is accessible from a different path off of the root domain name\. The preceding example includes three applications: `foo`, `bar`, and `ROOT`\. `ROOT.war` is a special file name that tells Elastic Beanstalk to run that application at the root domain, so that the three applications are available at `http://MyApplication.elasticbeanstalk.com/foo`, `http://MyApplication.elasticbeanstalk.com/bar`, and `http://MyApplication.elasticbeanstalk.com`\.
 
 The source bundle can include only an optional `.ebextensions` folder and WAR files\. The `.ebextensions` folder can contain [configuration files](ebextensions.md) that customize the resources deployed to your environment\.
 
@@ -26,12 +26,12 @@ The source bundle can include only an optional `.ebextensions` folder and WAR fi
 
 1. For **App code**, choose **Upload**\.
 
-1. Choose **Local file**, choose **Browse**, and open the source bundle\.
+1. Choose **Local file**, choose **Browse**, and then open the source bundle\.
 
 1. Choose **Upload**\.
 
 1. Choose **Review and launch**\.
 
-1. Review the available settings and choose **Create app**\.
+1. Review the available settings, and then choose **Create app**\.
 
 For information about creating source bundles, see [Create an Application Source Bundle](applications-sourcebundle.md)\.

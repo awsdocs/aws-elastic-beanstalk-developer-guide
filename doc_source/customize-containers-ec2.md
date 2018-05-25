@@ -181,7 +181,8 @@ files:
      owner: name of owning user for file
      group: name of owning group for file
      content: |
-    this is my content
+      # this is my
+      # file content
      encoding: encoding format
      authentication: authentication name:
 ```
@@ -205,7 +206,7 @@ Linux group that owns the file\.
 Linux user that owns the file\.
 
 `mode`  
-A six\-digit octal value representing the mode for this file \(e\.g, `000444`\)\. The first three digits are used for symlinks and the last three digits are used for setting permissions on the file\. 
+A six\-digit octal value representing the mode for this file\. Not supported for Windows systems\. Use the first three digits for symlinks and the last three digits for setting permissions\. To create a symlink, specify `120xxx`, where `xxx` defines the permissions of the target file\. To specify permissions for a file, use the last three digits, such as `000644`\.
 
 `authentication`  
 The name of a [AWS CloudFormation authentication method](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html) to use\. You can add authentication methods to the autoscaling group metadata with the Resources key\. See below for an example\.
@@ -225,8 +226,8 @@ files:
     owner: root
     group: root
     content: |
-      # this is my file
-      # with content
+      this is my
+      file content
 ```
 
 Example using a symlink\. This creates a link `/tmp/myfile2.txt` that points at the existing file `/tmp/myfile1.txt`\.

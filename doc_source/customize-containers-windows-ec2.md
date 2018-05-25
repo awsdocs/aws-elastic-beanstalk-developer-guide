@@ -26,32 +26,36 @@ Watch your environment's [events](using-features.events.md) while developing and
 
 Use the `packages` key to download and install prepackaged applications and components\.
 
+In Windows environments, Elastic Beanstalk supports downloading and installing MSI packages\. \(Linux environments support additional package managers\. For details, see [Packages](customize-containers-ec2.md#linux-packages) on the *Customizing Software on Linux Servers* page\.\)
+
+You can reference any external location, such as an Amazon Simple Storage Service \(Amazon S3\) object, as long as the URL is publicly accessible\.
+
 ### Syntax<a name="windows-packages-syntax"></a>
+
+Specify a name of your choice as the package name, and a URL to an MSI file location as the value\.
 
 ```
 packages: 
-  name of package manager:
-    package name: version
+  msi:
+    package name: package url
 ```
 
-### Supported Package Formats<a name="windows-packages-support"></a>
+### Examples<a name="windows-packages-snippet"></a>
 
-Elastic Beanstalk supports MSI packages\. 
-
-### Specifying Versions<a name="windows-packages-versions"></a>
-
-Packages are specified as a package name and a URL to the software\. 
-
-Elastic Beanstalk invokes the package manager associated with your configuration to install the package you specify, even if a newer version of the package is already installed on the instance\. Some package managers allow you to install an older version; some do not\. It is your responsibility to ensure that if you attempt to install an earlier version of a package, your package manager supports that feature\. If you specify the same version of a package that is already installed, the deployment fails\.
-
-### Example<a name="windows-packages-snippet"></a>
-
-The following example specifies a URL to download **mysql**\.
+The following example specifies a URL to download **mysql** from `https://dev.mysql.com/`\.
 
 ```
 packages:
   msi:
-    mysql: http://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-6.6.5.msi/from/http://cdn.mysql.com/
+    mysql: https://dev.mysql.com/get/Downloads/Connector-Net/mysql-connector-net-8.0.11.msi
+```
+
+The following example specifies an Amazon S3 object as the MSI file location\.
+
+```
+packages:
+  msi:
+    mymsi: https://s3.amazonaws.com/mybucket/myobject.msi
 ```
 
 ## Sources<a name="windows-sources"></a>
@@ -67,7 +71,9 @@ sources:
 
 ### Supported Formats<a name="windows-sources-support"></a>
 
-Elastic Beanstalk currently supports \.zip format\. You can reference external locations such as Amazon Simple Storage Service \(Amazon S3\) \(e\.g\., `https://s3.amazonaws.com/mybucket/myobject`\) as long as the URL is publically accessible\.
+In Windows environments, Elastic Beanstalk supports the \.zip format\. \(Linux environments support additional formats\. For details, see [Sources](customize-containers-ec2.md#linux-sources) on the *Customizing Software on Linux Servers* page\.\)
+
+You can reference any external location, such as an Amazon Simple Storage Service \(Amazon S3\) object, as long as the URL is publicly accessible\.
 
 ### Example<a name="windows-sources-example"></a>
 
@@ -111,7 +117,9 @@ Valid values: `plain` \| `base64`
 `authentication`  
 \(Optional\) The name of a [AWS CloudFormation authentication method](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html) to use\. You can add authentication methods to the autoscaling group metadata with the Resources key\.
 
-### Example<a name="windows-files-snippet"></a>
+### Examples<a name="windows-files-snippet"></a>
+
+The following example shows the two ways to provide file content: from a URL, or inline in the configuration file\.
 
 ```
 files:
@@ -126,6 +134,28 @@ files:
 
 **Note**  
 If you use a backslash \(\\\) in your file path, you must precede that with another backslash \(the escape character\) as shown in the previous example\.
+
+The following example uses the Resources key to add an authentication method named S3Auth and uses it to download a private file from an Amazon S3 bucket:
+
+```
+files:
+  "c:\\targetdirectory\\targetfile.zip":
+    source: https://s3.amazonaws.com/elasticbeanstalk-us-east-2-123456789012/prefix/myfile.zip
+    authentication: S3Auth
+
+Resources:
+  AWSEBAutoScalingGroup:
+    Metadata:
+      AWS::CloudFormation::Authentication:
+        S3Auth:
+          type: "s3"
+          buckets: ["elasticbeanstalk-us-east-2-123456789012"]
+          roleName:
+            "Fn::GetOptionSetting":
+              Namespace: "aws:autoscaling:launchconfiguration"
+              OptionName: "IamInstanceProfile"
+              DefaultValue: "aws-elasticbeanstalk-ec2-role"
+```
 
 ## Commands<a name="windows-commands"></a>
 

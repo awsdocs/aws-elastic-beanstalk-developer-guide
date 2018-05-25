@@ -145,12 +145,13 @@ To update your Elastic Beanstalk configuration, you can use the **init** command
 
 ## Step 5: View the Application<a name="create_deploy_nodejs_geddy_elasticache_update-view"></a>
 
-**To view the application**
-+ To open your application in a browser window, type the following:
+**To view the application in a browser window**
 
-  ```
-  eb open
-  ```
+Type the following:
+
+```
+eb open
+```
 
 ## Step 6: Update the Application<a name="create_deploy_nodejs_geddy_elasticache_update"></a>
 
@@ -491,13 +492,14 @@ Make sure you are looking at the same region that you deployed your application 
 
 If you no longer want to run your application, you can clean up by terminating your environment and deleting your application\.
 
-Use the `terminate` command to terminate your environment and the `delete` command to delete your application\. 
+Use the `eb terminate` command to terminate your environment and the `eb delete` command to delete your application\. 
 
-**To terminate your environment and delete the application**
-+ From the directory where you created your local repository, run `eb terminate`\.
+**To terminate your environment**
 
-  ```
-  $ eb terminate
-  ```
+From the directory where you created your local repository, run `eb terminate`\.
 
-  This process can take a few minutes\. Elastic Beanstalk displays a message once the environment is successfully terminated\. 
+```
+$ eb terminate
+```
+
+This process can take a few minutes\. Elastic Beanstalk displays a message once the environment is successfully terminated\. 

@@ -1,6 +1,6 @@
 # Using Elastic Beanstalk with Amazon Elastic File System<a name="services-efs"></a>
 
-With Amazon Elastic File System, you can create network file systems that can be mounted by instances across multiple Availability Zones\. An Amazon EFS file system is an AWS resource that uses security groups to control access over the network in your default or custom VPC\.
+With Amazon Elastic File System \(Amazon EFS\), you can create network file systems that can be mounted by instances across multiple Availability Zones\. An Amazon EFS file system is an AWS resource that uses security groups to control access over the network in your default or custom VPC\.
 
 In an Elastic Beanstalk environment, you can use Amazon EFS to create a shared directory that stores files uploaded or modified by users of your application\. Your application can treat a mounted Amazon EFS volume like local storage, so you don't have to change your application code to scale up to multiple instances\.
 
@@ -10,6 +10,7 @@ For more information about Amazon EFS, see the [Amazon Elastic File System User 
 + [Configuration Files](#services-efs-configs)
 + [Encrypted File Systems](#services-efs-encrypted)
 + [Sample Applications](#services-efs-samples)
++ [Cleaning Up File Systems](#services-efs-cleanup)
 
 ## Configuration Files<a name="services-efs-configs"></a>
 
@@ -30,5 +31,11 @@ Amazon EFS supports encrypted file systems\. The [https://github.com/awslabs/ela
 ## Sample Applications<a name="services-efs-samples"></a>
 
 Elastic Beanstalk also provides sample applications that use Amazon EFS for shared storage\. The two projects are configuration files that you can use with a standard WordPress or Drupal installer to run a blog or other content management system in a load\-balanced environment\. When a user uploads a photo or other media, it is stored on an Amazon EFS file system, avoiding the need to use a plugin to store uploaded files in Amazon S3\.
-+ **[Load Balanced WordPress](https://github.com/awslabs/eb-php-wordpress)** – Configuration files for installing WordPress securely and running it in a load\-balanced AWS Elastic Beanstalk environment\.
-+ **[Load Balanced Drupal](https://github.com/awslabs/eb-php-drupal)** – Configuration files and instructions for installing Drupal securely and running it in a load\-balanced AWS Elastic Beanstalk environment\. 
++ **[Load Balanced WordPress](https://github.com/awslabs/eb-php-wordpress)** – Configuration files for installing WordPress securely and running it in a load\-balanced Elastic Beanstalk environment\.
++ **[Load Balanced Drupal](https://github.com/awslabs/eb-php-drupal)** – Configuration files and instructions for installing Drupal securely and running it in a load\-balanced Elastic Beanstalk environment\. 
+
+## Cleaning Up File Systems<a name="services-efs-cleanup"></a>
+
+If you created an Amazon EFS file system using a configuration file as part of your Elastic Beanstalk environment, Elastic Beanstalk removes the file system when you terminate the environment\. To minimize storage costs of a running application, routinely delete files that your application doesn't need, or ensure that the application code maintains file lifecycle correctly\.
+
+In addition, if you created an Amazon EFS file system outside of an Elastic Beanstalk environment and mounted it to the environment's instances, be aware that Elastic Beanstalk doesn't remove the file system when you terminate the environment\. To ensure that personal information isn't unnecessarily retained, delete files that your application stored if you don't need them anymore, or remove the file system\.

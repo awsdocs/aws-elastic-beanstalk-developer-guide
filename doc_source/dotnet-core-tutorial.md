@@ -373,7 +373,7 @@ Launching an environment creates the following resources:
 All of these resources are managed by Elastic Beanstalk\. When you terminate your environment, Elastic Beanstalk terminates all the resources that it contains\.
 
 **Note**  
-The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md)\.
+The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)\.
 
 ## Cleanup<a name="dotnet-core-tutorial-cleanup"></a>
 

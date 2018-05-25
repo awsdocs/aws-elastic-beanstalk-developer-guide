@@ -35,11 +35,14 @@ Select a [service role](iam-servicerole.md) to associate with your Elastic Beans
 
 ### EC2 key pair<a name="using-features.managing.security.keypair"></a>
 
-You can securely log in to the Amazon EC2 instances provisioned for your Elastic Beanstalk application with an Amazon EC2 key pair\. For instructions on creating a key pair for Amazon EC2, see the [Amazon Elastic Compute Cloud Getting Started Guide](http://docs.aws.amazon.com/AWSEC2/latest/GettingStartedGuide/)\. 
+You can securely log in to the Amazon Elastic Compute Cloud \(Amazon EC2\) instances provisioned for your Elastic Beanstalk application with an Amazon EC2 key pair\. For instructions on creating a key pair, see [Creating a Key Pair Using Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) in the *Amazon EC2 User Guide for Linux Instances*\. 
 
-Choose an **EC2 key pair** from the drop\-down menu to assign it to your environment's instances\. When you assign a key pair, the public key is stored on the instance to authenticate the private key, which you store locally\. The private key is never stored in AWS\.
+**Note**  
+When you create a key pair, Amazon EC2 stores a copy of your public key\. If you no longer need to use it to connect to any environment instances, you can delete it from Amazon EC2\. For details, see [Deleting Your Key Pair](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#delete-key-pair) in the *Amazon EC2 User Guide for Linux Instances*\.
 
-For more information about connecting to Amazon EC2 instances, see [Connect to Your Instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html) and [ Connecting to Linux/UNIX Instances from Windows using PuTTY](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html) in the *Amazon Elastic Compute Cloud User Guide*\. 
+Choose an **EC2 key pair** from the drop\-down menu to assign it to your environment's instances\. When you assign a key pair, the public key is stored on the instance to authenticate the private key, which you store locally\. The private key is never stored on AWS\.
+
+For more information about connecting to Amazon EC2 instances, see [Connect to Your Instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html) and [Connecting to Linux/UNIX Instances from Windows using PuTTY](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
 
 ### IAM Instance Profile<a name="using-features.managing.security.profile"></a>
 

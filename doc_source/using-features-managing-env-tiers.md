@@ -8,7 +8,7 @@ One option is to spawn a worker process locally, return success, and process the
 
 To avoid running long\-running tasks locally, you can use the AWS SDK for your programming language to send them to an Amazon Simple Queue Service \(Amazon SQS\) queue, and run the process that performs them on a separate set of instances\. The worker instances take items from the queue only when they have capacity to run them, preventing them from becoming overwhelmed\.
 
-Elastic Beanstalk simplifies this process by managing the Amazon SQS queue and running a [daemon process](#worker-daemon) on each instance that reads from the queue for you\. When the daemon pulls an item from the queue, it sends an HTTP POST request locally to `http://localhost/` with the contents of the queue message in the body\. All that your application needs to do is perform the long\-running task in response to the POST\. You can [configure the daemon](#using-features-managing-env-tiers-worker-settings) to post to a different path, use a MIME type other than application/JSON, connect to an existing queue, or customize connections, timeouts, and retries\.
+Elastic Beanstalk simplifies this process by managing the Amazon SQS queue and running a [daemon process](#worker-daemon) on each instance that reads from the queue for you\. When the daemon pulls an item from the queue, it sends an HTTP POST request locally to `http://localhost/` on port 80 with the contents of the queue message in the body\. All that your application needs to do is perform the long\-running task in response to the POST\. You can [configure the daemon](#using-features-managing-env-tiers-worker-settings) to post to a different path, use a MIME type other than application/JSON, connect to an existing queue, or customize connections, timeouts, and retries\.
 
 ![\[Elastic Beanstalk worker environment Amazon SQS message processing\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-messageflow-worker.png)
 
@@ -124,6 +124,9 @@ You can also set other CloudWatch alarms, as needed, by using the AWS Management
 You can manage a worker environment's configuration by editing the **Worker Configuration** card on the **Configuration** page in the [environment management console](environments-console.md)\.
 
 ![\[Elastic Beanstalk Worker Details configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-worker.png)
+
+**Note**  
+You can configure the URL path for posting worker queue messages, but you can't configure the IP port\. Elastic Beanstalk always posts worker queue messages on port 80\. The worker environment application or its proxy must listen to port 80\.
 
 **To configure the worker daemon**
 

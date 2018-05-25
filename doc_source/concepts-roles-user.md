@@ -52,8 +52,8 @@ The following policy allows access to the actions used to create and manage Elas
                 "iam:CreateRole"
             ],
             "Resource": [
-                "arn:aws:iam::*:role/aws-elasticbeanstalk*",
-                "arn:aws:iam::*:instance-profile/aws-elasticbeanstalk*"
+                "iam::*:role/aws-elasticbeanstalk*",
+                "iam::*:instance-profile/aws-elasticbeanstalk*"
             ]
         },
         {
@@ -65,8 +65,8 @@ The following policy allows access to the actions used to create and manage Elas
             "Condition": {
                 "StringLike": {
                     "iam:PolicyArn": [
-                        "arn:aws:iam::aws:policy/AWSElasticBeanstalk*",
-                        "arn:aws:iam::aws:policy/service-role/AWSElasticBeanstalk*"
+                        "iam::aws:policy/AWSElasticBeanstalk*",
+                        "iam::aws:policy/service-role/AWSElasticBeanstalk*"
                     ]
                 }
             }

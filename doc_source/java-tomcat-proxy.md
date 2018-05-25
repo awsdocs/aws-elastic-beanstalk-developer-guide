@@ -1,8 +1,8 @@
 # Configuring Your Tomcat Environment's Proxy Server<a name="java-tomcat-proxy"></a>
 
-The Tomcat platform uses a reverse proxy to relay requests from port 80 on the instance to your Tomcat web container listening on port 8080\. Elastic Beanstalk provides a default proxy configuration that you can either extend or override completely with your own configuration\.
+The Tomcat platform uses a reverse proxy to relay requests from port 80 on the instance to your Tomcat web container listening on port 8080\. Elastic Beanstalk provides a default proxy configuration that you can extend or override completely with your own configuration\.
 
-The Tomcat platform uses Apache 2\.2 for the proxy by default\. You can choose to use nginx by including a [configuration file](ebextensions.md) in your source code:
+By default, the Tomcat platform uses [Apache 2\.4](https://httpd.apache.org/docs/2.4/) for the proxy\. You can choose to use [Apache 2\.2](https://httpd.apache.org/docs/2.2/) or [nginx](https://www.nginx.com/) by including a [configuration file](ebextensions.md) in your source code\. The following example configures Elastic Beanstalk to use nginx\.
 
 **Example \.ebextensions/nginx\-proxy\.config**  
 
@@ -13,12 +13,49 @@ option_settings:
 ```
 
 **Topics**
-+ [Extending the Default Apache Configuration](#java-tomcat-proxy-apache)
++ [Migrating from Apache 2\.2 to Apache 2\.4](#java-tomcat-proxy-apache-migrate)
++ [Extending and Overriding the Default Apache Configuration](#java-tomcat-proxy-apache)
 + [Extending the Default nginx Configuration](#java-tomcat-proxy-nginx)
 
-## Extending the Default Apache Configuration<a name="java-tomcat-proxy-apache"></a>
+## Migrating from Apache 2\.2 to Apache 2\.4<a name="java-tomcat-proxy-apache-migrate"></a>
 
-To extend Elastic Beanstalk's default Apache configuration, add `.conf` configuration files to a folder named `.ebextensions/httpd/conf.d` in your application source bundle\. Elastic Beanstalk's Apache configuration includes `.conf` files in this folder automatically\.
+If your application was developed for [Apache 2\.2](https://httpd.apache.org/docs/2.2/), read this section to learn about migrating to [Apache 2\.4](https://httpd.apache.org/docs/2.4/)\.
+
+Starting with Tomcat platform version 3\.0\.0 configurations, which were released with the [Java with Tomcat platform update on May 24, 2018](https://aws.amazon.com/releasenotes/release-aws-elastic-beanstalk-platform-update-for-the-java-with-tomcat-platform-on-may-24-2018/), Apache 2\.4 is the default proxy of the Tomcat platform\. The Apache 2\.4 `.conf` files are mostly, but not entirely, backward compatible with those of Apache 2\.2\. Elastic Beanstalk includes default `.conf` files that work correctly with each Apache version\. If your application doesn't customize Apache's configuration, as explained in [Extending and Overriding the Default Apache Configuration](#java-tomcat-proxy-apache), it should migrate to Apache 2\.4 without any issues\.
+
+If your application extends or overrides Apache's configuration, you might have to make some changes to migrate to Apache 2\.4\. For more information, see [Upgrading to 2\.4 from 2\.2](https://httpd.apache.org/docs/current/upgrading.html) on *The Apache Software Foundation*'s site\. As a temporary measure, until you successfully migrate to Apache 2\.4, you can choose to use Apache 2\.2 with your application by including the following [configuration file](ebextensions.md) in your source code\.
+
+**Example \.ebextensions/apache\-legacy\-proxy\.config**  
+
+```
+option_settings:
+  aws:elasticbeanstalk:environment:proxy:
+    ProxyServer: apache/2.2
+```
+
+For a quick fix, you can also select the proxy server in the Elastic Beanstalk console\.
+
+**To select the proxy in your Tomcat environment in the Elastic Beanstalk console**
+
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+
+1. Navigate to the [management page](environments-console.md) for your environment\.
+
+1. Choose **Configuration**\.
+
+1. On the **Software** configuration card, choose **Modify**\.
+
+1. For **Proxy server**, choose `Apache 2.2 (deprecated)`\.
+
+1. Choose **Save**, and then choose **Apply**\.
+
+![\[Choosing the proxy for a Tomcat environment on the Elastic Beanstalk console's Software configuration card\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/java-tomcat-proxy-selection.png)
+
+## Extending and Overriding the Default Apache Configuration<a name="java-tomcat-proxy-apache"></a>
+
+You can extend the Elastic Beanstalk default Apache configuration with your additional configuration files\. Alternatively, you can override the Elastic Beanstalk default Apache configuration completely\.
+
+To extend the Elastic Beanstalk default Apache configuration, add `.conf` configuration files to a folder named `.ebextensions/httpd/conf.d` in your application source bundle\. The Elastic Beanstalk Apache configuration includes `.conf` files in this folder automatically\.
 
 ```
 ~/workspace/my-app/
@@ -30,7 +67,7 @@ To extend Elastic Beanstalk's default Apache configuration, add `.conf` configur
 -- index.jsp
 ```
 
-For example, the following configuration adds a listener on port 5000:
+For example, the following Apache 2\.4 configuration adds a listener on port 5000\.
 
 **Example \.ebextensions/httpd/conf\.d/port5000\.conf**  
 
@@ -38,8 +75,7 @@ For example, the following configuration adds a listener on port 5000:
 listen 5000
 <VirtualHost *:5000>
   <Proxy *>
-    Order Allow,Deny
-    Allow from all
+    Require all granted
   </Proxy>
   ProxyPass / http://localhost:8080/ retry=0
   ProxyPassReverse / http://localhost:8080/
@@ -49,7 +85,7 @@ listen 5000
 </VirtualHost>
 ```
 
-To override Elastic Beanstalk's default Apache configuration completely, include a configuration in your source bundle at `.ebextensions/httpd/conf/httpd.conf`:
+To override the Elastic Beanstalk default Apache configuration completely, include a configuration in your source bundle at `.ebextensions/httpd/conf/httpd.conf`\.
 
 ```
 ~/workspace/my-app/
@@ -60,21 +96,23 @@ To override Elastic Beanstalk's default Apache configuration completely, include
 `-- index.jsp
 ```
 
-If you override Elastic Beanstalk's Apache configuration, add the following lines to your `httpd.conf` to pull in Elastic Beanstalk's configurations for [Enhanced Health Reporting and Monitoring](health-enhanced.md), response compression, and static files\.
+If you override the Elastic Beanstalk Apache configuration, add the following lines to your `httpd.conf` to pull in the Elastic Beanstalk configurations for [Enhanced Health Reporting and Monitoring](health-enhanced.md), response compression, and static files\.
 
 ```
-Include conf.d/*.conf
-Include conf.d/elasticbeanstalk/*.conf
+IncludeOptional conf.d/*.conf
+IncludeOptional conf.d/elasticbeanstalk/*.conf
 ```
+
+If your environment uses Apache 2\.2 as its proxy, replace the `IncludeOptional` directives with `Include`\. For details about the behavior of these two directives in the two Apache versions, see [Include in Apache 2\.4](https://httpd.apache.org/docs/2.4/mod/core.html#include), [IncludeOptional in Apache 2\.4](https://httpd.apache.org/docs/2.4/mod/core.html#includeoptional), and [Include in Apache 2\.2](https://httpd.apache.org/docs/2.2/mod/core.html#include)\.
 
 **Note**  
-To override the default listener on port 80, include a file named `00_application.conf` at `.ebextensions/httpd/conf.d/elasticbeanstalk/` to overwrite Elastic Beanstalk's configuration\.
+To override the default listener on port 80, include a file named `00_application.conf` at `.ebextensions/httpd/conf.d/elasticbeanstalk/` to overwrite the Elastic Beanstalk configuration\.
 
-Take a look at Elastic Beanstalk's default configuration file at `/etc/httpd/conf/httpd.conf` on an instance in your environment for a working example\. All files in the `.ebextensions/httpd` folder in your source bundle are copied to `/etc/httpd` during deployments\.
+For a working example, take a look at the Elastic Beanstalk default configuration file at `/etc/httpd/conf/httpd.conf` on an instance in your environment\. All files in the `.ebextensions/httpd` folder in your source bundle are copied to `/etc/httpd` during deployments\.
 
 ## Extending the Default nginx Configuration<a name="java-tomcat-proxy-nginx"></a>
 
-To extend Elastic Beanstalk's default nginx configuration, add `.conf` configuration files to a folder named `.ebextensions/nginx/conf.d/` in your application source bundle\. Elastic Beanstalk's nginx configuration includes `.conf` files in this folder automatically\.
+To extend Elastic Beanstalk's default nginx configuration, add `.conf` configuration files to a folder named `.ebextensions/nginx/conf.d/` in your application source bundle\. The Elastic Beanstalk nginx configuration includes `.conf` files in this folder automatically\.
 
 ```
 ~/workspace/my-app/
@@ -89,7 +127,7 @@ To extend Elastic Beanstalk's default nginx configuration, add `.conf` configura
 
 Files with the \.conf extension in the `conf.d` folder are included in the `http` block of the default configuration\. Files in the `conf.d/elasticbeanstalk` folder are included in the `server` block within the `http` block\.
 
-To override Elastic Beanstalk's default nginx configuration completely, include a configuration in your source bundle at `.ebextensions/nginx/nginx.conf`:
+To override the Elastic Beanstalk default nginx configuration completely, include a configuration in your source bundle at `.ebextensions/nginx/nginx.conf`\.
 
 ```
 ~/workspace/my-app/
@@ -99,19 +137,19 @@ To override Elastic Beanstalk's default nginx configuration completely, include 
 `-- index.jsp
 ```
 
-If you override Elastic Beanstalk's nginx configuration, add the following line to your configuration's `server` block to pull in Elastic Beanstalk's configurations for the port 80 listener, response compression, and static files\.
+If you override the Elastic Beanstalk nginx configuration, add the following line to your configuration's `server` block to pull in the Elastic Beanstalk configurations for the port 80 listener, response compression, and static files\.
 
 ```
  include conf.d/elasticbeanstalk/*.conf;
 ```
 
 **Note**  
-To override the default listener on port 80, include a file named `00_application.conf` at `.ebextensions/nginx/conf.d/elasticbeanstalk/` to overwrite Elastic Beanstalk's configuration\.
+To override the default listener on port 80, include a file named `00_application.conf` at `.ebextensions/nginx/conf.d/elasticbeanstalk/` to overwrite the Elastic Beanstalk configuration\.
 
-Also include the following line in your configuration's `http` block to pull in Elastic Beanstalk's configurations for [Enhanced Health Reporting and Monitoring](health-enhanced.md) and logging\.
+Also include the following line in your configuration's `http` block to pull in the Elastic Beanstalk configurations for [Enhanced Health Reporting and Monitoring](health-enhanced.md) and logging\.
 
 ```
     include       conf.d/*.conf;
 ```
 
-Take a look at Elastic Beanstalk's default configuration file at `/etc/nginx/nginx.conf` on an instance in your environment for a working example\. All files in the `.ebextensions/nginx` folder in your source bundle are copied to `/etc/nginx` during deployments\.
+For a working example, take a look at the Elastic Beanstalk default configuration file at `/etc/nginx/nginx.conf` on an instance in your environment\. All files in the `.ebextensions/nginx` folder in your source bundle are copied to `/etc/nginx` during deployments\.

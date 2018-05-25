@@ -60,16 +60,16 @@ Each application and web server stores logs in its own folder:
 
 When you request tail or bundle logs from your environment, or when instances upload rotated logs, they're stored in your Elastic Beanstalk bucket in Amazon S3\. Elastic Beanstalk creates a bucket named `elasticbeanstalk-region-account-id` for each region in which you create environments\. Within this bucket, logs are stored under the path `resources/environments/logs/logtype/environment-id/instance-id`\. 
 
-For example, logs from instance `i-0a1fd158`, in Elastic Beanstalk environment `e-mpcwnwheky` in region `us-west-2` in account `0123456789012`, are stored in the following locations:
+For example, logs from instance `i-0a1fd158`, in Elastic Beanstalk environment `e-mpcwnwheky` in region `us-west-2` in account `123456789012`, are stored in the following locations:
 + **Tail Logs** –
 
-  `s3://elasticbeanstalk-us-west-2-0123456789012/resources/environments/logs/tail/e-mpcwnwheky/i-0a1fd158`
+  `s3://elasticbeanstalk-us-west-2-123456789012/resources/environments/logs/tail/e-mpcwnwheky/i-0a1fd158`
 + **Bundle Logs** –
 
-  `s3://elasticbeanstalk-us-west-2-0123456789012/resources/environments/logs/bundle/e-mpcwnwheky/i-0a1fd158`
+  `s3://elasticbeanstalk-us-west-2-123456789012/resources/environments/logs/bundle/e-mpcwnwheky/i-0a1fd158`
 + **Rotated Logs** –
 
-  `s3://elasticbeanstalk-us-west-2-0123456789012/resources/environments/logs/publish/e-mpcwnwheky/i-0a1fd158`
+  `s3://elasticbeanstalk-us-west-2-123456789012/resources/environments/logs/publish/e-mpcwnwheky/i-0a1fd158`
 
 **Note**  
 You can find your environment ID in the [environment management console](environments-console.md)\.

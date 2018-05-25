@@ -239,12 +239,13 @@ Next, let's update the Express application to serve static files and add a new p
 ## Clean Up<a name="create_deploy_nodejs_express_delete"></a>
 
 If you are done working with Elastic Beanstalk, you can terminate your environment\.
-+ Use the `eb terminate` command to terminate your environment and all of the resources that it contains\.
 
-  ```
-  ~/node-express$ eb terminate
-  The environment "node-express-env" and all associated instances will be terminated.
-  To confirm, type the environment name: node-express-env
-  INFO: terminateEnvironment is starting.
-  ...
-  ```
+Use the `eb terminate` command to terminate your environment and all of the resources that it contains\.
+
+```
+~/node-express$ eb terminate
+The environment "node-express-env" and all associated instances will be terminated.
+To confirm, type the environment name: node-express-env
+INFO: terminateEnvironment is starting.
+...
+```

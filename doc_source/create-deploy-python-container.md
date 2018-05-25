@@ -10,7 +10,7 @@ To save settings in your source code, you can include [configuration files](ebex
 
 For Python packages available from pip, you can also include a [requirements file](python-configuration-requirements.md) named `requirements.txt` in the root of your application source code\. Elastic Beanstalk installs any packages specified in a requirements file during deployment\.
 
-Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
+Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
 
 ## Configuring Your Python Environment<a name="create-deploy-python-container-console"></a>
 

@@ -23,7 +23,7 @@ These configuration options do not apply to the Multicontainer Docker platform\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  ProxyServer  |  Specifies which web server should be used as a proxy\.  |  `nginx`  |  `nginx` `none`  | 
+|  ProxyServer  |  Specifies the web server to use as a proxy\.  |  `nginx`  |  `nginx` `none`  | 
 
 ## Go Platform Options<a name="command-options-golang"></a>
 
@@ -88,7 +88,7 @@ See [Environment Properties and Other Software Settings](environments-cfg-softwa
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
 |  GzipCompression  |  Set to `false` to disable response compression\.  |  `true`  |  `true` `false`  | 
-|  ProxyServer  |  Set to `nginx` to use nginx as a proxy instead of Apache 2\.2\.  |  `apache`  |  `apache` `nginx`  | 
+|  ProxyServer  |  Set the proxy to use on your environment's instances\. If you don't set this option, or if you set it to `apache`, Elastic Beanstalk uses [Apache 2\.4](https://httpd.apache.org/docs/2.4/)\. Set to `apache/2.2` if your application isn't ready to migrate away from [Apache 2\.2](https://httpd.apache.org/docs/2.2/) due to incompatible proxy configuration settings\. Set to `nginx` to use [nginx](https://www.nginx.com/)\. For more information, see [Configuring Your Tomcat Environment's Proxy Server](java-tomcat-proxy.md)\.  |  `apache`  |  `apache` `apache/2.2` `nginx`  | 
 
 You can use the following namespace to configure the proxy server to serve static files\. When a the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. This reduces the number of requests that your application has to process\.
 

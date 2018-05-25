@@ -12,13 +12,13 @@ Get started with one of the following example applications, or see [Single Conta
 
 1. For **App code**, choose **Upload**\.
 
-1. Choose **Local file**, choose **Browse**, and open the source bundle\.
+1. Choose **Local file**, choose **Browse**, and then open the source bundle\.
 
 1. Choose **Upload**\.
 
 1. Choose **Review and launch**\.
 
-1. Review the available settings and choose **Create app**\.
+1. Review the available settings, and then choose **Create app**\.
 
 For detailed instructions on configuring and using the EB CLI, see [Configure the EB CLI](eb-cli3-configuration.md) and [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
 

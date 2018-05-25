@@ -1,10 +1,12 @@
-# Creating a Custom Amazon Machine Image \(AMI\)<a name="using-features.customenv"></a>
+# Using a Custom Amazon Machine Image \(AMI\)<a name="using-features.customenv"></a>
 
 When you create an AWS Elastic Beanstalk environment, you can specify an Amazon Machine Image \(AMI\) to use instead of the standard Elastic Beanstalk AMI included in your platform configuration's solution stack\. A custom AMI can improve provisioning times when instances are launched in your environment if you need to install a lot of software that isn't included in the standard AMIs\.
 
 Using [configuration files](ebextensions.md) is great for configuring and customizing your environment quickly and consistently\. Applying configurations, however, can start to take a long time during environment creation and updates\. If you do a lot of server configuration in configuration files, you can reduce this time by making a custom AMI that already has the software and configuration that you need\.
 
 A custom AMI also allows you to make changes to low\-level components, such as the Linux kernel, that are difficult to implement or take a long time to apply in configuration files\. To create a custom AMI, launch an Elastic Beanstalk platform AMI in Amazon EC2, customize the software and configuration to your needs, and then stop the instance and save an AMI from it\.
+
+## Creating a Custom AMI<a name="using-features.customenv.create"></a>
 
 **To identify the base Elastic Beanstalk AMI**
 
@@ -21,7 +23,7 @@ A custom AMI also allows you to make changes to low\-level components, such as t
 
 1. Terminate the environment\.
 
-The value in the **Custom AMI ID** field is the stock Elastic Beanstalk AMI for the platform version, EC2 instance architecture, and region in which you created your environment\. If you need to create AMIs for multiple platforms, architectures or regions, repeat this process to identify the correct base AMI for each combination\.
+The value in the **Custom AMI ID** field is the stock Elastic Beanstalk AMI for the platform version, EC2 instance architecture, and AWS Region in which you created your environment\. If you need to create AMIs for multiple platforms, architectures or regions, repeat this process to identify the correct base AMI for each combination\.
 
 **Note**  
 Do not create an AMI from an instance that has been launched in an Elastic Beanstalk environment\. Elastic Beanstalk makes changes to instances during provisioning that can cause issues in the saved AMI\. Saving an image from an instance in an Elastic Beanstalk environment will also make the version of your application that was deployed to the instance a fixed part of the image\.
@@ -39,9 +41,9 @@ Although Elastic Beanstalk can use an AMI that isn't managed by Elastic Beanstal
 
 1. Choose **Launch Instance**\.
 
-1. Choose **Community AMIs**
+1. Choose **Community AMIs**\.
 
-1. If you identified a base Elastic Beanstalk or Amazon Linux AMI that you want to customize to create a custom AMI, enter its AMI ID to the search box, and then press **Enter**\.
+1. If you identified a base Elastic Beanstalk or Amazon Linux AMI that you want to customize to create a custom AMI, enter its AMI ID in the search box, and then press **Enter**\.
 
    You can also search the list for another community AMI that suits your needs\.
 **Note**  
@@ -58,13 +60,13 @@ For details about instance virtualization types, see [Linux AMI Virtualization T
 
    ```
    #cloud-config
-   repo_releasever: repository version number
-   repo_upgrade: none
+     repo_releasever: repository version number
+     repo_upgrade: none
    ```
 
    The *repository version number* is the year and month version in the AMI name\. For example, AMIs based on the March 2015 release of Amazon Linux have a repository version number `2015.03`\. For an Elastic Beanstalk image, this matches the date shown in the solution stack name for your [platform configuration](concepts.platforms.md)\.
 **Note**  
-These settings configure the lock\-on\-launch feature, which causes the AMI to use a fixed, specific repository version when it launches, and disables the automatic installation of security updates\. Both are required to use a custom AMI with Elastic Beanstalk\.
+These settings configure the lock\-on\-launch feature\. This causes the AMI to use a fixed, specific repository version when it launches, and disables the automatic installation of security updates\. Both are required to use a custom AMI with Elastic Beanstalk\.
 
 1. Proceed through the wizard to [launch the EC2 instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-an-instance.html)\. When prompted, select a key pair that you have access to so that you can connect to the instance for the next steps\.
 
@@ -72,12 +74,28 @@ These settings configure the lock\-on\-launch feature, which causes the AMI to u
 
 1. Perform any customizations you want\.
 
-1. **\(Windows platforms\)** Run the EC2Config service Sysprep\. For information about EC2Config, go to [Configuring a Windows Instance Using the EC2Config Service](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html)\. Ensure that Sysprep is configured to generate a random password that can be retrieved from the AWS Management Console\.
+1. **\(Windows platforms\)** Run the EC2Config service Sysprep\. For information about EC2Config, see [Configuring a Windows Instance Using the EC2Config Service](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html)\. Ensure that Sysprep is configured to generate a random password that can be retrieved from the AWS Management Console\.
 
-1. In the Amazon EC2 console, stop the EC2 instance, and then choose **Create Image \(EBS AMI\)** from the **Instance Actions** menu\.
+1. In the Amazon EC2 console, stop the EC2 instance\. Then on the **Instance Actions** menu, choose **Create Image \(EBS AMI\)**\.
 
 1. To avoid incurring additional AWS charges, [terminate the EC2 instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html)\.
 
-1. To use your custom AMI, specify your custom AMI ID in the **Custom AMI ID** field in the **Instances** section of the **Configuration** page of the Elastic Beanstalk environment management console\. Existing instances will be replaced with new instances launched from the new custom AMI\.
+**To use your custom AMI in an Elastic Beanstalk environment**
+
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+
+1. Navigate to the [management page](environments-console.md) for your environment\.
+
+1. Choose **Configuration**\.
+
+1. On the **Instances** configuration card, choose **Modify**\.
+
+1. For **Custom AMI ID**, type your custom AMI ID\.
+
+1. Choose **Save**, and then choose **Apply**\.
 
 When you create a new environment with the custom AMI, you should use the same platform configuration that you used as a base to create the AMI\. If you later apply a [platform update](using-features.platform.upgrade.md) to an environment using a custom AMI, Elastic Beanstalk attempts to apply the library and configuration updates during the bootstrapping process\.
+
+## Cleaning Up a Custom AMI<a name="using-features.customenv.cleanup"></a>
+
+When you are done with a custom AMI and don't need it to launch Elastic Beanstalk environments anymore, consider cleaning it up to minimize storage cost\. Cleaning up a custom AMI involves deregistering it from Amazon EC2 and deleting other associated resources\. For details, see [Deregistering Your Linux AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html) or [Deregistering Your Windows AMI](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html)\.

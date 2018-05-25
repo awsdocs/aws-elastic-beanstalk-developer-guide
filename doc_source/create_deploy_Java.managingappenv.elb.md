@@ -47,7 +47,7 @@ Elastic Load Balancing supports the HTTPS/TLS protocol to enable traffic encrypt
 
 1. Specify the HTTPS port by selecting a port from the **HTTPS Listener Port** drop\-down list\.
 
-1. In the **SSL Certificate ID** text box, enter the Amazon Resources Name \(ARN\) of your SSL certificate\. For example, **arn:aws:iam::123456789012:server\-certificate/abc/certs/build** or **arn:aws:acm:us\-west\-2:123456789012:certificate/12345678\-12ab\-34cd\-56ef\-12345678**\. Use the SSL certificate that you created and uploaded in step 1\.
+1. In the **SSL Certificate ID** text box, enter the Amazon Resources Name \(ARN\) of your SSL certificate\. For example, **arn:aws:iam::123456789012:server\-certificate/abc/certs/build** or **arn:aws:acm:us\-east\-2:123456789012:certificate/12345678\-12ab\-34cd\-56ef\-12345678**\. Use the SSL certificate that you created and uploaded in step 1\.
 
 To turn off the HTTPS port, select **OFF** for **HTTPS Listener Port**\.
 

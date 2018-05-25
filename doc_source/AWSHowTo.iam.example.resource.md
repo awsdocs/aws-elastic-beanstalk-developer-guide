@@ -77,8 +77,8 @@ The second policy specifies the Elastic Beanstalk actions that John is allowed t
          "Condition":{
             "StringEquals":{
                "elasticbeanstalk:InApplication":[
-                  "arn:aws:elasticbeanstalk:us-west-2:123456789012:application/app1",
-                  "arn:aws:elasticbeanstalk:us-west-2:123456789012:application/app2"
+                  "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/app1",
+                  "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/app2"
                ]
             }
          }
@@ -90,8 +90,8 @@ The second policy specifies the Elastic Beanstalk actions that John is allowed t
          ],
          "Effect":"Allow",
          "Resource":[
-            "arn:aws:elasticbeanstalk:us-west-2:123456789012:application/app1",
-            "arn:aws:elasticbeanstalk:us-west-2:123456789012:application/app2"
+            "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/app1",
+            "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/app2"
          ]
       },
       {
@@ -101,7 +101,7 @@ The second policy specifies the Elastic Beanstalk actions that John is allowed t
          ],
          "Effect":"Allow",
          "Resource":[
-            "arn:aws:elasticbeanstalk:us-west-2::solutionstack/*"
+            "arn:aws:elasticbeanstalk:us-east-2::solutionstack/*"
          ]
       }
    ]
@@ -181,8 +181,8 @@ The second policy specifies the Elastic Beanstalk actions that Jill is allowed t
          "Condition":{
             "StringEquals":{
                "elasticbeanstalk:InApplication":[
-                  "arn:aws:elasticbeanstalk:us-west-2:123456789012:application/app1",
-                  "arn:aws:elasticbeanstalk:us-west-2:123456789012:application/app2"
+                  "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/app1",
+                  "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/app2"
                ]
             }
          }
@@ -195,8 +195,8 @@ The second policy specifies the Elastic Beanstalk actions that Jill is allowed t
          ],
          "Effect":"Allow",
          "Resource":[
-            "arn:aws:elasticbeanstalk:us-west-2:123456789012:application/app1",
-            "arn:aws:elasticbeanstalk:us-west-2:123456789012:application/app2"
+            "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/app1",
+            "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/app2"
          ]
       },
       {
@@ -208,7 +208,7 @@ The second policy specifies the Elastic Beanstalk actions that Jill is allowed t
          ],
          "Effect":"Allow",
          "Resource":[
-            "arn:aws:elasticbeanstalk:us-west-2::solutionstack/*"
+            "arn:aws:elasticbeanstalk:us-east-2::solutionstack/*"
          ]
       }
    ]
@@ -283,7 +283,7 @@ The second policy specifies the Elastic Beanstalk actions that Jack is allowed t
          "Condition":{
             "StringEquals":{
                "elasticbeanstalk:InApplication":[
-                  "arn:aws:elasticbeanstalk:us-west-2:123456789012:application/app1"
+                  "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/app1"
                ]
             }
          }
@@ -296,7 +296,7 @@ The second policy specifies the Elastic Beanstalk actions that Jack is allowed t
          ],
          "Effect":"Allow",
          "Resource":[
-            "arn:aws:elasticbeanstalk:us-west-2:123456789012:application/app1"
+            "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/app1"
          ]
       },
       {
@@ -306,17 +306,17 @@ The second policy specifies the Elastic Beanstalk actions that Jack is allowed t
          ],
          "Effect":"Allow",
          "Resource":[
-            "arn:aws:elasticbeanstalk:us-west-2:123456789012:environment/app1/app1-staging*"
+            "arn:aws:elasticbeanstalk:us-east-2:123456789012:environment/app1/app1-staging*"
          ],
          "Condition":{
             "StringEquals":{
                "elasticbeanstalk:InApplication":[
-                  "arn:aws:elasticbeanstalk:us-west-2:123456789012:application/app1"
+                  "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/app1"
                ]
             },
             "StringLike":{
                "elasticbeanstalk:FromApplicationVersion":[
-                  "arn:aws:elasticbeanstalk:us-west-2:123456789012:applicationversion/app1/*"
+                  "arn:aws:elasticbeanstalk:us-east-2:123456789012:applicationversion/app1/*"
                ]
             }
          }
@@ -330,7 +330,7 @@ The second policy specifies the Elastic Beanstalk actions that Jack is allowed t
          ],
          "Effect":"Allow",
          "Resource":[
-            "arn:aws:elasticbeanstalk:us-west-2::solutionstack/*"
+            "arn:aws:elasticbeanstalk:us-east-2::solutionstack/*"
          ]
       }
    ]

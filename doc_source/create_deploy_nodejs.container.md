@@ -12,7 +12,7 @@ You can [include a `Package.json` file](nodejs-platform-packagejson.md) in your 
 
 The Node\.js platform includes a proxy server to serve static assets, forward traffic to your application, and compress responses\. You can [extend or override the default proxy configuration](nodejs-platform-proxy.md) for advanced scenarios\.
 
-Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
+Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
 
 ## Configuring Your Node\.js Environment<a name="nodejs-platform-console"></a>
 

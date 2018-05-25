@@ -207,8 +207,8 @@ To confirm, type the environment name: eb-dev
 INFO: terminateEnvironment is starting.
 INFO: Deleted CloudWatch alarm named: awseb-e-jc8t3pmscn-stack-AWSEBCloudwatchAlarmHigh-1XLMU7DNCBV6Y
 INFO: Deleted CloudWatch alarm named: awseb-e-jc8t3pmscn-stack-AWSEBCloudwatchAlarmLow-8IVI04W2SCXS
-INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:210774411744:scalingPolicy:1753d43e-ae87-4df6-a405-11d31f4c8f97:autoScalingGroupName/awseb-e-jc8t3pmscn-stack-AWSEBAutoScalingGroup-90TTS2ZL4MXV:policyName/awseb-e-jc8t3pmscn-stack-AWSEBAutoScalingScaleUpPolicy-A070H1BMUQAJ
-INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:210774411744:scalingPolicy:1fd24ea4-3d6f-4373-affc-4912012092ba:autoScalingGroupName/awseb-e-jc8t3pmscn-stack-AWSEBAutoScalingGroup-90TTS2ZL4MXV:policyName/awseb-e-jc8t3pmscn-stack-AWSEBAutoScalingScaleDownPolicy-LSWFUMZ46H1V
+INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-east-2:210774411744:scalingPolicy:1753d43e-ae87-4df6-a405-11d31f4c8f97:autoScalingGroupName/awseb-e-jc8t3pmscn-stack-AWSEBAutoScalingGroup-90TTS2ZL4MXV:policyName/awseb-e-jc8t3pmscn-stack-AWSEBAutoScalingScaleUpPolicy-A070H1BMUQAJ
+INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-east-2:210774411744:scalingPolicy:1fd24ea4-3d6f-4373-affc-4912012092ba:autoScalingGroupName/awseb-e-jc8t3pmscn-stack-AWSEBAutoScalingGroup-90TTS2ZL4MXV:policyName/awseb-e-jc8t3pmscn-stack-AWSEBAutoScalingScaleDownPolicy-LSWFUMZ46H1V
 INFO: Waiting for EC2 instances to terminate. This may take a few minutes.
  -- Events -- (safe to Ctrl+C)
 ```

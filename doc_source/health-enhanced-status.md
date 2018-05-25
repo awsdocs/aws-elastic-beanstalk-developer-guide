@@ -46,7 +46,7 @@ The health agent is reporting a very high number of request failures or other is
 
 Example: Elastic Beanstalk is unable to contact the load balancer to get instance health\.
 
-Message \(Environment\): *ELB health is failing or not available for all instances\. None of the instances are sending data\. Unable to assume role "arn:aws:iam::0123456789012:role/aws\-elasticbeanstalk\-service\-role"\. Verify that the role exists and is configured correctly\.*
+Message \(Environment\): *ELB health is failing or not available for all instances\. None of the instances are sending data\. Unable to assume role "arn:aws:iam::123456789012:role/aws\-elasticbeanstalk\-service\-role"\. Verify that the role exists and is configured correctly\.*
 
 Message \(Instances\): Instance ELB health has not been available for 37 minutes\. No data\. Last seen 37 minutes ago\.
 

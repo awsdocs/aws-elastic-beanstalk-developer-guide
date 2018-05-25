@@ -12,7 +12,7 @@ If you use Composer, you can [include a `composer.json` file](php-configuration-
 
 For advanced PHP configuration and PHP settings that are not provided as configuration options, you can [use configuration files to provide an `INI` file](php-configuration-phpini.md) that can extend and override the default settings applied by Elastic Beanstalk, or install additional extensions\.
 
-Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
+Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
 
 ## Configuring your PHP Environment<a name="php-console"></a>
 

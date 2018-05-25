@@ -171,7 +171,7 @@ In this example, your application requires end\-to\-end traffic encryption and a
 1. *Remove the default port 80 HTTP listener\.* Select the default listener, and then, for **Actions**, choose **Mark as 'removed'**\.  
 ![\[Application Load Balancer configuration - removing default listener\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-listeners-removed.png)
 
-1. *Add a secure listener\.* For **Port**, type `443`\. For **Protocol**, choose `HTTPS`\. For **SSL certificate**, choose the ARN of your SSL certificate\. For example, `arn:aws:iam::123456789012:server-certificate/abc/certs/build`, or `arn:aws:acm:us-west-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678`\.  
+1. *Add a secure listener\.* For **Port**, type `443`\. For **Protocol**, choose `HTTPS`\. For **SSL certificate**, choose the ARN of your SSL certificate\. For example, `arn:aws:iam::123456789012:server-certificate/abc/certs/build`, or `arn:aws:acm:us-east-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678`\.  
 ![\[Application Load Balancer configuration - adding a secure listener\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-listeners-https.png)
 
    You can now see your additional listener on the list\.  
@@ -269,7 +269,7 @@ option_settings:
     DefaultProcess: https
     ListenerEnabled: 'true'
     Protocol: HTTPS
-    SSLCertificateArns: arn:aws:acm:us-east-2:0123456789012:certificate/21324896-0fa4-412b-bf6f-f362d6eb6dd7
+    SSLCertificateArns: arn:aws:acm:us-east-2:123456789012:certificate/21324896-0fa4-412b-bf6f-f362d6eb6dd7
   aws:elasticbeanstalk:environment:process:https:
     Port: '443'
     Protocol: HTTPS
@@ -285,7 +285,7 @@ option_settings:
     ListenerEnabled: 'true'
     Protocol: HTTPS
     Rules: admin
-    SSLCertificateArns: arn:aws:acm:us-east-2:0123456789012:certificate/21324896-0fa4-412b-bf6f-f362d6eb6dd7
+    SSLCertificateArns: arn:aws:acm:us-east-2:123456789012:certificate/21324896-0fa4-412b-bf6f-f362d6eb6dd7
   aws:elasticbeanstalk:environment:process:https:
     Port: '443'
     Protocol: HTTPS

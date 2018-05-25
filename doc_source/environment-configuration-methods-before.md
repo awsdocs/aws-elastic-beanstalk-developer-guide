@@ -91,7 +91,7 @@ Create a saved configuration to save settings that you have applied to an existi
 
 1. Enter a configuration name and description and then click **Save**\.
 
-Saved configurations are stored in the Elastic Beanstalk S3 bucket in a folder named after your application\. For example, configurations for an application named `my-app` in the us\-west\-2 region for account number 0123456789012 can be found at `s3://elasticbeanstalk-us-west-2-0123456789012/resources/templates/my-app`\.
+Saved configurations are stored in the Elastic Beanstalk S3 bucket in a folder named after your application\. For example, configurations for an application named `my-app` in the us\-west\-2 region for account number 123456789012 can be found at `s3://elasticbeanstalk-us-west-2-123456789012/resources/templates/my-app`\.
 
 ### EB CLI<a name="configuration-options-before-savedconfig-ebcli"></a>
 

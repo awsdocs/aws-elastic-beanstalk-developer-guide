@@ -126,9 +126,10 @@ Elastic Beanstalk supports the following Tomcat configurations\.
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  AWS X‑Ray  |  Application Server  |  Proxy Server  | 
 | --- | --- | --- | --- | --- | --- | 
-|   **Java 8 with Tomcat 8 version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Tomcat 8 Java 8*   |  2018\.03\.0  |  Java 1\.8\.0\_171  |  2\.0\.0  |  Tomcat 8\.0\.50  |  Apache 2\.2\.34  | 
-|   **Java 7 with Tomcat 7 version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Tomcat 7 Java 7*   |  2018\.03\.0  |  Java 1\.7\.0\_171  |  2\.0\.0  |  Tomcat 7\.0\.85  |  Apache 2\.2\.34  | 
-|   **Java 6 with Tomcat 7 version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Tomcat 7 Java 6*   |  2018\.03\.0  |  Java 1\.6\.0\_41  |  2\.0\.0  |  Tomcat 7\.0\.85  |  Apache 2\.2\.34  | 
+|   **Java 8 with Tomcat 8\.5 version 3\.0\.0**   *64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 8\.5 Java 8*   |  2018\.03\.0  |  Java 1\.8\.0\_171  |  2\.0\.0  |  Tomcat 8\.5\.29  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
+|   **Java 8 with Tomcat 8 version 3\.0\.0**   *64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 8 Java 8*   |  2018\.03\.0  |  Java 1\.8\.0\_171  |  2\.0\.0  |  Tomcat 8\.0\.50  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
+|   **Java 7 with Tomcat 7 version 3\.0\.0**   *64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 7 Java 7*   |  2018\.03\.0  |  Java 1\.7\.0\_181  |  2\.0\.0  |  Tomcat 7\.0\.85  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
+|   **Java 6 with Tomcat 7 version 3\.0\.0**   *64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 7 Java 6*   |  2018\.03\.0  |  Java 1\.6\.0\_41  |  2\.0\.0  |  Tomcat 7\.0\.85  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
 
 For information about previous configurations, see [Tomcat Platform History](platform-history-java.md)\.
 
@@ -157,16 +158,16 @@ Elastic Beanstalk supports the following \.NET configurations\.
 
 |  Configuration  |  Solution Stack Name  |  Framework  |  Proxy Server  | 
 | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |   *64bit Windows Server 2016 v1\.2\.0 running IIS 10\.0*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |   *64bit Windows Server Core 2016 v1\.2\.0 running IIS 10\.0*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
-|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |   *64bit Windows Server 2012 R2 v1\.2\.0 running IIS 8\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
-|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |   *64bit Windows Server Core 2012 R2 v1\.2\.0 running IIS 8\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
-|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |   *64bit Windows Server 2012 v1\.2\.0 running IIS 8*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
-|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |   *64bit Windows Server 2008 R2 v1\.2\.0 running IIS 7\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
-|   **Windows Server 2012 R2 with IIS 8\.5**   |   *64bit Windows Server 2012 R2 running IIS 8\.5*   |  \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
-|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |   *64bit Windows Server Core 2012 R2 running IIS 8\.5*   |  \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
-|   **Windows Server 2012 with IIS 8**   |   *64bit Windows Server 2012 running IIS 8*   |  \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
-|   **Windows Server 2008 R2 with IIS 7\.5**   |   *64bit Windows Server 2008 R2 running IIS 7\.5*   |  \.NET Framework 4\.7, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |   *64bit Windows Server 2016 v1\.2\.0 running IIS 10\.0*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |   *64bit Windows Server Core 2016 v1\.2\.0 running IIS 10\.0*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |   *64bit Windows Server 2012 R2 v1\.2\.0 running IIS 8\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |   *64bit Windows Server Core 2012 R2 v1\.2\.0 running IIS 8\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |   *64bit Windows Server 2012 v1\.2\.0 running IIS 8*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
+|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |   *64bit Windows Server 2008 R2 v1\.2\.0 running IIS 7\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
+|   **Windows Server 2012 R2 with IIS 8\.5**   |   *64bit Windows Server 2012 R2 running IIS 8\.5*   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |   *64bit Windows Server Core 2012 R2 running IIS 8\.5*   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 with IIS 8**   |   *64bit Windows Server 2012 running IIS 8*   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
+|   **Windows Server 2008 R2 with IIS 7\.5**   |   *64bit Windows Server 2008 R2 running IIS 7\.5*   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
 
 ### More details<a name="concepts.platforms.net.details"></a>
 
@@ -175,16 +176,16 @@ Elastic Beanstalk supports the following \.NET configurations\.
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |  4\.9\.2565  |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |  4\.9\.2565  |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |  4\.9\.2565  |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |  4\.9\.2565  |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 R2 with IIS 8\.5**   |  2018\.03\.24  |  3\.3\.245\.0  |  4\.9\.2565  |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |  2018\.03\.24  |  3\.3\.245\.0  |  4\.9\.2565  |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 with IIS 8**   |  2018\.03\.24  |  3\.3\.245\.0  |  4\.9\.2565  |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2008 R2 with IIS 7\.5**   |  2018\.03\.24  |  3\.3\.245\.0  |  4\.9\.2565  |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |  4\.9\.2586  |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |  4\.9\.2586  |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |  4\.9\.2586  |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |  4\.9\.2586  |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5**   |  2018\.04\.11  |  3\.3\.260\.0  |  4\.9\.2586  |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |  2018\.04\.11  |  3\.3\.260\.0  |  4\.9\.2586  |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 with IIS 8**   |  2018\.04\.11  |  3\.3\.260\.0  |  4\.9\.2586  |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2008 R2 with IIS 7\.5**   |  2018\.04\.11  |  3\.3\.260\.0  |  4\.9\.2586  |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
 
 ## Node\.js<a name="concepts.platforms.nodejs"></a>
 

@@ -10,7 +10,7 @@ To save settings in your source code, you can include [configuration files](ebex
 
 If you use RubyGems, you can [include a `Gemfile` file](ruby-platform-gemfile.md) in your source bundle to install packages during deployment\.
 
-Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
+Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
 
 ## Configuring Your Ruby Environment<a name="create-deploy_Ruby.container.CON"></a>
 

@@ -1,8 +1,8 @@
-# Structuring your Project Folder<a name="java-tomcat-platform-directorystructure"></a>
+# Structuring Your Project Folder<a name="java-tomcat-platform-directorystructure"></a>
 
-To work when deployed to a Tomcat server, compiled Java Platform Enterprise Edition \(*Java EE*\) Web application ARchives \(WAR files\) must be structured according to certain [guidelines](https://docs.oracle.com/javaee/7/tutorial/packaging003.htm)\. Your project directory does not have to meet the same standards, but it is a good idea to structure it in the same way to simplify compiling and packaging\. Structuring your project folder like the WAR file contents also helps you understand how files are related and how they behave on a web server\.
+To work when deployed to a Tomcat server, compiled Java Platform Enterprise Edition \(*Java EE*\) web application archives \(WAR files\) must be structured according to certain [guidelines](https://docs.oracle.com/javaee/7/tutorial/packaging003.htm)\. Your project directory doesn't have to meet the same standards, but it's a good idea to structure it in the same way to simplify compiling and packaging\. Structuring your project folder like the WAR file contents also helps you understand how files are related and how they behave on a web server\.
 
-In the following recommended hierarchy, the source code for the web application is placed in a `src` directory, to isolate it from the build script and the WAR file it generates:
+In the following recommended hierarchy, the source code for the web application is placed in a `src` directory, to isolate it from the build script and the WAR file it generates\.
 
 ```
 ~/workspace/my-app/
@@ -17,17 +17,17 @@ In the following recommended hierarchy, the source code for the web application 
     |   |-- tlds        - Tag Library Descriptor files
     |   `-- web.xml     - Deployment Descriptor
     |-- com             - Uncompiled classes
-    |-- css             - Stylesheets
+    |-- css             - Style sheets
     |-- images          - Image files
     |-- js              - JavaScript files
-    `-- default.jsp     - JSP (JavaServer Pages) web page
+    `-- default.jsp     - JSP (JavaServer Pages) webpage
 ```
 
-The `src` folder contents match what you will package and deploy to the server, with the exception of the `com` folder\. The `com` folder contains your uncompiled classes \(`.java` files\), which need to be compiled and placed in the `WEB-INF/classes` directory to be accessible from your application code\.
+The `src` folder contents match what you will package and deploy to the server, with the exception of the `com` folder\. The `com` folder contains your uncompiled classes \(`.java` files\)\. These need to be compiled and placed in the `WEB-INF/classes` directory to be accessible from your application code\.
 
-The `WEB-INF` directory contains code and configurations that are not served publically on the web server\. The other folders at the root of the source directory \(`css`, `images`, and `js`\) are publically available at the corresponding path on the web server\.
+The `WEB-INF` directory contains code and configurations that are not served publicly on the web server\. The other folders at the root of the source directory \(`css`, `images`, and `js`\) are publicly available at the corresponding path on the web server\.
 
-The following example is identical to the preceding project directory, except that it contains more files and subdirectories\. This example project includes simple tags, model and support classes, and a Java Server Pages \(JSP\) file for a `record` resource\. It also includes a stylesheet and JavaScript for [Bootstrap](http://getbootstrap.com/), a default JSP file, and a an error page for 404 errors\.
+The following example is identical to the preceding project directory, except that it contains more files and subdirectories\. This example project includes simple tags, model and support classes, and a Java Server Pages \(JSP\) file for a `record` resource\. It also includes a style sheet and JavaScript for [Bootstrap](http://getbootstrap.com/), a default JSP file, and an error page for 404 errors\.
 
 `WEB-INF/lib` includes a Java Archive \(JAR\) file containing the Java Database Connectivity \(JDBC\) driver for PostgreSQL\. `WEB-INF/classes` is empty because class files have not been compiled yet\.
 
@@ -64,9 +64,9 @@ The following example is identical to the preceding project directory, except th
     `-- records.jsp
 ```
 
-## Building a WAR File With a Shell Script<a name="java-tomcat-platform-directorystructure-building"></a>
+## Building a WAR File with a Shell Script<a name="java-tomcat-platform-directorystructure-building"></a>
 
-`build.sh` is a very simple shell script that compiles Java classes, constructs a WAR file, and copies it to Tomcat's `webapps` directory for local testing:
+`build.sh` is a very simple shell script that compiles Java classes, constructs a WAR file, and copies it to the Tomcat `webapps` directory for local testing\.
 
 ```
 cd src
@@ -79,7 +79,7 @@ cp ROOT.war /Library/Tomcat/webapps
 mv ROOT.war ../
 ```
 
-Inside the WAR file, you'll find the same structure that exists in the `src` directory in the preceding example, excluding the `src/com` folder\. The `jar` command automatically creates the `META-INF/MANIFEST.MF` file\.
+Inside the WAR file, you find the same structure that exists in the `src` directory in the preceding example, excluding the `src/com` folder\. The `jar` command automatically creates the `META-INF/MANIFEST.MF` file\.
 
 ```
 ~/workspace/my-app/ROOT.war
@@ -114,7 +114,7 @@ Inside the WAR file, you'll find the same structure that exists in the `src` dir
 
 ## Using `.gitignore`<a name="java-tomcat-platform-gitignore"></a>
 
-To avoid committing compiled class files and WAR files to your Git repository, or seeing message about them appear when you run Git commands, add the relevant file types to a file named `.gitignore` in your project folder:
+To avoid committing compiled class files and WAR files to your Git repository, or seeing messages about them appear when you run Git commands, add the relevant file types to a file named `.gitignore` in your project folder\.
 
 **\~/workspace/myapp/\.gitignore**
 

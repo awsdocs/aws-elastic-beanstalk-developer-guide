@@ -1,6 +1,6 @@
 # Platform\.yaml File Format<a name="platform-yaml-format"></a>
 
-This file has the following format:
+This `platform.yaml` file has the following format\.
 
 ```
 version: "version-number"
@@ -58,7 +58,7 @@ RHEL 6
 Optional\. Contact information for the person who owns the platform \(100 characters\)\.
 
 *metadata\-description*  
-Optional\. Description of the platform \(2000 characters\)\.
+Optional\. Description of the platform \(2,000 characters\)\.
 
 *metadata\-operating\_system\_name*  
 Optional\. Name of the platform's operating system \(50 characters\)\. This value is available when filtering the output for the [ListPlatformVersions](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListPlatformVersions.html) API\.
@@ -85,7 +85,7 @@ Optional\. A namespace under `aws:elasticbeanstalk:container:custom` \(100 chara
 Optional\. The option's name \(100 characters\)\. You can define up to 50 custom configuration options that the platform provides to users\.
 
 *option\-def\-description*  
-Optional\. Description of the option \(1024 characters\)\.
+Optional\. Description of the option \(1,024 characters\)\.
 
 *option\-def\-default\_value*  
 Optional\. Default value used when the user doesn't specify one\.  

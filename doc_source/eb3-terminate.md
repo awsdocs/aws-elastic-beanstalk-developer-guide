@@ -42,9 +42,9 @@ To confirm, type the environment name: tmp-dev
 INFO: terminateEnvironment is starting.
 INFO: Deleted CloudWatch alarm named: awseb-e-2cpfjbra9a-stack-AWSEBCloudwatchAlarmHigh-16V08YOF2KQ7U
 INFO: Deleted CloudWatch alarm named: awseb-e-2cpfjbra9a-stack-AWSEBCloudwatchAlarmLow-6ZAWH9F20P7C
-INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:11122223333:scalingPolicy:5d7d3e6b-d59b-47c5-b102-3e11fe3047be:autoScalingGroupName/awseb-e-2cpfjbra9a-stack-AWSEBAutoScalingGroup-7AXY7U13ZQ6E:policyName/awseb-e-2cpfjbra9a-stack-AWSEBAutoSca
+INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-east-2:11122223333:scalingPolicy:5d7d3e6b-d59b-47c5-b102-3e11fe3047be:autoScalingGroupName/awseb-e-2cpfjbra9a-stack-AWSEBAutoScalingGroup-7AXY7U13ZQ6E:policyName/awseb-e-2cpfjbra9a-stack-AWSEBAutoSca
 lingScaleUpPolicy-1876U27JEC34J
-INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-west-2:11122223333:scalingPolicy:29c6e7c7-7ac8-46fc-91f5-cfabb65b985b:autoScalingGroupName/awseb-e-2cpfjbra9a-stack-AWSEBAutoScalingGroup-7AXY7U13ZQ6E:policyName/awseb-e-2cpfjbra9a-stack-AWSEBAutoSca
+INFO: Deleted Auto Scaling group policy named: arn:aws:autoscaling:us-east-2:11122223333:scalingPolicy:29c6e7c7-7ac8-46fc-91f5-cfabb65b985b:autoScalingGroupName/awseb-e-2cpfjbra9a-stack-AWSEBAutoScalingGroup-7AXY7U13ZQ6E:policyName/awseb-e-2cpfjbra9a-stack-AWSEBAutoSca
 lingScaleDownPolicy-SL4LHODMOMU
 INFO: Waiting for EC2 instances to terminate. This may take a few minutes.
 INFO: Deleted Auto Scaling group named: awseb-e-2cpfjbra9a-stack-AWSEBAutoScalingGroup-7AXY7U13ZQ6E

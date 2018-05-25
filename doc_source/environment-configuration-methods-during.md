@@ -1,4 +1,4 @@
-# Setting Configuration Options during Environment Creation<a name="environment-configuration-methods-during"></a>
+# Setting Configuration Options During Environment Creation<a name="environment-configuration-methods-during"></a>
 
 When you create an AWS Elastic Beanstalk environment by using the AWS Management Console, EB CLI, AWS CLI, an SDK, or the Elastic Beanstalk API, you can provide values for configuration options to customize your environment and the AWS resources that are launched within it\.
 
@@ -178,20 +178,20 @@ To apply configuration files to an environment that you create with the AWS CLI,
    ```
    $ aws elasticbeanstalk create-storage-location
    {
-       "S3Bucket": "elasticbeanstalk-us-west-2-0123456789012"
+       "S3Bucket": "elasticbeanstalk-us-west-2-123456789012"
    }
    ```
 
 1. Upload your application source bundle to Amazon S3\.
 
    ```
-   $ aws s3 cp sourcebundle.zip s3://elasticbeanstalk-us-west-2-0123456789012/my-app/sourcebundle.zip
+   $ aws s3 cp sourcebundle.zip s3://elasticbeanstalk-us-west-2-123456789012/my-app/sourcebundle.zip
    ```
 
 1. Create the application version\.
 
    ```
-   $ aws elasticbeanstalk create-application-version --application-name my-app --version-label v1 --description MyAppv1 --source-bundle S3Bucket="elasticbeanstalk-us-west-2-0123456789012",S3Key="my-app/sourcebundle.zip" --auto-create-application
+   $ aws elasticbeanstalk create-application-version --application-name my-app --version-label v1 --description MyAppv1 --source-bundle S3Bucket="elasticbeanstalk-us-west-2-123456789012",S3Key="my-app/sourcebundle.zip" --auto-create-application
    ```
 
 1. Create the environment:

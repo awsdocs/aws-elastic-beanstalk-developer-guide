@@ -27,10 +27,10 @@ When you configure an SSL certificate for your environment, data is encrypted be
 
 | Storage service | Service documentation | Elastic Beanstalk integration | 
 | --- | --- | --- | 
-| [Amazon S3](https://aws.amazon.com/s3/) | [Amazon Simple Storage Service Documentation](https://aws.amazon.com/documentation/s3/) | [Using Elastic Beanstalk with Amazon Simple Storage Service](AWSHowTo.S3.md) | 
+| [Amazon S3](https://aws.amazon.com/s3/) | [Amazon Simple Storage Service Documentation](https://aws.amazon.com/documentation/s3/) | [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md) | 
 | [Amazon Elastic File System](https://aws.amazon.com/efs/) | [Amazon Elastic File System Documentation](https://aws.amazon.com/documentation/efs/) | [Using Elastic Beanstalk with Amazon Elastic File System](services-efs.md) | 
 | [Amazon Elastic Block Store](https://aws.amazon.com/ebs/) |  [Amazon Elastic Block Store](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html) [Feature Guide: Elastic Block Store](https://aws.amazon.com/articles/1667)  |  | 
-| [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) | [Amazon DynamoDB Documentation](https://aws.amazon.com/documentation/dynamodb/) | [Using Elastic Beanstalk with DynamoDB](AWSHowTo.dynamoDB.md) | 
+| [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) | [Amazon DynamoDB Documentation](https://aws.amazon.com/documentation/dynamodb/) | [Using Elastic Beanstalk with Amazon DynamoDB](AWSHowTo.dynamoDB.md) | 
 | [Amazon Relational Database Service \(RDS\)](https://aws.amazon.com/rds/) | [Amazon Relational Database Service Documentation](https://aws.amazon.com/documentation/rds/) | [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) | 
 
 ## Fault Tolerance<a name="concepts.concepts.design.faulttolerance"></a>

@@ -102,7 +102,7 @@ Before you can configure an HTTPS listener, ensure that you have a valid SSL cer
 
 For more information about creating and uploading certificates to IAM, see [Working with Server Certificates](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in the *IAM User Guide*\.
 
-For **SSL certificate**, choose the ARN of your SSL certificate\. For example, `arn:aws:iam::123456789012:server-certificate/abc/certs/build`, or `arn:aws:acm:us-west-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678`\.
+For **SSL certificate**, choose the ARN of your SSL certificate\. For example, `arn:aws:iam::123456789012:server-certificate/abc/certs/build`, or `arn:aws:acm:us-east-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678`\.
 
 ![\[Classic Load Balancer configuration - adding a secure listener\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-clb-listeners-https.png)
 
@@ -185,7 +185,7 @@ The following example configuration file creates an HTTPS listener on port 443, 
 option_settings:
   aws:elb:listener:443:
     ListenerProtocol: HTTPS
-    SSLCertificateId: arn:aws:acm:us-west-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678
+    SSLCertificateId: arn:aws:acm:us-east-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678
     InstancePort: 80
     InstanceProtocol: HTTP
   aws:elb:listener:

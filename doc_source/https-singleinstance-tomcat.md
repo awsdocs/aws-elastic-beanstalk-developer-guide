@@ -48,7 +48,7 @@ files:
       sudo service httpd restart
 ```
 
-Your certificate vendor may include intermediate certificates that you can install for better compatibility with mobile clients\. Configure Apache with an intermediate certificate authority \(CA\) bundle by adding the following to your SSL configuration file \(see [Extending the Default Apache Configuration](java-tomcat-proxy.md#java-tomcat-proxy-apache) for the location\):
+Your certificate vendor may include intermediate certificates that you can install for better compatibility with mobile clients\. Configure Apache with an intermediate certificate authority \(CA\) bundle by adding the following to your SSL configuration file \(see [Extending and Overriding the Default Apache Configuration](java-tomcat-proxy.md#java-tomcat-proxy-apache) for the location\):
 + In the `ssl.conf` file contents, specify the chain file:
 
   ```

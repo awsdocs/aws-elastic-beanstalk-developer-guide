@@ -6,7 +6,7 @@ The Elastic Beanstalk console and EB CLI set configuration options when you crea
 
 Configuration option settings can be composed in text format and saved prior to environment creation, applied during environment creation using any supported client, and added, modified or removed after environment creation\. For a detailed breakdown of all of the available methods for working with configuration options at each of these three stages, read the following topics:
 + [Setting Configuration Options Before Environment Creation](environment-configuration-methods-before.md)
-+ [Setting Configuration Options during Environment Creation](environment-configuration-methods-during.md)
++ [Setting Configuration Options During Environment Creation](environment-configuration-methods-during.md)
 + [Setting Configuration Options After Environment Creation](environment-configuration-methods-after.md)
 
 For a complete list of namespaces and options, including default and supported values for each, see [General Options for All Environments](command-options-general.md) and [Platform Specific Options](command-options-specific.md)\.

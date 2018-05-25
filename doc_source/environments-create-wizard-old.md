@@ -5,7 +5,7 @@
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
 1. From the Elastic Beanstalk console applications page, choose **Actions** for the application in which you want to launch a new environment\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-app-page-action.png)
+![\[Actions drop-down menu on the Applications page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-app-page-action.png)
 
 1. Choose **Launch New Environment**\.
 
@@ -48,7 +48,7 @@ After you launch an environment with a specific configuration, you cannot change
 On the **Application Version** page, you can use the sample application, upload your own, or specify the URL for the Amazon S3 bucket that contains your application code\.
 
 **Note**  
-Depending on the platform configuration you selected, you can upload your application in a ZIP [source bundle](applications-sourcebundle.md), a WAR file, or a plaintext Docker configuration\. You can include multiple `WAR` files inside a `ZIP` file to deploy multiple Tomcat applications to each instance in your environment\. The file size limit is 512 MB\.
+Depending on the platform configuration you selected, you can upload your application in a ZIP [source bundle](applications-sourcebundle.md), a WAR file, or a plaintext Docker configuration\. You can include multiple WAR files inside a ZIP file to deploy multiple Tomcat applications to each instance in your environment\. The file size limit is 512 MB\.
 
 For load\-balancing, automatically scaling environments, choose a **Deployment policy** to configure how new application versions and changes to software configurations for instances are deployed\. **All at once** completes deployments as quickly as possible, but can result in downtime\. Rolling deployments ensure that some instances remain in service during the entire deployment process\. The **Healthy threshold** option lets you lower the minimum status at which instances can pass health checks during rolling deployments and configuration updates\. See [Deployment Policies and Settings](using-features.rolling-version-deploy.md) for more information\.
 
@@ -56,7 +56,7 @@ For load\-balancing, automatically scaling environments, choose a **Deployment p
 
 On the **Environment Information** page, enter the details of your environment and choose **Next**\.
 + Enter a name for the environment\.
-+ \(Web server environments\) Enter a unique environment URL\. Although the environment URL is populated with the environment name, you can enter a different name for the URL\. Elastic Beanstalk uses this name to create a unique CNAME for the environment\. You can check the availability of the URL by clicking **Check Availability**\.
++ \(Web server environments\) Enter a unique environment URL\. Although the environment URL is populated with the environment name, you can enter a different name for the URL\. Elastic Beanstalk uses this name to create a unique CNAME for the environment\. You can check the availability of the URL by choosing **Check Availability**\.
 + \(Optional\) Enter a description for this environment\.
 
 ## Additional Resources<a name="environments-create-wizard-old-additionalresources"></a>
@@ -78,7 +78,7 @@ Elastic Beanstalk is free, but the AWS resources that it provisions might not be
 + Select an **EC2 key pair** to enable SSH or RDP access to the instances in your environment\. For more information about Amazon EC2 key pairs, see [Using Credentials](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-credentials.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 + Specify an **Email address** to receive notifications about important events emitted by your environment\. For more information, see [Elastic Beanstalk Environment Notifications with Amazon SNS](using-features.managing.sns.md)\.
 + For load\-balancing, automatically scaling environments, **Application health check URL**, **Cross\-zone load balancing**, **Connection draining**, and **Connection draining timeout** let you configure the load balancer's behavior\. For more information, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)\. 
-+ **Rolling updates type** provides options for managing how instances are replaced when you change settings on the AutoScaling group or VPC\. For more information, see [Elastic Beanstalk Rolling Environment Configuration Updates](using-features.rollingupdates.md)\. 
++ **Rolling updates type** provides options for managing how instances are replaced when you change settings on the Auto Scaling group or VPC\. For more information, see [Elastic Beanstalk Rolling Environment Configuration Updates](using-features.rollingupdates.md)\. 
 + **Root volume type** displays the types of storage volumes provided by Amazon EBS that you can attach to Amazon EC2 instances in your Elastic Beanstalk environment\. Select the volume type that meets your performance and price requirements\. For more information, see [Amazon EBS Volume Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) and [Amazon EBS Product Details](https://aws.amazon.com/ebs/details/)\. The size of magnetic volumes can be between 8 GiB and 1,024 GiB, and SSD volumes can be between 10 GiB and 16,384 GiB\.
 + With **Root volume size**, you can specify the size of the storage volume that you selected\. You must specify the root volume size you want if you choose **Provisioned IOPS \(SSD\)** as the root volume type that your instances will use\. For other root volumes, if you do not specify your own value, Elastic Beanstalk uses the default volume size for the storage volume type\. 
 + If you selected **Provisioned IOPS \(SSD\)** as your root volume type, you must specify the input/output operations per second \(IOPS\) that you want\. The minimum is 100 and the maximum is 4,000\. The maximum ratio of IOPS to your volume size is 30 to 1\. For example, a volume with 3,000 IOPS must be at least 100 GiB\.
@@ -87,13 +87,13 @@ Elastic Beanstalk is free, but the AWS resources that it provisions might not be
 
 \(Optional\) On the **Environment Tags** page, create tags for the environment, and then choose **Next**\. Restrictions on tag keys and tag values include the following: 
 + Keys and values can contain any alphabetic character in any language, any numeric character, white space, invisible separator, and the following symbols: \_ \. : / = \+ \\ \- @
-+ Keys and values are case\-sensitive
++ Keys and values are case sensitive
 + Values cannot match the environment name
 + Values cannot include either **aws:** or **elasticbeanstalk:**
 
  For more information about using tags, see [Tagging Your Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-create-tags.png)
+![\[Environment Tags configuration section\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-create-tags.png)
 
 ## Worker Details<a name="environments-create-wizard-old-workerdetails"></a>
 
@@ -114,7 +114,7 @@ If you chose to associate an Amazon RDS DB earlier in the environment configurat
 + \(Optional\) For **Snapshot**, select whether to create an Amazon RDS DB from an existing snapshot\.
 + \(Optional\) For **DB engine**, select a database engine\.
 + \(Optional\) For **Instance Class**, select a database instance class\. For information about the DB instance classes, see [https://aws\.amazon\.com/rds/](http://aws.amazon.com/rds/)\.
-+ For **Allocated Storage**, type the space needed for your database\. You can allocate between 5 GB and 1024 GB\. You cannot update the allocated storage for a database to a lower amount after you set it\. In some cases, allocating a larger amount of storage for your DB instance than the size of your database can improve IO performance\. For information about storage allocation, see [Features](https://aws.amazon.com/rds/#features)\.
++ For **Allocated Storage**, type the space needed for your database\. You can allocate between 5 GB and 1,024 GB\. You cannot update the allocated storage for a database to a lower amount after you set it\. In some cases, allocating a larger amount of storage for your DB instance than the size of your database can improve I/O performance\. For information about storage allocation, see [Features](https://aws.amazon.com/rds/#features)\.
 + For **Master Username**, type a name using alphanumeric characters to use to log in to your DB instance with all database privileges\.
 + For **Master Password**, type a password containing 8–16 printable ASCII characters \(excluding /, \\, and @\)\.
 + For **Deletion Policy**, select **Create snapshot** to create a snapshot that you can use later to create another Amazon RDS database\. Select **Delete** to delete the DB instance when you terminate the environment\. If you select **Delete**, you lose your DB instance and all the data in it when you terminate the Elastic Beanstalk instance associated with it\. By default, Elastic Beanstalk creates and saves a snapshot\. You can use a snapshot to restore data to use in a new environment, but cannot otherwise recover lost data\.

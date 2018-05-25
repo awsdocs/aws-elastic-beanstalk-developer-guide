@@ -14,7 +14,7 @@ These tutorials are targeted at intermediate users and may not contain instructi
 + **Python and Django 1\.9** \- [Deploying a Django Application to Elastic Beanstalk](create-deploy-python-django.md)
 + **Node\.js and Express 4** \- [Deploying an Express Application to Elastic Beanstalk](create_deploy_nodejs_express.md)
 + **Docker, PHP and nginx** \- [Multicontainer Docker Environments with the AWS Management Console](create_deploy_docker_ecstutorial.md)
-+ **Ruby on Rails** \- [Deploying a Rails Application to Elastic Beanstalk](create_deploy_Ruby_rails.md)
++ **Ruby on Rails** \- [Deploying a Rails Application to Elastic Beanstalk](ruby-rails-tutorial.md)
 + **Ruby and Sinatra** \- [Deploying a Sinatra Application to AWS Elastic Beanstalk](create_deploy_Ruby_sinatra.md)
 + **\.NET Framework \(IIS and ASP\.NET\)** \- [Tutorial: How to Deploy a \.NET Sample Application Using AWS Elastic Beanstalk](create_deploy_NET.quickstart.md)
 

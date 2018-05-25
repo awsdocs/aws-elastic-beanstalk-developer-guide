@@ -37,7 +37,7 @@ eb config get NAME
 
 Saved configurations do not include settings applied with [configuration files](ebextensions.md) in your application's source code\. If the same setting is applied in both a configuration file and saved configuration, the setting in the saved configuration takes precedence\. Likewise, options specified in the AWS Management Console override options in saved configurations\. For more information, see [Precedence](command-options.md#configuration-options-precedence)\.
 
-Saved configurations are stored in the Elastic Beanstalk S3 bucket in a folder named after your application\. For example, configurations for an application named `my-app` in the us\-west\-2 region for account number 0123456789012 can be found at `s3://elasticbeanstalk-us-west-2-0123456789012/resources/templates/my-app/`\.
+Saved configurations are stored in the Elastic Beanstalk S3 bucket in a folder named after your application\. For example, configurations for an application named `my-app` in the us\-west\-2 region for account number 123456789012 can be found at `s3://elasticbeanstalk-us-west-2-123456789012/resources/templates/my-app/`\.
 
 View the contents of a saved configuration by opening it in a text editor\. The following example configuration shows the configuration of a web server environment launched with the Elastic Beanstalk Management Console\.
 
@@ -47,7 +47,7 @@ EnvironmentConfigurationMetadata:
   DateCreated: '1520633151000'
   DateModified: '1520633151000'
 Platform:
-  PlatformArn: arn:aws:elasticbeanstalk:us-west-2::platform/Java 8 running on 64bit Amazon Linux/2.5.0
+  PlatformArn: arn:aws:elasticbeanstalk:us-east-2::platform/Java 8 running on 64bit Amazon Linux/2.5.0
 OptionSettings:
   aws:elasticbeanstalk:command:
     BatchSize: '30'
@@ -92,7 +92,7 @@ The following keys are supported\.
 
   ```
   Platform:
-    PlatformArn: arn:aws:elasticbeanstalk:us-west-2::platform/Java 8 running on 64bit Amazon Linux/2.5.0
+    PlatformArn: arn:aws:elasticbeanstalk:us-east-2::platform/Java 8 running on 64bit Amazon Linux/2.5.0
   ```
 + **SolutionStack** – The full name of the [solution stack](concepts.platforms.md) used to create the environment\.
 
@@ -144,5 +144,5 @@ The **CName**, **EnvironmentName** and **EnvironmentLinks** keys can be used to 
 
 See the following topics for alternate methods of creating and applying saved configurations\.
 + [Setting Configuration Options Before Environment Creation](environment-configuration-methods-before.md)
-+ [Setting Configuration Options during Environment Creation](environment-configuration-methods-during.md)
++ [Setting Configuration Options During Environment Creation](environment-configuration-methods-during.md)
 + [Setting Configuration Options After Environment Creation](environment-configuration-methods-after.md)

@@ -261,20 +261,20 @@ To apply configuration files to a running environment with the AWS CLI, include 
    ```
    $ aws elasticbeanstalk create-storage-location
    {
-       "S3Bucket": "elasticbeanstalk-us-west-2-0123456789012"
+       "S3Bucket": "elasticbeanstalk-us-west-2-123456789012"
    }
    ```
 
 1. Upload your application source bundle to Amazon S3\.
 
    ```
-   $ aws s3 cp sourcebundlev2.zip s3://elasticbeanstalk-us-west-2-0123456789012/my-app/sourcebundlev2.zip
+   $ aws s3 cp sourcebundlev2.zip s3://elasticbeanstalk-us-west-2-123456789012/my-app/sourcebundlev2.zip
    ```
 
 1. Create the application version\.
 
    ```
-   $ aws elasticbeanstalk create-application-version --application-name my-app --version-label v2 --description MyAppv2 --source-bundle S3Bucket="elasticbeanstalk-us-west-2-0123456789012",S3Key="my-app/sourcebundlev2.zip"
+   $ aws elasticbeanstalk create-application-version --application-name my-app --version-label v2 --description MyAppv2 --source-bundle S3Bucket="elasticbeanstalk-us-west-2-123456789012",S3Key="my-app/sourcebundlev2.zip"
    ```
 
 1. Update the environment\.
@@ -287,7 +287,7 @@ To apply configuration files to a running environment with the AWS CLI, include 
 
 You can apply a saved configuration to a running environment with the `--template-name` option on the `aws elasticbeanstalk update-environment` command\.
 
-The saved configuration must be in your Elastic Beanstalk bucket in a path named after your application under `resources/templates`\. For example, the `v1` template for the `my-app` application in the US West \(Oregon\) Region \(us\-west\-2\) for account 0123456789012 is located at `s3://elasticbeanstalk-us-west-2-0123456789012/resources/templates/my-app/v1`
+The saved configuration must be in your Elastic Beanstalk bucket in a path named after your application under `resources/templates`\. For example, the `v1` template for the `my-app` application in the US West \(Oregon\) Region \(us\-west\-2\) for account 123456789012 is located at `s3://elasticbeanstalk-us-west-2-123456789012/resources/templates/my-app/v1`
 
 **To apply a saved configuration to a running environment \(AWS CLI\)**
 + Specify the saved configuration in an `update-environment` call with the `--template-name` option\.
