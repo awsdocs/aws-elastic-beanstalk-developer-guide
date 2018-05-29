@@ -6,7 +6,7 @@ AWS Elastic Beanstalk provides two managed policies that enable you to assign fu
 + **AWSElasticBeanstalkFullAccess** – Allows the user to create, modify, and delete Elastic Beanstalk applications, application versions, configuration settings, environments, and their underlying resources\.
 
   ```
-  { 
+  {
     "Version": "2012-10-17",
     "Statement": [
       {
@@ -25,6 +25,7 @@ AWS Elastic Beanstalk provides two managed policies that enable you to assign fu
           "dynamodb:*",
           "rds:*",
           "sqs:*",
+          "logs:*",
           "iam:GetPolicyVersion",
           "iam:GetRole",
           "iam:PassRole",
@@ -53,6 +54,34 @@ AWS Elastic Beanstalk provides two managed policies that enable you to assign fu
           "arn:aws:iam::*:role/aws-elasticbeanstalk*",
           "arn:aws:iam::*:instance-profile/aws-elasticbeanstalk*"
         ]
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "iam:CreateServiceLinkedRole"
+        ],
+        "Resource": [
+          "arn:aws:iam::*:role/aws-service-role/autoscaling.amazonaws.com/AWSServiceRoleForAutoScaling*"
+        ],
+        "Condition": {
+          "StringLike": {
+            "iam:AWSServiceName": "autoscaling.amazonaws.com"
+          }
+        }
+      },
+      {
+        "Effect": "Allow",
+        "Action": [
+          "iam:CreateServiceLinkedRole"
+        ],
+        "Resource": [
+          "arn:aws:iam::*:role/aws-service-role/elasticbeanstalk.amazonaws.com/AWSServiceRoleForElasticBeanstalk*"
+        ],
+        "Condition": {
+          "StringLike": {
+            "iam:AWSServiceName": "elasticbeanstalk.amazonaws.com"
+          }
+        }
       },
       {
         "Effect": "Allow",
