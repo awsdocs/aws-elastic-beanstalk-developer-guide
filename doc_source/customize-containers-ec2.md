@@ -405,7 +405,7 @@ services:
 
 You can use the `container_commands` key to execute commands that affect your application source code\. Container commands run after the application and web server have been set up and the application version archive has been extracted, but before the application version is deployed\. Non\-container commands and other customization operations are performed prior to the application source code being extracted\.
 
-Container commands are run from the staging directory, where your source code is extracted prior to being deployed to the application server\. Any changes you make to your source code in the staging directory with a container command will be included when the source is deployed to its final location\.
+The specified commands run as the root user. Container commands are run from the staging directory, where your source code is extracted prior to being deployed to the application server\. Any changes you make to your source code in the staging directory with a container command will be included when the source is deployed to its final location\.
 
 You can use `leader_only` to only run the command on a single instance, or configure a `test` to only run the command when a test command evaluates to `true`\. Leader\-only container commands are only executed during environment creation and deployments, while other commands and server customization operations are performed every time an instance is provisioned or updated\. Leader\-only container commands are not executed due to launch configuration changes, such as a change in the AMI Id or instance type\.
 
