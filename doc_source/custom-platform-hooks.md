@@ -2,7 +2,7 @@
 
 Elastic Beanstalk uses a standardized directory structure for hooks\. These are scripts that are run during lifecycle events and in response to management operations: when instances in your environment are launched, or when a user initiates a deployment or uses the restart application server feature\.
 
-All scripts that should be triggered by a hook should be placed in the `/opt/elasticbeanstalk/hooks/` directory.
+Place scripts that you want hooks to trigger in one of the subfolders of the `/opt/elasticbeanstalk/hooks/` folder\.
 
 Hooks are organized into the following folders:
 + `appdeploy` — Scripts run during an application deployment\. Elastic Beanstalk performs an application deployment when new instances are launched and when a client initiates a new version deployment\.

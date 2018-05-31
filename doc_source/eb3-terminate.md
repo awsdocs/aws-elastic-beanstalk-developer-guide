@@ -4,6 +4,8 @@
 
 Terminates the running environment so that you do not incur charges for unused AWS resources\.
 
+Using the `--all` option, deletes the application that the current directory was initialized to using [`eb init`](eb3-init.md)\. The command terminates all environments in the application, terminates the application's [application versions](applications-versions.md) and [saved configurations](environment-configuration-savedconfig.md), and then deletes the application\.
+
 If the root directory contains a `platform.yaml` file specifying a custom platform, this command terminates the running custom environment\.
 
 **Note**  
@@ -22,7 +24,7 @@ You can always launch a new environment using the same version later\. If you ha
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  `--all`  |  Terminates the environment, application, and all resources\.  | 
+|  `--all`  |  Terminates all environments in the application, the application's [application versions](applications-versions.md), and its [saved configurations](environment-configuration-savedconfig.md), and then deletes the application\.  | 
 |  `--force`  |  Terminate the environment without prompting for confirmation\.  | 
 |  `--ignore-links`  |  Terminate the environment even if there are dependent environments with links to it\. See [Compose Environments](ebcli-compose.md)\.  | 
 |  `--timeout`  |  The number of minutes before the command times out\.  | 
