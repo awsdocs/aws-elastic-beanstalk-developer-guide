@@ -318,7 +318,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Deploying a High-Availability Drupal Website with an External Amazon RDS Database to Elastic Beanstalk](php-hadrupal-tutorial.md)
    + [Adding an Amazon RDS DB Instance to Your PHP Application Environment](create_deploy_PHP.rds.md)
 + [Working with Python](create-deploy-python-apps.md)
-   + [Setting Up Your Python Development Environment](create-deploy-python-common-steps.md)
+   + [Setting Up Your Python Development Environment](python-development-environment.md)
    + [Using the AWS Elastic Beanstalk Python Platform](create-deploy-python-container.md)
       + [Requirements File](python-configuration-requirements.md)
    + [Deploying a Flask Application to AWS Elastic Beanstalk](create-deploy-python-flask.md)

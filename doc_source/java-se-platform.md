@@ -42,6 +42,23 @@ The Log Options section has two settings:
 + **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
+### Static Files<a name="java-se-options-staticfiles"></a>
+
+To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When a the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\. When you add a mapping, an extra row appears in case you want to add another one\. To remove a mapping, click **Remove**\.
+
+![\[Static file configuration in the Modify software configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-static-files.png)
+
+If you aren't seeing the **Static Files** section, you have to add at least one mapping by using configuration options\. For example, the following [configuration file](ebextensions.md) adds two virtual path and directory mappings, with directories at the top level of your source bundle\.
+
+**Example \.ebextensions/java\-se\-static\-files\.config**  
+
+```
+option_settings:
+  aws:elasticbeanstalk:container:java:staticfiles:
+    /html: statichtml
+    /images: staticimages
+```
+
 ### Environment Properties<a name="java-se-options-properties"></a>
 
 The **Environment Properties** section lets you specify environment configuration settings on the Amazon EC2 instances that are running your application\. Environment properties are passed in as key\-value pairs to the application\.

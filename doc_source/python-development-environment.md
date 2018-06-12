@@ -1,13 +1,24 @@
-# Setting Up Your Python Development Environment<a name="create-deploy-python-common-steps"></a>
+# Setting Up Your Python Development Environment<a name="python-development-environment"></a>
 
-AWS Elastic Beanstalk provides a consistent interface for deploying Python applications, so there are common procedures to follow regardless of the application framework you're using, or whether you're using one at all\.
+Set up a Python development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
+
+To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings proceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
+
+```
+~/eb-project$ this is a command
+this is output
+```
+
+On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
+
+For common setup steps and tools that apply to all languages, see [Configuring your development environment for use with AWS Elastic Beanstalk](chapter-devenv.md)
 
 **Topics**
-+ [Common Prerequisites](#python-common-prereq)
-+ [Setting up a virtual Python environment](#python-common-setup-venv)
++ [Installing Python and Pip](#python-common-prereq)
++ [Using a Virtual Environment](#python-common-setup-venv)
 + [Configuring a Python project for Elastic Beanstalk](#python-common-configuring)
 
-## Common Prerequisites<a name="python-common-prereq"></a>
+## Installing Python and Pip<a name="python-common-prereq"></a>
 
 For all Python applications that you'll deploy with Elastic Beanstalk, these prerequisites are common:
 
@@ -23,7 +34,7 @@ For all Python applications that you'll deploy with Elastic Beanstalk, these pre
 
 For instructions on installing Python, pip, and the EB CLI, see [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md)\.
 
-## Setting up a virtual Python environment<a name="python-common-setup-venv"></a>
+## Using a Virtual Environment<a name="python-common-setup-venv"></a>
 
 Once you have the prerequisites installed, set up a virtual environment with `virtualenv` to install your application's dependencies\. By using a virtual environment, you can discern exactly which packages are needed by your application so that the required packages are installed on the EC2 instances that are running your application\.
 

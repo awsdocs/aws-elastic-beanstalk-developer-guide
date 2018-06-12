@@ -26,6 +26,14 @@ You can use the AWS Management Console to enable log rotation to Amazon S3, conf
 
 1. On the **Software** configuration card, choose **Modify**\.
 
+### Python Settings<a name="python-console-settings"></a>
++ **WSGI Path** – The name of or path to your main application file\. For example, `application.py`, or `django/wsgi.py`\.
++ **NumProcesses** – The number of processes to run on each application instance\.
++ **NumThreads** – The number of threads to run in each process\.
+
+### AWS X\-Ray Settings<a name="python-console-xray"></a>
++ **X\-Ray daemon** – Run the AWS X\-Ray daemon to process trace data from the [AWS X\-Ray SDK for Python](http://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-python.html)\.
+
 ### Log Options<a name="create-deploy-python-container.console.logoptions"></a>
 
 The Log Options section has two settings:
@@ -34,11 +42,22 @@ The Log Options section has two settings:
 
 ### Static Files<a name="python-platform-staticfiles"></a>
 
-The **Static Files** section lets you configure the proxy server to serve static assets directly to the user without hitting your Python application\.
+To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When a the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\. When you add a mapping, an extra row appears in case you want to add another one\. To remove a mapping, click **Remove**\.
 
-By default, the proxy server serves any files in a folder named `static` at the `/static` path\. For example, if your application source contains a file named `logo.png` in a folder named `static`, the proxy server will serve it to users at `subdomain.elasticbeanstalk.com/static/logo.png`\.
+![\[Static file configuration in the Modify software configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-static-files.png)
 
-You can configure additional mappings by adding entries and choosing **Apply**\. Each entry takes a key and value that map a path in your application to a directory in your source code\.
+If you aren't seeing the **Static Files** section, you have to add at least one mapping by using configuration options\. For example, the following [configuration file](ebextensions.md) adds two virtual path and directory mappings, with directories at the top level of your source bundle\.
+
+**Example \.ebextensions/python\-static\-files\.config**  
+
+```
+option_settings:
+  aws:elasticbeanstalk:container:python:staticfiles:
+    /html: statichtml
+    /images: staticimages
+```
+
+By default, the proxy server in a Python environment serves any files in a folder named `static` at the `/static` path\. For example, if your application source contains a file named `logo.png` in a folder named `static`, the proxy server serves it to users at `subdomain.elasticbeanstalk.com/static/logo.png`\. You can configure additional mappings as explained in this section\.
 
 ### Environment Properties<a name="create-deploy-python-custom-container-envprop"></a>
 

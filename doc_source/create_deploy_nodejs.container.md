@@ -47,7 +47,20 @@ The Log Options section has two settings:
 
 ### Static Files<a name="nodejs-platform-console-staticfiles"></a>
 
-To improve performance, you may want to configure nginx or Apache to server static files \(for example, HTML or images\) from a set of directories inside your web application\. You can set the virtual path and directory mapping on the **Container** tab in the **Static Files** section\. To add multiple mappings, click **Add Path**\. To remove a mapping, click **Remove**\.
+To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When a the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\. When you add a mapping, an extra row appears in case you want to add another one\. To remove a mapping, click **Remove**\.
+
+![\[Static file configuration in the Modify software configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-static-files.png)
+
+If you aren't seeing the **Static Files** section, you have to add at least one mapping by using configuration options\. For example, the following [configuration file](ebextensions.md) adds two virtual path and directory mappings, with directories at the top level of your source bundle\.
+
+**Example \.ebextensions/nodejs\-static\-files\.config**  
+
+```
+option_settings:
+  aws:elasticbeanstalk:container:nodejs:staticfiles:
+    /html: statichtml
+    /images: staticimages
+```
 
 ### Environment Properties<a name="nodejs-platform-console-envprops"></a>
 

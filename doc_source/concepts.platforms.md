@@ -35,7 +35,7 @@ Packer is an open\-source tool for creating machine images for many platforms, i
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Packer Version  | 
 | --- | --- | --- | 
-|   **Elastic Beanstalk Packer Builder version 2\.5\.0**   *64bit Amazon Linux 2018\.03 v2\.5\.0 running Packer 1\.0\.3*   |  2018\.03\.0  |  1\.0\.3  | 
+|   **Elastic Beanstalk Packer Builder version 2\.5\.0**   * 64bit Amazon Linux 2018\.03 v2\.5\.0 running Packer 1\.0\.3 *   |  2018\.03\.0  |  1\.0\.3  | 
 
 For information about previous configurations, see [Packer Platform History](platform-history-packer.md)\.
 
@@ -50,7 +50,7 @@ See [Deploying Elastic Beanstalk Applications from Docker Containers](create_dep
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Docker Version  |  Proxy Server  | 
 | --- | --- | --- | --- | 
-|   **Single Container Docker 17\.12 version 2\.10\.0**   *64bit Amazon Linux 2018\.03 v2\.10\.0 running Docker 17\.12\.1\-ce*   |  2018\.03\.0  |  17\.12\.1\-ce  |  nginx 1\.12\.1  | 
+|   **Single Container Docker 17\.12 version 2\.10\.0**   * 64bit Amazon Linux 2018\.03 v2\.10\.0 running Docker 17\.12\.1\-ce *   |  2018\.03\.0  |  17\.12\.1\-ce  |  nginx 1\.12\.1  | 
 
 For information about previous configurations, see [Single Container Docker Platform History](platform-history-docker-single.md)\.
 
@@ -69,7 +69,7 @@ See [Deploying Elastic Beanstalk Applications from Docker Containers](create_dep
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Docker Version  |  ECS Agent  | 
 | --- | --- | --- | --- | 
-|   **Multicontainer Docker 17\.12 version 2\.10\.0**   *64bit Amazon Linux 2018\.03 v2\.10\.0 running Multi\-container Docker 17\.12\.1\-ce \(Generic\)*   |  2018\.03\.0  |  17\.12\.1\-ce  |  1\.17\.3  | 
+|   **Multicontainer Docker 17\.12 version 2\.10\.0**   * 64bit Amazon Linux 2018\.03 v2\.10\.0 running Multi\-container Docker 17\.12\.1\-ce \(Generic\) *   |  2018\.03\.0  |  17\.12\.1\-ce  |  1\.17\.3  | 
 
 For information about previous configurations, see [Multicontainer Docker Platform History](platform-history-docker-multi.md)\.
 
@@ -82,11 +82,11 @@ Preconfigured Docker platform configurations use Docker, but do not let you prov
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Platform  |  Container OS  |  Language  |  Proxy Server  |  Application Server  |  Docker Image  | 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-|   **Glassfish 4\.1 \(Docker\) version 2\.10\.0**   *64bit Debian jessie v2\.10\.0 running GlassFish 4\.1 Java 8 \(Preconfigured \- Docker\)*   |  2018\.03\.0  |  Docker 17\.12\.1\-ce  |  Debian Jessie  |  Java 8  |  nginx 1\.12\.1  |  Glassfish 4\.1  |  amazon/aws\-eb\-glassfish:4\.1\-jdk8\-onbuild\-3\.5\.1  | 
-|   **Glassfish 4\.0 \(Docker\) version 2\.10\.0**   *64bit Debian jessie v2\.10\.0 running GlassFish 4\.0 Java 7 \(Preconfigured \- Docker\)*   |  2018\.03\.0  |  Docker 17\.12\.1\-ce  |  Debian Jessie  |  Java 7  |  nginx 1\.12\.1  |  Glassfish 4\.0  |  amazon/aws\-eb\-glassfish:4\.0\-jdk7\-onbuild\-3\.5\.1  | 
-|   **Go 1\.4 \(Docker\) version 2\.10\.0**   *64bit Debian jessie v2\.10\.0 running Go 1\.4 \(Preconfigured \- Docker\)*   |  2018\.03\.0  |  Docker 17\.12\.1\-ce  |  Debian Jessie  |  Go 1\.4\.2  |  nginx 1\.12\.1  |  none  |  golang:1\.4\.2\-onbuild  | 
-|   **Go 1\.3 \(Docker\) version 2\.10\.0**   *64bit Debian jessie v2\.10\.0 running Go 1\.3 \(Preconfigured \- Docker\)*   |  2018\.03\.0  |  Docker 17\.12\.1\-ce  |  Debian Jessie  |  Go 1\.3\.3  |  nginx 1\.12\.1  |  none  |  golang:1\.3\.3\-onbuild  | 
-|   **Python 3\.4 with uWSGI 2 \(Docker\) version 2\.10\.0**   *64bit Debian jessie v2\.10\.0 running Python 3\.4 \(Preconfigured \- Docker\)*   |  2018\.03\.0  |  Docker 17\.12\.1\-ce  |  Debian Jessie  |  Python 3\.4  |  nginx 1\.12\.1  |  uWSGI 2\.0\.8  |  amazon/aws\-eb\-python:3\.4\.2\-onbuild\-3\.5\.1  | 
+|   **Glassfish 4\.1 \(Docker\) version 2\.10\.0**   * 64bit Debian jessie v2\.10\.0 running GlassFish 4\.1 Java 8 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 17\.12\.1\-ce  |  Debian Jessie  |  Java 8  |  nginx 1\.12\.1  |  Glassfish 4\.1  |  amazon/aws\-eb\-glassfish:4\.1\-jdk8\-onbuild\-3\.5\.1  | 
+|   **Glassfish 4\.0 \(Docker\) version 2\.10\.0**   * 64bit Debian jessie v2\.10\.0 running GlassFish 4\.0 Java 7 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 17\.12\.1\-ce  |  Debian Jessie  |  Java 7  |  nginx 1\.12\.1  |  Glassfish 4\.0  |  amazon/aws\-eb\-glassfish:4\.0\-jdk7\-onbuild\-3\.5\.1  | 
+|   **Go 1\.4 \(Docker\) version 2\.10\.0**   * 64bit Debian jessie v2\.10\.0 running Go 1\.4 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 17\.12\.1\-ce  |  Debian Jessie  |  Go 1\.4\.2  |  nginx 1\.12\.1  |  none  |  golang:1\.4\.2\-onbuild  | 
+|   **Go 1\.3 \(Docker\) version 2\.10\.0**   * 64bit Debian jessie v2\.10\.0 running Go 1\.3 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 17\.12\.1\-ce  |  Debian Jessie  |  Go 1\.3\.3  |  nginx 1\.12\.1  |  none  |  golang:1\.3\.3\-onbuild  | 
+|   **Python 3\.4 with uWSGI 2 \(Docker\) version 2\.10\.0**   * 64bit Debian jessie v2\.10\.0 running Python 3\.4 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 17\.12\.1\-ce  |  Debian Jessie  |  Python 3\.4  |  nginx 1\.12\.1  |  uWSGI 2\.0\.8  |  amazon/aws\-eb\-python:3\.4\.2\-onbuild\-3\.5\.1  | 
 
 For information about previous configurations, see [Preconfigured Docker Platform History](platform-history-preconfigureddocker.md)\.
 
@@ -99,7 +99,7 @@ Elastic Beanstalk supports the following Go configurations\.
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  Proxy Server  | 
 | --- | --- | --- | --- | 
-|   **Go 1\.10 version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Go 1\.10*   |  2018\.03\.0  |  Go 1\.10  |  nginx 1\.12\.1  | 
+|   **Go 1\.10 version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Go 1\.10 *   |  2018\.03\.0  |  Go 1\.10  |  nginx 1\.12\.1  | 
 
 For information about previous configurations, see [Go Platform History](platform-history-go.md)\.
 
@@ -112,8 +112,8 @@ Elastic Beanstalk supports the following Java SE configurations\.
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  Tools  |  AWS X‑Ray  |  Proxy Server  | 
 | --- | --- | --- | --- | --- | --- | 
-|   **Java 8 version 2\.7\.1**   *64bit Amazon Linux 2018\.03 v2\.7\.1 running Java 8*   |  2018\.03\.0  |  Java 1\.8\.0\_171  |  Ant 1\.9\.6, Gradle 2\.7, Maven 3\.3\.3  |  2\.0\.0  |  nginx 1\.12\.1  | 
-|   **Java 7 version 2\.7\.1**   *64bit Amazon Linux 2018\.03 v2\.7\.1 running Java 7*   |  2018\.03\.0  |  Java 1\.7\.0\_181  |  Ant 1\.9\.6, Gradle 2\.7, Maven 3\.3\.3  |  2\.0\.0  |  nginx 1\.12\.1  | 
+|   **Java 8 version 2\.7\.1**   * 64bit Amazon Linux 2018\.03 v2\.7\.1 running Java 8 *   |  2018\.03\.0  |  Java 1\.8\.0\_171  |  Ant 1\.9\.6, Gradle 2\.7, Maven 3\.3\.3  |  2\.0\.0  |  nginx 1\.12\.1  | 
+|   **Java 7 version 2\.7\.1**   * 64bit Amazon Linux 2018\.03 v2\.7\.1 running Java 7 *   |  2018\.03\.0  |  Java 1\.7\.0\_181  |  Ant 1\.9\.6, Gradle 2\.7, Maven 3\.3\.3  |  2\.0\.0  |  nginx 1\.12\.1  | 
 
 For information about previous configurations, see [Java SE Platform History](platform-history-javase.md)\.
 
@@ -126,10 +126,10 @@ Elastic Beanstalk supports the following Tomcat configurations\.
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  AWS X‑Ray  |  Application Server  |  Proxy Server  | 
 | --- | --- | --- | --- | --- | --- | 
-|   **Java 8 with Tomcat 8\.5 version 3\.0\.0**   *64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 8\.5 Java 8*   |  2018\.03\.0  |  Java 1\.8\.0\_171  |  2\.0\.0  |  Tomcat 8\.5\.29  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
-|   **Java 8 with Tomcat 8 version 3\.0\.0**   *64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 8 Java 8*   |  2018\.03\.0  |  Java 1\.8\.0\_171  |  2\.0\.0  |  Tomcat 8\.0\.50  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
-|   **Java 7 with Tomcat 7 version 3\.0\.0**   *64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 7 Java 7*   |  2018\.03\.0  |  Java 1\.7\.0\_181  |  2\.0\.0  |  Tomcat 7\.0\.85  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
-|   **Java 6 with Tomcat 7 version 3\.0\.0**   *64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 7 Java 6*   |  2018\.03\.0  |  Java 1\.6\.0\_41  |  2\.0\.0  |  Tomcat 7\.0\.85  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
+|   **Java 8 with Tomcat 8\.5 version 3\.0\.0**   * 64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 8\.5 Java 8 *   |  2018\.03\.0  |  Java 1\.8\.0\_171  |  2\.0\.0  |  Tomcat 8\.5\.29  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
+|   **Java 8 with Tomcat 8 version 3\.0\.0**   * 64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 8 Java 8 *   |  2018\.03\.0  |  Java 1\.8\.0\_171  |  2\.0\.0  |  Tomcat 8\.0\.50  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
+|   **Java 7 with Tomcat 7 version 3\.0\.0**   * 64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 7 Java 7 *   |  2018\.03\.0  |  Java 1\.7\.0\_181  |  2\.0\.0  |  Tomcat 7\.0\.85  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
+|   **Java 6 with Tomcat 7 version 3\.0\.0**   * 64bit Amazon Linux 2018\.03 v3\.0\.0 running Tomcat 7 Java 6 *   |  2018\.03\.0  |  Java 1\.6\.0\_41  |  2\.0\.0  |  Tomcat 7\.0\.85  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
 
 For information about previous configurations, see [Tomcat Platform History](platform-history-java.md)\.
 
@@ -158,16 +158,16 @@ Elastic Beanstalk supports the following \.NET configurations\.
 
 |  Configuration  |  Solution Stack Name  |  Framework  |  Proxy Server  | 
 | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |   *64bit Windows Server 2016 v1\.2\.0 running IIS 10\.0*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |   *64bit Windows Server Core 2016 v1\.2\.0 running IIS 10\.0*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
-|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |   *64bit Windows Server 2012 R2 v1\.2\.0 running IIS 8\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
-|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |   *64bit Windows Server Core 2012 R2 v1\.2\.0 running IIS 8\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
-|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |   *64bit Windows Server 2012 v1\.2\.0 running IIS 8*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
-|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |   *64bit Windows Server 2008 R2 v1\.2\.0 running IIS 7\.5*   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
-|   **Windows Server 2012 R2 with IIS 8\.5**   |   *64bit Windows Server 2012 R2 running IIS 8\.5*   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
-|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |   *64bit Windows Server Core 2012 R2 running IIS 8\.5*   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
-|   **Windows Server 2012 with IIS 8**   |   *64bit Windows Server 2012 running IIS 8*   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
-|   **Windows Server 2008 R2 with IIS 7\.5**   |   *64bit Windows Server 2008 R2 running IIS 7\.5*   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |   * 64bit Windows Server 2016 v1\.2\.0 running IIS 10\.0 *   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |   * 64bit Windows Server Core 2016 v1\.2\.0 running IIS 10\.0 *   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |   * 64bit Windows Server 2012 R2 v1\.2\.0 running IIS 8\.5 *   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |   * 64bit Windows Server Core 2012 R2 v1\.2\.0 running IIS 8\.5 *   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |   * 64bit Windows Server 2012 v1\.2\.0 running IIS 8 *   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
+|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |   * 64bit Windows Server 2008 R2 v1\.2\.0 running IIS 7\.5 *   |  \.NET Core 2\.0, supports 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
+|   **Windows Server 2012 R2 with IIS 8\.5**   |   * 64bit Windows Server 2012 R2 running IIS 8\.5 *   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |   * 64bit Windows Server Core 2012 R2 running IIS 8\.5 *   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 with IIS 8**   |   * 64bit Windows Server 2012 running IIS 8 *   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
+|   **Windows Server 2008 R2 with IIS 7\.5**   |   * 64bit Windows Server 2008 R2 running IIS 7\.5 *   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
 
 ### More details<a name="concepts.platforms.net.details"></a>
 
@@ -200,7 +200,7 @@ Elastic Beanstalk supports the following Node\.js configurations\.
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Node\.js version \(npm version\)  |  Proxy Server  |  Git  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | 
-|   **Node\.js version 4\.5\.0**   *64bit Amazon Linux 2018\.03 v4\.5\.0 running Node\.js*   |  2018\.03\.0  |  8\.11\.1\(5\.6\.0\), 8\.10\.0 \(5\.6\.0\), 7\.10\.1 \(4\.2\.0\), 6\.14\.1\(3\.10\.10\), 6\.13\.1 \(3\.10\.10\), 5\.12\.0 \(3\.8\.6\), 4\.9\.1\(2\.15\.11\), 4\.8\.7 \(2\.15\.11\)  Default platform: 6\.13\.1  |  nginx 1\.12\.1, Apache 2\.4\.27  |  2\.13\.6  |  2\.0\.0  | 
+|   **Node\.js version 4\.5\.0**   * 64bit Amazon Linux 2018\.03 v4\.5\.0 running Node\.js *   |  2018\.03\.0  |  8\.11\.1\(5\.6\.0\), 8\.10\.0 \(5\.6\.0\), 7\.10\.1 \(4\.2\.0\), 6\.14\.1\(3\.10\.10\), 6\.13\.1 \(3\.10\.10\), 5\.12\.0 \(3\.8\.6\), 4\.9\.1\(2\.15\.11\), 4\.8\.7 \(2\.15\.11\)  Default platform: 6\.13\.1  |  nginx 1\.12\.1, Apache 2\.4\.27  |  2\.13\.6  |  2\.0\.0  | 
 
 For information about previous configurations, see [Node\.js Platform History](platform-history-nodejs.md)\.
 
@@ -217,11 +217,11 @@ Elastic Beanstalk supports the following PHP configurations\.
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  Composer  |  Proxy Server  | 
 | --- | --- | --- | --- | --- | 
-|   **PHP 7\.1 version 2\.7\.0**   *64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 7\.1*   |  2018\.03\.0  |  PHP 7\.1\.15  |  1\.4\.2  |  Apache 2\.4\.27  | 
-|   **PHP 7\.0 version 2\.7\.0**   *64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 7\.0*   |  2018\.03\.0  |  PHP 7\.0\.29  |  1\.4\.2  |  Apache 2\.4\.27  | 
-|   **PHP 5\.6 version 2\.7\.0**   *64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 5\.6*   |  2018\.03\.0  |  PHP 5\.6\.35  |  1\.4\.2  |  Apache 2\.4\.27  | 
-|   **PHP 5\.5 version 2\.7\.0**   *64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 5\.5*   |  2018\.03\.0  |  PHP 5\.5\.38  |  1\.4\.2  |  Apache 2\.4\.27  | 
-|   **PHP 5\.4 version 2\.7\.0**   *64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 5\.4*   |  2018\.03\.0  |  PHP 5\.4\.45  |  1\.4\.2  |  Apache 2\.4\.27  | 
+|   **PHP 7\.1 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 7\.1 *   |  2018\.03\.0  |  PHP 7\.1\.15  |  1\.4\.2  |  Apache 2\.4\.27  | 
+|   **PHP 7\.0 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 7\.0 *   |  2018\.03\.0  |  PHP 7\.0\.29  |  1\.4\.2  |  Apache 2\.4\.27  | 
+|   **PHP 5\.6 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 5\.6 *   |  2018\.03\.0  |  PHP 5\.6\.35  |  1\.4\.2  |  Apache 2\.4\.27  | 
+|   **PHP 5\.5 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 5\.5 *   |  2018\.03\.0  |  PHP 5\.5\.38  |  1\.4\.2  |  Apache 2\.4\.27  | 
+|   **PHP 5\.4 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 5\.4 *   |  2018\.03\.0  |  PHP 5\.4\.45  |  1\.4\.2  |  Apache 2\.4\.27  | 
 
 For information about previous configurations, see [PHP Platform History](platform-history-php.md)\.
 
@@ -234,10 +234,10 @@ Elastic Beanstalk supports the following Python configurations\.
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  Package Manager  |  Packager  |  meld3  |  AWS X‑Ray  |  Proxy Server  | 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-|   **Python 3\.6 version 2\.7\.0**   *64bit Amazon Linux 2018\.03 v2\.7\.0 running Python 3\.6*   |  2018\.03\.0  |  Python 3\.6\.5  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
-|   **Python 3\.4 version 2\.7\.0**   *64bit Amazon Linux 2018\.03 v2\.7\.0 running Python 3\.4*   |  2018\.03\.0  |  Python 3\.4\.8  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
-|   **Python 2\.7 version 2\.7\.0**   *64bit Amazon Linux 2018\.03 v2\.7\.0 running Python 2\.7*   |  2018\.03\.0  |  Python 2\.7\.13  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
-|   **Python 2\.6 version 2\.7\.0**   *64bit Amazon Linux 2018\.03 v2\.7\.0 running Python 2\.6*   |  2018\.03\.0  |  Python 2\.6\.9  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
+|   **Python 3\.6 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running Python 3\.6 *   |  2018\.03\.0  |  Python 3\.6\.5  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
+|   **Python 3\.4 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running Python 3\.4 *   |  2018\.03\.0  |  Python 3\.4\.8  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
+|   **Python 2\.7 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running Python 2\.7 *   |  2018\.03\.0  |  Python 2\.7\.13  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
+|   **Python 2\.6 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running Python 2\.6 *   |  2018\.03\.0  |  Python 2\.6\.9  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
 
 For information about previous configurations, see [Python Platform History](platform-history-python.md)\.
 
@@ -250,18 +250,18 @@ Elastic Beanstalk supports the following Ruby configurations\.
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  Package Manager  |  Application Server  |  Proxy Server  | 
 | --- | --- | --- | --- | --- | --- | 
-|   **Ruby 2\.5 with Puma version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.5 \(Puma\)*   |  2018\.03\.0  |  Ruby 2\.5\.1\-p57  |  RubyGems 2\.7\.6  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
-|   **Ruby 2\.5 with Passenger version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.5 \(Passenger Standalone\)*   |  2018\.03\.0  |  Ruby 2\.5\.1\-p57  |  RubyGems 2\.7\.6  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
-|   **Ruby 2\.4 with Puma version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.4 \(Puma\)*   |  2018\.03\.0  |  Ruby 2\.4\.4\-p296  |  RubyGems 2\.7\.6  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
-|   **Ruby 2\.4 with Passenger version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.4 \(Passenger Standalone\)*   |  2018\.03\.0  |  Ruby 2\.4\.4\-p296  |  RubyGems 2\.7\.6  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
-|   **Ruby 2\.3 with Puma version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.3 \(Puma\)*   |  2018\.03\.0  |  Ruby 2\.3\.7\-p456  |  RubyGems 2\.7\.6  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
-|   **Ruby 2\.3 with Passenger version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.3 \(Passenger Standalone\)*   |  2018\.03\.0  |  Ruby 2\.3\.7\-p456  |  RubyGems 2\.7\.6  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
-|   **Ruby 2\.2 with Puma version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.2 \(Puma\)*   |  2018\.03\.0  |  Ruby 2\.2\.10\-p489  |  RubyGems 2\.7\.6  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
-|   **Ruby 2\.2 with Passenger version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.2 \(Passenger Standalone\)*   |  2018\.03\.0  |  Ruby 2\.2\.10\-p489  |  RubyGems 2\.7\.6  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
-|   **Ruby 2\.1 with Puma version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.1 \(Puma\)*   |  2018\.03\.0  |  Ruby 2\.1\.10\-p492  |  RubyGems 2\.6\.13  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
-|   **Ruby 2\.1 with Passenger version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.1 \(Passenger Standalone\)*   |  2018\.03\.0  |  Ruby 2\.1\.10\-p492  |  RubyGems 2\.6\.13  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
-|   **Ruby 2\.0 with Puma version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.0 \(Puma\)*   |  2018\.03\.0  |  Ruby 2\.0\.0\-p648  |  RubyGems 2\.6\.13  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
-|   **Ruby 2\.0 with Passenger version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.0 \(Passenger Standalone\)*   |  2018\.03\.0  |  Ruby 2\.0\.0\-p648  |  RubyGems 2\.6\.13  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
-|   **Ruby 1\.9 with Passenger version 2\.8\.0**   *64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 1\.9\.3*   |  2018\.03\.0  |  Ruby 1\.9\.3\-p551  |  RubyGems 2\.6\.13  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.5 with Puma version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.5 \(Puma\) *   |  2018\.03\.0  |  Ruby 2\.5\.1\-p57  |  RubyGems 2\.7\.6  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.5 with Passenger version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.5 \(Passenger Standalone\) *   |  2018\.03\.0  |  Ruby 2\.5\.1\-p57  |  RubyGems 2\.7\.6  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.4 with Puma version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.4 \(Puma\) *   |  2018\.03\.0  |  Ruby 2\.4\.4\-p296  |  RubyGems 2\.7\.6  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.4 with Passenger version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.4 \(Passenger Standalone\) *   |  2018\.03\.0  |  Ruby 2\.4\.4\-p296  |  RubyGems 2\.7\.6  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.3 with Puma version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.3 \(Puma\) *   |  2018\.03\.0  |  Ruby 2\.3\.7\-p456  |  RubyGems 2\.7\.6  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.3 with Passenger version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.3 \(Passenger Standalone\) *   |  2018\.03\.0  |  Ruby 2\.3\.7\-p456  |  RubyGems 2\.7\.6  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.2 with Puma version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.2 \(Puma\) *   |  2018\.03\.0  |  Ruby 2\.2\.10\-p489  |  RubyGems 2\.7\.6  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.2 with Passenger version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.2 \(Passenger Standalone\) *   |  2018\.03\.0  |  Ruby 2\.2\.10\-p489  |  RubyGems 2\.7\.6  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.1 with Puma version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.1 \(Puma\) *   |  2018\.03\.0  |  Ruby 2\.1\.10\-p492  |  RubyGems 2\.6\.13  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.1 with Passenger version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.1 \(Passenger Standalone\) *   |  2018\.03\.0  |  Ruby 2\.1\.10\-p492  |  RubyGems 2\.6\.13  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.0 with Puma version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.0 \(Puma\) *   |  2018\.03\.0  |  Ruby 2\.0\.0\-p648  |  RubyGems 2\.6\.13  |  Puma 2\.16\.0  |  nginx 1\.12\.1  | 
+|   **Ruby 2\.0 with Passenger version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 2\.0 \(Passenger Standalone\) *   |  2018\.03\.0  |  Ruby 2\.0\.0\-p648  |  RubyGems 2\.6\.13  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
+|   **Ruby 1\.9 with Passenger version 2\.8\.0**   * 64bit Amazon Linux 2018\.03 v2\.8\.0 running Ruby 1\.9\.3 *   |  2018\.03\.0  |  Ruby 1\.9\.3\-p551  |  RubyGems 2\.6\.13  |  Passenger 4\.0\.60  |  nginx 1\.12\.1  | 
 
 For information about previous configurations, see [Ruby Platform History](platform-history-ruby.md)\.

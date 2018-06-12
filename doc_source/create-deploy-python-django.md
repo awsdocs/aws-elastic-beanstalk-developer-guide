@@ -15,7 +15,7 @@ This tutorial walks through the deployment of a default [Django](https://www.dja
 
 To use any Amazon Web Service \(AWS\), including Elastic Beanstalk, you need to have an AWS account and credentials\. To learn more and to sign up, visit [https://aws\.amazon\.com/](https://aws.amazon.com/)\.
 
-To follow this tutorial, you should have all of the [Common Prerequisites](create-deploy-python-common-steps.md) for Python installed, including the following packages:
+To follow this tutorial, you should have all of the [Common Prerequisites](python-development-environment.md) for Python installed, including the following packages:
 + Python 2\.7
 + pip
 + virtualenv
