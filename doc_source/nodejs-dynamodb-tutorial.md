@@ -50,7 +50,7 @@ You can run all commands in this tutorial on a Linux virtual machine, and OS X m
   1. Open a new command prompt window and run the `zip` command to verify that it works:
 
      ```
-     > zip
+     > zip -h
      Copyright (C) 1990-1999 Info-ZIP
      Type 'zip "-L"' for software license.
      ...

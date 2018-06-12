@@ -57,7 +57,7 @@ This tutorial uses a command line ZIP utility to create a source bundle that you
 1. Open a new command prompt window and run the `zip` command to verify that it works:
 
    ```
-   > zip
+   > zip -h
    Copyright (C) 1990-1999 Info-ZIP
    Type 'zip "-L"' for software license.
    ...
