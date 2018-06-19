@@ -28,7 +28,7 @@ The value in the **Custom AMI ID** field is the stock Elastic Beanstalk AMI for 
 **Note**  
 Do not create an AMI from an instance that has been launched in an Elastic Beanstalk environment\. Elastic Beanstalk makes changes to instances during provisioning that can cause issues in the saved AMI\. Saving an image from an instance in an Elastic Beanstalk environment will also make the version of your application that was deployed to the instance a fixed part of the image\.
 
-It is also possible to create a custom AMI from a community AMI that wasn't published by Elastic Beanstalk\. You can use the latest [Amazon Linux](https://aws.amazon.com//amazon-linux-ami/) AMI as a starting point\. When you launch an environment with a Linux AMI that isn't managed by Elastic Beanstalk, Elastic Beanstalk attempts to install platform software \(language, framework, proxy server, etc\.\) and additional components to support features such as [Enhanced Health Reporting](health-enhanced.md)\. 
+It is also possible to create a custom AMI from a community AMI that wasn't published by Elastic Beanstalk\. You can use the latest [Amazon Linux](https://aws.amazon.com/amazon-linux-ami/) AMI as a starting point\. When you launch an environment with a Linux AMI that isn't managed by Elastic Beanstalk, Elastic Beanstalk attempts to install platform software \(language, framework, proxy server, etc\.\) and additional components to support features such as [Enhanced Health Reporting](health-enhanced.md)\. 
 
 **Note**  
 AMIs that aren't managed by Elastic Beanstalk aren't supported for Windows Server\-based Elastic Beanstalk platforms\.

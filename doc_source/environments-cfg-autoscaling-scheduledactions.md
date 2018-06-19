@@ -114,7 +114,7 @@ This configuration file instructs Elastic Beanstalk to scale in to no running in
 
 ```
 option_settings:
-  ScheduledPeriodicScaleDown.aws:autoscaling:scheduledaction:
+  ScheduledPeriodicScaleUp.aws:autoscaling:scheduledaction:
     MinSize: '0'
     MaxSize: '1'
     DesiredCapacity: '0'

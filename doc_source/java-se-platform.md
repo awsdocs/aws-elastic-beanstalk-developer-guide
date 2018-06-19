@@ -2,6 +2,9 @@
 
 The AWS Elastic Beanstalk Java SE platform is a set of [environment configurations](concepts.platforms.md#concepts.platforms.javase) for Java web applications that can run on their own from a compiled JAR file\. You can compile your application locally or upload the source code with a build script to compile it on\-instance\. Each configuration corresponds to a major version of Java, including *Java 8* and *Java 7*\.
 
+**Note**  
+Elastic Beanstalk doesn't parse your application's JAR file\. Keep files that Elastic Beanstalk needs outside of the JAR file\. For example, include the `cron.yaml` file of a [worker environment](using-features-managing-env-tiers.md) at the root of your application's source bundle, next to the JAR file\.
+
 Platform\-specific configuration options are available in the AWS Management Console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
 
 To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.

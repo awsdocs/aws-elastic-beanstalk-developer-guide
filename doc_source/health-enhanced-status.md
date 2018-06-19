@@ -75,3 +75,13 @@ Message: Performing initialization \(running for 12 seconds\)
 Elastic Beanstalk and the health agent are reporting an insufficient amount of data on an **instance**\.
 
 Example: No data is being received\.
+
+## Suspended \(Grey\)<a name="health-enhanced-status-suspended"></a>
+
+Elastic Beanstalk stopped monitoring the environment's health\. The environment might not work correctly\. Some severe health conditions, if they last a long time, cause Elastic Beanstalk to transition the environment to the Suspended status\.
+
+Example: Elastic Beanstalk can't access the environment's [service role](iam-servicerole.md)\.
+
+Example: The [Auto Scaling group](using-features.managing.as.md) that Elastic Beanstalk created for the environment has been deleted\.
+
+Message: Environment health has transitioned from Ok to Severe\. There are no instances\. Auto Scaling group desired capacity is set to 1\.

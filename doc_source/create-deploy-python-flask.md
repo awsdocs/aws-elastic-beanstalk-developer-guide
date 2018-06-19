@@ -44,8 +44,8 @@ Create a project directory and virtual environment for your application, and ins
 
    ```
    ~/eb-flask$ virtualenv virt
-   ~$ source ~/virt/bin/activate
-   (virt) ~$
+   ~$ source virt/bin/activate
+   (virt) ~/eb-flask$
    ```
 
    You will see `(virt)` prepended to your command prompt, indicating that you're in a virtual environment\. Use the virtual environment for the rest of this tutorial\.

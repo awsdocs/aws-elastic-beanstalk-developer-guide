@@ -2,6 +2,8 @@
 
 The following example configuration file [extends the default nginx configuration](nodejs-platform-proxy.md) to listen on port 443 and terminate SSL/TLS connections with a public certificate and private key\.
 
+If you configured your environment for [enhanced health reporting](health-enhanced.md), you need to configure nginx to generate access logs\. To do that, uncomment the block of lines under the comment that reads `# For enhanced health...` by removing the leading `#` characters\.
+
 **Example \.ebextensions/https\-instance\.config**  
 
 ```
@@ -25,6 +27,17 @@ files:
           
           ssl_protocols  TLSv1 TLSv1.1 TLSv1.2;
           ssl_prefer_server_ciphers   on;
+
+          # For enhanced health reporting support, uncomment this block:
+
+          #if ($time_iso8601 ~ "^(\d{4})-(\d{2})-(\d{2})T(\d{2})") {
+          #    set $year $1;
+          #    set $month $2;
+          #    set $day $3;
+          #    set $hour $4;
+          #}
+          #access_log /var/log/nginx/healthd/application.log.$year-$month-$day-$hour healthd;
+          #access_log  /var/log/nginx/access.log  main;
           
           location / {
               proxy_pass  http://nodejs;

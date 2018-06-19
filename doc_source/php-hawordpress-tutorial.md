@@ -108,7 +108,7 @@ To prepare to deploy WordPress using AWS Elastic Beanstalk, you must copy the Wo
 1. Download the configuration files from the sample repository:
 
    ```
-   ~$ wget https://github.com/aws-samples/eb-php-wordpress/releases/download/v1.0/eb-php-wordpress-v1.zip
+   ~$ wget https://github.com/aws-samples/eb-php-wordpress/releases/download/v1.1/eb-php-wordpress-v1.zip
    ```
 
 1. Extract WordPress and change the name of the folder\.

@@ -24,9 +24,9 @@ On supported platforms, you can use a configuration option to run the X\-Ray dae
 **Note**  
 To upload data to X\-Ray, the X\-Ray daemon requires IAM permissions in the **AWSXrayWriteOnlyAccess** managed policy\. These permissions are included in [the Elastic Beanstalk instance profile](concepts-roles-instance.md)\. If you don't use the default instance profile, see [Giving the Daemon Permission to Send Data to X\-Ray](http://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html#xray-daemon-permissions)\.
 
-Debugging with AWS X\-Ray requires the use of the AWS X\-Ray SDK\. See the [AWS X\-Ray Developer Guide](http://docs.aws.amazon.com//xray/latest/devguide/xray-gettingstarted.html) for instructions and sample applications\.
+Debugging with AWS X\-Ray requires the use of the AWS X\-Ray SDK\. See the [AWS X\-Ray Developer Guide](http://docs.aws.amazon.com/xray/latest/devguide/xray-gettingstarted.html) for instructions and sample applications\.
 
-If you use a platform configuration that doesn't include the daemon, you can still run it with a script in a configuration file\. For more information, see [ Downloading and Running the X\-Ray Daemon Manually \(Advanced\)](http://docs.aws.amazon.com//xray/latest/devguide/xray-daemon-beanstalk.html#xray-daemon-beanstalk-manual) in the *AWS X\-Ray Developer Guide*\.
+If you use a platform configuration that doesn't include the daemon, you can still run it with a script in a configuration file\. For more information, see [ Downloading and Running the X\-Ray Daemon Manually \(Advanced\)](http://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-beanstalk.html#xray-daemon-beanstalk-manual) in the *AWS X\-Ray Developer Guide*\.
 
 **Topics**
 + [Configuring Debugging](#environment-configuration-debugging-console)

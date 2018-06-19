@@ -175,7 +175,7 @@ In EC2\-Classic, your DB instance will have a DB security group instead of a VPC
 
 **To create a bridge security group**
 
-1. Open the [Amazon EC2 console](https://console.aws.amazon.com//ec2/v2/home)\.
+1. Open the [Amazon EC2 console](https://console.aws.amazon.com/ec2/v2/home)\.
 
 1. Choose **Security Groups** under **Network & Security** in the navigation sidebar\.
 
