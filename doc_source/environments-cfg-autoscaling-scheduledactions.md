@@ -100,7 +100,7 @@ This configuration file instructs Elastic Beanstalk to scale out every day at 9A
 
 ```
 option_settings:
-  ScheduledPeriodicScaleUp.aws:autoscaling:scheduledaction:
+  ScheduledPeriodicScaleDown.aws:autoscaling:scheduledaction:
     MinSize: '5'
     MaxSize: '10'
     DesiredCapacity: '5'
