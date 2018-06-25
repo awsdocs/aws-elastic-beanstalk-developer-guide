@@ -4,6 +4,19 @@ This page lists the previous versions of AWS Elastic Beanstalk's PHP platforms a
 
 See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
+The following Elastic Beanstalk platform configurations for PHP were current between May 11, 2018 and June 20, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  Composer  |  Proxy Server  | 
+| --- | --- | --- | --- | --- | 
+|   **PHP 7\.1 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 7\.1 *   |  2018\.03\.0  |  PHP 7\.1\.15  |  1\.4\.2  |  Apache 2\.4\.27  | 
+|   **PHP 7\.0 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 7\.0 *   |  2018\.03\.0  |  PHP 7\.0\.29  |  1\.4\.2  |  Apache 2\.4\.27  | 
+|   **PHP 5\.6 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 5\.6 *   |  2018\.03\.0  |  PHP 5\.6\.35  |  1\.4\.2  |  Apache 2\.4\.27  | 
+|   **PHP 5\.5 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 5\.5 *   |  2018\.03\.0  |  PHP 5\.5\.38  |  1\.4\.2  |  Apache 2\.4\.27  | 
+|   **PHP 5\.4 version 2\.7\.0**   * 64bit Amazon Linux 2018\.03 v2\.7\.0 running PHP 5\.4 *   |  2018\.03\.0  |  PHP 5\.4\.45  |  1\.4\.2  |  Apache 2\.4\.27  | 
+
 The following Elastic Beanstalk platform configurations for PHP were current between April 2, 2018 and May 10, 2018:
 
 

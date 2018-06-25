@@ -6,6 +6,15 @@ For Multicontainer Docker platform configurations that were current earlier than
 
 See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
+The following Elastic Beanstalk platform configurations for Multicontainer Docker were current between May 11, 2018 and June 20, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Docker Version  |  ECS Agent  | 
+| --- | --- | --- | --- | 
+|   **Multicontainer Docker 17\.12 version 2\.10\.0**   * 64bit Amazon Linux 2018\.03 v2\.10\.0 running Multi\-container Docker 17\.12\.1\-ce \(Generic\) *   |  2018\.03\.0  |  17\.12\.1\-ce  |  1\.17\.3  | 
+
 The following Elastic Beanstalk platform configurations for Multicontainer Docker were current between April 2, 2018 and May 10, 2018:
 
 
