@@ -70,13 +70,13 @@ You can use a mapping to store key\-value pairs organized by namespace\. A mappi
 Mappings: 
   Region2ELBAccountId: 
     us-east-1: 
-      AccountId: "127311923021"
+      AccountId: "111122223333"
     us-west-2: 
-      AccountId: "797873946194"
+      AccountId: "444455556666"
     us-west-1: 
-      AccountId: "027434742980"
+      AccountId: "123456789012"
     eu-west-1: 
-      AccountId: "156460612806"
+      AccountId: "777788889999"
 ...
             Principal: 
               AWS: 
