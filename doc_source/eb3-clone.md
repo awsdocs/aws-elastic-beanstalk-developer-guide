@@ -54,7 +54,7 @@ Environment details for: tmp-dev-clone
   Updated: 2014-10-29 22:00:23.008000+00:00
 Printing Status:
 INFO: createEnvironment is starting.
-INFO: Using elasticbeanstalk-us-west-2-888214631909 as Amazon S3 storage bucket for environment data.
+INFO: Using elasticbeanstalk-us-west-2-888888888888 as Amazon S3 storage bucket for environment data.
 INFO: Created load balancer named: awseb-e-v-AWSEBLoa-4X0VL5UVQ353
 INFO: Created security group named: awseb-e-vjvrqnn5pv-stack-AWSEBSecurityGroup-18AV9FGCH2HZM
 INFO: Created Auto Scaling launch configuration named: awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingLaunchConfiguration-FDUWRSZZ6L3Z
