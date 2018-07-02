@@ -95,7 +95,7 @@ The following Elastic Beanstalk platform configurations for Python were current 
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  Package Manager  |  Packager  |  meld3  |  AWS X‑Ray  |  Proxy Server  | 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-|   **Python 3\.6 version 2\.6\.0**   *64bit Amazon Linux 2017\.09 v2\.6\.0 running Python 3\.4*   |  2017\.09\.1  |  Python 3\.6\.2  |  pip 9\.0\.1  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
+|   **Python 3\.6 version 2\.6\.0**   *64bit Amazon Linux 2017\.09 v2\.6\.0 running Python 3\.6*   |  2017\.09\.1  |  Python 3\.6\.2  |  pip 9\.0\.1  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
 |   **Python 3\.4 version 2\.6\.0**   *64bit Amazon Linux 2017\.09 v2\.6\.0 running Python 3\.4*   |  2017\.09\.1  |  Python 3\.4\.3  |  pip 9\.0\.1  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
 |   **Python 2\.7 version 2\.6\.0**   *64bit Amazon Linux 2017\.09 v2\.6\.0 running Python 2\.7*   |  2017\.09\.1  |  Python 2\.7\.12  |  pip 9\.0\.1  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
 |   **Python 2\.6 version 2\.6\.0**   *64bit Amazon Linux 2017\.09 v2\.6\.0 running Python*   |  2017\.09\.1  |  Python 2\.6\.9  |  pip 9\.0\.1  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.27 with mod\_wsgi 3\.5  | 
