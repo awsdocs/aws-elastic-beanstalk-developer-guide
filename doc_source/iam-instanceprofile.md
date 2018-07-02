@@ -64,6 +64,17 @@ Elastic Beanstalk provides three managed policies: one for the web server tier, 
         "Resource": "*"
       },
       {
+        "Sid": "CloudWatchLogsAccess",
+        "Action": [
+            "logs:PutLogEvents",
+            "logs:CreateLogStream"
+        ],
+        "Effect": "Allow",
+        "Resource": [
+            "arn:aws:logs:*:*:log-group:/aws/elasticbeanstalk*"
+        ]
+      },
+      {
         "Sid": "XRayAccess",
         "Action":[
           "xray:PutTraceSegments",
