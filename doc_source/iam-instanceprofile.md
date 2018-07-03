@@ -92,8 +92,8 @@ Elastic Beanstalk provides three managed policies: one for the web server tier, 
         ],
         "Effect": "Allow",
         "Resource": [
-          "s3:::elasticbeanstalk-*",
-          "s3:::elasticbeanstalk-*/*"
+          "arn:aws:s3:::elasticbeanstalk-*",
+          "arn:aws:s3:::elasticbeanstalk-*/*"
         ]
       },
       {
@@ -110,7 +110,18 @@ Elastic Beanstalk provides three managed policies: one for the web server tier, 
         ],
         "Effect": "Allow",
         "Resource": [
-          "dynamodb:*:*:table/*-stack-AWSEBWorkerCronLeaderRegistry*"
+          "arn:aws:*:*:table/*-stack-AWSEBWorkerCronLeaderRegistry*"
+        ]
+      },
+      {
+        "Sid": "CloudWatchLogsAccess",
+        "Action": [
+          "logs:PutLogEvents",
+          "logs:CreateLogStream"
+        ],
+        "Effect": "Allow",
+        "Resource": [
+          "arn:aws:logs:*:*:log-group:/aws/elasticbeanstalk*"
         ]
       }
     ]
