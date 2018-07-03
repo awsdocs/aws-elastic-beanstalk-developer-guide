@@ -30,14 +30,17 @@ In Windows environments, Elastic Beanstalk supports downloading and installing M
 
 You can reference any external location, such as an Amazon Simple Storage Service \(Amazon S3\) object, as long as the URL is publicly accessible\.
 
+If you specify several `msi:` packages, their installation order isn't guaranteed\.
+
 ### Syntax<a name="windows-packages-syntax"></a>
 
-Specify a name of your choice as the package name, and a URL to an MSI file location as the value\.
+Specify a name of your choice as the package name, and a URL to an MSI file location as the value\. You can specify multiple packages under the `msi:` key\.
 
 ```
 packages: 
   msi:
     package name: package url
+    ...
 ```
 
 ### Examples<a name="windows-packages-snippet"></a>

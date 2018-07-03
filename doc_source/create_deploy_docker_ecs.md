@@ -144,7 +144,7 @@ See [Dockerrun\.aws\.json v2](create_deploy_docker_v2config.md#create_deploy_doc
 
 **To deploy an existing version**
 
-1. Open the Elastic Beanstalk console in your environment's region\.
+1. Open the in your environment's region\.
 
 1. Click **Actions** to the right of your application name and then click **View application versions**\.
 

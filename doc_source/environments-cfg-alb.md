@@ -77,6 +77,7 @@ If the **Load balancer** configuration card doesn't have a **Modify** button, yo
 + [Listeners](#environments-cfg-alb-console-listeners)
 + [Processes](#environments-cfg-alb-console-processes)
 + [Rules](#environments-cfg-alb-console-rules)
++ [Access Log Capture](#environments-cfg-alb-console-logs)
 + [Example: Application Load Balancer with a Secure Listener and Two Processes](#environments-cfg-alb-console-example)
 
 ### Listeners<a name="environments-cfg-alb-console-listeners"></a>
@@ -161,6 +162,12 @@ You can edit the settings of an existing rule, or add a new rule\. To start edit
 When editing any existing rule, you can't change its **Name** and **Listener port**\. When editing a default rule, **Process** is the only setting you can change\.
 
 ![\[Application Load Balancer configuration - rule list\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-rule-dialog.png)
+
+### Access Log Capture<a name="environments-cfg-alb-console-logs"></a>
+
+Use these settings to configure Elastic Load Balancing to capture logs with detailed information about requests sent to your Application Load Balancer\. Access log capture is disabled by default\. When enabled \(**Store logs**\), Elastic Load Balancing stores the logs in the Amazon S3 bucket that you configure \(**S3 bucket**\)\. The **Prefix** setting specifies a top\-level folder in the bucket for the logs\. Elastic Load Balancing places the logs in a folder named `AWSLogs` under your prefix\. If you don't specify a prefix, Elastic Load Balancing places its folder at the root level of the bucket\.
+
+![\[Application Load Balancer configuration - access logs\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-logs.png)
 
 ### Example: Application Load Balancer with a Secure Listener and Two Processes<a name="environments-cfg-alb-console-example"></a>
 

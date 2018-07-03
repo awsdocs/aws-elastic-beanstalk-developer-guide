@@ -285,11 +285,13 @@ If you see a "service role required" error message, run `eb create` interactivel
    ALLOWED_HOSTS = ['eb-django-app-dev.elasticbeanstalk.com']
    ```
 
-1. Save the file, and then deploy your application by running `eb deploy`:
+1. Save the file, and then deploy your application by running `eb deploy`\. When you run `eb deploy`, the EB CLI bundles up the contents of your project directory and deploys it to your environment\.
 
    ```
    ~/ebdjango$ eb deploy
    ```
+**Note**  
+If you are using Git with your project, see [Using the EB CLI with Git](eb3-cli-git.md)\.
 
 1. When the environment update process completes, open your web site with `eb open`:
 

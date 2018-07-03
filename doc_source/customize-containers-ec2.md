@@ -34,11 +34,18 @@ You can use the `packages` key to download and install prepackaged applications 
 packages: 
   name of package manager:
     package name: version
+    ...
+  name of package manager:
+    package name: version
+    ...
+  ...
 ```
+
+You can specify multiple packages under each package manager's key\.
 
 ### Supported Package Formats<a name="linux-packages-support"></a>
 
-Elastic Beanstalk currently supports the following package managers: yum, rubygems, python, and rpm\. Packages are processed in the following order: rpm, yum, and then rubygems and python\. There is no ordering between rubygems and python, and packages within each package manager are not guaranteed to be installed in any order\. Use a package manager supported by your operating system\.
+Elastic Beanstalk currently supports the following package managers: yum, rubygems, python, and rpm\. Packages are processed in the following order: rpm, yum, and then rubygems and python\. There is no ordering between rubygems and python\. Within each package manager, package installation order isn't guaranteed\. Use a package manager supported by your operating system\.
 
 **Note**  
 Elastic Beanstalk supports two underlying package managers for Python, pip and easy\_install\. However, in the syntax of the configuration file, you must specify the package manager name as `python`\. When you use a configuration file to specify a Python package manager, Elastic Beanstalk uses Python 2\.7\. If your application relies on a different version of Python, you can specify the packages to install in a `requirements.txt` file\. For more information, see [Requirements File](python-configuration-requirements.md)\.

@@ -32,7 +32,7 @@ The following example returns the most recent events\.
 ```
 $ eb events
 2014-10-29 21:55:39     INFO    createEnvironment is starting.
-2014-10-29 21:55:40     INFO    Using elasticbeanstalk-us-west-2-169465803350 as Amazon S3 storage bucket for environment data.
+2014-10-29 21:55:40     INFO    Using elasticbeanstalk-us-west-2-111122223333 as Amazon S3 storage bucket for environment data.
 2014-10-29 21:55:57     INFO    Created load balancer named: awseb-e-r-AWSEBLoa-NSKUOK5X6Z9J
 2014-10-29 21:56:16     INFO    Created security group named: awseb-e-rxgrhjr9bx-stack-AWSEBSecurityGroup-1UUHU5LZ20ZY7
 2014-10-29 21:56:20     INFO    Created Auto Scaling launch configuration named:awseb-e-rxgrhjr9bx-stack-AWSEBAutoScalingLaunchConfiguration-AG68JQHE9NWO
