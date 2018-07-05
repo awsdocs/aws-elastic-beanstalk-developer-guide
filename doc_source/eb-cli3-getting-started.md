@@ -5,6 +5,8 @@ After [installing the EB CLI](eb-cli3-install.md) and [configuring your project 
 **Note**  
 Creating environments with the EB CLI requires a [service role](concepts-roles-service.md)\. You can create a service role by creating an environment in the Elastic Beanstalk console\. If you don't have a service role, the EB CLI attempts to create one when you run `eb create`\.
 
+The EB CLI returns a zero \(`0`\) exit code for all successful commands, and a non\-zero exit code when it encounters any error\.
+
 The following examples use an empty project folder named `eb` that was initialized with the EB CLI for use with a sample Docker application\.
 
 **Topics**
@@ -105,7 +107,7 @@ Use eb events to see a list of events output by Elastic Beanstalk\.
 ```
 ~/eb$ eb events
 2015-06-29 23:21:09    INFO    createEnvironment is starting.
-2015-06-29 23:21:10    INFO    Using elasticbeanstalk-us-west-2-EXAMPLE as Amazon S3 storage bucket for environment data.
+2015-06-29 23:21:10    INFO    Using elasticbeanstalk-us-east-2-EXAMPLE as Amazon S3 storage bucket for environment data.
 2015-06-29 23:21:23    INFO    Created load balancer named: awseb-e-g-AWSEBLoa-EXAMPLE
 2015-06-29 23:21:42    INFO    Created security group named: awseb-e-gbzqc3jcra-stack-AWSEBSecurityGroup-EXAMPLE
 2015-06-29 23:21:45    INFO    Created Auto Scaling launch configuration named: awseb-e-gbzqc3jcra-stack-AWSEBAutoScalingLaunchConfiguration-EXAMPLE

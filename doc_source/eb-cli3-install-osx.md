@@ -33,7 +33,9 @@ You can install the latest version of Python and `pip` and then use them to inst
 
 **To install the EB CLI on macOS**
 
-1. Download and install Python 3\.4 from the [downloads page](https://www.python.org/downloads/release/python-344/) of [Python\.org](https://www.python.org)\.
+1. Download and install Python from the [downloads page](https://www.python.org/downloads/release/python) of [Python\.org](https://www.python.org)\. This tutorial uses version 3\.4 to demonstrate\.
+**Note**  
+The EB CLI requires Python 2 version 2\.7, or Python 3 in the versions range of 3\.4 to 3\.6\.
 
 1. Install `pip` with the script provided by the Python Packaging Authority\.
 
