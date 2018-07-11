@@ -153,7 +153,7 @@ aws:autoscaling:launchconfiguration:
     BlockDeviceMappings: null
     EC2KeyName: my-key
     IamInstanceProfile: aws-elasticbeanstalk-ec2-role
-    ImageId: ami-538a9563
+    ImageId: ami-1f316660
     InstanceType: t2.micro
 ...
 ```
@@ -173,7 +173,7 @@ aws:autoscaling:launchconfiguration:
        BlockDeviceMappings: null
        EC2KeyName: my-key
        IamInstanceProfile: aws-elasticbeanstalk-ec2-role
-       ImageId: ami-538a9563
+       ImageId: ami-1f316660
        InstanceType: t2.medium
    ```
 
@@ -200,7 +200,7 @@ You can also remove options from your environment with `eb config`\.<a name="con
        BlockDeviceMappings: null
        EC2KeyName: my-key
        IamInstanceProfile: aws-elasticbeanstalk-ec2-role
-       ImageId: ami-538a9563
+       ImageId: ami-1f316660
        InstanceType: null
    ```
 

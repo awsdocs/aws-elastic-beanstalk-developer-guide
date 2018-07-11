@@ -36,10 +36,13 @@ You can configure the following options:
 + **Engine version** – Choose a specific version of the database engine\.
 + **Instance class** – Choose the DB instance class\. For information about the DB instance classes, see [https://aws\.amazon\.com/rds/](http://aws.amazon.com/rds/)\.
 + **Storage** – Choose the amount of storage to provision for your database\. You can increase allocated storage later, but you cannot decrease it\. For information about storage allocation, see [Features](https://aws.amazon.com/rds/#features)\.
-+ **Username** – Type a user name using alphanumeric characters\.
-+ **Password** – Type a password containing 8–16 printable ASCII characters \(excluding `/`, `\`, and `@`\)\.
++ **Username** – Type a user name of your choice using alphanumeric characters\.
++ **Password** – Type a password of your choice containing 8–16 printable ASCII characters \(excluding `/`, `\`, and `@`\)\.
 + **Retention** – Choose **Create snapshot** to create a snapshot of the database when you terminate your environment\.
 + **Availability** – Choose **High \(Multi\-AZ\)** to run a warm backup in a second Availability Zone for high availability\.
+
+**Note**  
+Elastic Beanstalk creates a master user for the database using the user name and password you provide\. To learn more about the master user and its privileges, see [Master User Account Privileges](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.MasterAccounts.html)\.
 
 ![\[Elastic Beanstalk Auto Scaling Configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-rds-create.png)
 

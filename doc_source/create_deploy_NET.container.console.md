@@ -36,7 +36,7 @@ The Log Options section has two settings:
 
 ### Environment Properties<a name="dotnet-console-properties"></a>
 
-The **Environment Properties** section lets you specify environment configuration settings on the Amazon EC2 instances that are running your application\. These settings are passed in as key\-value pairs to the application\.
+The **Environment Properties** section lets you specify environment configuration settings on the Amazon EC2 instances that are running your application\. These settings are passed in as key\-value pairs to the application\. Use `System.GetEnvironmentVariable` to read them\. Identical keys can exist in both `web.config` and as environment properties\. Use the `System.Configuration` namespace to read values from `web.config`\.
 
 ```
 NameValueCollection appConfig = ConfigurationManager.AppSettings;

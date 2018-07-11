@@ -2,7 +2,7 @@
 
 Set up a Python development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
-To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings proceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
+To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings preceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
 
 ```
 ~/eb-project$ this is a command

@@ -87,7 +87,6 @@ option_settings:
     SecurityGroups: my-securitygroup
     EC2KeyName: my-keypair
     MonitoringInterval: "1 minute"
-    ImageId: "ami-cbab67a2"
     IamInstanceProfile: "ElasticBeanstalkProfile"
     BlockDeviceMappings: "/dev/sdj=:100,/dev/sdh=snap-51eef269,/dev/sdb=ephemeral0"
 ```

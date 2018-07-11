@@ -9,6 +9,8 @@ Bundle logs are full logs for a wider range of log files, including logs from yu
 **Note**  
 Elastic Beanstalk Windows Server platforms do not support bundle logs\.
 
+To upload rotated logs to Amazon S3, the instances in your environment must have an [instance profile](concepts-roles-instance.md) with permission to write to your Elastic Beanstalk Amazon S3 bucket\. These permissions are included in the default instance profile that Elastic Beanstalk prompts you to create when you launch an environment in the Elastic Beanstalk console for the first time\.
+
 To retrieve logs in the [environment management console](environments-console.md), navigate to **Logs**, choose **Request Logs**, and then choose the type of logs to retrieve\. To get tail logs, choose **Last 100 Lines**\. To get bundle logs, choose **Full Logs**\.
 
 ![\[Logs page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-logs.png)
@@ -18,8 +20,6 @@ When Elastic Beanstalk finishes retrieving your logs, choose **Download**\.
 Tail and bundle logs are removed from Amazon S3 15 minutes after they are created\. To persist logs, you can configure your environment to publish logs to Amazon S3 automatically after they are rotated\.
 
 To enable log rotation to Amazon S3, follow the procedure in [Configuring Instance Log Viewing](environments-cfg-logging.md#environments-cfg-logging-console)\. Instances in your environment will attempt to upload logs that have been rotated once per hour\.
-
-To upload rotated logs to Amazon S3, the instances in your environment must have an [instance profile](concepts-roles-instance.md) with permission to write to your Elastic Beanstalk Amazon S3 bucket\. These permissions are included in the default instance profile that Elastic Beanstalk prompts you to create when you launch an environment in the Elastic Beanstalk console for the first time\.
 
 If your application generates logs in a location that is not part of the default configuration for your environment's platform, you can extend the default configuration by using configuration files \(`[\.ebextensions](ebextensions.md)`\)\. You can add your application's log files to tail logs, bundle logs, or log rotation\.
 

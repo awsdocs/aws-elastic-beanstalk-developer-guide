@@ -6,7 +6,7 @@ This walkthrough shows how to deploy a simple [Sinatra](http://www.sinatrarb.com
 
 This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
 
-To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings proceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
+To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings preceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
 
 ```
 ~/eb-project$ this is a command
