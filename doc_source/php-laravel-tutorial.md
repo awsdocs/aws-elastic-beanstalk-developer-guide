@@ -158,9 +158,9 @@ Launch an RDS DB instance in your Elastic Beanstalk environment\. You can use My
 
 1. Choose **Configuration**\.
 
-1. In the **Data Tier** section, choose **create a new RDS database**\.
+1. On the **Database** configuration card, choose **Modify**\.
 
-1. For **DB engine**, choose **mysql**\.
+1. For **Engine**, choose **mysql**\.
 
 1. Type a master **username** and **password**\. Elastic Beanstalk will provide these values to your application using environment properties\.
 

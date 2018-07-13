@@ -257,7 +257,7 @@ The configuration files require modification to work with your account\. Replace
 **To update configuration files and create a source bundle\.**
 
 1. Modify the configuration files as follows\.
-   + `.ebextensions/dev.config` – restricts access to your environment to your IP address to protect it during the WordPress installation process\. Replace the placeholder IP address near the top of the file with your public IP address\.
+   + `.ebextensions/dev.config` – restricts access to your environment to your IP address to protect it during the WordPress installation process\. Replace the placeholder IP address near the top of the file with the public IP address of the computer you'll use to access your environment's web site to [complete your WordPress installation](#php-hawordpress-tutorial-install)\. Depending on your network topology, you might need to use an IP address block\.
    + `.ebextensions/efs-create.config` – creates an EFS file system and mount points in each Availability Zone / subnet in your VPC\. Identify your default VPC and subnet IDs in the [Amazon VPC console](https://console.aws.amazon.com/vpc/home#subnets:filter=default)\.
 
 1. Create a [source bundle](applications-sourcebundle.md) containing the files in your project folder\. The following command creates a source bundle named `wordpress-beanstalk.zip`\.

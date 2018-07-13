@@ -1,6 +1,6 @@
 # Logging Elastic Beanstalk API Calls with AWS CloudTrail<a name="AWSHowTo.cloudtrail"></a>
 
-Elastic Beanstalk is integrated with CloudTrail, a service that captures all of the Elastic BeanstalkAPI calls and delivers the log files to an Amazon S3 bucket that you specify\. CloudTrail captures API calls from the or from your code to the Elastic Beanstalk APIs\. Using the information collected by CloudTrail, you can determine the request that was made to Elastic Beanstalk, the source IP address from which the request was made, who made the request, when it was made, and so on\. 
+Elastic Beanstalk is integrated with CloudTrail, a service that captures all of the Elastic BeanstalkAPI calls and delivers the log files to an Amazon S3 bucket that you specify\. CloudTrail captures API calls from the Elastic Beanstalk console or from your code to the Elastic Beanstalk APIs\. Using the information collected by CloudTrail, you can determine the request that was made to Elastic Beanstalk, the source IP address from which the request was made, who made the request, when it was made, and so on\. 
 
 To learn more about CloudTrail, including how to configure and enable it, see the [AWS CloudTrail User Guide](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/)\.
 
