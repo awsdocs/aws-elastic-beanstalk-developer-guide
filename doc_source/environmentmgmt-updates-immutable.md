@@ -39,7 +39,7 @@ You can enable and configure immutable updates in the Elastic Beanstalk console\
 1. In the **Configuration Updates** section, set **Rolling update type** to **Immutable**\.  
 ![\[The configuration updates section on the modify rolling updates and deployments configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-mgmt-updates-immutable.png)
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 ## The aws:autoscaling:updatepolicy:rollingupdate namespace<a name="updates-immutable-namespace"></a>
 

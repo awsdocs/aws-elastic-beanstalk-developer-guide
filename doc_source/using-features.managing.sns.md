@@ -34,7 +34,7 @@ The Elastic Beanstalk console lets you enter an email address to create an Amazo
 1. Enter an email address\.  
 ![\[Elastic Beanstalk notifications configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-sns.png)
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 When you enter an email address for notifications, Elastic Beanstalk creates an Amazon SNS topic for your environment and adds a subscription\. Amazon SNS sends an email to the subscribed address to confirm the subscription\. You must click the link in the confirmation email to activate the subscription and receive notifications\.
 

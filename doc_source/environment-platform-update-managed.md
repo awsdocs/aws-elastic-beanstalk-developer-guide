@@ -28,7 +28,7 @@ Use the Elastic Beanstalk environment management console to enable managed platf
 
 1. \(optional\) Select **Instance replacement** to enable weekly instance replacement\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 Managed platform updates depend on [enhanced health reporting](health-enhanced.md) to determine that your application is healthy enough to consider the platform update successful\. See [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) for instructions\.
 

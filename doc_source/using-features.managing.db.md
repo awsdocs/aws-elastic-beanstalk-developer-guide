@@ -28,7 +28,7 @@ You can add a DB instance to your environment by using the Elastic Beanstalk con
 
 1. Choose a DB engine, and enter a user name and password\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 You can configure the following options:
 + **Snapshot** – Choose an existing database snapshot\. Elastic Beanstalk restores the snapshot and adds it to your environment\. The default value is **None**, which lets you configure a new database using the other settings on this page\.

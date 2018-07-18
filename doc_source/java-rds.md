@@ -16,7 +16,7 @@ If you are using Amazon RDS for the first time, add a DB instance to a test envi
 
 1. Choose a DB engine, and enter a user name and password\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 Adding a DB instance takes about 10 minutes\. When the environment update is complete, the DB instance's hostname and other connection information are available to your application through the following environment properties:
 + **RDS\_HOSTNAME** – The hostname of the DB instance\.

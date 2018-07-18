@@ -103,7 +103,7 @@ You can enable instance log streaming to CloudWatch Logs using the Elastic Beans
    + Set **Retention** to the number of days to save the logs\.
    + Select the **Lifecycle** setting that determines whether the logs are saved after the environment is terminated\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 The example in the following figure saves the logs for seven days and keeps the logs after terminating the environment\.
 

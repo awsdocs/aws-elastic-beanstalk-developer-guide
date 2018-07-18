@@ -28,7 +28,7 @@ You can configure the triggers that adjust the number of instances in your envir
    + **Scale down increment** – The number of Amazon EC2 instances to remove when performing a scaling activity\.  
 ![\[Elastic Beanstalk Auto Scaling triggers configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-autoscaling-triggers.png)
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 ## The aws:autoscaling:trigger Namespace<a name="environments-cfg-autoscaling-triggers-namespace"></a>
 

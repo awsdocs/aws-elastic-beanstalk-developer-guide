@@ -47,7 +47,7 @@ Environment properties appear in the Elastic Beanstalk console under **Software 
 
 1. Under **Environment properties**, enter key\-value pairs\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 **Environment Property Limits**
 + **Keys** can contain any alphanumeric characters and the following symbols: `_ . : / + \ - @`

@@ -45,7 +45,7 @@ If you use rolling updates, be sure that the maximum instance count is higher th
    + **Scaling cooldown** – The amount of time, in seconds, to wait for instances to launch or terminate after scaling, before continuing to evaluate triggers\. For more information, see [Scaling Cooldowns](http://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html)\.  
 ![\[Elastic Beanstalk Auto Scaling Configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-autoscaling.png)
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 ## The aws:autoscaling:asg Namespace<a name="environments-cfg-autoscaling-namespace"></a>
 

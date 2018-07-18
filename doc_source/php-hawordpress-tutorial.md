@@ -184,7 +184,7 @@ Add the security group of your DB instance to your running environment\. This pr
 
 1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 1. Read the warning, and then choose **Confirm**\.
 
@@ -216,7 +216,7 @@ Next, use environment properties to pass the connection information to your envi
    + **RDS\_PASSWORD** – The password that you configured for your database\.  
 ![\[Environment Properties section with RDS properties added\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 ## Configure and Deploy Your Application<a name="php-wordpress-tutorial-deploy"></a>
 
@@ -322,7 +322,7 @@ The hash salt can be any value that meets [environment property requirements](en
    + **LOGGED\_IN\_SALT** – The value chosen for LOGGED\_IN\_SALT\.
    + **NONCE\_SALT** — The value chosen for NONCE\_SALT\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 Setting the properties on the environment directly overrides the values in `wordpress.config`\.
 
@@ -378,7 +378,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. In the **Auto Scaling Group** section, set **Min instances** to **2**\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 To support content uploads across multiple instances, the sample project uses Amazon Elastic File System to create a shared file system\. Create a post on the site and upload content to store it on the shared file system\. View the post and refresh the page multiple times to hit both instances and verify that the shared file system is working\.
 

@@ -45,7 +45,7 @@ You can enable and configure rolling updates in the Elastic Beanstalk console\.
 
 1. Choose an **Update type** and batch settings\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 The **Configuration Updates** section of the **Rolling updates and deployments** page has the following options for rolling updates:
 + **Rolling update type** – Elastic Beanstalk waits after it finishes updating a batch of instances before moving on to the next batch, to allow those instances to finish bootstrapping and start serving traffic\. Choose from the following options:

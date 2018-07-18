@@ -49,7 +49,7 @@ If the **Load balancer** configuration card doesn't have a **Modify** button, yo
 **Note**  
 If the drop\-down menu doesn't show any certificates, you should create or upload a certificate in [AWS Certificate Manager \(ACM\)](http://docs.aws.amazon.com/acm/latest/userguide/) \(preferred\), or upload a certificate to IAM with the AWS CLI\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 ## Configuring a Secure Listener Using a Configuration File<a name="configuring-https-elb.configurationfile"></a>
 

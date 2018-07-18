@@ -140,7 +140,7 @@ Add the security group of your DB instance to your running environment\. This pr
 
 1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 1. Read the warning, and then choose **Confirm**\.
 
@@ -172,7 +172,7 @@ Next, use environment properties to pass the connection information to your envi
    + **RDS\_PASSWORD** – The password that you configured for your database\.  
 ![\[Environment Properties section with RDS properties added\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 After installing Drupal, you need to connect to the instance with SSH to retrieve some configuration details\. Assign an SSH key to your environment's instances\.
 
@@ -190,7 +190,7 @@ After installing Drupal, you need to connect to the instance with SSH to retriev
 
 1. For **EC2 key pair**, choose your key pair\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 ## Configure and Deploy Your Application<a name="php-hadrupal-tutorial-deploy"></a>
 
@@ -363,7 +363,7 @@ Assign the sync directory path and hash key to environment properties\. The cust
 
 1. Under **Environment properties**, enter key\-value pairs\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 Finally, the sample project includes a configuration file \(`loadbalancer-sg.config`\) that creates a security group and assigns it to the environment's load balancer, using the IP address that you configured in `dev.config` to restrict HTTP access on port 80 to connections from your network\. Otherwise, an outside party could potentially connect to your site before you have installed Drupal and configured your admin account\.
 
@@ -419,7 +419,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. In the **Auto Scaling Group** section, set **Min instances** to **2**\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 To support content uploads across multiple instances, the sample project uses Amazon Elastic File System to create a shared file system\. Create a post on the site and upload content to store it on the shared file system\. View the post and refresh the page multiple times to hit both instances and verify that the shared file system is working\.
 

@@ -35,6 +35,9 @@ Creates the private key file on the instance\. Replace *private key contents* wi
 + The `container_commands` key stops the httpd service after everything has been configured so that the service uses the new `https.conf` file and certificate\.
 + If your application is not named `application.py`, replace the highlighted text in the value for `WSGIScriptAlias` with the local path to your application\. For example, a django application's may be at `django/wsgi.py`\. The location should match the value of the `WSGIPath` option that you set for your environment\.
 
+**Note**  
+The example works only in environments using the [Python](create-deploy-python-container.md) platform\.
+
 **Example \.ebextensions/https\-instance\.config**  
 
 ```

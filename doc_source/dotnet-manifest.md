@@ -106,42 +106,37 @@ See [the tutorial](dotnet-core-tutorial.md) for a full example\.
 
 You can run multiple applications with a deployment manifest by defining multiple deployment targets\.
 
-The following deployment manifest runs a \.NET Standard web application at the root path using MS Deploy, and an ASP\.NET Core web application at `/admin`\. The front\-end web application is a standard [MS Deploy source bundle](applications-sourcebundle.md#using-features.deployment.source.dotnet) named `webapp.zip`, and the admin application is a \.NET Core site archive named `admin.zip`\.
+The following deployment manifest configures two \.NET Core applications\. The `WebAPITest` application implements a few web APIs and serves asynchronous requests at the `/api` path\. The `ASPNetTest` application is a web application that serves requests at the root path\.
 
 **Example aws\-windows\-deployment\-manifest\.json \- multiple apps**  
 
 ```
 {
-  "manifestVersion": 1,
-  "deployments": 
-  {
-    "msDeploy":
-    [{
-      "name": "Web app",
-      "parameters":
+  "manifestVersion":  1,
+  "deployments": {
+    "aspNetCoreWeb": [
       {
-        "appBundle": "webapp.zip",
-        "iisPath": "/",
-        "iisWebSite": "Default Web Site"
-      }
-    }],
-    "aspNetCoreWeb":
-    [{
-      "name": "Admin app",
-      "parameters": 
+        "name": "WebAPITest",
+        "parameters": {
+          "appBundle": "webapi.zip",
+          "iisPath": "/api"
+        }
+      },
       {
-        "appBundle": "admin.zip",
-        "iisPath": "/admin",
-        "iisWebSite": "Default Web Site"
+        "name": "ASPNetTest",
+        "parameters": {
+          "appBundle": "aspnet.zip",
+          "iisPath": "/"
+        }
       }
-    }]
+    ]
   }
 }
 ```
 
 A sample application with multiple applications is available here:
-+ **Deployable source bundle** \- [dotnet\-multiapp\-sample\-bundle\-v1\.zip](samples/dotnet-multiapp-sample-bundle-v1.zip)
-+ **Source code** \- [dotnet\-multiapp\-sample\-source\-v1\.zip](samples/dotnet-multiapp-sample-source-v1.zip)
++ **Deployable source bundle** \- [dotnet\-multiapp\-sample\-bundle\-v2\.zip](samples/dotnet-multiapp-sample-bundle-v2.zip)
++ **Source code** \- [dotnet\-multiapp\-sample\-source\-v2\.zip](samples/dotnet-multiapp-sample-source-v2.zip)
 
 ## Configure Application Pools<a name="dotnet-manifest-apppool"></a>
 

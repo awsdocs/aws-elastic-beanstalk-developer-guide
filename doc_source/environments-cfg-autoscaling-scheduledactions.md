@@ -37,7 +37,7 @@ You can create scheduled actions for your environment's Auto Scaling group in th
    The section now displays the scheduled actions you are about to add\.  
 ![\[Filled out Elastic Beanstalk Auto Scaling scheduled actions configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-autoscaling-scheduledactions-filled.png)
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 ## The aws:autoscaling:scheduledaction Namespace<a name="environments-cfg-autoscaling-scheduledactions-namespace"></a>
 

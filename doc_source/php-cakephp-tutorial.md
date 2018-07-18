@@ -133,8 +133,6 @@ Launch an Amazon RDS database instance in your Elastic Beanstalk environment\. Y
 
 1. Type a master **username** and **password**\. Elastic Beanstalk will provide these values to your application using environment properties\.
 
-1. Choose **Save**\.
-
 1. Choose **Apply**\.
 
 Creating a database instance takes about 10 minutes\. In the meantime, you can update your source code to read connection information from the environment\. Elastic Beanstalk provides connection details using environment variables such as `RDS_HOSTNAME` that you can access from your application\.

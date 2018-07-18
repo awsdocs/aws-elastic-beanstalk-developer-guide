@@ -171,7 +171,7 @@ This variable is used to create keys and should be a secret, as the name suggest
 
 1. Under **Environment properties**, enter key\-value pairs\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 Now you're ready to deploy the site to your environment\.
 

@@ -93,7 +93,7 @@ Next, add the DB instance's security group to your running environment\. This pr
 
 1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 1. Read the warning, and then choose **Confirm**\.
 
@@ -125,7 +125,7 @@ Next, pass the connection information to your environment by using environment p
    + **RDS\_PASSWORD** – The password that you configured for your database\.  
 ![\[Environment Properties section with RDS properties added\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 If you haven't programmed your application to read environment properties and construct a connection string yet, see the following language\-specific topics for instructions:
 + Java SE – [Connecting to a Database \(Java SE Platforms\)](java-rds.md#java-rds-javase)
@@ -224,7 +224,7 @@ Next, add the bridge security group to your running environment\. This procedure
 
 1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 1. Read the warning, and then choose **Confirm**\.
 

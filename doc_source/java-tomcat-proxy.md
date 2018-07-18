@@ -47,7 +47,7 @@ For a quick fix, you can also select the proxy server in the Elastic Beanstalk c
 
 1. For **Proxy server**, choose `Apache 2.2 (deprecated)`\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 ![\[Choosing the proxy for a Tomcat environment on the Elastic Beanstalk console's Software configuration card\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/java-tomcat-proxy-selection.png)
 

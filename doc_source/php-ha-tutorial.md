@@ -128,7 +128,7 @@ Add the security group of your DB instance to your running environment\. This pr
 
 1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 1. Read the warning, and then choose **Confirm**\.
 
@@ -160,7 +160,7 @@ Next, use environment properties to pass the connection information to your envi
    + **RDS\_PASSWORD** – The password that you configured for your database\.  
 ![\[Environment Properties section with RDS properties added\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 Finally, configure your environment's Auto Scaling group with a higher minimum instance count\. Run at least two instances at all times to prevent the web servers in your environment from being a single point of failure, and to allow you to deploy changes without taking your site out of service\.
 
@@ -176,7 +176,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. In the **Auto Scaling Group** section, set **Min instances** to **2**\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 ## Deploy the Sample Application<a name="php-hawrds-tutorial-deploy"></a>
 

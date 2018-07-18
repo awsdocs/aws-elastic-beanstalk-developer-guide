@@ -26,7 +26,7 @@ Enhanced health reporting requires an [instance profile](concepts-roles-instance
 **Note**  
 The options for enhanced health reporting don't appear if you are using an [unsupported platform or version](health-enhanced.md)\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 The Elastic Beanstalk console defaults to enhanced health reporting when you create a new environment with a version 2 platform configuration\. You can disable enhanced health reporting by changing the health reporting option during environment creation\.
 

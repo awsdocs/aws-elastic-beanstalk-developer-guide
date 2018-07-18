@@ -92,7 +92,7 @@ These settings configure the lock\-on\-launch feature\. This causes the AMI to u
 
 1. For **Custom AMI ID**, type your custom AMI ID\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 When you create a new environment with the custom AMI, you should use the same platform configuration that you used as a base to create the AMI\. If you later apply a [platform update](using-features.platform.upgrade.md) to an environment using a custom AMI, Elastic Beanstalk attempts to apply the library and configuration updates during the bootstrapping process\.
 

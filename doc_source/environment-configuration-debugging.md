@@ -48,7 +48,7 @@ You can enable the AWS X\-Ray daemon on a running environment in the Elastic Bea
 
 1. For **X\-Ray Daemon**, choose **Enabled**\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 You can also enable this option during environment creation\. For more information, see [The Create New Environment Wizard](environments-create-wizard.md)\.
 

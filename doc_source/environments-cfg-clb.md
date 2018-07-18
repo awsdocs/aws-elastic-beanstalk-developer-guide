@@ -65,7 +65,7 @@ If the **Load balancer** configuration card doesn't have a **Modify** button, yo
 
 1. Make the Classic Load Balancer configuration changes that your environment requires\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 **Topics**
 + [Listeners](#using-features.managing.elb.listeners)

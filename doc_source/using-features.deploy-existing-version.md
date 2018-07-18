@@ -30,7 +30,7 @@ If you need to ensure that your application source is always deployed to new ins
 
 1. In the **Application Deployments** section, choose a [Deployment policy](using-features.rolling-version-deploy.md) and batch settings\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 For deployments that depend on resource configuration changes or a new version that can't run alongside the old version, you can launch a new environment with the new version and perform a CNAME swap for a [blue/green deployment](using-features.CNAMESwap.md)\.
 

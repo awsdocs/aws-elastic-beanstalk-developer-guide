@@ -35,7 +35,7 @@ When the environmentis up and running, add an Amazon RDS database instance that 
 
 1. Choose a DB engine, and enter a user name and password\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 ## Publish Your Application to Elastic Beanstalk<a name="aws-elastic-beanstalk-tutorial-step-2-publish-application"></a>
 

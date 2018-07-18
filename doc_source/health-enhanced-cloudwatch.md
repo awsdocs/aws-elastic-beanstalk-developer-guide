@@ -70,7 +70,7 @@ Use the AWS Management Console to configure your environment to publish enhanced
 
 1. Under **Health reporting**, select the instance and environment metrics that you want to publish to CloudWatch\. To select multiple metrics, hold the **Ctrl** key while choosing\.
 
-1. Choose **Save**, and then choose **Apply**\.
+1. Choose **Apply**\.
 
 Enabling CloudWatch custom metrics adds them to the list of metrics available in the [**Monitoring** page](environment-health-console.md)\.
 
