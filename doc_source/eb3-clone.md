@@ -53,17 +53,8 @@ Environment details for: tmp-dev-clone
   CNAME: tmp-dev-clone.elasticbeanstalk.com
   Updated: 2014-10-29 22:00:23.008000+00:00
 Printing Status:
-INFO: createEnvironment is starting.
-INFO: Using elasticbeanstalk-us-west-2-888888888888 as Amazon S3 storage bucket for environment data.
-INFO: Created load balancer named: awseb-e-v-AWSEBLoa-4X0VL5UVQ353
-INFO: Created security group named: awseb-e-vjvrqnn5pv-stack-AWSEBSecurityGroup-18AV9FGCH2HZM
-INFO: Created Auto Scaling launch configuration named: awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingLaunchConfiguration-FDUWRSZZ6L3Z
-INFO: Waiting for EC2 instances to launch. This may take a few minutes.
-INFO: Created Auto Scaling group named: awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingGroup-69DN6PO5TISM
-INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-2:11122223333:scalingPolicy:addb18d0-7088-402f-90ae-43be7c8d40cb:autoScalingGroupName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingGroup-69DN6PO5TISM:policyName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingScaleDownPolicy-I8GFGQ8T8MOV
-INFO: Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-2:11122223333:scalingPolicy:fdcee817-e687-4fce-adc3-376995b3fef5:autoScalingGroupName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingGroup-69DN6PO5TISM:policyName/awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingScaleUpPolicy-1R312293DFY24
-INFO: Created CloudWatch alarm named: awseb-e-vjvrqnn5pv-stack-AWSEBCloudwatchAlarmLow-1M67HXZH1U9K3
-INFO: Created CloudWatch alarm named: awseb-e-vjvrqnn5pv-stack-AWSEBCloudwatchAlarmHigh-1K5CI7RVGV8ZJ
-INFO: Added EC2 instance 'i-cf30e1c5' to Auto Scaling Group 'awseb-e-vjvrqnn5pv-stack-AWSEBAutoScalingGroup-69DN6PO5TISM'.
-INFO: Successfully launched environment: tmp-dev-clone
+2018-07-11 21:04:20    INFO: createEnvironment is starting.
+2018-07-11 21:04:21    INFO: Using elasticbeanstalk-us-west-2-888888888888 as Amazon S3 storage bucket for environment data.
+...
+2018-07-11 21:07:10    INFO: Successfully launched environment: tmp-dev-clone
 ```

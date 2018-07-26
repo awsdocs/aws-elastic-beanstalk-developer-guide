@@ -67,11 +67,11 @@ If you encounter issues when you attempt to install the EB CLI with `pip`, you c
 
      1. Choose **PATH**, and then choose **Edit**\.
 
-     1. Add paths to the **Variable value** field, separated by semicolons\. For example: `C:\existing\path;C:\new\path`
+     1. Add paths to the **Variable value** field, separated by semicolons\. For example: `C:\item1\path;C:\item2\path`
 
      1. Choose **OK** twice to apply the new settings\.
 
-     1. Close any running command prompts and reopen\.
+     1. Close any running command prompts and reopen command prompt\.
 
 1. Verify that the EB CLI installed correctly by running `eb --version`\.
 

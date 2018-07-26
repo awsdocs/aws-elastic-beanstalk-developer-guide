@@ -46,7 +46,7 @@ Platform:       64bit Amazon Linux 2016.03 v2.1.6 running Java 8
 Terminated:     2016/12/14 16:21 PST
 Restore this environment? [y/n]: y
 
-INFO: restoreEnvironment is starting.
-INFO: Created security group named: sg-e2443f72
+2018-07-11 21:04:20    INFO: restoreEnvironment is starting.
+2018-07-11 21:04:39    INFO: Created security group named: sg-e2443f72
 ...
 ```

@@ -132,6 +132,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Enhanced Health Monitoring with the Environment Management Console](health-enhanced-console.md)
       + [Health Colors and Statuses](health-enhanced-status.md)
       + [Instance Metrics](health-enhanced-metrics.md)
+      + [Configuring Enhanced Health Rules for an Environment](health-enhanced-rules.md)
       + [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md)
       + [Using Enhanced Health Reporting with the AWS Elastic Beanstalk API](health-enhanced-api.md)
       + [Enhanced Health Log Format](health-enhanced-serverlogs.md)

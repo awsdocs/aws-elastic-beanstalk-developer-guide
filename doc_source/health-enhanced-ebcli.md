@@ -188,7 +188,7 @@ WebServer                                                                       
   i-e8a2d53b    Deployed   1    Sample Application   12 mins
   i-e81cca40    Deployed   1    Sample Application   1 hour
 
- (Commands: Help,Quit, ▼ ▲ ◀ ▶)
+ (Commands: Help,Quit, ▼ ▲ ◄ ►)
 ```
 
 This example shows an environment that has recently been scaled up from one to five instances\. The scaling operation succeeded, and all instances are now passing health checks and are ready to take requests\. In interactive mode, the health status updates every 10 seconds\. In the upper right corner, a timer ticks down to the next update\.
@@ -209,6 +209,7 @@ When viewing environment health interactively, you can use keyboard keys to adju
   -,+                Sort order descending/ascending
   P                  Save health snapshot data file
   Z                  Toggle color/mono mode
+  Q                  Quit this program
 
   Views
   1                  All tables/split view
@@ -216,4 +217,7 @@ When viewing environment health interactively, you can use keyboard keys to adju
   3                  Request Summary Table
   4                  CPU%/Load Table
   H                  This help menu
+
+
+(press Q or ESC to return)
 ```

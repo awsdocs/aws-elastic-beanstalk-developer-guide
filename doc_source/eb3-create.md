@@ -67,10 +67,10 @@ None of these options are required\. If you run `eb create` without any options,
 |  `--vpc`  |  Configure a VPC for your environment\. When you include this option, the EB CLI prompts you to enter all required settings prior to launching the environment\.  | 
 |  `--vpc.dbsubnets subnet1,subnet2`  |  Specifies subnets for database instances in a VPC\. Required when `--vpc.id` is specified\.  | 
 |  `--vpc.ec2subnets subnet1,subnet2`  |  Specifies subnets for Amazon EC2 instances in a VPC\. Required when `--vpc.id` is specified\.  | 
-|  `--vpc.elbpublic`  |  Launches your Elastic Load Balancing load balancer in a public subnet in your VPC\.  | 
-|  `--vpc.elbsubnets subnet1,subnet2`  |  Specifies subnets for the Elastic Load Balancing load balancer in a VPC\.  | 
+|  `--vpc.elbpublic`  |  Launches your Elastic Load Balancing load balancer in a public subnet in your VPC\. You can't specify this option with the `--tier worker` or `--single` options\.  | 
+|  `--vpc.elbsubnets subnet1,subnet2`  |  Specifies subnets for the Elastic Load Balancing load balancer in a VPC\. You can't specify this option with the `--tier worker` or `--single` options\.  | 
 |  `--vpc.id ID`  |  Launches your environment in the specified VPC\.  | 
-|  `--vpc.publicip`  |  Launches your Amazon EC2 instances in a public subnet in your VPC\.  | 
+|  `--vpc.publicip`  |  Launches your Amazon EC2 instances in a public subnet in your VPC\. You can't specify this option with the `--tier worker` option\.  | 
 |  `--vpc.securitygroups securitygroup1,securitygroup2`  |  Specifies the security group ID or security group name\. Required when `--vpc.id` is specified\.  | 
 |  [Common options](eb3-cmd-options.md)  |  | 
 

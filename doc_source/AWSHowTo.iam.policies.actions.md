@@ -213,8 +213,9 @@ The following example allows the `SwapEnvironmentCNAMEs` action to swap the CNAM
       ],
       "Condition": {
         "StringNotLike": {
-          "elasticbeanstalk:FromEnvironment": ["arn:aws:elasticbeanstalk:us-east-2:123456789012:environment/My App/mysrcenvPROD*"],
-          "elasticbeanstalk:FromEnvironment": ["arn:aws:elasticbeanstalk:us-east-2:123456789012:environment/My App/mydestenvPROD*"
+          "elasticbeanstalk:FromEnvironment": [
+            "arn:aws:elasticbeanstalk:us-east-2:123456789012:environment/My App/mysrcenvPROD*",
+            "arn:aws:elasticbeanstalk:us-east-2:123456789012:environment/My App/mydestenvPROD*"
           ]
         }
       }

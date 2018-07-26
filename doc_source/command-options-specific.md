@@ -171,13 +171,16 @@ Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrate
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  [document\_root](create_deploy_PHP.container.md)  |  Specify the child directory of your project that is treated as the public\-facing web root\.  |  `/`  |  A blank string is treated as `/`, or specify a string starting with `/`  | 
-|  [memory\_limit](create_deploy_PHP.container.md)  |  Amount of memory allocated to the PHP environment\.  |  `256M`  |  n/a  | 
-|  [zlib\.output\_compression](create_deploy_PHP.container.md)  |  Specifies whether or not PHP should use compression for output\.  |  `Off`  |  `On` `Off`  | 
-|  [allow\_url\_fopen](create_deploy_PHP.container.md)  |  Specifies if PHP's file functions are allowed to retrieve data from remote locations, such as websites or FTP servers\.  |  `On`  |  `On` `Off`  | 
-|  [display\_errors](create_deploy_PHP.container.md)  |  Specifies if error messages should be part of the output\.  |  `Off`  |  `On` `Off`  | 
-|  [max\_execution\_time](create_deploy_PHP.container.md)  |  Sets the maximum time, in seconds, a script is allowed to run before it is terminated by the environment\.  |  `60`  |  `0` to `9223372036854775807` \(PHP\_INT\_MAX\)  | 
-|  [composer\_options](create_deploy_PHP.container.md)  |  Sets custom options to use when installing dependencies using Composer through composer\.phar install\. For more information including available options, go to [http://getcomposer\.org/doc/03\-cli\.md\#install](http://getcomposer.org/doc/03-cli.md#install)\.  |  n/a  |  n/a  | 
+|  document\_root  |  Specify the child directory of your project that is treated as the public\-facing web root\.  |  `/`  |  A blank string is treated as `/`, or specify a string starting with `/`  | 
+|  memory\_limit  |  Amount of memory allocated to the PHP environment\.  |  `256M`  |  n/a  | 
+|  zlib\.output\_compression  |  Specifies whether or not PHP should use compression for output\.  |  `Off`  |  `On` `Off`  | 
+|  allow\_url\_fopen  |  Specifies if PHP's file functions are allowed to retrieve data from remote locations, such as websites or FTP servers\.  |  `On`  |  `On` `Off`  | 
+|  display\_errors  |  Specifies if error messages should be part of the output\.  |  `Off`  |  `On` `Off`  | 
+|  max\_execution\_time  |  Sets the maximum time, in seconds, a script is allowed to run before it is terminated by the environment\.  |  `60`  |  `0` to `9223372036854775807` \(PHP\_INT\_MAX\)  | 
+|  composer\_options  |  Sets custom options to use when installing dependencies using Composer through composer\.phar install\. For more information including available options, go to [http://getcomposer\.org/doc/03\-cli\.md\#install](http://getcomposer.org/doc/03-cli.md#install)\.  |  n/a  |  n/a  | 
+
+**Note**  
+For more information about the PHP platform, see [Using the AWS Elastic Beanstalk PHP Platform](create_deploy_PHP.container.md)\.
 
 ## Python Platform Options<a name="command-options-python"></a>
 

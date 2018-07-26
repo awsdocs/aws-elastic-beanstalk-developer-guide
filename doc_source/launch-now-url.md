@@ -6,14 +6,48 @@ A Launch Now URL gives Elastic Beanstalk the minimum information required to cre
 
 A Launch Now URL uses standard URL syntax\. For more information, see [RFC 3986 \- Uniform Resource Identifier \(URI\): Generic Syntax](http://tools.ietf.org/html/rfc3986)\.
 
-## URL Parameters<a name="using-features.deploy-existing-version.CON"></a>
+## URL Parameters<a name="launch-now-url.params"></a>
 
 The URL must contain the following parameters, which are case\-sensitive:
 + **region** – Specify an AWS Region\. For a list of regions supported by Elastic Beanstalk, see [AWS Elastic Beanstalk](http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region) in the *Amazon Web Services General Reference*\.
 + **applicationName** – Specify the name of your application\. Elastic Beanstalk displays the application name in the AWS Management Console to distinguish it from other applications\. By default, the application name also forms the basis of the environment name and environment URL\.
-+ **solutionStackName** – Specify the platform and version to use for the environment\. For more information, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
++ **platform** – Specify the platform configuration to use for the environment\. Use one of the following methods, then URL\-encode your choice:
+  + Specify the configuration's ARN without a version\. Elastic Beanstalk selects the configuration's latest version\. For example:
 
-A Launch Now URL can optionally contain the following parameters\. If you don't include the optional parameters in your Launch Now URL, Elastic Beanstalk uses default values to create and run your application\. When you don't include the **sourceBundleUrl** parameter, Elastic Beanstalk uses the default sample application for the specified **solutionStackName**\.
+    `Python 3.6 running on 64bit Amazon Linux`
+  + Specify the platform name\. Elastic Beanstalk selects the latest version of the platform's latest language configuration\. For example:
+
+    `Python`
+
+  For a description of all available platforms and their configurations, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
+
+  You can use the [AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/) \(AWS CLI\) to get a list of available configurations with their respective ARNs\. The `list-platform-versions` command lists detailed information about all available configurations\. The `--filters` argument allows you to scope down the list\. For example, you can list all configurations of a specific language\.
+
+  The following example queries for all Python configurations, and pipes the output through a series of commands\. The result is the platform configuration name of each ARN, in human\-readable format, without URL encoding\.
+
+  ```
+  $ aws elasticbeanstalk list-platform-versions --filters 'Type="PlatformName",Operator="contains",Values="Python"' | grep PlatformArn | awk -F '"' '{print $4}' | awk -F '/' '{print $2}'
+  Preconfigured Docker - Python 3.4 running on 64bit Debian
+  Preconfigured Docker - Python 3.4 running on 64bit Debian
+  Python 2.6 running on 32bit Amazon Linux
+  Python 2.6 running on 32bit Amazon Linux 2014.03
+  ...
+  Python 3.6 running on 64bit Amazon Linux
+  ```
+
+  The following example adds a Perl command to the last example, to URL\-encode the output\.
+
+  ```
+  $ aws elasticbeanstalk list-platform-versions --filters 'Type="PlatformName",Operator="contains",Values="Python"' | grep PlatformArn | awk -F '"' '{print $4}' | awk -F '/' '{print $2}' | perl -MURI::Escape -ne 'chomp;print uri_escape($_),"\n"'
+  Preconfigured%20Docker%20-%20Python%203.4%20running%20on%2064bit%20Debian
+  Preconfigured%20Docker%20-%20Python%203.4%20running%20on%2064bit%20Debian
+  Python%202.6%20running%20on%2032bit%20Amazon%20Linux
+  Python%202.6%20running%20on%2032bit%20Amazon%20Linux%202014.03
+  ...
+  Python%203.6%20running%20on%2064bit%20Amazon%20Linux
+  ```
+
+A Launch Now URL can optionally contain the following parameters\. If you don't include the optional parameters in your Launch Now URL, Elastic Beanstalk uses default values to create and run your application\. When you don't include the **sourceBundleUrl** parameter, Elastic Beanstalk uses the default sample application for the specified **platform**\.
 + **sourceBundleUrl** – Specify the location of your web application source bundle in URL format\. For example, if you uploaded your source bundle to an Amazon S3 bucket, you might specify the value of the **sourceBundleUrl** parameter as `https://s3.amazonaws.com/mybucket/myobject`\.
 **Note**  
 You can specify the value of the **sourceBundleUrl** parameter as an HTTP URL, but the user's web browser will convert characters as needed by applying HTML URL encoding\.
@@ -33,12 +67,12 @@ You can specify the value of the **sourceBundleUrl** parameter as an HTTP URL, b
 + **rdsMultiAZDatabase** – Specify whether Elastic Beanstalk needs to create the database instance across multiple Availability Zones\. You can specify either `true` or `false`\. For more information about multiple Availability Zone deployments with Amazon RDS, go to [Regions and Availability Zones](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html) in the * Amazon Relational Database Service User Guide*\.
 + **rdsDBDeletionPolicy** – Specify whether to delete or snapshot the database instance on environment termination\. You can specify either `Delete` or `Snapshot`\.
 
-## Example<a name="w3ab1c19c35c30c11"></a>
+## Example<a name="launch-now-url.example"></a>
 
 The following is an example Launch Now URL\. After you construct your own, you can give it to your users\. For example, you might want to embed the URL on a webpage or in training materials\. When users create an application using the Launch Now URL, the Elastic Beanstalk Create an Application wizard requires no additional input\.
 
 ```
-https://console.aws.amazon.com/elasticbeanstalk/?region=us-west-2#/newApplication?applicationName=YourCompanySampleApp&solutionStackName=PHP&sourceBundleUrl=http://s3.amazonaws.com/mybucket/myobject&environmentType=SingleInstance&tierName=WebServer&instanceType=m1.small&withVpc=true&withRds=true&rdsDBEngine=postgres&rdsDBAllocatedStorage=6&rdsDBInstanceClass=db.m1.small&rdsMultiAZDatabase=true&rdsDBDeletionPolicy=Snapshot
+https://console.aws.amazon.com/elasticbeanstalk/?region=us-west-2#/newApplication?applicationName=YourCompanySampleApp&platform=PHP%207.1%20running%20on%2064bit%20Amazon%20Linux&sourceBundleUrl=http://s3.amazonaws.com/mybucket/myobject&environmentType=SingleInstance&tierName=WebServer&instanceType=m1.small&withVpc=true&withRds=true&rdsDBEngine=postgres&rdsDBAllocatedStorage=6&rdsDBInstanceClass=db.m1.small&rdsMultiAZDatabase=true&rdsDBDeletionPolicy=Snapshot
 ```
 
 When users choose a Launch Now URL, Elastic Beanstalk displays a page similar to the following\.

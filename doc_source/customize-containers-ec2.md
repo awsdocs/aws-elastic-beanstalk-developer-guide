@@ -166,6 +166,9 @@ sources:
   /etc/myapp: https://s3.amazonaws.com/mybucket/myobject
 ```
 
+**Note**  
+Multiple extractions should not reuse the same target path\. Extracting another source to the same target path will replace rather than append to the contents\. 
+
 ## Files<a name="linux-files"></a>
 
 You can use the `files` key to create files on the EC2 instance\. The content can be either inline in the configuration file, or the content can be pulled from a URL\. The files are written to disk in lexicographic order\.

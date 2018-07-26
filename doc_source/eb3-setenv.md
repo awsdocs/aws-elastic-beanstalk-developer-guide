@@ -33,10 +33,10 @@ The following example sets the environment variable ExampleVar\.
 
 ```
 $ eb setenv ExampleVar=ExampleValue
-INFO: Environment update is starting.
-INFO: Updating environment tmp-dev's configuration settings.
-INFO: Successfully deployed new configuration to environment.
-INFO: Environment update completed successfully.
+2018-07-11 21:05:25    INFO: Environment update is starting.
+2018-07-11 21:05:29    INFO: Updating environment tmp-dev's configuration settings.
+2018-07-11 21:06:50    INFO: Successfully deployed new configuration to environment.
+2018-07-11 21:06:51    INFO: Environment update completed successfully.
 ```
 
 The following command sets multiple environment properties\. It adds the environment property named `foo` and sets its value to `bar`, changes the value of the `JDBC_CONNECTION_STRING` property, and deletes the `PARAM4` and `PARAM5` properties\.

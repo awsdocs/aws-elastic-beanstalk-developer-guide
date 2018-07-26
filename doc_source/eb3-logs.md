@@ -64,9 +64,9 @@ Enabling instance log streaming to CloudWatch for your environment
 After the environment is updated you can view your logs by following the link:
 https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logs:prefix=/aws/elasticbeanstalk/environment_name/
 Printing Status:
-INFO: Environment update is starting.
-INFO: Updating environment environment_name's configuration settings.
-INFO: Successfully deployed new configuration to environment.
+2018-07-11 21:05:20    INFO: Environment update is starting.
+2018-07-11 21:05:27    INFO: Updating environment environment_name's configuration settings.
+2018-07-11 21:06:45    INFO: Successfully deployed new configuration to environment.
 ```
 
 The following example retrieves instance logs into a `.zip` file\.

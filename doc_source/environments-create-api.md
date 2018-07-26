@@ -49,7 +49,7 @@
       + `CNAMEPrefix` = `sampleapplication`
       + `OptionSettings.member.1.Namespace` = `aws:autoscaling:launchconfiguration`
       + `OptionSettings.member.1.OptionName` = `IamInstanceProfile`
-      + `OptionSettings.member.1.Value` = `ElasticBeanstalkProfile`  
+      + `OptionSettings.member.1.Value` = `aws-elasticbeanstalk-ec2-role`  
 **Example**  
 
       ```
@@ -62,7 +62,7 @@
        7. &Operation=CreateEnvironment
        8. &OptionSettings.member.1.Namespace=aws%3Aautoscaling%3Alaunchconfiguration
        9. &OptionSettings.member.1.OptionName=IamInstanceProfile
-      10. &OptionSettings.member.1.Value=ElasticBeanstalkProfile
+      10. &OptionSettings.member.1.Value=aws-elasticbeanstalk-ec2-role
       11. &AuthParams
       ```
 
@@ -75,7 +75,7 @@
       + `Tier` = `Worker`
       + `OptionSettings.member.1.Namespace` = `aws:autoscaling:launchconfiguration`
       + `OptionSettings.member.1.OptionName` = `IamInstanceProfile`
-      + `OptionSettings.member.1.Value` = `ElasticBeanstalkProfile`
+      + `OptionSettings.member.1.Value` = `aws-elasticbeanstalk-ec2-role`
       + `OptionSettings.member.2.Namespace` = `aws:elasticbeanstalk:sqsd`
       + `OptionSettings.member.2.OptionName` = `WorkerQueueURL`
       + `OptionSettings.member.2.Value` = `sqsd.elasticbeanstalk.us-east-2.amazon.com`
@@ -112,7 +112,7 @@
        7. &Operation=CreateEnvironment
        8. &OptionSettings.member.1.Namespace=aws%3Aautoscaling%3Alaunchconfiguration
        9. &OptionSettings.member.1.OptionName=IamInstanceProfile
-      10. &OptionSettings.member.1.Value=ElasticBeanstalkProfile
+      10. &OptionSettings.member.1.Value=aws-elasticbeanstalk-ec2-role
       11. &OptionSettings.member.2.Namespace=aws%3Aelasticbeanstalk%3Asqsd
       12. &OptionSettings.member.2.OptionName=WorkerQueueURL
       13. &OptionSettings.member.2.Value=sqsd.elasticbeanstalk.us-east-2.amazon.com

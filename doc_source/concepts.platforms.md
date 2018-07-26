@@ -178,16 +178,16 @@ Elastic Beanstalk supports the following \.NET configurations\.
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |  4\.9\.2688  |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |  4\.9\.2688  |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |  4\.9\.2688  |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |  4\.9\.2688  |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 R2 with IIS 8\.5**   |  2018\.06\.13  |  3\.3\.283\.0  |  4\.9\.2688  |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |  2018\.06\.13  |  3\.3\.283\.0  |  4\.9\.2688  |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2012 with IIS 8**   |  2018\.06\.13  |  3\.3\.283\.0  |  4\.9\.2688  |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server 2008 R2 with IIS 7\.5**   |  2018\.06\.13  |  3\.3\.283\.0  |  4\.9\.2688  |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5**   |  2018\.07\.11  |  3\.3\.311\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |  2018\.07\.11  |  3\.3\.311\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 with IIS 8**   |  2018\.07\.11  |  3\.3\.311\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2008 R2 with IIS 7\.5**   |  2018\.07\.11  |  3\.3\.311\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
 
 ## Node\.js<a name="concepts.platforms.nodejs"></a>
 

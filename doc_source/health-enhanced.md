@@ -19,6 +19,7 @@ The first time you create an environment with a version 2 platform configuration
 **Topics**
 + [The Elastic Beanstalk Health Agent](#health-enhanced-agent)
 + [Factors in Determining Instance and Environment Health](#health-enhanced-factors)
++ [Health Check Rule Customization](#health-enhanced.rules)
 + [Enhanced Health Roles](#health-enhanced-roles)
 + [Enhanced Health Events](#health-enhanced-events)
 + [Enhanced Health Reporting Behavior During Updates, Deployments, and Scaling](#health-enhanced-effects)
@@ -26,6 +27,7 @@ The first time you create an environment with a version 2 platform configuration
 + [Enhanced Health Monitoring with the Environment Management Console](health-enhanced-console.md)
 + [Health Colors and Statuses](health-enhanced-status.md)
 + [Instance Metrics](health-enhanced-metrics.md)
++ [Configuring Enhanced Health Rules for an Environment](health-enhanced-rules.md)
 + [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md)
 + [Using Enhanced Health Reporting with the AWS Elastic Beanstalk API](health-enhanced-api.md)
 + [Enhanced Health Log Format](health-enhanced-serverlogs.md)
@@ -103,6 +105,10 @@ If you use Multicontainer Docker, which does not include a web server, or disabl
 Elastic Beanstalk monitors operating system metrics reported by the health agent to identify instances that are consistently low on system resources\.
 
 See [Instance Metrics](health-enhanced-metrics.md) for details on the metrics reported by the health agent\.
+
+## Health Check Rule Customization<a name="health-enhanced.rules"></a>
+
+Elastic Beanstalk enhanced health reporting relies on a set of rules to determine the health of your environment\. Some of these rules might not be appropriate for your particular application\. A common case is an application that returns frequent HTTP 4xx errors by design\. Elastic Beanstalk, using one of its default rules, concludes that something is going wrong, and changes your environment health status from OK to Warning, Degraded, or Severe, depending on the error rate\. To handle this case correctly, Elastic Beanstalk allows you to configure this rule and ignore application HTTP 4xx errors\. For details, see [Configuring Enhanced Health Rules for an Environment](health-enhanced-rules.md)\.
 
 ## Enhanced Health Roles<a name="health-enhanced-roles"></a>
 

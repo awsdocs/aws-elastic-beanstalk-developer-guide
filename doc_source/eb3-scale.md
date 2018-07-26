@@ -30,9 +30,9 @@ The following example sets the number of instances to 2\.
 
 ```
 $ eb scale 2
-INFO: Environment update is starting.
-INFO: Updating environment tmp-dev's configuration settings.
-INFO: Added EC2 instance 'i-5fce3d53' to Auto Scaling Group 'awseb-e-2cpfjbra9a-stack-AWSEBAutoScalingGroup-7AXY7U13ZQ6E'.
-INFO: Successfully deployed new configuration to environment.
-INFO: Environment update completed successfully.
+2018-07-11 21:05:22    INFO: Environment update is starting.
+2018-07-11 21:05:27    INFO: Updating environment tmp-dev's configuration settings.
+2018-07-11 21:08:53    INFO: Added EC2 instance 'i-5fce3d53' to Auto Scaling Group 'awseb-e-2cpfjbra9a-stack-AWSEBAutoScalingGroup-7AXY7U13ZQ6E'.
+2018-07-11 21:08:58    INFO: Successfully deployed new configuration to environment.
+2018-07-11 21:08:59    INFO: Environment update completed successfully.
 ```

@@ -1,13 +1,13 @@
 # Deploying an ASP\.NET Core Application with AWS Elastic Beanstalk<a name="dotnet-core-tutorial"></a>
 
-In this tutorial, you walk through the process of building a new ASP\.NET Core application and deploying it to Elastic Beanstalk\. You use the \.NET Core SDK's `dotnet` command line tool to generate a basic command line \.NET Core application, install dependencies, compile code, and run applications locally\.
+In this tutorial, you will walk through the process of building a new ASP\.NET Core application and deploying it to Elastic Beanstalk\.
 
-Next, you modify the default `Program` class, and add an ASP\.NET `Startup` class and configuration files to make an application that serves HTTP requests with ASP\.NET and IIS\. The `dotnet publish` command generates compiled classes and dependencies that you can bundle with a `web.config` file to create a *site archive* that you can deploy to an Elastic Beanstalk environment\.
+ First, you will use the \.NET Core SDK's `dotnet` command line tool to generate a basic \.NET Core command line application, install dependencies, compile code, and run applications locally\.  Next, you will create the default `Program.cs` class, and add an ASP\.NET `Startup.cs` class and configuration files to make an application that serves HTTP requests with ASP\.NET and IIS\. 
 
-Elastic Beanstalk uses a [deployment manifest](dotnet-manifest.md) to configure deployments for \.NET Core applications, custom applications, and multiple \.NET Core or MSBuild applications on a single server\. To deploy a \.NET Core application to a Windows Server environment, you add the site archive to an application source bundle with a deployment manifest\. The deployment manifest tells Elastic Beanstalk the path at which the site should run and can be used to configure application pools and run multiple applications at different paths\.
+Finally, Elastic Beanstalk uses a [deployment manifest](dotnet-manifest.md) to configure deployments for \.NET Core applications, custom applications, and multiple \.NET Core or MSBuild applications on a single server\. To deploy a \.NET Core application to a Windows Server environment, you add a site archive to an application source bundle with a deployment manifest\. The `dotnet publish` command generates compiled classes and dependencies that you can bundle with a `web.config` file to create a site archive\. The deployment manifest tells Elastic Beanstalk the path at which the site should run and can be used to configure application pools and run multiple applications at different paths\.
 
-**Note**  
-The application source code is available here: [dotnet\-core\-tutorial\-source\.zip](samples/dotnet-core-tutorial-source.zip)  
+The application source code is available here: [dotnet\-core\-tutorial\-source\.zip](samples/dotnet-core-tutorial-source.zip)
+
 The deployable source bundle is available here: [dotnet\-core\-tutorial\-bundle\.zip](samples/dotnet-core-tutorial-bundle.zip)
 
 **Topics**
@@ -24,15 +24,15 @@ The deployable source bundle is available here: [dotnet\-core\-tutorial\-bundle\
 This tutorial uses the \.NET Core SDK to generate a basic \.NET Core application, run it locally, and build a deployable package\.
 
 **Requirements**
-+ \.NET Core \(x64\) 1\.0\.1, 2\.0\.0, or newer 
++ \.NET Core \(x64\) 1\.0\.1, 2\.0\.0, or later 
 
 **To install the \.NET Core SDK**
 
-1. Download the installer from [microsoft\.com/net/core](https://www.microsoft.com/net/core#windows)\. Choose **Windows**, then under **Select your environment** choose **Command line / other**\. Choose **Download \.NET Core SDK**\.
+1. Download the installer from [microsoft\.com/net/core](https://www.microsoft.com/net/core#windows)\. Choose **Windows**\. Choose **Download \.NET SDK**\.
 
 1. Run the installer and follow the instructions\.
 
-This tutorial uses a command line ZIP utility to create a source bundle that you can deploy to Elastic Beanstalk\. To use the `zip` command in Windows, you can install `UnxUtils`, a lightweight collection of useful command line utilities like `zip` and `ls`\. \(Alternatively, you can [use Windows Explorer](applications-sourcebundle.md#using-features.deployment.source.gui) or any other ZIP utility to create source bundle archives\.\)
+This tutorial uses a command line ZIP utility to create a source bundle that you can deploy to Elastic Beanstalk\. To use the `zip` command in Windows, you can install `UnxUtils`, a lightweight collection of useful command line utilities like `zip` and `ls`\. Alternatively, you can [use Windows Explorer](applications-sourcebundle.md#using-features.deployment.source.gui) or any other ZIP utility to create source bundle archives\.
 
 **To install UnxUtils**
 
@@ -48,13 +48,13 @@ This tutorial uses a command line ZIP utility to create a source bundle that you
 
    1. Choose **PATH**, and then choose **Edit**\.
 
-   1. Add paths to the **Variable value** field, separated by semicolons\. For example: `C:\existing\path;C:\new\path`
+   1. Add paths to the **Variable value** field, separated by semicolons\. For example: `C:\item1\path;C:\item2\path`
 
    1. Choose **OK** twice to apply the new settings\.
 
-   1. Close any running command prompts and reopen\.
+   1. Close any running command prompts and reopen command prompt\.
 
-1. Open a new command prompt window and run the `zip` command to verify that it works:
+1. Open a new command prompt window and run the `zip` command to verify that it works\.
 
    ```
    > zip -h
@@ -109,11 +109,9 @@ Use the `dotnet` command line tool to generate a new C\# \.NET Core project and 
    Hello World!
    ```
 
-The default application prints `Hello World!` to the console and exits\. Before you deploy the application to Elastic Beanstalk, you update it to serve HTTP requests with ASP\.NET and IIS\.
-
 ## Launch an Elastic Beanstalk Environment<a name="dotnet-core-tutorial-launch"></a>
 
-Use the AWS Management Console to launch an Elastic Beanstalk environment\. Choose the **Windows Server 2012R2 v1\.2\.0** platform configuration and accept the default settings and sample code\. After you launch and configure your environment, you can deploy new source code at any time\.
+Use the AWS Management Console to launch an Elastic Beanstalk environment\. For this example, you will launch with a \.NET platform\. After you launch and configure your environment, you can deploy new source code at any time\.
 
 **To launch an environment \(console\)**
 
@@ -131,14 +129,15 @@ Environment creation takes about 10 minutes\. During this time you can update yo
 
 ## Update the Source Code<a name="dotnet-core-tutorial-update"></a>
 
-Update the default application to use ASP\.NET and IIS\. ASP\.NET is the website framework for \.NET\. IIS is the web server that runs the application on the EC2 instances in your Elastic Beanstalk environment\.
+Update the default application to use ASP\.NET and IIS\. 
++ ASP\.NET is the website framework for \.NET\. 
++ IIS is the web server that runs the application on the Amazon EC2 instances in your Elastic Beanstalk environment\.
 
-**Note**  
-The source code is available here: [dotnet\-core\-tutorial\-source\.zip](samples/dotnet-core-tutorial-source.zip)
+The source code examples to follow are available here: [dotnet\-core\-tutorial\-source\.zip](samples/dotnet-core-tutorial-source.zip)
 
 **To add ASP\.NET and IIS support to your code**
 
-1. Update `Program.cs` to run a web host builder\.  
+1. Copy `Program.cs` to your application directory to run as a web host builder\.  
 **Example c:\\users\\username\\dotnet\-core\-tutorial\\Program\.cs**  
 
    ```
@@ -165,7 +164,7 @@ The source code is available here: [dotnet\-core\-tutorial\-source\.zip](samples
    }
    ```
 
-1. Add a `Startup.cs` file to run an ASP\.NET website\.  
+1. Add `Startup.cs` to run an ASP\.NET website\.  
 **Example c:\\users\\username\\dotnet\-core\-tutorial\\Startup\.cs**  
 
    ```
@@ -189,7 +188,7 @@ The source code is available here: [dotnet\-core\-tutorial\-source\.zip](samples
    }
    ```
 
-1. Add a `web.config` file to configure the IIS server\.  
+1. Add the `web.config` file to configure the IIS server\.  
 **Example c:\\users\\username\\dotnet\-core\-tutorial\\web\.config**  
 
    ```
@@ -204,9 +203,9 @@ The source code is available here: [dotnet\-core\-tutorial\-source\.zip](samples
    </configuration>
    ```
 
-1. Update `dotnet-core-tutorial.csproj` to include IIS middleware and include the `web.config` file in the output of `dotnet publish`\.
+1. Add `dotnet-core-tutorial.csproj`, which includes IIS middleware and includes the `web.config` file from the output of `dotnet publish`\.
 **Note**  
-The following example was developed using \.NET Core Runtime 2\.0\.5\. You might need to modify the `TargetFramework` or the `Version` attribute values in the `PackageReference` elements to match the version of \.NET Core Runtime that you are using\.  
+The following example was developed using \.NET Core Runtime 2\.0\.5\. You might need to modify the `TargetFramework` or the `Version` attribute values in the `PackageReference` elements to match the version of \.NET Core Runtime that you are using in your custom projects\.\.  
 **Example c:\\users\\username\\dotnet\-core\-tutorial\\dotnet\-core\-tutorial\.csproj**  
 
    ```
@@ -232,7 +231,7 @@ The following example was developed using \.NET Core Runtime 2\.0\.5\. You might
    </Project>
    ```
 
-Next, you install the new dependencies and run the ASP\.NET website locally\.
+Next, install the new dependencies and run the ASP\.NET website locally\.
 
 **To run the website locally**
 
@@ -251,7 +250,7 @@ To run the application on a web server, you need to bundle the compiled source c
   C:\users\username\dotnet-core-tutorial> dotnet publish -o site
   ```
 
-To deploy the application to Elastic Beanstalk, bundle the site archive with a [deployment manifest](dotnet-manifest.md) that tells Elastic Beanstalk how to run it\.
+To deploy the application to Elastic Beanstalk, bundle the site archive with a [deployment manifest](dotnet-manifest.md)\. This tells Elastic Beanstalk how to run it\.
 
 **To create a source bundle**
 
@@ -334,9 +333,8 @@ To deploy the application to Elastic Beanstalk, bundle the site archive with a [
 
 ## Deploy Your Application<a name="dotnet-core-tutorial-deploy"></a>
 
-Deploy the source bundle to the Elastic Beanstalk environment that you created earlier\.
+Deploy the source bundle to the Elastic Beanstalk environment that you created\.
 
-**Note**  
 You can download the source bundle here: [dotnet\-core\-tutorial\-bundle\.zip](samples/dotnet-core-tutorial-bundle.zip)
 
 **To deploy a source bundle**
@@ -373,7 +371,7 @@ Launching an environment creates the following resources:
 All of these resources are managed by Elastic Beanstalk\. When you terminate your environment, Elastic Beanstalk terminates all the resources that it contains\.
 
 **Note**  
-The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)\.
+The Amazon S3 bucket that Elastic Beanstalk creates is shared between environments and isn't deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)\.
 
 ## Cleanup<a name="dotnet-core-tutorial-cleanup"></a>
 
@@ -397,6 +395,6 @@ As you continue to develop your application, you'll probably want to manage envi
 
 If you use Visual Studio to develop your application, you can also use the AWS Toolkit for Visual Studio to deploy changed, manage your Elastic Beanstalk environments, and manage other AWS resources\. See [The AWS Toolkit for Visual Studio](dotnet-toolkit.md) for more information\.
 
-For developing and testing, you might want to use Elastic Beanstalk's functionality for adding a managed DB instance directly to your environment\. For instructions on setting up a database inside your environment, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
+For developing and testing, you might want to use the Elastic Beanstalk functionality for adding a managed DB instance directly to your environment\. For instructions on setting up a database inside your environment, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
 
 Finally, if you plan to use your application in a production environment, [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.

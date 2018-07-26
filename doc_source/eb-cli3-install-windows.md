@@ -67,11 +67,11 @@ The installer installs Python in your user folder and adds its executable direct
 
    1. Choose **PATH**, and then choose **Edit**\.
 
-   1. Add paths to the **Variable value** field, separated by semicolons\. For example: `C:\existing\path;C:\new\path`
+   1. Add paths to the **Variable value** field, separated by semicolons\. For example: `C:\item1\path;C:\item2\path`
 
    1. Choose **OK** twice to apply the new settings\.
 
-   1. Close any running command prompts and reopen\.
+   1. Close any running command prompts and reopen command prompt\.
 
 1.  Restart a new command shell for the new PATH variable to take effect\. 
 

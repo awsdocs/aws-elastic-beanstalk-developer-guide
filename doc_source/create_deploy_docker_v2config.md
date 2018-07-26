@@ -162,7 +162,10 @@ For example, the following entry defines an environment variable with the name *
 True if the task should stop if the container fails\. Nonessential containers can finish or crash without affecting the rest of the containers on the instance\. 
 
 **memory**  
-Amount of memory on the container instance to reserve for the container\.
+Amount of memory on the container instance to reserve for the container\. Specify a non\-zero integer for one or both of the `memory` or `memoryReservation` parameters in container definitions\.
+
+**memoryReservation**  
+The soft limit \(in MiB\) of memory to reserve for the container\. Specify a non\-zero integer for one or both of the `memory` or `memoryReservation` parameters in container definitions\.
 
 **mountPoints**  
 Volumes from the Amazon EC2 container instance to mount, and the location on the Docker container file system at which to mount them\. When you mount volumes that contain application content, your container can read the data you upload in your source bundle\. When you mount log volumes for writing log data, Elastic Beanstalk can gather log data from these volumes\.   

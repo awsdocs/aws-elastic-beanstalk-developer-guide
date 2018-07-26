@@ -47,8 +47,8 @@ The following example deploys the current application\.
 
 ```
 $ eb deploy
-INFO: Environment update is starting.
-INFO: Deploying new version to instance(s).
-INFO: New application version was deployed to running EC2 instances.
-INFO: Environment update completed successfully.
+2018-07-11 21:05:22    INFO: Environment update is starting.
+2018-07-11 21:05:27    INFO: Deploying new version to instance(s).
+2018-07-11 21:05:53    INFO: New application version was deployed to running EC2 instances.
+2018-07-11 21:05:53    INFO: Environment update completed successfully.
 ```

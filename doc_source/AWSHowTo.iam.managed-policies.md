@@ -101,7 +101,7 @@ AWS Elastic Beanstalk provides two managed policies that enable you to assign fu
     ]
   }
   ```
-+ **AWSElasticBeanstalkReadOnlyAccess** – Allows the user to view applications and environments, but not to perform operations on them\. It provides read\-only access to all Elastic Beanstalk resources\. Note that read\-only access does not enable actions such as downloading Elastic Beanstalk logs so that you can read them\. See the example at the end of this topic for information on how to enable read\-only access to Elastic Beanstalk logs\.
++ **AWSElasticBeanstalkReadOnlyAccess** – Allows the user to view applications and environments, but not to perform operations on them\. It provides read\-only access to all Elastic Beanstalk resources\. Note that read\-only access does not enable actions such as downloading Elastic Beanstalk logs so that you can read them\. This is because the logs are staged in the Amazon S3 bucket, where Elastic Beanstalk would require write permission\. See the example at the end of this topic for information on how to enable access to Elastic Beanstalk logs\.
 
   ```
   {
@@ -244,36 +244,32 @@ The above policy shows how to grant limited access to Elastic Beanstalk operatio
 }
 ```
 
-### Enabling Read\-Only Access to Elastic Beanstalk Logs Stored in Amazon S3<a name="AWSHowTo.iam.policy.view-s3-logs"></a>
+### Enabling Access to Elastic Beanstalk Logs Stored in Amazon S3<a name="AWSHowTo.iam.policy.view-s3-logs"></a>
 
-The policy in the following example enables a user to view and pull Elastic Beanstalk logs that were stored in Amazon S3\.
+The policy in the following example enables a user to view and pull Elastic Beanstalk logs that are stored in Amazon S3\.
 
 ```
 {
   "Version": "2012-10-17",
   "Statement": [
     {
-      "Sid": "Stmt1491295324000",
-      "Effect": "Allow",
       "Action": [
-        "s3:GetObjectAcl"
+        "s3:DeleteObject",
+        "s3:GetObjectAcl",
+        "s3:PutObjectAcl"
       ],
-      "Resource": [
-        "arn:aws:s3:::elasticbeanstalk-*/*"
-      ]
-    },
-    {
-      "Sid": "Stmt1491295472000",
       "Effect": "Allow",
-      "Action": [
-        "s3:GetObjectAcl"
-      ],
-      "Resource": [
-        "arn:aws:s3:::elasticbeanstalk-*"
-      ]
+      "Resource": "arn:aws:s3:::elasticbeanstalk-*"
     }
   ]
 }
+```
+
+**Note**  
+To restrict these permissions to only the logs path, use the following resource format\.   
+
+```
+"arn:aws:s3:::elasticbeanstalk-us-east-2-123456789012/resources/environments/logs/*"
 ```
 
 ### Enabling Management of a Specific Elastic Beanstalk Application<a name="AWSHowTo.iam.policy.manage-app"></a>

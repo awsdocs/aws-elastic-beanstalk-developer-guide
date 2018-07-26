@@ -40,18 +40,18 @@ Select an environment to swap with.
 1) staging-dev
 2) live-env
 (default is 1): 2
-INFO: swapEnvironmentCNAMEs is starting.
-INFO: Swapping CNAMEs for environments 'tmp-dev' and 'live-env'.
-INFO: 'tmp-dev.elasticbeanstalk.com' now points to 'awseb-e-j-AWSEBLoa-M7U21VXNLWHN-487871449.us-west-2.elb.amazonaws.com'.
-INFO: Completed swapping CNAMEs for environments 'tmp-dev' and 'live-env'.
+2018-07-11 21:05:25    INFO: swapEnvironmentCNAMEs is starting.
+2018-07-11 21:05:26    INFO: Swapping CNAMEs for environments 'tmp-dev' and 'live-env'.
+2018-07-11 21:05:30    INFO: 'tmp-dev.elasticbeanstalk.com' now points to 'awseb-e-j-AWSEBLoa-M7U21VXNLWHN-487871449.us-west-2.elb.amazonaws.com'.
+2018-07-11 21:05:30    INFO: Completed swapping CNAMEs for environments 'tmp-dev' and 'live-env'.
 ```
 
 The following example swaps the environment tmp\-dev with the environment live\-env but does not prompt you to enter or select a value for any settings\.
 
 ```
 $ eb swap tmp-dev --destination_name live-env
-INFO: swapEnvironmentCNAMEs is starting.
-INFO: Swapping CNAMEs for environments 'tmp-dev' and 'live-env'.
-INFO: 'tmp-dev.elasticbeanstalk.com' now points to 'awseb-e-j-AWSEBLoa-M7U21VXNLWHN-487871449.us-west-2.elb.amazonaws.com'.
-INFO: Completed swapping CNAMEs for environments 'tmp-dev' and 'live-env'.
+2018-07-11 21:18:12    INFO: swapEnvironmentCNAMEs is starting.
+2018-07-11 21:18:13    INFO: Swapping CNAMEs for environments 'tmp-dev' and 'live-env'.
+2018-07-11 21:18:17    INFO: 'tmp-dev.elasticbeanstalk.com' now points to 'awseb-e-j-AWSEBLoa-M7U21VXNLWHN-487871449.us-west-2.elb.amazonaws.com'.
+2018-07-11 21:18:17    INFO: Completed swapping CNAMEs for environments 'tmp-dev' and 'live-env'.
 ```
