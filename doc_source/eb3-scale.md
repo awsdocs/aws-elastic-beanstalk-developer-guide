@@ -6,9 +6,9 @@ Scales the environment to always run on a specified number of instances, setting
 
 ## Syntax<a name="eb3-scalesyntax"></a>
 
- `eb scale scale` 
+ `eb scale instance_count`
 
- `eb scale scale environment_name` 
+ `eb scale instance_count environment_name`
 
 ## Options<a name="eb3-scaleoptions"></a>
 
