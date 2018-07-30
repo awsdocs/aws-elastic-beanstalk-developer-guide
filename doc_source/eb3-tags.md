@@ -18,8 +18,6 @@ For details about environment tagging, see [Tagging Resources in Your Elastic Be
 
 You can combine the `--add`, `--update`, and `--delete` subcommand options in a single command\. At least one of them is required\. You can't combined any of these three subcommand options with `--list`\.
 
-Environment names must be 4 to 40 characters in length, and can only contain letters, numbers, and hyphens\. Environment names can't begin or end with a hyphen\.
-
 ## Options<a name="eb3-tagsoptions"></a>
 
 None of these options are required\. If you run `eb create` without any options, you are prompted to enter or select a value for each setting\.
