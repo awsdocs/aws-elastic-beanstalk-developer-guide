@@ -15,7 +15,7 @@ You can configure the EB CLI to deploy an artifact from your build process inste
 
  `eb deploy` 
 
- `eb deploy environment_name` 
+ `eb deploy environment-name` 
 
 ## Options<a name="eb3-deployoptions"></a>
 

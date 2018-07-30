@@ -8,7 +8,7 @@ Opens the public URL of your website in the default browser\.
 
  `eb open` 
 
- `eb open environment_name` 
+ `eb open environment-name` 
 
 ## Options<a name="eb3-openoptions"></a>
 

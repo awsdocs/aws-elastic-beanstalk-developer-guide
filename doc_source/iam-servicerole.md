@@ -38,7 +38,7 @@ Elastic Beanstalk provides a managed policy for [enhanced health monitoring](hea
       ]
   }
   ```
-+ **AWSElasticBeanstalkService** – Grants permissions for Elastic Beanstalk to update environments on your behalf to perform managed updates\.
++ **AWSElasticBeanstalkService** – Grants permissions for Elastic Beanstalk to update environments on your behalf to perform managed platform updates\.
 
   ```
   {

@@ -4,6 +4,21 @@ This page lists the previous versions of AWS Elastic Beanstalk's preconfigured D
 
 See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
+The following Elastic Beanstalk platform configurations for preconfigured Docker were current between June 21, 2018 and July 26, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Platform  |  Container OS  |  Language  |  Proxy Server  |  Application Server  |  Docker Image  | 
+| --- | --- | --- | --- | --- | --- | --- | --- | 
+|   **Glassfish 5\.0 \(Docker\) version 2\.11\.0**   * 64bit Amazon Linux v2\.11\.0 running GlassFish 5\.0 Java 8 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Amazon Linux 2018\.03  |  Java 8  |  nginx 1\.12\.1  |  Glassfish 5\.0  |  amazon/aws\-eb\-glassfish:5\.0\-al  | 
+|   **Glassfish 4\.1 \(Docker\) version 2\.11\.0**   * 64bit Amazon Linux v2\.11\.0 running GlassFish 4\.1 Java 8 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Amazon Linux 2018\.03  |  Java 8  |  nginx 1\.12\.1  |  Glassfish 4\.1  |  amazon/aws\-eb\-glassfish:4\.1\.2\-al  | 
+|   **Glassfish 4\.1 \(Docker\) version 2\.11\.0**   * 64bit Debian jessie v2\.11\.0 running GlassFish 4\.1 Java 8 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Java 8  |  nginx 1\.12\.1  |  Glassfish 4\.1  |  amazon/aws\-eb\-glassfish:4\.1\-jdk8\-onbuild\-3\.5\.1  | 
+|   **Glassfish 4\.0 \(Docker\) version 2\.11\.0**   * 64bit Debian jessie v2\.10\.0 running GlassFish 4\.0 Java 7 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Java 7  |  nginx 1\.12\.1  |  Glassfish 4\.0  |  amazon/aws\-eb\-glassfish:4\.0\-jdk7\-onbuild\-3\.5\.1  | 
+|   **Go 1\.4 \(Docker\) version 2\.11\.0**   * 64bit Debian jessie v2\.11\.0 running Go 1\.4 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Go 1\.4\.2  |  nginx 1\.12\.1  |  none  |  golang:1\.4\.2\-onbuild  | 
+|   **Go 1\.3 \(Docker\) version 2\.11\.0**   * 64bit Debian jessie v2\.11\.0 running Go 1\.3 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Go 1\.3\.3  |  nginx 1\.12\.1  |  none  |  golang:1\.3\.3\-onbuild  | 
+|   **Python 3\.4 with uWSGI 2 \(Docker\) version 2\.11\.0**   * 64bit Debian jessie v2\.11\.0 running Python 3\.4 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Python 3\.4  |  nginx 1\.12\.1  |  uWSGI 2\.0\.8  |  amazon/aws\-eb\-python:3\.4\.2\-onbuild\-3\.5\.1  | 
+
 The following Elastic Beanstalk platform configurations for preconfigured Docker were current between May 11, 2018 and June 20, 2018:
 
 

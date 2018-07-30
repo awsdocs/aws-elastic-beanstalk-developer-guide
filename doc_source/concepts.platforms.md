@@ -50,7 +50,7 @@ See [Deploying Elastic Beanstalk Applications from Docker Containers](create_dep
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Docker Version  |  Proxy Server  | 
 | --- | --- | --- | --- | 
-|   **Single Container Docker 18\.03 version 2\.11\.0**   * 64bit Amazon Linux 2018\.03 v2\.11\.0 running Docker 18\.03\.1\-ce *   |  2018\.03\.0  |  18\.03\.1\-ce  |  nginx 1\.12\.1  | 
+|   **Single Container Docker 18\.03 version 2\.12\.0**   * 64bit Amazon Linux 2018\.03 v2\.12\.0 running Docker 18\.03\.1\-ce *   |  2018\.03\.0  |  18\.03\.1\-ce  |  nginx 1\.12\.1  | 
 
 For information about previous configurations, see [Single Container Docker Platform History](platform-history-docker-single.md)\.
 
@@ -82,13 +82,10 @@ Preconfigured Docker platform configurations use Docker, but do not let you prov
 
 |  Configuration and *Solution Stack Name*   |  AMI  |  Platform  |  Container OS  |  Language  |  Proxy Server  |  Application Server  |  Docker Image  | 
 | --- | --- | --- | --- | --- | --- | --- | --- | 
-|   **Glassfish 5\.0 \(Docker\) version 2\.11\.0**   * 64bit Amazon Linux v2\.11\.0 running GlassFish 5\.0 Java 8 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Amazon Linux 2018\.03  |  Java 8  |  nginx 1\.12\.1  |  Glassfish 5\.0  |  amazon/aws\-eb\-glassfish:5\.0\-al  | 
-|   **Glassfish 4\.1 \(Docker\) version 2\.11\.0**   * 64bit Amazon Linux v2\.11\.0 running GlassFish 4\.1 Java 8 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Amazon Linux 2018\.03  |  Java 8  |  nginx 1\.12\.1  |  Glassfish 4\.1  |  amazon/aws\-eb\-glassfish:4\.1\.2\-al  | 
-|   **Glassfish 4\.1 \(Docker\) version 2\.11\.0**   * 64bit Debian jessie v2\.11\.0 running GlassFish 4\.1 Java 8 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Java 8  |  nginx 1\.12\.1  |  Glassfish 4\.1  |  amazon/aws\-eb\-glassfish:4\.1\-jdk8\-onbuild\-3\.5\.1  | 
-|   **Glassfish 4\.0 \(Docker\) version 2\.11\.0**   * 64bit Debian jessie v2\.10\.0 running GlassFish 4\.0 Java 7 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Java 7  |  nginx 1\.12\.1  |  Glassfish 4\.0  |  amazon/aws\-eb\-glassfish:4\.0\-jdk7\-onbuild\-3\.5\.1  | 
-|   **Go 1\.4 \(Docker\) version 2\.11\.0**   * 64bit Debian jessie v2\.11\.0 running Go 1\.4 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Go 1\.4\.2  |  nginx 1\.12\.1  |  none  |  golang:1\.4\.2\-onbuild  | 
-|   **Go 1\.3 \(Docker\) version 2\.11\.0**   * 64bit Debian jessie v2\.11\.0 running Go 1\.3 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Go 1\.3\.3  |  nginx 1\.12\.1  |  none  |  golang:1\.3\.3\-onbuild  | 
-|   **Python 3\.4 with uWSGI 2 \(Docker\) version 2\.11\.0**   * 64bit Debian jessie v2\.11\.0 running Python 3\.4 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Python 3\.4  |  nginx 1\.12\.1  |  uWSGI 2\.0\.8  |  amazon/aws\-eb\-python:3\.4\.2\-onbuild\-3\.5\.1  | 
+|   **Glassfish 5\.0 \(Docker\) version 2\.12\.0**   * 64bit Amazon Linux v2\.12\.0 running GlassFish 5\.0 Java 8 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Amazon Linux 2018\.03  |  Java 8  |  nginx 1\.12\.1  |  Glassfish 5\.0  |  amazon/aws\-eb\-glassfish:5\.0\-al\-onbuild\-2\.11\.1  | 
+|   **Go 1\.4 \(Docker\) version 2\.12\.0**   * 64bit Debian jessie v2\.12\.0 running Go 1\.4 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Go 1\.4\.2  |  nginx 1\.12\.1  |  none  |  golang:1\.4\.2\-onbuild  | 
+|   **Go 1\.3 \(Docker\) version 2\.12\.0**   * 64bit Debian jessie v2\.12\.0 running Go 1\.3 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Go 1\.3\.3  |  nginx 1\.12\.1  |  none  |  golang:1\.3\.3\-onbuild  | 
+|   **Python 3\.4 with uWSGI 2 \(Docker\) version 2\.12\.0**   * 64bit Debian jessie v2\.12\.0 running Python 3\.4 \(Preconfigured \- Docker\) *   |  2018\.03\.0  |  Docker 18\.03\.1\-ce  |  Debian Jessie  |  Python 3\.4  |  nginx 1\.12\.1  |  uWSGI 2\.0\.8  |  amazon/aws\-eb\-python:3\.4\.2\-onbuild\-3\.5\.1  | 
 
 For information about previous configurations, see [Preconfigured Docker Platform History](platform-history-preconfigureddocker.md)\.
 

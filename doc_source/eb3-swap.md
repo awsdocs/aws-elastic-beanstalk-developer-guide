@@ -11,10 +11,10 @@ If you have more than two environments, you are prompted to select the name of t
 
  `eb swap` 
 
- `eb swap environment_name` 
+ `eb swap environment-name` 
 
 **Note**  
-The *environment\_name* is the environment for which you want a different CNAME\. If you don't specify *environment\_name* as a command line parameter when you run `eb swap`, EB CLI updates the CNAME of the default environment\.
+The *environment\-name* is the environment for which you want a different CNAME\. If you don't specify *environment\-name* as a command line parameter when you run `eb swap`, EB CLI updates the CNAME of the default environment\.
 
 ## Options<a name="eb3-swapoptions"></a>
 

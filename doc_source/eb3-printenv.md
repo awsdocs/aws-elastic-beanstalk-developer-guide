@@ -8,7 +8,7 @@ Prints all the environment properties in the command window\.
 
  `eb printenv` 
 
- `eb printenv environment_name` 
+ `eb printenv environment-name` 
 
 ## Options<a name="eb3-printenvoptions"></a>
 

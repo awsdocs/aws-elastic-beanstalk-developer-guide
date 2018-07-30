@@ -15,7 +15,7 @@ You can always launch a new environment using the same version later\. If you ha
 
  `eb terminate` 
 
- `eb terminate environment_name` 
+ `eb terminate environment-name` 
 
 ## Options<a name="eb3-terminateoptions"></a>
 

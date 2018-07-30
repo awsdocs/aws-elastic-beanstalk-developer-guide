@@ -10,7 +10,7 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 
  `eb console` 
 
- `eb console environment_name` 
+ `eb console environment-name` 
 
 ## Options<a name="eb3-consoleoptions"></a>
 

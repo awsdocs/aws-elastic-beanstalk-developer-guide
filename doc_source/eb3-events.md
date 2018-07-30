@@ -10,7 +10,7 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 
  `eb events` 
 
- `eb events environment_name` 
+ `eb events environment-name` 
 
 ## Options<a name="eb3-eventsoptions"></a>
 

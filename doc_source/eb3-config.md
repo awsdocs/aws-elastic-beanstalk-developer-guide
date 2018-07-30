@@ -13,7 +13,7 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 
  `eb config` 
 
- `eb config environment_name` 
+ `eb config environment-name` 
 
 The following describes the syntax for using the `eb config` command to work with saved configurations\. For examples, see the see the [Examples](#eb3-configexample) section later in this topic\.
 + `eb config delete filename ` – Deletes the named saved configuration\.

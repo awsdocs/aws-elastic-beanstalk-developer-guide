@@ -15,19 +15,19 @@ For more information, see [Using Elastic Beanstalk with Amazon CloudWatch Logs](
  To enable or disable log streaming to CloudWatch Logs: 
 
 ```
-eb logs --cloudwatch-logs [enable | disable] [--cloudwatch-log-source instance | environment-health | all] [environment_name]
+eb logs --cloudwatch-logs [enable | disable] [--cloudwatch-log-source instance | environment-health | all] [environment-name]
 ```
 
  To retrieve instance logs: 
 
 ```
-eb logs [-all | --zip | --stream] [--cloudwatch-log-source instance] [--instance instance-id] [--log-group log-group] [environment_name]
+eb logs [-all | --zip | --stream] [--cloudwatch-log-source instance] [--instance instance-id] [--log-group log-group] [environment-name]
 ```
 
  To retrieve environment health logs: 
 
 ```
-eb logs [-all | --zip | --stream] --cloudwatch-log-source environment-health [environment_name]
+eb logs [-all | --zip | --stream] --cloudwatch-log-source environment-health [environment-name]
 ```
 
 ## Options<a name="eb3-logsoptions"></a>
@@ -62,10 +62,10 @@ The following example enables instance log streaming to CloudWatch Logs\.
 $ eb logs -cw enable
 Enabling instance log streaming to CloudWatch for your environment
 After the environment is updated you can view your logs by following the link:
-https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logs:prefix=/aws/elasticbeanstalk/environment_name/
+https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#logs:prefix=/aws/elasticbeanstalk/environment-name/
 Printing Status:
 2018-07-11 21:05:20    INFO: Environment update is starting.
-2018-07-11 21:05:27    INFO: Updating environment environment_name's configuration settings.
+2018-07-11 21:05:27    INFO: Updating environment environment-name's configuration settings.
 2018-07-11 21:06:45    INFO: Successfully deployed new configuration to environment.
 ```
 

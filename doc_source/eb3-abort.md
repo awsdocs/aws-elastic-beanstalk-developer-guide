@@ -11,7 +11,7 @@ If you have more than two environments that are undergoing a update, you are pro
 
  `eb abort` 
 
- `eb abort environment_name` 
+ `eb abort environment-name` 
 
 ## Options<a name="eb3-abortoptions"></a>
 

@@ -20,7 +20,7 @@ See [Security Groups](using-features.managing.ec2.md#using-features.managing.ec2
 
  `eb ssh` 
 
- `eb ssh environment_name` 
+ `eb ssh environment-name` 
 
 ## Options<a name="eb3-sshoptions"></a>
 

@@ -11,7 +11,7 @@ By default, regardless of the solution stack version of the environment from whi
 
  `eb clone` 
 
- `eb clone environment_name` 
+ `eb clone environment-name` 
 
 ## Options<a name="eb3-cloneoptions"></a>
 

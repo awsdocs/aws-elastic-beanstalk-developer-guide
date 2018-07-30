@@ -8,7 +8,7 @@ When using Git, `eb use` sets the default environment for the current branch\. R
 
 ## Syntax<a name="eb3-usesyntax"></a>
 
- `eb use environment_name` 
+ `eb use environment-name` 
 
 ## Options<a name="eb3-useoptions"></a>
 
