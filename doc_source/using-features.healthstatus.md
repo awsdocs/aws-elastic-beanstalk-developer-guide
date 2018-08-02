@@ -33,7 +33,7 @@ These descriptions only apply to environments using basic health reporting\. See
 
 ## Elastic Load Balancing Health Check<a name="using-features.healthstatus.understanding"></a>
 
-In a load balanced environment, Elastic Load Balancing sends a request to each instance in an environment every 30 seconds to confirm that instances are healthy\. By default, the load balancer is configured to open a TCP connection on port 80\. If the instance acknowledges the connection, it is considered healthy\.
+In a load balanced environment, Elastic Load Balancing sends a request to each instance in an environment every 10 seconds to confirm that instances are healthy\. By default, the load balancer is configured to open a TCP connection on port 80\. If the instance acknowledges the connection, it is considered healthy\.
 
 You can choose to override this setting by specifying an existing resource in your application\. If you specify a path, such as `/health`, the health check URL is set to `HTTP:80/health`\. The health check URL should be set to a path that is always served by your application\. If it is set to a static page that is served or cached by the web server in front of your application, health checks will not reveal issues with the application server or web container\. For instructions on modifying your health check URL, see [Health Check](environments-cfg-clb.md#using-features.managing.elb.healthchecks)\.
 

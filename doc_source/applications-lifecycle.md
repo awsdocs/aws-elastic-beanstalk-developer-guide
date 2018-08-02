@@ -39,6 +39,6 @@ You can specify the lifecycle settings in the console\.
 
 1. For **Retention**, specify whether to delete the source bundle from S3 when the application version is deleted\.
 
-1. For **Service role**, specify the role under which the application version is deleted\.
+1. For **Service role**, specify the role under which the application version is deleted\. To include all permissions required for version deletion, choose the default Elastic Beanstalk service role, named `aws-elasticbeanstalk-service-role`, or another service role using the Elastic Beanstalk managed service policies\. For more information, see [Managing Elastic Beanstalk Service Roles](iam-servicerole.md)\.
 
 1. Select **Save** to save your application lifecycle settings\.

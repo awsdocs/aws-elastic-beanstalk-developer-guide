@@ -130,7 +130,7 @@ This page is only visible in development mode\. Add some content to the front pa
       create      app/assets/stylesheets/welcome_page.scss.
 ```
 
- This gives you all you need to access the page at `/welcome_page/welcome`\. Before you publish the changes, however, change the content in the view and add a route to make this page appear at the top level of the site\. 
+This gives you all you need to access the page at `/welcome_page/welcome`\. Before you publish the changes, however, change the content in the view and add a route to make this page appear at the top level of the site\. 
 
 Use a text editor to edit the content in `app/views/welcome_page/welcome.html.erb`\. For this example, you'll use `cat` to simply overwrite the content of the existing file\. 
 
@@ -155,9 +155,9 @@ This tells Rails to route requests to the root of the website to the welcome pag
 
 ## Configure Rails Settings<a name="ruby-rails-tutorial-configure"></a>
 
-Use the Elastic Beanstalk console to configure Rails with environment properties\. `SECRET_KEY_BASE`, which is referred to by `secrets.yml` in the `config` folder of your project\.
+Use the Elastic Beanstalk console to configure Rails with environment properties\. Set the `SECRET_KEY_BASE` environment property to a string of up to 256 alphanumeric characters\. The `secrets.yml` file in the `config` folder of your project refers to this property\.
 
-This variable is used to create keys and should be a secret, as the name suggests\. This is why you don't want it stored in source control where other people might see it\. Set this to any value with the console\.
+This property is used to create keys and should be a secret, as the name suggests\. This is why you don't want it stored in source control where other people might see it\. Set the `SECRET_KEY_BASE` environment property to any value\.
 
 **To configure environment properties in the Elastic Beanstalk console**
 

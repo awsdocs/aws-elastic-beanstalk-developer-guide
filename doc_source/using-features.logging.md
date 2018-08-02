@@ -43,6 +43,7 @@ Logs are stored in standard locations on the Amazon EC2 instances in your enviro
 
 **Windows Server**
 + `C:\Program Files\Amazon\ElasticBeanstalk\logs\`
++ `C:\cfn\logs\cfn-init.log`
 
 These logs contain messages about deployment activities, including messages related to configuration files \([`.ebextensions`](ebextensions.md)\)\.
 
