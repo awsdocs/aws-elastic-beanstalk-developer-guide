@@ -1,6 +1,6 @@
 # Using the AWS Elastic Beanstalk Python Platform<a name="create-deploy-python-container"></a>
 
-The AWS Elastic Beanstalk Python platform is a set of [environment configurations](concepts.platforms.md#concepts.platforms.python) for Python web applications that can run behind an Apache proxy server with WSGI\. Each configuration corresponds to a version of Python, including Python 2\.6, Python 2\.7, and Python 3\.4\.
+The AWS Elastic Beanstalk Python platform is a set of [environment configurations](concepts.platforms.md#concepts.platforms.python) for Python web applications that can run behind an Apache proxy server with WSGI\. Each configuration corresponds to a version of Python, such as Python 3\.4\.
 
 Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application, enable log rotation to Amazon S3, and map folders in your application source that contain static files to paths served by the proxy server\.
 
@@ -42,7 +42,7 @@ The Log Options section has two settings:
 
 ### Static Files<a name="python-platform-staticfiles"></a>
 
-To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When a the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\. When you add a mapping, an extra row appears in case you want to add another one\. To remove a mapping, click **Remove**\.
+To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\. When you add a mapping, an extra row appears in case you want to add another one\. To remove a mapping, click **Remove**\.
 
 ![\[Static file configuration in the Modify software configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-static-files.png)
 
