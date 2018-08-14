@@ -20,7 +20,7 @@ Number of requests that resulted in each type of status code over the last 10 se
 The EB CLI and [Environment Health Page](health-enhanced-console.md#health-enhanced-console-healthpage) show these metrics both as a raw number of requests for instances, and as a percentage of overall requests for environments\.
 
 `p99.9``p99``p95``p90``p85``p75``p50``p10`  
-Average latency for the slowest *x* percent of requests over the last 10 seconds, where *x* is the difference between the number and 100\. For example, p99 indicates the latency for the slowest 1% of requests over the last 10 seconds\.
+Average latency over the last 10 seconds, broken down into percentiles\. For example, *p99 3.001* indicates that latency for 99% of requests over the last 10 seconds were completed within 3.001 seconds\.
 
 ## Operating System Metrics<a name="health-enhanced-metrics-os"></a>
 
