@@ -154,22 +154,23 @@ Use the EB CLI to create your first custom platform with the sample platform def
    ```
 
 1. Run [`eb platform init`](eb3-platform.md#eb3-platform-init) and follow the prompts to initialize a platform repository\.
+
+   You can shorten `eb platform` to `ebp`\.
 **Note**  
-You can shorten `eb platform` to `ebp`\.  
 Windows PowerShell uses `ebp` as a command alias\. If you're running the EB CLI in Windows PowerShell, use the long form of this command — `eb platform`\.
 
    ```
-   ~/custom-platform$ ebp init
+   ~/custom-platform$ eb platform init
    ```
 
    This command also creates the directory `.elasticbeanstalk` in the current directory and adds the configuration file `config.yml` to the directory\. Don't change or delete this file, because Elastic Beanstalk relies on it when creating the custom platform\.
 
-   By default, `ebp init` uses the name of the current folder as the name of the custom platform, which would be `custom-platform` in this example\.
+   By default, `eb platform init` uses the name of the current folder as the name of the custom platform, which would be `custom-platform` in this example\.
 
 1. Run [`eb platform create`](eb3-platform.md#eb3-platform-create) to launch a Packer environment and get the ARN of the custom platform\. You'll need this value later when you create an environment from the custom platform\.
 
    ```
-   ~/custom-platform$ ebp create
+   ~/custom-platform$ eb platform create
    ...
    ```
 
@@ -182,21 +183,21 @@ Packer will fail to create a custom platform if you use the Elastic Beanstalk de
 1. You can check the logs for errors using the [`eb platform logs`](eb3-platform.md#eb3-platform-logs) command\.
 
    ```
-   ~/custom-platform$ ebp logs
+   ~/custom-platform$ eb platform logs
    ...
    ```
 
 1. You can check on the process later with [`eb platform events`](eb3-platform.md#eb3-platform-events)\.
 
    ```
-   ~/custom-platform$ ebp events
+   ~/custom-platform$ eb platform events
    ...
    ```
 
 1. Check the status of your platform with [`eb platform status`](eb3-platform.md#eb3-platform-status)\.
 
    ```
-   ~/custom-platform$ ebp status
+   ~/custom-platform$ eb platform status
    ...
    ```
 

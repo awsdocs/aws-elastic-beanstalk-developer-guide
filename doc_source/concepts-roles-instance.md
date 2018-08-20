@@ -1,7 +1,8 @@
 # Elastic Beanstalk Instance Profile<a name="concepts-roles-instance"></a>
 
 An instance profile is an IAM role that is applied to instances launched in your Elastic Beanstalk environment\. When creating an Elastic Beanstalk environment, you specify the instance profile that is used when your instances:
-+ Write logs to Amazon Simple Storage Service
++ Retrieve [application versions](concepts.md#concepts-version) from Amazon Simple Storage Service \(Amazon S3\)
++ Write logs to Amazon S3
 + In [AWS X\-Ray integrated environments](environment-configuration-debugging.md), upload debugging data to X\-Ray
 + In multicontainer Docker environments, coordinate container deployments with Amazon Elastic Container Service
 + In worker environments, read from an Amazon Simple Queue Service \(Amazon SQS\) queue

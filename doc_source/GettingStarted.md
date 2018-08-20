@@ -25,7 +25,7 @@ If you're not already an AWS customer, you need to sign up\. Signing up enables 
 
 Next, you create and deploy a sample application\. For this step, you use a sample application that is already prepared\.
 
-Elastic Beanstalk is free to use, but the AWS resources that it provides are live \(and not running in a sandbox\)\. You incur the standard usage fees for these resources until you terminate them in the last task in this tutorial\. The total charges are minimal \(typically less than a dollar\)\. For information about how you might minimize any charges, see [AWS Free Tier](https://aws.amazon.com/free)\.
+Elastic Beanstalk is free to use, but the AWS resources that it provides are live \(and not running in a sandbox\)\. You incur the standard usage fees for these resources until you terminate them in the last task in this tutorial\. The total charges are minimal \(typically less than a dollar\)\. For information about how you might minimize any charges, see [AWS Free Tier](https://aws.amazon.com/free)\. 
 
 **To create a sample application**
 

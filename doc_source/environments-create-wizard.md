@@ -1,6 +1,6 @@
 # The Create New Environment Wizard<a name="environments-create-wizard"></a>
 
-In [Creating an AWS Elastic Beanstalk Environment](using-features.environments.md) we show how to open the **Create New Environment**wizard and quickly create an environment\. Choose **Create environment**to launch an environment with a default environment name, automatically generated domain, sample application code, and recommended settings\.
+In [Creating an AWS Elastic Beanstalk Environment](using-features.environments.md) we show how to open the **Create New Environment** wizard and quickly create an environment\. Choose **Create environment** to launch an environment with a default environment name, automatically generated domain, sample application code, and recommended settings\.
 
 This topic describes the **Create New Environment** wizard and all the ways you can use it to configure the environment you want to create\.
 

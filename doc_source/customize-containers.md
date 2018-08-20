@@ -16,6 +16,7 @@ Elastic Beanstalk provides a wide range of options for customizing the resources
 This topic focuses on the resource configuration options available in the Elastic Beanstalk console\. The following topics show how to configure your environment in the console\. They also describe the underlying namespaces that correspond to the console options for use with configuration files or API configuration options\. You can learn more about advanced configuration methods in the [next chapter](beanstalk-environment-configuration-advanced.md)\. 
 
 **Topics**
++ [Environment Configuration Using the Elastic Beanstalk Console](environments-cfg-console.md)
 + [Your AWS Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.managing.ec2.md)
 + [Auto Scaling Group for Your AWS Elastic Beanstalk Environment](using-features.managing.as.md)
 + [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)

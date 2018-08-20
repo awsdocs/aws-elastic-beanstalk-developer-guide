@@ -10,11 +10,12 @@ Use this workspace to manage custom platforms\.
 [Environment](#eb3-platform-environment)  
 Use this workspace to select a default platform or show information about the current platform\.
 
+Elastic Beanstalk provides the shortcut `ebp` for `eb platform`\.
+
 **Note**  
-Elastic Beanstalk provides the shortcut `ebp` for `eb platform`\. The examples use this shortcut\.  
 Windows PowerShell uses `ebp` as a command alias\. If you're running the EB CLI in Windows PowerShell, use the long form of this command — `eb platform`\.
 
-### Using eb platform for custom platforms<a name="eb3-platform-preconfigured"></a>
+## Using eb platform for custom platforms<a name="eb3-platform-preconfigured"></a>
 
 Lists the versions of the current platform and enables you to manage custom platforms\.
 
@@ -36,7 +37,7 @@ Lists the versions of the current platform and enables you to manage custom plat
 
 `eb platform use [platform] [options]`
 
-### Options<a name="eb3-platformpreoptions"></a>
+### Options<a name="eb3-platform-options"></a>
 
 
 ****  
@@ -55,7 +56,7 @@ Lists the versions of the current platform and enables you to manage custom plat
 
 ### Common Options<a name="eb3-platform-common"></a>
 
-All `ebp platform` commands include the following common options\.
+All `eb platform` commands include the following common options\.
 
 
 ****  
@@ -70,7 +71,7 @@ All `ebp platform` commands include the following common options\.
 |  `-r REGION` OR `--region REGION`  |  Use the region *REGION*\.  | 
 |  `--no-verify-ssl`  |  Do not verify AWS SSL certificates\.  | 
 
-### ebp create<a name="eb3-platform-create"></a>
+### eb platform create<a name="eb3-platform-create"></a>
 
 Builds a new version of the platform and returns the ARN for the new version\. If there is no builder environment running in the current region, this command launches one\. The *version* and increment options \(`-M`, `-m`, and `-p`\) are mutually exclusive\. 
 
@@ -91,7 +92,7 @@ Builds a new version of the platform and returns the ARN for the new version\. I
 |  `--vpc.subnets VPC_SUBNETS`  | The VPC subnets in which Packer builds\. | 
 |  `--vpc.publicip`  | Associates public IPs to EC2 instances launched\. | 
 
-### ebp delete<a name="eb3-platform-delete"></a>
+### eb platform delete<a name="eb3-platform-delete"></a>
 
 Delete a platform version\. The version isn't deleted if an environment is using that version\.
 
@@ -107,7 +108,7 @@ Delete a platform version\. The version isn't deleted if an environment is using
 |  `--all-platforms`  |  If `--cleanup` is specified, remove all platform versions in the `Failed` state for all platforms\.  | 
 |  `--force`  |  Do not require confirmation when deleting a version\.  | 
 
-### ebp events<a name="eb3-platform-events"></a>
+### eb platform events<a name="eb3-platform-events"></a>
 
 Display the events from a platform version\. If *version* is specified, display the events from that version, otherwise display the events from the current version\.
 
@@ -121,7 +122,7 @@ Display the events from a platform version\. If *version* is specified, display 
 |  *version* | The version for which events are displayed\. This value is required\. | 
 |  `-f` OR `--follow`  | Continue to display events as they occur\. | 
 
-### ebp init<a name="eb3-platform-init"></a>
+### eb platform init<a name="eb3-platform-init"></a>
 
 Initialize a platform repository\.
 
@@ -140,7 +141,7 @@ You can run this command in a directory that has been previously initialized, al
 
 To re\-initialize with different options, use the `-i` option\.
 
-### ebp list<a name="eb3-platform-list"></a>
+### eb platform list<a name="eb3-platform-list"></a>
 
 List the versions of the platform associated with the workspace\.
 
@@ -154,7 +155,7 @@ List the versions of the platform associated with the workspace\.
 |  `-a` OR `--all-platforms`  | Lists the versions of all of the platforms associated with your account\. | 
 |  `-s STATUS` OR `--status STATUS`  |  List only the platforms matching *STATUS*: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-platform.html)  | 
 
-### ebp logs<a name="eb3-platform-logs"></a>
+### eb platform logs<a name="eb3-platform-logs"></a>
 
 Display logs from the builder environment for a platform version\.
 
@@ -168,7 +169,7 @@ Display logs from the builder environment for a platform version\.
 |  `version`  |  The version of the platform for which logs are displayed\. If omitted, display logs from the current version\.  | 
 |  `--stream`  | Stream deployment logs that were set up with CloudWatch\. | 
 
-### ebp status<a name="eb3-platform-status"></a>
+### eb platform status<a name="eb3-platform-status"></a>
 
 Display the status of the a platform version\.
 
@@ -181,7 +182,7 @@ Display the status of the a platform version\.
 | --- | --- | 
 |  `version`  | The version of the platform for which the status is retrieved\. If omitted, display the status of the current version\. | 
 
-### ebp use<a name="eb3-platform-use"></a>
+### eb platform use<a name="eb3-platform-use"></a>
 
 Select a different platform from which new versions are built\.
 
@@ -219,10 +220,10 @@ Lists supported platforms and enables you to set the default platform and platfo
 
 ### Example 1<a name="eb3-platformenvexample1"></a>
 
-The following example lists the names of all of all of the container for all platforms that Elastic Beanstalk supports\.
+The following example lists the names of all configurations for all platforms that Elastic Beanstalk supports\.
 
 ```
-$ ebp list
+$ eb platform list
 docker-1.5.0
 glassfish-4.0-java-7-(preconfigured-docker)
 glassfish-4.1-java-8-(preconfigured-docker)
@@ -259,7 +260,7 @@ tomcat-8-java-8
 The following example prompts you to choose from a list of platforms and the version that you want to deploy for the specified platform\.
 
 ```
-$ ebp select
+$ eb platform select
 Select a platform.
 1) PHP
 2) Node.js
@@ -284,7 +285,7 @@ Select a platform version.
 The following example shows information about the current default platform\.
 
 ```
-$ ebp show
+$ eb platform show
 Current default platform: Python 2.7
 New environments will be running:  64bit Amazon Linux 2014.09 v1.2.0 running Python 2.7
 

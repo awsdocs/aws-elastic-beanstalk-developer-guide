@@ -64,6 +64,7 @@ Amazon's trademarks and trade dress may not be used in
    + [AWS Elastic Beanstalk Worker Environments](using-features-managing-env-tiers.md)
    + [Creating Links Between AWS Elastic Beanstalk Environments](environment-cfg-links.md)
 + [AWS Elastic Beanstalk Environment Configuration](customize-containers.md)
+   + [Environment Configuration Using the Elastic Beanstalk Console](environments-cfg-console.md)
    + [Your AWS Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.managing.ec2.md)
    + [Auto Scaling Group for Your AWS Elastic Beanstalk Environment](using-features.managing.as.md)
       + [Auto Scaling Triggers](environments-cfg-autoscaling-triggers.md)
