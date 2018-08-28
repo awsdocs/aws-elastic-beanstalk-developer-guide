@@ -147,7 +147,7 @@ The final section, **deployments**, shows the deployment status of each instance
   i-8b2cf575    Deployed   1    Sample Application   1 hour
 ```
 
-## Interactive Health View<a name="w3ab1c31c41c19"></a>
+## Interactive Health View<a name="w3aac31c41c19"></a>
 
 The `eb health` command displays a snapshot of your environment's health\. To refresh the displayed information every 10 seconds, use the `--refresh` option:
 

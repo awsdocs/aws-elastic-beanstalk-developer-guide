@@ -4,6 +4,18 @@ This page lists the previous versions of AWS Elastic Beanstalk's Tomcat platform
 
 See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
+The following Elastic Beanstalk platform configurations for Tomcat were current between August 15, 2018 and August 19, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  AWS X‑Ray  |  Application Server  |  Proxy Server  | 
+| --- | --- | --- | --- | --- | --- | 
+|   **Java 8 with Tomcat 8\.5 version 3\.0\.2**   * 64bit Amazon Linux 2018\.03 v3\.0\.2 running Tomcat 8\.5 Java 8 *   |  2018\.03\.0  |  Java 1\.8\.0\_181  |  2\.0\.0  |  Tomcat 8\.5\.32  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
+|   **Java 8 with Tomcat 8 version 3\.0\.2**   * 64bit Amazon Linux 2018\.03 v3\.0\.2 running Tomcat 8 Java 8 *   |  2018\.03\.0  |  Java 1\.8\.0\_181  |  2\.0\.0  |  Tomcat 8\.0\.53  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
+|   **Java 7 with Tomcat 7 version 3\.0\.2**   * 64bit Amazon Linux 2018\.03 v3\.0\.2 running Tomcat 7 Java 7 *   |  2018\.03\.0  |  Java 1\.7\.0\_181  |  2\.0\.0  |  Tomcat 7\.0\.90  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
+|   **Java 6 with Tomcat 7 version 3\.0\.2**   * 64bit Amazon Linux 2018\.03 v3\.0\.2 running Tomcat 7 Java 6 *   |  2018\.03\.0  |  Java 1\.6\.0\_41  |  2\.0\.0  |  Tomcat 7\.0\.90  |  Apache 2\.4\.33 \(default\), Apache 2\.2\.34, Nginx 1\.12\.1  | 
+
 The following Elastic Beanstalk platform configurations for Tomcat were current between June 21, 2018 and August 14, 2018:
 
 

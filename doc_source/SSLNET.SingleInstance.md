@@ -3,12 +3,12 @@
 The following [configuration file](ebextensions.md) creates and runs a Windows PowerShell script that performs the following tasks:
 + Checks for an existing HTTPS certificate binding to port 443
 + Gets the [PFX certificate](configuring-https-ssl.md) and password from an Amazon S3 bucket
-
-  Add an `AmazonS3ReadOnlyAccess` policy to the `aws-elasticbeanstalk-service-role` to access the SSL certificate and password files on the Amazon S3 bucket\.
+**Note**  
+Add an `AmazonS3ReadOnlyAccess` policy to the `aws-elasticbeanstalk-service-role` to access the SSL certificate and password files on the Amazon S3 bucket\.
 + Installs the certificate
 + Binds the certificate to port 443
-
-  If you want to remove the HTTP endpoint \(port 80\), see the comment above the `Remove-WebBinding` command\.
+**Note**  
+To remove the HTTP endpoint \(port 80\), include the `Remove-WebBinding` command under the **Remove the HTTP binding** section of the example\.
 
 **Example \.ebextensions/https\-instance\-dotnet\.config**  
 
@@ -52,7 +52,8 @@ files:
       New-WebBinding -Name "Default Web Site" -IP "*" -Port 443 -Protocol https
       New-Item -path IIS:\SslBindings\0.0.0.0!443 -value $cert -Force
       
-      ## (optional) Remove the HTTP binding - uncomment the following line to unbind port 80
+      ## Remove the HTTP binding
+      ## (optional) Uncomment the following line to unbind port 80
       # Remove-WebBinding -Name "Default Web Site" -BindingInformation *:80:
       ##
       

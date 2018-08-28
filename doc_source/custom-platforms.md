@@ -41,22 +41,22 @@ One alternative to creating your own custom platform is to use one of the platfo
 **Note**  
 Do not use an unmodified sample custom platform in production\. The goal of the samples is to illustrate some of the functionality available for a custom platform, but they have not been hardened for production use\.
 
-[NodePlatform\_Ubuntu\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.1/NodePlatform_Ubuntu.zip)  
+[NodePlatform\_Ubuntu\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.2/NodePlatform_Ubuntu.zip)  
 This custom platform is based on **Ubuntu 16\.04** and supports **Node\.js 4\.4\.4**\. We'll use this custom platform for the examples in this section\.
 
-[NodePlatform\_RHEL\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.1/NodePlatform_RHEL.zip)  
+[NodePlatform\_RHEL\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.2/NodePlatform_RHEL.zip)  
 This custom platform is based on **RHEL 7\.2** and supports **Node\.js 4\.4\.4**\.
 
-[NodePlatform\_AmazonLinux\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.1/NodePlatform_AmazonLinux.zip)  
+[NodePlatform\_AmazonLinux\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.2/NodePlatform_AmazonLinux.zip)  
 This custom platform is based on **Amazon Linux 2016\.09\.1** and supports **Node\.js 4\.4\.4**\.
 
-[TomcatPlatform\_Ubuntu\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.1/TomcatPlatform_Ubuntu.zip)  
+[TomcatPlatform\_Ubuntu\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.2/TomcatPlatform_Ubuntu.zip)  
 This custom platform is based on **Ubuntu 16\.04** and supports **Tomcat 7/Java 8**\.
 
-[CustomPlatform\_NodeSampleApp\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.1/CustomPlatform_NodeSampleApp.zip)  
+[CustomPlatform\_NodeSampleApp\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.2/CustomPlatform_NodeSampleApp.zip)  
 A Node\.js sample that uses **express** and **ejs** to display a static webpage\.
 
-[CustomPlatform\_TomcatSampleApp\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.1/CustomPlatform_TomcatSampleApp.zip)  
+[CustomPlatform\_TomcatSampleApp\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.2/CustomPlatform_TomcatSampleApp.zip)  
 A Tomcat sample that displays a static webpage when deployed\.
 
 Download the sample platform definition archive: `NodePlatform_Ubuntu.zip`\. This file contains a platform definition file, Packer template, scripts that Packer runs during image creation, and scripts and configuration files that Packer copies onto the builder instance during platform creation\.

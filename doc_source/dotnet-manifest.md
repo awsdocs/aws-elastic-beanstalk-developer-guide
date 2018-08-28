@@ -2,7 +2,7 @@
 
 You can use a deployment manifest to tell Elastic Beanstalk how to deploy your application\. For example, instead of using `MSDeploy` to generate a source bundle for a single ASP\.NET application that runs at the root path of your website, you can use a manifest file to run multiple applications at different paths, or tell Elastic Beanstalk to deploy and run the app with ASP\.NET Core\. You can also use a deployment manifest to configure an application pool in which to run your applications\.
 
-Deployment manifests add support for [\.NET Core applications](#dotnet-manifest-dotnetcore) to Elastic Beanstalk\. You can deploy a \.NET Standard application without a deployment manifest, but \.NET Core applications require a deployment manifest to run on Elastic Beanstalk\. When you use a deployment manifest, you create a site archive for each application and then bundle the site archives in a second ZIP archive that contains the deployment manifest\.
+Deployment manifests add support for [\.NET Core applications](#dotnet-manifest-dotnetcore) to Elastic Beanstalk\. You can deploy a \.NET Framework application without a deployment manifest, but \.NET Core applications require a deployment manifest to run on Elastic Beanstalk\. When you use a deployment manifest, you create a site archive for each application and then bundle the site archives in a second ZIP archive that contains the deployment manifest\.
 
 Deployment manifests also add the ability to [run multiple applications at different paths](#dotnet-manifest-multiapp)\. A deployment manifest defines an array of deployment targets, each with a site archive and a path at which IIS should run it\. For example, you could run a web API at the `/api` path to serve asynchronous requests, and a web app at the root path that consumes the API\.
 
@@ -142,7 +142,7 @@ A sample application with multiple applications is available here:
 
 You can use a deployment manifest to configure an application pool in IIS and use it to run one or more applications\.
 
-The following deployment manifest configures an application pool that restarts its applications every 10 minutes, and attaches it to a \.NET Standard web application that runs at the root path\.
+The following deployment manifest configures an application pool that restarts its applications every 10 minutes, and attaches it to a \.NET Framework web application that runs at the root path\.
 
 **Example aws\-windows\-deployment\-manifest\.json \- app pool**  
 

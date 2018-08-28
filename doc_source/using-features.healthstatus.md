@@ -99,7 +99,7 @@ These lists are not comprehensive\. For a full list of metrics that can be repor
 | AWS::SQS::Queue | [Amazon SQS Metrics and Resources](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/sqs-metricscollected.html) | 
 | AWS::RDS::DBInstance | [Amazon RDS Dimensions and Metrics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/rds-metricscollected.html) | 
 
-### Worker Environment Health Metric<a name="w3ab1c25b9c21c18"></a>
+### Worker Environment Health Metric<a name="w3aac25b9c21c18"></a>
 
 For worker environments only, the SQS daemon publishes a custom metric for environment health to CloudWatch, where a value of 1 is Green\. You can review the CloudWatch health metric data in your account using the `ElasticBeanstalk/SQSD` namespace\. The metric dimension is `EnvironmentName`, and the metric name is `Health`\. All instances publish their metrics to the same namespace\.
 
