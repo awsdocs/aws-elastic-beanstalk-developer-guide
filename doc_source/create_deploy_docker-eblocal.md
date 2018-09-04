@@ -41,7 +41,7 @@ The EB CLI supports running single container, multicontainer, and preconfigured 
 
 Docker containers run locally without emulating AWS resources that are provisioned when you deploy an application to Elastic Beanstalk, including security groups and data or worker tiers\.
 
-You can configure your local containers to connect to a database by passing the necessary connection string or other variables with the `envvars` option, but you must ensure that any resources in AWS are accessible from your local machine by [opening the appropriate ports](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html) in their assigned security groups or attaching a [default gateway](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Internet_Gateway.html) or [elastic IP address](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)\.
+You can configure your local containers to connect to a database by passing the necessary connection string or other variables with the `envvars` option, but you must ensure that any resources in AWS are accessible from your local machine by [opening the appropriate ports](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html) in their assigned security groups or attaching a [default gateway](http://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html) or [elastic IP address](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)\.
 
 ## Preparing a Docker Application for Use with the EB CLI<a name="create_deploy_docker-eblocal-prepare"></a>
 

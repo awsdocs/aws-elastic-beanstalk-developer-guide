@@ -10,7 +10,7 @@ You can use functions in your configuration files to populate values for resourc
 
 ## Ref<a name="ebextensions-functions-ref"></a>
 
-Use `Ref` to retrieve the default string representation of an AWS resource\. The value returned by `Ref` depends on the resource type, and sometimes depends on other factors as well\. For example, a security group \([AWS::EC2::SecurityGroup](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html)\) returns either the name or ID of the security group, depending on if the security group is in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\), EC2 classic, or a custom VPC\.
+Use `Ref` to retrieve the default string representation of an AWS resource\. The value returned by `Ref` depends on the resource type, and sometimes depends on other factors as well\. For example, a security group \([AWS::EC2::SecurityGroup](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html)\) returns either the name or ID of the security group, depending on if the security group is in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\), EC2 classic, or a custom VPC\.
 
 ```
 { "Ref" : "resource name" }

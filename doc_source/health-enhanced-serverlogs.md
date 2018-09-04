@@ -2,12 +2,12 @@
 
 AWS Elastic Beanstalk platforms use a custom web server log format to efficiently relay information about HTTP requests to the enhanced health reporting system, which analyzes the logs, identifies issues, and sets the instance and environment health accordingly\. If you disable the web server proxy on your environment and serve requests directly from the web container, you can still make full use of enhanced health reporting by configuring your server to output logs in the location and format that the [Elastic Beanstalk health agent](health-enhanced.md#health-enhanced-agent) uses\.
 
-## Web Server Log Configuration<a name="w3aac25c11c61b5"></a>
+## Web Server Log Configuration<a name="health-enhanced-serverlogs.configure"></a>
 
 Elastic Beanstalk platforms are configured to output two logs with information about HTTP requests\. The first is in verbose format and provides detailed information about the request, including the requester's user agent information and a human\-readable timestamp\.
 
 **/var/log/nginx/access\.log**  
-The following example is from an nginx proxy running on a Ruby web server environment, but the format is similar for Apache:
+The following example is from an nginx proxy running on a Ruby web server environment, but the format is similar for Apache\.
 
 ```
 172.31.24.3 - - [23/Jul/2015:00:21:20 +0000] "GET / HTTP/1.1" 200 11 "-" "curl/7.22.0 (x86_64-pc-linux-gnu) libcurl/7.22.0 OpenSSL/1.0.1 zlib/1.2.3.4 libidn/1.23 librtmp/2.3" "177.72.242.17"
@@ -49,7 +49,7 @@ W, [DATE-TIME #1922] WARN -- : log file "/var/log/nginx/healthd/application.log.
 You can start with the \.ebextension in the [Multicontainer Docker sample](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/samples/docker-multicontainer-v1.zip)\.
 
 **/etc/nginx/conf\.d/webapp\_healthd\.conf**  
-The following example shows the log configuration for nginx with the `healthd` log format highlighted:
+The following example shows the log configuration for nginx with the `healthd` log format highlighted\.
 
 ```
 upstream my_app {
@@ -98,7 +98,15 @@ server {
 }
 ```
 
-## Generating Logs for Enhanced Health Reporting<a name="w3aac25c11c61b7"></a>
+**/etc/httpd/conf\.d/healthd\.conf**  
+The following example shows the log configuration for Apache\.
+
+```
+LogFormat "%{%s}t\"%U\"%s\"%D\"%D\"%{X-Forwarded-For}i" healthd
+CustomLog "|/usr/sbin/rotatelogs /var/log/httpd/healthd/application.log.%Y-%m-%d-%H 3600" healthd
+```
+
+## Generating Logs for Enhanced Health Reporting<a name="health-enhanced-serverlogs.generate"></a>
 
 To provide logs to the health agent, you must do the following:
 + Output logs in the correct format, as shown in the previous section

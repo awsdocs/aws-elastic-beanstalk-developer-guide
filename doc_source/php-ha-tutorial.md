@@ -17,7 +17,7 @@ The tutorial uses a [sample PHP application](https://github.com/awslabs/eb-demo-
 
 Before you start, download the sample application source bundle from GitHub: [eb\-demo\-php\-simple\-app\-1\.1\.zip](https://github.com/awslabs/eb-demo-php-simple-app/releases/download/v1.1/eb-demo-php-simple-app-v1.1.zip)
 
-The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
+The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
 
 ## Launch a DB Instance in Amazon RDS<a name="php-hawrds-tutorial-database"></a>
 

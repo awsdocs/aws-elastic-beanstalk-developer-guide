@@ -18,6 +18,12 @@
    $ aws elasticbeanstalk describe-application-versions --application-name my-app --version-label v1
    ```
 
+   If you don't have an application version for your source yet, create it\. For example, the following command creates an application version from a source bundle in Amazon Simple Storage Service \(Amazon S3\)\.
+
+   ```
+   $ aws elasticbeanstalk create-application-version --application-name my-app --version-label v1 --source-bundle S3Bucket=my-bucket,S3Key=my-source-bundle.zip
+   ```
+
 1. Create a configuration template for the application\.
 
    ```

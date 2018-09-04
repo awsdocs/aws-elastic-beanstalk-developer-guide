@@ -1,6 +1,6 @@
 # Example Snippets: ElastiCache<a name="customize-environment-resources-elasticache"></a>
 
-The following samples add an Amazon ElastiCache cluster to EC2\-Classic and EC2\-VPC \(both default and custom [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/) \(Amazon VPC\)\) platforms\. For more information about these platforms and how you can determine which ones EC2 supports for your region and your AWS account, see [http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html)\. Then refer to the section in this topic that applies to your platform\.
+The following samples add an Amazon ElastiCache cluster to EC2\-Classic and EC2\-VPC \(both default and custom [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\) platforms\. For more information about these platforms and how you can determine which ones EC2 supports for your region and your AWS account, see [http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html)\. Then refer to the section in this topic that applies to your platform\.
 + [EC2\-Classic Platforms](#customize-environment-resources-elasticache-classic)
 + [EC2\-VPC \(Default\)](#customize-environment-resources-elasticache-defaultvpc)
 + [EC2\-VPC \(Custom\)](#customize-environment-resources-elasticache-targetedvpc)
@@ -77,7 +77,7 @@ These lines tell Elastic Beanstalk to get the values for the **CacheNodeType, Nu
 
 ## EC2\-VPC \(Default\)<a name="customize-environment-resources-elasticache-defaultvpc"></a>
 
-This sample adds an Amazon ElastiCache cluster to an environment with instances launched into the EC2\-VPC platform\. Specifically, the information in this section applies to a scenario where EC2 launches instances into the default VPC\. All of the properties in this example are the minimum required properties that must be set for each resource type\. For more information about default VPCs, see [Your Default VPC and Subnets](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/default-vpc.html)\.
+This sample adds an Amazon ElastiCache cluster to an environment with instances launched into the EC2\-VPC platform\. Specifically, the information in this section applies to a scenario where EC2 launches instances into the default VPC\. All of the properties in this example are the minimum required properties that must be set for each resource type\. For more information about default VPCs, see [Your Default VPC and Subnets](http://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html)\.
 
 **Note**  
 This example creates AWS resources, which you might be charged for\. For more information about AWS pricing, see [https://aws.amazon.com/pricing/](https://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you can test drive these services for free\. See [https://aws.amazon.com/free/](https://aws.amazon.com/free/) for more information\.
@@ -187,7 +187,7 @@ Next, we create an EC2 security group\. We define the name for this resource, de
 The ingress rules for the EC2 security group also define the IP protocol and port numbers on which the cache nodes can accept connections\. For Redis, the default port number is `6379`\. Finally, this example creates a subnet group for the ElastiCache cluster\. We define the name for this resource, declare its type, and add a description and ID of the subnet in the subnet group\.
 
 **Note**  
-We recommend that you use private subnets for the ElastiCache cluster\. For more information about a VPC with a private subnet, see [http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario2.html](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Scenario2.html)\.
+We recommend that you use private subnets for the ElastiCache cluster\. For more information about a VPC with a private subnet, see [http://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html](http://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html)\.
 
 ```
 #This sample requires you to create a separate configuration file that defines the custom option settings for CacheCluster properties.
