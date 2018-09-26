@@ -4,6 +4,18 @@ This page lists the previous versions of AWS Elastic Beanstalk's Python platform
 
 See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
+The following Elastic Beanstalk platform configurations for Python were current between August 20, 2018 and September 24, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Language  |  Package Manager  |  Packager  |  meld3  |  AWS X‑Ray  |  Proxy Server  | 
+| --- | --- | --- | --- | --- | --- | --- | --- | 
+|   **Python 3\.6 version 2\.7\.3**   * 64bit Amazon Linux 2018\.03 v2\.7\.3 running Python 3\.6 *   |  2018\.03\.0  |  Python 3\.6\.5  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.33 with mod\_wsgi 3\.5  | 
+|   **Python 3\.4 version 2\.7\.3**   * 64bit Amazon Linux 2018\.03 v2\.7\.3 running Python 3\.4 *   |  2018\.03\.0  |  Python 3\.4\.8  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.33 with mod\_wsgi 3\.5  | 
+|   **Python 2\.7 version 2\.7\.3**   * 64bit Amazon Linux 2018\.03 v2\.7\.3 running Python 2\.7 *   |  2018\.03\.0  |  Python 2\.7\.14  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.33 with mod\_wsgi 3\.5  | 
+|   **Python 2\.6 version 2\.7\.3**   * 64bit Amazon Linux 2018\.03 v2\.7\.3 running Python 2\.6 *   |  2018\.03\.0  |  Python 2\.6\.9  |  pip 9\.0\.3  |  setuptools 28\.8\.0  |  meld3 1\.0\.2  |  2\.0\.0  |  Apache 2\.4\.33 with mod\_wsgi 3\.5  | 
+
 The following Elastic Beanstalk platform configurations for Python were current between August 15, 2018 and August 19, 2018:
 
 

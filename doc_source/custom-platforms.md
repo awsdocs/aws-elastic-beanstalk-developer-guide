@@ -81,7 +81,7 @@ provisioner:
   flavor: ubuntu1604
 ```
 
-The Packer template tells Packer how to build the AMIs for the platform, using an [Ubuntu AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) as a base for the platform image for HVM instance types\. The `provisioners` section tells Packer to copy all files in the `builder` folder within the archive to the instance, and to run the `builder.sh` script on the instance\. When the scripts complete, Packer creates an image from the modified instance\.
+The Packer template tells Packer how to build the AMIs for the platform, using an [Ubuntu AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html) as a base for the platform image for HVM instance types\. The `provisioners` section tells Packer to copy all files in the `builder` folder within the archive to the instance, and to run the `builder.sh` script on the instance\. When the scripts complete, Packer creates an image from the modified instance\.
 
 Elastic Beanstalk creates three environment variables that can be used to tag AMIs in Packer:
 

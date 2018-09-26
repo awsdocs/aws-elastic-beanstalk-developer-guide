@@ -22,7 +22,7 @@ In the **Web Tier** section of the environment configuration page, choose the ge
 
 **Question:** *Can I prevent Amazon EBS volumes from being deleted when instances are terminated?*
 
-Instances in your environment use Amazon EBS for storage; however, the root volume is deleted when an instance is terminated by Auto Scaling\. It is not recommended to store state or other data on your instances\. If needed, you can prevent volumes from being deleted with the AWS CLI: `$ aws ec2 modify-instance-attribute -b '/dev/sdc=<vol-id>:false` as described in the [AWS CLI Reference](http://docs.aws.amazon.com/cli/latest/reference/ec2/modify-instance-attribute.html)\.
+Instances in your environment use Amazon EBS for storage; however, the root volume is deleted when an instance is terminated by Auto Scaling\. It is not recommended to store state or other data on your instances\. If needed, you can prevent volumes from being deleted with the AWS CLI: `$ aws ec2 modify-instance-attribute -b '/dev/sdc=<vol-id>:false` as described in the [AWS CLI Reference](https://docs.aws.amazon.com/cli/latest/reference/ec2/modify-instance-attribute.html)\.
 
 **Question:** *How do I delete personal information from my Elastic Beanstalk application?*
 

@@ -6,7 +6,7 @@ Your environment is available to users at a subdomain of elasticbeanstalk\.com\.
 
 You can change the CNAME on your environment by swapping it with the CNAME of another environment\. For instructions, see [Blue/Green Deployments with AWS Elastic Beanstalk](using-features.CNAMESwap.md)\.
 
-If you own a domain name, you can use Route 53 to resolve it to your environment\. You can purchase a domain name with Amazon Route 53, or use one that you purchase from another provider\. To purchase a domain name with Route 53, see [Registering a New Domain](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html) in the *Route 53 Developer Guide*\.
+If you own a domain name, you can use Route 53 to resolve it to your environment\. You can purchase a domain name with Amazon Route 53, or use one that you purchase from another provider\. To purchase a domain name with Route 53, see [Registering a New Domain](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html) in the *Route 53 Developer Guide*\.
 
 To use a custom domain name, first create a hosted zone for your domain\. A hosted zone contains the name server and start of authority \(SOA\) records that specify the DNS hosts that will resolve requests for your domain name\.
 
@@ -30,7 +30,7 @@ Next, add a record to the hosted zone that resolves your domain name to your env
 **Note**  
 In a single\-instance environment, the elasticbeanstalk\.com subdomain resolves to an Elastic IP address attached to the instance running your application\.
 
-If your environment has a regionalized subdomain, you can use an Route 53 [alias resource record set](http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html) to save money on name resolution\. The domain name for an environment with a regionalized subdomain includes the region; for example, `my-environment.us-west-2.elasticbeanstalk.com`\.
+If your environment has a regionalized subdomain, you can use an Route 53 [alias resource record set](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-choosing-alias-non-alias.html) to save money on name resolution\. The domain name for an environment with a regionalized subdomain includes the region; for example, `my-environment.us-west-2.elasticbeanstalk.com`\.
 
 **To add an alias resource record set in Route 53**
 

@@ -9,13 +9,13 @@ Several Elastic Beanstalk resource types are integrated with AWS Config:
 
 The following section shows how to configure AWS Config to record resources of these types\.
 
-For more information about AWS Config, see the [AWS Config Developer Guide](http://docs.aws.amazon.com/config/latest/developerguide/)\. For pricing information, see the [AWS Config pricing information page](https://aws.amazon.com/config/pricing/)\.
+For more information about AWS Config, see the [AWS Config Developer Guide](https://docs.aws.amazon.com/config/latest/developerguide/)\. For pricing information, see the [AWS Config pricing information page](https://aws.amazon.com/config/pricing/)\.
 
 ## Setting up AWS Config<a name="AWSHowTo.config.setup"></a>
 
-To initially set up AWS Config, see the following topics in the [AWS Config Developer Guide](http://docs.aws.amazon.com/config/latest/developerguide/)\.
-+ [Setting up AWS Config with the Console](http://docs.aws.amazon.com/config/latest/developerguide/gs-console.html)
-+ [Setting up AWS Config with the AWS CLI](http://docs.aws.amazon.com/config/latest/developerguide/gs-cli.html)
+To initially set up AWS Config, see the following topics in the [AWS Config Developer Guide](https://docs.aws.amazon.com/config/latest/developerguide/)\.
++ [Setting up AWS Config with the Console](https://docs.aws.amazon.com/config/latest/developerguide/gs-console.html)
++ [Setting up AWS Config with the AWS CLI](https://docs.aws.amazon.com/config/latest/developerguide/gs-cli.html)
 
 ## Configuring AWS Config to Record Elastic Beanstalk Resources<a name="AWSHowTo.config.record"></a>
 
@@ -29,7 +29,7 @@ After you select a few resource types, this is how the **Specific types** list a
 
 ![\[AWS Config settings page showing selected resource types to record\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cc-settings-resource-types-selected.png)
 
-To learn about *regional* vs\. *global* resources, and for the full customization procedure, see [Selecting which Resources AWS Config Records](http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html)\.
+To learn about *regional* vs\. *global* resources, and for the full customization procedure, see [Selecting which Resources AWS Config Records](https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html)\.
 
 ## Viewing Elastic Beanstalk Configuration Details in the AWS Config Console<a name="AWSHowTo.config.viewing"></a>
 
@@ -61,7 +61,7 @@ To see the full details of the recorded configuration, choose **View Details**\.
 
 ![\[AWS Config resource details page showing configuration details for an Elastic Beanstalk environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cc-resources-view-details.png)
 
-To learn more ways to find a resource and view information on this page, see [Viewing AWS Resource Configurations and History](http://docs.aws.amazon.com/config/latest/developerguide/view-manage-resource.html) in the *AWS Config Developer Guide*\.
+To learn more ways to find a resource and view information on this page, see [Viewing AWS Resource Configurations and History](https://docs.aws.amazon.com/config/latest/developerguide/view-manage-resource.html) in the *AWS Config Developer Guide*\.
 
 ## Evaluating Elastic Beanstalk Resources Using AWS Config Rules<a name="AWSHowTo.config.rules"></a>
 
@@ -69,4 +69,4 @@ You can create AWS Config rules, which represent the ideal configuration setting
 
 If a resource violates a rule and is flagged as *noncompliant*, AWS Config can alert you using an [Amazon Simple Notification Service \(Amazon SNS\)](https://aws.amazon.com/sns/) topic\. To programmatically consume the data in these AWS Config alerts, use an [Amazon Simple Queue Service \(Amazon SQS\)](https://aws.amazon.com/sqs/) queue as the notification endpoint for the Amazon SNS topic\. For example, you might want to write code that starts a workflow when someone modifies your environment's Auto Scaling group configuration\.
 
-To learn more about setting up and using rules, see [Evaluating Resources with AWS Config Rules](http://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html) in the *AWS Config Developer Guide*\.
+To learn more about setting up and using rules, see [Evaluating Resources with AWS Config Rules](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html) in the *AWS Config Developer Guide*\.

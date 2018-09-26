@@ -29,14 +29,14 @@ You can use the [Amazon VPC console](https://console.aws.amazon.com/vpc/) to cre
 
    The wizard begins to create your VPC, subnets, and internet gateway\. It also updates the main route table and creates a custom route table\. Finally, the wizard creates a NAT gateway in the public subnet\.
 **Note**  
-You can choose to launch a NAT instance in the public subnet instead of a NAT gateway\. For more information, see [Scenario 2: VPC with Public and Private Subnets \(NAT\)](http://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html) in the *Amazon VPC User Guide*\.
+You can choose to launch a NAT instance in the public subnet instead of a NAT gateway\. For more information, see [Scenario 2: VPC with Public and Private Subnets \(NAT\)](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario2.html) in the *Amazon VPC User Guide*\.
 
 1. After the VPC is successfully created, you get a VPC ID\. You need this value for the next step\. To view your VPC ID, choose **Your VPCs** in the left pane of the [Amazon VPC console](https://console.aws.amazon.com/vpc/)\.  
 ![\[The Amazon VPC console displays your VPC ID.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vpc-id.png)
 
 ## Create a DB Subnet Group<a name="vpc-rds-subnet"></a>
 
-A DB subnet group for a VPC is a collection of subnets \(typically private\) that you can designate for your backend RDS DB instances\. Each DB subnet group should have at least one subnet for every Availability Zone in a given AWS Region\. To learn more, see [Creating a Subnet in Your VPC](http://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#AddaSubnet)\.
+A DB subnet group for a VPC is a collection of subnets \(typically private\) that you can designate for your backend RDS DB instances\. Each DB subnet group should have at least one subnet for every Availability Zone in a given AWS Region\. To learn more, see [Creating a Subnet in Your VPC](https://docs.aws.amazon.com/vpc/latest/userguide/working-with-vpcs.html#AddaSubnet)\.
 
 **Create a DB subnet group**
 

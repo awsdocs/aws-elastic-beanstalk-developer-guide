@@ -105,10 +105,10 @@ Configure the Amazon EC2 instances that serve requests in your environment\.
 ![\[Modify instances configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-instances.png)
 + **Instance type** – Select a server with the characteristics \(including memory size and CPU power\) that are most appropriate to your application\. 
 
-  For more information about the Amazon EC2 instance types available for your Elastic Beanstalk environment, see [Instance Families and Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
+  For more information about the Amazon EC2 instance types available for your Elastic Beanstalk environment, see [Instance Families and Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
 + **AMI ID** – If you created a [custom AMI](using-features.customenv.md), specify the AMI ID to use on your instances\.
 + **Root volume** – Specify the type, size, and input/output operations per second \(IOPS\) for your root volume\.
-  + **Root volume type** – From the list of storage volumes types provided by Amazon EBS, choose the type to attach to the Amazon EC2 instances in your Elastic Beanstalk environment\. Select the volume type that meets your performance and price requirements\. For more information, see [Amazon EBS Volume Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) and [Amazon EBS Product Details](https://aws.amazon.com/ebs/details/)\. 
+  + **Root volume type** – From the list of storage volumes types provided by Amazon EBS, choose the type to attach to the Amazon EC2 instances in your Elastic Beanstalk environment\. Select the volume type that meets your performance and price requirements\. For more information, see [Amazon EBS Volume Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) and [Amazon EBS Product Details](https://aws.amazon.com/ebs/details/)\. 
   + **Size** – Set the size of your storage volume\. The size for magnetic volumes can be between 8 GiB and 1,024 GiB; SSD volumes can be between 10 GiB and 16,384 GiB\. If you choose **Provisioned IOPS \(SSD\)** as the root volume type for your instances, you must specify the value you want for root volume size\. For other root volumes, if you don't specify your own value, Elastic Beanstalk uses the default volume size for that storage volume type\.
   + **IOPS** – Specify the input/output operations per second that you want\. If you selected **Provisioned IOPS \(SSD\)** as your root volume type, you must specify the IOPS\. The minimum is 100 and the maximum is 4,000\. The maximum ratio of IOPS to your volume size is 30 to 1\. For example, a volume with 3,000 IOPS must be at least 100 GiB\.
 
@@ -137,7 +137,7 @@ A **scaling trigger** is an Amazon CloudWatch alarm that lets Amazon EC2 Auto Sc
 + **Upper threshold** – Specify the minimum value that a statistic can match to be considered in breach\.
 + **Lower threshold** – Specify the maximum value that a statistic can match to be considered in breach\.
 
-For more information on CloudWatch metrics and alarms, see [Amazon CloudWatch Concepts](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html) in the *Amazon CloudWatch User Guide*\.
+For more information on CloudWatch metrics and alarms, see [Amazon CloudWatch Concepts](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html) in the *Amazon CloudWatch User Guide*\.
 
 ### Load Balancer<a name="environments-create-wizard-loadbalancer"></a>
 
@@ -157,7 +157,7 @@ For load\-balanced environments, choose a **Deployment policy** to configure how
 + **Deployment policy** – **Rolling** deployments take one batch of instances out of service at a time to deploy a new version\. **Rolling with additional batch** launches a new batch first to ensure that capacity is not affected during the deployment\. **Immutable** performs an [immutable update](environmentmgmt-updates-immutable.md) when you deploy\. 
 + **Batch size** – The number or percentage of instances to update in each batch\.
 
-[Rolling updates](using-features.rollingupdates.md) occur when you change instance launch configuration settings or [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) settings, which require terminating and replacing the instances in your environment\. Other configuration changes are made in place without affecting capacity\. For more information, see [Configuration Changes](environments-updating.md)\.
+[Rolling updates](using-features.rollingupdates.md) occur when you change instance launch configuration settings or [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) settings, which require terminating and replacing the instances in your environment\. Other configuration changes are made in place without affecting capacity\. For more information, see [Configuration Changes](environments-updating.md)\.
 
 ![\[Configuration updates section in the Modify rolling updates and deployments configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-rolling-updates.png)
 + **Rolling update type** – Time based, where AWS CloudFormation waits for the specified amount of time after new instances are registered before moving on to the next batch, or health based, where AWS CloudFormation waits for instances to pass health checks\. **Immutable** performs an [immutable update](environmentmgmt-updates-immutable.md) when a configuration change would normally trigger a rolling update\.
@@ -178,9 +178,9 @@ Choose an Amazon EC2 key pair to enable SSH or RDP access to the instances in yo
 
 ![\[Modify security configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-security.png)
 + **Service role** – A [service role](concepts-roles-service.md) grants Elastic Beanstalk permission to monitor the resources in your environment\.
-+ **EC2 key pair** – Assign an SSH key to the instances in your environment to allow you to connect to them remotely for debugging\. For more information about Amazon EC2 key pairs, see [Using Credentials](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-credentials.html) in the *Amazon EC2 User Guide for Linux Instances*\.
++ **EC2 key pair** – Assign an SSH key to the instances in your environment to allow you to connect to them remotely for debugging\. For more information about Amazon EC2 key pairs, see [Using Credentials](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-credentials.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 **Note**  
-When you create a key pair, Amazon EC2 stores a copy of your public key\. If you no longer need it to connect to any Amazon EC2 instances, you can delete it from Amazon EC2\. For details, see [Deleting Your Key Pair](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#delete-key-pair) in the *Amazon EC2 User Guide for Linux Instances*\.
+When you create a key pair, Amazon EC2 stores a copy of your public key\. If you no longer need it to connect to any Amazon EC2 instances, you can delete it from Amazon EC2\. For details, see [Deleting Your Key Pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#delete-key-pair) in the *Amazon EC2 User Guide for Linux Instances*\.
 + **IAM instance profile** – An [instance profile](concepts-roles-instance.md) grants the Amazon EC2 instances in your environment permissions to access AWS resources\. 
 
 The Elastic Beanstalk console looks for an instance profile named `aws-elasticbeanstalk-ec2-role` and a service role named `aws-elasticbeanstalk-service-role`\. If you don't have these roles, the console creates them for you\. For more information, see [Service Roles, Instance Profiles, and User Policies](concepts-roles.md)\.
@@ -240,7 +240,7 @@ For more information about Amazon RDS, see [Amazon Relational Database Service \
 
 ### Tags<a name="environments-create-wizard-tags"></a>
 
-Add [tags](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) to the resources in your environment\. For more information about environment tagging, see [Tagging Resources in Your Elastic Beanstalk Environment](using-features.tagging.md)\.
+Add [tags](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) to the resources in your environment\. For more information about environment tagging, see [Tagging Resources in Your Elastic Beanstalk Environment](using-features.tagging.md)\.
 
 ![\[Tags page in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-create-tags.png)
 

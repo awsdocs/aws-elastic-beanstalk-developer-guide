@@ -34,7 +34,7 @@ To use `eb init` to create a new key pair, you must have `ssh-keygen` installed 
 
 ## AWS CodeBuild Support<a name="eb3-init-codebuild"></a>
 
-If you run `eb init` in a folder that contains a [buildspec\.yml](http://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html) file, Elastic Beanstalk parses the file for an `eb_codebuild_settings` entry with the following format:
+If you run `eb init` in a folder that contains a [buildspec\.yml](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html) file, Elastic Beanstalk parses the file for an `eb_codebuild_settings` entry with the following format:
 
 ```
 eb_codebuild_settings:
@@ -51,10 +51,10 @@ ComputeType
 The amount of resources for the Docker container\. Valid values are BUILD\_GENERAL1\_SMALL, BUILD\_GENERAL1\_MEDIUM, and BUILD\_GENERAL1\_LARGE\.
 
 Image  
-The name of the Docker Hub or Amazon ECR image that AWS CodeBuild creates for Elastic Beanstalk\. This value is optional and if omitted the `eb init` command prompts you for a platform and other options\. see [Build Environment Reference for AWS CodeBuild](http://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref.html) for a list of images\. 
+The name of the Docker Hub or Amazon ECR image that AWS CodeBuild creates for Elastic Beanstalk\. This value is optional and if omitted the `eb init` command prompts you for a platform and other options\. see [Build Environment Reference for AWS CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref.html) for a list of images\. 
 
 Timeout  
-The duration, in minutes, that the AWS CodeBuild build runs before timing out\. This value is optional\. See [Create a Build Project in AWS CodeBuild](http://docs.aws.amazon.com/codebuild/latest/userguide/create-project.html) for the default value and range of values\.
+The duration, in minutes, that the AWS CodeBuild build runs before timing out\. This value is optional\. See [Create a Build Project in AWS CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/create-project.html) for the default value and range of values\.
 
 **Note**  
 Some regions don't offer AWS CodeBuild\. The integration between Elastic Beanstalk and AWS CodeBuild doesn't work in these regions\.  

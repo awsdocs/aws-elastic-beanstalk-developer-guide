@@ -32,7 +32,7 @@ You can use the AWS Management Console to enable log rotation to Amazon S3, conf
 + **NumThreads** – The number of threads to run in each process\.
 
 ### AWS X\-Ray Settings<a name="python-console-xray"></a>
-+ **X\-Ray daemon** – Run the AWS X\-Ray daemon to process trace data from the [AWS X\-Ray SDK for Python](http://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-python.html)\.
++ **X\-Ray daemon** – Run the AWS X\-Ray daemon to process trace data from the [AWS X\-Ray SDK for Python](https://docs.aws.amazon.com/xray/latest/devguide/xray-sdk-python.html)\.
 
 ### Log Options<a name="create-deploy-python-container.console.logoptions"></a>
 

@@ -1,6 +1,6 @@
 # Deploying a Geddy Application with Clustering to Elastic Beanstalk<a name="create_deploy_nodejs_geddy_elasticache"></a>
 
-This section walks you through deploying a sample application to Elastic Beanstalk using the Elastic Beanstalk Command Line Interface \(EB CLI\) and Git, and then updating the application to use the [Geddy](http://geddyjs.org/) framework and [Amazon ElastiCache](https://aws.amazon.com/elasticache/) for clustering\. Clustering enhances your web application's high availability, performance, and security\. To learn more about Amazon ElastiCache, go to [Introduction to ElastiCache](http://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Introduction.html) in the *Amazon ElastiCache User Guide*\. 
+This section walks you through deploying a sample application to Elastic Beanstalk using the Elastic Beanstalk Command Line Interface \(EB CLI\) and Git, and then updating the application to use the [Geddy](http://geddyjs.org/) framework and [Amazon ElastiCache](https://aws.amazon.com/elasticache/) for clustering\. Clustering enhances your web application's high availability, performance, and security\. To learn more about Amazon ElastiCache, go to [Introduction to ElastiCache](https://docs.aws.amazon.com/AmazonElastiCache/latest/UserGuide/Introduction.html) in the *Amazon ElastiCache User Guide*\. 
 
 **Note**  
 This example creates AWS resources, which you might be charged for\. For more information about AWS pricing, see [https://aws.amazon.com/pricing/](https://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you can test drive these services for free\. See [https://aws.amazon.com/free/](https://aws.amazon.com/free/) for more information\.
@@ -98,7 +98,7 @@ The following instructions use the [Elastic Beanstalk command line interface](eb
    eb init
    ```
 
-1. When you are prompted for the Elastic Beanstalk region, type the number of the region\. For information about this product's regions, see [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html?r=1166) in the *Amazon Web Services General Reference*\. For this example, we'll use **US West \(Oregon\)**\.
+1. When you are prompted for the Elastic Beanstalk region, type the number of the region\. For information about this product's regions, see [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html?r=1166) in the *Amazon Web Services General Reference*\. For this example, we'll use **US West \(Oregon\)**\.
 
 1.  When you are prompted for the Elastic Beanstalk application to use, type the number corresponding to the option **Create New Application**\. Elastic Beanstalk generates an application name based on the current directory name, if an application name has not been previously configured\. In this example, we use geddyapp\. 
 

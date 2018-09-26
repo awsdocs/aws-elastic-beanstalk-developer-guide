@@ -14,7 +14,7 @@ To publish CloudWatch custom metrics for an environment, you must first enable e
 
 ## Enhanced Health Reporting Metrics<a name="health-enhanced-cloudwatch-metrics"></a>
 
-When you enable enhanced health reporting in your environment, the enhanced health reporting system automatically publishes one [CloudWatch custom metric](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html), *EnvironmentHealth*\. To publish additional metrics to CloudWatch, configure your environment with those metrics by using the [AWS Management Console](#health-enhanced-cloudwatch-console), [EB CLI](#health-enhanced-cloudwatch-ebcli), or [\.ebextensions](command-options.md)\.
+When you enable enhanced health reporting in your environment, the enhanced health reporting system automatically publishes one [CloudWatch custom metric](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html), *EnvironmentHealth*\. To publish additional metrics to CloudWatch, configure your environment with those metrics by using the [AWS Management Console](#health-enhanced-cloudwatch-console), [EB CLI](#health-enhanced-cloudwatch-ebcli), or [\.ebextensions](command-options.md)\.
 
 You can publish the following enhanced health metrics from your environment to CloudWatch\.
 

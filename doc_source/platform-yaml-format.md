@@ -61,7 +61,7 @@ Optional\. Contact information for the person who owns the platform \(100 charac
 Optional\. Description of the platform \(2,000 characters\)\.
 
 *metadata\-operating\_system\_name*  
-Optional\. Name of the platform's operating system \(50 characters\)\. This value is available when filtering the output for the [ListPlatformVersions](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListPlatformVersions.html) API\.
+Optional\. Name of the platform's operating system \(50 characters\)\. This value is available when filtering the output for the [ListPlatformVersions](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListPlatformVersions.html) API\.
 
 *metadata\-operating\_system\_version*  
 Optional\. Version of the platform's operating system \(20 characters\)\.

@@ -10,7 +10,7 @@ You can edit the Elastic Beanstalk environment's Amazon EC2 instance configurati
 
 **Instance type** displays the instance types available to your Elastic Beanstalk application\. Change the instance type to select a server with the characteristics \(including memory size and CPU power\) that are most appropriate to your application\. For example, applications with intensive and long\-running operations can require more CPU or memory\.
 
-For more information about the Amazon EC2 instance types available for your Elastic Beanstalk application, see [Instance Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon Elastic Compute Cloud User Guide*\.
+For more information about the Amazon EC2 instance types available for your Elastic Beanstalk application, see [Instance Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon Elastic Compute Cloud User Guide*\.
 
 ## Amazon EC2 Security Groups<a name="create_deploy_NET.managing.ec2.securitygroups"></a>
 

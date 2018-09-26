@@ -1,6 +1,6 @@
 # Using Elastic Beanstalk with Amazon Virtual Private Cloud<a name="vpc"></a>
 
-You can use an [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) to create a secure network for your Elastic Beanstalk application and related AWS resources\. When you create your environment, you choose which VPC, subnets, and security groups are used for your application instances and load balancer\. You can use any VPC configuration that you like as long as it meets the following requirements\.
+You can use an [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) to create a secure network for your Elastic Beanstalk application and related AWS resources\. When you create your environment, you choose which VPC, subnets, and security groups are used for your application instances and load balancer\. You can use any VPC configuration that you like as long as it meets the following requirements\.
 
 **VPC Requirements**
 + **Internet Access** – Instances must have access to the Internet through one of the following methods\.

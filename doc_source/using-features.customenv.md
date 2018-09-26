@@ -50,7 +50,7 @@ Although Elastic Beanstalk can use an AMI that isn't managed by Elastic Beanstal
 We recommend that you choose an AMI that uses HVM virtualization\. These AMIs show **Virtualization type: hvm** in their description\.  
 
 ![\[AMI with HVM virtualization type listed on EC2 console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/using-features-customenv-hvm-ami.png)
-For details about instance virtualization types, see [Linux AMI Virtualization Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html) in the *Amazon EC2 User Guide for Linux Instances*\.
+For details about instance virtualization types, see [Linux AMI Virtualization Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 1. Choose **Select** to select the AMI\.
 
@@ -68,13 +68,13 @@ For details about instance virtualization types, see [Linux AMI Virtualization T
 **Note**  
 These settings configure the lock\-on\-launch feature\. This causes the AMI to use a fixed, specific repository version when it launches, and disables the automatic installation of security updates\. Both are required to use a custom AMI with Elastic Beanstalk\.
 
-1. Proceed through the wizard to [launch the EC2 instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-an-instance.html)\. When prompted, select a key pair that you have access to so that you can connect to the instance for the next steps\.
+1. Proceed through the wizard to [launch the EC2 instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-an-instance.html)\. When prompted, select a key pair that you have access to so that you can connect to the instance for the next steps\.
 
-1.  [Connect to the instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html) with SSH or RDP\.
+1.  [Connect to the instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html) with SSH or RDP\.
 
 1. Perform any customizations you want\.
 
-1. **\(Windows platforms\)** Run the EC2Config service Sysprep\. For information about EC2Config, see [Configuring a Windows Instance Using the EC2Config Service](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html)\. Ensure that Sysprep is configured to generate a random password that can be retrieved from the AWS Management Console\.
+1. **\(Windows platforms\)** Run the EC2Config service Sysprep\. For information about EC2Config, see [Configuring a Windows Instance Using the EC2Config Service](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html)\. Ensure that Sysprep is configured to generate a random password that can be retrieved from the AWS Management Console\.
 
 1. In the Amazon EC2 console, stop the EC2 instance\. Then on the **Instance Actions** menu, choose **Create Image \(EBS AMI\)**\.
 
@@ -98,4 +98,4 @@ When you create a new environment with the custom AMI, you should use the same p
 
 ## Cleaning Up a Custom AMI<a name="using-features.customenv.cleanup"></a>
 
-When you are done with a custom AMI and don't need it to launch Elastic Beanstalk environments anymore, consider cleaning it up to minimize storage cost\. Cleaning up a custom AMI involves deregistering it from Amazon EC2 and deleting other associated resources\. For details, see [Deregistering Your Linux AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html) or [Deregistering Your Windows AMI](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html)\.
+When you are done with a custom AMI and don't need it to launch Elastic Beanstalk environments anymore, consider cleaning it up to minimize storage cost\. Cleaning up a custom AMI involves deregistering it from Amazon EC2 and deleting other associated resources\. For details, see [Deregistering Your Linux AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html) or [Deregistering Your Windows AMI](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html)\.

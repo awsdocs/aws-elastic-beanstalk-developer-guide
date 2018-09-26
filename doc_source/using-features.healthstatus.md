@@ -1,6 +1,6 @@
 # Basic Health Reporting<a name="using-features.healthstatus"></a>
 
-AWS Elastic Beanstalk uses information from multiple sources to determine if your environment is available and processing requests from the Internet\. An environment's health is represented by one of four colors, which is displayed in the [environment dashboard](environments-console.md), and is also available from the [DescribeEnvironments](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html) API and by calling `eb status` with the [EB CLI](eb-cli3.md)\.
+AWS Elastic Beanstalk uses information from multiple sources to determine if your environment is available and processing requests from the Internet\. An environment's health is represented by one of four colors, which is displayed in the [environment dashboard](environments-console.md), and is also available from the [DescribeEnvironments](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html) API and by calling `eb status` with the [EB CLI](eb-cli3.md)\.
 
 Prior to version 2 Linux platform configurations, the only health reporting system was basic health\. The basic health reporting system provides information about the health of instances in an Elastic Beanstalk environment based on health checks performed by Elastic Load Balancing for load balanced environments or Amazon Elastic Compute Cloud for single instance environments\.
 
@@ -39,7 +39,7 @@ You can choose to override this setting by specifying an existing resource in yo
 
 If a health check URL is configured, Elastic Load Balancing expects a GET request that it sends to return a response of `200 OK`\. The application fails the health check if it fails to respond within 5 seconds or if it responds with any other HTTP status code\. After 5 consecutive health check failures, Elastic Load Balancing takes the instance out of service\. 
 
-For more information about Elastic Load Balancing health checks, see [Health Check](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/TerminologyandKeyConcepts.html#healthcheck) in the *Elastic Load Balancing User Guide*\.
+For more information about Elastic Load Balancing health checks, see [Health Check](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/TerminologyandKeyConcepts.html#healthcheck) in the *Elastic Load Balancing User Guide*\.
 
 **Note**  
 Configuring a health check URL does not change the health check behavior of an environment's Auto Scaling group\. An unhealthy instance is removed from the load balancer, but is not automatically replaced by Amazon EC2 Auto Scaling unless you configure Amazon EC2 Auto Scaling to use the Elastic Load Balancing health check as a basis for replacing instances\. To configure Amazon EC2 Auto Scaling to replace instances that fail an Elastic Load Balancing health check, see [Auto Scaling Health Check Setting](environmentconfig-autoscaling-healthchecktype.md)\.
@@ -48,7 +48,7 @@ Configuring a health check URL does not change the health check behavior of an e
 
 In a single instance environment, Elastic Beanstalk determines the instance's health by monitoring its Amazon EC2 instance status\. Elastic Load Balancing health settings, including HTTP health check URLs, cannot be used in a single instance environment\.
 
-For more information on Amazon EC2 instance status checks, see [Monitoring Instances with Status Checks](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
+For more information on Amazon EC2 instance status checks, see [Monitoring Instances with Status Checks](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
 
 ## Additional Checks<a name="monitoring-basic-additionalchecks"></a>
 
@@ -94,10 +94,10 @@ These lists are not comprehensive\. For a full list of metrics that can be repor
 
 | Namespace | Topic | 
 | --- | --- | 
-| AWS::ElasticLoadBalancing::LoadBalancer | [Elastic Load Balancing Metrics and Resources](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/elb-metricscollected.html) | 
-| AWS::AutoScaling::AutoScalingGroup | [Amazon Elastic Compute Cloud Metrics and Resources](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/ec2-metricscollected.html) | 
-| AWS::SQS::Queue | [Amazon SQS Metrics and Resources](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/sqs-metricscollected.html) | 
-| AWS::RDS::DBInstance | [Amazon RDS Dimensions and Metrics](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/rds-metricscollected.html) | 
+| AWS::ElasticLoadBalancing::LoadBalancer | [Elastic Load Balancing Metrics and Resources](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/elb-metricscollected.html) | 
+| AWS::AutoScaling::AutoScalingGroup | [Amazon Elastic Compute Cloud Metrics and Resources](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/ec2-metricscollected.html) | 
+| AWS::SQS::Queue | [Amazon SQS Metrics and Resources](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/sqs-metricscollected.html) | 
+| AWS::RDS::DBInstance | [Amazon RDS Dimensions and Metrics](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/rds-metricscollected.html) | 
 
 ### Worker Environment Health Metric<a name="w3aac25b9c21c18"></a>
 

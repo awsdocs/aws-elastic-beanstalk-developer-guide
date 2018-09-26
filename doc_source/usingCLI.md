@@ -1,7 +1,7 @@
 # Getting Set Up<a name="usingCLI"></a>
 
 **Note**  
- This tool, the Elastic Beanstalk API CLI, and its documentation have been replaced with the AWS CLI\. See the [AWS CLI User Guide ](http://docs.aws.amazon.com/cli/latest/userguide/) to get started with the AWS CLI\. Also try the [EB CLI](eb-cli3.md) for a simplified, higher\-level command line experience\. 
+ This tool, the Elastic Beanstalk API CLI, and its documentation have been replaced with the AWS CLI\. See the [AWS CLI User Guide ](https://docs.aws.amazon.com/cli/latest/userguide/) to get started with the AWS CLI\. Also try the [EB CLI](eb-cli3.md) for a simplified, higher\-level command line experience\. 
 
  Elastic Beanstalk provides a command line interface \(CLI\) to access Elastic Beanstalk functionality without using the AWS Management Console or the APIs\. This section describes the prerequisites for running the CLI tools \(or command line tools\), where to get the tools, how to set up the tools and their environment, and includes a series of common examples of tool usage\.
 
@@ -33,7 +33,7 @@ The command line tools are available as a \.zip file on the [AWS Sample Code & L
 
 ## Providing Credentials for the Command Line Interface<a name="usingCLI.StartCLI.WhoYouAre"></a>
 
-The command line interface requires the access key ID and secret access key\. To get your access keys \(access key ID and secret access key\), see [How Do I Get Security Credentials?](http://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html) in the *AWS General Reference*\.
+The command line interface requires the access key ID and secret access key\. To get your access keys \(access key ID and secret access key\), see [How Do I Get Security Credentials?](https://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html) in the *AWS General Reference*\.
 
 You need to create a file containing your access key ID and secret access key\. The contents of the file should look like this:
 
@@ -58,7 +58,7 @@ With the credentials file set up, you'll need to set the AWS\_CREDENTIAL\_FILE e
 
 ## Set the Service Endpoint URL<a name="usingCLI.StartCLI.endpoints"></a>
 
-By default, AWS Elastic Beanstalk uses the US East \(N\. Virginia\) region \(us\-east\-1\) with the elasticbeanstalk\.us\-east\-1\.amazonaws\.com service endpoint URL\. This section describes how to specify a different region by setting the service endpoint URL\. For information about this product's regions, go to [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html?r=1166) in the *Amazon Web Services General Reference*\. 
+By default, AWS Elastic Beanstalk uses the US East \(N\. Virginia\) region \(us\-east\-1\) with the elasticbeanstalk\.us\-east\-1\.amazonaws\.com service endpoint URL\. This section describes how to specify a different region by setting the service endpoint URL\. For information about this product's regions, go to [Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html?r=1166) in the *Amazon Web Services General Reference*\. 
 
 **To set the service endpoint URL**
 + Set the environment variable using the following command:  

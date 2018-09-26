@@ -4,7 +4,7 @@ With Amazon Elastic File System \(Amazon EFS\), you can create network file syst
 
 In an Elastic Beanstalk environment, you can use Amazon EFS to create a shared directory that stores files uploaded or modified by users of your application\. Your application can treat a mounted Amazon EFS volume like local storage, so you don't have to change your application code to scale up to multiple instances\.
 
-For more information about Amazon EFS, see the [Amazon Elastic File System User Guide](http://docs.aws.amazon.com/efs/latest/ug/)\.
+For more information about Amazon EFS, see the [Amazon Elastic File System User Guide](https://docs.aws.amazon.com/efs/latest/ug/)\.
 
 **Topics**
 + [Configuration Files](#services-efs-configs)

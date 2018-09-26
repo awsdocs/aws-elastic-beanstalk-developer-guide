@@ -64,13 +64,13 @@ EB CLI stores your credentials in a file named `credentials` in a folder named `
    eb init
    ```
 
-1. When you are prompted for the access key ID, type your access key ID\. To get your access key ID, see [How Do I Get Security Credentials?](http://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html) in the *AWS General Reference*\.
+1. When you are prompted for the access key ID, type your access key ID\. To get your access key ID, see [How Do I Get Security Credentials?](https://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html) in the *AWS General Reference*\.
 
    ```
    Enter your AWS Access Key ID (current value is "AKIAIOSFODNN7EXAMPLE"): 
    ```
 
-1. When you are prompted for the secret access key, type your secret access key\. To get your secret access key, see [How Do I Get Security Credentials?](http://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html) in the *AWS General Reference*\.
+1. When you are prompted for the secret access key, type your secret access key\. To get your secret access key, see [How Do I Get Security Credentials?](https://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html) in the *AWS General Reference*\.
 
    ```
    Enter your AWS Secret Access Key (current value is "wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY"): 

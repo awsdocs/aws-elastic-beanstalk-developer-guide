@@ -27,7 +27,7 @@ The source bundle's file size limit is 512 MB\.
 
 The file you specified is associated with your application\. You can deploy the application version to a new or existing environment\.
 
-Over time, your application can accumulate many application versions\. To save storage space and avoid hitting the [application version limit](http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_elastic_beanstalk), you can configure Elastic Beanstalk to delete old versions automatically\.
+Over time, your application can accumulate many application versions\. To save storage space and avoid hitting the [application version limit](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_elastic_beanstalk), you can configure Elastic Beanstalk to delete old versions automatically\.
 
 **Note**  
 Deleting an application version doesn't affect environments currently running that version\.

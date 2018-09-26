@@ -40,7 +40,7 @@ The **Instance type** setting determines the type of EC2 instance launched to ru
 
 For large\-scale, high\-availability applications, use a pool of instances to ensure that capacity is not greatly affected if any single instance goes down\. Start with an instance type that allows you to run five instances under moderate load during normal hours\. If any instance fails, the rest of the instances can absorb the rest of the traffic\. The capacity buffer also allows time for the environment to scale up as traffic begins to rise during peak hours\.
 
-For more information about EC2 instance families and types, see [Instance Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon Elastic Compute Cloud User Guide*\. 
+For more information about EC2 instance families and types, see [Instance Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon Elastic Compute Cloud User Guide*\. 
 
 ### AMI ID<a name="using-features.managing.ec2.customami"></a>
 
@@ -60,7 +60,7 @@ Each instance in your environment is configured with a root volume\. The root vo
 
 You can modify **Root volume type** to use magnetic storage or provisioned IOPS SSD volume types and, if needed, increase the volume size\. For provisioned IOPS volumes, you must also select the number of IOPS to provision\. Select the volume type that meets your performance and price requirements\.
 
-For more information, see [Amazon EBS Volume Types](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) and [Amazon EBS Product Details](https://aws.amazon.com/ebs/details/)\.
+For more information, see [Amazon EBS Volume Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) and [Amazon EBS Product Details](https://aws.amazon.com/ebs/details/)\.
 
 ### Security Groups<a name="using-features.managing.ec2.securitygroups"></a>
 
@@ -72,7 +72,7 @@ You can specify additional security groups that you have created to allow traffi
 To allow traffic between environment A's instances and environment B's instances, you can add a rule to the security group that Elastic Beanstalk attached to environment B, and specify the security group that Elastic Beanstalk attached to environment A\. This allows ingress from, or egress to, environment A's instances\. However, doing so creates a dependency between the two security groups\. If you later try to terminate environment A, Elastic Beanstalk will not be able to delete the environment's security group, because environment B's security group is dependent on it\.  
 A safer approach would be to create a separate security group, attach it to environment A, and specify it in a rule of environment B's security group\.
 
-For more information on Amazon EC2 security groups, see [Amazon EC2 Security Groups](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) in the *Amazon Elastic Compute Cloud User Guide*\.
+For more information on Amazon EC2 security groups, see [Amazon EC2 Security Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) in the *Amazon Elastic Compute Cloud User Guide*\.
 
 ## The aws:autoscaling:launchconfiguration Namespace<a name="using-features.managing.ec2.namespace"></a>
 
@@ -91,6 +91,6 @@ option_settings:
     BlockDeviceMappings: "/dev/sdj=:100,/dev/sdh=snap-51eef269,/dev/sdb=ephemeral0"
 ```
 
-`BlockDeviceMappings` lets you configure additional block devices for your instances\. For more information, see [Block Device Mapping](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html) in the *Amazon Elastic Cloud Computer User Guide*\.
+`BlockDeviceMappings` lets you configure additional block devices for your instances\. For more information, see [Block Device Mapping](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html) in the *Amazon Elastic Cloud Computer User Guide*\.
 
 The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.

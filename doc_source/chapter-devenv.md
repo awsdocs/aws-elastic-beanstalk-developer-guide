@@ -50,7 +50,7 @@ What if your hard drive crashes, or you want to work on your project on a differ
 
 AWS CodeCommit lets you create a private repository in the AWS cloud\. AWS CodeCommit is free in the [AWS Free Tier](https://aws.amazon.com/free/) for up to five AWS Identity and Access Management \(IAM\) users in your account\. For pricing details, see [AWS CodeCommit Pricing](https://aws.amazon.com/codecommit/pricing/)\. 
 
-Visit the [AWS CodeCommit User Guide](http://docs.aws.amazon.com/codecommit/latest/userguide/setting-up.html) for instructions on getting set up\.
+Visit the [AWS CodeCommit User Guide](https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up.html) for instructions on getting set up\.
 
 GitHub is another popular option for storing your project code online\. It lets you create a public online repository for free and also supports private repositories for a monthly charge\. Sign up for GitHub at [github\.com](https://github.com/)\.
 

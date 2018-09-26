@@ -17,7 +17,7 @@ For information about the AWS services offered in each region, see [Region Table
 
 ## Prerequisites<a name="eb-cli-codecommit-prereqs"></a>
 
-To use AWS CodeCommit with AWS Elastic Beanstalk, you need a local Git repository \(either one you have already or a new one you create\) with at least one commit, [permission to use AWS CodeCommit](http://docs.aws.amazon.com/codecommit/latest/userguide/access-permissions.html), and an Elastic Beanstalk environment in a region that AWS CodeCommit supports\. Your environment and repository must be in the same region\.
+To use AWS CodeCommit with AWS Elastic Beanstalk, you need a local Git repository \(either one you have already or a new one you create\) with at least one commit, [permission to use AWS CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/access-permissions.html), and an Elastic Beanstalk environment in a region that AWS CodeCommit supports\. Your environment and repository must be in the same region\.
 
 **To initialize a Git repository**
 

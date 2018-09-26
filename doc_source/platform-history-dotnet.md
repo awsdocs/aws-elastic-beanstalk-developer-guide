@@ -4,6 +4,46 @@ This page lists the previous versions of AWS Elastic Beanstalk's \.NET platforms
 
 See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
+## August 27, 2018 – September 23, 2018<a name="platform-history-2018-08-27"></a>
+
+The following Elastic Beanstalk platform configurations for \.NET were current during this date range:
+
+### Configuration basics<a name="concepts.platforms.net.basics"></a>
+
+
+****  
+
+|  Configuration  |  Solution Stack Name  |  Framework  |  Proxy Server  | 
+| --- | --- | --- | --- | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |   * 64bit Windows Server 2016 v1\.2\.0 running IIS 10\.0 *   |  \.NET Core 2\.1, supports 2\.1\.x, 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |   * 64bit Windows Server Core 2016 v1\.2\.0 running IIS 10\.0 *   |  \.NET Core 2\.1, supports 2\.1\.x, 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 10\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |   * 64bit Windows Server 2012 R2 v1\.2\.0 running IIS 8\.5 *   |  \.NET Core 2\.1, supports 2\.1\.x, 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |   * 64bit Windows Server Core 2012 R2 v1\.2\.0 running IIS 8\.5 *   |  \.NET Core 2\.1, supports 2\.1\.x, 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |   * 64bit Windows Server 2012 v1\.2\.0 running IIS 8 *   |  \.NET Core 2\.1, supports 2\.1\.x, 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
+|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |   * 64bit Windows Server 2008 R2 v1\.2\.0 running IIS 7\.5 *   |  \.NET Core 2\.1, supports 2\.1\.x, 2\.0\.x, 1\.1\.x, 1\.0\.x \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
+|   **Windows Server 2012 R2 with IIS 8\.5**   |   * 64bit Windows Server 2012 R2 running IIS 8\.5 *   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |   * 64bit Windows Server Core 2012 R2 running IIS 8\.5 *   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8\.5  | 
+|   **Windows Server 2012 with IIS 8**   |   * 64bit Windows Server 2012 running IIS 8 *   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 8  | 
+|   **Windows Server 2008 R2 with IIS 7\.5**   |   * 64bit Windows Server 2008 R2 running IIS 7\.5 *   |  \.NET Framework 4\.7\.2, supports 4\.x, 2\.0, 1\.x  |  IIS 7\.5  | 
+
+### More details<a name="concepts.platforms.net.details"></a>
+
+
+****  
+
+|  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
+| --- | --- | --- | --- | --- | --- | --- | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.08\.15  |  3\.3\.336\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.08\.15  |  3\.3\.336\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.08\.15  |  3\.3\.336\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.08\.15  |  3\.3\.336\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2018\.08\.15  |  3\.3\.336\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2008 R2 with IIS 7\.5 version 1\.2\.0**   |  2018\.08\.15  |  3\.3\.336\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 with IIS 8\.5**   |  2018\.08\.15  |  3\.3\.336\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 R2 Server Core with IIS 8\.5**   |  2018\.08\.15  |  3\.3\.336\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2012 with IIS 8**   |  2018\.08\.15  |  3\.3\.336\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2008 R2 with IIS 7\.5**   |  2018\.08\.15  |  3\.3\.336\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+
 ## July 25, 2018 – August 26, 2018<a name="platform-history-2018-07-25"></a>
 
 The following Elastic Beanstalk platform configurations for \.NET were current during this date range:
@@ -33,8 +73,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2018\.07\.11  |  3\.3\.311\.0  |  4\.9\.2756  |  2\.2\.800\.0  |  3\.6  |  1\.0\.0  | 
@@ -73,8 +113,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |  4\.9\.2688  |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |  4\.9\.2688  |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2018\.06\.13  |  3\.3\.283\.0  |  4\.9\.2688  |  2\.2\.619\.0  |  3\.6  |  1\.0\.0  | 
@@ -113,8 +153,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |  4\.9\.2586  |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |  4\.9\.2586  |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2018\.04\.11  |  3\.3\.260\.0  |  4\.9\.2586  |  2\.2\.392\.0  |  3\.6  |  1\.0\.0  | 
@@ -153,8 +193,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |  4\.9\.2565  |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |  4\.9\.2565  |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2018\.03\.24  |  3\.3\.245\.0  |  4\.9\.2565  |  2\.2\.355\.0  |  3\.6  |  1\.0\.0  | 
@@ -193,8 +233,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.03\.06  |  3\.15\.345  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.160\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.03\.06  |  3\.15\.345  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.160\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.03\.06  |  3\.15\.345  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.160\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.03\.06  |  3\.15\.345  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.160\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.03\.06  |  3\.15\.345  |  4\.9\.2400\.0  |  2\.2\.160\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.03\.06  |  3\.15\.345  |  4\.9\.2400\.0  |  2\.2\.160\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2018\.03\.06  |  3\.15\.345  |  4\.9\.2400\.0  |  2\.2\.160\.0  |  3\.6  |  1\.0\.0  | 
@@ -233,8 +273,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.01\.12  |  3\.15\.304  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.01\.12  |  3\.15\.304  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.01\.12  |  3\.15\.304  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.01\.12  |  3\.15\.304  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.01\.12  |  3\.15\.304  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.01\.12  |  3\.15\.304  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2018\.01\.12  |  3\.15\.304  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
@@ -273,8 +313,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.01\.05  |  3\.15\.304\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.01\.05  |  3\.15\.304\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.01\.05  |  3\.15\.304\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2018\.01\.05  |  3\.15\.304\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2018\.01\.05  |  3\.15\.304\.0  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2018\.01\.05  |  3\.15\.304\.0  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2017\.12\.13  |  3\.15\.277\.0  |  4\.9\.2262\.0  |  2\.2\.93\.0  |  3\.6  |  1\.0\.0  | 
@@ -313,8 +353,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.11\.29  |  3\.15\.244\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.64\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.11\.29  |  3\.15\.244\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.64\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.11\.29  |  3\.15\.244\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.64\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.11\.29  |  3\.15\.244\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.64\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2017\.11\.29  |  3\.15\.244\.0  |  4\.9\.2188\.0  |  2\.2\.64\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2017\.11\.29  |  3\.15\.244\.0  |  4\.9\.2188\.0  |  2\.2\.64\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2017\.11\.29  |  3\.15\.244\.0  |  4\.9\.2188\.0  |  2\.2\.64\.0  |  3\.6  |  1\.0\.0  | 
@@ -353,8 +393,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.10\.13  |  3\.15\.172\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.30\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.10\.13  |  3\.15\.172\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.30\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.10\.13  |  3\.15\.172\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.30\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.10\.13  |  3\.15\.172\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.2\.30\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2017\.10\.13  |  3\.15\.172\.0  |  4\.9\.2188\.0  |  2\.2\.30\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2017\.10\.13  |  3\.15\.172\.0  |  4\.9\.2188\.0  |  2\.2\.30\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2017\.10\.13  |  3\.15\.172\.0  |  4\.9\.2188\.0  |  2\.2\.30\.0  |  3\.6  |  1\.0\.0  | 
@@ -393,8 +433,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.08\.09  |  3\.3\.103\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.879\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.08\.09  |  3\.3\.103\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.879\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.08\.09  |  3\.3\.103\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.879\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.08\.09  |  3\.3\.103\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.879\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2017\.08\.09  |  3\.3\.58\.0  |  4\.9\.2016  |  2\.0\.879\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2017\.08\.09  |  3\.3\.58\.0  |  4\.9\.2016  |  2\.0\.879\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2017\.08\.09  |  3\.3\.102\.0  |  4\.9\.2016  |  2\.0\.879\.0  |  3\.6  |  1\.0\.0  | 
@@ -433,8 +473,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.07\.13  |  3\.3\.103\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.847\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.07\.13  |  3\.3\.103\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.847\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.07\.13  |  3\.3\.103\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.847\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.07\.13  |  3\.3\.103\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.847\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2017\.07\.13  |  3\.3\.102\.0  |  4\.9\.1981  |  2\.0\.847\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2017\.07\.13  |  3\.3\.102\.0  |  4\.9\.1981  |  2\.0\.847\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2017\.07\.13  |  3\.3\.102\.0  |  4\.9\.1981  |  2\.0\.847\.0  |  3\.6  |  1\.0\.0  | 
@@ -473,8 +513,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.06\.14  |  3\.3\.103\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.805\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.06\.14  |  3\.3\.103\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.805\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.06\.14  |  3\.3\.103\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.805\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.06\.14  |  3\.3\.103\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.805\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 with IIS 8\.5 version 1\.2\.0**   |  2017\.06\.14  |  3\.3\.102\.0  |  4\.9\.1900\.0  |  2\.0\.805\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 R2 Server Core with IIS 8\.5 version 1\.2\.0**   |  2017\.06\.14  |  3\.3\.102\.0  |  4\.9\.1900\.0  |  2\.0\.805\.0  |  3\.6  |  1\.0\.0  | 
 |   **Windows Server 2012 with IIS 8 version 1\.2\.0**   |  2017\.06\.14  |  3\.3\.102\.0  |  4\.9\.1900\.0  |  2\.0\.682\.0  |  3\.6  |  1\.0\.0  | 
@@ -505,8 +545,8 @@ The following Elastic Beanstalk platform configurations for \.NET were current d
 
 |  Configuration  |  AMI version  |  AWS SDK for \.NET  |  EC2Config  |  SSM Agent  |  Web Deploy  |  AWS X‑Ray  | 
 | --- | --- | --- | --- | --- | --- | --- | 
-|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.05\.10  |  3\.14\.61\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.767\.0  |  3\.6  |  1\.0\.0  | 
-|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.05\.10  |  3\.14\.61\.0  |   * [SSM only](http://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.767\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.05\.10  |  3\.14\.61\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.767\.0  |  3\.6  |  1\.0\.0  | 
+|   **Windows Server Core 2016 with IIS 10\.0 version 1\.2\.0**   |  2017\.05\.10  |  3\.14\.61\.0  |   * [SSM only](https://docs.aws.amazon.com/systems-manager/latest/userguide/) *   |  2\.0\.767\.0  |  3\.6  |  1\.0\.0  | 
 
 ## May 16, 2017 – July 16, 2017<a name="platform-history-24"></a>
 

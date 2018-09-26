@@ -4,7 +4,7 @@ AWS Identity and Access Management \(IAM\) helps you securely control access to 
 
 For an overview of permissions, see [Service Roles, Instance Profiles, and User Policies](concepts-roles.md)\. For most environments, the service role and instance profile that the AWS Management Console prompts you to create when you launch your first environment have all of the permissions that you need\. Likewise, the [managed policies](AWSHowTo.iam.managed-policies.md) provided by Elastic Beanstalk for full access and read\-only access contain all of the user permissions required for daily use\.
 
-The [IAM User Guide](http://docs.aws.amazon.com/IAM/latest/UserGuide/IAMGettingStarted.html) provides in\-depth coverage of AWS permissions\.
+The [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMGettingStarted.html) provides in\-depth coverage of AWS permissions\.
 
 **Topics**
 + [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md)

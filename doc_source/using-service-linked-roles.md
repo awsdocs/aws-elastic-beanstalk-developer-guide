@@ -1,12 +1,12 @@
 # Using Service\-Linked Roles for Elastic Beanstalk<a name="using-service-linked-roles"></a>
 
-AWS Elastic Beanstalk can use AWS Identity and Access Management \(IAM\)[ service\-linked roles](http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role)\. A service\-linked role is a unique type of IAM role that is linked directly to Elastic Beanstalk\. Service\-linked roles are predefined by Elastic Beanstalk and include all the permissions that the service requires to call other AWS services on your behalf\. Elastic Beanstalk uses a service\-linked role when you create an environment and don't explicitly specify a service role for it\.
+AWS Elastic Beanstalk can use AWS Identity and Access Management \(IAM\)[ service\-linked roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role)\. A service\-linked role is a unique type of IAM role that is linked directly to Elastic Beanstalk\. Service\-linked roles are predefined by Elastic Beanstalk and include all the permissions that the service requires to call other AWS services on your behalf\. Elastic Beanstalk uses a service\-linked role when you create an environment and don't explicitly specify a service role for it\.
 
 A service\-linked role makes setting up Elastic Beanstalk easier because you don’t have to manually add the necessary permissions\. Elastic Beanstalk defines the permissions of its service\-linked roles, and unless defined otherwise, only Elastic Beanstalk can assume its roles\. The defined permissions include the trust policy and the permissions policy, and that permissions policy cannot be attached to any other IAM entity\.
 
 You can delete the roles only after first deleting their related resources\. This protects your Elastic Beanstalk resources because you can't inadvertently remove permission to access the resources\.
 
-For information about other services that support service\-linked roles, see [AWS Services That Work with IAM](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html) and look for the services that have **Yes **in the **Service\-Linked Role** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\.
+For information about other services that support service\-linked roles, see [AWS Services That Work with IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html) and look for the services that have **Yes **in the **Service\-Linked Role** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\.
 
 ## Service\-Linked Role Permissions for Elastic Beanstalk<a name="service-linked-role-permissions"></a>
 
@@ -118,10 +118,10 @@ Alternatively, you can use an AWS managed policy to [provide full access](AWSHow
 
 You don't need to manually create the AWSServiceRoleForElasticBeanstalk role\. When you create an Elastic Beanstalk environment using the Elastic Beanstalk API and don't specify a service role, Elastic Beanstalk creates the service\-linked role for you\. 
 
-You can also use the IAM console, the AWS CLI, or the IAM API to create a service\-linked role using the **Elastic Beanstalk** use case\. For more information, see [Creating a Service\-Linked Role](http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#create-service-linked-role) in the *IAM User Guide*\.
+You can also use the IAM console, the AWS CLI, or the IAM API to create a service\-linked role using the **Elastic Beanstalk** use case\. For more information, see [Creating a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#create-service-linked-role) in the *IAM User Guide*\.
 
 **Important**  
-If you were using the Elastic Beanstalk service before September 27, 2017, when it began supporting service\-linked roles, Elastic Beanstalk created the AWSServiceRoleForElasticBeanstalk role in your account\. To learn more, see [A New Role Appeared in My IAM Account](http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_roles.html#troubleshoot_roles_new-role-appeared)\.
+If you were using the Elastic Beanstalk service before September 27, 2017, when it began supporting service\-linked roles, Elastic Beanstalk created the AWSServiceRoleForElasticBeanstalk role in your account\. To learn more, see [A New Role Appeared in My IAM Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_roles.html#troubleshoot_roles_new-role-appeared)\.
 
 ## Editing a Service\-Linked Role for Elastic Beanstalk<a name="edit-service-linked-role"></a>
 
@@ -150,7 +150,7 @@ You can use IAM commands from the AWS Command Line Interface to edit the descrip
 1. \(Optional\) To view the current description for a role, use the following commands:
 
    ```
-   $ aws iam [get\-role](http://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name role-name
+   $ aws iam [get\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/get-role.html) --role-name role-name
    ```
 
    Use the role name, not the ARN, to refer to roles with the CLI commands\. For example, if a role has the following ARN: `arn:aws:iam::123456789012:role/myrole`, you refer to the role as **myrole**\.
@@ -158,7 +158,7 @@ You can use IAM commands from the AWS Command Line Interface to edit the descrip
 1. To update a service\-linked role's description, use one of the following commands:
 
    ```
-   $ aws iam [update\-role\-description](http://docs.aws.amazon.com/cli/latest/reference/iam/update-role-description.html) --role-name role-name --description description
+   $ aws iam [update\-role\-description](https://docs.aws.amazon.com/cli/latest/reference/iam/update-role-description.html) --role-name role-name --description description
    ```
 
 ### Editing a Service\-Linked Role Description \(IAM API\)<a name="edit-service-linked-role-iam-api"></a>
@@ -169,11 +169,11 @@ You can use the IAM API to edit the description of a service\-linked role\.
 
 1. \(Optional\) To view the current description for a role, use the following command:
 
-   IAM API: [GetRole](http://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
+   IAM API: [GetRole](https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetRole.html) 
 
 1. To update a role's description, use the following command: 
 
-   IAM API: [UpdateRoleDescription](http://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRoleDescription.html)
+   IAM API: [UpdateRoleDescription](https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateRoleDescription.html)
 
 ## Deleting a Service\-Linked Role for Elastic Beanstalk<a name="delete-service-linked-role"></a>
 
@@ -209,8 +209,12 @@ When you find out which Elastic Beanstalk environments are using the AWSServiceR
 
 See [`eb terminate`](eb3-terminate.md) for details about terminating an Elastic Beanstalk environment using the EB CLI\.
 
-See [TerminateEnvironment](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_TerminateEnvironment.html) for details about terminating an Elastic Beanstalk environment using the API\.
+See [TerminateEnvironment](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_TerminateEnvironment.html) for details about terminating an Elastic Beanstalk environment using the API\.
 
 ### Deleting a Service\-Linked Role<a name="delete-service-linked-role-iam"></a>
 
-You can use the IAM console, the AWS CLI, or the IAM API to delete a service\-linked role\. For more information, see [Deleting a Service\-Linked Role](http://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
+You can use the IAM console, the AWS CLI, or the IAM API to delete a service\-linked role\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
+
+## Supported Regions for Elastic Beanstalk Service\-Linked Roles<a name="slr-regions"></a>
+
+Elastic Beanstalk supports using service\-linked roles in all of the regions where the service is available\. For more information, see [Elastic Beanstalk Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region)\.

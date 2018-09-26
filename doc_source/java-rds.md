@@ -264,7 +264,7 @@ As an example, the preceding is acceptable\. But in actual applications, keep yo
 
 1. On the **RDS Dashboard** instance details page, under **Security and Network**, choose the security group starting with *rds\-* next to **Security Groups**\.
 **Note**  
-The database might have multiple entries labeled **Security Groups**\. Use the first, which starts with *awseb*, only if you have an older account that doesn't have a default [Amazon Virtual Private Cloud](http://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\.
+The database might have multiple entries labeled **Security Groups**\. Use the first, which starts with *awseb*, only if you have an older account that doesn't have a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\.
 
 1. In **Security group details**, choose the **Inbound** tab, and then choose **Edit**\.
 

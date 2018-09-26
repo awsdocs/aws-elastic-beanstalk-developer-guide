@@ -1,11 +1,11 @@
 # Load Balancer for Your AWS Elastic Beanstalk Environment<a name="using-features.managing.elb"></a>
 
-When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), AWS Elastic Beanstalk creates an [Elastic Load Balancing](http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/) load balancer for your environment\. The load balancer distributes traffic among your environment's instances\.
+When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), AWS Elastic Beanstalk creates an [Elastic Load Balancing](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/) load balancer for your environment\. The load balancer distributes traffic among your environment's instances\.
 
 Elastic Beanstalk supports these load balancer types:
-+ [Classic Load Balancer](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/) – The Elastic Load Balancing previous\-generation load balancer\. Routes HTTP, HTTPS, or TCP request traffic to different ports on environment instances\.
-+ [Application Load Balancer](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/) – An application layer load balancer\. Routes HTTP or HTTPS request traffic to different ports on environment instances based on the request path\.
-+ [Network Load Balancer](http://docs.aws.amazon.com/elasticloadbalancing/latest/network/) – A network layer load balancer\. Routes TCP request traffic to different ports on environment instances\. Supports both active and passive health checks\.
++ [Classic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/) – The Elastic Load Balancing previous\-generation load balancer\. Routes HTTP, HTTPS, or TCP request traffic to different ports on environment instances\.
++ [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/) – An application layer load balancer\. Routes HTTP or HTTPS request traffic to different ports on environment instances based on the request path\.
++ [Network Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/) – A network layer load balancer\. Routes TCP request traffic to different ports on environment instances\. Supports both active and passive health checks\.
 
 By default, Elastic Beanstalk creates a Classic Load Balancer for your environment\. It configures the load balancer to listen for HTTP traffic on port 80 and forward this traffic to instances on the same port\. You can choose the type of load balancer that your environment uses only during environment creation\. You can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.
 

@@ -4,7 +4,7 @@ The following [configuration file](ebextensions.md) creates and runs a Windows P
 + Checks for an existing HTTPS certificate binding to port 443
 + Gets the [PFX certificate](configuring-https-ssl.md) and password from an Amazon S3 bucket
 **Note**  
-Add an `AmazonS3ReadOnlyAccess` policy to the `aws-elasticbeanstalk-service-role` to access the SSL certificate and password files on the Amazon S3 bucket\.
+Add an `AmazonS3ReadOnlyAccess` policy to the `aws-elasticbeanstalk-ec2-role` to access the SSL certificate and password files in the Amazon S3 bucket\.
 + Installs the certificate
 + Binds the certificate to port 443
 **Note**  

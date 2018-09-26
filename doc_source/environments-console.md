@@ -92,11 +92,11 @@ Restart the web server running on your environment's instances\. This option doe
 
 ### Rebuild Environment<a name="environments-dashboard-actions-rebuild"></a>
 
-Terminate all resources in the running environment and build a new environment with the same settings\. This operation takes several minutes, equivalent to deploying a new environment from scratch\. Any Amazon RDS instances running in your environment's data tier are deleted during a rebuild\. If you need the data, create a snapshot\. You can create a snapshot manually [in the RDS console](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html) or configure your data tier's Deletion Policy to create a snapshot automatically before deleting the instance \(this is the default setting when you create a data tier\)\. 
+Terminate all resources in the running environment and build a new environment with the same settings\. This operation takes several minutes, equivalent to deploying a new environment from scratch\. Any Amazon RDS instances running in your environment's data tier are deleted during a rebuild\. If you need the data, create a snapshot\. You can create a snapshot manually [in the RDS console](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html) or configure your data tier's Deletion Policy to create a snapshot automatically before deleting the instance \(this is the default setting when you create a data tier\)\. 
 
 ### Terminate Environment<a name="environments-dashboard-actions-terminate"></a>
 
-Terminate all resources in the running environment, and remove the environment from the application\. If you have an RDS instance running in a data tier and need to retain the data, be sure to take a snapshot before terminating your environment\. You can create a snapshot manually [in the RDS console](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html) or configure your data tier's Deletion Policy to create a snapshot automatically before deleting the instance \(this is the default setting when you create a data tier\)\. 
+Terminate all resources in the running environment, and remove the environment from the application\. If you have an RDS instance running in a data tier and need to retain the data, be sure to take a snapshot before terminating your environment\. You can create a snapshot manually [in the RDS console](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html) or configure your data tier's Deletion Policy to create a snapshot automatically before deleting the instance \(this is the default setting when you create a data tier\)\. 
 
 ### Restore Environment<a name="environments-dashboard-actions-restore"></a>
 

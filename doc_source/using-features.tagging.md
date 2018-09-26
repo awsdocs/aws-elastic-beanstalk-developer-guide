@@ -2,7 +2,7 @@
 
 ## Introduction to Environment Tagging<a name="using-features.tagging.intro"></a>
 
-AWS Elastic Beanstalk provides support for you to specify tags to apply to resources in your environment\. Tags are key\-value pairs\. They help you identify environments in cost allocation reports\. This is especially useful if you manage many environments\. You can also use tags to manage permissions at the resource level\. For more information, see [Tagging Your Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in the *Amazon EC2 User Guide for Linux Instances*\.
+AWS Elastic Beanstalk provides support for you to specify tags to apply to resources in your environment\. Tags are key\-value pairs\. They help you identify environments in cost allocation reports\. This is especially useful if you manage many environments\. You can also use tags to manage permissions at the resource level\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 By default, Elastic Beanstalk applies three tags:
 + `elasticbeanstalk:environment-name` – The name of the environment\. 
@@ -20,7 +20,7 @@ You can specify tags when you create the Elastic Beanstalk environment\. In an e
 + Keys cannot begin with `aws:` or `elasticbeanstalk:`\.
 + Values cannot match the environment name\.
 
-You can use cost allocation reports to track your usage of AWS resources\. The reports include both tagged and untagged resources, but they aggregate costs according to tags\. For information about how cost allocation reports use tags, see [Use Cost Allocation Tags for Custom Billing Reports](http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation.html) in the *AWS Billing and Cost Management User Guide*\.
+You can use cost allocation reports to track your usage of AWS resources\. The reports include both tagged and untagged resources, but they aggregate costs according to tags\. For information about how cost allocation reports use tags, see [Use Cost Allocation Tags for Custom Billing Reports](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation.html) in the *AWS Billing and Cost Management User Guide*\.
 
 ## Adding Tags During Environment Creation<a name="using-features.tagging.create"></a>
 
@@ -34,7 +34,7 @@ If you use the EB CLI to create environments, use the `--tags` option with `[eb 
 ~/workspace/my-app$ eb create --tags mytag1=value1,mytag2=value2
 ```
 
-With the AWS CLI or other API\-based clients, use the `--tags` parameter on the `[create\-environment](http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-environment.html)` command\.
+With the AWS CLI or other API\-based clients, use the `--tags` parameter on the `[create\-environment](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-environment.html)` command\.
 
 ```
 $ aws elasticbeanstalk create-environment --tags Key=mytag1,Value=value1 Key=mytag2,Value=value2 --application-name my-app --environment-name my-env --cname-prefix my-app --version-label v1 --template-name my-saved-config
@@ -80,13 +80,13 @@ The following command updates the tag `mytag1` and deletes the tag `mytag2`\.
 
 For a complete list of options and more examples, see `[eb tags](eb3-tags.md)`\.
 
-With the AWS CLI or other API\-based clients, use the `[list\-tags\-for\-resource](http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/list-tags-for-resource.html)` command to list the tags of an environment\.
+With the AWS CLI or other API\-based clients, use the `[list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/list-tags-for-resource.html)` command to list the tags of an environment\.
 
 ```
 $ aws elasticbeanstalk list-tags-for-resource --resource-arn "arn:aws:elasticbeanstalk:us-east-2:my-account-id:environment/my-app/my-env"
 ```
 
-Use the `[update\-tags\-for\-resource](http://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-tags-for-resource.html)` command to add, update, or delete tags in an environment\.
+Use the `[update\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-tags-for-resource.html)` command to add, update, or delete tags in an environment\.
 
 ```
 $ aws elasticbeanstalk update-tags-for-resource --tags-to-add

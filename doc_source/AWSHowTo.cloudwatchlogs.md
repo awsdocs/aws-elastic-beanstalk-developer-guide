@@ -45,7 +45,7 @@ To enable streaming of logs from your environment's Amazon EC2 instances to Clou
 
 ## How Elastic Beanstalk Sets Up CloudWatch Logs<a name="AWSHowTo.cloudwatchlogs.loggroups"></a>
 
-Elastic Beanstalk installs a CloudWatch log agent with the default configuration settings on each instance it creates\. Learn more in the [CloudWatch Logs Agent Reference](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html)\.
+Elastic Beanstalk installs a CloudWatch log agent with the default configuration settings on each instance it creates\. Learn more in the [CloudWatch Logs Agent Reference](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html)\.
 
 When you enable instance log streaming to CloudWatch Logs, Elastic Beanstalk sends log files from your environment's instances to CloudWatch Logs\. Different platforms stream different logs\. The following table lists the logs, by platform\.
 
@@ -168,7 +168,7 @@ commands:
     command: service awslogs restart
 ```
 
-For more information about configuring CloudWatch Logs, see the [CloudWatch Logs Agent Reference](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html) in the *Amazon CloudWatch Logs User Guide*\.
+For more information about configuring CloudWatch Logs, see the [CloudWatch Logs Agent Reference](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html) in the *Amazon CloudWatch Logs User Guide*\.
 
 Before you can configure integration with CloudWatch Logs using configuration files, you must set up IAM permissions to use with the CloudWatch Logs agent\. You can attach the following custom policy to the [instance profile](concepts-roles-instance.md) that you assign to your environment\.
 

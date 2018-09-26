@@ -24,7 +24,7 @@ Use the `lifecycle` option to display or create the application version lifecycl
 |  Name  |  Description  | 
 | --- | --- | 
 |  \-d *version\-label* or \-\-delete *version\-label*  | Delete version version\-label of the application\. | 
-|  lifecycle  | Invoke the default editor to create a new application version lifecycle policy\. Use this policy to avoid hitting the [ limit to how many application versions you can create](http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_elastic_beanstalk)\. | 
+|  lifecycle  | Invoke the default editor to create a new application version lifecycle policy\. Use this policy to avoid hitting the [ limit to how many application versions you can create](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_elastic_beanstalk)\. | 
 |  lifecycle \-p or lifecycle \-\-print  | Display the current application lifecycle policy\. | 
 |  [Common options](eb3-cmd-options.md)  |  | 
 

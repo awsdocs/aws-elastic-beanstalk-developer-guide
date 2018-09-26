@@ -31,7 +31,7 @@ The following example shows the configuration steps when running `eb init` for t
    (default is 3): 3
    ```
 
-1. Next, provide your access key and secret key so that the EB CLI can manage resources for you\. Access keys are created in the AWS Identity and Access Management console\. If you don't have keys, see [How Do I Get Security Credentials?](http://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html) in the *Amazon Web Services General Reference*\.
+1. Next, provide your access key and secret key so that the EB CLI can manage resources for you\. Access keys are created in the AWS Identity and Access Management console\. If you don't have keys, see [How Do I Get Security Credentials?](https://docs.aws.amazon.com/general/latest/gr/getting-aws-sec-creds.html) in the *Amazon Web Services General Reference*\.
 
    ```
    You have not yet set up your credentials or your credentials are incorrect.
@@ -158,7 +158,7 @@ The EB CLI looks for credentials and configuration settings in the following ord
 
 1. **The AWS credentials file** – Located at `~/.aws/credentials` on Linux and OS X systems, or at `C:\Users\USERNAME\.aws\credentials` on Windows systems\. This file can contain multiple named profiles in addition to a default profile\.
 
-1. **The [AWS CLI configuration file](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-files)** – Located at `~/.aws/config` on Linux and OS X systems or `C:\Users\USERNAME\.aws\config` on Windows systems\. This file can contain a default profile, [named profiles](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles), and AWS CLI–specific configuration parameters for each\.
+1. **The [AWS CLI configuration file](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-config-files)** – Located at `~/.aws/config` on Linux and OS X systems or `C:\Users\USERNAME\.aws\config` on Windows systems\. This file can contain a default profile, [named profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html#cli-multiple-profiles), and AWS CLI–specific configuration parameters for each\.
 
 1. **Legacy EB CLI configuration file** – Located at `~/.elasticbeanstalk/config` on Linux and OS X systems or `C:\Users\USERNAME\.elasticbeanstalk\config` on Windows systems\.
 
@@ -176,4 +176,4 @@ To use the EB CLI from an Amazon EC2 instance, create a role that has access to 
 
 `pip` comes preinstalled on Amazon Linux\.
 
-The EB CLI reads credentials from the instance metadata\. For more information, see [ Granting Applications that Run on Amazon EC2 Instances Access to AWS Resources](http://docs.aws.amazon.com/IAM/latest/UserGuide/role-usecase-ec2app.html) in *IAM User Guide*\.
+The EB CLI reads credentials from the instance metadata\. For more information, see [ Granting Applications that Run on Amazon EC2 Instances Access to AWS Resources](https://docs.aws.amazon.com/IAM/latest/UserGuide/role-usecase-ec2app.html) in *IAM User Guide*\.

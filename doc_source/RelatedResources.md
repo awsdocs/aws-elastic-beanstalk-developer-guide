@@ -1,7 +1,7 @@
 # Elastic Beanstalk Resources<a name="RelatedResources"></a>
 
 The following related resources can help you as you work with this service\.
-+  **[Elastic Beanstalk API Reference](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/)** A comprehensive description of all SOAP and Query APIs\. Additionally, it contains a list of all SOAP data types\. 
++  **[Elastic Beanstalk API Reference](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/)** A comprehensive description of all SOAP and Query APIs\. Additionally, it contains a list of all SOAP data types\. 
 +  **[Elastic Beanstalk Sample Code and Libraries](https://aws.amazon.com/code/AWS-Elastic-Beanstalk)** – A link to the command line tool as well as a sample Java web application\. See the links below for additional sample applications\.
 +  **[elastic\-beanstalk\-samples on GitHub](https://github.com/awslabs/elastic-beanstalk-samples)** – A GitHub repository with Elastic Beanstalk sample configuration files \(\.ebextensions\)\. The repository's `README.md` file has links to additional GitHub repositories with sample applications\.
 +  **[Elastic Beanstalk Technical FAQ](https://aws.amazon.com/elasticbeanstalk/faqs/)** – The top questions developers have asked about this product\. 

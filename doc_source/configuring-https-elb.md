@@ -47,7 +47,7 @@ If the **Load balancer** configuration card doesn't have a **Modify** button, yo
 
    1. Choose **Add**\.
 **Note**  
-If the drop\-down menu doesn't show any certificates, you should create or upload a certificate for your [custom domain name](customdomains.md) in [AWS Certificate Manager \(ACM\)](http://docs.aws.amazon.com/acm/latest/userguide/) \(preferred\), or upload a certificate to IAM with the AWS CLI\.
+If the drop\-down menu doesn't show any certificates, you should create or upload a certificate for your [custom domain name](customdomains.md) in [AWS Certificate Manager \(ACM\)](https://docs.aws.amazon.com/acm/latest/userguide/) \(preferred\), or upload a certificate to IAM with the AWS CLI\.
 
 1. Choose **Apply**\.
 

@@ -21,7 +21,7 @@ The URL must contain the following parameters, which are case\-sensitive:
 
   For a description of all available platforms and their configurations, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
 
-  You can use the [AWS Command Line Interface](http://docs.aws.amazon.com/cli/latest/userguide/) \(AWS CLI\) to get a list of available configurations with their respective ARNs\. The `list-platform-versions` command lists detailed information about all available configurations\. The `--filters` argument allows you to scope down the list\. For example, you can list all configurations of a specific language\.
+  You can use the [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/) \(AWS CLI\) to get a list of available configurations with their respective ARNs\. The `list-platform-versions` command lists detailed information about all available configurations\. The `--filters` argument allows you to scope down the list\. For example, you can list all configurations of a specific language\.
 
   The following example queries for all Python configurations, and pipes the output through a series of commands\. The result is the platform configuration name of each ARN, in human\-readable format, without URL encoding\.
 

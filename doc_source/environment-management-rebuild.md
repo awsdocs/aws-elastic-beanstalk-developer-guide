@@ -20,7 +20,7 @@ You can rebuild an environment through the Elastic Beanstalk console or by using
 
 Rebuilding a running environment creates new resources that have the same configuration as the old resources; however, the resource IDs are different, and any data on the old resources is not restored\. For example, rebuilding an environment with an Amazon RDS database instance creates a new database with the same configuration, but does not apply a snapshot to the new database\.
 
-To rebuild a running environment with the Elastic Beanstalk API, use the [http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html) action with the AWS CLI or the AWS SDK\.
+To rebuild a running environment with the Elastic Beanstalk API, use the [https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html) action with the AWS CLI or the AWS SDK\.
 
 ```
 $ aws elasticbeanstalk rebuild-environment --environment-id e-vdnftxubwq
@@ -62,7 +62,7 @@ $ eb restore e-vdnftxubwq
 
 See [`eb restore`](eb3-restore.md) for more information\.
 
-To rebuild a terminated environment with the Elastic Beanstalk API, use the [http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html) action with the AWS CLI or the AWS SDK\.
+To rebuild a terminated environment with the Elastic Beanstalk API, use the [https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html) action with the AWS CLI or the AWS SDK\.
 
 ```
 $ aws elasticbeanstalk rebuild-environment --environment-id e-vdnftxubwq

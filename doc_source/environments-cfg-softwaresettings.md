@@ -88,7 +88,7 @@ option_settings:
     NOTIFICATION_TOPIC: '`{"Ref" : "NotificationTopic"}`'
 ```
 
-You can also use this feature to propagate information from [AWS CloudFormation pseudo parameters](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html)\. This example gets the current region and assigns it to a property named `AWS_REGION`\.
+You can also use this feature to propagate information from [AWS CloudFormation pseudo parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html)\. This example gets the current region and assigns it to a property named `AWS_REGION`\.
 
 **Example \.ebextensions/[env\-regionname\.config](https://github.com/awslabs/elastic-beanstalk-docs/blob/master/configuration-files/aws-provided/instance-configuration/env-regionname.config)**  
 

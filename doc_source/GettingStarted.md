@@ -250,7 +250,7 @@ For more information about using the Elastic Beanstalk plug\-in for Eclipse, see
 
 The AWS SDK for \.NET enables you to build applications that use AWS infrastructure services\. With the AWS SDK for \.NET, you can get started in minutes with a single, downloadable package that includes the AWS \.NET library, code samples, and documentation\. 
 
-For more information, see [AWS SDK for \.NET](https://aws.amazon.com/sdk-for-net/)\. For supported \.NET Framework and Visual studio versions, see [AWS SDK for \.NET Developer Guide](http://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/)\.
+For more information, see [AWS SDK for \.NET](https://aws.amazon.com/sdk-for-net/)\. For supported \.NET Framework and Visual studio versions, see [AWS SDK for \.NET Developer Guide](https://docs.aws.amazon.com/sdk-for-net/latest/developer-guide/)\.
 
 ### AWS Toolkit for Visual Studio<a name="GettingStarted.UsingAEB.vs"></a>
 

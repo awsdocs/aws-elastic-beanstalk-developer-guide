@@ -25,12 +25,12 @@ To turn off the HTTP port, you select OFF for **HTTP Listener Port**\. To turn o
 
 **Note**  
 To access your environment using a port other than the default port 80, such as port 8080, add a listener to the existing load balancer and configure the new listener to listen on that port\.  
-For example, using the [AWS CLI for Classic load balancers](http://docs.aws.amazon.com/cli/latest/reference/elb/create-load-balancer-listeners.html), type the following command, replacing *LOAD\_BALANCER\_NAME* with the name of your load balancer for Elastic Beanstalk\.  
+For example, using the [AWS CLI for Classic load balancers](https://docs.aws.amazon.com/cli/latest/reference/elb/create-load-balancer-listeners.html), type the following command, replacing *LOAD\_BALANCER\_NAME* with the name of your load balancer for Elastic Beanstalk\.  
 
 ```
 aws elb create-load-balancer-listeners --load-balancer-name LOAD_BALANCER_NAME --listeners "Protocol=HTTP, LoadBalancerPort=8080, InstanceProtocol=HTTP, InstancePort=80"
 ```
-For example, using the [AWS CLI for Application Load Balancers](http://docs.aws.amazon.com/cli/latest/reference/elbv2/create-listener.html), type the following command, replacing *LOAD\_BALANCER\_ARN* with the ARN of your load balancer for Elastic Beanstalk\.  
+For example, using the [AWS CLI for Application Load Balancers](https://docs.aws.amazon.com/cli/latest/reference/elbv2/create-listener.html), type the following command, replacing *LOAD\_BALANCER\_ARN* with the ARN of your load balancer for Elastic Beanstalk\.  
 
 ```
 aws elbv2 create-listener --load-balancer-arn LOAD_BALANCER_ARN --protocol HTTP --port 8080
@@ -43,7 +43,7 @@ Elastic Load Balancing supports the HTTPS/TLS protocol to enable traffic encrypt
 
 **To turn on the HTTPS port**
 
-1. Create a new certificate using AWS Certificate Manager \(ACM\) or upload a certificate and key to AWS Identity and Access Management \(IAM\)\. For more information about requesting an ACM certificate, see [Request a Certificate](http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide*\. For more information about importing third\-party certificates into ACM, see [Importing Certificates](http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\. If ACM is not [available in your region](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region), use AWS Identity and Access Management \(IAM\) to upload a third\-party certificate\. The ACM and IAM services store the certificate and provide an Amazon Resource Name \(ARN\) for the SSL certificate\. For more information about creating and uploading certificates to IAM, see [Working with Server Certificates](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in *IAM User Guide*\.
+1. Create a new certificate using AWS Certificate Manager \(ACM\) or upload a certificate and key to AWS Identity and Access Management \(IAM\)\. For more information about requesting an ACM certificate, see [Request a Certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide*\. For more information about importing third\-party certificates into ACM, see [Importing Certificates](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\. If ACM is not [available in your region](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region), use AWS Identity and Access Management \(IAM\) to upload a third\-party certificate\. The ACM and IAM services store the certificate and provide an Amazon Resource Name \(ARN\) for the SSL certificate\. For more information about creating and uploading certificates to IAM, see [Working with Server Certificates](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in *IAM User Guide*\.
 
 1. Specify the HTTPS port by selecting a port from the **HTTPS Listener Port** drop\-down list\.
 

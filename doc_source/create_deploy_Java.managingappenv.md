@@ -10,7 +10,7 @@
 + [Configuring Java Containers Using AWS Toolkit for Eclipse](create_deploy_Java.container.md)
 + [Setting System Properties with AWS Toolkit for Eclipse](#create_deploy_Java.managing.customenv.eclipse)
 
- With the AWS Toolkit for Eclipse, you can change the provisioning and configuration of the AWS resources that are used by your application environments\. For information on how to manage your application environments using the AWS Management Console, see [Managing Environments](using-features.managing.md)\. This section discusses the specific service settings you can edit in the AWS Toolkit for Eclipse as part of your application environment configuration\. For more about AWS Toolkit for Eclipse, see [AWS Toolkit for Eclipse Getting Started Guide](http://docs.aws.amazon.com/AWSToolkitEclipse/latest/GettingStartedGuide/)\. 
+ With the AWS Toolkit for Eclipse, you can change the provisioning and configuration of the AWS resources that are used by your application environments\. For information on how to manage your application environments using the AWS Management Console, see [Managing Environments](using-features.managing.md)\. This section discusses the specific service settings you can edit in the AWS Toolkit for Eclipse as part of your application environment configuration\. For more about AWS Toolkit for Eclipse, see [AWS Toolkit for Eclipse Getting Started Guide](https://docs.aws.amazon.com/AWSToolkitEclipse/latest/GettingStartedGuide/)\. 
 
 ## Changing Environment Configuration Settings<a name="create_deploy_Java.managingappenv.env"></a>
 

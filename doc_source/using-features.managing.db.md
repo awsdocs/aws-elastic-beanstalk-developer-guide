@@ -42,7 +42,7 @@ You can configure the following options:
 + **Availability** – Choose **High \(Multi\-AZ\)** to run a warm backup in a second Availability Zone for high availability\.
 
 **Note**  
-Elastic Beanstalk creates a master user for the database using the user name and password you provide\. To learn more about the master user and its privileges, see [Master User Account Privileges](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.MasterAccounts.html)\.
+Elastic Beanstalk creates a master user for the database using the user name and password you provide\. To learn more about the master user and its privileges, see [Master User Account Privileges](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.MasterAccounts.html)\.
 
 ![\[Elastic Beanstalk Auto Scaling Configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-rds-create.png)
 

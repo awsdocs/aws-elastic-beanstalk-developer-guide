@@ -4,6 +4,15 @@ This page lists the previous versions of AWS Elastic Beanstalk's Node\.js platfo
 
 See the [Supported Platforms](concepts.platforms.md) page for information on the latest version of each platform supported by Elastic Beanstalk\. Detailed release notes are available for recent releases at [aws\.amazon\.com/releasenotes](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. 
 
+The following Elastic Beanstalk platform configurations for Node\.js were current between August 20, 2018 and September 24, 2018:
+
+
+****  
+
+|  Configuration and *Solution Stack Name*   |  AMI  |  Node\.js version \(npm version\)  |  Proxy Server  |  Git  |  AWS X‑Ray  | 
+| --- | --- | --- | --- | --- | --- | 
+|   **Node\.js version 4\.5\.3**   * 64bit Amazon Linux 2018\.03 v4\.5\.3 running Node\.js *   |  2018\.03\.0  |  8\.11\.3 \(5\.6\.0\), 8\.11\.1\(5\.6\.0\), 7\.10\.1 \(4\.2\.0\), 6\.14\.3 \(3\.10\.10\), 6\.14\.1\(3\.10\.10\), 5\.12\.0 \(3\.8\.6\), 4\.9\.1\(2\.15\.11\), 4\.8\.7 \(2\.15\.11\)  Default platform: 6\.14\.3  |  nginx 1\.12\.1, Apache 2\.4\.33  |  2\.14\.4  |  2\.0\.0  | 
+
 The following Elastic Beanstalk platform configurations for Node\.js were current between August 15, 2018 and August 19, 2018:
 
 
