@@ -2,6 +2,9 @@
 
 This tutorial walks through the deployment of a default, auto\-generated [Django](https://www.djangoproject.com/) website to an Elastic Beanstalk environment running Python 3\.6\. The tutorial uses the EB CLI as a deployment mechanism, but you can also use the AWS Management Console to deploy a ZIP file containing your project's contents\. The EB CLI is an interactive command line interface written in Python that uses the Python SDK for AWS \(boto\)\.
 
+**Note**  
+This tutorial uses SQLite, a simple database engine included in Python\. The database is deployed with your project files\. For production environments, we recommend that you use Amazon Relational Database Service \(Amazon RDS\), and that you separate it from your environment\. For details, see [Adding an Amazon RDS DB Instance to Your Python Application Environment](create-deploy-python-rds.md)\.
+
 **Topics**
 + [Prerequisites](#python-django-prereq)
 + [Set Up a Python Virtual Environment with Django](#python-django-setup-venv)

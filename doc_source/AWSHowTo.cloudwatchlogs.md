@@ -156,11 +156,13 @@ files:
       log_group_name = `{"Fn::Join":["/", ["/aws/elasticbeanstalk", { "Ref":"AWSEBEnvironmentName" }, "var/log/eb-docker/containers/eb-current-app/stdouterr.log"]]}`
       log_stream_name = {instance_id}
       file = /var/log/eb-docker/containers/eb-current-app/*stdouterr.log*
+      file_fingerprint_lines=1-8
       [sample-app.log]
       log_group_name = `{"Fn::Join":["/", ["/aws/elasticbeanstalk", { "Ref":"AWSEBEnvironmentName" }, "var/log/eb-docker/containers/eb-current-app/sampleapp.log"]]}`
       log_stream_name = {instance_id}
       file = /var/log/eb-docker/containers/eb-current-app/sample-app.log*
- 
+      file_fingerprint_lines=1-8
+
 commands:
   "01":
     command: chkconfig awslogs on

@@ -11,7 +11,7 @@ Metrics gathered by the resources in your environment is published to Amazon Clo
 **Topics**
 + [Health Colors](#using-features.healthstatus.colors)
 + [Elastic Load Balancing Health Check](#using-features.healthstatus.understanding)
-+ [Single Instance Environment Health Check](#monitoring-basic-healthcheck-singleinstance)
++ [Single Instance and Worker Tier Environment Health Check](#monitoring-basic-healthcheck-singleinstance)
 + [Additional Checks](#monitoring-basic-additionalchecks)
 + [Amazon CloudWatch Metrics](#monitoring-basic-cloudwatch)
 
@@ -44,9 +44,9 @@ For more information about Elastic Load Balancing health checks, see [Health Che
 **Note**  
 Configuring a health check URL does not change the health check behavior of an environment's Auto Scaling group\. An unhealthy instance is removed from the load balancer, but is not automatically replaced by Amazon EC2 Auto Scaling unless you configure Amazon EC2 Auto Scaling to use the Elastic Load Balancing health check as a basis for replacing instances\. To configure Amazon EC2 Auto Scaling to replace instances that fail an Elastic Load Balancing health check, see [Auto Scaling Health Check Setting](environmentconfig-autoscaling-healthchecktype.md)\.
 
-## Single Instance Environment Health Check<a name="monitoring-basic-healthcheck-singleinstance"></a>
+## Single Instance and Worker Tier Environment Health Check<a name="monitoring-basic-healthcheck-singleinstance"></a>
 
-In a single instance environment, Elastic Beanstalk determines the instance's health by monitoring its Amazon EC2 instance status\. Elastic Load Balancing health settings, including HTTP health check URLs, cannot be used in a single instance environment\.
+In a single instance or worker tier environment, Elastic Beanstalk determines the instance's health by monitoring its Amazon EC2 instance status\. Elastic Load Balancing health settings, including HTTP health check URLs, cannot be used in these environment types\.
 
 For more information on Amazon EC2 instance status checks, see [Monitoring Instances with Status Checks](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
 

@@ -13,6 +13,8 @@ The [`Resources` section](environment-resources.md) lets you further customize t
 
 The other sections of a configuration file \(`packages`, `sources`, `files`, `users`, `groups`, `commands`, `container_commands`, and `services`\) let you configure the EC2 instances that are launched in your environment\. Whenever a server is launched in your environment, Elastic Beanstalk runs the operations defined in these sections to prepare the operating system and storage system for your application\.
 
+For examples of commonly used \.ebextensions, see the [Elastic Beanstalk Configuration Files Repository](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files)\.
+
 **Requirements**
 + **Location** – Place all of your configuration files in a single folder, named `.ebextensions`, in the root of your source bundle\. Folders starting with a dot can be hidden by file browsers, so make sure that the folder is added when you create your source bundle\. See [Create an Application Source Bundle](applications-sourcebundle.md) for instructions\.
 + **Naming** – Configuration files must have the `.config` file extension\.

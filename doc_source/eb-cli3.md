@@ -3,7 +3,7 @@
 The EB CLI is a command line interface for Elastic Beanstalk that provides interactive commands that simplify creating, updating and monitoring environments from a local repository\. Use the EB CLI as part of your everyday development and testing cycle as an alternative to the AWS Management Console\.
 
 **Note**  
-The current version of the EB CLI has a different base set of commands than versions prior to version 3\.0\. See [EB CLI 2\.6 \(Deprecated\)](eb-cli.md) if you use an older version\.
+The current version of the EB CLI has a different base set of commands than versions prior to version 3\.0\. If you are using an older version, see [Migrating to EB CLI 3 and AWS CodeCommit](eb-cli.md#eb-cli2-migrating) for migration information\.
 
 Once you've installed the EB CLI and configured a repository, you can create environments with a single command:
 
