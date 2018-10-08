@@ -1,0 +1,11 @@
+# Using Elastic Beanstalk with Amazon DynamoDB<a name="AWSHowTo.dynamoDB"></a>
+
+Amazon DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability\. If you are a developer, you can use DynamoDB to create a database table that can store and retrieve any amount of data, and serve any level of request traffic\. DynamoDB automatically spreads the data and traffic for the table over a sufficient number of servers to handle the request capacity specified by the customer and the amount of data stored, while maintaining consistent and fast performance\. All data items are stored on Solid State Drives \(SSDs\) and are automatically replicated across multiple Availability Zones in an AWS Region to provide built\-in high availability and data durability\. 
+
+If you use [periodic tasks](using-features-managing-env-tiers.md#worker-periodictasks) in a worker environment, Elastic Beanstalk creates a DynamoDB table and uses it to perform leader election and store information about the task\. Each instance in the environment attempts to write to the table every few seconds to become leader and perform the task when scheduled\.
+
+You can use [configuration files](ebextensions.md) to create a DynamoDB table for your application\. See [eb\-node\-express\-sample](https://github.com/awslabs/eb-node-express-sample) on GitHub for a sample Node\.js application that creates a table with a configuration file and connects to it with the AWS SDK for JavaScript in Node\.js\. For an example walkthrough using DynamoDB with PHP, see [Example: DynamoDB, CloudWatch, and SNS](customize-environment-resources-dynamodb.md)\. For an example that uses the AWS SDK for Java, see [Manage Tomcat Session State with DynamoDB](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/java-dg-tomcat-session-manager.html) in the AWS SDK for Java documentation\.
+
+When you create a DynamoDB table using configuration files, the table isn't tied to your environment's lifecycle, and isn't deleted when you terminate your environment\. To ensure that personal information isn't unnecessarily retained, delete any records that you don't need anymore, or delete the table\.
+
+For more information about DynamoDB, see the [DynamoDB Developer Guide](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/)\.
