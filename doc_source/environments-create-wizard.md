@@ -143,7 +143,7 @@ For more information on CloudWatch metrics and alarms, see [Amazon CloudWatch Co
 
 In a load\-balanced environment, your environment's load balancer is the entry point for all traffic headed for your application\. Elastic Beanstalk supports several types of load balancer\. Use the **Modify load balancer** configuration page to select a load balancer type and to configure settings for it\. By default, the Elastic Beanstalk console creates a Classic Load Balancer and configures it to serve HTTP traffic on port 80\.
 
-For more details about load balancer types and settings, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md) and [Configuring HTTPS for your Elastic Beanstalk Environment](configuring-https.md)\.
+For more details about load balancer types and settings, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md) and [Configuring HTTPS for Your Elastic Beanstalk Environment](configuring-https.md)\.
 
 ![\[Load balancer configuration during environment creation\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-elb-type-chooser.png)
 

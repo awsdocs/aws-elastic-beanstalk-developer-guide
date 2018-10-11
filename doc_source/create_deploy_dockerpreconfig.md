@@ -4,7 +4,7 @@ Elastic Beanstalk supports Docker containers that are based on the language stac
 
 For an end\-to\-end walkthrough about deploying an application to Elastic Beanstalk using a preconfigured Docker container, see [Getting Started with Preconfigured Docker Containers](create_deploy_dockerpreconfig.walkthrough.md)\.
 
-For more information about supported platforms for preconfigured Docker containers, see [Preconfigured Docker](concepts.platforms.md#concepts.platforms.dockerpreconfig)\.
+For more information about supported platforms for preconfigured Docker containers, see [Preconfigured Docker](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.dockerpreconfig) in the *AWS Elastic Beanstalk Platforms* document\.
 
 **Topics**
 + [Getting Started with Preconfigured Docker Containers](create_deploy_dockerpreconfig.walkthrough.md)

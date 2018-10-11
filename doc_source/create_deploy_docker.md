@@ -13,7 +13,7 @@ The topics in this chapter assume some knowledge of Elastic Beanstalk environmen
 
 The Docker platform for Elastic Beanstalk has two generic configurations \(single container and multicontainer\), and several preconfigured containers\.
 
-See the [Supported Platforms](concepts.platforms.md#concepts.platforms.docker) page for details on the currently supported version of each configuration\.
+See the [Supported Platforms](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.docker) page in the *AWS Elastic Beanstalk Platforms* document for details on the currently supported version of each configuration\.
 
 ### Single Container Docker<a name="docker-platform-single"></a>
 

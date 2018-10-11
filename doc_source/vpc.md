@@ -10,11 +10,11 @@ You can use an [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/la
   Elastic Beanstalk does not support proxy settings like `HTTPS_PROXY` for configuring a web proxy\.
 + **NTP** – Instances in your Elastic Beanstalk environment use Network Time Protocol \(NTP\) to synchronize the system clock\. If instances are unable to communicate on UDP port 123, the clock may go out of sync, causing issues with Elastic Beanstalk health reporting\. Ensure that your VPC security groups and network ACLs allow inbound and outbound UDP traffic on port 123 to avoid these issues\.
 
-The [elastic\-beanstalk\-samples](https://github.com/awslabs/elastic-beanstalk-samples/) repository provides AWS CloudFormation templates that you can use to create a VPC for use with your Elastic Beanstalk environments\.
+The [elastic\-beanstalk\-samples](https://github.com/awsdocs/elastic-beanstalk-samples/) repository provides AWS CloudFormation templates that you can use to create a VPC for use with your Elastic Beanstalk environments\.
 
 **To create resources with a AWS CloudFormation template**
 
-1. Clone the samples repository or download a template using the links in the [README](https://github.com/awslabs/elastic-beanstalk-samples/tree/master/cfn-templates/README.md)\.
+1. Clone the samples repository or download a template using the links in the [README](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/cfn-templates/README.md)\.
 
 1. Open the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation/home)\.
 
@@ -30,7 +30,7 @@ When stack creation completes, check the **Outputs** tab to find the VPC ID and 
 
 ## VPC with Public Subnets<a name="services-vpc-public"></a>
 
-**AWS CloudFormation template** – [vpc\-public\.yaml](https://github.com/awslabs/elastic-beanstalk-samples/tree/master/cfn-templates/vpc-public.yaml)
+**AWS CloudFormation template** – [vpc\-public\.yaml](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/cfn-templates/vpc-public.yaml)
 
 **Settings \(load balanced\)**
 + **Load balancer visibility** – Public
@@ -53,7 +53,7 @@ This is similar to the way that Elastic Beanstalk manages networking when you us
 
 ## VPC with Private and Public Subnets<a name="services-vpc-privatepublic"></a>
 
-**AWS CloudFormation template** – [vpc\-privatepublic\.yaml](https://github.com/awslabs/elastic-beanstalk-samples/tree/master/cfn-templates/vpc-privatepublic.yaml)
+**AWS CloudFormation template** – [vpc\-privatepublic\.yaml](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/cfn-templates/vpc-privatepublic.yaml)
 
 **Settings \(load balanced\)**
 + **Load balancer visibility** – Public

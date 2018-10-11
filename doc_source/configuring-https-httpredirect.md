@@ -1,6 +1,6 @@
 # Configuring HTTP to HTTPS Redirection<a name="configuring-https-httpredirect"></a>
 
-In [Configuring HTTPS for your Elastic Beanstalk Environment](configuring-https.md) and its subtopics, we discuss configuring your Elastic Beanstalk environment to use HTTPS to ensure traffic encryption into your application\. This topic describes how to elegantly handle HTTP traffic to your application if end users still initiate it\. You do this by configuring *HTTP to HTTPS redirection*, sometimes referred to as *forcing HTTPS*\.
+In [Configuring HTTPS for Your Elastic Beanstalk Environment](configuring-https.md) and its subtopics, we discuss configuring your Elastic Beanstalk environment to use HTTPS to ensure traffic encryption into your application\. This topic describes how to elegantly handle HTTP traffic to your application if end users still initiate it\. You do this by configuring *HTTP to HTTPS redirection*, sometimes referred to as *forcing HTTPS*\.
 
 To configure redirection, you first configure your environment to use HTTPS traffic\. Then you configure the web servers on the environment's instances to redirect HTTP traffic to HTTPS by responding with an HTTP redirection response status\.
 

@@ -1,19 +1,19 @@
 # Configuring a Classic Load Balancer<a name="environments-cfg-clb"></a>
 
-When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports a few load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. 
+When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports several load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. 
 
 This topic describes the configuration of a [Classic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)\.
 
 **Note**  
-You can choose the type of load balancer that your environment uses only during environment creation\. You can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.
+You can choose the type of load balancer that your environment uses only during environment creation\. Later, you can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.
 
 ## Introduction<a name="environments-cfg-clb-intro"></a>
 
-A [Classic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/) is the Elastic Load Balancing previous\-generation load balancer\. It supports routing HTTP, HTTPS, or TCP request traffic to different ports on environment instances\. When you enable load balancing, Classic Load Balancer is the default load balancer type\.
+A [Classic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/) is the Elastic Load Balancing previous\-generation load balancer\. It supports routing HTTP, HTTPS, or TCP request traffic to different ports on environment instances\.
 
-By default, Elastic Beanstalk configures your Classic Load Balancer to [listen](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html) for HTTP traffic on port 80 and forward it to instances on the same port\. To support secure connections, you can configure your load balancer with a listener on port 443 and a TLS certificate\.
+When your environment uses a Classic Load Balancer, Elastic Beanstalk configures it by default to [listen](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html) for HTTP traffic on port 80 and forward it to instances on the same port\. To support secure connections, you can configure your load balancer with a listener on port 443 and a TLS certificate\.
 
-The load balancer uses a [health check](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html) to determine whether the Amazon EC2 instances running your application are healthy\. The health check determines an instance's health status by making a request to a specified URL at a set interval\. If the URL returns an error message, or fails to return within a specified timeout period, the health check fails\.
+The load balancer uses a [health check](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-healthchecks.html) to determine whether the Amazon EC2 instances running your application are healthy\. The health check makes a request to a specified URL at a set interval\. If the URL returns an error message, or fails to return within a specified timeout period, the health check fails\.
 
 If your application performs better by serving multiple requests from the same client on a single server, you can configure your load balancer to use [sticky sessions](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-sticky-sessions.html)\. With sticky sessions, the load balancer adds a cookie to HTTP responses that identifies the Amazon EC2 instance that served the request\. When a subsequent request is received from the same client, the load balancer uses the cookie to send the request to the same instance\.
 
@@ -22,15 +22,17 @@ With [cross\-zone load balancing](https://docs.aws.amazon.com/elasticloadbalanci
 When an instance is removed from the load balancer because it has become unhealthy or the environment is scaling down, [connection draining](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html) gives the instance time to complete requests before closing the connection between the instance and the load balancer\. You can change the amount of time given to instances to send a response, or disable connection draining completely\.
 
 **Note**  
-Connection draining is enabled by default when you create an environment with the console or the EB CLI\. For other clients, you can enable it with [configuration options](#environments-cfg-clb-namespace)\. 
+Connection draining is enabled by default when you create an environment with the Elastic Beanstalkconsole or the EB CLI\. For other clients, you can enable it with [configuration options](#environments-cfg-clb-namespace)\. 
 
-You can use advanced load balancer settings to configure listeners on arbitrary ports, modify additional sticky session settings, and configure the load balancer to connect to EC2 instances securely\. These settings are available through [configuration options](#environments-cfg-clb-namespace) that you can set with configuration files in your source code, or directly on an environment by using the Elastic Beanstalk API\. Many of them are also available in the Elastic Beanstalk console\. In addition, you can configure a load balancer to [upload access logs](environments-cfg-loadbalancer-accesslogs.md) to Amazon S3\.
+You can use advanced load balancer settings to configure listeners on arbitrary ports, modify additional sticky session settings, and configure the load balancer to connect to EC2 instances securely\. These settings are available through [configuration options](#environments-cfg-clb-namespace) that you can set by using configuration files in your source code, or directly on an environment by using the Elastic Beanstalk API\. Many of these settings are also available in the Elastic Beanstalk console\. In addition, you can configure a load balancer to [upload access logs](environments-cfg-loadbalancer-accesslogs.md) to Amazon S3\.
 
 ## Configuring a Classic Load Balancer Using the Elastic Beanstalk Console<a name="environments-cfg-clb-console"></a>
 
 You can use the Elastic Beanstalk console to configure a Classic Load Balancer's ports, HTTPS certificate, and other settings, during environment creation or later when your environment is running\.
 
 **To configure a Classic Load Balancer in the Elastic Beanstalk console during environment creation**
+
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
 1. Use the [Create New Environment wizard](environments-create-wizard.md) to start creating your environment\.
 
@@ -96,35 +98,37 @@ For example, you can edit the default listener and change the **Protocol** from 
 
 1. In the **Classic Load Balancer listener** dialog box, configure the settings you want, and then choose **Add**\.
 
-Adding a secure listener is a common case\. The example in the following image adds a listener for HTTPS traffic on port 443\. This listener routes the incoming traffic to environment instance servers listening to HTTPS traffic on port 443\.
+Adding a secure listener is a common use case\. The example in the following image adds a listener for HTTPS traffic on port 443\. This listener routes the incoming traffic to environment instance servers listening to HTTPS traffic on port 443\.
 
-Before you can configure an HTTPS listener, ensure that you have a valid SSL certificate\. Create a new certificate using AWS Certificate Manager \(ACM\), or upload a certificate and key to AWS Identity and Access Management \(IAM\)\. For more information about requesting an ACM certificate, see [Request a Certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide*\. For more information about importing third\-party certificates into ACM, see [Importing Certificates](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\. If ACM isn't [available in your AWS Region](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region), upload your existing certificate and key to IAM\.
+Before you can configure an HTTPS listener, ensure that you have a valid SSL certificate\. Do one of the following:
++ If AWS Certificate Manager is [available in your AWS Region](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region), create or import a certificate using AWS Certificate Manager \(ACM\)\. For more information about requesting an ACM certificate, see [Request a Certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide*\. For more information about importing third\-party certificates into ACM, see [Importing Certificates](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\.
++ If ACM isn't [available in your AWS Region](http://docs.aws.amazon.com/general/latest/gr/rande.html#acm_region), upload your existing certificate and key to IAM\. For more information about creating and uploading certificates to IAM, see [Working with Server Certificates](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in the *IAM User Guide*\.
 
-For more information about creating and uploading certificates to IAM, see [Working with Server Certificates](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in the *IAM User Guide*\.
+For more detail on configuring HTTPS and working with certificates in Elastic Beanstalk, see [Configuring HTTPS for Your Elastic Beanstalk Environment](configuring-https.md)\.
 
 For **SSL certificate**, choose the ARN of your SSL certificate\. For example, `arn:aws:iam::123456789012:server-certificate/abc/certs/build`, or `arn:aws:acm:us-east-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678`\.
 
 ![\[Classic Load Balancer configuration - adding a secure listener\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-clb-listeners-https.png)
 
-For details about configuring HTTPS and working with certificates in Elastic Beanstalk, see [Configuring HTTPS for your Elastic Beanstalk Environment](configuring-https.md)\.
+For details about configuring HTTPS and working with certificates in Elastic Beanstalk, see [Configuring HTTPS for Your Elastic Beanstalk Environment](configuring-https.md)\.
 
 ### Sessions<a name="using-features.managing.elb.sessions"></a>
 
-Use these settings to enable or disable sticky sessions \(**Session stickiness enabled**\) and to configure a sticky session's duration \(**Cookie duration**\), up to **1000000** seconds\.
+Select or clear the **Session stickiness enabled** box to enable or disable sticky sessions\. Use **Cookie duration** to configure a sticky session's duration, up to **1000000** seconds\.
 
-![\[Classic Load Balancer settings for session stickiness\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-elb-sessions.png)
+![\[Classic Load Balancer settings for session stickiness and duration\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-elb-sessions.png)
 
 ### Cross\-Zone Load Balancing<a name="using-features.managing.elb.cross-zone"></a>
 
-Use this setting to enable or disable cross\-zone load balancing \(**Load balancing across multiple Availability Zones enabled**\)\.
+Select or clear the **Load balancing across multiple Availability Zones enabled** box to enable or disable cross\-zone load balancing\.
 
 ![\[Classic Load Balancer settings for cross-zone load balancing\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-elb-cross-zone.png)
 
 ### Connection Draining<a name="using-features.managing.elb.draining"></a>
 
-Use these settings to enable or disable connection draining \(**Connection draining enabled**\), and to set the **Draining timeout**, up to **3600** seconds\.
+Select or clear the **Connection draining enabled** box to enable or disable connection draining\. Set the **Draining timeout**, up to **3600** seconds\.
 
-![\[Classic Load Balancer settings for connection draining\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-elb-draining.png)
+![\[Classic Load Balancer settings for connection draining and draining timeout\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-elb-draining.png)
 
 ### Health Check<a name="using-features.managing.elb.healthchecks"></a>
 
@@ -137,7 +141,7 @@ Use the following settings to configure load balancer health checks:
 ![\[Classic Load Balancer settings for health check\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-elb-healthcheck.png)
 
 **Note**  
-The Elastic Load Balancing health check doesn't affect the health check behavior of an environment's Auto Scaling group\. Instances that fail an Elastic Load Balancing health check will not automatically be replaced by Amazon EC2 Auto Scaling unless you manually configure Amazon EC2 Auto Scaling to do so\. See [Auto Scaling Health Check Setting](environmentconfig-autoscaling-healthchecktype.md) for details\. 
+The Elastic Load Balancing health check doesn't affect the health check behavior of an environment's Auto Scaling group\. Instances that fail an Elastic Load Balancing health check are not automatically replaced by Amazon EC2 Auto Scaling unless you manually configure Amazon EC2 Auto Scaling to do so\. See [Auto Scaling Health Check Setting](environmentconfig-autoscaling-healthchecktype.md) for details\. 
 
 For more information about health checks and how they influence your environment's overall health, see [Basic Health Reporting](using-features.healthstatus.md)\.
 

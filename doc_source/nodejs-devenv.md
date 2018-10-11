@@ -13,7 +13,7 @@ For common setup steps and tools that apply to all languages, see [Configuring y
 
 ## Installing Node\.js<a name="nodejs-devenv-nodejs"></a>
 
-Install Node\.js to run Node\.js applications locally\. If you don't have a preference, get the latest version supported by Elastic Beanstalk\. See [Node\.js](concepts.platforms.md#concepts.platforms.nodejs) on the supported platforms page for a list of supported versions\.
+Install Node\.js to run Node\.js applications locally\. If you don't have a preference, get the latest version supported by Elastic Beanstalk\. See [Node\.js](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.nodejs) in the *AWS Elastic Beanstalk Platforms* document for a list of supported versions\.
 
 Download Node\.js at [nodejs\.org](https://nodejs.org/en/)\.
 

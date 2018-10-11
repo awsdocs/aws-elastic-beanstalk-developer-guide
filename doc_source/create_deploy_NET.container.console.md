@@ -1,6 +1,6 @@
 # Using the AWS Elastic Beanstalk \.NET Platform<a name="create_deploy_NET.container.console"></a>
 
-AWS Elastic Beanstalk supports a number of platforms for different versions of the \.NET programming framework and Windows Server\. See [Supported Platforms](concepts.platforms.md#concepts.platforms.net) for a full list\.
+AWS Elastic Beanstalk supports a number of platforms for different versions of the \.NET programming framework and Windows Server\. See [\.NET on Windows Server with IIS](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) in the *AWS Elastic Beanstalk Platforms* document for a full list\.
 
 Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application, enable log rotation to Amazon S3, and set \.NET framework settings\.
 

@@ -1,6 +1,6 @@
 # Using the AWS Elastic Beanstalk Node\.js Platform<a name="create_deploy_nodejs.container"></a>
 
-The AWS Elastic Beanstalk Node\.js platform is a [platform configuration](concepts.platforms.md#concepts.platforms.nodejs) for Node\.js web applications that can run behind an nginx proxy server, behind an Apache server, or standalone\.
+The AWS Elastic Beanstalk Node\.js platform is a [platform configuration](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.nodejs) for Node\.js web applications that can run behind an nginx proxy server, behind an Apache server, or standalone\.
 
 Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can choose which proxy server to run in front of your application, choose a specific version of Node\.js to run, and choose the command used to run your application\. You can also configure environment variables needed by your application and enable log rotation to Amazon S3\.
 

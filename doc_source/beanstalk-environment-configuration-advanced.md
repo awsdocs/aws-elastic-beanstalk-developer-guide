@@ -14,4 +14,4 @@ When deploying your applications, you may want to customize and configure the so
 + [Using Elastic Beanstalk Saved Configurations](environment-configuration-savedconfig.md)
 + [Environment Manifest \(`env.yaml`\)](environment-cfg-manifest.md)
 + [Using a Custom Amazon Machine Image \(AMI\)](using-features.customenv.md)
-+ [Configuring HTTPS for your Elastic Beanstalk Environment](configuring-https.md)
++ [Configuring HTTPS for Your Elastic Beanstalk Environment](configuring-https.md)

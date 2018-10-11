@@ -74,9 +74,9 @@ option_settings:
     API_ENDPOINT: www.example.com/api
 ```
 
-If you use configuration files or AWS CloudFormation templates to create [custom resources](environment-resources.md), you can use an AWS CloudFormation function to get information about the resource and assign it to an environment property dynamically during deployment\. The following example from the the [elastic\-beanstalk\-samples](https://github.com/awslabs/elastic-beanstalk-docs/) GitHub repository uses the [Ref function](ebextensions-functions.md) to get the ARN of an Amazon SNS topic that it creates, and assigns it to an environment property named `NOTIFICATION_TOPIC`\.
+If you use configuration files or AWS CloudFormation templates to create [custom resources](environment-resources.md), you can use an AWS CloudFormation function to get information about the resource and assign it to an environment property dynamically during deployment\. The following example from the the [elastic\-beanstalk\-samples](https://github.com/awsdocs/elastic-beanstalk-samples/) GitHub repository uses the [Ref function](ebextensions-functions.md) to get the ARN of an Amazon SNS topic that it creates, and assigns it to an environment property named `NOTIFICATION_TOPIC`\.
 
-**Example \.ebextensions/[sns\-topic\.config](https://github.com/awslabs/elastic-beanstalk-docs/blob/master/configuration-files/aws-provided/resource-configuration/sns-topic.config)**  
+**Example \.ebextensions/[sns\-topic\.config](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/resource-configuration/sns-topic.config)**  
 
 ```
 Resources:
@@ -90,7 +90,7 @@ option_settings:
 
 You can also use this feature to propagate information from [AWS CloudFormation pseudo parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html)\. This example gets the current region and assigns it to a property named `AWS_REGION`\.
 
-**Example \.ebextensions/[env\-regionname\.config](https://github.com/awslabs/elastic-beanstalk-docs/blob/master/configuration-files/aws-provided/instance-configuration/env-regionname.config)**  
+**Example \.ebextensions/[env\-regionname\.config](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/instance-configuration/env-regionname.config)**  
 
 ```
 option_settings:
@@ -158,4 +158,4 @@ Elastic Beanstalk doesn't support passing environment variables to \.NET Core ap
   endpoint = ENV['API_ENDPOINT']
   ```
 
-Outside of application code, such as in a script that runs during deployment, you can access environment properties with the [`get-config` platform script](custom-platforms-scripts.md)\. See the [elastic\-beanstalk\-samples](https://github.com/awslabs/elastic-beanstalk-docs/search?utf8=%E2%9C%93&q=get-config) GitHub repository for example configurations that use `get-config`\.
+Outside of application code, such as in a script that runs during deployment, you can access environment properties with the [`get-config` platform script](custom-platforms-scripts.md)\. See the [elastic\-beanstalk\-samples](https://github.com/awsdocs/elastic-beanstalk-samples/search?utf8=%E2%9C%93&q=get-config) GitHub repository for example configurations that use `get-config`\.

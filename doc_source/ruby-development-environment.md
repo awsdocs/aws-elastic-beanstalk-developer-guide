@@ -64,7 +64,7 @@ View the available versions of Ruby\.
 ...
 ```
 
-Check the [supported platforms](concepts.platforms.md#concepts.platforms.ruby) page to find the latest version of Ruby available on a Beanstalk platform\. Install that version\.
+Check [Ruby](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.ruby) in the *AWS Elastic Beanstalk Platforms* document to find the latest version of Ruby available on an Elastic Beanstalk platform\. Install that version\.
 
 ```
 ~$ rvm install 2.5.1

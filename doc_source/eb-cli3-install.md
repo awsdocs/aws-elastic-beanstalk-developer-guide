@@ -80,7 +80,7 @@ If you encounter issues when you attempt to install the EB CLI with `pip`, you c
    EB CLI 3.7.8 (Python 3.4.3)
    ```
 
-The EB CLI is updated regularly to add functionality that supports [the latest Elastic Beanstalk features](https://aws.amazon.com/releasenotes/AWS-Elastic-Beanstalk)\. To update to the latest version of the EB CLI, run the installation command again\.
+The EB CLI is updated regularly to add functionality that supports [the latest Elastic Beanstalk features](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/relnotes.html)\. To update to the latest version of the EB CLI, run the installation command again\.
 
 ```
 $ pip install awsebcli --upgrade --user

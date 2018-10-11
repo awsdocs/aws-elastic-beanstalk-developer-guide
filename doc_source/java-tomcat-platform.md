@@ -1,6 +1,6 @@
 # Using the AWS Elastic Beanstalk Tomcat Platform<a name="java-tomcat-platform"></a>
 
-The AWS Elastic Beanstalk Tomcat platform is a set of [environment configurations](concepts.platforms.md#concepts.platforms.java) for Java web applications that can run in a Tomcat web container\. Each configuration corresponds to a major version of Tomcat, like *Java 8 with Tomcat 8*\.
+The AWS Elastic Beanstalk Tomcat platform is a set of [environment configurations](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.java) for Java web applications that can run in a Tomcat web container\. Each configuration corresponds to a major version of Tomcat, like *Java 8 with Tomcat 8*\.
 
 Platform\-specific configuration options are available in the AWS Management Console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
 

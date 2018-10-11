@@ -2,7 +2,7 @@
 
 To update your AWS Elastic Beanstalk environment to use HTTPS, you need to configure an HTTPS listener for the load balancer in your environment\. Two types of load balancer support an HTTPS listener: Classic Load Balancer and Application Load Balancer\.
 
-You can use either the Elastic Beanstalk console or a configuration file to configure a secure listener and assign the certificate\.
+You can use the Elastic Beanstalk console or a configuration file to configure a secure listener and assign the certificate\.
 
 **Note**  
 Single\-instance environments don't have a load balancer and don't support HTTPS termination at the load balancer\.
@@ -22,32 +22,37 @@ Single\-instance environments don't have a load balancer and don't support HTTPS
 If the **Load balancer** configuration card doesn't have a **Modify** button, your environment doesn't have a [load balancer](using-features-managing-env-types.md#using-features.managing.changetype)\.
 
 1. On the **Modify load balancer** page, the procedure varies depending on the type of load balancer associated with your environment\.
+   + **Classic Load Balancer**
 
-**Classic Load Balancer**
+     1. Choose **Add listener**\.
 
-   1. Choose **Add listener**\.
+     1. In the **Classic Load Balancer listener** dialog box, configure the following settings:
+        + For **Listener port**, type the incoming traffic port, typically `443`\.
+        + For **Listener protocol**, choose **HTTPS**\.
+        + For **Instance port**, type `80`\.
+        + For **Instance protocol**, choose **HTTP**\.
+        + For **SSL certificate**, choose your certificate\.
 
-   1. In the **Classic Load Balancer listener** dialog box, configure the following settings:
-      + For **Listener port**, type the incoming traffic port, typically `443`\.
-      + For **Listener protocol**, choose **HTTPS**\.
-      + For **Instance port**, type `80`\.
-      + For **Instance protocol**, choose **HTTP**\.
-      + For **SSL certificate**, choose your certificate\.
+     1. Choose **Add**\.
+   + **Application Load Balancer**
 
-   1. Choose **Add**\.
+     1. Choose **Add listener**\.
 
-**Application Load Balancer**
+     1. In the **Application Load Balancer listener** dialog box, configure the following settings:
+        + For **Port**, type the incoming traffic port, typically `443`\.
+        + For **Protocol**, choose **HTTPS**\.
+        + For **SSL certificate**, choose your certificate\.
 
-   1. Choose **Add listener**\.
-
-   1. In the **Application Load Balancer listener** dialog box, configure the following settings:
-      + For **Port**, type the incoming traffic port, typically `443`\.
-      + For **Protocol**, choose **HTTPS**\.
-      + For **SSL certificate**, choose your certificate\.
-
-   1. Choose **Add**\.
+     1. Choose **Add**\.
 **Note**  
-If the drop\-down menu doesn't show any certificates, you should create or upload a certificate for your [custom domain name](customdomains.md) in [AWS Certificate Manager \(ACM\)](https://docs.aws.amazon.com/acm/latest/userguide/) \(preferred\), or upload a certificate to IAM with the AWS CLI\.
+For Classic Load Balancer and Application Load Balancer, if the drop\-down menu doesn't show any certificates, you should create or upload a certificate for your [custom domain name](customdomains.md) in [AWS Certificate Manager \(ACM\)](https://docs.aws.amazon.com/acm/latest/userguide/) \(preferred\)\. Alternatively, upload a certificate to IAM with the AWS CLI\.
+   + **Network Load Balancer**
+
+     1. Choose **Add listener**\.
+
+     1. In the **Network Load Balancer listener** dialog box, for **Port**, type the incoming traffic port, typically `443`\.
+
+     1. Choose **Add**\.
 
 1. Choose **Apply**\.
 
@@ -76,8 +81,18 @@ Use this example when your environment has an Application Load Balancer\. The ex
 ```
 option_settings:
   aws:elbv2:listener:443:
+    ListenerEnabled: 'true'
     Protocol: HTTPS
     SSLCertificateArns: arn:aws:acm:us-east-2:1234567890123:certificate/####################################
+```
+
+**Example \.ebextensions/securelistener\-nlb\.config**  
+Use this example when your environment has a Network Load Balancer\. The example uses options in the `aws:elbv2:listener` namespace to configure a listener on port 443\. The listener routes traffic to the default process\.  
+
+```
+option_settings:
+  aws:elbv2:listener:443:
+    ListenerEnabled: 'true'
 ```
 
 ## Configuring a Security Group<a name="configuring-https-elb.security-group"></a>
@@ -86,7 +101,7 @@ If you configure your load balancer to forward traffic to an instance port other
 
 You add this rule by adding a `Resources` key to a [configuration file](ebextensions.md) in the `.ebextensions` directory for your application\.
 
-The following example configuration file adds an ingress rule to the `AWSEBSecurityGroup` security group, which allows traffic on port 1000 from the load balancer's security group\.
+The following example configuration file adds an ingress rule to the `AWSEBSecurityGroup` security group\. This allows traffic on port 1000 from the load balancer's security group\.
 
 **Example \.ebextensions/sg\-ingressfromlb\.config**  
 

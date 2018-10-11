@@ -1,6 +1,6 @@
 # Using the AWS Elastic Beanstalk Python Platform<a name="create-deploy-python-container"></a>
 
-The AWS Elastic Beanstalk Python platform is a set of [environment configurations](concepts.platforms.md#concepts.platforms.python) for Python web applications that can run behind an Apache proxy server with WSGI\. Each configuration corresponds to a version of Python, such as Python 3\.4\.
+The AWS Elastic Beanstalk Python platform is a set of [environment configurations](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.python) for Python web applications that can run behind an Apache proxy server with WSGI\. Each configuration corresponds to a version of Python, such as Python 3\.4\.
 
 Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application, enable log rotation to Amazon S3, and map folders in your application source that contain static files to paths served by the proxy server\.
 

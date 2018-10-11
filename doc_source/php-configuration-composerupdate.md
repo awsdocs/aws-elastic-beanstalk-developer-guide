@@ -1,6 +1,6 @@
 # Update Composer<a name="php-configuration-composerupdate"></a>
 
-[PHP platform configurations](concepts.platforms.md#concepts.platforms.PHP) ship with the latest version of Composer available at the time of release\. To keep Composer, PHP, and other libraries up to date, [upgrade your environment](using-features.platform.upgrade.md) whenever a platform update is available\. 
+[PHP platform configurations](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.PHP) ship with the latest version of Composer available at the time of release\. To keep Composer, PHP, and other libraries up to date, [upgrade your environment](using-features.platform.upgrade.md) whenever a platform update is available\. 
 
 Between platform updates, you can use a [configuration file](ebextensions.md) to update Composer on the instances in your environment\. You may need to update Composer if you see an error when you try to install packages with a Composer file, or if you are unable to use the latest platform version\.
 
