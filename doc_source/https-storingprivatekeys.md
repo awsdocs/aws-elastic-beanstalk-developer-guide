@@ -21,7 +21,7 @@ Resources:
               DefaultValue: "aws-elasticbeanstalk-ec2-role"
 files:
   # Private key
-  /etc/pki/tls/certs/server.key:
+  "/etc/pki/tls/certs/server.key":
     mode: "000400"
     owner: root
     group: root
