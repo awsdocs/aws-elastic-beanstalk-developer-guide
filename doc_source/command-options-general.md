@@ -232,7 +232,7 @@ Configure your environment's default process\.
 |  HealthCheckPath  |  Path to which to send HTTP requests for health checks\.  |  `/`   |  A routable path\.  | 
 |  HealthCheckTimeout  |  Time, in seconds, to wait for a response during a health check\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `5`  |  `1` to `60`  | 
 |  HealthyThresholdCount  |  Consecutive successful requests before Elastic Load Balancing changes the instance health status\.  |  With classic or application load balancer: `3` With network load balancer: `5`  |  `2` to `10`  | 
-|  MatcherHTTPCode  |  A comma\-separated list of HTTP code\(s\) that indicate that an instance is healthy\.  |  `200`  |  `200` to `399`  | 
+|  MatcherHTTPCode  |  A comma\-separated list of HTTP code\(s\) that indicate that an instance is healthy\.  |  `200`  |  `200` to `499`  | 
 |  Port  |  Port on which the process listens\.  |  `80`  |  `1` to `65535`  | 
 |  Protocol  |  Protocol that the process uses\. With an application load balancer, you can only set this option to `HTTP` or `HTTPS`\. With a network load balancer, you can only set this option to `TCP`\.  |  With classic or application load balancer: `HTTP` With network load balancer: `TCP`  |  `TCP` `HTTP` `HTTPS`  | 
 |  StickinessEnabled  |  Set to true to enable sticky sessions\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `'false'`  |  `'false'` `'true'`  | 
