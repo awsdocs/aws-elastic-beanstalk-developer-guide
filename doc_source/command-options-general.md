@@ -22,6 +22,7 @@
 + [aws:elasticbeanstalk:monitoring](#command-options-general-elasticbeanstalkmonitoring)
 + [aws:elasticbeanstalk:sns:topics](#command-options-general-elasticbeanstalksnstopics)
 + [aws:elasticbeanstalk:sqsd](#command-options-general-elasticbeanstalksqsd)
++ [aws:elasticbeanstalk:xray](#command-options-general-elasticbeanstalkxray)
 + [aws:elb:healthcheck](#command-options-general-elbhealthcheck)
 + [aws:elb:loadbalancer](#command-options-general-elbloadbalancer)
 + [aws:elb:listener](#command-options-general-elblistener)
@@ -354,6 +355,17 @@ Configure the Amazon SQS queue for a worker environment\.
 |  ErrorVisibilityTimeout  |  The amount of time, in seconds, that elapses before Elastic Beanstalk returns a message to the Amazon SQS queue after a processing attempt fails with an explicit error\.  |  `2` seconds  |  `0` to `43200` seconds  | 
 |  RetentionPeriod  |  The amount of time, in seconds, a message is valid and will be actively processed  |   `345600`   |  `60` to `1209600`  | 
 |  MaxRetries  |  The maximum number of attempts that Elastic Beanstalk attempts to send the message to the web application that will process it before moving the message to the dead letter queue\.  |   `10`   |  `1` to `100`  | 
+
+## aws:elasticbeanstalk:xray<a name="command-options-general-elasticbeanstalkxray"></a>
+
+Use the Elastic Beanstalk X-Ray Integration to Run the X-Ray Daemon\.
+
+
+**Namespace: `aws:elasticbeanstalk:xray`**  
+
+|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+| --- | --- | --- | --- | 
+|  XRayEnabled  |  Enable the X-Ray daemon on the application intances\.  |   `true`   |   `true`   `false`   | 
 
 ## aws:elb:healthcheck<a name="command-options-general-elbhealthcheck"></a>
 
