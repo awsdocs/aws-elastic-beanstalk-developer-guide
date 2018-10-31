@@ -271,7 +271,7 @@ Configure enhanced health reporting for your environment\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  SystemType  | Health reporting system \([basic](using-features.healthstatus.md) or [enhanced](health-enhanced.md)\)\. Enhanced health reporting requires a [service role](concepts-roles-service.md) and a version 2 [platform configuration](concepts.platforms.md)\. |   `basic`   |   `basic`   `enhanced`   | 
+|  SystemType  | Health reporting system \([basic](using-features.healthstatus.md) or [enhanced](health-enhanced.md)\)\. Enhanced health reporting requires a [service role](concepts-roles-service.md) and a version 2 or newer [platform configuration](concepts.platforms.md)\. |   `basic`   |   `basic`   `enhanced`   |
 | ConfigDocument | A JSON document describing the environment and instance metrics to publish to CloudWatch\. | None |  | 
 |  HealthCheckSuccessThreshold  | Lower the threshold for instances to pass health checks\. |  `Ok`  |  `Ok` `Warning` `Degraded` `Severe`  | 
 
