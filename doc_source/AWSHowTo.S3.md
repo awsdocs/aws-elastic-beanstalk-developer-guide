@@ -4,6 +4,8 @@ Amazon Simple Storage Service \(Amazon S3\) provides highly durable, fault\-tole
 
 Elastic Beanstalk creates an Amazon S3 bucket named `elasticbeanstalk-region-account-id` for each region in which you create environments\. Elastic Beanstalk uses this bucket to store objects required for the proper operation of your application\.
 
+Elastic Beanstalk doesn't turn on default encryption for the Amazon S3 bucket that it creates\. This means that by default, objects are stored unencrypted in the bucket \(and are accessible only by authorized users\)\. Some applications require all objects to be encrypted when they are stored—on a hard drive, in a database, etc\. \(also known as *encryption at rest*\)\. If you have this requirement, you can configure your account's buckets for default encryption\. For more details, see [Amazon S3 Default Encryption for S3 Buckets](https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html) in the *Amazon Simple Storage Service Developer Guide*\.
+
 ## Contents of the Elastic Beanstalk Amazon S3 Bucket<a name="AWSHowTo.S3.content"></a>
 
 The following table lists some objects that Elastic Beanstalk stores in your `elasticbeanstalk-*` Amazon S3 bucket\. The table also shows which objects have to be deleted manually\. To avoid unnecessary storage costs, and to ensure that personal information isn't retained, be sure to manually delete these objects when you no longer need them\.

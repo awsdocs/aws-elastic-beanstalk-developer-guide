@@ -73,8 +73,13 @@ Add the database driver to your project's [`package.json` file](nodejs-platform-
 **Common Driver Packages for Node\.js**
 + **MySQL** – `mysql`
 + **PostgreSQL** – `pg`
-+ **Oracle** – `oracle`
 + **SQL Server** – `mssql`
++ **Oracle** – `oracle` or `oracledb`
+
+  The Oracle package and version depend on the Node\.js version you're using:
+  + **Node\.js 6\.x, 8\.x** – Use the latest version of `oracledb`\.
+  + **Node\.js 4\.x** – Use the `oracledb` version 2\.2\.0\.
+  + **Node\.js 5\.x, 7\.x** – Use the latest version of `oracle`\. The `oracledb` package doesn't support these Node\.js versions\.
 
 ## Connecting to a Database<a name="nodejs-rds-connect"></a>
 

@@ -271,7 +271,7 @@ Configure enhanced health reporting for your environment\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  SystemType  | Health reporting system \([basic](using-features.healthstatus.md) or [enhanced](health-enhanced.md)\)\. Enhanced health reporting requires a [service role](concepts-roles-service.md) and a version 2 or newer [platform configuration](concepts.platforms.md)\. |   `basic`   |   `basic`   `enhanced`   |
+|  SystemType  | Health reporting system \([basic](using-features.healthstatus.md) or [enhanced](health-enhanced.md)\)\. Enhanced health reporting requires a [service role](concepts-roles-service.md) and a version 2 or newer [platform configuration](concepts.platforms.md)\. |   `basic`   |   `basic`   `enhanced`   | 
 | ConfigDocument | A JSON document describing the environment and instance metrics to publish to CloudWatch\. | None |  | 
 |  HealthCheckSuccessThreshold  | Lower the threshold for instances to pass health checks\. |  `Ok`  |  `Ok` `Warning` `Degraded` `Severe`  | 
 
@@ -502,7 +502,7 @@ This namespace isn't applicable to environments with a network load balancer\.
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
 |  HostHeaders  |  List of host names to match\. For example, `my.example.com`\.  |  None  |  Each name can be up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and up to three wildcard characters \(\* matches zero or more characters; ? matches exactly one character\)  | 
-|  PathPatterns  |  List of path patterns to match\. For example, `/img/*`\. This option is only applicable to environments with an application load balancer\.  |  None  |  Each pattern can be up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and up to three wildcard characters \(\* matches zero or more characters; ? matches exactly one character\)  | 
+|  PathPatterns  |  A path pattern to match\. For example, `/img/*`\. This option is only applicable to environments with an application load balancer\.  |  None  |  A pattern can be up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and can include up to three wildcard characters \(\* matches zero or more characters; ? matches exactly one character\)  | 
 |  Priority  |  Precedence of this rule when multiple rules match\. The lower number takes precedence\. No two rules can have the same priority\.  |  `1`  |  `1` to `1000`  | 
 |  Process  |  Name of the [process](#command-options-general-environmentprocess) to which to forward traffic when this rule matches the request\.  |  `default`  |  A process name\.  | 
 

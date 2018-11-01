@@ -173,20 +173,23 @@ The Amazon S3 bucket that Elastic Beanstalk creates is shared between environmen
 Add the security group of your DB instance to your running environment\. This procedure causes Elastic Beanstalk to reprovision all instances in your environment with the additional security group attached\.
 
 **To add a security group to your environment**
++ Do one of the following:
+  + To add a security group using the Elastic Beanstalk console
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+    1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+    1. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Choose **Configuration**\.
+    1. Choose **Configuration**\.
 
-1. On the **Instances** configuration card, choose **Modify**\.
+    1. On the **Instances** configuration card, choose **Modify**\.
 
-1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
+    1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
-1. Choose **Apply**\.
+    1. Choose **Apply**\.
 
-1. Read the warning, and then choose **Confirm**\.
+    1. Read the warning, and then choose **Confirm**\.
+  + To add a security group using a [configuration file](ebextensions.md), use the [`securitygroup-addexisting.config` ](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/security-configuration/securitygroup-addexisting.config) example file\.
 
 Next, use environment properties to pass the connection information to your environment\. The sample application uses a default set of properties that match the ones that Elastic Beanstalk configures when you provision a database within your environment\.
 

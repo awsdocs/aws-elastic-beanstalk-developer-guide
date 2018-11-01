@@ -10,7 +10,7 @@ You can use the solution stack name listed under the configuration name to launc
 You can use solution stacks for the latest platform configurations \(the current versions listed on this page\) to create an environment\.  
 In addition, a platform configuration that you used to launch or update an environment remains available \(to the account in use, in the region used\) even after it's no longer current, as long as the environment is active, and up to 30 days after its termination\.
 
-You can customize and configure the software that your application depends on in your Linux platform\. Learn more at [Customizing Software on Linux Servers](customize-containers-ec2.md)\. Detailed release notes are available for recent releases at [AWS Elastic Beanstalk Release Notes](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/relnotes.html)\. 
+You can customize and configure the software that your application depends on in your Linux platform\. Learn more at [Customizing Software on Linux Servers](customize-containers-ec2.md)\. Detailed release notes are available for recent releases at [AWS Elastic Beanstalk Release Notes](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/)\. 
 
 ## Supported Platform Configurations<a name="concepts.platforms.list"></a>
 

@@ -1,6 +1,6 @@
 # Storing Private Keys Securely in Amazon S3<a name="https-storingprivatekeys"></a>
 
-The private key that you use to sign your public certificate is private and should not be commited to source code\. You can avoid storing private keys in configuration files by uploading them to Amazon S3, and configuring Elastic Beanstalk to download the file from Amazon S3 during application deployment\.
+The private key that you use to sign your public certificate is private and should not be committed to source code\. You can avoid storing private keys in configuration files by uploading them to Amazon S3, and configuring Elastic Beanstalk to download the file from Amazon S3 during application deployment\.
 
 The following example shows the [Resources](environment-resources.md) and [files](customize-containers-ec2.md#linux-files) sections of a [configuration file](ebextensions.md) downloads a private key file from an Amazon S3 bucket\.
 
@@ -45,4 +45,4 @@ The instance profile assigned to your environment's EC2 instances must have perm
 
 1. Verify that your account is a grantee on the bucket with read permission\.
 
-1. If a bucket policy is attached, the **Edit bucket policy**\. Choose **Edit bucket policy** to view the permissions assigned to the bucket\.
+1. If a bucket policy is attached, choose **Bucket policy** to view the permissions assigned to the bucket\.

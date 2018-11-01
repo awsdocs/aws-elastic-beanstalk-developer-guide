@@ -82,20 +82,23 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 Next, add the DB instance's security group to your running environment\. This procedure causes Elastic Beanstalk to reprovision all instances in your environment with the additional security group attached\.
 
 **To add a security group to your environment**
++ Do one of the following:
+  + To add a security group using the Elastic Beanstalk console
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+    1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+    1. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Choose **Configuration**\.
+    1. Choose **Configuration**\.
 
-1. On the **Instances** configuration card, choose **Modify**\.
+    1. On the **Instances** configuration card, choose **Modify**\.
 
-1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
+    1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
-1. Choose **Apply**\.
+    1. Choose **Apply**\.
 
-1. Read the warning, and then choose **Confirm**\.
+    1. Read the warning, and then choose **Confirm**\.
+  + To add a security group using a [configuration file](ebextensions.md), use the [`securitygroup-addexisting.config` ](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/security-configuration/securitygroup-addexisting.config) example file\.
 
 Next, pass the connection information to your environment by using environment properties\. When you [add a DB instance to your environment](using-features.managing.db.md) with the Elastic Beanstalk console, Elastic Beanstalk uses environment properties like **RDS\_HOSTNAME** to pass connection information to your application\. You can use the same properties, which will let you use the same application code with both integrated DB instances and external DB instances, or choose your own property names\.
 
@@ -213,20 +216,23 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 Next, add the bridge security group to your running environment\. This procedure requires all instances in your environment to be reprovisioned with the additional security group attached\.
 
 **To add a security group to your environment**
++ Do one of the following:
+  + To add a security group using the Elastic Beanstalk console
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+    1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+    1. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Choose **Configuration**\.
+    1. Choose **Configuration**\.
 
-1. On the **Instances** configuration card, choose **Modify**\.
+    1. On the **Instances** configuration card, choose **Modify**\.
 
-1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
+    1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
-1. Choose **Apply**\.
+    1. Choose **Apply**\.
 
-1. Read the warning, and then choose **Confirm**\.
+    1. Read the warning, and then choose **Confirm**\.
+  + To add a security group using a [configuration file](ebextensions.md), use the [`securitygroup-addexisting.config` ](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/security-configuration/securitygroup-addexisting.config) example file\.
 
 Next, pass the connection information to your environment by using environment properties\. When you [add a DB instance to your environment](using-features.managing.db.md) with the Elastic Beanstalk console, Elastic Beanstalk uses environment properties like **RDS\_HOSTNAME** to pass connection information to your application\. You can use the same properties, which will let you use the same application code with both integrated DB instances and external DB instances, or choose your own property names\.
 

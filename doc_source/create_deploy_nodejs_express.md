@@ -4,7 +4,7 @@ This section walks you through deploying a sample application to Elastic Beansta
 
 ## Prerequisites<a name="nodejs-express-tutorial-prerequisites"></a>
 
-This tutorial requires the Node\.js language and its package manager, NPM\. See [Setting Up your Node\.js Development Environment](nodejs-devenv.md) for details on setting up your local development environment\.
+This tutorial requires the Node\.js language and its package manager, NPM\. See [Setting Up your Node\.js Development Environment](nodejs-devenv.md) for details on setting up your local development environment\. This tutorial also requires the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
 
 ## Install Express and Generate a Project<a name="create_deploy_nodejs_express_setup"></a>
 
@@ -158,7 +158,7 @@ Next, let's update the Express application to serve static files and add a new p
    ```
    option_settings:
      aws:elasticbeanstalk:container:nodejs:staticfiles:
-       /public: public
+       /public: /public
    ```
 
    This setting configures the proxy server to serve files in the `public` folder at the `/public` path of the application\. [Serving files statically](create_deploy_nodejs.container.md#nodejs-namespaces) from the proxy reduces the load on your application\.

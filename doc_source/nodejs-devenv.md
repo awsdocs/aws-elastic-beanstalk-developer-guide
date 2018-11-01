@@ -76,7 +76,8 @@ Express is a web application framework that runs on Node\.js\.
    You should see output similar to the following:
 
    ```
-   Express server listening on port 3000
+   > nodejs@0.0.0 start /home/local/user/node-express
+   > node ./bin/www
    ```
 
    Press **Ctrl\+C** to stop the server\.
