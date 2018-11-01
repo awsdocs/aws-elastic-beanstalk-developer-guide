@@ -38,6 +38,15 @@ Map a path served by the proxy server to a folder in your source code that conta
 | --- | --- | 
 |  Path where the proxy server will serve the files\. Example: `/images` to serve files at `subdomain.eleasticbeanstalk.com/images`\.  |  Name of the folder containing the files\. Example: `staticimages` to serve files from a folder named `staticimages` at the top level of your source bundle\.  | 
 
+Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrated](environment-configuration-debugging.md) Go application\.
+
+
+**Namespace: `aws:elasticbeanstalk:xray`**  
+
+|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+| --- | --- | --- | --- | 
+|  `XRayEnabled`  |  Set to `true` to run the AWS X\-Ray daemon on the instances in your environment\.  |  `false`  |  `true` `false`  | 
+
 ## Java SE Platform Options<a name="command-options-plain-java"></a>
 
 You can use the following namespace to configure the proxy server to serve static files\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. This reduces the number of requests that your application has to process\.
