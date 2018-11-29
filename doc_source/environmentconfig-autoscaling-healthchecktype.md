@@ -17,4 +17,6 @@ Resources:
       HealthCheckGracePeriod: 300
 ```
 
+You can read the [CloudFormation documentation on AWS::AutoScaling::AutoScalingGroup](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html) for more information on the `HealthCheckType` and `HealthCheckGracePeriod` properties.
+
 By default, the Elastic Load Balancing health check is configured to attempt a TCP connection to your instance over port 80\. This confirms that the web server running on the instance is accepting connections\. However, you might want to [customize the load balancer health check](using-features.managing.elb.md) to ensure that your application, and not just the web server, is in a good state\. The grace period setting sets the number of seconds that an instance can fail the health check without being terminated and replaced\. Instances can recover after being kicked out of the load balancer, so give the instance an amount of time that is appropriate for your application\.
