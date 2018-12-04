@@ -87,13 +87,13 @@ For details about changing configuration options on a running environment using 
 
 ## The EB CLI<a name="configuration-options-after-ebcli"></a>
 
-You can update configuration option settings with the EB CLI by deploying source code that contains configuration files, applying settings from a saved configuration, or modifying the environment configuration directly with the `eb config` command\.
+You can update configuration option settings with the EB CLI by deploying source code that contains configuration files, applying settings from a saved configuration, or modifying the environment configuration directly with the eb config command\.
 
 **Topics**
 + [Using Configuration Files \(`.ebextensions`\)](#configuration-options-after-ebcli-ebextensions)
 + [Using a Saved Configuration](#configuration-options-after-ebcli-savedconfig)
-+ [Using `eb config`](#configuration-options-after-ebcli-ebconfig)
-+ [Using `eb setenv`](#configuration-options-after-ebcli-ebsetenv)
++ [Using eb config](#configuration-options-after-ebcli-ebconfig)
++ [Using eb setenv](#configuration-options-after-ebcli-ebsetenv)
 
 ### Using Configuration Files \(`.ebextensions`\)<a name="configuration-options-after-ebcli-ebextensions"></a>
 
@@ -110,7 +110,7 @@ Include `.config` files in your project folder under `.ebextensions` to deploy t
 `-- styles.css
 ```
 
-Deploy your source code with `eb deploy`\.
+Deploy your source code with eb deploy\.
 
 ```
 ~/workspace/my-app$ eb deploy
@@ -118,7 +118,7 @@ Deploy your source code with `eb deploy`\.
 
 ### Using a Saved Configuration<a name="configuration-options-after-ebcli-savedconfig"></a>
 
-You can use the `eb config` command to apply a saved configuration to a running environment\. Use the `--cfg` option with the name of the saved configuration to apply its settings to your environment\.
+You can use the eb config command to apply a saved configuration to a running environment\. Use the `--cfg` option with the name of the saved configuration to apply its settings to your environment\.
 
 ```
 $ eb config --cfg v1
@@ -128,14 +128,14 @@ In this example, `v1` is the name of a [previously created and saved configurati
 
 Settings applied to an environment with this command override settings that were applied during environment creation, and settings defined in configuration files in your application source bundle\.
 
-### Using `eb config`<a name="configuration-options-after-ebcli-ebconfig"></a>
+### Using eb config<a name="configuration-options-after-ebcli-ebconfig"></a>
 
-The EB CLI's `eb config` command lets you set and remove option settings directly on an environment by using a text editor\.
+The EB CLI's eb config command lets you set and remove option settings directly on an environment by using a text editor\.
 
-When you run `eb config`, the EB CLI shows settings applied to your environment from all sources, including configuration files, saved configurations, recommended values, options set directly on the environment, and API defaults\.
+When you run eb config, the EB CLI shows settings applied to your environment from all sources, including configuration files, saved configurations, recommended values, options set directly on the environment, and API defaults\.
 
 **Note**  
-`eb config` does not show environment properties\. To set environment properties that you can read from within your application, use [`eb setenv`](#configuration-options-after-ebcli-ebsetenv)\.
+eb config does not show environment properties\. To set environment properties that you can read from within your application, use [eb setenv](#configuration-options-after-ebcli-ebsetenv)\.
 
 The following example shows settings applied in the `aws:autoscaling:launchconfiguration` namespace\. These settings include:
 + Two recommended values, for `IamInstanceProfile` and `InstanceType`, applied by the EB CLI during environment creation\.
@@ -158,9 +158,9 @@ aws:autoscaling:launchconfiguration:
 ...
 ```
 
-**To set or change configuration options with `eb config`**
+**To set or change configuration options with eb config**
 
-1. Run `eb config` to view your environment's configuration\.
+1. Run eb config to view your environment's configuration\.
 
    ```
    ~/workspace/my-app/$ eb config
@@ -181,13 +181,13 @@ aws:autoscaling:launchconfiguration:
 
 1. The EB CLI updates your environment configuration\.
 
-Setting configuration options with `eb config` overrides settings from all other sources\.
+Setting configuration options with eb config overrides settings from all other sources\.
 
-You can also remove options from your environment with `eb config`\.<a name="configuration-options-remove-ebcli"></a>
+You can also remove options from your environment with eb config\.<a name="configuration-options-remove-ebcli"></a>
 
 **To remove configuration options \(EB CLI\)**
 
-1. Run `eb config` to view your environment's configuration\.
+1. Run eb config to view your environment's configuration\.
 
    ```
    ~/workspace/my-app/$ eb config
@@ -208,11 +208,11 @@ You can also remove options from your environment with `eb config`\.<a name="con
 
 1. The EB CLI updates your environment configuration\.
 
-Removing options from your environment with `eb config` allows settings for the same options to surface from configuration files in your application source bundle\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
+Removing options from your environment with eb config allows settings for the same options to surface from configuration files in your application source bundle\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
 
-### Using `eb setenv`<a name="configuration-options-after-ebcli-ebsetenv"></a>
+### Using eb setenv<a name="configuration-options-after-ebcli-ebsetenv"></a>
 
-To set environment properties with the EB CLI, use `eb setenv`\.
+To set environment properties with the EB CLI, use eb setenv\.
 
 ```
 ~/workspace/my-app/$ eb setenv ENVVAR=TEST
@@ -222,9 +222,9 @@ INFO: Environment health has transitioned from Ok to Info. Command is executing 
 INFO: Successfully deployed new configuration to environment.
 ```
 
-This command sets environment properties in the [`aws:elasticbeanstalk:application:environment` namespace](command-options-general.md#command-options-general-elasticbeanstalkapplicationenvironment)\. Environment properties set with `eb setenv` are available to your application after a short update process\.
+This command sets environment properties in the [`aws:elasticbeanstalk:application:environment` namespace](command-options-general.md#command-options-general-elasticbeanstalkapplicationenvironment)\. Environment properties set with eb setenv are available to your application after a short update process\.
 
-View environment properties set on your environment with `eb printenv`\.
+View environment properties set on your environment with eb printenv\.
 
 ```
 ~/workspace/my-app/$ eb printenv

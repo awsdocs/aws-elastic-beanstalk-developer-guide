@@ -203,7 +203,7 @@ To configure your environment's Application Load Balancer to meet these requirem
 
 ## Configuring an Application Load Balancer Using the EB CLI<a name="environments-cfg-alb-ebcli"></a>
 
-The EB CLI prompts you to choose a load balancer type when you run [`eb create`](eb3-create.md)\.
+The EB CLI prompts you to choose a load balancer type when you run [eb create](eb3-create.md)\.
 
 ```
 $ eb create

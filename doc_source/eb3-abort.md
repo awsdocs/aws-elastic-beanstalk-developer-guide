@@ -1,4 +1,4 @@
-# `eb abort`<a name="eb3-abort"></a>
+# eb abort<a name="eb3-abort"></a>
 
 ## Description<a name="eb3-abortdescription"></a>
 
@@ -9,9 +9,9 @@ If you have more than two environments that are undergoing a update, you are pro
 
 ## Syntax<a name="eb3-abortsyntax"></a>
 
- `eb abort` 
+ eb abort 
 
- `eb abort environment-name` 
+ eb abort *environment\-name* 
 
 ## Options<a name="eb3-abortoptions"></a>
 

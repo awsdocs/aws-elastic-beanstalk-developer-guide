@@ -32,11 +32,11 @@ You can use the EB CLI to configure enhanced health rules by saving your environ
 
 **To ignore application HTTP 4xx status codes using the EB CLI and saved configurations**
 
-1. Initialize your project folder with [`eb init`](eb-cli3-configuration.md)\.
+1. Initialize your project folder with [eb init](eb-cli3-configuration.md)\.
 
-1. Create an environment by running the [`eb create`](eb-cli3-getting-started.md) command\.
+1. Create an environment by running the [eb create](eb-cli3-getting-started.md) command\.
 
-1. Save a configuration template locally by running the `eb config save` command\. The following example uses the `--cfg` option to specify the name of the configuration\.
+1. Save a configuration template locally by running the eb config save command\. The following example uses the `--cfg` option to specify the name of the configuration\.
 
    ```
    $ eb config save --cfg 01-base-state
@@ -63,17 +63,17 @@ You can use the EB CLI to configure enhanced health rules by saving your environ
    ```
 **Note**  
 You can combine `Rules` and `CloudWatchMetrics` in the same `ConfigDocument` option setting\. `CloudWatchMetrics` are described in [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md)\.  
-If you previously enabled `CloudWatchMetrics`, then the configuration file that you retrieve using the `eb config save` command already has a `ConfigDocument` key with a `CloudWatchMetrics` section\. *Do not delete it*—add a `Rules` section into the same `ConfigDocument` option value\.
+If you previously enabled `CloudWatchMetrics`, then the configuration file that you retrieve using the eb config save command already has a `ConfigDocument` key with a `CloudWatchMetrics` section\. *Do not delete it*—add a `Rules` section into the same `ConfigDocument` option value\.
 
 1. Save the configuration file and close the text editor\. In this example, the updated configuration file is saved with a name \(`02-cloudwatch-enabled.cfg.yml`\) that's different from the downloaded configuration file\. This creates a separate saved configuration when the file is uploaded\. You can use the same name as the downloaded file to overwrite the existing configuration without creating a new one\.
 
-1. Use the `eb config put` command to upload the updated configuration file to Elastic Beanstalk\.
+1. Use the eb config put command to upload the updated configuration file to Elastic Beanstalk\.
 
    ```
    $ eb config put 02-cloudwatch-enabled
    ```
 
-   When using the `eb config` `get` and `put` commands with saved configurations, don't include the file name extension\.
+   When using the eb config `get` and `put` commands with saved configurations, don't include the file name extension\.
 
 1. Apply the saved configuration to your running environment\.
 
@@ -102,7 +102,7 @@ The configuration \(config\) document for enhanced health rules is a JSON docume
 }
 ```
 
-For the AWS CLI, you pass the document as a value for the `Value` key in an option settings argument, which itself is a JSON object\. In this case, you must escape quotation marks in the embedded document\.
+For the AWS CLI, you pass the document as a value for the `Value` key in an option settings argument, which itself is a JSON object\. In this case, you must escape quotation marks in the embedded document\. The following command checks if the configuration settings are valid\.
 
 ```
 $ aws elasticbeanstalk validate-configuration-settings --application-name my-app --environment-name my-env --option-settings '[

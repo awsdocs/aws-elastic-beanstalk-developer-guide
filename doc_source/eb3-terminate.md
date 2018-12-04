@@ -1,10 +1,10 @@
-# `eb terminate`<a name="eb3-terminate"></a>
+# eb terminate<a name="eb3-terminate"></a>
 
 ## Description<a name="eb3-terminatedescription"></a>
 
 Terminates the running environment so that you do not incur charges for unused AWS resources\.
 
-Using the `--all` option, deletes the application that the current directory was initialized to using [`eb init`](eb3-init.md)\. The command terminates all environments in the application, terminates the application's [application versions](applications-versions.md) and [saved configurations](environment-configuration-savedconfig.md), and then deletes the application\.
+Using the `--all` option, deletes the application that the current directory was initialized to using [eb init](eb3-init.md)\. The command terminates all environments in the application, terminates the application's [application versions](applications-versions.md) and [saved configurations](environment-configuration-savedconfig.md), and then deletes the application\.
 
 If the root directory contains a `platform.yaml` file specifying a custom platform, this command terminates the running custom environment\.
 
@@ -13,9 +13,9 @@ You can always launch a new environment using the same version later\. If you ha
 
 ## Syntax<a name="eb3-terminatesyntax"></a>
 
- `eb terminate` 
+ eb terminate 
 
- `eb terminate environment-name` 
+ eb terminate *environment\-name* 
 
 ## Options<a name="eb3-terminateoptions"></a>
 

@@ -54,13 +54,13 @@ To rebuild an environment that is no longer visible, use the **Restore terminate
 
 Elastic Beanstalk attempts to create a new environment with the same name, ID, and configuration\. If an environment with the same name or URL exists when you attempt to rebuild, the rebuild fails\. Deleting the application version that was deployed to the environment will also cause the rebuild to fail\.
 
-If you use the EB CLI to manage your environment, use the `eb restore` command to rebuild a terminated environment\.
+If you use the EB CLI to manage your environment, use the eb restore command to rebuild a terminated environment\.
 
 ```
 $ eb restore e-vdnftxubwq
 ```
 
-See [`eb restore`](eb3-restore.md) for more information\.
+See [eb restore](eb3-restore.md) for more information\.
 
 To rebuild a terminated environment with the Elastic Beanstalk API, use the [https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_RebuildEnvironment.html) action with the AWS CLI or the AWS SDK\.
 

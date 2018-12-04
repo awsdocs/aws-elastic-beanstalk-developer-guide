@@ -44,7 +44,7 @@ With your environment set up, you're ready to create and test your Go applicatio
 
 1. Add a `Dockerfile` to your application’s root folder\. In the file, specify the Elastic Beanstalk Docker base image to use to run your local preconfigured Docker container\. Elastic Beanstalk uses this image to run any subsequent `Dockerfile` instructions\.
 **Note**  
-Include only the instruction with the Docker image name for your platform version\. For preconfigured Docker image names, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\. For more information about using a `Dockerfile`, see [Single Container Docker Configuration](create_deploy_docker_image.md)\. For an example `Dockerfile` for preconfigured Docker platforms, see [Example: Using a Dockerfile to Customize and Configure a Preconfigured Docker Platform](create_deploy_dockerpreconfig.dockerfile.md)\.
+Include only the instruction with the Docker image name for your platform version\. For preconfigured Docker image names, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\. For more information about using a `Dockerfile`, see [Single Container Docker Configuration](single-container-docker-configuration.md)\. For an example `Dockerfile` for preconfigured Docker platforms, see [Example: Using a Dockerfile to Customize and Configure a Preconfigured Docker Platform](create_deploy_dockerpreconfig.dockerfile.md)\.
 
    You can use the following example:  
 **Example \~/eb\-go\-sample/Dockerfile**  

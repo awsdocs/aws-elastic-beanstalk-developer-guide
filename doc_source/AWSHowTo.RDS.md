@@ -32,9 +32,9 @@ The following procedures describe the process for a [default VPC](https://docs.a
 
 1. Open the [RDS console](https://console.aws.amazon.com/rds/home)\.
 
-1. Choose **Instances** in the navigation pane\.
+1. Choose **Databases** in the navigation pane\.
 
-1. Choose **Launch DB instance**\.
+1. Choose **Create database**\.
 
 1. Choose a database engine\. Choose **Next**\.
 
@@ -119,7 +119,7 @@ Next, pass the connection information to your environment by using environment p
    + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies among DB engines\.
 
      Amazon RDS console label – **Port**
-   + **RDS\_DB\_NAME** – The database name, `ebdb`\.
+   + **RDS\_DB\_NAME** – The database name, ebdb\.
 
      Amazon RDS console label – **DB Name**
    + **RDS\_USERNAME** – The user name that you configured for your database\.

@@ -5,9 +5,31 @@ The Elastic Beanstalk Command Line Interface \(EB CLI\) is a command line client
 **Note**  
 Amazon Linux, starting with version 2015\.03, comes with Python 2\.7 and `pip`\.
 
+**Topics**
++ [Compatibility notes](#eb-cli3-install.compat)
++ [Install the EB CLI](#eb-cli3-install.cli-only)
++ [Install Python, pip, and the EB CLI on Linux](eb-cli3-install-linux.md)
++ [Install Python, pip, and the EB CLI on Windows](eb-cli3-install-windows.md)
++ [Install the EB CLI on macOS](eb-cli3-install-osx.md)
++ [Install the EB CLI in a Virtual Environment](eb-cli3-install-virtualenv.md)
+
+## Compatibility notes<a name="eb-cli3-install.compat"></a>
+
+The EB CLI and the [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/) \(AWS CLI\) share a dependency on the [botocore](https://botocore.amazonaws.com/v1/documentation/api/latest/index.html) Python package\. Due to a breaking change in botocore, different versions of these two CLI tools depend on different versions of botocore\.
+
+The latest versions of the two CLIs are compatible\. If you need to use previous versions, consult the following table to ensure you use compatible versions\.
+
+
+|  **EB CLI version**  |  **Compatible AWS CLI version**  | 
+| --- | --- | 
+|  3\.14\.5 or earlier  |  1\.16\.9 or earlier  | 
+|  3\.14\.6 or later  |  1\.16\.11 or later  | 
+
+## Install the EB CLI<a name="eb-cli3-install.cli-only"></a>
+
 The primary distribution method for the EB CLI on Linux, Windows, and macOS is `pip`\. This is a package manager for Python that provides an easy way to install, upgrade, and remove Python packages and their dependencies\. For macOS, you can also get the latest version of the EB CLI with Homebrew\.
 
-If you already have `pip` and a supported version of Python, use the following procedure to install the EB CLI\.
+If you don't have Python and `pip`, use the procedure for your operating system\. If you already have `pip` and a supported version of Python, use the following procedure to install the EB CLI\.
 
 **To install the EB CLI**
 
@@ -73,7 +95,7 @@ If you encounter issues when you attempt to install the EB CLI with `pip`, you c
 
      1. Close any running command prompts and reopen command prompt\.
 
-1. Verify that the EB CLI installed correctly by running `eb --version`\.
+1. Verify that the EB CLI installed correctly by running eb \-\-version\.
 
    ```
    $ eb --version
@@ -91,11 +113,3 @@ If you need to uninstall the EB CLI, use `pip uninstall`\.
 ```
 $ pip uninstall awsebcli
 ```
-
-If you don't have Python and `pip`, use the procedure for your operating system\.
-
-**Topics**
-+ [Install Python, pip, and the EB CLI on Linux](eb-cli3-install-linux.md)
-+ [Install Python, pip, and the EB CLI on Windows](eb-cli3-install-windows.md)
-+ [Install the EB CLI on macOS](eb-cli3-install-osx.md)
-+ [Install the EB CLI in a Virtual Environment](eb-cli3-install-virtualenv.md)

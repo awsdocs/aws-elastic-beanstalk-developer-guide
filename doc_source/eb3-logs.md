@@ -1,8 +1,8 @@
-# `eb logs`<a name="eb3-logs"></a>
+# eb logs<a name="eb3-logs"></a>
 
 ## Description<a name="eb3-logsdescription"></a>
 
-The `eb logs` command has two distinct purposes: to enable or disable log streaming to CloudWatch Logs, and to retrieve instance logs or CloudWatch Logs logs\. With the `--cloudwatch-logs` \(`-cw`\) option, the command enables or disables log streaming\. Without this option, it retrieves logs\.
+The eb logs command has two distinct purposes: to enable or disable log streaming to CloudWatch Logs, and to retrieve instance logs or CloudWatch Logs logs\. With the `--cloudwatch-logs` \(`-cw`\) option, the command enables or disables log streaming\. Without this option, it retrieves logs\.
 
 When retrieving logs, specify the `--all`, `--zip`, or `--stream` option to retrieve complete logs\. If you don't specify any of these options, Elastic Beanstalk retrieves tail logs\.
 

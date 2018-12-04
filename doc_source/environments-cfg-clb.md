@@ -147,7 +147,7 @@ For more information about health checks and how they influence your environment
 
 ## Configuring a Classic Load Balancer Using the EB CLI<a name="environments-cfg-clb-ebcli"></a>
 
-The EB CLI prompts you to choose a load balancer type when you run [`eb create`](eb3-create.md)\.
+The EB CLI prompts you to choose a load balancer type when you run [eb create](eb3-create.md)\.
 
 ```
 $ eb create

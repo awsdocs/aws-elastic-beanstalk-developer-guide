@@ -1,4 +1,4 @@
-# `eb events`<a name="eb3-events"></a>
+# eb events<a name="eb3-events"></a>
 
 ## Description<a name="eb3-eventsdescription"></a>
 
@@ -8,9 +8,9 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 
 ## Syntax<a name="eb3-eventssyntax"></a>
 
- `eb events` 
+ eb events 
 
- `eb events environment-name` 
+ eb events *environment\-name* 
 
 ## Options<a name="eb3-eventsoptions"></a>
 

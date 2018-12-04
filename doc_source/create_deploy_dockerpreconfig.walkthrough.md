@@ -49,7 +49,7 @@ For this walkthrough we will use a Python Flask “Hello World” application\.
    FROM amazon/aws-eb-python:3.4.2-onbuild-3.5.1
    ```
 
-   AWS Elastic Beanstalk also supports Docker images for Glassfish 4\.1 Java 8 and Glassfish 4\.0 Java 7\. For their Docker image names, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\. For more information about using a `Dockerfile`, see [Single Container Docker Configuration](create_deploy_docker_image.md)\.
+   AWS Elastic Beanstalk also supports Docker images for Glassfish 4\.1 Java 8 and Glassfish 4\.0 Java 7\. For their Docker image names, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\. For more information about using a `Dockerfile`, see [Single Container Docker Configuration](single-container-docker-configuration.md)\.
 
 1. Build the Docker image\.
 

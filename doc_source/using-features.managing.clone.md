@@ -32,7 +32,7 @@ For **Platform**, only solution stacks with the same language and web server con
 
 ## Elastic Beanstalk Command Line Interface \(EB CLI\)<a name="using-features.managing.clone.CLI"></a>
 
-Use the `eb clone` command to clone a running environment, as follows\.
+Use the eb clone command to clone a running environment, as follows\.
 
 ```
 ~/workspace/my-app$ eb clone my-env1
@@ -44,7 +44,7 @@ Enter DNS CNAME prefix
 
 You can specify the name of the source environment in the clone command, or leave it out to clone the default environment for the current project folder\. The EB CLI prompts you to enter a name and DNS prefix for the new environment\.
 
-By default, `eb clone` creates the new environment with the latest available version of the source environment's platform\. To force the EB CLI to use the same version, even if there is a newer version available, use the `--exact` option\.
+By default, eb clone creates the new environment with the latest available version of the source environment's platform\. To force the EB CLI to use the same version, even if there is a newer version available, use the `--exact` option\.
 
 ```
 ~/workspace/my-app$ eb clone --exact

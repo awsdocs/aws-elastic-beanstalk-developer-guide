@@ -10,5 +10,5 @@ The command line operations accept the set of optional parameters described in t
 
 | Option | Description | 
 | --- | --- | 
-|   `--help`   `-h`   |  Displays help text for the command\. You can also use `help commandname`\. This option applies to `eb` and the original command line interface\. Default: off  | 
+|   `--help`   `-h`   |  Displays help text for the command\. You can also use `help commandname`\. This option applies to eb and the original command line interface\. Default: off  | 
 |   `--show-json`  `-j`  |  Displays the raw JSON response\. This option applies only to the original command line interface\. Default: off  | 

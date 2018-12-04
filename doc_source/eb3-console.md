@@ -1,4 +1,4 @@
-# `eb console`<a name="eb3-console"></a>
+# eb console<a name="eb3-console"></a>
 
 ## Description<a name="eb3-consoledescription"></a>
 
@@ -8,9 +8,9 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 
 ## Syntax<a name="eb3-consolesyntax"></a>
 
- `eb console` 
+ eb console 
 
- `eb console environment-name` 
+ eb console *environment\-name* 
 
 ## Options<a name="eb3-consoleoptions"></a>
 

@@ -1,4 +1,4 @@
-# `eb setenv`<a name="eb3-setenv"></a>
+# eb setenv<a name="eb3-setenv"></a>
 
 ## Description<a name="eb3-setenv-description"></a>
 
@@ -6,7 +6,7 @@ Sets [environment properties](environments-cfg-softwaresettings.md) for the defa
 
 ## Syntax<a name="eb3-setenv-syntax"></a>
 
-`eb setenv key=value` 
+eb setenv *key*=*value* 
 
 You can include as many properties as you want, but the total size of all properties cannot exceed 4096 bytes\. You can delete a variable by leaving the value blank\. See [Configuring Environment Properties](environments-cfg-softwaresettings.md#environments-cfg-softwaresettings-console) for limits\.
 

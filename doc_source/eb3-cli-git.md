@@ -43,7 +43,7 @@ By default, the EB CLI deploys the latest commit in the current branch, using th
    ~/eb$ git add .
    ```
 
-1. Deploy the staged changes with `eb deploy`:
+1. Deploy the staged changes with eb deploy:
 
    ```
    ~/eb$ eb deploy --staged
@@ -53,7 +53,7 @@ If you have configured the EB CLI to [deploy an artifact](eb-cli3-configuration.
 
 ## Using Git submodules<a name="eb3-cli-git.submodules"></a>
 
-Some code projects benefit from having Git submodules — repositories within the top\-level repository\. When you deploy your code using `eb create` or `eb deploy`, the EB CLI can include submodules in the application version zip file and upload them with the rest of the code\.
+Some code projects benefit from having Git submodules — repositories within the top\-level repository\. When you deploy your code using eb create or eb deploy, the EB CLI can include submodules in the application version zip file and upload them with the rest of the code\.
 
 You can control the inclusion of submodules by using the `include_git_submodules` option in the `global` section of the EB CLI configuration file, `.elasticbeanstalk/config.yml` in your project folder\.
 
@@ -69,7 +69,7 @@ When the `include_git_submodules` option is missing or set to `false`, EB CLI do
 See [Git Tools \- Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) for more details about Git submodules\.
 
 **Default behavior**  
-When you run `eb init` to configure your project, the EB CLI adds the `include_git_submodules` option and sets it to `true`\. This ensures that any submodules you have in your project are included in your deployments\.  
+When you run eb init to configure your project, the EB CLI adds the `include_git_submodules` option and sets it to `true`\. This ensures that any submodules you have in your project are included in your deployments\.  
 The EB CLI did not always support including submodules\. To avoid an accidental and undesirable change to projects that had existed before we added submodule support, the EB CLI does not include submodules when the `include_git_submodules` option is missing\. If you have one of these existing projects and you want to include submodules in your deployments, add the option and set it to `true` as explained in this section\.
 
 **CodeCommit behavior**  

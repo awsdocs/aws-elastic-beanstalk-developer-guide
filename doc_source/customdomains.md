@@ -72,7 +72,7 @@ If your environment doesn't have a regionalized subdomain, create a CNAME record
 
 1. Choose **Save Record Set**\.
 
-DNS records take up to 24 hours to propagate worldwide\.
+The new DNS record takes a moment to propagate to Route 53 name servers\.
 
 If you registered a domain name with another provider, register the name servers in your Route 53 hosted zone in the domain configuration\. When your provider receives DNS requests for your domain name, it will forward them to the Route 53 name servers to resolve the domain name to an IP address\. Look for a setting called *Nameservers*, or check your provider's documentation\.
 

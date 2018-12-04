@@ -1,4 +1,4 @@
-# `eb deploy`<a name="eb3-deploy"></a>
+# eb deploy<a name="eb3-deploy"></a>
 
 ## Description<a name="eb3-deploydescription"></a>
 
@@ -13,9 +13,9 @@ You can configure the EB CLI to deploy an artifact from your build process inste
 
 ## Syntax<a name="eb3-deploysyntax"></a>
 
- `eb deploy` 
+ eb deploy 
 
- `eb deploy environment-name` 
+ eb deploy *environment\-name* 
 
 ## Options<a name="eb3-deployoptions"></a>
 
@@ -39,7 +39,7 @@ You can configure the EB CLI to deploy an artifact from your build process inste
 
 If successful, the command returns the status of the `deploy` operation\.
 
-If you enabled AWS CodeBuild support in your application, `eb deploy` displays information from AWS CodeBuild as your code is built\. Learn more about AWS CodeBuild support in Elastic Beanstalk in the [Using the EB CLI with AWS CodeBuild](eb-cli-codebuild.md) topic\.
+If you enabled AWS CodeBuild support in your application, eb deploy displays information from AWS CodeBuild as your code is built\. Learn more about AWS CodeBuild support in Elastic Beanstalk in the [Using the EB CLI with AWS CodeBuild](eb-cli-codebuild.md) topic\.
 
 ## Example<a name="eb3-deployexample"></a>
 

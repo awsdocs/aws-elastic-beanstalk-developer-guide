@@ -1,4 +1,4 @@
-# `eb restore`<a name="eb3-restore"></a>
+# eb restore<a name="eb3-restore"></a>
 
 ## Description<a name="eb3-restoredescription"></a>
 
@@ -6,9 +6,9 @@ Rebuilds a terminated environment, creating a new environment with the same name
 
 ## Syntax<a name="eb3-restoresyntax"></a>
 
- `eb restore` 
+ eb restore 
 
- `eb restore environment_id` 
+ eb restore *environment\_id* 
 
 ## Options<a name="eb3-restoreoptions"></a>
 

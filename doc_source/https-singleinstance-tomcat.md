@@ -3,7 +3,6 @@
 For Tomcat container types, you use a [configuration file](ebextensions.md) to enable the Apache HTTP Server to use HTTPS when acting as the reverse proxy for Tomcat\.
 
 Add the following snippet to your configuration file, replacing the certificate and private key material as instructed, and save it in your source bundle's `.ebextensions` directory\. The configuration file performs the following tasks:
-+ The `packages` key uses yum to install `mod_ssl`\.
 + The `files` key creates the following files on the instance:  
 `/etc/pki/tls/certs/server.crt`  
 Creates the certificate file on the instance\. Replace *certificate file contents* with the contents of your certificate\.  
@@ -16,10 +15,6 @@ Creates a post\-deployment hook script to restart the httpd service\.
 **Example \.ebextensions/https\-instance\.config**  
 
 ```
-packages:
-  yum:
-    mod_ssl : []
-    
 files:
   /etc/pki/tls/certs/server.crt:
     mode: "000400"

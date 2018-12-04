@@ -55,7 +55,7 @@ Once you have the prerequisites installed, set up a virtual environment with `vi
    Installing setuptools, pip...done.
    ```
 
-1. Once your virtual environment is ready, start it by running the `activate` script located in the environment's `bin` directory\. For example, to start the `eb_python_app` environment created in the previous step, you would type:
+1. Once your virtual environment is ready, start it by running the `activate` script located in the environment's `bin` directory\. For example, to start the eb\_python\_app environment created in the previous step, you would type:
 
    ```
    . /tmp/eb_python_app/bin/activate
@@ -86,6 +86,6 @@ You can use the Elastic Beanstalk CLI to prepare your Python applications for de
 
    This allows Elastic Beanstalk to replicate your application's Python environment using the same packages and same versions that you used to develop and test your application\.
 
-1. Configure the EB CLI repository with the `eb init` command\. Follow the prompts to choose a region, platform and other options\. For detailed instructions, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
+1. Configure the EB CLI repository with the eb init command\. Follow the prompts to choose a region, platform and other options\. For detailed instructions, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
 
 By default, Elastic Beanstalk looks for a file called `application.py` to start your application\. If this doesn't exist in the Python project that you've created, some adjustment of your application's environment is necessary\. You will also need to set environment variables so that your application's modules can be loaded\. See [Using the AWS Elastic Beanstalk Python Platform](create-deploy-python-container.md) for more information\.

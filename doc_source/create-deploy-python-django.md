@@ -121,7 +121,7 @@ The remainder of these instructions show the Linux command prompt `~$` in your h
    (eb-virt)~$ django-admin startproject ebdjango
    ```
 
-   This command creates a standard Django site named `ebdjango` with the following directory structure:
+   This command creates a standard Django site named ebdjango with the following directory structure:
 
    ```
    ~/ebdjango
@@ -235,7 +235,7 @@ Immediately after deployment, you'll edit Django's configuration to add the doma
 
 **To create an environment and deploy your Django application**
 
-1. Initialize your EB CLI repository with the `eb init` command:
+1. Initialize your EB CLI repository with the eb init command:
 
    ```
    ~/ebdjango$ eb init -p python-3.6 django-tutorial
@@ -244,7 +244,7 @@ Immediately after deployment, you'll edit Django's configuration to add the doma
 
    This command creates a new application named `django-tutorial` and configures your local repository to create environments with the latest Python 3\.6 platform configuration\.
 
-1. \(optional\) Run `eb init` again to configure a default keypair so that you can connect to the EC2 instance running your application with SSH:
+1. \(optional\) Run eb init again to configure a default keypair so that you can connect to the EC2 instance running your application with SSH:
 
    ```
    ~/ebdjango$ eb init
@@ -255,9 +255,9 @@ Immediately after deployment, you'll edit Django's configuration to add the doma
    2) [ Create new KeyPair ]
    ```
 
-   Select a key pair if you have one already, or follow the prompts to create a new one\. If you don't see the prompt or need to change your settings later, run `eb init -i`\.
+   Select a key pair if you have one already, or follow the prompts to create a new one\. If you don't see the prompt or need to change your settings later, run eb init \-i\.
 
-1. Create an environment and deploy you application to it with `eb create`:
+1. Create an environment and deploy you application to it with eb create:
 
    ```
    ~/ebdjango$ eb create django-env
@@ -267,7 +267,7 @@ If you see a "service role required" error message, run `eb create` interactivel
 
    This command creates a load balanced Elastic Beanstalk environment named `django-env`\. Creating an environment takes about 5 minutes\. As Elastic Beanstalk creates the resources necessary to run your application, it outputs informational messages that the EB CLI relays to your terminal\.
 
-1. When the environment creation process completes, find the domain name of your new environment by running `eb status`:
+1. When the environment creation process completes, find the domain name of your new environment by running eb status:
 
    ```
    ~/ebdjango$ eb status
@@ -287,7 +287,7 @@ If you see a "service role required" error message, run `eb create` interactivel
    ALLOWED_HOSTS = ['eb-django-app-dev.elasticbeanstalk.com']
    ```
 
-1. Save the file, and then deploy your application by running `eb deploy`\. When you run `eb deploy`, the EB CLI bundles up the contents of your project directory and deploys it to your environment\.
+1. Save the file, and then deploy your application by running eb deploy\. When you run eb deploy, the EB CLI bundles up the contents of your project directory and deploys it to your environment\.
 
    ```
    ~/ebdjango$ eb deploy
@@ -295,7 +295,7 @@ If you see a "service role required" error message, run `eb create` interactivel
 **Note**  
 If you are using Git with your project, see [Using the EB CLI with Git](eb3-cli-git.md)\.
 
-1. When the environment update process completes, open your web site with `eb open`:
+1. When the environment update process completes, open your web site with eb open:
 
    ```
    ~/ebdjango$ eb open
@@ -415,7 +415,7 @@ You can create a site administrator for your Django application to access the ad
 1. Log in with the username and password that you configured in step 2:  
 ![\[The Django administration console for your Django website deployed with Elastic Beanstalk\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/eb_django_admin_console.png)
 
-You can use a similar procedure of local updating/testing followed by `eb deploy`\. Elastic Beanstalk takes care of the work of updating your live servers, so you can focus on application development instead of server administration\!
+You can use a similar procedure of local updating/testing followed by eb deploy\. Elastic Beanstalk takes care of the work of updating your live servers, so you can focus on application development instead of server administration\!
 
 ### Add a Database Migration Configuration File<a name="python-django-migrate-site"></a>
 
@@ -446,13 +446,13 @@ You can add commands to your `.ebextensions` script that will be run when your s
 
 ## Clean Up and Next Steps<a name="python-django-stopping"></a>
 
-To save instance hours and other AWS resources between development sessions, terminate your Elastic Beanstalk environment with `eb terminate`:
+To save instance hours and other AWS resources between development sessions, terminate your Elastic Beanstalk environment with eb terminate:
 
 ```
 ~/ebdjango$ eb terminate django-env
 ```
 
-This command terminates the environment and all of the AWS resources that run within it\. It does not delete the application, however, so you can always create more environments with the same configuration by running `eb create` again\. For more information on EB CLI commands, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\. 
+This command terminates the environment and all of the AWS resources that run within it\. It does not delete the application, however, so you can always create more environments with the same configuration by running eb create again\. For more information on EB CLI commands, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\. 
 
 If you are done with the sample application, you can also remove the project folder and virtual environment:
 

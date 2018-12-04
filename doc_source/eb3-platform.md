@@ -1,4 +1,4 @@
-# `eb platform`<a name="eb3-platform"></a>
+# eb platform<a name="eb3-platform"></a>
 
 ## Description<a name="eb3-platformdescription"></a>
 
@@ -10,10 +10,10 @@ Use this workspace to manage custom platforms\.
 [Environment](#eb3-platform-environment)  
 Use this workspace to select a default platform or show information about the current platform\.
 
-Elastic Beanstalk provides the shortcut `ebp` for `eb platform`\.
+Elastic Beanstalk provides the shortcut ebp for eb platform\.
 
 **Note**  
-Windows PowerShell uses `ebp` as a command alias\. If you're running the EB CLI in Windows PowerShell, use the long form of this command — `eb platform`\.
+Windows PowerShell uses ebp as a command alias\. If you're running the EB CLI in Windows PowerShell, use the long form of this command — eb platform\.
 
 ## Using eb platform for custom platforms<a name="eb3-platform-preconfigured"></a>
 
@@ -21,21 +21,21 @@ Lists the versions of the current platform and enables you to manage custom plat
 
 ### Syntax<a name="eb3-platformpresyntax"></a>
 
-`eb platform create [version] [options]`
+eb platform create \[*version*\] \[*options*\]
 
-`eb platform delete [version] [options]`
+eb platform delete \[*version*\] \[*options*\]
 
-`eb platform events [version] [options]`
+eb platform events \[*version*\] \[*options*\]
 
-`eb platform init [platform] [options]`
+eb platform init \[*platform*\] \[*options*\]
 
-`eb platform list [options]`
+eb platform list \[*options*\]
 
-`eb platform logs [version] [options]`
+eb platform logs \[*version*\] \[*options*\]
 
-`eb platform status [version] [options]`
+eb platform status \[*version*\] \[*options*\]
 
-`eb platform use [platform] [options]`
+eb platform use \[*platform*\] \[*options*\]
 
 ### Options<a name="eb3-platform-options"></a>
 
@@ -56,7 +56,7 @@ Lists the versions of the current platform and enables you to manage custom plat
 
 ### Common Options<a name="eb3-platform-common"></a>
 
-All `eb platform` commands include the following common options\.
+All eb platform commands include the following common options\.
 
 
 ****  
@@ -144,7 +144,12 @@ To re\-initialize with different options, use the `-i` option\.
 
 ### eb platform list<a name="eb3-platform-list"></a>
 
-List the versions of the platform associated with the workspace\.
+List the versions of the platform associated with a workspace \(directory\) or a region\.
+
+The command returns different results depending on the type of workspace you run it in, as follows:
++ In a platform workspace \(a directory initialized by `eb platform init`\), the command returns a list of all platform versions of the custom platform defined in the workspace\. Add the `--all-platforms` or `--verbose` option to get a list of all platform versions of all custom platforms your account has in the region associated with the workspace\.
++ In an application workspace \(a directory initialized by `eb init`\), the command returns a list of all platform versions, both for platforms managed by Elastic Beanstalk and for your account's custom platforms\. The list uses short platform version names, and some platform version variants might be combined\. Add the `--verbose` option to get a detailed list with full names and all variants listed separately\.
++ In an uninitialized directory, the command only works with the `--region` option\. It returns a list of all Elastic Beanstalk\-managed platform versions supported in the region\. The list uses short platform version names, and some platform version variants might be combined\. Add the `--verbose` option to get a detailed list with full names and all variants listed separately\.
 
 #### Options<a name="eb3-platform-list-options"></a>
 
@@ -153,7 +158,7 @@ List the versions of the platform associated with the workspace\.
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  `-a` OR `--all-platforms`  | Lists the versions of all of the platforms associated with your account\. | 
+|  `-a` OR `--all-platforms`  |  Valid only in an initialized workspace \(a directory initialized by `eb platform init` or `eb init`\)\. Lists the platform versions of all custom platforms associated with your account\. | 
 |  `-s STATUS` OR `--status STATUS`  |  List only the platforms matching *STATUS*: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-platform.html)  | 
 
 ### eb platform logs<a name="eb3-platform-logs"></a>
@@ -198,15 +203,15 @@ Select a different platform from which new versions are built\.
 
 ## Using eb platform for environments<a name="eb3-platform-environment"></a>
 
-Lists supported platforms and enables you to set the default platform and platform version to use when you launch an environment\. Use `eb platform list` to view a list of all supported platforms\. Use `eb platform use` to change the platform for your project\. Use `eb platform show` to view your project's selected platform\.
+Lists supported platforms and enables you to set the default platform and platform version to use when you launch an environment\. Use eb platform list to view a list of all supported platforms\. Use eb platform use to change the platform for your project\. Use eb platform show to view your project's selected platform\.
 
 ### Syntax<a name="eb3-platformenvsyntax"></a>
 
-`eb platform list`
+eb platform list
 
-`eb platform select`
+eb platform select
 
-`eb platform show`
+eb platform show
 
 ### Options<a name="eb3-platformenvoptions"></a>
 

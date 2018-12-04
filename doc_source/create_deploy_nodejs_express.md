@@ -80,7 +80,7 @@ Set up Express and create the project structure\. The following walks you throug
 
 Configure an EB CLI repository for your application and create an Elastic Beanstalk environment running the Node\.js platform\.
 
-1. Create a repository with the `eb init` command\.
+1. Create a repository with the eb init command\.
 
    ```
    ~/node-express$ eb init --platform node.js --region us-west-2
@@ -89,7 +89,7 @@ Configure an EB CLI repository for your application and create an Elastic Beanst
 
    This command creates a configuration file in a folder named `.elasticbeanstalk` that specifies settings for creating environments for your application, and creates an Elastic Beanstalk application named after the current folder\.
 
-1. Create an environment running a sample application with the `eb create` command\.
+1. Create an environment running a sample application with the eb create command\.
 
    ```
    ~/node-express$ eb create --sample node-express-env
@@ -108,7 +108,7 @@ Configure an EB CLI repository for your application and create an Elastic Beanst
    + **AWS CloudFormation stack** – Elastic Beanstalk uses AWS CloudFormation to launch the resources in your environment and propagate configuration changes\. The resources are defined in a template that you can view in the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation)\.
    + **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
 
-1. When environment creation completes, use the `eb open` command to open the environment's URL in the default browser\.
+1. When environment creation completes, use the eb open command to open the environment's URL in the default browser\.
 
    ```
    ~/node-express$ eb open
@@ -240,7 +240,7 @@ Next, let's update the Express application to serve static files and add a new p
 
 If you are done working with Elastic Beanstalk, you can terminate your environment\.
 
-Use the `eb terminate` command to terminate your environment and all of the resources that it contains\.
+Use the eb terminate command to terminate your environment and all of the resources that it contains\.
 
 ```
 ~/node-express$ eb terminate

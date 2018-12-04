@@ -82,11 +82,11 @@ You can use the EB CLI to configure custom metrics by saving your environment's 
 
 **To configure CloudWatch custom metrics with the EB CLI and saved configurations**
 
-1. Initialize your project folder with [`eb init`](eb-cli3-configuration.md)\.
+1. Initialize your project folder with [eb init](eb-cli3-configuration.md)\.
 
-1. Create an environment by running the [`eb create`](eb-cli3-getting-started.md) command\.
+1. Create an environment by running the [eb create](eb-cli3-getting-started.md) command\.
 
-1. Save a configuration template locally by running the `eb config save` command\. The following example uses the `--cfg` option to specify the name of the configuration\.
+1. Save a configuration template locally by running the eb config save command\. The following example uses the `--cfg` option to specify the name of the configuration\.
 
    ```
    $ eb config save --cfg 01-base-state
@@ -116,17 +116,17 @@ You can use the EB CLI to configure custom metrics by saving your environment's 
    In the example, 60 indicates the number of seconds between measurements\. This is the only currently supported value\.
 **Note**  
 You can combine `CloudWatchMetrics` and `Rules` in the same `ConfigDocument` option setting\. `Rules` are described in [Configuring Enhanced Health Rules for an Environment](health-enhanced-rules.md)\.  
-If you previously used `Rules` to configure enhanced health rules, then the configuration file that you retrieve using the `eb config save` command already has a `ConfigDocument` key with a `Rules` section\. *Do not delete it*—add a `CloudWatchMetrics` section into the same `ConfigDocument` option value\.
+If you previously used `Rules` to configure enhanced health rules, then the configuration file that you retrieve using the eb config save command already has a `ConfigDocument` key with a `Rules` section\. *Do not delete it*—add a `CloudWatchMetrics` section into the same `ConfigDocument` option value\.
 
 1. Save the configuration file and close the text editor\. In this example, the updated configuration file is saved with a name \(`02-cloudwatch-enabled.cfg.yml`\) that is different from the downloaded configuration file\. This creates a separate saved configuration when the file is uploaded\. You can use the same name as the downloaded file to overwrite the existing configuration without creating a new one\.
 
-1. Use the `eb config put` command to upload the updated configuration file to Elastic Beanstalk\.
+1. Use the eb config put command to upload the updated configuration file to Elastic Beanstalk\.
 
    ```
    $ eb config put 02-cloudwatch-enabled
    ```
 
-   When using the `eb config` `get` and `put` commands with saved configurations, do not include the file name extension\.
+   When using the eb config `get` and `put` commands with saved configurations, do not include the file name extension\.
 
 1. Apply the saved configuration to your running environment\.
 

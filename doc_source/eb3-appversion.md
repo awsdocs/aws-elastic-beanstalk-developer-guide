@@ -1,4 +1,4 @@
-# `eb appversion`<a name="eb3-appversion"></a>
+# eb appversion<a name="eb3-appversion"></a>
 
 ## Description<a name="eb3-appversion-description"></a>
 
@@ -10,11 +10,11 @@ Use the `lifecycle` option to display or create the application version lifecycl
 
 ## Syntax<a name="eb3-appversion-syntax"></a>
 
- `eb appversion` 
+ eb appversion 
 
- `eb appversion [-d | --delete] version-label` 
+ eb appversion \[\-d \| \-\-delete\] *version\-label* 
 
- `eb appversion lifecycle [-p | --print]` 
+ eb appversion lifecycle \[\-p \| \-\-print\] 
 
 ## Options<a name="eb3-appversion-options"></a>
 
@@ -51,7 +51,7 @@ The following example shows the interactive window for an application with the f
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/InteractiveModeWithEnvironment.png)
 
-The following example shows the output from an `eb appversion lifecycle -p` command, where *ACCOUNT\-ID* is the user's account ID:
+The following example shows the output from an eb appversion lifecycle \-p command, where *ACCOUNT\-ID* is the user's account ID:
 
 ```
 Application details for: lifecycle

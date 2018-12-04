@@ -99,7 +99,7 @@ Include `.config` files in your project folder under `.ebextensions` to deploy t
 `-- styles.css
 ```
 
-Create your environment and deploy your source code to it with `eb create`\.
+Create your environment and deploy your source code to it with eb create\.
 
 ```
 ~/workspace/my-app$ eb create my-env
@@ -107,7 +107,7 @@ Create your environment and deploy your source code to it with `eb create`\.
 
 ### Using Saved Configurations<a name="configuration-options-during-ebcli-savedconfig"></a>
 
-To apply a saved configuration when you create an environment with [`eb create`](eb3-create.md), use the `--cfg` option\.
+To apply a saved configuration when you create an environment with [eb create](eb3-create.md), use the `--cfg` option\.
 
 ```
 ~/workspace/my-app$ eb create --cfg savedconfig
@@ -131,7 +131,7 @@ If the EB CLI does not find the configuration locally, it looks in the Elastic B
 
 ### Using Command Line Options<a name="configuration-options-during-ebcli-params"></a>
 
-The EB CLI `eb create` command has several [options](eb3-create.md#eb3-createoptions) that you can use to set configuration options during environment creation\. You can use these options to add an RDS database to your environment, configure a VPC, or override [recommended values](command-options.md#configuration-options-recommendedvalues)\.
+The EB CLI eb create command has several [options](eb3-create.md#eb3-createoptions) that you can use to set configuration options during environment creation\. You can use these options to add an RDS database to your environment, configure a VPC, or override [recommended values](command-options.md#configuration-options-recommendedvalues)\.
 
 For example, the EB CLI uses the `t2.micro` instance type by default\. To choose a different instance type, use the `--instance_type` option\.
 

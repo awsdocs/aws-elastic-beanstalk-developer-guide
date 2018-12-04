@@ -33,7 +33,7 @@ When you create the environment, Elastic Beanstalk sets the `MinSize` option in 
 
 The Elastic Beanstalk Command Line Interface \(EB CLI\) and Elastic Beanstalk console provide recommended values for some configuration options\. These values can be different from the default values and are set at the API level when your environment is created\. Recommended values allow Elastic Beanstalk to improve the default environment configuration without making backwards incompatible changes to the API\.
 
-For example, both the EB CLI and Elastic Beanstalk console set the configuration option for EC2 instance type \(`InstanceType` in the `aws:autoscaling:launchconfiguration` namespace\)\. Each client provides a different way of overriding the default setting\. In the console you can choose a different instance type from a drop down menu on the **Configuration Details** page of the **Create New Environment** wizard\. With the EB CLI, you can use the `--instance_type` parameter for [`eb create`](eb3-create.md)\.
+For example, both the EB CLI and Elastic Beanstalk console set the configuration option for EC2 instance type \(`InstanceType` in the `aws:autoscaling:launchconfiguration` namespace\)\. Each client provides a different way of overriding the default setting\. In the console you can choose a different instance type from a drop down menu on the **Configuration Details** page of the **Create New Environment** wizard\. With the EB CLI, you can use the `--instance_type` parameter for [eb create](eb3-create.md)\.
 
 Because the recommended values are set at the API level, they will override values for the same options that you set in configuration files or saved configurations\. The following options are set:
 

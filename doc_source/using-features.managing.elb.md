@@ -12,7 +12,7 @@ By default, Elastic Beanstalk creates an Application Load Balancer for your envi
 **Note**  
 Your environment must be in a VPC with subnets in at least two Availability Zones to create an Application Load Balancer\. All new AWS accounts include default VPCs that meet this requirement\. If your environment is in a VPC with subnets in only one Availability Zone, it defaults to a Classic Load Balancer\. If you don't have any subnets, you can't enable load balancing\.
 
-You can create and manage environments with all load balancer types using the Elastic Beanstalk console, the EB CLI [`eb create`](eb3-create.md) command, the Elastic Beanstalk APIs, or configuration files \([\.ebextensions](ebextensions.md)\)\.
+You can create and manage environments with all load balancer types using the Elastic Beanstalk console, the EB CLI [eb create](eb3-create.md) command, the Elastic Beanstalk APIs, or configuration files \([\.ebextensions](ebextensions.md)\)\.
 
 See the following topics to learn about each Elastic Beanstalk\-supported load balancer type, its functionality, and how to configure and manage it in an Elastic Beanstalk environment, and how to configure a load balancer to [upload access logs](environments-cfg-loadbalancer-accesslogs.md) to Amazon S3\. 
 

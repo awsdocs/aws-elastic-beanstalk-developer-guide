@@ -41,9 +41,9 @@ Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosin
 
 1. Open the [RDS console](https://console.aws.amazon.com/rds/home)\.
 
-1. Choose **Instances** in the navigation pane\.
+1. Choose **Databases** in the navigation pane\.
 
-1. Choose **Launch DB instance**\.
+1. Choose **Create database**\.
 
 1. Choose a database engine\. Choose **Next**\.
 
@@ -96,7 +96,7 @@ Use the AWS Management Console to create an Elastic Beanstalk environment\. Choo
 
 **To launch an environment \(console\)**
 
-1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced&instanceType=t2\.micro](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced&instanceType=t2.micro)
+1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
 1. For **Platform**, choose the platform that matches the language used by your application\.
 
@@ -166,7 +166,7 @@ Next, use environment properties to pass the connection information to your envi
    + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies among DB engines\.
 
      Amazon RDS console label – **Port**
-   + **RDS\_DB\_NAME** – The database name, `ebdb`\.
+   + **RDS\_DB\_NAME** – The database name, ebdb\.
 
      Amazon RDS console label – **DB Name**
    + **RDS\_USERNAME** – The user name that you configured for your database\.

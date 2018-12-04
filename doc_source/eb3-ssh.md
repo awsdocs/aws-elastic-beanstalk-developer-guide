@@ -1,4 +1,4 @@
-# `eb ssh`<a name="eb3-ssh"></a>
+# eb ssh<a name="eb3-ssh"></a>
 
 ## Description<a name="eb3-sshdescription"></a>
 
@@ -10,7 +10,7 @@ Connect to a Linux Amazon EC2 instance in your environment using Secure Shell \(
 If the root directory contains a `platform.yaml` file specifying a custom platform, this command also connects to instances in the custom environment\.
 
 **SSH Keys**  
-If you have not previously configured SSH, you can use the EB CLI to create a key when running `eb init`\. If you have already run `eb init`, run it again with the `--interactive` option and select **Yes** and **Create New Keypair** when prompted to set up SSH\. Keys created during this process will be stored in the proper folder by the EB CLI\.
+If you have not previously configured SSH, you can use the EB CLI to create a key when running eb init\. If you have already run eb init, run it again with the `--interactive` option and select **Yes** and **Create New Keypair** when prompted to set up SSH\. Keys created during this process will be stored in the proper folder by the EB CLI\.
 
 This command temporarily opens port 22 in your environment's security group for incoming traffic from 0\.0\.0\.0/0 \(all IP addresses\) if no rules for port 22 are already in place\. If you have configured your environment's security group to open port 22 to a restricted CIDR range for increased security, the EB CLI will respect that setting and forgo any changes to the security group\. To override this behavior and force the EB CLI to open port 22 to all incoming traffic, use the `--force` option\.
 
@@ -18,9 +18,9 @@ See [Security Groups](using-features.managing.ec2.md#using-features.managing.ec2
 
 ## Syntax<a name="eb3-sshsyntax"></a>
 
- `eb ssh` 
+ eb ssh 
 
- `eb ssh environment-name` 
+ eb ssh *environment\-name* 
 
 ## Options<a name="eb3-sshoptions"></a>
 

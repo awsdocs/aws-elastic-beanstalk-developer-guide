@@ -24,7 +24,7 @@ The tutorial's sample application uses a DynamoDB table to store user\-provided 
   this is output
   ```
 **Note**  
-You can run all commands in this tutorial on a Linux virtual machine, and OS X machine, or an Amazon EC2 instance running Amazon Linux\. If you need a development environment, you can launch a single\-instance Elastic Beanstalk environment and connect to it with SSH\.
+You can run all commands in this tutorial on a Linux virtual machine, an OS X machine, or an Amazon EC2 instance running Amazon Linux\. If you need a development environment, you can launch a single\-instance Elastic Beanstalk environment and connect to it with SSH\.
 + This tutorial uses a command line ZIP utility to create a source bundle that you can deploy to Elastic Beanstalk\. To use the `zip` command in Windows, you can install `UnxUtils`, a lightweight collection of useful command\-line utilities like `zip` and `ls`\. \(Alternatively, you can [use Windows Explorer](applications-sourcebundle.md#using-features.deployment.source.gui) or any other ZIP utility to create source bundle archives\.\)
 
 **To install UnxUtils**
@@ -62,7 +62,7 @@ You use the Elastic Beanstalk console to launch an Elastic Beanstalk environment
 
 **To launch an environment \(console\)**
 
-1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced&instanceType=t2\.micro](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced&instanceType=t2.micro)
+1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
 1. For **Platform**, choose the platform that matches the language used by your application\.
 

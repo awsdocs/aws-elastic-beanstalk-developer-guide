@@ -19,7 +19,7 @@ See the [Supported Platforms](https://docs.aws.amazon.com/elasticbeanstalk/lates
 
 The single container configuration can be used to deploy a Docker image \(described in a Dockerfile or Dockerrun\.aws\.json definition\) and source code to EC2 instances running in an Elastic Beanstalk environment\. Use the single container configuration when you only need to run one container per instance\.
 
-For samples and help getting started with a single container Docker environment, see [Single Container Docker](docker-singlecontainer-deploy.md)\. For detailed information on the container definition formats and their use, see [Single Container Docker Configuration](create_deploy_docker_image.md)\.
+For samples and help getting started with a single container Docker environment, see [Single Container Docker Environments](single-container-docker.md)\. For detailed information on the container definition formats and their use, see [Single Container Docker Configuration](single-container-docker-configuration.md)\.
 
 ### Multicontainer Docker<a name="docker-platform-multi"></a>
 

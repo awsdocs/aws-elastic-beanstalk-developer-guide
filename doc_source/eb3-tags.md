@@ -1,4 +1,4 @@
-# `eb tags`<a name="eb3-tags"></a>
+# eb tags<a name="eb3-tags"></a>
 
 ## Description<a name="eb3-tagsdescription"></a>
 
@@ -8,19 +8,19 @@ For details about environment tagging, see [Tagging Resources in Your Elastic Be
 
 ## Syntax<a name="eb3-tagsyntax"></a>
 
-`eb tags [environment-name] -l|--list`
+eb tags \[*environment\-name*\] \-l\|\-\-list
 
-`eb tags [environment-name] -a|--add key1=value1[,key2=value2 ...]`
+eb tags \[*environment\-name*\] \-a\|\-\-add *key1*=*value1*\[,*key2*=*value2* \.\.\.\]
 
-`eb tags [environment-name] -u|--update key1=value1[,key2=value2 ...]`
+eb tags \[*environment\-name*\] \-u\|\-\-update *key1*=*value1*\[,*key2*=*value2* \.\.\.\]
 
-`eb tags [environment-name] -d|--delete key1[,key2 ...]`
+eb tags \[*environment\-name*\] \-d\|\-\-delete *key1*\[,*key2* \.\.\.\]
 
 You can combine the `--add`, `--update`, and `--delete` subcommand options in a single command\. At least one of them is required\. You can't combined any of these three subcommand options with `--list`\.
 
 ## Options<a name="eb3-tagsoptions"></a>
 
-None of these options are required\. If you run `eb create` without any options, you are prompted to enter or select a value for each setting\.
+None of these options are required\. If you run eb create without any options, you are prompted to enter or select a value for each setting\.
 
 
 ****  

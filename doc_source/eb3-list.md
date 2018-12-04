@@ -1,4 +1,4 @@
-# `eb list`<a name="eb3-list"></a>
+# eb list<a name="eb3-list"></a>
 
 ## Description<a name="eb3-listdescription"></a>
 
@@ -8,7 +8,7 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 
 ## Syntax<a name="eb3-listsyntax"></a>
 
- `eb list` 
+ eb list 
 
 ## Options<a name="listoptions"></a>
 

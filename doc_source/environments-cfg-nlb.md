@@ -136,7 +136,7 @@ In this example, your application requires end\-to\-end traffic encryption\. To 
 
 ## Configuring a Network Load Balancer Using the EB CLI<a name="environments-cfg-nlb-ebcli"></a>
 
-The EB CLI prompts you to choose a load balancer type when you run [`eb create`](eb3-create.md)\.
+The EB CLI prompts you to choose a load balancer type when you run [eb create](eb3-create.md)\.
 
 ```
 $ eb create

@@ -14,7 +14,7 @@ When you create a custom platform, you launch a single instance environment with
 Custom platforms are region specific\. If you use Elastic Beanstalk in multiple regions, you must create your platforms separately in each region\.  
 In certain circumstances, instances launched by Packer are not cleaned up and have to be manually terminated\. To learn how to manually clean up these instances, see [Packer Instance Cleanup](custom-platforms-packercleanup.md)\.
 
-Users in your account can use your custom platforms by specifying a [platform ARN](AWSHowTo.iam.policies.arn.md) during environment creation\. These ARNs are returned by the `eb platform create` command that you used to create the custom platform\.
+Users in your account can use your custom platforms by specifying a [platform ARN](AWSHowTo.iam.policies.arn.md) during environment creation\. These ARNs are returned by the eb platform create command that you used to create the custom platform\.
 
 Each time you build your custom platform, Elastic Beanstalk creates a new platform version\. Users can specify a platform by name to get only the latest version of the platform, or include a version number to get a specific version\.
 
@@ -41,22 +41,22 @@ One alternative to creating your own custom platform is to use one of the platfo
 **Note**  
 Do not use an unmodified sample custom platform in production\. The goal of the samples is to illustrate some of the functionality available for a custom platform, but they have not been hardened for production use\.
 
-[NodePlatform\_Ubuntu\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.3/NodePlatform_Ubuntu.zip)  
+[NodePlatform\_Ubuntu\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.4/NodePlatform_Ubuntu.zip)  
 This custom platform is based on **Ubuntu 16\.04** and supports **Node\.js 4\.4\.4**\. We'll use this custom platform for the examples in this section\.
 
-[NodePlatform\_RHEL\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.3/NodePlatform_RHEL.zip)  
+[NodePlatform\_RHEL\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.4/NodePlatform_RHEL.zip)  
 This custom platform is based on **RHEL 7\.2** and supports **Node\.js 4\.4\.4**\.
 
-[NodePlatform\_AmazonLinux\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.3/NodePlatform_AmazonLinux.zip)  
+[NodePlatform\_AmazonLinux\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.4/NodePlatform_AmazonLinux.zip)  
 This custom platform is based on **Amazon Linux 2016\.09\.1** and supports **Node\.js 4\.4\.4**\.
 
-[TomcatPlatform\_Ubuntu\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.3/TomcatPlatform_Ubuntu.zip)  
+[TomcatPlatform\_Ubuntu\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.4/TomcatPlatform_Ubuntu.zip)  
 This custom platform is based on **Ubuntu 16\.04** and supports **Tomcat 7/Java 8**\.
 
-[CustomPlatform\_NodeSampleApp\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.3/CustomPlatform_NodeSampleApp.zip)  
+[CustomPlatform\_NodeSampleApp\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.4/CustomPlatform_NodeSampleApp.zip)  
 A Node\.js sample that uses **express** and **ejs** to display a static webpage\.
 
-[CustomPlatform\_TomcatSampleApp\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.3/CustomPlatform_TomcatSampleApp.zip)  
+[CustomPlatform\_TomcatSampleApp\.zip](https://github.com/awslabs/eb-custom-platforms-samples/releases/download/v1.0.4/CustomPlatform_TomcatSampleApp.zip)  
 A Tomcat sample that displays a static webpage when deployed\.
 
 Download the sample platform definition archive: `NodePlatform_Ubuntu.zip`\. This file contains a platform definition file, Packer template, scripts that Packer runs during image creation, and scripts and configuration files that Packer copies onto the builder instance during platform creation\.
@@ -164,11 +164,11 @@ Use the EB CLI to create your first custom platform with the sample platform def
 
 1. Edit the `custom_platform.json` file, and provide values for the `source_ami` and `region` properties\. For details, see [Updating Packer template](https://github.com/aws-samples/eb-custom-platforms-samples#updating-packer-template)\.
 
-1. Run [`eb platform init`](eb3-platform.md#eb3-platform-init) and follow the prompts to initialize a platform repository\.
+1. Run [eb platform init](eb3-platform.md#eb3-platform-init) and follow the prompts to initialize a platform repository\.
 
-   You can shorten `eb platform` to `ebp`\.
+   You can shorten eb platform to ebp\.
 **Note**  
-Windows PowerShell uses `ebp` as a command alias\. If you're running the EB CLI in Windows PowerShell, use the long form of this command — `eb platform`\.
+Windows PowerShell uses ebp as a command alias\. If you're running the EB CLI in Windows PowerShell, use the long form of this command — eb platform\.
 
    ```
    ~/custom-platform$ eb platform init
@@ -176,36 +176,36 @@ Windows PowerShell uses `ebp` as a command alias\. If you're running the EB CLI 
 
    This command also creates the directory `.elasticbeanstalk` in the current directory and adds the configuration file `config.yml` to the directory\. Don't change or delete this file, because Elastic Beanstalk relies on it when creating the custom platform\.
 
-   By default, `eb platform init` uses the name of the current folder as the name of the custom platform, which would be `custom-platform` in this example\.
+   By default, eb platform init uses the name of the current folder as the name of the custom platform, which would be `custom-platform` in this example\.
 
-1. Run [`eb platform create`](eb3-platform.md#eb3-platform-create) to launch a Packer environment and get the ARN of the custom platform\. You'll need this value later when you create an environment from the custom platform\.
+1. Run [eb platform create](eb3-platform.md#eb3-platform-create) to launch a Packer environment and get the ARN of the custom platform\. You'll need this value later when you create an environment from the custom platform\.
 
    ```
    ~/custom-platform$ eb platform create
    ...
    ```
 
-   By default, Elastic Beanstalk creates the instance profile `aws-elasticbeanstalk-custom-platform-ec2-role` for custom platforms\. If, instead, you want to use an existing instance profile, add the option `-ip INSTANCE_PROFILE` to the [`eb platform create`](eb3-platform.md#eb3-platform-create) command\.
+   By default, Elastic Beanstalk creates the instance profile `aws-elasticbeanstalk-custom-platform-ec2-role` for custom platforms\. If, instead, you want to use an existing instance profile, add the option `-ip INSTANCE_PROFILE` to the [eb platform create](eb3-platform.md#eb3-platform-create) command\.
 **Note**  
 Packer will fail to create a custom platform if you use the Elastic Beanstalk default instance profile `aws-elasticbeanstalk-ec2-role`\.
 
    The EB CLI shows event output of the Packer environment until the build is complete\. You can exit the event view by pressing **Ctrl\-C**\. 
 
-1. You can check the logs for errors using the [`eb platform logs`](eb3-platform.md#eb3-platform-logs) command\.
+1. You can check the logs for errors using the [eb platform logs](eb3-platform.md#eb3-platform-logs) command\.
 
    ```
    ~/custom-platform$ eb platform logs
    ...
    ```
 
-1. You can check on the process later with [`eb platform events`](eb3-platform.md#eb3-platform-events)\.
+1. You can check on the process later with [eb platform events](eb3-platform.md#eb3-platform-events)\.
 
    ```
    ~/custom-platform$ eb platform events
    ...
    ```
 
-1. Check the status of your platform with [`eb platform status`](eb3-platform.md#eb3-platform-status)\.
+1. Check the status of your platform with [eb platform status](eb3-platform.md#eb3-platform-status)\.
 
    ```
    ~/custom-platform$ eb platform status
@@ -240,7 +240,7 @@ You can use the custom platform when creating a new environment from the console
    ~/custom-platform-app$ unzip ~/NodeSampleApp.zip
    ```
 
-1. Run `eb create -p CUSTOM-PLATFORM-ARN`, where *CUSTOM\-PLATFORM\-ARN* is the ARN returned by an `eb platform create` command, to launch an environment running your custom platform\.
+1. Run eb create \-p *CUSTOM\-PLATFORM\-ARN*, where *CUSTOM\-PLATFORM\-ARN* is the ARN returned by an eb platform create command, to launch an environment running your custom platform\.
 
    ```
    ~/custom-platform-app$ eb create -p CUSTOM-PLATFORM-ARN

@@ -41,7 +41,7 @@ The health agent reports similar metrics to those [published to CloudWatch](usin
 
 For basic health, these metrics are published every five minutes and can be monitored with graphs in the environment management console\. With enhanced health, the Elastic Beanstalk health agent reports metrics to Elastic Beanstalk every ten seconds\. Elastic Beanstalk uses the metrics provided by the health agent to determine the health status of each instance in the environment, and, combined with other [factors](#health-enhanced-factors), to determine the overall health of the environment\. 
 
- The overall health of the environment can be viewed in real\-time in the environment dashboard and is published to CloudWatch by Elastic Beanstalk every sixty seconds\. Detailed metrics reported by the health agent can be viewed in real time with the [`eb health`](health-enhanced-ebcli.md) command in the [EB CLI](eb-cli3.md)\.
+ The overall health of the environment can be viewed in real\-time in the environment dashboard and is published to CloudWatch by Elastic Beanstalk every sixty seconds\. Detailed metrics reported by the health agent can be viewed in real time with the [eb health](health-enhanced-ebcli.md) command in the [EB CLI](eb-cli3.md)\.
 
 For an additional charge, you can choose to publish individual instance and environment level metrics to CloudWatch every sixty seconds\. Metrics published to CloudWatch can then be used to create [monitoring graphs](environment-health-console.md#environment-health-console-customize) in the [environment management console](environments-console.md)\. 
 
@@ -114,7 +114,7 @@ Elastic Beanstalk enhanced health reporting relies on a set of rules to determin
 
 Enhanced health reporting requires two roles—a service role for Elastic Beanstalk and an instance profile for the environment\. The service role allows Elastic Beanstalk to interact with other AWS services on your behalf in order to gather information about the resources in your environment\. The instance profile allows the instances in your environment to write logs to Amazon S3\.
 
-When you create an Elastic Beanstalk environment in the AWS Management Console, the console prompts you to create an instance profile and service role with appropriate permissions\. The EB CLI also assists you in creating these roles when you call `eb create` to create an environment\.
+When you create an Elastic Beanstalk environment in the AWS Management Console, the console prompts you to create an instance profile and service role with appropriate permissions\. The EB CLI also assists you in creating these roles when you call eb create to create an environment\.
 
 If you use the API, an SDK, or the AWS CLI to create environments, you must create these roles beforehand and specify them during environment creation to use enhanced health\. For instructions on creating appropriate roles for your environments, see [Service Roles, Instance Profiles, and User Policies](concepts-roles.md)\.
 
@@ -128,7 +128,7 @@ When transitioning to a worse state, Elastic Beanstalk includes a message indica
 
 Not all changes in status at an instance level will cause Elastic Beanstalk to emit an event\. To prevent false alarms, Elastic Beanstalk only generates a health related event if an issue persists across multiple checks\.
 
-Real time environment level health information, including status, color and cause, is available in the [environment dashboard](environments-console.md#environments-dashboard) and the [EB CLI](eb-cli3.md)\. By attaching the EB CLI to your environment and running the [`eb health`](health-enhanced-ebcli.md) command, you can also view real time statuses from each of the *instances *in your environment\.
+Real time environment level health information, including status, color and cause, is available in the [environment dashboard](environments-console.md#environments-dashboard) and the [EB CLI](eb-cli3.md)\. By attaching the EB CLI to your environment and running the [eb health](health-enhanced-ebcli.md) command, you can also view real time statuses from each of the *instances *in your environment\.
 
 ## Enhanced Health Reporting Behavior During Updates, Deployments, and Scaling<a name="health-enhanced-effects"></a>
 

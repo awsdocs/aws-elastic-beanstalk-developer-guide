@@ -68,7 +68,7 @@ Environment details for: elasticBeanstalkExa-env
 
 ## eb health<a name="ebcli3-basics-health"></a>
 
-Use the `eb health` command to view [health information](health-enhanced.md) about the instances in your environment and the state of your environment overall\. Use the `--refresh` option to view health in an interactive view that updates every 10 seconds\.
+Use the eb health command to view [health information](health-enhanced.md) about the instances in your environment and the state of your environment overall\. Use the `--refresh` option to view health in an interactive view that updates every 10 seconds\.
 
 ```
 ~/eb$ eb health

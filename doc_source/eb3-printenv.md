@@ -1,4 +1,4 @@
-# `eb printenv`<a name="eb3-printenv"></a>
+# eb printenv<a name="eb3-printenv"></a>
 
 ## Description<a name="eb3-printenvdescription"></a>
 
@@ -6,9 +6,9 @@ Prints all the environment properties in the command window\.
 
 ## Syntax<a name="eb3-printenvsyntax"></a>
 
- `eb printenv` 
+ eb printenv 
 
- `eb printenv environment-name` 
+ eb printenv *environment\-name* 
 
 ## Options<a name="eb3-printenvoptions"></a>
 

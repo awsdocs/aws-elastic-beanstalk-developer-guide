@@ -33,7 +33,7 @@ Specify images by name in `Dockerrun.aws.json`\. Note these conventions:
 + Images in other repositories on Docker Hub are qualified with an organization name \(for example, `amazon/amazon-ecs-agent`\)\.
 + Images in other online repositories are qualified further by a domain name \(for example, `quay.io/assemblyline/ubuntu` or `account-id.dkr.ecr.us-east-2.amazonaws.com/ubuntu:trusty`\)\. 
 
-For single container environments only, you can also build your own image during environment creation with a Dockerfile\. See [Building Custom Images with a Dockerfile](create_deploy_docker_image.md#create_deploy_docker_image_dockerfile) for details\.
+For single container environments only, you can also build your own image during environment creation with a Dockerfile\. See [Building Custom Images with a Dockerfile](single-container-docker-configuration.md#single-container-docker-configuration.dockerfile) for details\.
 
 ### Using Images from an Amazon ECR Repository<a name="docker-images-ecr"></a>
 
@@ -77,7 +77,7 @@ You do, however, need to provide your instances with permission to access the im
 
 Replace the Amazon Resource Name \(ARN\) in the above policy with the ARN of your repository\.
 
-In your `Dockerrun.aws.json` file, refer to the image by URL\. For a [single container configuration](create_deploy_docker_image.md), the URL goes in the `Image` definition:
+In your `Dockerrun.aws.json` file, refer to the image by URL\. For a [single container configuration](single-container-docker-configuration.md), the URL goes in the `Image` definition:
 
 ```
   "Image": {
@@ -117,14 +117,11 @@ With Docker version 1\.7 and later, the docker login command creates the authent
 
 ```
 {
-  "auths" :
-  {
-    "server" :
-    {
-      "auth" : "auth_token",
-      "email" : "email"
-    }
-  }
+   "auths":{
+      "server":{
+         "auth":"key"
+      }
+   }
 }
 ```
 With Docker version 1\.6\.2 and earlier, the docker login command creates the authentication file in `~/.dockercfg` in the following format:  
@@ -138,13 +135,13 @@ With Docker version 1\.6\.2 and earlier, the docker login command creates the au
   }
 }
 ```
-To convert a `config.json` file, remove the outer `auths` key and flatten the JSON document to match the old format\.
+To convert a `config.json` file, remove the outer `auths` key, add an `email` key, and flatten the JSON document to match the old format\.
 
 Upload the authentication file to a secure Amazon S3 bucket\. The Amazon S3 bucket must be hosted in the same region as the environment that is using it\. Elastic Beanstalk cannot download files from an Amazon S3 bucket hosted in other regions\. Grant permissions for the `s3:GetObject` operation to the IAM role in the instance profile\. For details, see [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md)\.
 
 Include the Amazon S3 bucket information in the `Authentication` \(v1\) or `authentication` \(v2\) parameter in your `Dockerrun.aws.json` file\.
 
-For more information about the `Dockerrun.aws.json` format for single container environments, see [Single Container Docker Configuration](create_deploy_docker_image.md)\. For multicontainer environments, see [Multicontainer Docker Configuration](create_deploy_docker_v2config.md)\.
+For more information about the `Dockerrun.aws.json` format for single container environments, see [Single Container Docker Configuration](single-container-docker-configuration.md)\. For multicontainer environments, see [Multicontainer Docker Configuration](create_deploy_docker_v2config.md)\.
 
 For more information about the authentication file, see [ Store images on Docker Hub ](https://docs.docker.com/docker-hub/repos/) and [ docker login ](https://docs.docker.com/engine/reference/commandline/login/) on the Docker website\.
 

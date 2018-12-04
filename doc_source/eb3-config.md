@@ -1,4 +1,4 @@
-# `eb config`<a name="eb3-config"></a>
+# eb config<a name="eb3-config"></a>
 
 ## Description<a name="eb3-configdescription"></a>
 
@@ -7,20 +7,20 @@ Changes the environment configuration settings\. This command saves the environm
 If the root directory contains a `platform.yaml` file specifying a custom platform, this command also changes the builder configuration settings, based on the values set in `platform.yaml`\.
 
 **Note**  
-`eb config` does not show environment properties\. To set environment properties that you can read from within your application, use [`eb setenv`](environment-configuration-methods-after.md#configuration-options-after-ebcli-ebsetenv)
+eb config does not show environment properties\. To set environment properties that you can read from within your application, use [eb setenv](environment-configuration-methods-after.md#configuration-options-after-ebcli-ebsetenv)
 
 ## Syntax<a name="eb3-configsyntax"></a>
 
- `eb config` 
+ eb config 
 
- `eb config environment-name` 
+ eb config *environment\-name* 
 
-The following describes the syntax for using the `eb config` command to work with saved configurations\. For examples, see the see the [Examples](#eb3-configexample) section later in this topic\.
-+ `eb config delete filename ` – Deletes the named saved configuration\.
-+ `eb config get filename` – Downloads the named saved configuration\.
-+ `eb config list` – Lists the saved configurations that you have in Amazon S3\.
-+ `eb config put filename` – Uploads the named saved configuration to an Amazon S3 bucket\. The *filename* must have the file extension `.cfg.yml`\. To specify the file name without a path, you can save the file to the `.elasticbeanstalk` folder or to the `.elasticbeanstalk/saved_configs/` folder before you run the command\. Alternatively, you can specify the *filename* by providing the full path\.
-+ `eb config save` – Saves the environment configuration settings for the current running environment to `.elasticbeanstalk/saved_configs/` with the filename `[configuration-name].cfg.yml`\. By default, the EB CLI saves the configuration settings with a *configuration\-name* based on the environment name\. You can specify a different configuration name by including the `--cfg` option with your desired configuration name when you run the command\.
+The following describes the syntax for using the eb config command to work with saved configurations\. For examples, see the see the [Examples](#eb3-configexample) section later in this topic\.
++ eb config delete *filename*  – Deletes the named saved configuration\.
++ eb config get *filename* – Downloads the named saved configuration\.
++ eb config list – Lists the saved configurations that you have in Amazon S3\.
++ eb config put *filename* – Uploads the named saved configuration to an Amazon S3 bucket\. The *filename* must have the file extension `.cfg.yml`\. To specify the file name without a path, you can save the file to the `.elasticbeanstalk` folder or to the `.elasticbeanstalk/saved_configs/` folder before you run the command\. Alternatively, you can specify the *filename* by providing the full path\.
++ eb config save – Saves the environment configuration settings for the current running environment to `.elasticbeanstalk/saved_configs/` with the filename `[configuration-name].cfg.yml`\. By default, the EB CLI saves the configuration settings with a *configuration\-name* based on the environment name\. You can specify a different configuration name by including the `--cfg` option with your desired configuration name when you run the command\.
 
 ## Options<a name="eb3-configoptions"></a>
 
@@ -63,7 +63,7 @@ For Windows, the following example changes the editor to Notepad\+\+\.
 > set EDITOR="C:\Program Files\Notepad++\Notepad++.exe
 ```
 
-This section provides examples for the `eb config` command when it is run with parameters\.
+This section provides examples for the eb config command when it is run with parameters\.
 
 The following example deletes the saved configuration named app\-tmp\.
 

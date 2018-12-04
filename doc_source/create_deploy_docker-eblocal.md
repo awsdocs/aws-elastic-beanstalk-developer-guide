@@ -14,7 +14,7 @@ The EB CLI supports running single container, multicontainer, and preconfigured 
 + Linux OS or Mac OS X
 + [EB CLI version 3\.3 or greater](eb-cli3-install.md)
 
-  Run `eb init` in your project directory to initialize an EB CLI repository\. If you haven't used the EB CLI before, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
+  Run eb init in your project directory to initialize an EB CLI repository\. If you haven't used the EB CLI before, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
 + [Docker version 1\.6 or greater](https://docs.docker.com/engine/installation/)
 
   Add yourself to the `docker` group, log out, and then log back in to ensure that you can run Docker commands without `sudo`:
@@ -37,7 +37,7 @@ The EB CLI supports running single container, multicontainer, and preconfigured 
   If your application uses Docker images that are in a private repository, run `docker login` and follow the prompts to create an authentication profile\.
 + w3m \(optional\)
 
-  W3m is a web browser that you can use to view your running web application within a command line terminal with `eb local run`\. If you are using the command line in a desktop environment, you don't need w3m\.
+  W3m is a web browser that you can use to view your running web application within a command line terminal with eb local run\. If you are using the command line in a desktop environment, you don't need w3m\.
 
 Docker containers run locally without emulating AWS resources that are provisioned when you deploy an application to Elastic Beanstalk, including security groups and data or worker tiers\.
 
@@ -49,7 +49,7 @@ Prepare your Docker configuration file and source data as though you were deploy
 
 ## Running a Docker Application Locally<a name="create_deploy_docker-eblocal-localrun"></a>
 
-Run your Docker application locally with the `eb local run` command from within the project directory:
+Run your Docker application locally with the eb local run command from within the project directory:
 
 ```
 ~/project$ eb local run
@@ -63,7 +63,7 @@ phpapp_1     | [23-Apr-2015 23:24:25] NOTICE: ready to handle connections
 The EB CLI reads the Docker configuration and executes the Docker commands necessary to run your application\. The first time you run a project locally, Docker downloads images from a remote repository and stores them on your local machine\. This process can take several minutes\.
 
 **Note**  
-The `eb local run` command takes two optional parameters, `port` and `envvars`\.  
+The eb local run command takes two optional parameters, `port` and `envvars`\.  
 To override the default port for a single container application, use the `port` option:  
 
 ```
@@ -75,11 +75,11 @@ To pass environment variables to the application containers, use the `envvars` o
 ```
 $ eb local run --envvars RDS_HOST=$RDS_HOST,RDS_DB=$RDS_DB,RDS_USER=$RDS_USER,RDS_PASS=$RDS_PASS
 ```
-Use environment variables to configure a database connection, set debug options, or pass secrets securely to your application\. For more information on the options supported by the `eb local` subcommands, see [`eb local`](eb3-local.md)\.
+Use environment variables to configure a database connection, set debug options, or pass secrets securely to your application\. For more information on the options supported by the eb local subcommands, see [eb local](eb3-local.md)\.
 
-After the containers are up and running in Docker, they are ready to take requests from clients\. The `eb local` process stays open as long as the containers are running\. If you need to stop the process and containers, press **Ctrl\-C**\.
+After the containers are up and running in Docker, they are ready to take requests from clients\. The eb local process stays open as long as the containers are running\. If you need to stop the process and containers, press **Ctrl\-C**\.
 
-Open a second terminal to run additional commands while the `eb local` process is running\. Use `eb local status` to view your application's status:
+Open a second terminal to run additional commands while the eb local process is running\. Use eb local status to view your application's status:
 
 ```
 ~/project$ eb local status
@@ -106,7 +106,7 @@ CONTAINER ID        IMAGE               COMMAND                CREATED          
 82cbf620bdc1        php:fpm             "php-fpm"              9 minutes ago       Up 9 minutes        9000/tcp                      elasticbeanstalk_phpapp_1
 ```
 
-Next, view your application in action with `eb local open`:
+Next, view your application in action with eb local open:
 
 ```
 ~/project$ eb local open
@@ -122,7 +122,7 @@ phpapp_1     | 172.17.0.36 -  21/Apr/2015:23:46:17 +0000 "GET /index.php" 200
 
 This shows that the web application in the Docker container received an HTTP GET request for index\.php that was returned successfully with a 200 \(non error\) status\.
 
-Run `eb local logs` to see where the EB CLI writes the logs\.
+Run eb local logs to see where the EB CLI writes the logs\.
 
 ```
 ~/project$ eb local logs
@@ -132,9 +132,9 @@ Logs were most recently created 3 minutes ago and written to /home/user/project/
 
 ## Cleaning Up After Running a Docker Application Locally<a name="create_deploy_docker-eblocal-cleanup"></a>
 
-When you are done testing your application locally, you can stop the applications and remove the images downloaded by Docker when you use `eb local run`\. Removing the images is optional\. You may want to keep them for future use\.
+When you are done testing your application locally, you can stop the applications and remove the images downloaded by Docker when you use eb local run\. Removing the images is optional\. You may want to keep them for future use\.
 
-Return to the terminal running the `eb local` process and press **Ctrl\-C**to stop the application: 
+Return to the terminal running the eb local process and press **Ctrl\-C**to stop the application: 
 
 ```
 ^CGracefully stopping... (press Ctrl+C again to force)

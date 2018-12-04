@@ -1,8 +1,8 @@
 # Configure the EB CLI<a name="eb-cli3-configuration"></a>
 
-After [installing the EB CLI](eb-cli3-install.md), you are ready to configure your project directory and the EB CLI by running `eb init`\.
+After [installing the EB CLI](eb-cli3-install.md), you are ready to configure your project directory and the EB CLI by running eb init\.
 
-The following example shows the configuration steps when running `eb init` for the first time in a project folder named `eb`\.
+The following example shows the configuration steps when running eb init for the first time in a project folder named `eb`\.
 
 **To initialize an EB CLI project**
 
@@ -48,7 +48,7 @@ The following example shows the configuration steps when running `eb init` for t
    (default is 1): 1
    ```
 
-1. The default application name is the name of the folder in which you run `eb init`\. Enter any name that describes your project\.
+1. The default application name is the name of the folder in which you run eb init\. Enter any name that describes your project\.
 
    ```
    Enter Application Name
@@ -117,7 +117,7 @@ If you store your credentials as a named profile in a `credentials` or `config` 
 $ eb init --profile user2
 ```
 
-You can also change the default profile by setting the `AWS_EB_PROFILE` environment variable\. When this variable is set, the EB CLI reads credentials from the specified profile instead of `default` or `eb-cli`\.
+You can also change the default profile by setting the `AWS_EB_PROFILE` environment variable\. When this variable is set, the EB CLI reads credentials from the specified profile instead of `default` or eb\-cli\.
 
 **Linux, macOS, or Unix**
 

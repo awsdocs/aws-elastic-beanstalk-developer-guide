@@ -5,7 +5,7 @@ You can create an X509 certificate for your application with `OpenSSL`\. OpenSSL
 **Note**  
 You only need to create a certificate locally if you want to [use HTTPS in a single instance environment](https-singleinstance.md) or [re\-encrypt on the backend](configuring-https-endtoend.md) with a self\-signed certificate\. If you own a domain name, you can create a certificate in AWS and use it with a load balanced environment for free by using AWS Certificate Manager \(ACM\)\. See [Request a Certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide* for instructions\.
 
-Run `openssl version` at the command line to see if you already have OpenSSL installed\. If you don't, you can build and install the source code using the instructions at the [public GitHub repository](https://github.com/openssl/openssl), or use your favorite package manager\. OpenSSL is also installed on Elastic Beanstalk's Linux images, so a quick alternative is to connect to an EC2 instance in a running environment by using the [EB CLI](eb-cli3.md)'s `eb ssh` command:
+Run `openssl version` at the command line to see if you already have OpenSSL installed\. If you don't, you can build and install the source code using the instructions at the [public GitHub repository](https://github.com/openssl/openssl), or use your favorite package manager\. OpenSSL is also installed on Elastic Beanstalk's Linux images, so a quick alternative is to connect to an EC2 instance in a running environment by using the [EB CLI](eb-cli3.md)'s eb ssh command:
 
 ```
 ~/eb$ eb ssh

@@ -1,6 +1,10 @@
 # Managing Elastic Beanstalk Service Roles<a name="iam-servicerole"></a>
 
-When you launch an environment in the AWS Elastic Beanstalk environment management console, the console creates a default service role, named `aws-elasticbeanstalk-service-role`, and attaches managed policies with default permissions to it\. 
+To manage and monitor your environment, AWS Elastic Beanstalk performs actions on the environment's resources on your behalf\. Elastic Beanstalk needs certain permissions to perform these actions, and it assumes AWS Identity and Access Management \(IAM\) service roles to get these permissions\.
+
+Elastic Beanstalk needs to use temporary security credentials whenever it assumes a service role\. To get these credentials, Elastic Beanstalk sends a request to AWS Security Token Service \(AWS STS\) on a global endpoint\. For more information, see [Temporary Security Credentials](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) in the *IAM User Guide*\.
+
+When you launch an environment in the Elastic Beanstalk console, the console creates a default service role, named `aws-elasticbeanstalk-service-role`, and attaches managed policies with default permissions to it\. 
 
 Elastic Beanstalk provides a managed policy for [enhanced health monitoring](health-enhanced.md), and one with additional permissions required for [managed platform updates](environment-platform-update-managed.md)\. The console assigns both of these policies to the default service role\. The managed service role policies follow\.
 
@@ -171,7 +175,7 @@ To allow Elastic Beanstalk to assume the `aws-elasticbeanstalk-service-role` rol
 }
 ```
 
-When you launch an environment using the [`eb create`](eb3-create.md) command of the Elastic Beanstalk Command Line Interface \(EB CLI\) and don't specify a service role through the `--service-role` option, Elastic Beanstalk creates the default service role `aws-elasticbeanstalk-service-role`\. If the default service role already exists, Elastic Beanstalk uses it for the new environment\.
+When you launch an environment using the [eb create](eb3-create.md) command of the Elastic Beanstalk Command Line Interface \(EB CLI\) and don't specify a service role through the `--service-role` option, Elastic Beanstalk creates the default service role `aws-elasticbeanstalk-service-role`\. If the default service role already exists, Elastic Beanstalk uses it for the new environment\.
 
 If you use the `CreateEnvironment` action of the Elastic Beanstalk API to create an environment, specify a service role with the `ServiceRole` configuration option in the `aws:elasticbeanstalk:environment` namespace\. See [Using Enhanced Health Reporting with the AWS Elastic Beanstalk API](health-enhanced-api.md) for details on using enhanced health monitoring with the Elastic Beanstalk API\. 
 

@@ -17,13 +17,13 @@ This topic lists common error messages encountered when using the EB CLI and pos
 
 **Cause:** When you create a new branch in git, it is not attached to an Elastic Beanstalk environment by default\.
 
-**Solution:** Run `eb list` to see a list of available environments\. Then run `eb use env-name` to use one of the available environments\.
+**Solution:** Run eb list to see a list of available environments\. Then run eb use *env\-name* to use one of the available environments\.
 
 **ERROR: 2\.0\+ Platforms require a service role\. You can provide one with \-\-service\-role option**
 
-**Cause:** If you specify an environment name with `eb create` \(for example, `eb create my-env`\), the EB CLI will not attempt to create a service role for you\. If you don't have the default service role, the above error is shown\.
+**Cause:** If you specify an environment name with eb create \(for example, eb create my\-env\), the EB CLI will not attempt to create a service role for you\. If you don't have the default service role, the above error is shown\.
 
-**Solution:** Run `eb create` without an environment name and follow the prompts to create the default service role\.
+**Solution:** Run eb create without an environment name and follow the prompts to create the default service role\.
 
 ## Troubleshooting deployments<a name="python-common-troubleshooting"></a>
 
@@ -31,7 +31,7 @@ If your Elastic Beanstalk deployment didn't go quite as smoothly as planned, you
 
 **To use the EB CLI to help troubleshoot your deployment**
 
-1. Run `eb status` to see the status of your current deployment and health of your EC2 hosts\. For example:
+1. Run eb status to see the status of your current deployment and health of your EC2 hosts\. For example:
 
    ```
    $ eb status --verbose
@@ -51,9 +51,9 @@ If your Elastic Beanstalk deployment didn't go quite as smoothly as planned, you
          i-8000528c: InService
    ```
 **Note**  
-Using the `--verbose` switch provides information about the status of your running instances\. Without it, `eb status` will print only general information about your environment\.
+Using the `--verbose` switch provides information about the status of your running instances\. Without it, eb status will print only general information about your environment\.
 
-1. Run `eb health` to view health information about your environment:
+1. Run eb health to view health information about your environment:
 
    ```
    $ eb health --refresh
@@ -95,12 +95,12 @@ Using the `--verbose` switch provides information about the status of your runni
 
    The above example shows an environment with five instances where the deployment of version "v2" failed on the third instance\. After a failed deployment, the expected version is reset to the last version that succeeded, which in this case is "Sample Application" from the first deployment\. See [Using the EB CLI to Monitor Environment Health](health-enhanced-ebcli.md) for more information\.
 
-1. Run `eb logs` to download and view the logs associated with your application deployment\.
+1. Run eb logs to download and view the logs associated with your application deployment\.
 
    ```
    $ eb logs
    ```
 
-1. Run `eb ssh` to connect with the EC2 instance that's running your application and examine it directly\. On the instance, your deployed application can be found in the `/opt/python/current/app` directory, and your Python environment will be found in `/opt/python/run/venv/`\.
+1. Run eb ssh to connect with the EC2 instance that's running your application and examine it directly\. On the instance, your deployed application can be found in the `/opt/python/current/app` directory, and your Python environment will be found in `/opt/python/run/venv/`\.
 
-1. Run `eb console` to view your application environment on the [AWS Management Console](https://aws.amazon.com/console/)\. You can use the web interface to easily examine various aspects of your deployment, including your application's configuration, status, events, logs\. You can also download the current or past application versions that you've deployed to the server\.
+1. Run eb console to view your application environment on the [AWS Management Console](https://aws.amazon.com/console/)\. You can use the web interface to easily examine various aspects of your deployment, including your application's configuration, status, events, logs\. You can also download the current or past application versions that you've deployed to the server\.

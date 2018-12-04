@@ -17,7 +17,7 @@ Create a saved configuration from the current state of your environment in the E
 
 The saved configuration includes any settings that you have applied to the environment with the console or any other client that uses the Elastic Beanstalk API\. You can then apply the saved configuration to your environment at a later date to restore it to its previous state, or apply it to a new environment during [environment creation](environments-create-wizard.md)\.
 
-You can download a configuration using the EB CLI [`eb config`](eb3-config.md) command, as shown in the following example, *NAME* is the name of your saved configuration\. 
+You can download a configuration using the EB CLI [eb config](eb3-config.md) command, as shown in the following example, *NAME* is the name of your saved configuration\. 
 
 ```
 eb config get NAME

@@ -1,17 +1,17 @@
-# `eb clone`<a name="eb3-clone"></a>
+# eb clone<a name="eb3-clone"></a>
 
 ## Description<a name="eb3-clonedescription"></a>
 
 Clones an environment to a new environment so that both have identical environment settings\.
 
 **Note**  
-By default, regardless of the solution stack version of the environment from which you create the clone, the `eb clone` command creates the clone environment with the most recent solution stack\. You can suppress this by including the `--exact` option when you run the command\.
+By default, regardless of the solution stack version of the environment from which you create the clone, the eb clone command creates the clone environment with the most recent solution stack\. You can suppress this by including the `--exact` option when you run the command\.
 
 ## Syntax<a name="eb3-clonesyntax"></a>
 
- `eb clone` 
+ eb clone 
 
- `eb clone environment-name` 
+ eb clone *environment\-name* 
 
 ## Options<a name="eb3-cloneoptions"></a>
 
@@ -31,7 +31,7 @@ By default, regardless of the solution stack version of the environment from whi
 
 ## Output<a name="eb3-cloneoutput"></a>
 
-If successful, the command creates an environment that has the same settings as the original environment or with modifications to the environment as specified by any `eb clone` options\.
+If successful, the command creates an environment that has the same settings as the original environment or with modifications to the environment as specified by any eb clone options\.
 
 ## Example<a name="eb3-cloneexample"></a>
 

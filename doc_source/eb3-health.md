@@ -1,4 +1,4 @@
-# `eb health`<a name="eb3-health"></a>
+# eb health<a name="eb3-health"></a>
 
 ## Description<a name="eb3-healthdescription"></a>
 
@@ -8,9 +8,9 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 
 ## Syntax<a name="eb3-healthsyntax"></a>
 
- `eb health` 
+ eb health 
 
- `eb health environment-name` 
+ eb health *environment\-name* 
 
 ## Options<a name="eb3-healthoptions"></a>
 

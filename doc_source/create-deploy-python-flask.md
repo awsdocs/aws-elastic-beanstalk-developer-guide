@@ -176,7 +176,7 @@ Next, you'll create your application environment and deploy your configured appl
 
 **To create an environment and deploy your Flask application**
 
-1. Initialize your EB CLI repository with the `eb init` command:
+1. Initialize your EB CLI repository with the eb init command:
 
    ```
    ~/eb-flask$ eb init -p python-3.6 flask-tutorial --region us-east-2
@@ -185,7 +185,7 @@ Next, you'll create your application environment and deploy your configured appl
 
    This command creates a new application named `flask-tutorial` and configures your local repository to create environments with the latest Python 3\.6 platform configuration\.
 
-1. \(optional\) Run `eb init` again to configure a default keypair so that you can connect to the EC2 instance running your application with SSH:
+1. \(optional\) Run eb init again to configure a default keypair so that you can connect to the EC2 instance running your application with SSH:
 
    ```
    ~/eb-flask$ eb init
@@ -196,9 +196,9 @@ Next, you'll create your application environment and deploy your configured appl
    2) [ Create new KeyPair ]
    ```
 
-   Select a key pair if you have one already, or follow the prompts to create a new one\. If you don't see the prompt or need to change your settings later, run `eb init -i`\.
+   Select a key pair if you have one already, or follow the prompts to create a new one\. If you don't see the prompt or need to change your settings later, run eb init \-i\.
 
-1. Create an environment and deploy your application to it with `eb create`:
+1. Create an environment and deploy your application to it with eb create:
 
    ```
    ~/eb-flask$ eb create flask-env
@@ -222,7 +222,7 @@ All of these resources are managed by Elastic Beanstalk\. When you terminate you
 **Note**  
 The Amazon S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)\.
 
-When the environment creation process completes, open your web site with `eb open`:
+When the environment creation process completes, open your web site with eb open:
 
 ```
 ~/eb-flask$ eb open

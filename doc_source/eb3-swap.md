@@ -1,4 +1,4 @@
-# `eb swap`<a name="eb3-swap"></a>
+# eb swap<a name="eb3-swap"></a>
 
 ## Description<a name="eb3-swapdescription"></a>
 
@@ -9,12 +9,12 @@ If you have more than two environments, you are prompted to select the name of t
 
 ## Syntax<a name="eb3-swapsyntax"></a>
 
- `eb swap` 
+ eb swap 
 
- `eb swap environment-name` 
+ eb swap *environment\-name* 
 
 **Note**  
-The *environment\-name* is the environment for which you want a different CNAME\. If you don't specify *environment\-name* as a command line parameter when you run `eb swap`, EB CLI updates the CNAME of the default environment\.
+The *environment\-name* is the environment for which you want a different CNAME\. If you don't specify *environment\-name* as a command line parameter when you run eb swap, EB CLI updates the CNAME of the default environment\.
 
 ## Options<a name="eb3-swapoptions"></a>
 
@@ -23,7 +23,7 @@ The *environment\-name* is the environment for which you want a different CNAME\
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  `-n` or `--destination_name`  |  Specifies the name of the environment with which you want to swap CNAMEs\. If you run `eb swap` without this option, then EB CLI prompts you to choose from a list of your environments\.  | 
+|  `-n` or `--destination_name`  |  Specifies the name of the environment with which you want to swap CNAMEs\. If you run eb swap without this option, then EB CLI prompts you to choose from a list of your environments\.  | 
 |  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-swapoutput"></a>

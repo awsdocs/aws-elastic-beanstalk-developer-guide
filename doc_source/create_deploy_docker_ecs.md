@@ -32,7 +32,7 @@ The following diagram shows an example Elastic Beanstalk environment configured 
  Container instances—Amazon EC2 instances running Multicontainer Docker in an Elastic Beanstalk environment—require a configuration file named `Dockerrun.aws.json`\. This file is specific to Elastic Beanstalk and can be used alone or combined with source code and content in a [source bundle](applications-sourcebundle.md) to create an environment on a Docker platform\. 
 
 **Note**  
- Version 1 of the `Dockerrun.aws.json` format is used to launch a single Docker container to an Elastic Beanstalk environment\. Version 2 adds support for multiple containers per Amazon EC2 instance and can only be used with the multicontainer Docker platform\. The format differs significantly from the previous version which is detailed under [Single Container Docker Configuration](create_deploy_docker_image.md) 
+ Version 1 of the `Dockerrun.aws.json` format is used to launch a single Docker container to an Elastic Beanstalk environment\. Version 2 adds support for multiple containers per Amazon EC2 instance and can only be used with the multicontainer Docker platform\. The format differs significantly from the previous version which is detailed under [Single Container Docker Configuration](single-container-docker-configuration.md) 
 
  See [Dockerrun\.aws\.json v2](create_deploy_docker_v2config.md#create_deploy_docker_v2config_dockerrun) for details on the updated format and an example file\. 
 

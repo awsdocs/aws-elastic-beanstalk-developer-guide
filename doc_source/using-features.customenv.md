@@ -33,7 +33,7 @@ It is also possible to create a custom AMI from a community AMI that wasn't publ
 **Note**  
 AMIs that aren't managed by Elastic Beanstalk aren't supported for Windows Server\-based Elastic Beanstalk platforms\.
 
-Although Elastic Beanstalk can use an AMI that isn't managed by Elastic Beanstalk, the increase in provisioning time that results from Elastic Beanstalk installing missing components can reduce or eliminate the benefits of creating a custom AMI in the first place\. Other Linux distributions might work with some troubleshooting but are not officially supported\. If your application requires a specific Linux distribution, one alternative is to create a Docker image and run it on the Elastic Beanstalk [single container Docker platform](docker-singlecontainer-deploy.md) or [multicontainer Docker platform](create_deploy_docker_ecs.md)\.
+Although Elastic Beanstalk can use an AMI that isn't managed by Elastic Beanstalk, the increase in provisioning time that results from Elastic Beanstalk installing missing components can reduce or eliminate the benefits of creating a custom AMI in the first place\. Other Linux distributions might work with some troubleshooting but are not officially supported\. If your application requires a specific Linux distribution, one alternative is to create a Docker image and run it on the Elastic Beanstalk [single container Docker platform](single-container-docker.md) or [multicontainer Docker platform](create_deploy_docker_ecs.md)\.
 
 **To create a custom AMI**
 

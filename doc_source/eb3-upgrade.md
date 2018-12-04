@@ -1,4 +1,4 @@
-# `eb upgrade`<a name="eb3-upgrade"></a>
+# eb upgrade<a name="eb3-upgrade"></a>
 
 ## Description<a name="eb3-upgradedescription"></a>
 
@@ -8,9 +8,9 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 
 ## Syntax<a name="eb3-upgradesyntax"></a>
 
- `eb upgrade` 
+ eb upgrade 
 
- `eb upgrade environment-name` 
+ eb upgrade *environment\-name* 
 
 ## Options<a name="eb3-upgradeoptions"></a>
 

@@ -1,4 +1,4 @@
-# `eb status`<a name="eb3-status"></a>
+# eb status<a name="eb3-status"></a>
 
 ## Description<a name="eb3-status-description"></a>
 
@@ -8,9 +8,9 @@ If the root directory contains a `platform.yaml` file specifying a custom platfo
 
 ## Syntax<a name="eb3-status-syntax"></a>
 
- `eb status` 
+ eb status 
 
- `eb status environment-name` 
+ eb status *environment\-name* 
 
 ## Options<a name="eb3-statusoptions"></a>
 

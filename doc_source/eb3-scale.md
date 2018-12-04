@@ -1,4 +1,4 @@
-# `eb scale`<a name="eb3-scale"></a>
+# eb scale<a name="eb3-scale"></a>
 
 ## Description<a name="eb3-scaledescription"></a>
 
@@ -6,9 +6,9 @@ Scales the environment to always run on a specified number of instances, setting
 
 ## Syntax<a name="eb3-scalesyntax"></a>
 
- `eb scale number-of-instances` 
+ eb scale *number\-of\-instances* 
 
- `eb scale number-of-instances environment-name` 
+ eb scale *number\-of\-instances* *environment\-name* 
 
 ## Options<a name="eb3-scaleoptions"></a>
 

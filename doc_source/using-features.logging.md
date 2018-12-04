@@ -2,7 +2,7 @@
 
 The Amazon EC2 instances in your Elastic Beanstalk environment generate logs that you can view to troubleshoot issues with your application or configuration files\. Logs created by the web server, application server, Elastic Beanstalk platform scripts, and AWS CloudFormation are stored locally on individual instances\. You can easily retrieve them by using the environment management console or the EB CLI\. You can also configure your environment to stream logs to Amazon CloudWatch Logs in real time\.
 
-Tail logs are the last 100 lines of the most commonly used log files – Elastic Beanstalk operational logs and logs from the web server and/or application server\. When you request tail logs in the environment management console or with `eb logs`, an instance in your environment concatenates the most recent log entries into a single text file and uploads it to Amazon S3\.
+Tail logs are the last 100 lines of the most commonly used log files – Elastic Beanstalk operational logs and logs from the web server and/or application server\. When you request tail logs in the environment management console or with eb logs, an instance in your environment concatenates the most recent log entries into a single text file and uploads it to Amazon S3\.
 
 Bundle logs are full logs for a wider range of log files, including logs from yum and cron and several logs from AWS CloudFormation\. When you request bundle logs, an instance in your environment packages the full log files into a ZIP archive and uploads it to Amazon S3\.
 

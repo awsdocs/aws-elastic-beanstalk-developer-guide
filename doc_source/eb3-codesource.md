@@ -1,4 +1,4 @@
-# `eb codesource`<a name="eb3-codesource"></a>
+# eb codesource<a name="eb3-codesource"></a>
 
 ## Description<a name="eb3-codesourcedescription"></a>
 
@@ -10,11 +10,11 @@ For information about the AWS services offered in each region, see [Region Table
 
 ## Syntax<a name="eb3-codesourcesyntax"></a>
 
-`eb codesource` 
+eb codesource 
 
-`eb codesource codecommit`
+eb codesource codecommit
 
-`eb codesource local`
+eb codesource local
 
 ## Options<a name="eb3-codesourceoptions"></a>
 
@@ -27,15 +27,15 @@ For information about the AWS services offered in each region, see [Region Table
 
 ## Output<a name="eb3-codesourceoutput"></a>
 
-`eb codesource` prompts you to choose between AWS CodeCommit integration and standard deployments\.
+eb codesource prompts you to choose between AWS CodeCommit integration and standard deployments\.
 
-`eb codesource codecommit` initiates interactive repository configuration for AWS CodeCommit integration\.
+eb codesource codecommit initiates interactive repository configuration for AWS CodeCommit integration\.
 
-`eb codesource local` shows the original configuration and disables AWS CodeCommit integration\.
+eb codesource local shows the original configuration and disables AWS CodeCommit integration\.
 
 ## Examples<a name="eb3-codesourceexample"></a>
 
-Use `eb codesource codecommit` to configure AWS CodeCommit integration for the current branch\.
+Use eb codesource codecommit to configure AWS CodeCommit integration for the current branch\.
 
 ```
 ~/my-app$ eb codesource codecommit
@@ -52,7 +52,7 @@ Select a branch
 (default is 1): 1
 ```
 
-Use `eb codesource local` to disable AWS CodeCommit integration for the current branch\.
+Use eb codesource local to disable AWS CodeCommit integration for the current branch\.
 
 ```
 ~/my-app$ eb codesource local

@@ -12,7 +12,7 @@ The application version limit applies across all applications in a region\. If y
 
 By default, Elastic Beanstalk leaves the application version's [source bundle](applications-sourcebundle.md) in Amazon S3 to prevent loss of data\. You can delete the source bundle to save space\.
 
-You can set the lifecycle settings through the Elastic Beanstalk CLI and APIs\. See [`eb appversion`](eb3-appversion.md), [CreateApplication](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplication.html) \(using the `ResourceLifecycleConfig` parameter\), and [UpdateApplicationResourceLifecycle](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplicationResourceLifecycle.html) for details\.
+You can set the lifecycle settings through the Elastic Beanstalk CLI and APIs\. See [eb appversion](eb3-appversion.md), [CreateApplication](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_CreateApplication.html) \(using the `ResourceLifecycleConfig` parameter\), and [UpdateApplicationResourceLifecycle](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_UpdateApplicationResourceLifecycle.html) for details\.
 
 ## Setting the Application Lifecycle Settings in the Console<a name="applications-lifecycle-console"></a>
 

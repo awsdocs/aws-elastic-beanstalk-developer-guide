@@ -47,7 +47,7 @@ The Elastic Beanstalk console defaults to enhanced health reporting when you cre
 
 ## Enabling Enhanced Health Reporting with the EB CLI<a name="health-enhanced-enable-ebcli"></a>
 
-When you create a new environment with the `eb create` command, the EB CLI enables enhanced health reporting by default and applies the default instance profile and service role\.
+When you create a new environment with the eb create command, the EB CLI enables enhanced health reporting by default and applies the default instance profile and service role\.
 
 You can specify a different service role by name with the `--service-role` option\.
 
@@ -55,7 +55,7 @@ If you have an environment running with basic health reporting on a version 2 pl
 
 **To enable enhanced health on a running environment using the [EB CLI](eb-cli3.md)**
 
-1. Use the `eb config` command to open the configuration file in the default text editor\.
+1. Use the eb config command to open the configuration file in the default text editor\.
 
    ```
    ~/project$ eb config

@@ -95,7 +95,7 @@ Saved configurations are stored in the Elastic Beanstalk S3 bucket in a folder n
 
 ### EB CLI<a name="configuration-options-before-savedconfig-ebcli"></a>
 
-The [EB CLI](eb-cli3.md) also provides subcommands for interacting with saved configurations under [`eb config`](eb3-config.md):
+The [EB CLI](eb-cli3.md) also provides subcommands for interacting with saved configurations under [eb config](eb3-config.md):
 
 **To create a saved configuration \(EB CLI\)**
 
@@ -180,7 +180,7 @@ For example, the following JSON document sets the application's health check url
 
 ## EB CLI Configuration<a name="configuration-options-before-configyml"></a>
 
-In addition to supporting saved configurations and direct environment configuration with `eb config` commands, the EB CLI has a configuration file with an option named `default_ec2_keyname` that you can use to specify an Amazon EC2 key pair for SSH access to the instances in your environment\. The EB CLI uses this option to set the `EC2KeyName` configuration option in the `aws:autoscaling:launchconfiguration` namespace\. 
+In addition to supporting saved configurations and direct environment configuration with eb config commands, the EB CLI has a configuration file with an option named `default_ec2_keyname` that you can use to specify an Amazon EC2 key pair for SSH access to the instances in your environment\. The EB CLI uses this option to set the `EC2KeyName` configuration option in the `aws:autoscaling:launchconfiguration` namespace\. 
 
 **\~/workspace/my\-app/\.elasticbeanstalk/config\.yml**
 

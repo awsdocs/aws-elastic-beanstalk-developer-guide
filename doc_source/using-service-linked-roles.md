@@ -207,7 +207,7 @@ When you find out which Elastic Beanstalk environments are using the AWSServiceR
 
 1. In the **Confirm Termination** dialog box, type the environment name, and then choose **Terminate**\.
 
-See [`eb terminate`](eb3-terminate.md) for details about terminating an Elastic Beanstalk environment using the EB CLI\.
+See [eb terminate](eb3-terminate.md) for details about terminating an Elastic Beanstalk environment using the EB CLI\.
 
 See [TerminateEnvironment](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_TerminateEnvironment.html) for details about terminating an Elastic Beanstalk environment using the API\.
 

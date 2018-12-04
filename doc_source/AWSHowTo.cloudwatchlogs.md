@@ -113,13 +113,13 @@ After you enable log streaming, you can return to the **Software** configuration
 
 ### Instance Log Streaming Using the EB CLI<a name="AWSHowTo.cloudwatchlogs.streaming.ebcli"></a>
 
-To enable instance log streaming to CloudWatch Logs using the EB CLI, use the [`eb logs`](eb3-logs.md) command\.
+To enable instance log streaming to CloudWatch Logs using the EB CLI, use the [eb logs](eb3-logs.md) command\.
 
 ```
 $ eb logs --cloudwatch-logs enable
 ```
 
-You can also use `eb logs` to retrieve logs from CloudWatch Logs\. You can retrieve all the environment's instance logs, or use the command's many options to specify subsets of logs to retrieve\. For example, the following command retrieves the complete set of instance logs for your environment, and saves them to a directory under `.elasticbeanstalk/logs`\.
+You can also use eb logs to retrieve logs from CloudWatch Logs\. You can retrieve all the environment's instance logs, or use the command's many options to specify subsets of logs to retrieve\. For example, the following command retrieves the complete set of instance logs for your environment, and saves them to a directory under `.elasticbeanstalk/logs`\.
 
 ```
 $ eb logs --all

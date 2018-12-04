@@ -57,13 +57,13 @@ After you enable log streaming, you can return to the **Monitoring** configurati
 
 ### Environment Health Log Streaming Using the EB CLI<a name="AWSHowTo.cloudwatchlogs.envhealth.streaming.ebcli"></a>
 
-To enable environment health log streaming to CloudWatch Logs using the EB CLI, use the [`eb logs`](eb3-logs.md) command\.
+To enable environment health log streaming to CloudWatch Logs using the EB CLI, use the [eb logs](eb3-logs.md) command\.
 
 ```
 $ eb logs --cloudwatch-logs enable --cloudwatch-log-source environment-health
 ```
 
-You can also use `eb logs` to retrieve logs from CloudWatch Logs\. For example, the following command retrieves all the health logs for your environment, and saves them to a directory under `.elasticbeanstalk/logs`\.
+You can also use eb logs to retrieve logs from CloudWatch Logs\. For example, the following command retrieves all the health logs for your environment, and saves them to a directory under `.elasticbeanstalk/logs`\.
 
 ```
 $ eb logs --all --cloudwatch-log-source environment-health
