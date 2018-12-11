@@ -32,6 +32,8 @@ On Linux and macOS, use your preferred shell and package manager\. On Windows 10
 
 The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
 
+Additionally, this sample application is dependent on the [EFS](https://aws.amazon.com/efs) service, there are only specific regions where EFS is currently supported. Check the [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticfilesystem-region) page to see which regions these are.
+
 This tutorial was developed with WordPress version 4\.9\.5 and PHP 7\.0\.
 
 ## Launch a DB Instance in Amazon RDS<a name="php-hawordpress-tutorial-database"></a>
