@@ -28,7 +28,7 @@ Set up Express and create the project structure\. The following walks you throug
 1. Depending on your operating system, you may need to set your path to run the `express` command\. If you need to set your path, use the output from the previous step when you installed Express\. The following is an example\. 
 
    ```
-   ~/node-express$ export:PATH=$PATH:/usr/local/share/npm/bin/express
+   ~/node-express$ export PATH=$PATH:/usr/local/share/npm/bin/express
    ```
 
 1. Run the `express` command\. This generates `package.json`\. 

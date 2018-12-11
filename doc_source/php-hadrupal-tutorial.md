@@ -29,6 +29,8 @@ On Linux and macOS, use your preferred shell and package manager\. On Windows 10
 
 The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
 
+This tutorial uses Amazon Elastic File System, which is available only in certain AWS Regions\. For details, see [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticfilesystem-region)\.
+
 This tutorial was developed with Drupal version 8\.5\.3 and PHP 7\.0\.
 
 ## Launch a DB Instance in Amazon RDS<a name="php-hadrupal-tutorial-database"></a>

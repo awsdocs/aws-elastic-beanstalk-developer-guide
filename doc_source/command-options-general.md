@@ -319,7 +319,7 @@ Configure your environment to terminate EC2 instances that fail health checks\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  Automatically Terminate Unhealthy Instances  |  Terminate an instance if it fails health checks\.  |   `true`   |   `true`   `false`   | 
+|  Automatically Terminate Unhealthy Instances  |  Terminate an instance if it fails health checks\.  This option was only supported on [legacy environments](using-features.migration.md)\. It determined the health of an instance based on being able to reach it and on other instance\-based metrics\. Elastic Beanstalk doesn't provide a way to automatically terminate instances based on application health\.   |   `true`   |   `true`   `false`   | 
 
 ## aws:elasticbeanstalk:sns:topics<a name="command-options-general-elasticbeanstalksnstopics"></a>
 

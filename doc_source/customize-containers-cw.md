@@ -33,7 +33,7 @@ packages:
     perl-Bundle-LWP: []
 
 sources: 
-  /opt/cloudwatch: http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip
+  /opt/cloudwatch: https://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip
   
 container_commands:
   01-setupcron:

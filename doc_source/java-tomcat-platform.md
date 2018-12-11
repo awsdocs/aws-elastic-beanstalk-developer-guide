@@ -112,4 +112,16 @@ option_settings:
     /pub: public
 ```
 
+### Include Elastic Beanstalk Configurations Files<a name="java-tomcat-ebextensions"></a>
+
+To deploy `.ebextensions` configuration files, include them in your application source\. For a single application, add your `.ebextensions` to a compressed WAR file by running the following command:
+
+**Example**  
+
+```
+zip -ur your_application.war .ebextensions
+```
+
+For an application requiring multiple WAR files, see [Bundling Multiple WAR Files for Tomcat Environments](java-tomcat-multiple-war-files.md) for further instructions\.
+
 Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration Options](command-options.md) for more information\.

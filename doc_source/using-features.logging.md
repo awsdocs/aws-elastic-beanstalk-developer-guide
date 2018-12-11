@@ -78,7 +78,7 @@ For example, logs from instance `i-0a1fd158`, in Elastic Beanstalk environment `
 **Note**  
 You can find your environment ID in the [environment management console](environments-console.md)\.
 
-Elastic Beanstalk deletes tail and bundle logs from Amazon S3 automatically 15 minutes after they are created\. Rotated logs persist until you delete them or move them to Amazon Glacier\.
+Elastic Beanstalk deletes tail and bundle logs from Amazon S3 automatically 15 minutes after they are created\. Rotated logs persist until you delete them or move them to Glacier\.
 
 ## Log Rotation Settings on Linux<a name="health-logs-logrotate"></a>
 

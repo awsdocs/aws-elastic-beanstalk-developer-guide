@@ -23,7 +23,7 @@ The following table lists some objects that Elastic Beanstalk stores in your `el
 
 When you terminate an environment or delete an application, Elastic Beanstalk deletes most related objects from Amazon S3\. To minimize storage costs of a running application, routinely delete objects that your application doesn't need\. In addition, pay attention to objects that you have to delete manually, as listed in [Contents of the Elastic Beanstalk Amazon S3 Bucket](#AWSHowTo.S3.content)\. To ensure that private information isn't unnecessarily retained, delete these objects when you don't need them anymore\.
 + Delete application versions that you don't expect to use in your application anymore\. When you delete an application version, you can select **Delete versions from Amazon S3** to also delete the related source bundle—a copy of your application's source code and configurations files, which Elastic Beanstalk uploaded to Amazon S3 when you deployed an application or uploaded an application version\. To learn how to delete an application version, see [Managing Application Versions](applications-versions.md)\.
-+ Delete rotated logs that you don't need\. Alternatively, download them or move them to Amazon Glacier for further analysis\.
++ Delete rotated logs that you don't need\. Alternatively, download them or move them to Amazon S3 Glacier for further analysis\.
 + Delete saved configurations that you aren't going to use in any environment anymore\.
 
 ## Deleting the Elastic Beanstalk Amazon S3 Bucket<a name="AWSHowTo.S3.delete-bucket"></a>

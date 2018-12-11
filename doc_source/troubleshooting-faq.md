@@ -12,10 +12,6 @@ You can pick specific Availability Zones using the APIs, CLI, Eclipse plugin, or
 
 The default set of resources used by an Elastic Beanstalk environment don't incur charges in the Free Tier\. However, if you change the Amazon EC2 instance type, add Amazon EC2 instances, or run resources outside of your Elastic Beanstalk environment, charges may be accrued\. For information about the Free Tier, see [AWS Free Tier](https://aws.amazon.com/free)\. If you have questions about your account, contact our [ customer service team](https://aws-portal.amazon.com/gp/aws/html-forms-controller/contactus/aws-account-and-billing) directly\.
 
-**Question:** *Can I receive notifications by SMS?*
-
-If you specify an SMS email address, such as one constructed on [http://www\.makeuseof\.com/tag/email\-to\-sms](http://www.makeuseof.com/tag/email-to-sms/), you will receive the notifications by SMS\. To subscribe to more than one email address, you can use the Elastic Beanstalk command line to register an Amazon SNS topic with an environment\.
-
 **Question:** *How do I change my environment's instance type?*
 
 In the **Web Tier** section of the environment configuration page, choose the gear icon on the **Instances** card\. Select a new instance type and choose **Apply** to update your environment\. Elastic Beanstalk will terminate all running instances and replace them with new ones\.
