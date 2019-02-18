@@ -11,19 +11,19 @@ A Launch Now URL uses standard URL syntax\. For more information, see [RFC 3986 
 The URL must contain the following parameters, which are case\-sensitive:
 + **region** – Specify an AWS Region\. For a list of regions supported by Elastic Beanstalk, see [AWS Elastic Beanstalk](http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region) in the *Amazon Web Services General Reference*\.
 + **applicationName** – Specify the name of your application\. Elastic Beanstalk displays the application name in the AWS Management Console to distinguish it from other applications\. By default, the application name also forms the basis of the environment name and environment URL\.
-+ **platform** – Specify the platform configuration to use for the environment\. Use one of the following methods, then URL\-encode your choice:
-  + Specify the configuration's ARN without a version\. Elastic Beanstalk selects the configuration's latest version\. For example:
++ **platform** – Specify the platform version to use for the environment\. Use one of the following methods, then URL\-encode your choice:
+  + Specify a platform ARN without a version\. Elastic Beanstalk selects the latest platform version of the corresponding platform major version\. For example, to select the latest Python 3\.6 platform version, specify:
 
     `Python 3.6 running on 64bit Amazon Linux`
-  + Specify the platform name\. Elastic Beanstalk selects the latest version of the platform's latest language configuration\. For example:
+  + Specify the platform name\. Elastic Beanstalk selects the latest version of the platform's latest language runtime\. For example:
 
     `Python`
 
-  For a description of all available platforms and their configurations, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
+  For a description of all available platforms and their versions, see [AWS Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
 
-  You can use the [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/) \(AWS CLI\) to get a list of available configurations with their respective ARNs\. The `list-platform-versions` command lists detailed information about all available configurations\. The `--filters` argument allows you to scope down the list\. For example, you can list all configurations of a specific language\.
+  You can use the [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/) \(AWS CLI\) to get a list of available platform versions with their respective ARNs\. The `list-platform-versions` command lists detailed information about all available platform versions\. The `--filters` argument allows you to scope down the list\. For example, you can list all platform versions of a specific language\.
 
-  The following example queries for all Python configurations, and pipes the output through a series of commands\. The result is the platform configuration name of each ARN, in human\-readable format, without URL encoding\.
+  The following example queries for all Python platform versions, and pipes the output through a series of commands\. The result is a list of platform version ARNs \(without the `/version` tail\), in human\-readable format, with no URL encoding\.
 
   ```
   $ aws elasticbeanstalk list-platform-versions --filters 'Type="PlatformName",Operator="contains",Values="Python"' | grep PlatformArn | awk -F '"' '{print $4}' | awk -F '/' '{print $2}'

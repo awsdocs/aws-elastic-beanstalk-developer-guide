@@ -53,7 +53,7 @@ If an update fails, you can find the reason for the failure on the [Managed Upda
 
 ## The Managed Update Maintenance Window<a name="environment-platform-update-managed-window"></a>
 
-When AWS releases a new version of your environment's platform configuration, Elastic Beanstalk schedules a managed platform update during the next weekly maintenance window\. Maintenance windows are two hours long\. Elastic Beanstalk starts a scheduled update during the maintenance window, but the update might not complete until after the windows ends\.
+When AWS releases a new version of your environment's platform, Elastic Beanstalk schedules a managed platform update during the next weekly maintenance window\. Maintenance windows are two hours long\. Elastic Beanstalk starts a scheduled update during the maintenance window, but the update might not complete until after the windows ends\.
 
 ## Minor and Patch Version Updates<a name="environment-platform-update-managed-versioning"></a>
 
@@ -63,11 +63,14 @@ In a platform version number, the second number is the minor update version, and
 
 ## Immutable Environment Updates<a name="environment-platform-update-managed-immutable"></a>
 
-Managed platform updates perform [immutable environment updates](environmentmgmt-updates-immutable.md) to upgrade your environment to a new platform version\. Immutable updates update your environment without taking any instances out of service or modifying your environment, prior to confirming that instances running the new configuration pass health checks\. 
+Managed platform updates perform [immutable environment updates](environmentmgmt-updates-immutable.md) to upgrade your environment to a new platform version\. Immutable updates update your environment without taking any instances out of service or modifying your environment, prior to confirming that instances running the new version pass health checks\. 
 
-In an immutable update, Elastic Beanstalk deploys as many instances as are currently running with the new platform version\. The new instances begin to take requests alongside those running the old version\. If the new set of instances passes all health checks, Elastic Beanstalk terminates the old set of instances, leaving only instances with the new configuration\.
+In an immutable update, Elastic Beanstalk deploys as many instances as are currently running with the new platform version\. The new instances begin to take requests alongside those running the old version\. If the new set of instances passes all health checks, Elastic Beanstalk terminates the old set of instances, leaving only instances with the new version\.
 
-Managed platform updates always perform immutable updates, even when you apply them outside of the maintenance window\. If you change the platform configuration from the **Dashboard**, Elastic Beanstalk applies the update policy that you've chosen for configuration updates\.
+Managed platform updates always perform immutable updates, even when you apply them outside of the maintenance window\. If you change the platform version from the **Dashboard**, Elastic Beanstalk applies the update policy that you've chosen for configuration updates\.
+
+**Warning**  
+During managed platform updates with instance replacement enabled, immutable updates, and deployments with immutable updates enabled all instances are replaced\. This causes all acculumated [Amazon EC2 Burst Balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\.
 
 ## Managing Managed Updates<a name="environment-platform-update-managed-managing"></a>
 

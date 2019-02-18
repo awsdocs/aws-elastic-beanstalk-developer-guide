@@ -43,7 +43,7 @@ When users connect to your website, their requests may be routed through a numbe
 
 ## Software Updates and Patching<a name="concepts.concepts.design.updates"></a>
 
-Elastic Beanstalk periodically updates its platform configurations with new software and patches\. Elastic Beanstalk does not upgrade running environments to new configuration versions automatically, but you can initiate a [platform upgrade](using-features.platform.upgrade.md) to update your running environment in place\. Platform upgrades use [rolling updates](using-features.rollingupdates.md) to keep your application available by applying changes in batches\.
+Elastic Beanstalk periodically updates its platforms with new software and patches\. Elastic Beanstalk doesn't upgrade running environments to new platform versions automatically, but you can initiate a [platform update](using-features.platform.upgrade.md) to update your running environment in place\. Platform updates use [rolling updates](using-features.rollingupdates.md) to keep your application available by applying changes in batches\.
 
 ## Connectivity<a name="concepts.concepts.design.connectivity"></a>
 

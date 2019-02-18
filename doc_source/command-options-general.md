@@ -99,7 +99,7 @@ Configure scaling triggers for your environment's Auto Scaling group\.
 |  BreachDuration  |  Amount of time, in minutes, a metric can be beyond its defined limit \(as specified in the `UpperThreshold` and `LowerThreshold`\) before the trigger fires\.  |   `5`   |  `1` to `600`  | 
 |  LowerBreachScaleIncrement  |  How many Amazon EC2 instances to remove when performing a scaling activity\.  |   `-1`   |   | 
 |  LowerThreshold  |  If the measurement falls below this number for the breach duration, a trigger is fired\.  |   `2000000`   |  `0` to `20000000`  | 
-|  MeasureName  |  Metric used for your Auto Scaling trigger\.  |   `NetworkOut`   |   `CPUUtilization`   `NetworkIn`   `NetworkOut`   `DiskWriteOps`   `DiskReadBytes`   `DiskReadOps`   `DiskWriteBytes`   `Latency`   `RequestCount`   `HealthyHostCount`   `UnhealthyHostCount`   | 
+|  MeasureName  |  Metric used for your Auto Scaling trigger\.  |   `NetworkOut`   |   `CPUUtilization`   `NetworkIn`   `NetworkOut`   `DiskWriteOps`   `DiskReadBytes`   `DiskReadOps`   `DiskWriteBytes`   `Latency`   `RequestCount`   `HealthyHostCount`   `UnhealthyHostCount`   `TargetResponseTime`   | 
 |  Period  |  Specifies how frequently Amazon CloudWatch measures the metrics for your trigger\.  |   `5`   |   | 
 |  Statistic  |  Statistic the trigger should use, such as `Average`\.  |   `Average`   |   `Minimum`   `Maximum`   `Sum`   `Average`   | 
 |  Unit  |  Unit for the trigger measurement, such as `Bytes`\.  |   `Bytes`   |   `Seconds`   `Percent`   `Bytes`   `Bits`   `Count`   `Bytes/Second`   `Bits/Second`   `Count/Second`   `None`   | 
@@ -271,7 +271,7 @@ Configure enhanced health reporting for your environment\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
 | --- | --- | --- | --- | 
-|  SystemType  | Health reporting system \([basic](using-features.healthstatus.md) or [enhanced](health-enhanced.md)\)\. Enhanced health reporting requires a [service role](concepts-roles-service.md) and a version 2 or newer [platform configuration](concepts.platforms.md)\. |   `basic`   |   `basic`   `enhanced`   | 
+|  SystemType  | Health reporting system \([basic](using-features.healthstatus.md) or [enhanced](health-enhanced.md)\)\. Enhanced health reporting requires a [service role](concepts-roles-service.md) and a version 2 or newer [platform version](concepts.platforms.md)\. |   `basic`   |   `basic`   `enhanced`   | 
 | ConfigDocument | A JSON document describing the environment and instance metrics to publish to CloudWatch\. | None |  | 
 |  HealthCheckSuccessThreshold  | Lower the threshold for instances to pass health checks\. |  `Ok`  |  `Ok` `Warning` `Degraded` `Severe`  | 
 

@@ -29,7 +29,7 @@ You can configure the EB CLI to deploy an artifact from your build process inste
 |  `-m` "*version\_description*" or `--message` "*version\_description*"  |  The description for the application version, enclosed in double quotation marks\. Type: String  | 
 |  `--modules` *component\-a component\-b*  | List of components to update\. Only for use with [Compose Environments](ebcli-compose.md)\. | 
 |  `-p` or `--process`  |  Preprocess and validate the environment manifest and configuration files in the source bundle\. Validating configuration files can identify issues prior to deploying the application version to an environment\.  | 
-|  `--source codecommit/repository-name/branch-name`  |  AWS CodeCommit repository and branch\. See [Using the EB CLI with AWS CodeCommit](eb-cli-codecommit.md)\.  | 
+|  `--source codecommit/repository-name/branch-name`  |  CodeCommit repository and branch\. See [Using the EB CLI with AWS CodeCommit](eb-cli-codecommit.md)\.  | 
 |  `--staged`  |  Deploy files staged in the git index instead of the HEAD commit\.  | 
 |  `--timeout` *minutes*  |  The number of minutes before the command times out\.  | 
 |  `--version` *version\_label*  |  An existing application version to deploy\. Type: String  | 
@@ -39,7 +39,7 @@ You can configure the EB CLI to deploy an artifact from your build process inste
 
 If successful, the command returns the status of the `deploy` operation\.
 
-If you enabled AWS CodeBuild support in your application, eb deploy displays information from AWS CodeBuild as your code is built\. Learn more about AWS CodeBuild support in Elastic Beanstalk in the [Using the EB CLI with AWS CodeBuild](eb-cli-codebuild.md) topic\.
+If you enabled CodeBuild support in your application, eb deploy displays information from CodeBuild as your code is built\. For information about CodeBuild support in Elastic Beanstalk, see [Using the EB CLI with AWS CodeBuild](eb-cli-codebuild.md)\.
 
 ## Example<a name="eb3-deployexample"></a>
 

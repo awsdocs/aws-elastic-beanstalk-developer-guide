@@ -92,27 +92,27 @@ This example configuration defines two containers, a PHP web site with an nginx 
 
 The volumes defined in the configuration correspond to the content that you will create next and upload as part of your application source bundle\. The containers access content on the host by mounting volumes in the `mountPoints` section of the container definitions\. 
 
-For more information on the format of `Dockerrun.aws.config` and its parameters, see [Container Definition Format](create_deploy_docker_v2config.md#create_deploy_docker_v2config_dockerrun_format)\. 
+For more information on the format of `Dockerrun.aws.json` and its parameters, see [Container Definition Format](create_deploy_docker_v2config.md#create_deploy_docker_v2config_dockerrun_format)\. 
 
 ## Add Content<a name="create_deploy_docker_ecstutorial_code"></a>
 
 Next you will add some content for your PHP site to display to visitors, and a configuration file for the nginx proxy\. 
 
-**php\-app\\index\.php**
+**php\-app/index\.php**
 
 ```
 <h1>Hello World!!!</h1>
 <h3>PHP Version <pre><?= phpversion()?></pre></h3>
 ```
 
-**php\-app\\static\.html**
+**php\-app/static\.html**
 
 ```
 <h1>Hello World!</h1>
 <h3>This is a static HTML page.</h3>
 ```
 
-**proxy\\conf\.d\\default\.conf**
+**proxy/conf\.d/default\.conf**
 
 ```
 server {
@@ -144,10 +144,13 @@ server {
 Your application folder now contains the following files:
 
 ```
-php-app\index.php
-php-app\static.html
-proxy\conf.d\default.conf
-Dockerrun.aws.json
+├── Dockerrun.aws.json
+├── php-app
+│   ├── index.php
+│   └── static.html
+└── proxy
+    └── conf.d
+        └── default.conf
 ```
 
 This is all you need to create the Elastic Beanstalk environment\. Create a `.zip` archive of the above files and folders \(not including the top\-level project folder\)\. To create the archive in Windows explorer, select the contents of the project folder, right\-click, select **Send To**, and then click **Compressed \(zipped\) Folder** 

@@ -9,7 +9,7 @@ As you develop your application, you will deploy it often, possibly to several d
 **Note**  
 Modify the resources in your environment only by using Elastic Beanstalk\. If you modify resources using another service's console, CLI commands, or SDKs, Elastic Beanstalk won't be able to accurately monitor the state of those resources, and you won't be able to save the configuration or reliably recreate the environment\. Out\-of band\-changes can also cause issues when terminating an environment\.
 
-When you launch an environment, you choose a platform configuration\. We update platform configurations periodically to provide performance improvements and new features\. You can [update your environment to the latest platform configuration](using-features.platform.upgrade.md) at any time\.
+When you launch an environment, you choose a platform version\. We update platforms periodically with new platform versions to provide performance improvements and new features\. You can [update your environment to the latest platform version](using-features.platform.upgrade.md) at any time\.
 
 As your application grows in complexity, you can split it into multiple components, each running in a separate environment\. For long\-running workloads, you can launch [worker environments](using-features-managing-env-tiers.md) that process jobs from an Amazon Simple Queue Service \(Amazon SQS\) queue\.
 

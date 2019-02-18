@@ -6,15 +6,15 @@ In addition to changes in how health color works, enhanced health adds a *status
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-dashboard-cause.png)
 
-To provide detailed health information about the EC2 instances running in your environment, Elastic Beanstalk includes a [health agent](#health-enhanced-agent) in the Amazon Machine Image \(AMI\) for each platform configuration that supports enhanced health\. The health agent monitors web server logs and system metrics and relays them to the Elastic Beanstalk service\. Elastic Beanstalk analyzes these metrics along with data from Elastic Load Balancing and Amazon EC2 Auto Scaling to provide an overall picture of an environment's health\.
+To provide detailed health information about the EC2 instances running in your environment, Elastic Beanstalk includes a [health agent](#health-enhanced-agent) in the Amazon Machine Image \(AMI\) for each platform version that supports enhanced health\. The health agent monitors web server logs and system metrics and relays them to the Elastic Beanstalk service\. Elastic Beanstalk analyzes these metrics along with data from Elastic Load Balancing and Amazon EC2 Auto Scaling to provide an overall picture of an environment's health\.
 
 In addition to collecting and presenting information about your environment's resources, Elastic Beanstalk monitors the resources in your environment for several error conditions and provides notifications to help you avoid failures and resolve configuration issues\. [Factors that influence your environment's health](#health-enhanced-factors) include the results of each request served by your application, metrics from your instances' operating system, and the status of the most recent deployment\.
 
 You can view health status in real time by using the [environment dashboard](health-enhanced-console.md) in the AWS Management Console or the [eb health](health-enhanced-ebcli.md) command in the [Elastic Beanstalk command line interface](eb-cli3.md) \(EB CLI\)\. To record and track environment and instance health over time, you can configure your environment to publish the information gathered by Elastic Beanstalk for enhanced health reporting to Amazon CloudWatch as custom metrics\. CloudWatch [charges](https://aws.amazon.com/cloudwatch/pricing/) for custom metrics apply to all metrics other than `EnvironmentHealth`, which is free of charge\.
 
-Enhanced health reporting requires a version 2 or newer [ platform configuration](concepts.platforms.md) and is supported by all platforms except Windows Server with IIS\. In order to monitor resources and publish metrics, your environment must have both an [instance profile and service](#health-enhanced) role\. The Multicontainer Docker configuration does not include a web server by default but can be used with enhanced health reporting if you configure your web server to [provide logs in the proper format](health-enhanced-serverlogs.md)\.
+Enhanced health reporting requires a version 2 or newer [ platform version](concepts.platforms.md) and is supported by all platforms except Windows Server with IIS\. In order to monitor resources and publish metrics, your environment must have both an [instance profile and service](#health-enhanced) role\. The Multicontainer Docker platform doesn't include a web server by default but can be used with enhanced health reporting if you configure your web server to [provide logs in the proper format](health-enhanced-serverlogs.md)\.
 
-The first time you create an environment with a version 2 platform configuration in the AWS Management Console, Elastic Beanstalk prompts you to create the required roles and enables enhanced health reporting by default\. Continue reading for details on how enhanced health reporting works, or go to [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) to get started using it right away\.
+The first time you create an environment with a version 2 platform version in the AWS Management Console, Elastic Beanstalk prompts you to create the required roles and enables enhanced health reporting by default\. Continue reading for details on how enhanced health reporting works, or go to [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) to get started using it right away\.
 
 **Topics**
 + [The Elastic Beanstalk Health Agent](#health-enhanced-agent)
@@ -35,7 +35,7 @@ The first time you create an environment with a version 2 platform configuration
 
 ## The Elastic Beanstalk Health Agent<a name="health-enhanced-agent"></a>
 
-The Elastic Beanstalk health agent is a daemon process that runs on each EC2 instance in your environment, monitoring operating system and application\-level health metrics and reporting issues to Elastic Beanstalk\. The health agent is included in all Linux platform solution stacks starting with version 2\.0 of each configuration\.
+The Elastic Beanstalk health agent is a daemon process that runs on each EC2 instance in your environment, monitoring operating system and application\-level health metrics and reporting issues to Elastic Beanstalk\. The health agent is included in all Linux platform versions starting with version 2\.0 of each platform\.
 
 The health agent reports similar metrics to those [published to CloudWatch](using-features.healthstatus.md#monitoring-basic-cloudwatch) by Amazon EC2 Auto Scaling and Elastic Load Balancing as part of [basic health reporting](using-features.healthstatus.md), including CPU load, HTTP codes, and latency\. The health agent, however, reports directly to Elastic Beanstalk, with greater granularity and frequency than basic health reporting\.
 
@@ -98,7 +98,7 @@ For a web server environment to be considered healthy, each instance in the envi
 
 When no operation is in progress on an environment, the primary source of information about instance and environment health is the web server logs for each instance\. To determine the health of an instance and the overall health of the environment, Elastic Beanstalk considers the number of requests, the result of each request, and the speed at which each request was resolved\.
 
-If you use Multicontainer Docker, which does not include a web server, or disable the web server \(nginx or Apache\) that is included in other Elastic Beanstalk platforms, additional configuration is required to get the [Elastic Beanstalk health agent](#health-enhanced-agent) logs in the format that it needs to relay health information to the Elastic Beanstalk service\. See [Enhanced Health Log Format](health-enhanced-serverlogs.md) for details\.
+If you use Multicontainer Docker, which doesn't include a web server, or disable the web server \(nginx or Apache\) that is included in other Elastic Beanstalk platforms, additional configuration is required to get the [Elastic Beanstalk health agent](#health-enhanced-agent) logs in the format that it needs to relay health information to the Elastic Beanstalk service\. See [Enhanced Health Log Format](health-enhanced-serverlogs.md) for details\.
 
 ### Operating System Metrics<a name="health-enhanced-factors-healthcheck"></a>
 

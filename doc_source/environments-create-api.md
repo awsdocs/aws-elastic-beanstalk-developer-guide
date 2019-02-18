@@ -7,7 +7,7 @@
 **Example**  
 
    ```
-   1. https://elasticbeanstalk.us-east-2.amazon.com/?CNAMEPrefix=sampleapplication
+   1. https://elasticbeanstalk.us-east-2.amazonaws.com/?CNAMEPrefix=sampleapplication
    2. &Operation=CheckDNSAvailability
    3. &AuthParams
    ```
@@ -18,7 +18,7 @@
 **Example**  
 
    ```
-   1. https://elasticbeanstalk.us-east-2.amazon.com/?ApplicationName=SampleApp
+   1. https://elasticbeanstalk.us-east-2.amazonaws.com/?ApplicationName=SampleApp
    2. &VersionLabel=Version2
    3. &Operation=DescribeApplicationVersions
    4. &AuthParams
@@ -31,7 +31,7 @@
 **Example**  
 
    ```
-   1. https://elasticbeanstalk.us-east-2.amazon.com/?ApplicationName=SampleApp
+   1. https://elasticbeanstalk.us-east-2.amazonaws.com/?ApplicationName=SampleApp
    2. &TemplateName=MyConfigTemplate
    3. &Operation=CreateConfigurationTemplate
    4. &SolutionStackName=64bit%20Amazon%20Linux%202015.03%20v2.0.0%20running%20Ruby%202.2%20(Passenger%20Standalone)
@@ -53,7 +53,7 @@
 **Example**  
 
       ```
-       1. https://elasticbeanstalk.us-east-2.amazon.com/?ApplicationName=SampleApp
+       1. https://elasticbeanstalk.us-east-2.amazonaws.com/?ApplicationName=SampleApp
        2. &VersionLabel=Version2
        3. &EnvironmentName=SampleAppEnv2
        4. &TemplateName=MyConfigTemplate
@@ -78,7 +78,7 @@
       + `OptionSettings.member.1.Value` = `aws-elasticbeanstalk-ec2-role`
       + `OptionSettings.member.2.Namespace` = `aws:elasticbeanstalk:sqsd`
       + `OptionSettings.member.2.OptionName` = `WorkerQueueURL`
-      + `OptionSettings.member.2.Value` = `sqsd.elasticbeanstalk.us-east-2.amazon.com`
+      + `OptionSettings.member.2.Value` = `sqsd.elasticbeanstalk.us-east-2.amazonaws.com`
       + `OptionSettings.member.3.Namespace` = `aws:elasticbeanstalk:sqsd`
       + `OptionSettings.member.3.OptionName` = `HttpPath`
       + `OptionSettings.member.3.Value` = `/`
@@ -103,7 +103,7 @@
 **Example**  
 
       ```
-       1. https://elasticbeanstalk.us-east-2.amazon.com/?ApplicationName=SampleApp
+       1. https://elasticbeanstalk.us-east-2.amazonaws.com/?ApplicationName=SampleApp
        2. &VersionLabel=Version2
        3. &EnvironmentName=SampleAppEnv2
        4. &TemplateName=MyConfigTemplate
@@ -115,7 +115,7 @@
       10. &OptionSettings.member.1.Value=aws-elasticbeanstalk-ec2-role
       11. &OptionSettings.member.2.Namespace=aws%3Aelasticbeanstalk%3Asqsd
       12. &OptionSettings.member.2.OptionName=WorkerQueueURL
-      13. &OptionSettings.member.2.Value=sqsd.elasticbeanstalk.us-east-2.amazon.com
+      13. &OptionSettings.member.2.Value=sqsd.elasticbeanstalk.us-east-2.amazonaws.com
       14. &OptionSettings.member.3.Namespace=aws%3elasticbeanstalk%3sqsd
       15. &OptionSettings.member.3.OptionName=HttpPath
       16. &OptionSettings.member.3.Value=%2F

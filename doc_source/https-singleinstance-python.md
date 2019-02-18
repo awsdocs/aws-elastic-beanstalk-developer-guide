@@ -6,13 +6,7 @@ Add the following snippet to your [configuration file](ebextensions.md), replaci
 + The `packages` key uses yum to install `mod24_ssl`\.
 + The `files` key creates the following files on the instance:  
 `/etc/httpd/conf.d/ssl.conf`  
-Configures the Apache server\. Replace *python site\-packages directories* with the Python site\-packages directories in your environment, separating each directory with a colon \(:\)\. The Python site\-packages directories vary depending on your environment\.     
-Python 2\.7  
-  + `/opt/python/run/venv/lib/python2.7/site-packages`
-  + `/opt/python/run/venv/lib64/python2.7/site-packages`  
-Python 3\.4  
-  + `/opt/python/run/venv/lib/python3.4/site-packages`
-  + `/opt/python/run/venv/lib64/python3.4/site-packages`
+Configures the Apache server\. If your application is not named `application.py`, replace the highlighted text in the value for `WSGIScriptAlias` with the local path to your application\. For example, a django application's may be at `django/wsgi.py`\. The location should match the value of the `WSGIPath` option that you set for your environment\.  
 Depending on your application requirements, you may also need to add other directories to the python\-path parameter\.   
 `/etc/pki/tls/certs/server.crt`  
 Creates the certificate file on the instance\. Replace *certificate file contents* with the contents of your certificate\.  
@@ -33,7 +27,6 @@ If you have intermediate certificates, include them in `server.crt` after your s
 `/etc/pki/tls/certs/server.key`  
 Creates the private key file on the instance\. Replace *private key contents* with the contents of the private key used to create the certificate request or self\-signed certificate\. 
 + The `container_commands` key stops the httpd service after everything has been configured so that the service uses the new `https.conf` file and certificate\.
-+ If your application is not named `application.py`, replace the highlighted text in the value for `WSGIScriptAlias` with the local path to your application\. For example, a django application's may be at `django/wsgi.py`\. The location should match the value of the `WSGIPath` option that you set for your environment\.
 
 **Note**  
 The example works only in environments using the [Python](create-deploy-python-container.md) platform\.
@@ -74,7 +67,8 @@ files:
         </Directory>
         
         WSGIDaemonProcess wsgi-ssl processes=1 threads=15 display-name=%{GROUP} \
-          python-path=/opt/python/current/app:<python site-packages directories> \
+          python-path=/opt/python/current/app \
+          python-home=/opt/python/run/venv \
           home=/opt/python/current/app \
           user=wsgi \
           group=wsgi

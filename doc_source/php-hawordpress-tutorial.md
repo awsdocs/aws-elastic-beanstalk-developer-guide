@@ -1,6 +1,6 @@
 # Deploying a High\-Availability WordPress Website with an External Amazon RDS Database to Elastic Beanstalk<a name="php-hawordpress-tutorial"></a>
 
-This tutorial describes how you [launch an Amazon RDS DB instance](AWSHowTo.RDS.md) that is external to AWS Elastic Beanstalk\. Then it describes how to configure a high\-availability environment running a WordPress website to connect to it\. Running a DB instance external to Elastic Beanstalk decouples the database from the lifecycle of your environment\. This lets you connect to the same database from multiple environments, swap out one database for another, or perform a blue/green deployment without affecting your database\.
+This tutorial describes how you [launch an Amazon RDS DB instance](AWSHowTo.RDS.md) that is external to AWS Elastic Beanstalk\. Then it describes how to configure a high\-availability environment running a WordPress website to connect to it\. The website uses Amazon Elastic File System \(Amazon EFS\) as shared storage for uploaded files\. Running a DB instance external to Elastic Beanstalk decouples the database from the lifecycle of your environment\. This lets you connect to the same database from multiple environments, swap out one database for another, or perform a blue/green deployment without affecting your database\.
 
 **Topics**
 + [Prerequisites](#php-wordpress-tutorial-prereqs)
@@ -32,7 +32,7 @@ On Linux and macOS, use your preferred shell and package manager\. On Windows 10
 
 The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
 
-This tutorial uses Amazon Elastic File System, which is available only in certain AWS Regions\. For details, see [AWS Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticfilesystem-region)\.
+The sample application uses Amazon EFS\. It only works in AWS Regions that support Amazon EFS\. To learn about supporting AWS Regions, see [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticfilesystem-region) in the *Amazon Web Services General Reference*\.
 
 This tutorial was developed with WordPress version 4\.9\.5 and PHP 7\.0\.
 
@@ -63,7 +63,7 @@ Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosin
 
 1. Under **Database options**, for **Database name**, type **ebdb**\. Make a note of the **Database port** value for use later\.
 
-1. Verify the default settings for the remaining options, and choose **Launch DB instance**\.
+1. Verify the default settings for the remaining options, and choose **Create database**\.
 
 Next, modify the security group attached to your DB instance to allow inbound traffic on the appropriate port\. This is the same security group that you will attach to your Elastic Beanstalk environment later, so the rule that you add will grant ingress permission to other resources in the same security group\.
 
@@ -71,14 +71,14 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 
 1. Open the [ Amazon RDS console](https://console.aws.amazon.com/rds/home)\.
 
-1. Choose **Instances**\.
+1. Choose **Databases**\.
 
 1. Choose the name of your DB instance to view its details\.
 
-1. Under **Details** section, note the **Subnets**, **Security groups**, and **Endpoint** shown on this page so you can use this information later\.
+1. In the **Connectivity** section, note the **Subnets**, **Security groups**, and **Endpoint** shown on this page so you can use this information later\.
 
-1. Under **Security and network**, you can see the security group associated with the DB instance\. Open the link to view the security group in the Amazon EC2 console\.  
-![\[Details section of a DB instance page in the Amazon RDS console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup.png)
+1. Under **Security**, you can see the security group associated with the DB instance\. Open the link to view the security group in the Amazon EC2 console\.  
+![\[Connectivity section of a DB instance page in the Amazon RDS console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup.png)
 
 1. In the security group details, choose **Inbound**\.
 
@@ -423,11 +423,11 @@ In addition, you can terminate database resources that you created outside of yo
 
 1. Open the [Amazon RDS console](https://console.aws.amazon.com/rds)\.
 
-1. Choose **Instances**\.
+1. Choose **Databases**\.
 
 1. Choose your DB instance\.
 
-1. Choose **Instance actions**, and then choose **Delete**\.
+1. Choose **Actions**, and then choose **Delete**\.
 
 1. Choose whether to create a snapshot, and then choose **Delete**\.
 

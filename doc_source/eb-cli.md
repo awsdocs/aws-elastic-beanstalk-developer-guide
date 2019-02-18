@@ -18,19 +18,19 @@ EB CLI introduces the commands eb create, eb deploy, eb open, eb console, eb sca
 
 For more information about using EB CLI 3 commands to create and manage an application, see [EB CLI Command Reference](eb3-cmd-commands.md)\. For a walkthrough of how to deploy a sample application using EB CLI 3, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
 
-## Migrating to EB CLI 3 and AWS CodeCommit<a name="eb-cli2-migrating"></a>
+## Migrating to EB CLI 3 and CodeCommit<a name="eb-cli2-migrating"></a>
 
-Elastic Beanstalk has not only deprecated EB CLI 2\.6, but is also removing some 2\.6 functionality\. The most significant change from 2\.6 is that EB CLI no longer natively supports incremental code updates \(eb push, `git aws.push`\) or branching \(eb branch\)\. This section describes how to migrate from EB CLI 2\.6 to the latest version of EB CLI and use AWS CodeCommit as your code repository\.
+Elastic Beanstalk has not only deprecated EB CLI 2\.6, but is also removing some 2\.6 functionality\. The most significant change from 2\.6 is that EB CLI no longer natively supports incremental code updates \(eb push, `git aws.push`\) or branching \(eb branch\)\. This section describes how to migrate from EB CLI 2\.6 to the latest version of EB CLI and use CodeCommit as your code repository\.
 
-If you have not done so already, create a code repository in AWS CodeCommit, as described in [Migrate to AWS CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository.html)\.
+If you have not done so already, create a code repository in CodeCommit, as described in [Migrate to CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository.html)\.
 
-Once you have [installed](eb-cli3-install.md) and [configured](eb-cli3-configuration.md) EB CLI, you have two opportunities to associate your application with your AWS CodeCommit repository, including a specific branch\. 
-+ When executing eb init, such in the following example where *myRepo* is the name of your AWS CodeCommit repository and *myBranch* is the branch in AWS CodeCommit\.
+Once you have [installed](eb-cli3-install.md) and [configured](eb-cli3-configuration.md) EB CLI, you have two opportunities to associate your application with your CodeCommit repository, including a specific branch\. 
++ When executing eb init, such in the following example where *myRepo* is the name of your CodeCommit repository and *myBranch* is the branch in CodeCommit\.
 
   ```
   eb init --source codecommit/myRepo/myBranch
   ```
-+ When executing eb deploy, such in the following example where *myRepo* is the name of your AWS CodeCommit repository and *myBranch* is the branch in AWS CodeCommit\.
++ When executing eb deploy, such in the following example where *myRepo* is the name of your CodeCommit repository and *myBranch* is the branch in CodeCommit\.
 
   ```
   eb deploy --source codecommit/myRepo/myBranch

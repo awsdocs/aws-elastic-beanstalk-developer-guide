@@ -24,7 +24,7 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-CakePHP requires PHP 5\.5\.9 or newer, and the `mbstring` and `intl` extensions for PHP\. In this tutorial we use PHP 7\.0 and the corresponding Elastic Beanstalk platform configuration\. Install PHP and Composer by following the instructions at [Setting Up your PHP Development Environment](php-development-environment.md)\.
+CakePHP requires PHP 5\.5\.9 or newer, and the `mbstring` and `intl` extensions for PHP\. In this tutorial we use PHP 7\.0 and the corresponding Elastic Beanstalk platform version\. Install PHP and Composer by following the instructions at [Setting Up your PHP Development Environment](php-development-environment.md)\.
 
 ## Launch an Elastic Beanstalk Environment<a name="php-cakephp-tutorial-launch"></a>
 
@@ -237,11 +237,11 @@ In addition, you can terminate database resources that you created outside of yo
 
 1. Open the [Amazon RDS console](https://console.aws.amazon.com/rds)\.
 
-1. Choose **Instances**\.
+1. Choose **Databases**\.
 
 1. Choose your DB instance\.
 
-1. Choose **Instance actions**, and then choose **Delete**\.
+1. Choose **Actions**, and then choose **Delete**\.
 
 1. Choose whether to create a snapshot, and then choose **Delete**\.
 

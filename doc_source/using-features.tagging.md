@@ -2,7 +2,14 @@
 
 ## Introduction to Environment Tagging<a name="using-features.tagging.intro"></a>
 
-AWS Elastic Beanstalk provides support for you to specify tags to apply to resources in your environment\. Tags are key\-value pairs\. They help you identify environments in cost allocation reports\. This is especially useful if you manage many environments\. You can also use tags to manage permissions at the resource level\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in the *Amazon EC2 User Guide for Linux Instances*\.
+AWS Elastic Beanstalk provides support for you to specify tags to apply to resources in your environment\. Tags are key\-value pairs associated with AWS resources\. Tags can help you categorize resources\. They are particularly useful if you manage many environments\.
+
+Here are some ways you can use tagging with Elastic Beanstalk environments:
++ *Environment stages*—Identify environments in different stages, such as development, beta, and production\.
++ *Cost allocation*—Identify environments associated with various expense accounts in cost allocation reports\.
++ *Access control*—Use tags to manage permissions to requests and resources\. For details, see [Controlling Access to Elastic Beanstalk Resources Using Tags](AWSHowTo.iam.policies.access-tags.md)\.
+
+You can also use tags to manage permissions at the specific resource level within an environment\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 By default, Elastic Beanstalk applies three tags:
 + `elasticbeanstalk:environment-name` – The name of the environment\. 
@@ -16,9 +23,8 @@ You can specify tags when you create the Elastic Beanstalk environment\. In an e
 **Constraints**
 + Keys and values can contain letters, numbers, white space, and the following symbols: `_ . : / = + - @`
 + Keys can contain up to 128 characters\. Values can contain up to 256 characters\.
-+ Keys are case\-sensitive\.
++ Keys are case sensitive\.
 + Keys cannot begin with `aws:` or `elasticbeanstalk:`\.
-+ Values cannot match the environment name\.
 
 You can use cost allocation reports to track your usage of AWS resources\. The reports include both tagged and untagged resources, but they aggregate costs according to tags\. For information about how cost allocation reports use tags, see [Use Cost Allocation Tags for Custom Billing Reports](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation.html) in the *AWS Billing and Cost Management User Guide*\.
 

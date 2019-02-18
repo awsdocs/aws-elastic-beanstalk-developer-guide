@@ -26,7 +26,7 @@ The **Environment Properties** section lets you specify environment variables th
 
 ## Docker Images<a name="docker-images"></a>
 
-The single container and multicontainer Docker configuration for Elastic Beanstalk support the use of Docker images stored in a public or private online image repository\.
+The single container and multicontainer Docker platforms for Elastic Beanstalk support the use of Docker images stored in a public or private online image repository\.
 
 Specify images by name in `Dockerrun.aws.json`\. Note these conventions:
 + Images in official repositories on Docker Hub use a single name \(for example, `ubuntu` or `mongo`\)\.
@@ -77,7 +77,7 @@ You do, however, need to provide your instances with permission to access the im
 
 Replace the Amazon Resource Name \(ARN\) in the above policy with the ARN of your repository\.
 
-In your `Dockerrun.aws.json` file, refer to the image by URL\. For a [single container configuration](single-container-docker-configuration.md), the URL goes in the `Image` definition:
+In your `Dockerrun.aws.json` file, refer to the image by URL\. For the [single container platform](single-container-docker-configuration.md), the URL goes in the `Image` definition:
 
 ```
   "Image": {
@@ -86,7 +86,7 @@ In your `Dockerrun.aws.json` file, refer to the image by URL\. For a [single con
   },
 ```
 
-For a [multicontainer configuration](create_deploy_docker_v2config.md), use the `image` key in a container definition object:
+For the [multicontainer platform](create_deploy_docker_v2config.md), use the `image` key in a container definition object:
 
 ```
 "containerDefinitions": [
@@ -185,9 +185,9 @@ docker ps -q | xargs docker inspect --format='{{ .State.Pid }}' | xargs -IZ sudo
 
 ## Configuring Managed Updates for Docker Environments<a name="docker-managed-updates"></a>
 
-With [managed platform updates](environment-platform-update-managed.md), you can configure your environment to automatically upgrade to the latest version of a platform on a schedule\.
+With [managed platform updates](environment-platform-update-managed.md), you can configure your environment to automatically update to the latest version of a platform on a schedule\.
 
-In the case of Docker environments, you might want to decide if an automatic platform update should happen across Docker versions—when the new platform configuration version includes a new Docker version\. Elastic Beanstalk supports managed platform updates across Docker versions when updating from an environment running a Docker configuration version newer than 2\.9\.0\. When a new platform configuration version includes a new version of Docker, Elastic Beanstalk increments the minor update version number\. Therefore, to allow managed platform updates across Docker versions, enable managed platform updates for both minor and patch version updates\. To prevent managed platform updates across Docker versions, enable managed platform updates to apply patch version updates only\.
+In the case of Docker environments, you might want to decide if an automatic platform update should happen across Docker versions—when the new platform version includes a new Docker version\. Elastic Beanstalk supports managed platform updates across Docker versions when updating from an environment running a Docker platform version newer than 2\.9\.0\. When a new platform version includes a new version of Docker, Elastic Beanstalk increments the minor update version number\. Therefore, to allow managed platform updates across Docker versions, enable managed platform updates for both minor and patch version updates\. To prevent managed platform updates across Docker versions, enable managed platform updates to apply patch version updates only\.
 
 For example, the following [configuration file](ebextensions.md) enables managed platform updates at 9:00 AM UTC each Tuesday for both minor and patch version updates, thereby allowing for managed updates across Docker versions:
 
@@ -202,4 +202,4 @@ option_settings:
     UpdateLevel: minor
 ```
 
-For environments running Docker configuration versions 2\.9\.0 or earlier, Elastic Beanstalk never performs managed platform updates if the new platform configuration version includes a new Docker version\.
+For environments running Docker platform versions 2\.9\.0 or earlier, Elastic Beanstalk never performs managed platform updates if the new platform version includes a new Docker version\.

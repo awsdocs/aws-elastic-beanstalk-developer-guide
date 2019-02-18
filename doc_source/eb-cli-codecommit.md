@@ -1,23 +1,23 @@
 # Using the EB CLI with AWS CodeCommit<a name="eb-cli-codecommit"></a>
 
-You can use the EB CLI to deploy your application directly from your AWS CodeCommit repository\. With AWS CodeCommit, you can upload only your changes to the repository when you deploy, instead of uploading your entire project\. This can save you time and bandwidth if you have a large project or limited Internet connectivity\. The EB CLI pushes your local commits and uses them to create application versions when you use eb create or eb deploy\.
+You can use the EB CLI to deploy your application directly from your AWS CodeCommit repository\. With CodeCommit, you can upload only your changes to the repository when you deploy, instead of uploading your entire project\. This can save you time and bandwidth if you have a large project or limited Internet connectivity\. The EB CLI pushes your local commits and uses them to create application versions when you use eb create or eb deploy\.
 
-To deploy your changes, AWS CodeCommit integration requires you to commit changes first\. However, as you develop or debug, you might not want to push changes that you haven't confirmed are working\. You can avoid committing your changes by staging them and using eb deploy \-\-staged \(which performs a standard deployment\)\. Or commit your changes to a development or testing branch first, and merge to your master branch only when your code is ready\. With eb use, you can configure the EB CLI to deploy to one environment from your development branch, and to a different environment from your master branch\.
+To deploy your changes, CodeCommit integration requires you to commit changes first\. However, as you develop or debug, you might not want to push changes that you haven't confirmed are working\. You can avoid committing your changes by staging them and using eb deploy \-\-staged \(which performs a standard deployment\)\. Or commit your changes to a development or testing branch first, and merge to your master branch only when your code is ready\. With eb use, you can configure the EB CLI to deploy to one environment from your development branch, and to a different environment from your master branch\.
 
 **Note**  
-Some regions don't offer AWS CodeCommit\. The integration between Elastic Beanstalk and AWS CodeCommit doesn't work in these regions\.  
+Some regions don't offer CodeCommit\. The integration between Elastic Beanstalk and CodeCommit doesn't work in these regions\.  
 For information about the AWS services offered in each region, see [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)\.
 
 **Topics**
 + [Prerequisites](#eb-cli-codecommit-prereqs)
-+ [Creating an AWS CodeCommit Repository with the EB CLI](#eb-cli-codecommit-create)
-+ [Deploying from Your AWS CodeCommit Repository](#eb-cli-codecommit-deploy)
++ [Creating an CodeCommit Repository with the EB CLI](#eb-cli-codecommit-create)
++ [Deploying from Your CodeCommit Repository](#eb-cli-codecommit-deploy)
 + [Configuring Additional Branches and Environments](#eb-cli-codecommit-config)
-+ [Using an Existing AWS CodeCommit Repository](#eb-cli-codecommit-existing)
++ [Using an Existing CodeCommit Repository](#eb-cli-codecommit-existing)
 
 ## Prerequisites<a name="eb-cli-codecommit-prereqs"></a>
 
-To use AWS CodeCommit with AWS Elastic Beanstalk, you need a local Git repository \(either one you have already or a new one you create\) with at least one commit, [permission to use AWS CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/access-permissions.html), and an Elastic Beanstalk environment in a region that AWS CodeCommit supports\. Your environment and repository must be in the same region\.
+To use CodeCommit with AWS Elastic Beanstalk, you need a local Git repository \(either one you have already or a new one you create\) with at least one commit, [permission to use CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/access-permissions.html), and an Elastic Beanstalk environment in a region that CodeCommit supports\. Your environment and repository must be in the same region\.
 
 **To initialize a Git repository**
 
@@ -39,13 +39,13 @@ To use AWS CodeCommit with AWS Elastic Beanstalk, you need a local Git repositor
    ~/my-app$ git commit -m "Elastic Beanstalk application"
    ```
 
-## Creating an AWS CodeCommit Repository with the EB CLI<a name="eb-cli-codecommit-create"></a>
+## Creating an CodeCommit Repository with the EB CLI<a name="eb-cli-codecommit-create"></a>
 
-To get started with AWS CodeCommit, run [eb init](eb3-init.md)\. During repository configuration, the EB CLI prompts you to use AWS CodeCommit to store your code and speed up deployments\. Even if you previously configured your project with eb init, you can run it again to configure AWS CodeCommit\.
+To get started with CodeCommit, run [eb init](eb3-init.md)\. During repository configuration, the EB CLI prompts you to use CodeCommit to store your code and speed up deployments\. Even if you previously configured your project with eb init, you can run it again to configure CodeCommit\.
 
-**To create an AWS CodeCommit repository with the EB CLI**
+**To create an CodeCommit repository with the EB CLI**
 
-1. Run eb init in your project folder\. During configuration, the EB CLI asks if you want to use AWS CodeCommit to store your code and speed up deployments\. If you previously configured your project with eb init, you can still run it again to configure AWS CodeCommit\. Type **y** at the prompt to set up AWS CodeCommit\.
+1. Run eb init in your project folder\. During configuration, the EB CLI asks if you want to use CodeCommit to store your code and speed up deployments\. If you previously configured your project with eb init, you can still run it again to configure CodeCommit\. Type **y** at the prompt to set up CodeCommit\.
 
    ```
    ~/my-app$ eb init
@@ -79,11 +79,11 @@ To get started with AWS CodeCommit, run [eb init](eb3-init.md)\. During reposito
    Successfully created branch: master
    ```
 
-## Deploying from Your AWS CodeCommit Repository<a name="eb-cli-codecommit-deploy"></a>
+## Deploying from Your CodeCommit Repository<a name="eb-cli-codecommit-deploy"></a>
 
-When you configure AWS CodeCommit with your EB CLI repository, the EB CLI uses the contents of the repository to create source bundles\. When you run eb deploy or eb create, the EB CLI pushes new commits and uses the HEAD revision of your branch to create the archive that it deploys to the EC2 instances in your environment\.
+When you configure CodeCommit with your EB CLI repository, the EB CLI uses the contents of the repository to create source bundles\. When you run eb deploy or eb create, the EB CLI pushes new commits and uses the HEAD revision of your branch to create the archive that it deploys to the EC2 instances in your environment\.
 
-**To use AWS CodeCommit integration with the EB CLI**
+**To use CodeCommit integration with the EB CLI**
 
 1. Create a new environment with eb create\.
 
@@ -127,13 +127,13 @@ When you configure AWS CodeCommit with your EB CLI repository, the EB CLI uses t
    ~/my-app$ eb deploy --staged
    ```
 
-   Deploying with the `--staged` option performs a standard deployment, bypassing AWS CodeCommit\.
+   Deploying with the `--staged` option performs a standard deployment, bypassing CodeCommit\.
 
 ## Configuring Additional Branches and Environments<a name="eb-cli-codecommit-config"></a>
 
-AWS CodeCommit configuration applies to a single branch\. You can use eb use and eb codesource to configure additional branches or modify the current branch's configuration\.
+CodeCommit configuration applies to a single branch\. You can use eb use and eb codesource to configure additional branches or modify the current branch's configuration\.
 
-**To configure AWS CodeCommit integration with the EB CLI**
+**To configure CodeCommit integration with the EB CLI**
 
 1. To change the remote branch, use the [eb use](eb3-use.md) command's `--source` option\.
 
@@ -141,7 +141,7 @@ AWS CodeCommit configuration applies to a single branch\. You can use eb use and
    ~/my-app$ eb use test-env --source my-app/test
    ```
 
-1. To create a new branch and environment, check out a new branch, push it to AWS CodeCommit, create the environment, and then use eb use to connect the local branch, remote branch, and environment\.
+1. To create a new branch and environment, check out a new branch, push it to CodeCommit, create the environment, and then use eb use to connect the local branch, remote branch, and environment\.
 
    ```
    ~/my-app$ git checkout -b production
@@ -150,7 +150,7 @@ AWS CodeCommit configuration applies to a single branch\. You can use eb use and
    ~/my-app$ eb use --source my-app/production production-env
    ```
 
-1. To configure AWS CodeCommit interactively, use [eb codesource codecommit](eb3-codesource.md)\.
+1. To configure CodeCommit interactively, use [eb codesource codecommit](eb3-codesource.md)\.
 
    ```
    ~/my-app$ eb codesource codecommit
@@ -172,7 +172,7 @@ AWS CodeCommit configuration applies to a single branch\. You can use eb use and
    (default is 1): 1
    ```
 
-1. To disable AWS CodeCommit integration, use [eb codesource local](eb3-codesource.md)\.
+1. To disable CodeCommit integration, use [eb codesource local](eb3-codesource.md)\.
 
    ```
    ~/my-app$ eb codesource local
@@ -182,13 +182,13 @@ AWS CodeCommit configuration applies to a single branch\. You can use eb use and
    Default set to use local sources
    ```
 
-## Using an Existing AWS CodeCommit Repository<a name="eb-cli-codecommit-existing"></a>
+## Using an Existing CodeCommit Repository<a name="eb-cli-codecommit-existing"></a>
 
-If you already have an AWS CodeCommit repository and want to use it with Elastic Beanstalk, run eb init at the root of your local Git repository\.
+If you already have an CodeCommit repository and want to use it with Elastic Beanstalk, run eb init at the root of your local Git repository\.
 
-**To use an existing AWS CodeCommit repository with the EB CLI**
+**To use an existing CodeCommit repository with the EB CLI**
 
-1. Clone your AWS CodeCommit repository\.
+1. Clone your CodeCommit repository\.
 
    ```
    ~$ git clone ssh://git-codecommit.us-east-2.amazonaws.com/v1/repos/my-app

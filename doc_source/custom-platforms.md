@@ -1,4 +1,4 @@
-# Custom Platforms<a name="custom-platforms"></a>
+# AWS Elastic Beanstalk Custom Platforms<a name="custom-platforms"></a>
 
 Elastic Beanstalk supports custom platforms\. A custom platform is a more advanced customization than a [Custom Image](using-features.customenv.md) in several ways\. A custom platform lets you develop an entire new platform from scratch, customizing the operating system, additional software, and scripts that Elastic Beanstalk runs on platform instances\. This flexibility allows you to build a platform for an application that uses a language or other infrastructure software, for which Elastic Beanstalk doesn't provide a platform out of the box\. Compare that to custom images, where you modify an AMI for use with an existing Elastic Beanstalk platform, and Elastic Beanstalk still provides the platform scripts and controls the platform's software stack\. In addition, with custom platforms you use an automated, scripted way to create and maintain your customization, whereas with custom images you make the changes manually over a running instance\.
 

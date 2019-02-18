@@ -1,7 +1,7 @@
 # AWS Elastic Beanstalk Developer Guide
 
 -----
-*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -24,9 +24,12 @@ Amazon's trademarks and trade dress may not be used in
    + [Elastic Beanstalk Service Role](concepts-roles-service.md)
    + [Elastic Beanstalk Instance Profile](concepts-roles-instance.md)
    + [Elastic Beanstalk User Policy](concepts-roles-user.md)
-+ [Elastic Beanstalk Platforms](concepts-all-platforms.md)
-   + [Elastic Beanstalk Supported Platforms](concepts.platforms.md)
-   + [Custom Platforms](custom-platforms.md)
++ [AWS Elastic Beanstalk Platforms](concepts-all-platforms.md)
+   + [AWS Elastic Beanstalk Platforms Glossary](platforms-glossary.md)
+   + [Shared Responsibility Model for AWS Elastic Beanstalk Platform Maintenance](platforms-shared-responsibility.md)
+   + [AWS Elastic Beanstalk Platform Support Policy](platforms-support-policy.md)
+   + [AWS Elastic Beanstalk Supported Platforms](concepts.platforms.md)
+   + [AWS Elastic Beanstalk Custom Platforms](custom-platforms.md)
       + [Platform Definition Archive Contents](custom-platforms-pda.md)
       + [Platform Hooks](custom-platform-hooks.md)
       + [Platform Scripts](custom-platforms-scripts.md)
@@ -108,6 +111,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Using Elastic Beanstalk Saved Configurations](environment-configuration-savedconfig.md)
    + [Environment Manifest (env.yaml)](environment-cfg-manifest.md)
    + [Using a Custom Amazon Machine Image (AMI)](using-features.customenv.md)
+   + [Serving Static Files](environment-cfg-staticfiles.md)
    + [Configuring HTTPS for Your Elastic Beanstalk Environment](configuring-https.md)
       + [Create and Sign an X509 Certificate](configuring-https-ssl.md)
       + [Upload a Certificate to IAM](configuring-https-ssl-upload.md)
@@ -160,6 +164,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Controlling Access to Elastic Beanstalk](AWSHowTo.iam.managed-policies.md)
       + [Amazon Resource Name Format for Elastic Beanstalk](AWSHowTo.iam.policies.arn.md)
       + [Resources and Conditions for Elastic Beanstalk Actions](AWSHowTo.iam.policies.actions.md)
+      + [Controlling Access to Elastic Beanstalk Resources Using Tags](AWSHowTo.iam.policies.access-tags.md)
       + [Example Policies Based on Managed Policies](ExamplePolicies_AEB.md)
       + [Example Policies Based on Resource Permissions](AWSHowTo.iam.example.resource.md)
    + [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)

@@ -28,7 +28,7 @@ The options for enhanced health reporting don't appear if you are using an [unsu
 
 1. Choose **Apply**\.
 
-The Elastic Beanstalk console defaults to enhanced health reporting when you create a new environment with a version 2 platform configuration\. You can disable enhanced health reporting by changing the health reporting option during environment creation\.
+The Elastic Beanstalk console defaults to enhanced health reporting when you create a new environment with a version 2 platform version\. You can disable enhanced health reporting by changing the health reporting option during environment creation\.
 
 **To disable enhanced health reporting when creating an environment using the AWS Management Console**
 
@@ -51,7 +51,7 @@ When you create a new environment with the eb create command, the EB CLI enables
 
 You can specify a different service role by name with the `--service-role` option\.
 
-If you have an environment running with basic health reporting on a version 2 platform configuration and want to switch to enhanced health, follow these steps\.
+If you have an environment running with basic health reporting on a version 2 platform version and you want to switch to enhanced health, follow these steps\.
 
 **To enable enhanced health on a running environment using the [EB CLI](eb-cli3.md)**
 

@@ -1,6 +1,6 @@
 # Using the AWS Elastic Beanstalk Node\.js Platform<a name="create_deploy_nodejs.container"></a>
 
-The AWS Elastic Beanstalk Node\.js platform is a [platform configuration](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.nodejs) for Node\.js web applications that can run behind an nginx proxy server, behind an Apache server, or standalone\.
+The AWS Elastic Beanstalk Node\.js platform is a [platform version](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.nodejs) for Node\.js web applications that can run behind an nginx proxy server, behind an Apache server, or standalone\.
 
 Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can choose which proxy server to run in front of your application, choose a specific version of Node\.js to run, and choose the command used to run your application\. You can also configure environment variables needed by your application and enable log rotation to Amazon S3\.
 
@@ -32,7 +32,7 @@ The Node\.js settings lets you fine\-tune the behavior of your Amazon EC2 instan
 
 On the configuration page, specify the following:
 + **Proxy Server**– Specifies which web server to use to proxy connections to Node\.js\. By default, nginx is used\. If you select **none**, static file mappings do not take effect, and gzip compression is disabled\.
-+ **Node Version**– Specifies the version of Node\.js\. For information about what versions are supported, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
++ **Node Version**– Specifies the version of Node\.js\. For information about what versions are supported, see [AWS Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
 **Note**  
 When support for the version of Node\.js that you are using is removed from the platform configuration, you must change or remove the version setting prior to doing a [platform upgrade](using-features.platform.upgrade.md)\. This may occur when a security vulnerability is identified for one or more versions of Node\.js  
 When this occurs, attempting to upgrade to a new version of the platform that does not support the configured [NodeVersion](command-options-specific.md#command-options-nodejs) fails\. To avoid needing to create a new environment, change the *NodeVersion* configuration option to a version that is supported by both the old configuration version and the new one, or [remove the option setting](environment-configuration-methods-after.md), and then perform the platform upgrade\.
@@ -47,20 +47,9 @@ The Log Options section has two settings:
 
 ### Static Files<a name="nodejs-platform-console-staticfiles"></a>
 
-To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\. When you add a mapping, an extra row appears in case you want to add another one\. To remove a mapping, click **Remove**\.
+To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
 
-![\[Static file configuration in the Modify software configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-static-files.png)
-
-If you aren't seeing the **Static Files** section, you have to add at least one mapping by using configuration options\. For example, the following [configuration file](ebextensions.md) adds two virtual path and directory mappings, with directories at the top level of your source bundle\.
-
-**Example \.ebextensions/nodejs\-static\-files\.config**  
-
-```
-option_settings:
-  aws:elasticbeanstalk:container:nodejs:staticfiles:
-    /html: statichtml
-    /images: staticimages
-```
+For details about configuring static files using the Elastic Beanstalk console, see [Serving Static Files](environment-cfg-staticfiles.md)\.
 
 ### Environment Properties<a name="nodejs-platform-console-envprops"></a>
 
@@ -93,7 +82,8 @@ option_settings:
     ProxyServer: apache
     GzipCompression: true
   aws:elasticbeanstalk:container:nodejs:staticfiles:
-    /images: myimages
+    /html: statichtml
+    /images: staticimages
 ```
 
 Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration Options](command-options.md) for more information\.

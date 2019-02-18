@@ -144,17 +144,19 @@ AWS Elastic Beanstalk provides two managed policies that enable you to assign fu
 
 You can use managed policies to grant full access or read\-only access to Elastic Beanstalk\. Elastic Beanstalk updates these policies automatically when additional permissions are required to access new features\.
 
-**To apply a managed policy to an IAM user**
+**To apply a managed policy to IAM users or groups**
 
-1. Open the [**Users** page](https://console.aws.amazon.com/iam/home#users) in the IAM console\.
+1. Open the [**Policies** page](https://console.aws.amazon.com/iam/home#policies) in the IAM console\.
 
-1. In the navigation pane, choose **Permissions**\.
+1. In the search box, type **AWSElasticBeanstalk** to filter the policies\.
 
-1. Choose **Attach Policy**\.
+1. In the list of policies, select the check box next to **AWSElasticBeanstalkReadOnlyAccess** or **AWSElasticBeanstalkFullAccess**\.
 
-1. Type **AWSElasticBeanstalk** to filter the policies\.
+1. Choose **Policy actions**, and then choose **Attach**\.
 
-1. Select **AWSElasticBeanstalkReadOnlyAccess** or **AWSElasticBeanstalkFullAccess**, and then choose **Attach Policy**\.
+1. Select one or more users and groups to attach the policy to\. You can use the **Filter** menu and the search box to filter the list of principal entities\.
+
+1. Choose **Attach policy**\.
 
 ## Creating a Custom User Policy<a name="AWSHowTo.iam.policies"></a>
 

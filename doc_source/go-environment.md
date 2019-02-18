@@ -26,7 +26,7 @@ For more information on using `commands`, `files`, `packages` and `container_com
 
 ## Configuring Your Go Environment<a name="go-options"></a>
 
-For Go platform configurations on Elastic Beanstalk, Elastic Beanstalk provides a few platform\-specific options in addition to the standard options it provides for all environments\. These options let you configure the nginx proxy that runs in front of your application to serve static files\.
+The Elastic Beanstalk Go platform provides a few platform\-specific options in addition to the standard options that all platforms have\. These options let you configure the nginx proxy that runs in front of your application to serve static files\.
 
 You can use the AWS Management Console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
 
@@ -48,20 +48,9 @@ The Log Options section has two settings:
 
 ### Static Files<a name="go-options-staticfiles"></a>
 
-To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\. When you add a mapping, an extra row appears in case you want to add another one\. To remove a mapping, click **Remove**\.
+To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
 
-![\[Static file configuration in the Modify software configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-static-files.png)
-
-If you aren't seeing the **Static Files** section, you have to add at least one mapping by using configuration options\. For example, the following [configuration file](ebextensions.md) adds two virtual path and directory mappings, with directories at the top level of your source bundle\.
-
-**Example \.ebextensions/golang\-static\-files\.config**  
-
-```
-option_settings:
-  aws:elasticbeanstalk:container:golang:staticfiles:
-    /html: statichtml
-    /images: staticimages
-```
+For details about configuring static files using the Elastic Beanstalk console, see [Serving Static Files](environment-cfg-staticfiles.md)\.
 
 ### Environment Properties<a name="go-options-properties"></a>
 
@@ -75,7 +64,7 @@ endpoint := os.Getenv("API_ENDPOINT")
 
 See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
 
-## The aws:elasticbeanstalk:container:golang:staticfiles Namespace<a name="go-namespaces"></a>
+## Go Configuration Namespaces<a name="go-namespaces"></a>
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
@@ -88,7 +77,8 @@ For example, this [configuration file](ebextensions.md) tells the proxy server t
 ```
 option_settings:
   aws:elasticbeanstalk:container:golang:staticfiles:
-    /images: myimages
+    /html: statichtml
+    /images: staticimages
 ```
 
 Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration Options](command-options.md) for more information\.

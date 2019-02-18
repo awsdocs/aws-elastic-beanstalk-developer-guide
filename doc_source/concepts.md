@@ -25,3 +25,9 @@ When you launch an Elastic Beanstalk environment, you first choose an environmen
 ## Configuration Template<a name="concepts-configuration"></a>
 
 A *configuration template* is a starting point for creating unique environment configurations\. Configuration templates can be created or modified by using the Elastic Beanstalk command line utilities or API\.
+
+## Platform<a name="concepts-platform"></a>
+
+A *platform* is a combination of an operating system \(OS\), programming language runtime, web server, application server, and Elastic Beanstalk components\. You design and target your web application to a platform\. Elastic Beanstalk provides a variety of platforms on which you can build your applications\.
+
+For details, see [AWS Elastic Beanstalk Platforms](concepts-all-platforms.md)\.

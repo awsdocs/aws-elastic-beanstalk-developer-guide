@@ -24,7 +24,7 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Rails requires Ruby 2\.2\.2 or newer\. In this tutorial we use Ruby 2\.5\.1 and the corresponding Elastic Beanstalk platform configuration\. Install Ruby by following the instructions at [Setting Up your Ruby Development Environment](ruby-development-environment.md)\.
+Rails requires Ruby 2\.2\.2 or newer\. In this tutorial we use Ruby 2\.5\.1 and the corresponding Elastic Beanstalk platform version\. Install Ruby by following the instructions at [Setting Up your Ruby Development Environment](ruby-development-environment.md)\.
 
 ## Launch an Elastic Beanstalk Environment<a name="ruby-rails-tutorial-launch"></a>
 

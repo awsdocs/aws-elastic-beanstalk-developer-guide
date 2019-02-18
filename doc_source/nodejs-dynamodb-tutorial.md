@@ -58,7 +58,7 @@ You can run all commands in this tutorial on a Linux virtual machine, an OS X ma
 
 ## Launch an Elastic Beanstalk Environment<a name="nodejs-dynamodb-tutorial-launch"></a>
 
-You use the Elastic Beanstalk console to launch an Elastic Beanstalk environment\. You'll choose the **Node\.js** platform configuration and accept the default settings and sample code\. After you configure the environment's permissions, you deploy the sample application that you downloaded from GitHub\.
+You use the Elastic Beanstalk console to launch an Elastic Beanstalk environment\. You'll choose the **Node\.js** platform and accept the default settings and sample code\. After you configure the environment's permissions, you deploy the sample application that you downloaded from GitHub\.
 
 **To launch an environment \(console\)**
 
@@ -104,11 +104,11 @@ The sample application uses instance permissions to write data to a DynamoDB tab
 
 1. Choose **aws\-elasticbeanstalk\-ec2\-role**\.
 
-1. On the **Permissions** tab, under **Managed Policies**, choose **Attach Policy**\.
+1. On the **Permissions** tab, choose **Attach policies**\.
 
 1. Select the managed policy for the additional services that your application uses\. For example, `AmazonSNSFullAccess` or `AmazonDynamoDBFullAccess`\.
 
-1. Choose **Attach Policies**\.
+1. Choose **Attach policy**\.
 
 See [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md) for more on managing instance profiles\.
 

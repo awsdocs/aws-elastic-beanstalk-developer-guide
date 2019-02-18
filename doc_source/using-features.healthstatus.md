@@ -2,7 +2,7 @@
 
 AWS Elastic Beanstalk uses information from multiple sources to determine if your environment is available and processing requests from the Internet\. An environment's health is represented by one of four colors, which is displayed in the [environment dashboard](environments-console.md), and is also available from the [DescribeEnvironments](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html) API and by calling eb status with the [EB CLI](eb-cli3.md)\.
 
-Prior to version 2 Linux platform configurations, the only health reporting system was basic health\. The basic health reporting system provides information about the health of instances in an Elastic Beanstalk environment based on health checks performed by Elastic Load Balancing for load balanced environments or Amazon Elastic Compute Cloud for single instance environments\.
+Prior to version 2 Linux platform versions, the only health reporting system was basic health\. The basic health reporting system provides information about the health of instances in an Elastic Beanstalk environment based on health checks performed by Elastic Load Balancing for load balanced environments or Amazon Elastic Compute Cloud for single instance environments\.
 
 In addition to checking the health of your EC2 instances, Elastic Beanstalk also monitors the other resources in your environment and reports missing or incorrectly configured resources that can cause your environment to become unavailable to users\.
 

@@ -312,7 +312,7 @@ $ elastic-beanstalk-create-environment -a MySampleApp -t myconfigtemplate -e MyS
 
 ### Description<a name="CLIReference-cmd-CreateStorageLocation-Description"></a>
 
-Creates theAmazon S3 storage location for the account\. This location is used to store user log files and is used by the AWS Management Console to upload application versions\. You do not need to create this bucket in order to work with Elastic Beanstalk\. 
+Creates the Amazon S3 storage location for the account\. This location is used to store user log files and is used by the AWS Management Console to upload application versions\. You do not need to create this bucket in order to work with Elastic Beanstalk\. 
 
 ### Syntax<a name="CLIReference-cmd-CreateStorageLocation-Syntax"></a>
 

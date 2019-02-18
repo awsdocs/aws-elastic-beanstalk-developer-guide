@@ -10,7 +10,7 @@ You can also use a deployment manifest to [create application pools in IIS](#dot
 
 For full customization, you can [write your own deployment scripts](#dotnet-manifest-custom) in Windows PowerShell and tell Elastic Beanstalk which scripts to run to install, uninstall, and restart your application\.
 
-Deployment manifests and related features require a Windows Server platform configuration [version 1\.2\.0 or newer](dotnet-v2migration.md)\.
+Deployment manifests and related features require a Windows Server platform [version 1\.2\.0 or newer](dotnet-v2migration.md)\.
 
 **Topics**
 + [\.NET Core Apps](#dotnet-manifest-dotnetcore)

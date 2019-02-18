@@ -22,7 +22,7 @@ The following figure shows the **Alarms** page and graphs for the example alarms
 ## Prerequisites to Instance Log Streaming to CloudWatch Logs<a name="AWSHowTo.cloudwatchlogs.prereqs"></a>
 
 To enable streaming of logs from your environment's Amazon EC2 instances to CloudWatch Logs, you must meet the following conditions\.
-+ *Platform* – Because this feature is only available in platform configurations released on or after [this release](https://aws.amazon.com/releasenotes/6677534638371416), if you are using an earlier platform configuration, update your environment to a current one\.
++ *Platform* – Because this feature is only available in platform versions released on or after [this release](https://aws.amazon.com/releasenotes/6677534638371416), if you are using an earlier platform version, update your environment to a current one\.
 + If you don't have the *AWSElasticBeanstalkWebTier* or *AWSElasticBeanstalkWorkerTier* Elastic Beanstalk managed policy in your [Elastic Beanstalk instance profile](concepts-roles-instance.md), you must add the following to your profile to enable this feature\.
 
   ```
@@ -86,6 +86,31 @@ For Windows platforms, see the following table for the log group corresponding t
 
 You can enable instance log streaming to CloudWatch Logs using the Elastic Beanstalk console, the EB CLI, or configuration options\.
 
+Before you enable it, set up IAM permissions to use with the CloudWatch Logs agent\. You can attach the following custom policy to the [instance profile](concepts-roles-instance.md) that you assign to your environment\.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "logs:CreateLogGroup",
+        "logs:CreateLogStream",
+        "logs:GetLogEvents",
+        "logs:PutLogEvents",
+        "logs:DescribeLogGroups",
+        "logs:DescribeLogStreams",
+        "logs:PutRetentionPolicy"
+      ],
+      "Resource": [
+        "*"
+      ]
+    }
+  ]
+}
+```
+
 ### Instance Log Streaming Using the Elastic Beanstalk Console<a name="AWSHowTo.cloudwatchlogs.streaming.console"></a>
 
 **To stream instance logs to CloudWatch Logs**
@@ -129,9 +154,7 @@ In particular, the `--log-group` option enables you to retrieve instance logs of
 
 ### Instance Log Streaming Using Configuration Files<a name="AWSHowTo.cloudwatchlogs.files"></a>
 
-When you create or update an environment, you can use a configuration file to set up and configure instance log streaming to CloudWatch Logs\. You can also configure the streaming of custom log files\. To use each of the examples below, copy the text into a file with the `.config` extension in the `.ebextensions` directory at the top level of your application source bundle\. You can use each example separately or combine them into a single configuration file\.
-
-The following example configuration file enables default instance log streaming\. Elastic Beanstalk streams the default set of log files for your environment's platform\.
+When you create or update an environment, you can use a configuration file to set up and configure instance log streaming to CloudWatch Logs\. The following example configuration file enables default instance log streaming\. Elastic Beanstalk streams the default set of log files for your environment's platform\. To use the example, copy the text into a file with the `.config` extension in the `.ebextensions` directory at the top level of your application source bundle\.
 
 ```
 option_settings:
@@ -140,62 +163,14 @@ option_settings:
     value: true
 ```
 
-The following example configuration file configures the streaming of custom log files that your application generates\. The example configures the CloudWatch Logs agent on your environment's instances to stream each set of log files into a CloudWatch Logs log group named after the log files, for easy detection and retrieval\.
+### Custom Log File Streaming<a name="AWSHowTo.cloudwatchlogs.streaming.custom"></a>
+
+The Elastic Beanstalk integration with CloudWatch Logs doesn't directly support the streaming of custom log files that your application generates\. To stream custom logs, use a configuration file to directly install the CloudWatch Logs agent and to configure the files to be pushed\. For an example configuration file, see [https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/instance-configuration/logs-streamtocloudwatch-linux.config](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/instance-configuration/logs-streamtocloudwatch-linux.config)\.
 
 **Note**  
-Elastic Beanstalk doesn't support custom log file streaming on the Windows platform\. This example only works on Linux environments\.
-
-```
-files:
-  "/etc/awslogs/config/customlogs.conf":
-    mode: "000600"
-    owner: root
-    group: root
-    content: |
-      [stdouterr.log]
-      log_group_name = `{"Fn::Join":["/", ["/aws/elasticbeanstalk", { "Ref":"AWSEBEnvironmentName" }, "var/log/eb-docker/containers/eb-current-app/stdouterr.log"]]}`
-      log_stream_name = {instance_id}
-      file = /var/log/eb-docker/containers/eb-current-app/*stdouterr.log*
-      file_fingerprint_lines=1-8
-      [sample-app.log]
-      log_group_name = `{"Fn::Join":["/", ["/aws/elasticbeanstalk", { "Ref":"AWSEBEnvironmentName" }, "var/log/eb-docker/containers/eb-current-app/sampleapp.log"]]}`
-      log_stream_name = {instance_id}
-      file = /var/log/eb-docker/containers/eb-current-app/sample-app.log*
-      file_fingerprint_lines=1-8
-
-commands:
-  "01":
-    command: chkconfig awslogs on
-  "02":
-    command: service awslogs restart
-```
+The example doesn't work on the Windows platform\.
 
 For more information about configuring CloudWatch Logs, see the [CloudWatch Logs Agent Reference](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html) in the *Amazon CloudWatch Logs User Guide*\.
-
-Before you can configure integration with CloudWatch Logs using configuration files, you must set up IAM permissions to use with the CloudWatch Logs agent\. You can attach the following custom policy to the [instance profile](concepts-roles-instance.md) that you assign to your environment\.
-
-```
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Action": [
-        "logs:CreateLogGroup",
-        "logs:CreateLogStream",
-        "logs:GetLogEvents",
-        "logs:PutLogEvents",
-        "logs:DescribeLogGroups",
-        "logs:DescribeLogStreams",
-        "logs:PutRetentionPolicy"
-      ],
-      "Resource": [
-        "*"
-      ]
-    }
-  ]
-}
-```
 
 ## Troubleshooting CloudWatch Logs Integration<a name="AWSHowTo.cloudwatchlogs.troubleshoot"></a>
 

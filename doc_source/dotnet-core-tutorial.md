@@ -129,11 +129,18 @@ Environment creation takes about 10 minutes\. During this time you can update yo
 
 ## Update the Source Code<a name="dotnet-core-tutorial-update"></a>
 
-Update the default application to use ASP\.NET and IIS\. 
+Modify the default application into a web application that uses ASP\.NET and IIS\. 
 + ASP\.NET is the website framework for \.NET\. 
 + IIS is the web server that runs the application on the Amazon EC2 instances in your Elastic Beanstalk environment\.
 
 The source code examples to follow are available here: [dotnet\-core\-tutorial\-source\.zip](samples/dotnet-core-tutorial-source.zip)
+
+**Note**  
+The following procedure shows how to convert the project code into a web application\. To simplify the process, you can generate the project as a web application right from the start\. In the previous section [Generate a \.NET Core Project](#dotnet-core-tutorial-generate), modify the `dotnet new` step's command with the following command\.  
+
+```
+C:\Users\username> dotnet new web -o dotnet-core-tutorial
+```
 
 **To add ASP\.NET and IIS support to your code**
 
@@ -205,7 +212,7 @@ The source code examples to follow are available here: [dotnet\-core\-tutorial\-
 
 1. Add `dotnet-core-tutorial.csproj`, which includes IIS middleware and includes the `web.config` file from the output of `dotnet publish`\.
 **Note**  
-The following example was developed using \.NET Core Runtime 2\.0\.5\. You might need to modify the `TargetFramework` or the `Version` attribute values in the `PackageReference` elements to match the version of \.NET Core Runtime that you are using in your custom projects\.\.  
+The following example was developed using \.NET Core Runtime 2\.2\.1\. You might need to modify the `TargetFramework` or the `Version` attribute values in the `PackageReference` elements to match the version of \.NET Core Runtime that you are using in your custom projects\.  
 **Example c:\\users\\username\\dotnet\-core\-tutorial\\dotnet\-core\-tutorial\.csproj**  
 
    ```
@@ -213,15 +220,15 @@ The following example was developed using \.NET Core Runtime 2\.0\.5\. You might
    
        <PropertyGroup>
            <OutputType>Exe</OutputType>
-           <TargetFramework>netcoreapp2.0</TargetFramework>
+           <TargetFramework>netcoreapp2.2</TargetFramework>
        </PropertyGroup>
    
        <ItemGroup>
-           <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.0.1" />
+           <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel" Version="2.2.0" />
        </ItemGroup>
    
        <ItemGroup>
-           <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.0.1" />
+           <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration" Version="2.2.0" />
        </ItemGroup>
    
        <ItemGroup>
@@ -259,46 +266,49 @@ To deploy the application to Elastic Beanstalk, bundle the site archive with a [
    ```
    C:\users\username\dotnet-core-tutorial> cd site
    C:\users\username\dotnet-core-tutorial\site> zip ../site.zip *
-     adding: dotnet-core-tutorial.deps.json (144 bytes security) (deflated 83%)
-     adding: dotnet-core-tutorial.dll (144 bytes security) (deflated 60%)
-     adding: dotnet-core-tutorial.pdb (144 bytes security) (deflated 29%)
-     adding: dotnet-core-tutorial.runtimeconfig.json (144 bytes security) (deflated 27%)
-     adding: Microsoft.AspNetCore.Authentication.Abstractions.dll (144 bytes security) (deflated 50%)
-     adding: Microsoft.AspNetCore.Authentication.Core.dll (144 bytes security) (deflated 52%)
-     adding: Microsoft.AspNetCore.Hosting.Abstractions.dll (144 bytes security) (deflated 47%)
-     adding: Microsoft.AspNetCore.Hosting.dll (144 bytes security) (deflated 60%)
-     adding: Microsoft.AspNetCore.Hosting.Server.Abstractions.dll (144 bytes security) (deflated 44%)
-     adding: Microsoft.AspNetCore.Http.Abstractions.dll (144 bytes security) (deflated 54%)
-     adding: Microsoft.AspNetCore.Http.dll (144 bytes security) (deflated 54%)
-     adding: Microsoft.AspNetCore.Http.Extensions.dll (144 bytes security) (deflated 50%)
-     adding: Microsoft.AspNetCore.Http.Features.dll (144 bytes security) (deflated 51%)
-     adding: Microsoft.AspNetCore.HttpOverrides.dll (144 bytes security) (deflated 49%)
-     adding: Microsoft.AspNetCore.Server.IISIntegration.dll (144 bytes security) (deflated 46%)
-     adding: Microsoft.AspNetCore.Server.Kestrel.Core.dll (144 bytes security) (deflated 63%)
-     adding: Microsoft.AspNetCore.Server.Kestrel.dll (144 bytes security) (deflated 44%)
-     adding: Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll (144 bytes security) (deflated 54%)
-     adding: Microsoft.AspNetCore.Server.Kestrel.Transport.Libuv.dll (144 bytes security) (deflated 54%)
-     adding: Microsoft.AspNetCore.WebUtilities.dll (144 bytes security) (deflated 55%)
-     adding: Microsoft.Extensions.Configuration.Abstractions.dll (144 bytes security) (deflated 47%)
-     adding: Microsoft.Extensions.Configuration.dll (144 bytes security) (deflated 45%)
-     adding: Microsoft.Extensions.Configuration.EnvironmentVariables.dll (144 bytes security) (deflated 46%)
-     adding: Microsoft.Extensions.Configuration.FileExtensions.dll (144 bytes security) (deflated 46%)
-     adding: Microsoft.Extensions.DependencyInjection.Abstractions.dll (144 bytes security) (deflated 54%)
-     adding: Microsoft.Extensions.DependencyInjection.dll (144 bytes security) (deflated 51%)
-     adding: Microsoft.Extensions.FileProviders.Abstractions.dll (144 bytes security) (deflated 45%)
-     adding: Microsoft.Extensions.FileProviders.Physical.dll (144 bytes security) (deflated 46%)
-     adding: Microsoft.Extensions.FileSystemGlobbing.dll (144 bytes security) (deflated 49%)
-     adding: Microsoft.Extensions.Hosting.Abstractions.dll (144 bytes security) (deflated 45%)
-     adding: Microsoft.Extensions.Logging.Abstractions.dll (144 bytes security) (deflated 55%)
-     adding: Microsoft.Extensions.Logging.dll (144 bytes security) (deflated 48%)
-     adding: Microsoft.Extensions.ObjectPool.dll (144 bytes security) (deflated 45%)
-     adding: Microsoft.Extensions.Options.dll (144 bytes security) (deflated 48%)
-     adding: Microsoft.Extensions.Primitives.dll (144 bytes security) (deflated 49%)
-     adding: Microsoft.Net.Http.Headers.dll (144 bytes security) (deflated 53%)
-     adding: runtimes/ (144 bytes security) (stored 0%)
-     adding: System.Runtime.CompilerServices.Unsafe.dll (144 bytes security) (deflated 44%)
-     adding: System.Text.Encodings.Web.dll (144 bytes security) (deflated 57%)
-     adding: web.config (144 bytes security) (deflated 41%)
+     adding: dotnet-core-tutorial.deps.json (164 bytes security) (deflated 84%)
+     adding: dotnet-core-tutorial.dll (164 bytes security) (deflated 59%)
+     adding: dotnet-core-tutorial.pdb (164 bytes security) (deflated 28%)
+     adding: dotnet-core-tutorial.runtimeconfig.json (164 bytes security) (deflated 26%)
+     adding: Microsoft.AspNetCore.Authentication.Abstractions.dll (164 bytes security) (deflated 49%)
+     adding: Microsoft.AspNetCore.Authentication.Core.dll (164 bytes security) (deflated 57%)
+     adding: Microsoft.AspNetCore.Connections.Abstractions.dll (164 bytes security) (deflated 51%)
+     adding: Microsoft.AspNetCore.Hosting.Abstractions.dll (164 bytes security) (deflated 49%)
+     adding: Microsoft.AspNetCore.Hosting.dll (164 bytes security) (deflated 60%)
+     adding: Microsoft.AspNetCore.Hosting.Server.Abstractions.dll (164 bytes security) (deflated 44%)
+     adding: Microsoft.AspNetCore.Http.Abstractions.dll (164 bytes security) (deflated 54%)
+     adding: Microsoft.AspNetCore.Http.dll (164 bytes security) (deflated 55%)
+     adding: Microsoft.AspNetCore.Http.Extensions.dll (164 bytes security) (deflated 50%)
+     adding: Microsoft.AspNetCore.Http.Features.dll (164 bytes security) (deflated 50%)
+     adding: Microsoft.AspNetCore.HttpOverrides.dll (164 bytes security) (deflated 49%)
+     adding: Microsoft.AspNetCore.Server.IISIntegration.dll (164 bytes security) (deflated 46%)
+     adding: Microsoft.AspNetCore.Server.Kestrel.Core.dll (164 bytes security) (deflated 63%)
+     adding: Microsoft.AspNetCore.Server.Kestrel.dll (164 bytes security) (deflated 46%)
+     adding: Microsoft.AspNetCore.Server.Kestrel.Https.dll (164 bytes security) (deflated 44%)
+     adding: Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll (164 bytes security) (deflated 56%)
+     adding: Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll (164 bytes security) (deflated 51%)
+     adding: Microsoft.AspNetCore.WebUtilities.dll (164 bytes security) (deflated 55%)
+     adding: Microsoft.Extensions.Configuration.Abstractions.dll (164 bytes security) (deflated 48%)
+     adding: Microsoft.Extensions.Configuration.Binder.dll (164 bytes security) (deflated 47%)
+     adding: Microsoft.Extensions.Configuration.dll (164 bytes security) (deflated 46%)
+     adding: Microsoft.Extensions.Configuration.EnvironmentVariables.dll (164 bytes security) (deflated 46%)
+     adding: Microsoft.Extensions.Configuration.FileExtensions.dll (164 bytes security) (deflated 47%)
+     adding: Microsoft.Extensions.DependencyInjection.Abstractions.dll (164 bytes security) (deflated 54%)
+     adding: Microsoft.Extensions.DependencyInjection.dll (164 bytes security) (deflated 53%)
+     adding: Microsoft.Extensions.FileProviders.Abstractions.dll (164 bytes security) (deflated 46%)
+     adding: Microsoft.Extensions.FileProviders.Physical.dll (164 bytes security) (deflated 47%)
+     adding: Microsoft.Extensions.FileSystemGlobbing.dll (164 bytes security) (deflated 49%)
+     adding: Microsoft.Extensions.Hosting.Abstractions.dll (164 bytes security) (deflated 47%)
+     adding: Microsoft.Extensions.Logging.Abstractions.dll (164 bytes security) (deflated 54%)
+     adding: Microsoft.Extensions.Logging.dll (164 bytes security) (deflated 48%)
+     adding: Microsoft.Extensions.ObjectPool.dll (164 bytes security) (deflated 45%)
+     adding: Microsoft.Extensions.Options.dll (164 bytes security) (deflated 53%)
+     adding: Microsoft.Extensions.Primitives.dll (164 bytes security) (deflated 50%)
+     adding: Microsoft.Net.Http.Headers.dll (164 bytes security) (deflated 53%)
+     adding: System.IO.Pipelines.dll (164 bytes security) (deflated 50%)
+     adding: System.Runtime.CompilerServices.Unsafe.dll (164 bytes security) (deflated 43%)
+     adding: System.Text.Encodings.Web.dll (164 bytes security) (deflated 57%)
+     adding: web.config (164 bytes security) (deflated 39%)
    C:\users\username\dotnet-core-tutorial\site> cd ../
    ```
 

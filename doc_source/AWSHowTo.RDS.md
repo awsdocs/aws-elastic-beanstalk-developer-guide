@@ -49,7 +49,7 @@ The following procedures describe the process for a [default VPC](https://docs.a
 
 1. Under **Database options**, for **Database name**, type **ebdb**\. Make a note of the **Database port** value for use later\.
 
-1. Verify the default settings for the remaining options, and choose **Launch DB instance**\.
+1. Verify the default settings for the remaining options, and choose **Create database**\.
 
 Next, modify the security group attached to your DB instance to allow inbound traffic on the appropriate port\. This is the same security group that you will attach to your Elastic Beanstalk environment later, so the rule that you add will grant ingress permission to other resources in the same security group\.
 
@@ -57,14 +57,14 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 
 1. Open the [ Amazon RDS console](https://console.aws.amazon.com/rds/home)\.
 
-1. Choose **Instances**\.
+1. Choose **Databases**\.
 
 1. Choose the name of your DB instance to view its details\.
 
-1. Under **Details** section, note the **Subnets**, **Security groups**, and **Endpoint** shown on this page so you can use this information later\.
+1. In the **Connectivity** section, note the **Subnets**, **Security groups**, and **Endpoint** shown on this page so you can use this information later\.
 
-1. Under **Security and network**, you can see the security group associated with the DB instance\. Open the link to view the security group in the Amazon EC2 console\.  
-![\[Details section of a DB instance page in the Amazon RDS console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup.png)
+1. Under **Security**, you can see the security group associated with the DB instance\. Open the link to view the security group in the Amazon EC2 console\.  
+![\[Connectivity section of a DB instance page in the Amazon RDS console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup.png)
 
 1. In the security group details, choose **Inbound**\.
 
@@ -159,18 +159,18 @@ You can add rules to a DB security group that allow ingress from EC2 security gr
 
 1. Open the [RDS management console](https://console.aws.amazon.com/rds/home)\.
 
-1. Choose **Launch a DB Instance**\.
+1. Choose **Create database**\.
 
-1. Proceed through the wizard until you reach the **Advanced Settings** page\. Note the values that you enter for the following options:
+1. Proceed through the wizard\. Note the values that you enter for the following options:
    + **Master Username**
    + **Master Password**
 
-1. For **Network and Security** settings, choose the following:
+1. When you reach **Configure advanced settings**, for **Network and Security** settings, choose the following:
    + **VPC** – **Not in VPC**\. If this option isn't available, your account might not support [EC2\-Classic](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html), or you may have chosen an [instance type that is only available in VPC](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types)\.
    + **Availability Zone** – **No Preference**
    + **DB Security Group\(s\)** – **Create new Security Group**
 
-1. Configure the remaining options and choose **Launch DB Instance**\. Note the values that you enter for the following options:
+1. Configure the remaining options and choose **Create database**\. Note the values that you enter for the following options:
    + **Database Name**
    + **Database Port**
 
@@ -198,14 +198,11 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 
 1. Open the [Amazon RDS console](https://console.aws.amazon.com/rds/home)\.
 
-1. Choose **Instances**\.
+1. Choose **Databases**\.
 
-1. Choose the arrow next to the entry for your DB instance to expand the view\.
+1. Choose the name of your DB instance to view its details\.
 
-1. Choose the **Details** tab\.
-
-1. In the **Security and Network** section, the security group associated with the DB instance is shown\. Open the link to view the security group in the Amazon EC2 console\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup-classic.png)
+1. In the **Connectivity** section, under **Security**, the security group associated with the DB instance is shown\. Open the link to view the security group in the Amazon EC2 console\.
 
 1. In the security group details, set **Connection Type** to **EC2 Security Group**\.
 
@@ -315,7 +312,7 @@ The highlighted portions of the URL correspond to the endpoint, port, DB name, u
 
 By default, your account owns the file and has permission to manage it, but IAM users and roles do not unless you grant them access explicitly\. Grant the instances in your Elastic Beanstalk environment by adding a policy to the [instance profile](concepts-roles-instance.md)\.
 
-The default instance is named `aws-elasticbeanstalk-ec2-role`\. If you're not sure what your instance profile is named, you can find it on the **Configuration** page in the [environment management console](using-features.managing.ec2.md)\.
+The default instance profile is named `aws-elasticbeanstalk-ec2-role`\. If you're not sure what your instance profile is named, you can find it on the **Configuration** page in the [environment management console](using-features.managing.ec2.md)\.
 
 **To add permissions to the instance profile**
 
@@ -325,7 +322,7 @@ The default instance is named `aws-elasticbeanstalk-ec2-role`\. If you're not su
 
 1. Choose **aws\-elasticbeanstalk\-ec2\-role**\.
 
-1. Under **Inline Policies**, choose **Create Role Policy**\. Choose **Custom Policy**\.
+1. Choose **Add inline policy**\.
 
 1. Add a policy that allows the instance to retrieve the file\.
 

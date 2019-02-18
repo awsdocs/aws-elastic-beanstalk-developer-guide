@@ -42,20 +42,9 @@ The Log Options section has two settings:
 
 ### Static Files<a name="python-platform-staticfiles"></a>
 
-To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\. When you add a mapping, an extra row appears in case you want to add another one\. To remove a mapping, click **Remove**\.
+To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
 
-![\[Static file configuration in the Modify software configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-static-files.png)
-
-If you aren't seeing the **Static Files** section, you have to add at least one mapping by using configuration options\. For example, the following [configuration file](ebextensions.md) adds two virtual path and directory mappings, with directories at the top level of your source bundle\.
-
-**Example \.ebextensions/python\-static\-files\.config**  
-
-```
-option_settings:
-  aws:elasticbeanstalk:container:python:staticfiles:
-    /html: statichtml
-    /images: staticimages
-```
+For details about configuring static files using the Elastic Beanstalk console, see [Serving Static Files](environment-cfg-staticfiles.md)\.
 
 By default, the proxy server in a Python environment serves any files in a folder named `static` at the `/static` path\. For example, if your application source contains a file named `logo.png` in a folder named `static`, the proxy server serves it to users at `subdomain.elasticbeanstalk.com/static/logo.png`\. You can configure additional mappings as explained in this section\.
 
@@ -87,7 +76,8 @@ option_settings:
   aws:elasticbeanstalk:application:environment:
     DJANGO_SETTINGS_MODULE: production.settings
   aws:elasticbeanstalk:container:python:staticfiles:
-    "/images/": "staticimages/"
+    /html: statichtml
+    /images: staticimages
   aws:elasticbeanstalk:container:python:
     WSGIPath: ebdjango/wsgi.py
     NumProcesses: 3

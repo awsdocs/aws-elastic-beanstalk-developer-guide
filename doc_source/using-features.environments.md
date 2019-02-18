@@ -28,14 +28,14 @@ The [\.NET on Windows Server platform](create_deploy_NET.md) doesn't support the
 
 1. Choose a **Platform** that matches the language used by your application\.
 **Note**  
-Elastic Beanstalk supports multiple [configurations](concepts.platforms.md) for most platforms listed\. By default, the console selects the latest version of the language, web container, or framework [supported by Elastic Beanstalk](concepts.platforms.md)\. If your application requires an older version, choose **Configure more options**, as described below\.
+Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most platforms listed\. By default, the console selects the latest version of the language, web container, or framework [supported by Elastic Beanstalk](concepts.platforms.md)\. If your application requires an older version, choose **Configure more options**, as described below\.
 
 1. For **App code**, choose **Sample application**\.
 
 1. If you want to further customize your environment, choose **Configure more options**\. The following options can be set only during environment creation:
    + Environment name
    + Domain name
-   + Platform configuration
+   + Platform version \(configuration\)
    + VPC
    + Tier
 

@@ -56,7 +56,7 @@ When all of the resources finish launching and the EC2 instances running the app
 
 ## Step 3: View Information about Your Environment<a name="GettingStarted.Walkthrough.ViewApp"></a>
 
-After you create the Elastic Beanstalk application, you can view information about the application you deployed and its provisioned resources by going to the environment dashboard in the AWS Management Console\. The dashboard shows the health of your application's environment, the running version, and the environment configuration\.
+After you create the Elastic Beanstalk application, you can view information about the application you deployed and its provisioned resources by going to the environment dashboard in the AWS Management Console\. The dashboard shows the health of your application's environment, the running version, and the environment's platform version \(configuration\)\.
 
 While Elastic Beanstalk creates your AWS resources and launches your application, the environment is in a `Pending` state\. Status messages about launch events are displayed in the environment's dashboard\.
 
@@ -69,7 +69,7 @@ If you are not currently viewing the dashboard, return to it now\.
 1. Choose **GettingStartedApp\-env**\.  
 ![\[Elastic beanstalk console showing list of applications and environments.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-chooseenvironment.png)
 
-The dashboard shows a subset of useful information about your environment\. This includes its URL, its current health status, the name of the currently deployed application version, its five most recent events, and the platform configuration on which the application runs\.
+The dashboard shows a subset of useful information about your environment\. This includes its URL, its current health status, the name of the currently deployed application version, its five most recent events, and the platform version \(configuration\) on which the application runs\.
 
 ![\[Environment dashboard.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-dashboard.png)
 

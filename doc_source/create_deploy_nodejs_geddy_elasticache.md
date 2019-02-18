@@ -27,7 +27,7 @@ Set up Geddy and create the project structure\. The following steps walk you thr
    $ node -v
    ```
 **Note**  
-For information about what Node\.js versions are supported, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
+For information about what Node\.js versions are supported, see [AWS Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
 
 1. Create a directory for your Geddy application\.
 

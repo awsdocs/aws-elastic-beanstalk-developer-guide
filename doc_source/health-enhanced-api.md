@@ -6,7 +6,7 @@ You configure enhanced health reporting by setting the service role, the instanc
 
 To use the API, SDKs, or AWS command line interface \(CLI\) to create an environment that supports enhanced health, you must:
 + Create a service role and instance profile with the appropriate [permissions](concepts-roles.md)
-+ Create a new environment with a solution stack for a new version of the [platform configuration](concepts.platforms.md)
++ Create a new environment with a new [platform version](concepts.platforms.md)
 + Set the health system type, instance profile, and service role [configuration options](command-options.md)
 
 Use the following configuration options in the `aws:elasticbeanstalk:healthreporting:system`, `aws:autoscaling:launchconfiguration`, and `aws:elasticbeanstalk:environment` namespaces to configure your environment for enhanced health reporting\. 

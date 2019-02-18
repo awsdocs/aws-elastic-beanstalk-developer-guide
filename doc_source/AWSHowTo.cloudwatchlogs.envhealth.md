@@ -9,7 +9,7 @@ When the environment's health status changes, Elastic Beanstalk adds a record to
 ## Prerequisites to Environment Health Streaming to CloudWatch Logs<a name="AWSHowTo.cloudwatchlogs.envhealth.prereqs"></a>
 
 To enable environment health streaming to CloudWatch Logs, you must meet the following conditions:
-+ *Platform* – You must be using a platform configuration that supports enhanced health reporting\.
++ *Platform* – You must be using a platform version that supports enhanced health reporting\.
 + *Permissions* – You must grant certain logging\-related permissions to Elastic Beanstalk so that it can act on your behalf to stream health information for your environment\. If your environment isn't using a service role that Elastic Beanstalk created for it, `aws-elasticbeanstalk-service-role`, or your account's service\-linked role, `AWSServiceRoleForElasticBeanstalk`, be sure to add the following permissions to your custom service role\.
 
   ```

@@ -201,9 +201,9 @@ The permissions granted by your default service role can vary depending on when 
 
 1. Choose **aws\-elasticbeanstalk\-service\-role**\.
 
-1. On the **Permissions** tab, in the **Managed Policies** and **Inline Policies** sections, review the list of policies attached to the role\.
+1. On the **Permissions** tab, review the list of policies attached to the role\.
 
-1. To view the permissions that a policy grants, choose **Show Policy** next to the policy\.
+1. To view the permissions that a policy grants, choose the policy\.
 
 ## Updating an Out\-of\-Date Default Service Role<a name="iam-servicerole-update"></a>
 
@@ -217,11 +217,11 @@ Alternatively, you can add the managed policies to the default service role manu
 
 1. Choose **aws\-elasticbeanstalk\-service\-role**\.
 
-1. On the **Permissions** tab, under **Managed Policies**, choose **Attach Policy**\.
+1. On the **Permissions** tab, choose **Attach policies**\.
 
 1. Type **AWSElasticBeanstalk** to filter the policies\.
 
-1. Select the following policies, and then choose **Attach Policies**:
+1. Select the following policies, and then choose **Attach policy**:
    + `AWSElasticBeanstalkEnhancedHealth`
    + `AWSElasticBeanstalkService`
 
@@ -235,11 +235,11 @@ If your application includes configuration files that refer to AWS resources for
 
 1. Choose **aws\-elasticbeanstalk\-service\-role**\.
 
-1. On the **Permissions** tab, under **Managed Policies**, choose **Attach Policy**\.
+1. On the **Permissions** tab, choose **Attach policies**\.
 
 1. Select the managed policy for the additional services that your application uses\. For example, `AmazonAPIGatewayAdministrator` or `AmazonElasticFileSystemFullAccess`\.
 
-1. Choose **Attach Policies**\.
+1. Choose **Attach policy**\.
 
 ## Creating a Service Role<a name="iam-servicerole-create"></a>
 
@@ -249,16 +249,22 @@ If you can't use the default service role, create a service role\.
 
 1. Open the [**Roles** page](https://console.aws.amazon.com/iam/home#roles) in the IAM console\.
 
-1. Choose **Create New Role**\.
+1. Choose **Create role**\.
 
-1. Type a name, and then choose **Next Step**\.
+1. Under **AWS service**, choose **AWS Elastic Beanstalk**, and then select your use case\.
 
-1. Under **AWS Service Roles**, choose **AWS Elastic Beanstalk**\.
+1. Choose **Next: Permissions**\.
 
 1. Attach the `AWSElasticBeanstalkService` and `AWSElasticBeanstalkEnhancedHealth` managed policies and any additional policies that provide permissions that your application needs\.
 
-1. Choose **Next Step**\.
+1. Choose **Next: Tags**\.
 
-1. Choose **Create Role**\.
+1. \(Optional\) Add tags to the role\.
+
+1. Choose **Next: Review**\.
+
+1. Enter a name for the role\.
+
+1. Choose **Create role**\.
 
 You can apply your custom service role when you create an environment in the [environment creation wizard](environments-create-wizard.md) or with the `--service-role` option on the `[eb create](eb3-create.md)` command\.

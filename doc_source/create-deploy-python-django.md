@@ -242,7 +242,7 @@ Immediately after deployment, you'll edit Django's configuration to add the doma
    Application django-tutorial has been created.
    ```
 
-   This command creates a new application named `django-tutorial` and configures your local repository to create environments with the latest Python 3\.6 platform configuration\.
+   This command creates a new application named `django-tutorial` and configures your local repository to create environments with the latest Python 3\.6 platform version\.
 
 1. \(optional\) Run eb init again to configure a default keypair so that you can connect to the EC2 instance running your application with SSH:
 

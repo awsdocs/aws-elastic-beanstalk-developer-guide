@@ -73,7 +73,7 @@ When you run eb init to configure your project, the EB CLI adds the `include_git
 The EB CLI did not always support including submodules\. To avoid an accidental and undesirable change to projects that had existed before we added submodule support, the EB CLI does not include submodules when the `include_git_submodules` option is missing\. If you have one of these existing projects and you want to include submodules in your deployments, add the option and set it to `true` as explained in this section\.
 
 **CodeCommit behavior**  
-Elastic Beanstalk's integration with [AWS CodeCommit](eb-cli-codecommit.md) doesn't support submodules at this time\. If you enabled your environment to integrate with AWS CodeCommit, submodules are not included in your deployments\.
+Elastic Beanstalk's integration with [CodeCommit](eb-cli-codecommit.md) doesn't support submodules at this time\. If you enabled your environment to integrate with CodeCommit, submodules are not included in your deployments\.
 
 ## Assigning Git tags to your application version<a name="eb3-cli-git.tags"></a>
 

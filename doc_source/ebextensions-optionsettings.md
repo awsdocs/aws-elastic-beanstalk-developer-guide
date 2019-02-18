@@ -34,6 +34,7 @@ Elastic Beanstalk also supports a shorthand syntax for option settings that lets
 option_settings:
   namespace:
     option name: option value
+    option name: option value
 ```
 
 ## Examples<a name="ebextensions-optionsettings-snippet"></a>

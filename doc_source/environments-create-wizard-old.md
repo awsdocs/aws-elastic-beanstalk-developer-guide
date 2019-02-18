@@ -37,7 +37,7 @@ After you launch an environment, you cannot change the environment tier\. If you
 ## Environment Type<a name="environments-create-wizard-old-environmenttype"></a>
 
 On the **Environment Type** page, select a platform and environment type, and then choose **Next**\.
-+ The **Predefined configuration** setting specifies the platform and version that is used for the environment\. For more information, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
++ The **Predefined configuration** setting specifies the platform and version that is used for the environment\. For more information, see [AWS Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
 **Note**  
 After you launch an environment with a specific configuration, you cannot change the configuration\. If your application requires a different configuration, you must launch a new environment\.
 + The **Saved configuration** setting lists all environment configurations that you previously saved for this application, if any\. If you have no saved configurations for this application, Elastic Beanstalk does not display this option in the console\.
@@ -48,7 +48,7 @@ After you launch an environment with a specific configuration, you cannot change
 On the **Application Version** page, you can use the sample application, upload your own, or specify the URL for the Amazon S3 bucket that contains your application code\.
 
 **Note**  
-Depending on the platform configuration you selected, you can upload your application in a ZIP [source bundle](applications-sourcebundle.md), a WAR file, or a plaintext Docker configuration\. You can include multiple WAR files inside a ZIP file to deploy multiple Tomcat applications to each instance in your environment\. The file size limit is 512 MB\.
+Depending on the platform version you selected, you can upload your application in a ZIP [source bundle](applications-sourcebundle.md), a WAR file, or a plaintext Docker configuration\. You can include multiple WAR files inside a ZIP file to deploy multiple Tomcat applications to each instance in your environment\. The file size limit is 512 MB\.
 
 For load\-balancing, automatically scaling environments, choose a **Deployment policy** to configure how new application versions and changes to software configurations for instances are deployed\. **All at once** completes deployments as quickly as possible, but can result in downtime\. Rolling deployments ensure that some instances remain in service during the entire deployment process\. The **Healthy threshold** option lets you lower the minimum status at which instances can pass health checks during rolling deployments and configuration updates\. See [Deployment Policies and Settings](using-features.rolling-version-deploy.md) for more information\.
 

@@ -1,6 +1,6 @@
 # Using Elastic Beanstalk Saved Configurations<a name="environment-configuration-savedconfig"></a>
 
-You can save your environment's configuration as an object in Amazon S3 that can be applied to other environments during environment creation, or applied to a running environment\. *Saved configurations* are YAML formatted templates that define an environment's [platform configuration](concepts.platforms.md), [tier](concepts.md#concepts-tier), [configuration option](command-options.md) settings, and tags\.
+You can save your environment's configuration as an object in Amazon S3 that can be applied to other environments during environment creation, or applied to a running environment\. *Saved configurations* are YAML formatted templates that define an environment's [platform version](concepts.platforms.md), [tier](concepts.md#concepts-tier), [configuration option](command-options.md) settings, and tags\.
 
 Create a saved configuration from the current state of your environment in the Elastic Beanstalk Management Console\.
 
@@ -88,7 +88,7 @@ The following keys are supported\.
   ```
   AWSConfigurationTemplateVersion: 1.1.0.0
   ```
-+ **Platform** – The Amazon Resource Name \(ARN\) of the environment's platform configuration\. You can specify the platform by ARN or solution stack name\.
++ **Platform** – The Amazon Resource Name \(ARN\) of the environment's platform version\. You can specify the platform by ARN or solution stack name\.
 
   ```
   Platform:

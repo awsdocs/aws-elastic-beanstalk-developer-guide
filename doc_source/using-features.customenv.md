@@ -1,6 +1,6 @@
 # Using a Custom Amazon Machine Image \(AMI\)<a name="using-features.customenv"></a>
 
-When you create an AWS Elastic Beanstalk environment, you can specify an Amazon Machine Image \(AMI\) to use instead of the standard Elastic Beanstalk AMI included in your platform configuration's solution stack\. A custom AMI can improve provisioning times when instances are launched in your environment if you need to install a lot of software that isn't included in the standard AMIs\.
+When you create an AWS Elastic Beanstalk environment, you can specify an Amazon Machine Image \(AMI\) to use instead of the standard Elastic Beanstalk AMI included in your platform version\. A custom AMI can improve provisioning times when instances are launched in your environment if you need to install a lot of software that isn't included in the standard AMIs\.
 
 Using [configuration files](ebextensions.md) is great for configuring and customizing your environment quickly and consistently\. Applying configurations, however, can start to take a long time during environment creation and updates\. If you do a lot of server configuration in configuration files, you can reduce this time by making a custom AMI that already has the software and configuration that you need\.
 
@@ -64,7 +64,7 @@ For details about instance virtualization types, see [Linux AMI Virtualization T
      repo_upgrade: none
    ```
 
-   The *repository version number* is the year and month version in the AMI name\. For example, AMIs based on the March 2015 release of Amazon Linux have a repository version number `2015.03`\. For an Elastic Beanstalk image, this matches the date shown in the solution stack name for your [platform configuration](concepts.platforms.md)\.
+   The *repository version number* is the year and month version in the AMI name\. For example, AMIs based on the March 2015 release of Amazon Linux have a repository version number `2015.03`\. For an Elastic Beanstalk image, this matches the date shown in the solution stack name for your [platform version](concepts.platforms.md)\.
 **Note**  
 These settings configure the lock\-on\-launch feature\. This causes the AMI to use a fixed, specific repository version when it launches, and disables the automatic installation of security updates\. Both are required to use a custom AMI with Elastic Beanstalk\.
 
@@ -94,7 +94,7 @@ These settings configure the lock\-on\-launch feature\. This causes the AMI to u
 
 1. Choose **Apply**\.
 
-When you create a new environment with the custom AMI, you should use the same platform configuration that you used as a base to create the AMI\. If you later apply a [platform update](using-features.platform.upgrade.md) to an environment using a custom AMI, Elastic Beanstalk attempts to apply the library and configuration updates during the bootstrapping process\.
+When you create a new environment with the custom AMI, you should use the same platform version that you used as a base to create the AMI\. If you later apply a [platform update](using-features.platform.upgrade.md) to an environment using a custom AMI, Elastic Beanstalk attempts to apply the library and configuration updates during the bootstrapping process\.
 
 ## Cleaning Up a Custom AMI<a name="using-features.customenv.cleanup"></a>
 

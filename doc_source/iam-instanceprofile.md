@@ -188,9 +188,9 @@ The permissions assigned to your default instance profile can vary depending on 
 
 1. Choose **aws\-elasticbeanstalk\-ec2\-role**\.
 
-1. Choose the **Permissions** tab and review the **Managed Policies** and **Inline Policies** sections to see the policies attached to the role\.
+1. On the **Permissions** tab, review the list of policies attached to the role\.
 
-1. To see the permissions that a policy grants, choose **Show Policy** next to the policy\.
+1. To see the permissions that a policy grants, choose the policy\.
 
 ## Updating an Out\-of\-Date Default Instance Profile<a name="iam-instanceprofile-update"></a>
 
@@ -204,11 +204,11 @@ Alternatively, you can add the managed policies to the role attached to the defa
 
 1. Choose **aws\-elasticbeanstalk\-ec2\-role**\.
 
-1. On the **Permissions** tab, under **Managed Policies**, choose **Attach Policy**\.
+1. On the **Permissions** tab, choose **Attach policies**\.
 
 1. Type **AWSElasticBeanstalk** to filter the policies\.
 
-1. Select the following policies, and then choose **Attach Policies**:
+1. Select the following policies, and then choose **Attach policy**:
    + `AWSElasticBeanstalkWebTier`
    + `AWSElasticBeanstalkWorkerTier`
    + `AWSElasticBeanstalkMulticontainerDocker`
@@ -223,11 +223,11 @@ If your application accesses AWS APIs or resources to which permissions aren't g
 
 1. Choose **aws\-elasticbeanstalk\-ec2\-role**\.
 
-1. On the **Permissions** tab, under **Managed Policies**, choose **Attach Policy**\.
+1. On the **Permissions** tab, choose **Attach policies**\.
 
 1. Select the managed policy for the additional services that your application uses\. For example, `AmazonS3FullAccess` or `AmazonDynamoDBFullAccess`\.
 
-1. Choose **Attach Policies**\.
+1. Choose **Attach policy**\.
 
 ## Creating an Instance Profile<a name="iam-instanceprofile-create"></a>
 
@@ -237,14 +237,20 @@ An instance profile is a wrapper around a standard IAM role that allows an EC2 i
 
 1. Open the [**Roles** page](https://console.aws.amazon.com/iam/home#roles) in the IAM console\.
 
-1. Choose **Create New Role**\.
+1. Choose **Create role**\.
 
-1. Type a name, and then choose **Next Step**\.
+1. Under **AWS service**, choose **EC2**\.
 
-1. Under **AWS Service Roles**, choose **Amazon EC2**\.
+1. Choose **Next: Permissions**\.
 
 1. Attach the appropriate managed policies provided by Elastic Beanstalk and any additional policies that provide permissions that your application needs\.
 
-1. Choose **Next Step**\.
+1. Choose **Next: Tags**\.
 
-1. Choose **Create Role**\.
+1. \(Optional\) Add tags to the role\.
+
+1. Choose **Next: Review**\.
+
+1. Enter a name for the role\.
+
+1. Choose **Create role**\.

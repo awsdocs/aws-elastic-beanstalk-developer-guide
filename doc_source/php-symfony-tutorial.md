@@ -24,7 +24,7 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Symfony 3 requires PHP 5\.5\.9 or later and the `intl` extension for PHP\. In this tutorial we use PHP 7\.0 and the corresponding Elastic Beanstalk platform configuration\. Install PHP and Composer by following the instructions at [Setting Up your PHP Development Environment](php-development-environment.md)\.
+Symfony 3 requires PHP 5\.5\.9 or later and the `intl` extension for PHP\. In this tutorial we use PHP 7\.0 and the corresponding Elastic Beanstalk platform version\. Install PHP and Composer by following the instructions at [Setting Up your PHP Development Environment](php-development-environment.md)\.
 
 ## Launch an Elastic Beanstalk Environment<a name="php-symfony-tutorial-launch"></a>
 

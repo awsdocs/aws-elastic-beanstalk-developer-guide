@@ -22,7 +22,7 @@ With [cross\-zone load balancing](https://docs.aws.amazon.com/elasticloadbalanci
 When an instance is removed from the load balancer because it has become unhealthy or the environment is scaling down, [connection draining](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html) gives the instance time to complete requests before closing the connection between the instance and the load balancer\. You can change the amount of time given to instances to send a response, or disable connection draining completely\.
 
 **Note**  
-Connection draining is enabled by default when you create an environment with the Elastic Beanstalkconsole or the EB CLI\. For other clients, you can enable it with [configuration options](#environments-cfg-clb-namespace)\. 
+Connection draining is enabled by default when you create an environment with the Elastic Beanstalk console or the EB CLI\. For other clients, you can enable it with [configuration options](#environments-cfg-clb-namespace)\. 
 
 You can use advanced load balancer settings to configure listeners on arbitrary ports, modify additional sticky session settings, and configure the load balancer to connect to EC2 instances securely\. These settings are available through [configuration options](#environments-cfg-clb-namespace) that you can set by using configuration files in your source code, or directly on an environment by using the Elastic Beanstalk API\. Many of these settings are also available in the Elastic Beanstalk console\. In addition, you can configure a load balancer to [upload access logs](environments-cfg-loadbalancer-accesslogs.md) to Amazon S3\.
 

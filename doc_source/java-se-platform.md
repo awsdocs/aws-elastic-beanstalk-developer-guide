@@ -9,7 +9,7 @@ Platform\-specific configuration options are available in the AWS Management Con
 
 To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
 
-Elastic Beanstalk Java SE platform configurations include an [nginx](https://www.nginx.com/) server that acts as a reverse proxy, serving cached static content and passing requests to your application\. The platform provides configuration options to configure the proxy server to serve static assets from a folder in your source code to reduce the load on your application\. For advanced scenarios, you can [include your own \.conf files](java-se-nginx.md) in your source bundle to extend Elastic Beanstalk's proxy configuration or overwrite it completely\. 
+The Elastic Beanstalk Java SE platform includes an [nginx](https://www.nginx.com/) server that acts as a reverse proxy, serving cached static content and passing requests to your application\. The platform provides configuration options to configure the proxy server to serve static assets from a folder in your source code to reduce the load on your application\. For advanced scenarios, you can [include your own \.conf files](java-se-nginx.md) in your source bundle to extend Elastic Beanstalk's proxy configuration or overwrite it completely\. 
 
 If you only have one JAR file, Elastic Beanstalk will run it with `java -jar application_name.jar`\. To configure the processes that run on the server instances in your environment, include an optional [Procfile](java-se-procfile.md) in your source bundle\. A `Procfile` is required if you have more than one JAR in your source bundle root, or if you want to customize the java command to set JVM options\.
 
@@ -25,7 +25,7 @@ For more information on using `commands`, `files`, `packages` and `container_com
 
 ## Configuring Your Java SE Environment<a name="java-se-options"></a>
 
-For Java SE platform configurations on Elastic Beanstalk, Elastic Beanstalk provides a few platform\-specific options in addition to the standard options it provides for all environments\. These options let you configure the nginx proxy that runs in front of your application to serve static files\.
+The Elastic Beanstalk Java SE platform provides a few platform\-specific options in addition to the standard options that all platforms have\. These options let you configure the nginx proxy that runs in front of your application to serve static files\.
 
 You can use the AWS Management Console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
 
@@ -47,20 +47,9 @@ The Log Options section has two settings:
 
 ### Static Files<a name="java-se-options-staticfiles"></a>
 
-To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\. When you add a mapping, an extra row appears in case you want to add another one\. To remove a mapping, click **Remove**\.
+To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
 
-![\[Static file configuration in the Modify software configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-static-files.png)
-
-If you aren't seeing the **Static Files** section, you have to add at least one mapping by using configuration options\. For example, the following [configuration file](ebextensions.md) adds two virtual path and directory mappings, with directories at the top level of your source bundle\.
-
-**Example \.ebextensions/java\-se\-static\-files\.config**  
-
-```
-option_settings:
-  aws:elasticbeanstalk:container:java:staticfiles:
-    /html: statichtml
-    /images: staticimages
-```
+For details about configuring static files using the Elastic Beanstalk console, see [Serving Static Files](environment-cfg-staticfiles.md)\.
 
 ### Environment Properties<a name="java-se-options-properties"></a>
 
@@ -74,7 +63,7 @@ String endpoint = System.getenv("API_ENDPOINT");
 
 See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
 
-## The aws:elasticbeanstalk:container:java:staticfiles Namespace<a name="java-se-namespaces"></a>
+## Java SE Configuration Namespaces<a name="java-se-namespaces"></a>
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
@@ -85,8 +74,8 @@ For example, this [option\_settings](ebextensions-optionsettings.md) snippet def
 ```
 option_settings:
   aws:elasticbeanstalk:container:java:staticfiles:
-    /public: public
-    /images: img
+    /html: statichtml
+    /images: staticimages
 ```
 
 The folders that you map using this namespace must be actual folders in the root of your source bundle\. You cannot map a path to a folder in a JAR file\.

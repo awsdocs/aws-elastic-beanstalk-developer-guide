@@ -43,6 +43,30 @@ files:
       sudo service httpd restart
 ```
 
+You must also configure your environment's proxy server to listen on port 443\. The following Apache 2\.4 configuration adds a listener on port 443\. To learn more, see [Configuring Your Tomcat Environment's Proxy Server](java-tomcat-proxy.md)\.
+
+**Example \.ebextensions/httpd/conf\.d/ssl\.conf**  
+
+```
+Listen 443
+<VirtualHost *:443> 
+  ServerName server-name
+  SSLEngine on 
+  SSLCertificateFile "/etc/pki/tls/certs/server.crt" 
+  SSLCertificateKeyFile "/etc/pki/tls/certs/server.key" 
+
+  <Proxy *> 
+    Require all granted 
+  </Proxy> 
+  ProxyPass / http://localhost:8080/ retry=0 
+  ProxyPassReverse / http://localhost:8080/ 
+  ProxyPreserveHost on 
+
+  ErrorLog /var/log/httpd/elasticbeanstalk-ssl-error_log 
+
+</VirtualHost>
+```
+
 Your certificate vendor may include intermediate certificates that you can install for better compatibility with mobile clients\. Configure Apache with an intermediate certificate authority \(CA\) bundle by adding the following to your SSL configuration file \(see [Extending and Overriding the Default Apache Configuration](java-tomcat-proxy.md#java-tomcat-proxy-apache) for the location\):
 + In the `ssl.conf` file contents, specify the chain file:
 

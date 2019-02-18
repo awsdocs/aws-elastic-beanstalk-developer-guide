@@ -8,6 +8,9 @@ Each deployment is identified by a deployment ID\. Deployment IDs start at `1` a
 
 If you need to ensure that your application source is always deployed to new instances, instead of updating existing instances, you can configure your environment to use [immutable updates](environmentmgmt-updates-immutable.md) for deployments\. In an immutable update, a second Auto Scaling group is launched in your environment and the new version serves traffic alongside the old version until the new instances pass health checks\.
 
+**Warning**  
+During managed platform updates with instance replacement enabled, immutable updates, and deployments with immutable updates enabled all instances are replaced\. This causes all acculumated [Amazon EC2 Burst Balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\.
+
 
 **Supported Deployment Policies**  
 

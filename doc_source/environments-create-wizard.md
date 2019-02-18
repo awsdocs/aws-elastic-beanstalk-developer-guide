@@ -48,7 +48,7 @@ Now that you have selected the platform to use, the next step is to provide your
 + You can use code that you already deployed to Elastic Beanstalk\. Choose **Existing version** and your application in the **Application code** section\.
 + You can upload new code\. Select **Upload your code**, and then choose **Upload**\. You can upload new application code from a local file, or you can specify the URL for the Amazon S3 bucket that contains your application code\.
 **Note**  
-Depending on the platform configuration you selected, you can upload your application in a ZIP [source bundle](applications-sourcebundle.md), a [WAR file](java-tomcat-platform.md), or a [plaintext Docker configuration](single-container-docker.md)\. The file size limit is 512 MB\.
+Depending on the platform version you selected, you can upload your application in a ZIP [source bundle](applications-sourcebundle.md), a [WAR file](java-tomcat-platform.md), or a [plaintext Docker configuration](single-container-docker.md)\. The file size limit is 512 MB\.
 
 ![\[Providing application code in the Create New Environment wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-environment-appcode.png)
 

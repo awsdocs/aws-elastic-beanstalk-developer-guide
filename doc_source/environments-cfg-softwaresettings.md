@@ -102,8 +102,8 @@ option_settings:
 ```
 
 Most Elastic Beanstalk platforms define additional namespaces with options for configuring software that runs on the instance, such as the reverse proxy that relays requests to your application\. For more information about the namespaces available for your platform, see the following:
-+ Go – [The aws:elasticbeanstalk:container:golang:staticfiles Namespace](go-environment.md#go-namespaces)
-+ Java SE – [The aws:elasticbeanstalk:container:java:staticfiles Namespace](java-se-platform.md#java-se-namespaces)
++ Go – [Go Configuration Namespaces](go-environment.md#go-namespaces)
++ Java SE – [Java SE Configuration Namespaces](java-se-platform.md#java-se-namespaces)
 + Tomcat – [Tomcat Configuration Namespaces](java-tomcat-platform.md#java-tomcat-namespaces)
 + \.NET – [The aws:elasticbeanstalk:container:dotnet:apppool Namespace](create_deploy_NET.container.console.md#dotnet-namespaces)
 + Node\.js – [Node\.js Configuration Namespaces](create_deploy_nodejs.container.md#nodejs-namespaces)

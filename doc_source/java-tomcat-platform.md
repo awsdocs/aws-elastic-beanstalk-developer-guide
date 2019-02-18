@@ -6,7 +6,7 @@ Platform\-specific configuration options are available in the AWS Management Con
 
 To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
 
-Elastic Beanstalk Tomcat platform configurations include a reverse proxy that forwards requests to your application\. The default server is [Apache HTTP Server Version 2\.4](https://httpd.apache.org/docs/2.4/)\. You can use [configuration options](#java-tomcat-namespaces) to configure Elastic Beanstalk to use the legacy [Apache HTTP Server Version 2\.2](https://httpd.apache.org/docs/2.2/) instead, or to use [nginx](https://www.nginx.com/)\. Elastic Beanstalk also provides configuration options to configure the proxy server to serve static assets from a folder in your source code to reduce the load on your application\. For advanced scenarios, you can [include your own `.conf` files](java-tomcat-proxy.md) in your source bundle to extend the Elastic Beanstalk proxy configuration or overwrite it completely\.
+The Elastic Beanstalk Tomcat platform includes a reverse proxy that forwards requests to your application\. The default server is [Apache HTTP Server Version 2\.4](https://httpd.apache.org/docs/2.4/)\. You can use [configuration options](#java-tomcat-namespaces) to configure Elastic Beanstalk to use the legacy [Apache HTTP Server Version 2\.2](https://httpd.apache.org/docs/2.2/) instead, or to use [nginx](https://www.nginx.com/)\. Elastic Beanstalk also provides configuration options to configure the proxy server to serve static assets from a folder in your source code to reduce the load on your application\. For advanced scenarios, you can [include your own `.conf` files](java-tomcat-proxy.md) in your source bundle to extend the Elastic Beanstalk proxy configuration or overwrite it completely\.
 
 You must package Java applications in a web application archive \(WAR\) file with a specific structure\. For information on the required structure and how it relates to the structure of your project directory, see [Structuring Your Project Folder](java-tomcat-platform-directorystructure.md)\.
 
@@ -16,7 +16,7 @@ Settings applied in the AWS Management Console override the same settings in con
 
 ## Configuring Your Tomcat Environment<a name="java-tomcat-options"></a>
 
-For Tomcat platform configurations on Elastic Beanstalk, Elastic Beanstalk provides a few platform\-specific options in addition to the standard options it provides for all environments\. These options enable you to configure the Java virtual machine \(JVM\) that runs on your environment's web servers, and define system properties that provide information configuration strings to your application\.
+The Elastic Beanstalk Tomcat platform provides a few platform\-specific options in addition to the standard options that all platforms have\. These options enable you to configure the Java virtual machine \(JVM\) that runs on your environment's web servers, and define system properties that provide information configuration strings to your application\.
 
 You can use the AWS Management Console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
 
@@ -47,20 +47,9 @@ The **Log Options** section has two settings:
 
 ### Static Files<a name="java-tomcat-options-staticfiles"></a>
 
-To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\. When you add a mapping, an extra row appears in case you want to add another one\. To remove a mapping, click **Remove**\.
+To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
 
-![\[Static file configuration in the Modify software configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-static-files.png)
-
-If you aren't seeing the **Static Files** section, you have to add at least one mapping by using configuration options\. For example, the following [configuration file](ebextensions.md) adds two virtual path and directory mappings, with directories at the top level of your source bundle\.
-
-**Example \.ebextensions/java\-tomcat\-static\-files\.config**  
-
-```
-option_settings:
-  aws:elasticbeanstalk:environment:proxy:staticfiles:
-    /html: statichtml
-    /images: staticimages
-```
+For details about configuring static files using the Elastic Beanstalk console, see [Serving Static Files](environment-cfg-staticfiles.md)\.
 
 ### Environment Properties<a name="java-tomcat-options-properties"></a>
 
@@ -109,7 +98,8 @@ option_settings:
     GzipCompression: 'true'
     ProxyServer: nginx
   aws:elasticbeanstalk:environment:proxy:staticfiles:
-    /pub: public
+    /html: statichtml
+    /images: staticimages
 ```
 
 ### Include Elastic Beanstalk Configurations Files<a name="java-tomcat-ebextensions"></a>

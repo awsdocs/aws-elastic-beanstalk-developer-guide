@@ -26,9 +26,9 @@ If you don't already have another web container or framework, install the approp
 
 ## Downloading Libraries<a name="java-development-environment-libraries"></a>
 
-Elastic Beanstalk platform configurations include few libraries by default\. Download libraries that your application will use and save them in your project folder to deploy in your application source bundle\.
+Elastic Beanstalk platforms include few libraries by default\. Download libraries that your application will use and save them in your project folder to deploy in your application source bundle\.
 
-If you've installed Tomcat locally, you can copy the servlet API and JavaServer Pages \(JSP\) API libraries from the installation folder\. If you deploy to a Tomcat platform configuration, you don't need to include these files in your source bundle, but you do need to have them in your `classpath` to compile any classes that use them\.
+If you've installed Tomcat locally, you can copy the servlet API and JavaServer Pages \(JSP\) API libraries from the installation folder\. If you deploy to a Tomcat platform version, you don't need to include these files in your source bundle, but you do need to have them in your `classpath` to compile any classes that use them\.
 
 JUnit, Google Guava, and Apache Commons provide several useful libraries\. Visit their homepages to learn more:
 +  [Download JUnit](https://github.com/junit-team/junit/wiki/Download-and-Install) 

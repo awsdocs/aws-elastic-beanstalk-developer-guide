@@ -23,9 +23,11 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Flask requires Python 2\.7 or 3\.4 or newer\. In this tutorial we use Python 3\.6 and the corresponding Elastic Beanstalk platform configuration\. Install Python by following the instructions at [Setting Up Your Python Development Environment](python-development-environment.md)\.
+Flask requires Python 2\.7 or 3\.4 or newer\. In this tutorial we use Python 3\.6 and the corresponding Elastic Beanstalk platform version\. Install Python by following the instructions at [Setting Up Your Python Development Environment](python-development-environment.md)\.
 
 The [Flask](http://flask.pocoo.org/) framework will be installed as part of the tutorial\.
+
+This tutorial also uses the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
 
 ## Set Up a Python Virtual Environment with Flask<a name="python-flask-setup-venv"></a>
 
@@ -183,7 +185,7 @@ Next, you'll create your application environment and deploy your configured appl
    Application flask-tutorial has been created.
    ```
 
-   This command creates a new application named `flask-tutorial` and configures your local repository to create environments with the latest Python 3\.6 platform configuration\.
+   This command creates a new application named `flask-tutorial` and configures your local repository to create environments with the latest Python 3\.6 platform version\.
 
 1. \(optional\) Run eb init again to configure a default keypair so that you can connect to the EC2 instance running your application with SSH:
 
