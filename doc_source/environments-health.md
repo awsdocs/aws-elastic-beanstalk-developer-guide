@@ -9,4 +9,4 @@ When you are running a production website, it is important to know that your app
 + [Manage Alarms](using-features.alarms.md)
 + [Viewing an Elastic Beanstalk Environment's Event Stream](using-features.events.md)
 + [Listing and Connecting to Server Instances](using-features.ec2connect.md)
-+ [Viewing Logs from Your Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.logging.md)
++ [Viewing Logs from Amazon EC2 Instances in Your Elastic Beanstalk Environment](using-features.logging.md)

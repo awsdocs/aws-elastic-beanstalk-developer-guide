@@ -146,14 +146,14 @@ The remainder of these instructions show the Linux command prompt `~$` in your h
 1. Open `http://127.0.0.1:8000/` in a web browser to view the site:  
 ![\[The welcome page for your Django app running locally\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/eb_django_test_local.png)
 
-1. Check the server log to see the output from your request\. You can stop the web server and return to your virtual environment by typing **Ctrl\-C**:
+1. Check the server log to see the output from your request\. You can stop the web server and return to your virtual environment by typing **Ctrl\+C**:
 
    ```
    Django version 2.1.1, using settings 'ebdjango.settings'
    Starting development server at http://127.0.0.1:8000/
    Quit the server with CONTROL-C.
    [07/Sep/2018 20:14:09] "GET / HTTP/1.1" 200 16348
-   Ctrl-C
+   Ctrl+C
    ```
 
 ## Configure Your Django Application for Elastic Beanstalk<a name="python-django-configure-for-eb"></a>

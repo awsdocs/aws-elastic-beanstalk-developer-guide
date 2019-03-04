@@ -35,8 +35,7 @@ The following tables list existing platform components that are either marked as
 | Node\.js 4\.x–8\.x | March 1, 2020 | 
 | PHP 5\.4–5\.6 | March 1, 2020 | 
 | PHP 7\.0–7\.1 | March 1, 2020 | 
-| Python 2\.6 | March 1, 2020 | 
-| Python 3\.4 | March 1, 2020 | 
+| Python 2\.6, 2\.7, 3\.4 | March 1, 2020 | 
 | Ruby 1\.9\.3 | March 1, 2020 | 
 | Ruby 2\.0–2\.3 | March 1, 2020 | 
 

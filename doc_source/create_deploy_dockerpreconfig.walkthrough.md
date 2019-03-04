@@ -78,6 +78,8 @@ After testing your application, you are ready to deploy it to Elastic Beanstalk\
 **To deploy your application to Elastic Beanstalk**
 
 1. In your application's root folder, rename the `Dockerfile` to `Dockerfile.local`\. This step is required for Elastic Beanstalk to use the `Dockerfile` that contains the correct instructions for Elastic Beanstalk to build a customized Docker image on each Amazon EC2 instance in your Elastic Beanstalk environment\.
+**Note**  
+You do not need to perform this step if your `Dockerfile` includes instructions that modify the platform version's base Docker image\. You do not need to use a `Dockerfile` if your `Dockerfile` includes only a `FROM` line to specify the base image from which to build the container\. In that situation, the `Dockerfile` is redundant\.
 
 1. Create an application source bundle\. For more information, see [Create an Application Source Bundle](applications-sourcebundle.md)\.
 

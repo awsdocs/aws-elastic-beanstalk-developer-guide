@@ -4,7 +4,7 @@ AWS Elastic Beanstalk provides two ways to regularly view logs from the Amazon E
 + Configure your Elastic Beanstalk environment to upload rotated instance logs to the environment's Amazon S3 bucket\.
 + Configure the environment to stream instance logs to Amazon CloudWatch Logs\.
 
-When you configure instance log streaming to CloudWatch Logs, Elastic Beanstalk creates CloudWatch Logs log groups for proxy and deployment logs on the Amazon EC2 instances, and transfers these log files to CloudWatch Logs in real time\. For more information about instance logs, see [Viewing Logs from Your Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.logging.md)\.
+When you configure instance log streaming to CloudWatch Logs, Elastic Beanstalk creates CloudWatch Logs log groups for proxy and deployment logs on the Amazon EC2 instances, and transfers these log files to CloudWatch Logs in real time\. For more information about instance logs, see [Viewing Logs from Amazon EC2 Instances in Your Elastic Beanstalk Environment](using-features.logging.md)\.
 
 In addition to instance logs, if you enable [enhanced health](health-enhanced.md) for your environment, you can configure the environment to stream health information to CloudWatch Logs\. When the environment's health status changes, Elastic Beanstalk adds a record to a health log group, with the new status and a description of the cause of the change\. For information about environment health streaming, see [Streaming Elastic Beanstalk Environment Health Information to Amazon CloudWatch Logs](AWSHowTo.cloudwatchlogs.envhealth.md)\.
 

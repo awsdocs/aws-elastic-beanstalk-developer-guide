@@ -4,7 +4,7 @@ AWS Elastic Beanstalk provides several options for how [deployments](using-featu
 
 With rolling deployments, Elastic Beanstalk splits the environment's EC2 instances into batches and deploys the new version of the application to one batch at a time, leaving the rest of the instances in the environment running the old version of the application\. During a rolling deployment, some instances serve requests with the old version of the application, while instances in completed batches serve other requests with the new version\.
 
-If you need to maintain full capacity during deployments, you can configure your environment to launch a new batch of instances prior to taking any instances out of service\. This option is called a **rolling deployment with an additional batch**\. When the deployment completes, Elastic Beanstalk terminates the additional batch of instances\.
+To maintain full capacity during deployments, you can configure your environment to launch a new batch of instances before taking any instances out of service\. This option is known as a **rolling deployment with an additional batch**\. When the deployment completes, Elastic Beanstalk terminates the additional batch of instances\.
 
 **Immutable deployments** perform an [immutable update](environmentmgmt-updates-immutable.md) to launch a full set of new instances running the new version of the application in a separate Auto Scaling group, alongside the instances running the old version\. Immutable deployments can prevent issues caused by partially completed rolling deployments\. If the new instances don't pass health checks, Elastic Beanstalk terminates them, leaving the original instances untouched\.
 
@@ -26,11 +26,11 @@ In the [environment management console](environments-console.md), enable and con
 
 1. On the **Rolling updates and deployments** configuration card, choose **Modify**\.
 
-1. In the **Application Deployments** section, choose a **Deployment policy**, batch settings and health check options\.
+1. In the **Application Deployments** section, choose a **Deployment policy**, batch settings, and health check options\.
 
 1. Choose **Apply**\.
 
-The **Application Deployments** section of the **Rolling updates and deployments** page has the following options for rolling updates:
+The **Application deployments** section of the **Rolling updates and deployments** page has the following options for rolling updates:
 + **Deployment policy** – Choose from the following deployment options:
   + **All at once** – Deploy the new version to all instances simultaneously\. All instances in your environment are out of service for a short time while the deployment occurs\.
   + **Rolling** – Deploy the new version in batches\. Each batch is taken out of service during the deployment phase, reducing your environment's capacity by the number of instances in a batch\.
@@ -40,18 +40,18 @@ The **Application Deployments** section of the **Rolling updates and deployments
 
   Choose **Percentage** to configure a percentage of the total number of EC2 instances in the Auto Scaling group \(up to 100 percent\), or choose **Fixed** to configure a fixed number of instances \(up to the maximum instance count in your environment's Auto Scaling configuration\)\.
 
-![\[Elastic Beanstalk Application Deployment Configuration Page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-rollingdeployments.png)
+![\[Elastic Beanstalk application deployment configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-rollingdeployments.png)
 
 The **Deployment preferences** section contains options related to health checks\.
 + **Ignore health check** – Prevents a deployment from rolling back when a batch fails to become healthy within the **Command timeout**\.
-+ **Healthy threshold** – Lowers the threshold at which an instance is considered healthy during rolling deployments, rolling updates and immutable updates\.
++ **Healthy threshold** – Lowers the threshold at which an instance is considered healthy during rolling deployments, rolling updates, and immutable updates\.
 + **Command timeout** – The number of seconds to wait for an instance to become healthy before canceling the deployment or, if **Ignore health check** is set, to continue to the next batch\.
 
 ![\[Elastic Beanstalk Application deployments configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-healthchecks.png)
 
 ## How Rolling Deployments Work<a name="environments-cfg-rollingdeployments-method"></a>
 
-When processing a batch, Elastic Beanstalk detaches all instances in the batch from the load balancer, deploys the new application version, and then reattaches the instances\. If you enable [connection draining](environments-cfg-clb.md#using-features.managing.elb.draining), Elastic Beanstalk drains existing connections from the EC2 instances in each batch before beginning the deployment\.
+When processing a batch, Elastic Beanstalk detaches all instances in the batch from the load balancer, deploys the new application version, and then reattaches the instances\. If you enable [connection draining](environments-cfg-clb.md#using-features.managing.elb.draining), Elastic Beanstalk drains existing connections from the Amazon EC2 instances in each batch before beginning the deployment\.
 
 After reattaching the instances in a batch to the load balancer, Elastic Load Balancing waits until they pass a minimum number of Elastic Load Balancing health checks \(the **Healthy check count threshold** value\), and then starts routing traffic to them\. If no [health check URL](environments-cfg-clb.md#using-features.managing.elb.healthchecks) is configured, this can happen very quickly, because an instance will pass the health check as soon as it can accept a TCP connection\. If a health check URL is configured, the load balancer doesn't route traffic to the updated instances until they return a `200 OK` status code in response to an `HTTP GET` request to the health check URL\.
 
@@ -66,12 +66,12 @@ If a deployment fails after one or more batches completed successfully, the comp
 You can also use the [configuration options](command-options.md) in the [`aws:elasticbeanstalk:command`](command-options-general.md#command-options-general-elasticbeanstalkcommand) namespace to configure rolling deployments\.
 
 Use the `DeploymentPolicy` option to set the deployment type\. The following values are supported:
-+ `AllAtOnce` disables rolling deployments and always deploy to all instances simultaneously\.
-+ `Rolling` enables standard rolling deployments\.
-+ `RollingWithAdditionalBatch` launches an extra batch of instances, prior to starting the deployment, to maintain full capacity\.
-+ `Immutable` performs an [immutable update](environmentmgmt-updates-immutable.md) for every deployment\.
++ `AllAtOnce` – Disables rolling deployments and always deploys to all instances simultaneously\.
++ `Rolling` – Enables standard rolling deployments\.
++ `RollingWithAdditionalBatch` – Launches an extra batch of instances, before starting the deployment, to maintain full capacity\.
++ `Immutable` – Performs an [immutable update](environmentmgmt-updates-immutable.md) for every deployment\.
 
-When you enable rolling deployments, set the `BatchSize` and `BatchSizeType` options to configure the size of each batch\. For example, to deploy twenty\-five percent of all instances in each batch, specify the following options and values\.
+When you enable rolling deployments, set the `BatchSize` and `BatchSizeType` options to configure the size of each batch\. For example, to deploy 25 percent of all instances in each batch, specify the following options and values\.
 
 **Example \.ebextensions/rolling\-updates\.config**  
 
@@ -83,7 +83,7 @@ option_settings:
     BatchSize: 25
 ```
 
-To deploy to five instances in each batch, regardless of the number of instances running, and to bring up an extra batch of five instances running the new version prior to pulling any instances out of service, specify the following options and values\.
+To deploy to five instances in each batch, regardless of the number of instances running, and to bring up an extra batch of five instances running the new version before pulling any instances out of service, specify the following options and values\.
 
 **Example \.ebextensions/rolling\-additionalbatch\.config**  
 

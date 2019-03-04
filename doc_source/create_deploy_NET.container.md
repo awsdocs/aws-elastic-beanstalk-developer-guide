@@ -3,7 +3,7 @@
  The **Container/\.NET Options** panel lets you fine\-tune the behavior of your Amazon EC2 instances and enable or disable Amazon S3 log rotation\. You can use the AWS Toolkit for Visual Studio to configure your container information\.
 
 **Note**  
-You can modify your configuration settings with zero downtime by swapping the CNAME for your environments\. For more information, see [Blue/Green Deployments with AWS Elastic Beanstalk](using-features.CNAMESwap.md)\.
+You can modify your configuration settings with zero downtime by swapping the CNAME for your environments\. For more information, see [Blue/Green Deployments with Elastic Beanstalk](using-features.CNAMESwap.md)\.
 
 If you want to, you can extend the number of parameters\. For information about extending parameters, see [Option Settings](ebextensions-optionsettings.md)\.
 

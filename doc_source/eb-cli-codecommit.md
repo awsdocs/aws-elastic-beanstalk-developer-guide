@@ -10,7 +10,7 @@ For information about the AWS services offered in each region, see [Region Table
 
 **Topics**
 + [Prerequisites](#eb-cli-codecommit-prereqs)
-+ [Creating an CodeCommit Repository with the EB CLI](#eb-cli-codecommit-create)
++ [Creating a CodeCommit Repository with the EB CLI](#eb-cli-codecommit-create)
 + [Deploying from Your CodeCommit Repository](#eb-cli-codecommit-deploy)
 + [Configuring Additional Branches and Environments](#eb-cli-codecommit-config)
 + [Using an Existing CodeCommit Repository](#eb-cli-codecommit-existing)
@@ -39,11 +39,11 @@ To use CodeCommit with AWS Elastic Beanstalk, you need a local Git repository \(
    ~/my-app$ git commit -m "Elastic Beanstalk application"
    ```
 
-## Creating an CodeCommit Repository with the EB CLI<a name="eb-cli-codecommit-create"></a>
+## Creating a CodeCommit Repository with the EB CLI<a name="eb-cli-codecommit-create"></a>
 
 To get started with CodeCommit, run [eb init](eb3-init.md)\. During repository configuration, the EB CLI prompts you to use CodeCommit to store your code and speed up deployments\. Even if you previously configured your project with eb init, you can run it again to configure CodeCommit\.
 
-**To create an CodeCommit repository with the EB CLI**
+**To create a CodeCommit repository with the EB CLI**
 
 1. Run eb init in your project folder\. During configuration, the EB CLI asks if you want to use CodeCommit to store your code and speed up deployments\. If you previously configured your project with eb init, you can still run it again to configure CodeCommit\. Type **y** at the prompt to set up CodeCommit\.
 
@@ -184,7 +184,7 @@ CodeCommit configuration applies to a single branch\. You can use eb use and eb 
 
 ## Using an Existing CodeCommit Repository<a name="eb-cli-codecommit-existing"></a>
 
-If you already have an CodeCommit repository and want to use it with Elastic Beanstalk, run eb init at the root of your local Git repository\.
+If you already have a CodeCommit repository and want to use it with Elastic Beanstalk, run eb init at the root of your local Git repository\.
 
 **To use an existing CodeCommit repository with the EB CLI**
 

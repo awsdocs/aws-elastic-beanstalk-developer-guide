@@ -59,7 +59,7 @@ eb local printenv
 
 eb local run
 
-Status messages from Docker\. Remains active as long as application is running\. Press **Ctrl\-C** to stop the application\.
+Status messages from Docker\. Remains active as long as application is running\. Press **Ctrl\+C** to stop the application\.
 
 eb local status
 

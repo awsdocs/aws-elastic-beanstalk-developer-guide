@@ -100,7 +100,8 @@ Configure scaling triggers for your environment's Auto Scaling group\.
 |  LowerBreachScaleIncrement  |  How many Amazon EC2 instances to remove when performing a scaling activity\.  |   `-1`   |   | 
 |  LowerThreshold  |  If the measurement falls below this number for the breach duration, a trigger is fired\.  |   `2000000`   |  `0` to `20000000`  | 
 |  MeasureName  |  Metric used for your Auto Scaling trigger\.  |   `NetworkOut`   |   `CPUUtilization`   `NetworkIn`   `NetworkOut`   `DiskWriteOps`   `DiskReadBytes`   `DiskReadOps`   `DiskWriteBytes`   `Latency`   `RequestCount`   `HealthyHostCount`   `UnhealthyHostCount`   `TargetResponseTime`   | 
-|  Period  |  Specifies how frequently Amazon CloudWatch measures the metrics for your trigger\.  |   `5`   |   | 
+|  Period  |  Specifies how frequently Amazon CloudWatch measures the metrics for your trigger\. The value is the number of minutes between two consecutive periods\.  |   `5`   |  `1` to `600`  | 
+|  EvaluationPeriods  |  The number of consecutive evaluation periods used to determine if a breach is occurring\.  |   `1`   |  `1` to `600`  | 
 |  Statistic  |  Statistic the trigger should use, such as `Average`\.  |   `Average`   |   `Minimum`   `Maximum`   `Sum`   `Average`   | 
 |  Unit  |  Unit for the trigger measurement, such as `Bytes`\.  |   `Bytes`   |   `Seconds`   `Percent`   `Bytes`   `Bits`   `Count`   `Bytes/Second`   `Bits/Second`   `Count/Second`   `None`   | 
 |  UpperBreachScaleIncrement  |  How many Amazon EC2 instances to add when performing a scaling activity\.  |   `1`   |   | 
@@ -134,7 +135,7 @@ Configure your environment to launch resources in a custom [Amazon Virtual Priva
 |  VPCId  |  The ID for your Amazon VPC\.  |  None  |   | 
 |  Subnets  |  The IDs of the Auto Scaling group subnet or subnets\. If you have multiple subnets, specify the value as a single comma\-delimited string of subnet IDs \(for example, `"subnet-11111111,subnet-22222222"`\)\.  |  None  |   | 
 |  ELBSubnets  |  The IDs of the subnet or subnets for the elastic load balancer\. If you have multiple subnets, specify the value as a single comma\-delimited string of subnet IDs \(for example, `"subnet-11111111,subnet-22222222"`\)\.  |  None  |   | 
-|  ELBScheme  |  Specify `internal` if you want to create an internal load balancer in your Amazon VPC so that your Elastic Beanstalk application cannot be accessed from outside your Amazon VPC\.  |  None  |   `internal`   | 
+|  ELBScheme  |  Specify `internal` if you want to create an internal load balancer in your Amazon VPC so that your Elastic Beanstalk application cannot be accessed from outside your Amazon VPC\. If you specify a value other than `public` or `internal`, Elastic Beanstalk will ignore the value\.  |   `public`   |   `public`   `internal`   | 
 |  DBSubnets  |  Contains the IDs of the database subnets\. This is only used if you want to add an Amazon RDS DB Instance as part of your application\. If you have multiple subnets, specify the value as a single comma\-delimited string of subnet IDs \(for example, `"subnet-11111111,subnet-22222222"`\)\.  |  None  |   | 
 |  AssociatePublicIpAddress  |  Specifies whether to launch instances with public IP addresses in your Amazon VPC\. Instances with public IP addresses do not require a NAT device to communicate with the Internet\. You must set the value to `true` if you want to include your load balancer and instances in a single public subnet\.  |  None  |   `true`   `false`   | 
 

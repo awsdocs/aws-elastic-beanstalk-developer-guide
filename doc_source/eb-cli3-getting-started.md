@@ -45,7 +45,7 @@ INFO: createEnvironment is starting.
  -- Events -- (safe to Ctrl+C) Use "eb abort" to cancel the command.
 ```
 
-Your environment can take several minutes to become ready\. Press **Ctrl\-C** to return to the command line while the environment is created\.
+Your environment can take several minutes to become ready\. Press **Ctrl\+C** to return to the command line while the environment is created\.
 
 ## eb status<a name="ebcli3-basics-status"></a>
 

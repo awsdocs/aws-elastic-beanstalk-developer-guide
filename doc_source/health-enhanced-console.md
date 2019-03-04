@@ -17,40 +17,46 @@ The [environment dashboard](environments-console.md#environments-dashboard) disp
 
 1. Navigate to the [management page](environments-console.md) for your environment\.
 
-For detailed information about the current environment's health, open the Health page by choosing **Causes**\. 
+For detailed information about the current environment's health, open the **Health** page by choosing **Causes**\. 
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-dashboard.png)
+![\[A health warning on the Elastic Beanstalk environment dashboard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-dashboard.png)
 
 ## Environment Health Page<a name="health-enhanced-console-healthpage"></a>
 
-The Health page displays health status, metrics and causes for the environment and for each EC2 instance in the environment\.
+The **Health** page displays health status, metrics, and causes for the environment and for each Amazon EC2 instance in the environment\.
 
 **Note**  
-Elastic Beanstalk displays the Health page only if you have [enabled enhanced health monitoring](health-enhanced-enable.md) for the environment\.
+Elastic Beanstalk displays the **Health** page only if you have [enabled enhanced health monitoring](health-enhanced-enable.md) for the environment\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-instances.png)
+The following image shows the **Health** page for a Linux environment\.
+
+![\[Environment Health page for a Linux environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-instances.png)
+
+The following image shows the **Health** page for a Windows environment\. Notice that CPU metrics are different from those on a Linux environment\.
+
+![\[Environment Health page for a Windows environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-instances-win.png)
 
 To display only instances that have a particular status, choose**Filter By**, and then choose a [status](health-enhanced-status.md)\.
 
 To reboot or terminate an unhealthy instance, choose **Instance Actions**, and then choose **Reboot** or **Terminate**\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-instances-actions.png)
+![\[Environment Health page showing the Instance Actions menu for rebooting or terminating unhealthy instances\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-instances-actions.png)
 
-To hide detailed information about the environment and instances' health, choose **Hide Details**\. To show or hide the details for a single instance, use the arrow at the beginning of the row:
+To hide detailed information about the environment and instances' health, choose **Hide Details**\. To show or hide the details for a single instance, use the arrow at the beginning of the row\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-causes.png)
+![\[Showing or hiding a single instance on the Environment Health page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-causes.png)
 
-Elastic Beanstalk updates the Health page every ten seconds\. It reports information about environment health for five categories\.
+Elastic Beanstalk updates the **Health** page every 10 seconds\. It reports information about environment health for five categories\.
 
-The first category, **Server**, displays information about each of the EC2 instances in the environment, including the instance's ID and [status](health-enhanced-status.md), the amount of time since the instance was launched, and the ID of the most recent deployment executed on the instance\.
+The first category, **Server**, displays information about each of the EC2 instances in the environment\. This includes the instance's ID and [status](health-enhanced-status.md), the amount of time since the instance was launched, and the ID of the most recent deployment executed on the instance\.
 
-For more information about an instance, including its Availability Zone and instance type, pause on its **Instance ID**:
+For more information about an instance, including its Availability Zone and instance type, pause on its **Instance ID**\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-instance.png)
+![\[Server metrics on the Environment Health page with instance information tooltip\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-instance.png)
 
-For information about the last [deployment](using-features.deploy-existing-version.md) to the instance, pause on the **Deployment ID**:
+For information about the last [deployment](using-features.deploy-existing-version.md) to the instance, pause on the **Deployment ID**\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-deployment.png)
+![\[Server metrics on the Environment Health page with deployment information tooltip\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-deployment.png)
 
 Deployment information includes the following:
 + **Deployment ID**—The unique identifier for the [deployment](using-features.deploy-existing-version.md)\. Deployment IDs starts at 1 and increase by one each time you deploy a new application version or change configuration settings that affect the software or operating system running on the instances in your environment\.
@@ -60,12 +66,12 @@ Deployment information includes the following:
 
 The other categories provide detailed information about the results and latency of requests served by each instance, and load and CPU utilization information for each instance\. For details on these metrics, see [Instance Metrics](health-enhanced-metrics.md)\.
 
-If you [enable X\-Ray integration](environment-configuration-debugging.md) on your environment and instrument your application with the AWS X\-Ray SDK, the Health page adds links to the AWS X\-Ray console in the overview row\.
+If you [enable X\-Ray integration](environment-configuration-debugging.md) on your environment and instrument your application with the AWS X\-Ray SDK, the **Health** page adds links to the AWS X\-Ray console in the overview row\.
 
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-xray.png)
+![\[Request metrics on the Environment Health page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-xray.png)
 
 Choose a link to view traces related to the highlighted statistic in the AWS X\-Ray console\.
 
 ## Monitoring Page<a name="health-enhanced-console-monitoringpage"></a>
 
-The Monitoring page displays summary statistics and graphs for the custom Amazon CloudWatch metrics generated by the enhanced health reporting system\. See [Monitoring Environment Health in the AWS Management Console](environment-health-console.md) for instructions on adding graphs and statistics to this page\. 
+The **Monitoring** page displays summary statistics and graphs for the custom Amazon CloudWatch metrics generated by the enhanced health reporting system\. See [Monitoring Environment Health in the AWS Management Console](environment-health-console.md) for instructions on adding graphs and statistics to this page\. 

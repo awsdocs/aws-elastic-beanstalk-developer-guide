@@ -205,7 +205,7 @@ After you have deployed a sample application, you can update it with your own ap
 1. Your environment will be updated after a few minutes\. Once the environment is green and ready, refresh the URL to verify it worked\. You should see a web page that says "Hello, World\!"\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-nodejs-geddy.png)
 
-You can access the logs for your EC2 instances running your application\. For instructions on accessing your logs, see [Viewing Logs from Your Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.logging.md)\.
+You can access the logs for your EC2 instances running your application\. For instructions on accessing your logs, see [Viewing Logs from Amazon EC2 Instances in Your Elastic Beanstalk Environment](using-features.logging.md)\.
 
 Next, let's create an environment variable and set the environment to production\.
 
@@ -475,7 +475,7 @@ Make sure you are looking at the same region that you deployed your application 
 
       If you copy and paste your application URL into another web browser, you should see your CurrItem count go up to 2 after 5 minutes\.
 
-   1. Take a snapshot of your logs, and look in `/var/log/nodejs/nodejs.log`\. For more information about logs, see [Viewing Logs from Your Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.logging.md)\. You should see something similar to the following:
+   1. Take a snapshot of your logs, and look in `/var/log/nodejs/nodejs.log`\. For more information about logs, see [Viewing Logs from Amazon EC2 Instances in Your Elastic Beanstalk Environment](using-features.logging.md)\. You should see something similar to the following:
 
       ```
       "sessions": {

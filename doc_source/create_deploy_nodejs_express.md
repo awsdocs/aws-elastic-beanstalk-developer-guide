@@ -58,7 +58,7 @@ Set up Express and create the project structure\. The following walks you throug
    > node ./bin/www
    ```
 
-   Press **Ctrl\+c** to stop the server\.
+   Press **Ctrl\+C** to stop the server\.
 
 1. Initialize the Git repository\. If you don't have Git installed, download it from the [Git downloads site](https://git-scm.com/downloads)\.
 

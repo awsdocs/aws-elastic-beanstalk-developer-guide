@@ -1,4 +1,4 @@
-# Blue/Green Deployments with AWS Elastic Beanstalk<a name="using-features.CNAMESwap"></a>
+# Blue/Green Deployments with Elastic Beanstalk<a name="using-features.CNAMESwap"></a>
 
 Because AWS Elastic Beanstalk performs an in\-place update when you update your application versions, your application can become unavailable to users for a short period of time\. You can avoid this downtime by performing a blue/green deployment, where you deploy the new version to a separate environment, and then swap CNAMEs of the two environments to redirect traffic to the new version instantly\.
 
@@ -28,4 +28,4 @@ Elastic Beanstalk swaps the CNAME records of the old and new environments, redir
 
 ![\[Swap Environment URL events\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cnameswap-events.png)
 
-After Elastic Beanstalk completes the swap operation, verify that the new environment responds when you try to connect to the old environment URL\. However, do not terminate your old environment until the DNS changes have been propagated and your old DNS records expire\. DNS servers do not necessarily clear old records from their cache based on the time to live \(TTL\) you set on your DNS records\.
+After Elastic Beanstalk completes the swap operation, verify that the new environment responds when you try to connect to the old environment URL\. However, do not terminate your old environment until the DNS changes are propagated and your old DNS records expire\. DNS servers don't necessarily clear old records from their cache based on the time to live \(TTL\) you set on your DNS records\.

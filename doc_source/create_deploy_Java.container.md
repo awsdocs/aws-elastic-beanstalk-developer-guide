@@ -3,7 +3,7 @@
 The **Container/JVM Options** panel lets you fine\-tune the behavior of the Java Virtual Machine on your Amazon EC2 instances and enable or disable Amazon S3 log rotation\. You can use the AWS Toolkit for Eclipse to configure your container information\. For more information on the options available for Tomcat environments, see [Configuring Your Tomcat Environment](java-tomcat-platform.md#java-tomcat-options)
 
 **Note**  
-You can modify your configuration settings with zero downtime by swapping the CNAME for your environments\. For more information, see [Blue/Green Deployments with AWS Elastic Beanstalk](using-features.CNAMESwap.md)\.
+You can modify your configuration settings with zero downtime by swapping the CNAME for your environments\. For more information, see [Blue/Green Deployments with Elastic Beanstalk](using-features.CNAMESwap.md)\.
 
 **To access the Container/JVM Options panel for your Elastic Beanstalk application**
 

@@ -10,7 +10,7 @@ For information about the AWS services offered in each region, see [Region Table
 
 **To create an Elastic Beanstalk application that uses CodeBuild**
 
-1. Include an CodeBuild build specification file, [https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html), in your application folder\.
+1. Include a CodeBuild build specification file, [https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html](https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html), in your application folder\.
 
 1. Add an `eb_codebuild_settings` entry with options specific to Elastic Beanstalk to the file\.
 
@@ -28,7 +28,7 @@ eb_codebuild_settings:
 
 `CodeBuildServiceRole`  
 The ARN or name of the AWS Identity and Access Management \(IAM\) service role that CodeBuild can use to interact with dependent AWS services on your behalf\. This value is required\. If you omit it, any subsequent eb create or eb deploy command fails\.  
-To learn more about creating a service role for CodeBuild, see [Create an CodeBuild Service Role](https://docs.aws.amazon.com/codebuild/latest/userguide/setting-up.html#setting-up-service-role) in the *AWS CodeBuild User Guide*\.  
+To learn more about creating a service role for CodeBuild, see [Create a CodeBuild Service Role](https://docs.aws.amazon.com/codebuild/latest/userguide/setting-up.html#setting-up-service-role) in the *AWS CodeBuild User Guide*\.  
 You also need permissions to perform actions in CodeBuild itself\. The Elastic Beanstalk `AWSElasticBeanstalkFullAccess` managed user policy includes all the required CodeBuild action permissions\. If you're not using the managed policy, be sure to allow the following permissions in your user policy\.  
 
 ```
@@ -48,7 +48,7 @@ The `Image` value is optional\. If you omit it, the eb init command attempts to 
 
 `Timeout`  
 The duration, in minutes, that the CodeBuild build runs before timing out\. This value is optional\. For details about valid and default values, see [Create a Build Project in CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/create-project.html)\.  
-This timeout controls the maximum duration for an CodeBuild run, and the EB CLI also respects it as part of its first step to create an application version\. It's distinct from the value you can specify with the `--timeout` option of the [eb create](eb3-create.md) or [eb deploy](eb3-deploy.md) commands\. The latter value controls the maximum duration that for EB CLI to wait for environment creation or update\.
+This timeout controls the maximum duration for a CodeBuild run, and the EB CLI also respects it as part of its first step to create an application version\. It's distinct from the value you can specify with the `--timeout` option of the [eb create](eb3-create.md) or [eb deploy](eb3-deploy.md) commands\. The latter value controls the maximum duration that for EB CLI to wait for environment creation or update\.
 
 ## Building and Deploying Your Application Code<a name="eb-cli-codebuild-using"></a>
 

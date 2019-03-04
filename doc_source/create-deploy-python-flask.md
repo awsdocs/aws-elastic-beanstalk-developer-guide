@@ -151,7 +151,7 @@ Open `http://127.0.0.1:5000/` in your web browser\. You should see the applicati
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/eb_flask_test_local.png)
 
-Check the server log to see the output from your request\. You can stop the web server and return to your virtual environment by typing **Ctrl\-C**\.
+Check the server log to see the output from your request\. You can stop the web server and return to your virtual environment by typing **Ctrl\+C**\.
 
 If you got debug output instead, fix the errors and make sure the application is running locally before configuring it for Elastic Beanstalk\.
 

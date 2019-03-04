@@ -66,7 +66,7 @@ Map volumes from an EC2 instance to your Docker container\. Specify one or more 
 ```
 
 ****Logging****  
-Specify the directory inside the container to which your application writes logs\. Elastic Beanstalk uploads any logs in this directory to Amazon S3 when you request tail or bundle logs\. If you rotate logs to a folder named `rotated` within this directory, you can also configure Elastic Beanstalk to upload rotated logs to Amazon S3 for permanent storage\. For more information, see [Viewing Logs from Your Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.logging.md)\.
+Specify the directory inside the container to which your application writes logs\. Elastic Beanstalk uploads any logs in this directory to Amazon S3 when you request tail or bundle logs\. If you rotate logs to a folder named `rotated` within this directory, you can also configure Elastic Beanstalk to upload rotated logs to Amazon S3 for permanent storage\. For more information, see [Viewing Logs from Amazon EC2 Instances in Your Elastic Beanstalk Environment](using-features.logging.md)\.
 
 **Command**  
 Specify a command to execute in the container\. If you specify an **Entrypoint**, then **Command** is added as an argument to **Entrypoint**\. For more information, see [CMD](https://docs.docker.com/engine/reference/run/#cmd-default-command-or-options) in the Docker documentation\.

@@ -189,7 +189,7 @@ Windows PowerShell uses ebp as a command alias\. If you're running the EB CLI in
 **Note**  
 Packer will fail to create a custom platform if you use the Elastic Beanstalk default instance profile `aws-elasticbeanstalk-ec2-role`\.
 
-   The EB CLI shows event output of the Packer environment until the build is complete\. You can exit the event view by pressing **Ctrl\-C**\. 
+   The EB CLI shows event output of the Packer environment until the build is complete\. You can exit the event view by pressing **Ctrl\+C**\. 
 
 1. You can check the logs for errors using the [eb platform logs](eb3-platform.md#eb3-platform-logs) command\.
 

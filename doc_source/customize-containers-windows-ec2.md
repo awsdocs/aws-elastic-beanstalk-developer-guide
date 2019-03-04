@@ -18,7 +18,7 @@ Configuration files support the following keys that affect the Windows server on
 Keys are processed in the order that they are listed here\.
 
 **Note**  
-Older \(non\-versioned\) \.NET platform versions do not process configuration files in the correct order\. Learn more at [Migrating to v1 Elastic Beanstalk Windows Server Platforms](dotnet-v2migration.md)\.
+Older \(non\-versioned\) \.NET platform versions do not process configuration files in the correct order\. Learn more at [Migrating Across Major Versions of the Elastic Beanstalk Windows Server Platform](dotnet-v2migration.md)\.
 
 Watch your environment's [events](using-features.events.md) while developing and testing configuration files\. Elastic Beanstalk ignores a configuration file that contains validation errors, like an invalid key, and doesn't process any of the other keys in the same file\. When this happens, Elastic Beanstalk adds a warning event to the event log\.
 

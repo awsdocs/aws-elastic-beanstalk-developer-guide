@@ -2,7 +2,7 @@
 
 ## Description<a name="eb3-codesourcedescription"></a>
 
-Configures the EB CLI to [deploy from an CodeCommit repository](eb-cli-codecommit.md), or disables CodeCommit integration and uploads the source bundle from your local machine\.
+Configures the EB CLI to [deploy from a CodeCommit repository](eb-cli-codecommit.md), or disables CodeCommit integration and uploads the source bundle from your local machine\.
 
 **Note**  
 Some regions don't offer CodeCommit\. The integration between Elastic Beanstalk and CodeCommit doesn't work in these regions\.  

@@ -72,7 +72,7 @@ Save the current configuration of your environment to your application\. Before 
 
 ### Swap Environment URLs<a name="environments-dashboard-actions-swap"></a>
 
-Swap the CNAME of the current environment with a new environment\. After a CNAME swap, all traffic to the application using the environment URL goes to the new environment\. When you are ready to deploy a new version of your application, you can launch a separate environment under the new version\. When the new environment is ready to start taking requests, perform a CNAME swap to start routing traffic to the new environment with no interruption of service\. For more information, see [Blue/Green Deployments with AWS Elastic Beanstalk](using-features.CNAMESwap.md)\. 
+Swap the CNAME of the current environment with a new environment\. After a CNAME swap, all traffic to the application using the environment URL goes to the new environment\. When you are ready to deploy a new version of your application, you can launch a separate environment under the new version\. When the new environment is ready to start taking requests, perform a CNAME swap to start routing traffic to the new environment with no interruption of service\. For more information, see [Blue/Green Deployments with Elastic Beanstalk](using-features.CNAMESwap.md)\. 
 
 ### Clone Environment<a name="environments-dashboard-actions-clone"></a>
 
@@ -118,7 +118,7 @@ You can also configure your environment's instances to upload logs to Amazon S3 
 
 ![\[The logs page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-logs.png)
 
-For more information, see [Viewing Logs from Your Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.logging.md)\.
+For more information, see [Viewing Logs from Amazon EC2 Instances in Your Elastic Beanstalk Environment](using-features.logging.md)\.
 
 ## Health<a name="environments-console-health"></a>
 

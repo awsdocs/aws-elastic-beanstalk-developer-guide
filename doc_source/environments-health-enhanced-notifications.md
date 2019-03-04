@@ -10,11 +10,11 @@ Elastic Beanstalk monitors your environment for consistency following deployment
 
 *Incorrect application version on environment instances\. Expected version "v1" \(deployment 1\)\.*
 
-The expected application version is not running on some or all instances in an **environment**\.
+The expected application version is not running on some or all instances in an environment\.
 
 *Incorrect application version "v2" \(deployment 2\)\. Expected version "v1" \(deployment 1\)\.*
 
-The application deployed to an **instance** differs from the expected version\. If a deployment fails, the expected version is reset to the version from the most recent successful deployment\. In the above example, the first deployment \(version "v1"\) succeeded, but the second deployment \(version "v2"\) failed\. Any instances running "v2" are considered unhealthy\.
+The application deployed to an instance differs from the expected version\. If a deployment fails, the expected version is reset to the version from the most recent successful deployment\. In the above example, the first deployment \(version "v1"\) succeeded, but the second deployment \(version "v2"\) failed\. Any instances running "v2" are considered unhealthy\.
 
 To solve this issue, start another deployment\. You can [redeploy a previous version](using-features.deploy-existing-version.md) that you know works, or configure your environment to [ignore health checks](using-features.rolling-version-deploy.md#environments-cfg-rollingdeployments-console) during deployment and redeploy the new version to force the deployment to complete\.
 
@@ -26,7 +26,7 @@ You can also identify and terminate the instances that are running the wrong app
 
 *20% of the requests to the ELB are erroring with HTTP 4xx\.*
 
-A high percentage of HTTP requests to an **instance** or **environment** are failing with 4xx errors\.
+A high percentage of HTTP requests to an instance or environment are failing with 4xx errors\.
 
 A 400 series status code indicates that the user made a bad request, such as requesting a page that doesn't exist \(404 File Not Found\) or that the user doesn't have access to \(403 Forbidden\)\. A low number of 404s is not unusual but a large number could mean that there are internal or external links to unavailable pages\. These issues can be resolved by fixing bad internal links and adding redirects for bad external links\.
 
@@ -34,13 +34,13 @@ A 400 series status code indicates that the user made a bad request, such as req
 
 *3% of the requests to the ELB are failing with HTTP 5xx\.*
 
-A high percentage of HTTP requests to an **instance** or **environment** are failing with 500 series status codes\.
+A high percentage of HTTP requests to an instance or environment are failing with 500 series status codes\.
 
 A 500 series status code indicates that the application server encountered an internal error\. These issues indicate that there is an error in your application code and should be identified and fixed quickly\.
 
 *95% of CPU is in use*
 
-On an **instance**, the health agent is reporting an extremely high percentage of CPU usage and sets the instance health to **Warning** or **Degraded**\.
+On an instance, the health agent is reporting an extremely high percentage of CPU usage and sets the instance health to **Warning** or **Degraded**\.
 
 Scale your environment to take load off of instances\.
 

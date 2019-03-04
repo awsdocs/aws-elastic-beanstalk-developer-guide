@@ -14,7 +14,11 @@ Elastic Beanstalk provides single page sample applications for each platform as 
 |  \.NET Default  |  WS 2012 R2 WS 2012 R2 Server Core WS 2012 WS 2008 R2  |  Web Server  |   [dotnet\-asp\-v1\.zip](samples/dotnet-asp-v1.zip)   |  ASP\.NET web application with a single page configured to be displayed at the website root\.  | 
 |  ASP\.NET MVC5  |  WS 2012 R2  |  Web Server  |  [dotnet\-aspmvc5\-v1\.zip](samples/dotnet-aspmvc5-v1.zip)  |  ASP\.NET web application with a classic model\-view\-control architecture\.  | 
 
-Download any of the sample applications and deploy it to Elastic Beanstalk by following these steps:
+Download any of the sample applications and deploy it to Elastic Beanstalk by using the following procedure\.
+
+**Note**  
+For a Windows production environment, we recommend changing the default Amazon EC2 instance type to t2\.medium or better\. Be aware that the t2\.medium instance type isn’t eligible for the [AWS Free Tier](https://aws.amazon.com/free)\.   
+To change the instance type, choose **Configure more options** during the procedure, and then choose **Modify** on the **Instances** configuration card\. 
 
 **To launch an environment with a sample application \(console\)**
 

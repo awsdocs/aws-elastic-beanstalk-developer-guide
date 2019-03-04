@@ -101,7 +101,7 @@ Puma starting in single mode...
 * Min threads: 5, max threads: 5
 * Environment: development
 * Listening on tcp://0.0.0.0:3000
-Use Ctrl-C to stop
+Use Ctrl+C to stop
 ...
 ```
 

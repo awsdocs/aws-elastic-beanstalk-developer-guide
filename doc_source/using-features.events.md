@@ -11,7 +11,7 @@ You can use the AWS Management Console to access events and notifications associ
 
    The Events page shows you a list of all events that have been recorded for the environment and application version\. You can filter on the type of events by using the **Severity** drop\-down list\. You can also filter when the events occurred by using the time slider\. 
 
-The [EB CLI](eb-cli3.md) and [AWS CLI](https://aws.amazon.com/cli/) both provide commands for retrieving events\. If you are managing your environment using the EB CLI, use [eb events](eb3-events.md) to print a list of events\. This command also has a `--follow` option that continues to show new events until you press **Ctrl\-C** to stop output\.
+The [EB CLI](eb-cli3.md) and [AWS CLI](https://aws.amazon.com/cli/) both provide commands for retrieving events\. If you are managing your environment using the EB CLI, use [eb events](eb3-events.md) to print a list of events\. This command also has a `--follow` option that continues to show new events until you press **Ctrl\+C** to stop output\.
 
 To pull events using the AWS CLI, use the `describe-events` command and specify the environment by name or ID:
 

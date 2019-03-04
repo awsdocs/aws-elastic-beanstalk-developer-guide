@@ -57,4 +57,4 @@ Environment configuration settings can contain any printable ASCII character exc
 
    This will be accessible to your Elastic Beanstalk application as a system property called `JDBC_CONNECTION_STRING`\.
 
-1. Press **Ctrl\-C** on the keyboard or choose **File**, **Save** to save your changes to the environment configuration\. Changes are reflected in about one minute\. 
+1. Press **Ctrl\+C** on the keyboard or choose **File**, **Save** to save your changes to the environment configuration\. Changes are reflected in about one minute\. 

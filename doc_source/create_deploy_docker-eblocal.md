@@ -77,7 +77,7 @@ $ eb local run --envvars RDS_HOST=$RDS_HOST,RDS_DB=$RDS_DB,RDS_USER=$RDS_USER,RD
 ```
 Use environment variables to configure a database connection, set debug options, or pass secrets securely to your application\. For more information on the options supported by the eb local subcommands, see [eb local](eb3-local.md)\.
 
-After the containers are up and running in Docker, they are ready to take requests from clients\. The eb local process stays open as long as the containers are running\. If you need to stop the process and containers, press **Ctrl\-C**\.
+After the containers are up and running in Docker, they are ready to take requests from clients\. The eb local process stays open as long as the containers are running\. If you need to stop the process and containers, press **Ctrl\+C**\.
 
 Open a second terminal to run additional commands while the eb local process is running\. Use eb local status to view your application's status:
 
@@ -134,7 +134,7 @@ Logs were most recently created 3 minutes ago and written to /home/user/project/
 
 When you are done testing your application locally, you can stop the applications and remove the images downloaded by Docker when you use eb local run\. Removing the images is optional\. You may want to keep them for future use\.
 
-Return to the terminal running the eb local process and press **Ctrl\-C**to stop the application: 
+Return to the terminal running the eb local process and press **Ctrl\+C**to stop the application: 
 
 ```
 ^CGracefully stopping... (press Ctrl+C again to force)
@@ -145,7 +145,7 @@ Aborting.
 [1]+  Exit 5                  eb local run
 ```
 
-The EB CLI attempts to stop each running container gracefully with Docker commands\. If you need to stop a process immediately, press **Ctrl\-C** again\.
+The EB CLI attempts to stop each running container gracefully with Docker commands\. If you need to stop a process immediately, press **Ctrl\+C** again\.
 
 After you stop the applications, the Docker containers should also stop running\. Verify this with `docker ps`:
 

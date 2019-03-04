@@ -207,7 +207,7 @@ Congratulations\! You have successfully deployed a sample application to the clo
 
    1. From the Elastic Beanstalk applications page, choose **Actions** for the **getting\-started\-app** application, and then choose **Delete application**\.
 
-   1. Confirm that you want to delete this Elastic Beanstalk application by choosing **Delete**\.
+   1. Confirm that you are deleting **getting\-started\-app**, and then choose **Delete**\.
 
 ## Where to Go Next<a name="GettingStarted.Next"></a>
 

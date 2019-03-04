@@ -1,6 +1,9 @@
 # Enhanced Health Log Format<a name="health-enhanced-serverlogs"></a>
 
-AWS Elastic Beanstalk platforms use a custom web server log format to efficiently relay information about HTTP requests to the enhanced health reporting system, which analyzes the logs, identifies issues, and sets the instance and environment health accordingly\. If you disable the web server proxy on your environment and serve requests directly from the web container, you can still make full use of enhanced health reporting by configuring your server to output logs in the location and format that the [Elastic Beanstalk health agent](health-enhanced.md#health-enhanced-agent) uses\.
+AWS Elastic Beanstalk platforms use a custom web server log format to efficiently relay information about HTTP requests to the enhanced health reporting system\. The system analyzes the logs, identifies issues, and sets the instance and environment health accordingly\. If you disable the web server proxy on your environment and serve requests directly from the web container, you can still make full use of enhanced health reporting by configuring your server to output logs in the location and format that the [Elastic Beanstalk health agent](health-enhanced.md#health-enhanced-agent) uses\.
+
+**Note**  
+The information on this page is relevant only to Linux\-based platforms\. On the Windows Server platform, Elastic Beanstalk receives information about HTTP requests directly from the IIS web server\. For details, see [Web Server Metrics Capture in IIS on Windows Server](health-enhanced-metrics-server-iis.md)\.
 
 ## Web Server Log Configuration<a name="health-enhanced-serverlogs.configure"></a>
 
@@ -31,17 +34,17 @@ The following example shows a log in the machine\-readable format\.
 ```
 
 The enhanced health log format includes the following information:
-+ The time of the request, in Unix time\.
-+ The path of the request\.
-+ The HTTP status code for the result\.
-+ The request time\.
-+ The upstream time\.
-+ The `X-Forwarded-For` HTTP header\.
++ The time of the request, in Unix time
++ The path of the request
++ The HTTP status code for the result
++ The request time
++ The upstream time
++ The `X-Forwarded-For` HTTP header
 
 For nginx proxies, times are printed in floating\-point seconds, with three decimal places\. For Apache, whole milliseconds are used\.
 
 **Note**  
-If you see a warning similar to the following in a log file, where `DATE-TIME` is a date and time, and you are using a custom proxy, such as in a multi\-container Docker environment\. you must use an \.ebextension to configure your environment so that healthd can read your log files:  
+If you see a warning similar to the following in a log file, where `DATE-TIME` is a date and time, and you are using a custom proxy, such as in a multi\-container Docker environment, you must use an \.ebextension to configure your environment so that `healthd` can read your log files:  
 
 ```
 W, [DATE-TIME #1922] WARN -- : log file "/var/log/nginx/healthd/application.log.DATE-TIME" does not exist
