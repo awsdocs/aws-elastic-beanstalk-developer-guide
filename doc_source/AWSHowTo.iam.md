@@ -12,6 +12,6 @@ The [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMGetting
 + [Controlling Access to Elastic Beanstalk](AWSHowTo.iam.managed-policies.md)
 + [Amazon Resource Name Format for Elastic Beanstalk](AWSHowTo.iam.policies.arn.md)
 + [Resources and Conditions for Elastic Beanstalk Actions](AWSHowTo.iam.policies.actions.md)
-+ [Controlling Access to Elastic Beanstalk Resources Using Tags](AWSHowTo.iam.policies.access-tags.md)
++ [Using Tags to Control Access to Elastic Beanstalk Resources](AWSHowTo.iam.policies.access-tags.md)
 + [Example Policies Based on Managed Policies](ExamplePolicies_AEB.md)
 + [Example Policies Based on Resource Permissions](AWSHowTo.iam.example.resource.md)

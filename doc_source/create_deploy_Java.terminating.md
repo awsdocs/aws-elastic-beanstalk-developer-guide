@@ -1,9 +1,6 @@
 # Terminating an Environment<a name="create_deploy_Java.terminating"></a>
 
-To avoid incurring charges for unused AWS resources, you can use the AWS Toolkit for Eclipse to terminate a running environment\. 
-
-**Note**  
- You can always launch a new environment using the same version later\. 
+To avoid incurring charges for unused AWS resources, you can use the AWS Toolkit for Eclipse to terminate a running environment\. For details about environment termination, see [Terminate an Elastic Beanstalk Environment](using-features.terminating.md)\.
 
 **To terminate an environment**
 

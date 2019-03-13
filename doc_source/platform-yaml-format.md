@@ -1,6 +1,6 @@
 # Platform\.yaml File Format<a name="platform-yaml-format"></a>
 
-This `platform.yaml` file has the following format\.
+The `platform.yaml` file has the following format\.
 
 ```
 version: "version-number"
@@ -32,7 +32,7 @@ option_settings:
      value: "option-setting-value"
 ```
 
-Where:
+Replace the placeholders with these values:
 
 *version\-number*  
 Required\. The version of the YAML definition\. Must be **1\.0**\.
@@ -44,7 +44,7 @@ Required\. The type of builder used to create the custom platform\. Must be **pa
 Required\. The JSON file containing the settings for *provisioner\-type*\.
 
 *provisioner\-flavor*  
-Optional\. The base operating system used for the AMI\. One of:     
+Optional\. The base operating system used for the AMI\. One of the following:     
 amazon \(default\)  
 Amazon Linux\. If not specified, the latest version of Amazon Linux when the platform is created\.  
 ubuntu1604  
@@ -79,7 +79,7 @@ Optional\. Name of the web framework used by the platform \(50 characters\)\.
 Optional\. Version of the platform's web framework \(20 characters\)\.
 
 *option\-def\-namespace*  
-Optional\. A namespace under `aws:elasticbeanstalk:container:custom` \(100 characters\)
+Optional\. A namespace under `aws:elasticbeanstalk:container:custom` \(100 characters\)\.
 
 *option\-def\-option\_name*  
 Optional\. The option's name \(100 characters\)\. You can define up to 50 custom configuration options that the platform provides to users\.
@@ -89,7 +89,7 @@ Optional\. Description of the option \(1,024 characters\)\.
 
 *option\-def\-default\_value*  
 Optional\. Default value used when the user doesn't specify one\.  
-The following example creates the option **NPM\_START**:  
+The following example creates the option **NPM\_START**\.  
 
 ```
 options_definitions:

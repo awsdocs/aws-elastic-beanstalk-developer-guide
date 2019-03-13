@@ -51,7 +51,7 @@ option_settings:
     CloudWatchMetrics : "--mem-util --mem-used --mem-avail --disk-space-util --disk-space-used --disk-space-avail --disk-path=/ --auto-scaling"
 ```
 
-After you verify the configuration file works, you can conserve disk usage by changing the command redirect from a log file \(`>> /var/log/cwpump.log 2>&1'`\) to `/dev/null` \(`> /dev/null`\)\. 
+After you verify the configuration file works, you can conserve disk usage by changing the command redirect from a log file \(`>> /var/log/cwpump.log 2>&1`\) to `/dev/null` \(`> /dev/null`\)\. 
 
 ## Permissions<a name="customize-containers-cw-policy"></a>
 

@@ -240,7 +240,7 @@ For more information about Amazon RDS, see [Amazon Relational Database Service \
 
 ### Tags<a name="environments-create-wizard-tags"></a>
 
-Add [tags](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) to the resources in your environment\. For more information about environment tagging, see [Tagging Resources in Your Elastic Beanstalk Environment](using-features.tagging.md)\.
+Add [tags](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) to the resources in your environment\. For more information about environment tagging, see [Tagging Resources in Your Elastic Beanstalk Environments](using-features.tagging.md)\.
 
 ![\[Tags page in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-create-tags.png)
 

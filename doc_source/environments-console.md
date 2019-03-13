@@ -122,7 +122,7 @@ For more information, see [Viewing Logs from Amazon EC2 Instances in Your Elasti
 
 ## Health<a name="environments-console-health"></a>
 
-If enhanced health monitoring is enabled, the **Enhanced Health Overview**page shows live health information about every instance in your environment\. Enhanced health monitoring enables Elastic Beanstalk to closely monitor the resources in your environment so that it can assess the health of your application more accurately\.
+If enhanced health monitoring is enabled, the **Enhanced Health Overview** page shows live health information about every instance in your environment\. Enhanced health monitoring enables Elastic Beanstalk to closely monitor the resources in your environment so that it can assess the health of your application more accurately\.
 
 When enhanced health monitoring is enabled, this page shows information about the requests served by the instances in your environment and metrics from the operating system, including latency, load, and CPU utilization\.
 
@@ -140,7 +140,7 @@ For more information, see [Monitoring Environment Health in the AWS Management C
 
 ## Alarms<a name="environments-console-alarms"></a>
 
-The **Existing Alarms**page shows information about any alarms that you have configured for your environment\. You can use the options on this page to modify or delete alarms\.
+The **Existing Alarms** page shows information about any alarms that you have configured for your environment\. You can use the options on this page to modify or delete alarms\.
 
 ![\[The existing alarms page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-alarms.png)
 
@@ -168,4 +168,4 @@ The **Tags** page shows the tags that you applied to the environment when you cr
 
 ![\[The tags page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-management-tags.png)
 
-For more information, see [Tagging Resources in Your Elastic Beanstalk Environment](using-features.tagging.md)\.
+For more information, see [Tagging Resources in Your Elastic Beanstalk Environments](using-features.tagging.md)\.

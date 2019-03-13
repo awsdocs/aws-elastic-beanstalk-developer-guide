@@ -1,48 +1,116 @@
 # Updating Your Elastic Beanstalk Environment's Platform Version<a name="using-features.platform.upgrade"></a>
 
-Elastic Beanstalk regularly releases updates for the Linux\-based and Windows Server\-based [platforms](concepts.platforms.md) that run applications on an Elastic Beanstalk environment\. A platform consists of a software component \(an AMI running a specific version of an operating system \(OS\), tools, and Elastic Beanstalk\-specific scripts\), and a configuration component \(the default [settings](command-options.md) applied to environments created with the platform\)\. New platform versions provide updates to existing software components and support for new features and configuration options\.
+Elastic Beanstalk regularly releases new platform versions to update all Linux\-based and Windows Server\-based [platforms](concepts.platforms.md)\. New platform versions provide updates to existing software components and support for new features and configuration options\. To learn about platforms and platform versions, see [AWS Elastic Beanstalk Platforms Glossary](platforms-glossary.md)\.
 
-For platforms that support multiple incompatible major versions of the included web container, programming language, or framework, separate *platform configurations* are concurrently supported, each with its own line of platform versions\. For example, the [Java with Tomcat](java-tomcat-platform.md) platform supports separate platform configurations for Tomcat 7 and Tomcat 8\. Updates are generally released for all configurations of a given platform at the same time\.
+You can use the Elastic Beanstalk console or the EB CLI to update your environment's platform version\. Depending on the platform version you'd like to update to, Elastic Beanstalk recommends one of two methods for performing platform updates\.
++ [Method 1 – Update your Environment's Platform Version](#using-features.platform.upgrade.config)\. We recommend this method when you're updating to the latest platform version, without a change in runtime, web server, or application server versions, and without a change in the major platform version\. This is the most common and routine platform update\.
++ [Method 2 – Perform a Blue/Green Deployment](#using-features.platform.upgrade.bluegreen)\. We recommend this method when you're updating to a different runtime, web server, or application server versions, or to a different major platform version\. This is a good approach when you want to take advantage of new runtime capabilities or the latest Elastic Beanstalk functionality\.
 
-Elastic Beanstalk platforms are semantically versioned with three numbers, major, minor, and patch\. For example, *Java 8 with Tomcat 8 version 2\.1\.0* has a major version of 2, a minor version of 1, and a patch version of 0\. Major versions are only used for backward\-incompatible changes\. Minor versions add support for new Elastic Beanstalk features, and patch versions fix bugs, update OS and software components, and provide access to updated packages in the Amazon Linux yum repository\.
+For more help with choosing the best platform update method, expand the section for your environment's platform\.
 
-You can update your environment's platform version to another platform version of the same configuration\. You can't perform a platform update across platform configurations\.
+## Single Container Docker<a name="using-features.platform.upgrade.docker-single"></a>
+
+Use [Method 1](#using-features.platform.upgrade.config) to perform platform updates\.
+
+## Multicontainer Docker<a name="using-features.platform.upgrade.docker-multi"></a>
+
+Use [Method 1](#using-features.platform.upgrade.config) to perform platform updates\.
+
+## Preconfigured Docker<a name="using-features.platform.upgrade.docker-preconfigured"></a>
+
+Consider the following cases:
++ If you're migrating your application to another platform, for example from *Go 1\.4 \(Docker\)* to *Go 1\.11* or from *Python 3\.4 \(Docker\)* to *Python 3\.6*, use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're migrating your application to a different Docker container version, for example from *Glassfish 4\.1 \(Docker\)* to *Glassfish 5\.0 \(Docker\)*, use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're updating to a latest platform version with no change in container version or major version, use [Method 1](#using-features.platform.upgrade.config)\.
+
+## Go<a name="using-features.platform.upgrade.go"></a>
+
+Use [Method 1](#using-features.platform.upgrade.config) to perform platform updates\.
+
+## Java SE<a name="using-features.platform.upgrade.java-se"></a>
+
+Consider the following cases:
++ If you're migrating your application to a different Java runtime version, for example from *Java 7* to *Java 8*, use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're updating to a latest platform version with no change in runtime version, use [Method 1](#using-features.platform.upgrade.config)\.
+
+## Java with Tomcat<a name="using-features.platform.upgrade.java-tomcat"></a>
+
+Consider the following cases:
++ If you're migrating your application to a different Java runtime version or Tomcat application server version, for example from *Java 7 with Tomcat 7* to *Java 8 with Tomcat 8\.5*, use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're migrating your application across major Java with Tomcat platform versions \(v1\.x\.x, v2\.x\.x, and v3\.x\.x\), use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're updating to a latest platform version with no change in runtime version, application server version, or major version, use [Method 1](#using-features.platform.upgrade.config)\.
+
+## \.NET on Windows Server with IIS<a name="using-features.platform.upgrade.dotnet"></a>
+
+Consider the following cases:
++ If you're migrating your application to a different Windows operating system version, for example from *Windows Server 2008 R2* to *Windows Server 2016*, use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're migrating your application across major Windows Server platform versions, see [Migrating from Earlier Major Versions of the Windows Server Platform](dotnet-v2migration.md#dotnet-v2migration.migration), and use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If your application is currently running on a Windows Server platform V2\.x\.x and you're updating to a latest platform version, use [Method 1](#using-features.platform.upgrade.config)\.
 
 **Note**  
-[Windows Server platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) that use IIS versions earlier than IIS 8\.5 aren't semantically versioned and don't support managed platform updates\. You can only launch the latest version of each of these Windows Server major platform versions and can't roll back after an upgrade\.
+[Windows Server platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) earlier than v2 aren't semantically versioned\. You can only launch the latest version of each of these Windows Server major platform versions and can't roll back after an upgrade\.
 
-**Warning**  
-During managed platform updates with instance replacement enabled, immutable updates, and deployments with immutable updates enabled all instances are replaced\. This causes all acculumated [Amazon EC2 Burst Balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\.
+## Node\.js<a name="using-features.platform.upgrade.nodejs"></a>
 
-## Updating an Environment's Platform Version<a name="using-features.platform.upgrade.config"></a>
+Use [Method 2](#using-features.platform.upgrade.bluegreen) to perform platform updates\.
 
-When a new version of your environment's platform is available, Elastic Beanstalk shows a message in the [environment management console](environments-console.md) and makes the **Change** button available\. If you've previously created an environment using an older platform version, or upgraded your environment from an older version, you can also use the **Change** button to revert to a previous platform version\.
+## PHP<a name="using-features.platform.upgrade.php"></a>
 
-**To update your environment's platform**
+Consider the following cases:
++ If you're migrating your application to a different PHP runtime version, for example from *PHP 5\.6* to *PHP 7\.2*, use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're migrating your application across major PHP platform versions \(v1\.x\.x and v2\.x\.x\), use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're updating to a latest platform version with no change in runtime version or major version, use [Method 1](#using-features.platform.upgrade.config)\.
+
+## Python<a name="using-features.platform.upgrade.python"></a>
+
+Consider the following cases:
++ If you're migrating your application to a different Python runtime version, for example from *Python 2\.7* to *Python 3\.6*, use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're migrating your application across major Python platform versions \(v1\.x\.x and v2\.x\.x\), use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're updating to a latest platform version with no change in runtime version or major version, use [Method 1](#using-features.platform.upgrade.config)\.
+
+## Ruby<a name="using-features.platform.upgrade.ruby"></a>
+
+Consider the following cases:
++ If you're migrating your application to a different Ruby runtime version or application server version, for example from *Ruby 2\.3 with Puma* to *Ruby 2\.6 with Puma*, use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're migrating your application across major Ruby platform versions \(v1\.x\.x and v2\.x\.x\), use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're updating to a latest platform version with no change in runtime version, application server version, or major version, use [Method 1](#using-features.platform.upgrade.config)\.
+
+## Method 1 – Update your Environment's Platform Version<a name="using-features.platform.upgrade.config"></a>
+
+Use this method to update to the latest version of your environment's platform\. If you've previously created an environment using an older platform version, or upgraded your environment from an older version, you can also use this method to revert to a previous platform version\.
+
+**To update your environment's platform version**
 
 1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. In the **Overview** section, under **Configuration**, click **Change**\.  
 ![\[Elastic Beanstalk Newer Platform Available\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-dashboard-changetonewplatform.png)
 
-1. Choose a **Platform Version**\. The newest platform version is selected automatically, but you can update to any version that you have used in the past if you choose\.  
+1. Choose a **Platform Version**\. The newest platform version is selected automatically, but you can update to any version that you've used in the past\.  
 ![\[Elastic Beanstalk Update Platform Version Confirmation\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-updateplatform-rollingon.png)
 
 1. Choose **Save**\.
 
-You can configure your environment to apply minor and patch version updates automatically during a configurable weekly maintenance window with [managed platform updates](environment-platform-update-managed.md)\. Elastic Beanstalk applies managed updates with no downtime or reduction in capacity, and cancels the update immediately if instances running your application on the new version fail health checks\.
+To further simplify platform updates, Elastic Beanstalk can manage them for you\. You can configure your environment to apply minor and patch version updates automatically during a configurable weekly maintenance window\. Elastic Beanstalk applies managed updates with no downtime or reduction in capacity, and cancels the update immediately if instances running your application on the new version fail health checks\. For details, see [Managed Platform Updates](environment-platform-update-managed.md)\.
 
-## Migrating an Environment to a New Configuration<a name="using-features.platform.upgrade.cross-config"></a>
+## Method 2 – Perform a Blue/Green Deployment<a name="using-features.platform.upgrade.bluegreen"></a>
 
-You might have reasons to migrate your application to a new configuration\. Switching to the latest language version is a common reason\. For example, you might want to move your PHP application from version 7\.0 to version 7\.1\. Or migrate an application on the *Java with Tomcat* platform from *Java 7 with Tomcat 7* to *Java 8 with Tomcat 8\.5*\.
+Use this method to update to a different runtime, web server, or application server versions, or to a different major platform version\. This is typically necessary when you want to take advantage of new runtime capabilities or the latest Elastic Beanstalk functionality\.
 
-Elastic Beanstalk doesn't support automatic platform updates across configurations\. When you want to change your environment's configuration, you can't use the procedure shown in the previous section\. The following procedure shows how to migrate your environment to a different platform configuration\.
+When you migrate across major platform versions or to platform versions with major component updates, there's a greater likelihood that your application, or some aspects of it, might not function as expected on the new platform version, and might require changes\.
 
-**To migrate your environment's platform to a new configuration**
+Before performing the migration, update your local development machine to the newer runtime versions and other components of the platform you plan on migrating to\. Verify that your application still works as expected, and make any necessary code fixes and changes\. Then use the following best practice procedure to safely migrate your environment to the new platform version\.
 
-1. [Create a new environment](using-features.environments.md), using the new target configuration, and deploy your application code to it\. The new environment should be in the Elastic Beanstalk application that contains the environment you're migrating\. Don't terminate the existing environment yet\.
+**To migrate your environment to a platform version with major updates**
 
-1. Use the new environment to migrate your application code\. Find and fix any application compatibility issues resulting from migrating to the new language configuration\. Iterate on testing and deploying your fixes until you're satisfied with the application on the new environment\.
+1. [Create a new environment](using-features.environments.md), using the new target platform version, and deploy your application code to it\. The new environment should be in the Elastic Beanstalk application that contains the environment you're migrating\. Don't terminate the existing environment yet\.
+
+1. Use the new environment to migrate your application\. In particular:
+   + Find and fix any application compatibility issues that you couldn't discover during the development phase\.
+   + Ensure that any customizations that your application makes using [configuration files](ebextensions.md) work correctly in the new environment\. These might include option settings, additional installed packages, custom security policies, and script or configuration files installed on environment instances\.
+   + If your application uses a custom Amazon Machine Image \(AMI\), create a new custom AMI based on the AMI of the new platform version\. To learn more, see [Using a Custom Amazon Machine Image \(AMI\)](using-features.customenv.md)\. Specifically, this is required if your application uses the Windows Server platform with a custom AMI, and you're migrating to a Windows Server V2 platform version\. In this case, see also [Migrating from Earlier Major Versions of the Windows Server Platform](dotnet-v2migration.md#dotnet-v2migration.migration)\.
+
+   Iterate on testing and deploying your fixes until you're satisfied with the application on the new environment\.
 
 1. Turn the new environment into your production environment by swapping its CNAME with the existing production environment's CNAME\. For details, see [Blue/Green Deployments with Elastic Beanstalk](using-features.CNAMESwap.md)\.
 

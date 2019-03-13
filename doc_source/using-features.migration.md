@@ -12,7 +12,7 @@ Legacy platforms do not support the following features:
 + Data Tiers, as described in the [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md) topic
 + Worker Tiers, as described in the [Worker Environments](concepts-worker.md) topic
 + Single Instance Environments, as described in the [Environment Types](using-features-managing-env-types.md) topic
-+ Tags, as described in the [Tagging Resources in Your Elastic Beanstalk Environment](using-features.tagging.md) topic
++ Tags, as described in the [Tagging Resources in Your Elastic Beanstalk Environments](using-features.tagging.md) topic
 + Rolling Updates, as described in the [Elastic Beanstalk Rolling Environment Configuration Updates](using-features.rollingupdates.md) topic
 
 ## Why are some container types marked legacy?<a name="using-features.migration.why"></a>

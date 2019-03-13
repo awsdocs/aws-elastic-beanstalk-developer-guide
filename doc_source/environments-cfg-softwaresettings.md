@@ -12,7 +12,7 @@ In addition to the standard set of options available for all environments, most 
 + **Placeholder environment properties** – The Tomcat platform defines an environment property named `JDBC_CONNECTION_STRING` that is not set to any value\. This type of setting was more common on older platform versions\.
 + **Configuration options** – Most platforms define [configuration options](command-options.md) in platform\-specific or shared namespaces, such as `aws:elasticbeanstalk:xray` or `aws:elasticbeanstalk:container:python`\.
 
-For information about platform\-specific options, see the platform topic for your language or framework:
+For information about platform\-specific options, and about getting environment property values in your code, see the platform topic for your language or framework:
 + Go – [Using the AWS Elastic Beanstalk Go Platform](go-environment.md)
 + Java SE – [Using the AWS Elastic Beanstalk Java SE Platform](java-se-platform.md)
 + Tomcat – [Using the AWS Elastic Beanstalk Tomcat Platform](java-tomcat-platform.md)

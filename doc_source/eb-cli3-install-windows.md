@@ -79,7 +79,7 @@ The installer installs Python in your user folder and adds its executable direct
 
    ```
    C:\Windows\System32> eb --version
-   EB CLI 3.2.2 (Python 3.4.3)
+   EB CLI 3.2.2 (Python 3.6.2)
    ```
 
 To upgrade to the latest version, run the installation command again\.

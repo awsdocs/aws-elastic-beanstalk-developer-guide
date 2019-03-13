@@ -1,6 +1,6 @@
 # AWS Elastic Beanstalk Concepts<a name="concepts"></a>
 
-AWS Elastic Beanstalk lets you manage all of the resources that run your *application* as *environments*\. Let's take a closer look at what these terms mean\.
+AWS Elastic Beanstalk enables you to manage all of the resources that run your *application* as *environments*\. Here are some key Elastic Beanstalk concepts\.
 
 ## Application<a name="concepts-application"></a>
 
@@ -8,7 +8,7 @@ An Elastic Beanstalk *application* is a logical collection of Elastic Beanstalk 
 
 ## Application Version<a name="concepts-version"></a>
 
-In Elastic Beanstalk, an *application version* refers to a specific, labeled iteration of deployable code for a web application\. An application version points to an Amazon Simple Storage Service \(Amazon S3\) object that contains the deployable code such as a Java WAR file\. An application version is part of an application\. Applications can have many versions and each application version is unique\. In a running environment, you can deploy any application version you already uploaded to the application or you can upload and immediately deploy a new application version\. You might upload multiple application versions to test differences between one version of your web application and another\.
+In Elastic Beanstalk, an *application version* refers to a specific, labeled iteration of deployable code for a web application\. An application version points to an Amazon Simple Storage Service \(Amazon S3\) object that contains the deployable code, such as a Java WAR file\. An application version is part of an application\. Applications can have many versions and each application version is unique\. In a running environment, you can deploy any application version you already uploaded to the application, or you can upload and immediately deploy a new application version\. You might upload multiple application versions to test differences between one version of your web application and another\.
 
 ## Environment<a name="concepts-environment"></a>
 
@@ -16,18 +16,18 @@ An *environment* is a version that is deployed onto AWS resources\. Each environ
 
 ## Environment Tier<a name="concepts-tier"></a>
 
-When you launch an Elastic Beanstalk environment, you first choose an environment tier\. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support an application that handles HTTP requests or an application that pulls tasks from a queue\. An application that serves HTTP requests runs in a [web server environment](concepts-webserver.md)\. An environment that pulls tasks from an Amazon Simple Queue Service queue runs in a [worker environment](concepts-worker.md)\.
+When you launch an Elastic Beanstalk environment, you first choose an environment tier\. The environment tier designates the type of application that the environment runs, and determines what resources Elastic Beanstalk provisions to support it\. An application that serves HTTP requests runs in a [web server environment tier](concepts-webserver.md)\. An environment that pulls tasks from an Amazon Simple Queue Service \(Amazon SQS\) queue runs in a [worker environment tier](concepts-worker.md)\.
 
 ## Environment Configuration<a name="concepts-environmentconfig"></a>
 
  An *environment configuration* identifies a collection of parameters and settings that define how an environment and its associated resources behave\. When you update an environment’s configuration settings, Elastic Beanstalk automatically applies the changes to existing resources or deletes and deploys new resources \(depending on the type of change\)\.
 
-## Configuration Template<a name="concepts-configuration"></a>
+## Saved Configuration<a name="concepts-configuration"></a>
 
-A *configuration template* is a starting point for creating unique environment configurations\. Configuration templates can be created or modified by using the Elastic Beanstalk command line utilities or API\.
+A *saved configuration* is a template that you can use as a starting point for creating unique environment configurations\. You can create and modify saved configurations, and apply them to environments, using the Elastic Beanstalk console, EB CLI, AWS CLI, or API\. The API and the AWS CLI refer to saved configurations as *configuration templates*\.
 
 ## Platform<a name="concepts-platform"></a>
 
-A *platform* is a combination of an operating system \(OS\), programming language runtime, web server, application server, and Elastic Beanstalk components\. You design and target your web application to a platform\. Elastic Beanstalk provides a variety of platforms on which you can build your applications\.
+A *platform* is a combination of an operating system, programming language runtime, web server, application server, and Elastic Beanstalk components\. You design and target your web application to a platform\. Elastic Beanstalk provides a variety of platforms on which you can build your applications\.
 
 For details, see [AWS Elastic Beanstalk Platforms](concepts-all-platforms.md)\.

@@ -22,7 +22,7 @@ This topic focuses on the resource configuration options available in the Elasti
 + [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)
 + [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)
 + [Your AWS Elastic Beanstalk Environment Security](using-features.managing.security.md)
-+ [Tagging Resources in Your Elastic Beanstalk Environment](using-features.tagging.md)
++ [Tagging Resources in Your Elastic Beanstalk Environments](using-features.tagging.md)
 + [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md)
 + [Elastic Beanstalk Environment Notifications with Amazon SNS](using-features.managing.sns.md)
 + [Configuring Amazon Virtual Private Cloud \(Amazon VPC\) with Elastic Beanstalk](using-features.managing.vpc.md)

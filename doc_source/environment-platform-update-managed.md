@@ -70,7 +70,7 @@ In an immutable update, Elastic Beanstalk deploys as many instances as are curre
 Managed platform updates always perform immutable updates, even when you apply them outside of the maintenance window\. If you change the platform version from the **Dashboard**, Elastic Beanstalk applies the update policy that you've chosen for configuration updates\.
 
 **Warning**  
-During managed platform updates with instance replacement enabled, immutable updates, and deployments with immutable updates enabled all instances are replaced\. This causes all acculumated [Amazon EC2 Burst Balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\.
+During managed platform updates with instance replacement enabled, immutable updates, and deployments with immutable updates enabled all instances are replaced\. This causes all accumulated [Amazon EC2 Burst Balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\.
 
 ## Managing Managed Updates<a name="environment-platform-update-managed-managing"></a>
 

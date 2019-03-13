@@ -1,34 +1,19 @@
-# Tagging Resources in Your Elastic Beanstalk Environment<a name="using-features.tagging"></a>
+# Tagging Resources in Your Elastic Beanstalk Environments<a name="using-features.tagging"></a>
 
-## Introduction to Environment Tagging<a name="using-features.tagging.intro"></a>
-
-AWS Elastic Beanstalk provides support for you to specify tags to apply to resources in your environment\. Tags are key\-value pairs associated with AWS resources\. Tags can help you categorize resources\. They are particularly useful if you manage many environments\.
-
-Here are some ways you can use tagging with Elastic Beanstalk environments:
-+ *Environment stages*—Identify environments in different stages, such as development, beta, and production\.
-+ *Cost allocation*—Identify environments associated with various expense accounts in cost allocation reports\.
-+ *Access control*—Use tags to manage permissions to requests and resources\. For details, see [Controlling Access to Elastic Beanstalk Resources Using Tags](AWSHowTo.iam.policies.access-tags.md)\.
+You can apply tags to your AWS Elastic Beanstalk environments\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging AWS Elastic Beanstalk Application ResourcesTagging Resources](applications-tagging-resources.md)\.
 
 You can also use tags to manage permissions at the specific resource level within an environment\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
-By default, Elastic Beanstalk applies three tags:
+By default, Elastic Beanstalk applies three tags to your environment:
 + `elasticbeanstalk:environment-name` – The name of the environment\. 
 + `elasticbeanstalk:environment-id` – The environment ID\.
 + `Name` – Also the name of the environment\. `Name` is used in the Amazon EC2 dashboard to identify and sort resources\.
 
 You can't edit these default tags\.
 
-You can specify tags when you create the Elastic Beanstalk environment\. In an existing environment, you can add or remove tags, and you can update the values of existing tags\. In addition to the default tags, you can add up to 47 additional tags to each environment\.
+You can specify tags when you create the Elastic Beanstalk environment\. In an existing environment, you can add or remove tags, and update the values of existing tags\. In addition to the default tags, you can add up to 47 additional tags to each environment\.
 
-**Constraints**
-+ Keys and values can contain letters, numbers, white space, and the following symbols: `_ . : / = + - @`
-+ Keys can contain up to 128 characters\. Values can contain up to 256 characters\.
-+ Keys are case sensitive\.
-+ Keys cannot begin with `aws:` or `elasticbeanstalk:`\.
-
-You can use cost allocation reports to track your usage of AWS resources\. The reports include both tagged and untagged resources, but they aggregate costs according to tags\. For information about how cost allocation reports use tags, see [Use Cost Allocation Tags for Custom Billing Reports](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation.html) in the *AWS Billing and Cost Management User Guide*\.
-
-## Adding Tags During Environment Creation<a name="using-features.tagging.create"></a>
+## Adding Tags during Environment Creation<a name="using-features.tagging.create"></a>
 
 When you use the Elastic Beanstalk console to create an environment, you can specify tag keys and values on the **Tags** page of the [Create New Environment wizard](environments-create-wizard.md), as shown\.
 
@@ -43,7 +28,9 @@ If you use the EB CLI to create environments, use the `--tags` option with `[eb 
 With the AWS CLI or other API\-based clients, use the `--tags` parameter on the `[create\-environment](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-environment.html)` command\.
 
 ```
-$ aws elasticbeanstalk create-environment --tags Key=mytag1,Value=value1 Key=mytag2,Value=value2 --application-name my-app --environment-name my-env --cname-prefix my-app --version-label v1 --template-name my-saved-config
+$ aws elasticbeanstalk create-environment \
+      --tags Key=mytag1,Value=value1 Key=mytag2,Value=value2 \
+      --application-name my-app --environment-name my-env --cname-prefix my-app --version-label v1 --template-name my-saved-config
 ```
 
 [Saved configurations](environment-configuration-methods-before.md#configuration-options-before-savedconfig) include user\-defined tags\. When you apply a saved configuration that contains tags during environment creation, those tags are applied to the new environment, as long as you don't specify any new tags\. If you add tags to an environment using one of the preceding methods, any tags defined in the saved configuration are discarded\.
@@ -52,7 +39,7 @@ $ aws elasticbeanstalk create-environment --tags Key=mytag1,Value=value1 Key=myt
 
 You can add, update, and delete tags in an existing Elastic Beanstalk environment\. Elastic Beanstalk applies the changes to your environment's resources\.
 
-However, you can't edit the default tags that Elastic Beanstalk applies to your environment\. For details about these default tags, see [Introduction to Environment Tagging](#using-features.tagging.intro)\.
+However, you can't edit the default tags that Elastic Beanstalk applies to your environment\.
 
 **To manage an environment's tags in the Elastic Beanstalk console**
 
@@ -64,7 +51,7 @@ However, you can't edit the default tags that Elastic Beanstalk applies to your 
 ![\[Tag management page shows tags for the environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-manage-tags.png)
 
 1. Add, update, or delete tags:
-   + To add a tag, type it into the empty boxes at the bottom of the list\.
+   + To add a tag, enter it into the empty boxes at the bottom of the list\.
    + To update a tag's key or value, edit the respective box in the tag's row\.
    + To delete a tag, choose ![\[Remove tag\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/x.png) next to the tag's value box\.
 
@@ -95,14 +82,16 @@ $ aws elasticbeanstalk list-tags-for-resource --resource-arn "arn:aws:elasticbea
 Use the `[update\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-tags-for-resource.html)` command to add, update, or delete tags in an environment\.
 
 ```
-$ aws elasticbeanstalk update-tags-for-resource --tags-to-add
-      Key=mytag1,Value=newvalue --tags-to-remove mytag2 --resource-arn "arn:aws:elasticbeanstalk:us-east-2:my-account-id:environment/my-app/my-env"
+$ aws elasticbeanstalk update-tags-for-resource \
+      --tags-to-add Key=mytag1,Value=newvalue --tags-to-remove mytag2 \
+      --resource-arn "arn:aws:elasticbeanstalk:us-east-2:my-account-id:environment/my-app/my-env"
 ```
+
+Specify both tags to add and tags to update in the `--tags-to-add` parameter of `update-tags-for-resource`\. A nonexisting tag is added, and an existing tag's value is updated\.
 
 **Note**  
-To use these two commands with an Elastic Beanstalk environment, you need the environment's ARN\. You can retrieve the ARN by using the following command\.  
+To use these two AWS CLI commands with an Elastic Beanstalk environment, you need the environment's ARN\. You can retrieve the ARN by using the following command\.  
 
 ```
-aws elasticbeanstalk describe-environments
+$ aws elasticbeanstalk describe-environments
 ```
-Specify both tags to add and tags to update in the `--tags-to-add` parameter of `update-tags-for-resource`\. A nonexisting tag is added, and an existing tag's value is updated\.

@@ -37,9 +37,6 @@ You can publish the following enhanced health metrics from your environment to C
 `ApplicationLatencyP10``ApplicationLatencyP50``ApplicationLatencyP75``ApplicationLatencyP85``ApplicationLatencyP90``ApplicationLatencyP95``ApplicationLatencyP99``ApplicationLatencyP99.9`  
 *Instance and environment\.* Indicates the average amount of time, in seconds, it takes to complete the fastest *x* percent of requests\.
 
-`LoadAverage1min`  
-*Instance only\.* The average CPU load of the instance over the last minute\.
-
 `InstanceHealth`  
 *Instance only\.* Indicates the current health status of the instance\. Instance health is represented by one of seven [statuses](health-enhanced-status.md)\. In the CloudWatch console, these statuses map to the following values:  
 + 0 – OK
@@ -48,13 +45,16 @@ You can publish the following enhanced health metrics from your environment to C
 + 10 – No data
 + 15 – Warning
 + 20 – Degraded
-+ 25 – Severe
-
-`RootFilesystemUtil`  
-*Instance only\.* Indicates the percentage of disk space that's in use\.Available metrics—Linux
++ 25 – SevereAvailable metrics—Linux
 
 `CPUIrq``CPUIdle``CPUUser``CPUSystem``CPUSoftirq``CPUIowait``CPUNice`  
-*Instance only\.* Indicates the percentage of time that the CPU has spent in each state over the last minute\.Available metrics—Windows
+*Instance only\.* Indicates the percentage of time that the CPU has spent in each state over the last minute\.
+
+`LoadAverage1min`  
+*Instance only\.* The average CPU load of the instance over the last minute\.
+
+`RootFilesystemUtil`  
+*Instance only\.* Indicates the percentage of disk space that's in use\.Available metrics—Windows
 
 `CPUIdle``CPUUser``CPUPriveleged`  
 Instance only\. Indicates the percentage of time that the CPU has spent in each state over the last minute\.
@@ -141,7 +141,7 @@ If you previously used `Rules` to configure enhanced health rules, then the conf
 
 ## Providing Custom Metric Config Documents<a name="health-enhanced-cloudwatch-configdocument"></a>
 
-The configuration \(config\) document for Amazon CloudWatch custom metrics is a JSON document that lists the metrics to publish at the environment and instance levels\. The following example shows a config document that enables all available custom metrics\.
+The configuration \(config\) document for Amazon CloudWatch custom metrics is a JSON document that lists the metrics to publish at the environment and instance levels\. The following example shows a config document that enables all custom metrics available on Linux\.
 
 ```
 {

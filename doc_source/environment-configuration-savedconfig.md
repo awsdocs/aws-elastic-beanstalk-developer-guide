@@ -1,8 +1,13 @@
 # Using Elastic Beanstalk Saved Configurations<a name="environment-configuration-savedconfig"></a>
 
-You can save your environment's configuration as an object in Amazon S3 that can be applied to other environments during environment creation, or applied to a running environment\. *Saved configurations* are YAML formatted templates that define an environment's [platform version](concepts.platforms.md), [tier](concepts.md#concepts-tier), [configuration option](command-options.md) settings, and tags\.
+You can save your environment's configuration as an object in Amazon Simple Storage Service \(Amazon S3\) that can be applied to other environments during environment creation, or applied to a running environment\. *Saved configurations* are YAML formatted templates that define an environment's [platform version](concepts.platforms.md), [tier](concepts.md#concepts-tier), [configuration option](command-options.md) settings, and tags\.
 
-Create a saved configuration from the current state of your environment in the Elastic Beanstalk Management Console\.
+You can apply tags to a saved configuration when you create it, and edit tags of existing saved configurations\. For details, see [Tagging Saved Configurations](environment-configuration-savedconfig-tagging.md)\.
+
+**Note**  
+The tags applied to a saved configuration aren't related to the tags specified in a saved configuration using the `Tags:` key\. The latter are applied to an environment when you apply the saved configuration to the environment\.
+
+Create a saved configuration from the current state of your environment in the Elastic Beanstalk management console\.
 
 **To save an environment's configuration**
 
@@ -10,10 +15,10 @@ Create a saved configuration from the current state of your environment in the E
 
 1. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Choose **Actions** and then choose **Save Configuration**\.  
+1. Choose **Actions**, and then choose **Save Configuration**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-saveconfiguration.png)
 
-1. Type a configuration name and description and then choose **Save**\.
+1. Enter a configuration name and description, and then choose **Save**\.
 
 The saved configuration includes any settings that you have applied to the environment with the console or any other client that uses the Elastic Beanstalk API\. You can then apply the saved configuration to your environment at a later date to restore it to its previous state, or apply it to a new environment during [environment creation](environments-create-wizard.md)\.
 
@@ -35,11 +40,11 @@ eb config get NAME
 
 1. Proceed through the wizard to create your environment\.
 
-Saved configurations do not include settings applied with [configuration files](ebextensions.md) in your application's source code\. If the same setting is applied in both a configuration file and saved configuration, the setting in the saved configuration takes precedence\. Likewise, options specified in the AWS Management Console override options in saved configurations\. For more information, see [Precedence](command-options.md#configuration-options-precedence)\.
+Saved configurations don't include settings applied with [configuration files](ebextensions.md) in your application's source code\. If the same setting is applied in both a configuration file and saved configuration, the setting in the saved configuration takes precedence\. Likewise, options specified in the AWS Management Console override options in saved configurations\. For more information, see [Precedence](command-options.md#configuration-options-precedence)\.
 
 Saved configurations are stored in the Elastic Beanstalk S3 bucket in a folder named after your application\. For example, configurations for an application named `my-app` in the us\-west\-2 region for account number 123456789012 can be found at `s3://elasticbeanstalk-us-west-2-123456789012/resources/templates/my-app/`\.
 
-View the contents of a saved configuration by opening it in a text editor\. The following example configuration shows the configuration of a web server environment launched with the Elastic Beanstalk Management Console\.
+View the contents of a saved configuration by opening it in a text editor\. The following example configuration shows the configuration of a web server environment launched with the Elastic Beanstalk management console\.
 
 ```
 EnvironmentConfigurationMetadata:
@@ -80,7 +85,7 @@ Tags:
   Cost Center: WebApp Dev
 ```
 
-You can modify the contents of a saved configuration and save it in the same location in Amazon S3\. Any properly formatted saved configuration stored in the right location can be applied to an environment with the Elastic Beanstalk Management Console\.
+You can modify the contents of a saved configuration and save it in the same location in Amazon S3\. Any properly formatted saved configuration stored in the right location can be applied to an environment by using the Elastic Beanstalk management console\.
 
 The following keys are supported\.
 + **AWSConfigurationTemplateVersion** \(required\) – The configuration template version \(1\.1\.0\.0\)\.
@@ -138,11 +143,11 @@ The following keys are supported\.
     "WORKERQUEUE" : "worker+"
   ```
 
-  The value of the link variable varies depending on the type of the linked environment\. For a web server environment, the link is the environment's CNAME\. For a worker environment, the link is the name of the environment's Amazon SQS queue\.
+  The value of the link variable varies depending on the type of the linked environment\. For a web server environment, the link is the environment's CNAME\. For a worker environment, the link is the name of the environment's Amazon Simple Queue Service \(Amazon SQS\) queue\.
 
 The **CName**, **EnvironmentName** and **EnvironmentLinks** keys can be used to create [environment groups](environment-mgmt-compose.md) and [links to other environments](environment-cfg-links.md)\. These features are currently supported when using the EB CLI, AWS CLI or an SDK\. When using these features, you can include the saved configuration in your source code as an [environment manifest](environment-cfg-manifest.md) instead of referencing a saved configuration stored in Amazon S3\. See the corresponding topics for more information\.
 
-See the following topics for alternate methods of creating and applying saved configurations\.
+See the following topics for alternate methods of creating and applying saved configurations:
 + [Setting Configuration Options Before Environment Creation](environment-configuration-methods-before.md)
 + [Setting Configuration Options During Environment Creation](environment-configuration-methods-during.md)
 + [Setting Configuration Options After Environment Creation](environment-configuration-methods-after.md)

@@ -58,7 +58,7 @@ None of these options are required\. If you run eb create without any options, t
 |  `--scale` *number\-of\-instances*  |  Launch with the specified number of instances  | 
 | \-\-service\-role servicerole | Assign a non\-default service role to the environment\.  Do not enter an ARN, just the role name\. Elastic Beanstalk prefixes the role name with the correct values to create the resulting ARN internally\.  | 
 |  `--single`  |  Create the environment with a single Amazon EC2 instance and without a load balancer\.  A single\-instance environment isn't production ready\. If the instance becomes unstable during deployment, or Elastic Beanstalk terminates and restarts the instance during a configuration update, your application can be unavailable for a period of time\. Use single\-instance environments for development, testing, or staging\. Use load\-balanced environments for production\.   | 
-|  `-﻿-﻿tags key1=value1[,key2=value2 ...]`  |  Tag the resources in your environment\. Tags are specified as a comma\-separated list of `key=value` pairs\. For valid values and more details, see [Tag an Environment](using-features.tagging.md)\.  | 
+|  `-﻿-﻿tags key1=value1[,key2=value2 ...]`  |  Tag the resources in your environment\. Tags are specified as a comma\-separated list of `key=value` pairs\. For valid values and more details, see [Tagging Environments](using-features.tagging.md)\.  | 
 |  `-t worker` or `--tier worker`  | Create a worker environment\. Omit this option to create a web server environment\. | 
 |  `--timeout` *minutes*  |  Set number of minutes before the command times out\.  | 
 |  `--version` *version\_label*  |  Specifies the application version that you want deployed to the environment instead of the application source code in the local project directory\. Type: String Valid values: An existing application version label  | 
@@ -69,7 +69,7 @@ None of these options are required\. If you run eb create without any options, t
 |  `--vpc.elbsubnets subnet1,subnet2`  |  Specifies subnets for the Elastic Load Balancing load balancer in a VPC\. You can't specify this option with the `--tier worker` or `--single` options\.  | 
 |  `--vpc.id ID`  |  Launches your environment in the specified VPC\.  | 
 |  `--vpc.publicip`  |  Launches your Amazon EC2 instances in a public subnet in your VPC\. You can't specify this option with the `--tier worker` option\.  | 
-|  `--vpc.securitygroups securitygroup1,securitygroup2`  |  Specifies the security group ID or security group name\. Required when `--vpc.id` is specified\.  | 
+|  `--vpc.securitygroups securitygroup1,securitygroup2`  |  Specifies security group IDs\. Required when `--vpc.id` is specified\.  | 
 |  [Common options](eb3-cmd-options.md)  |  | 
 
 ## Output<a name="eb3-createoutput"></a>
