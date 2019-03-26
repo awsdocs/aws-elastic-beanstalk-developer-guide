@@ -119,7 +119,7 @@ The application version you are running now is labeled **Sample Application**\.
 
 1. Choose **Deploy**\.
 
- Elastic Beanstalk now deploys your file to your Amazon EC2 instances\. You can view the status of your deployment on the environment's dashboard\. The **Environment Health** status turns gray while the application version is updated\. When the deployment is complete, Elastic Beanstalk performs an application health check\. The status returns to green when the application responds to the health check\. The environment dashboard will show the new **Running Version** as **Sample Application Second Version** \(or whatever you provided as the **Version label**\)\.
+ Elastic Beanstalk now deploys your file to your Amazon EC2 instances\. You can view the status of your deployment on the environment's dashboard\. The **Environment Health** status turns gray while the application version is being updated\. When the deployment is complete, Elastic Beanstalk performs an application health check\. The status returns to green when the application responds to the health check\. The environment dashboard will show the new **Running Version** as **Sample Application Second Version** \(or whatever you provided as the **Version label**\)\.
 
 Your new application version is also uploaded and added to the table of application versions\. To view the table, choose **My First Elastic Beanstalk Application**, and then choose **Application Versions**\.
 
