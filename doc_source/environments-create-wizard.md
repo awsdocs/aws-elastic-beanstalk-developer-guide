@@ -43,14 +43,19 @@ After selecting the platform from which the new environment is created, you can 
 
 ### Provide Application Code<a name="environments-create-wizard-app-code"></a>
 
-Now that you have selected the platform to use, the next step is to provide your application code\. You have several options:
+Now that you have selected the platform to use, the next step is to provide your application code\.
+
+![\[Providing application code in the Create New Environment wizard of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-environment-appcode.png)
+
+You have several options:
 + You can use the sample application that Elastic Beanstalk provides for each platform\.
 + You can use code that you already deployed to Elastic Beanstalk\. Choose **Existing version** and your application in the **Application code** section\.
-+ You can upload new code\. Select **Upload your code**, and then choose **Upload**\. You can upload new application code from a local file, or you can specify the URL for the Amazon S3 bucket that contains your application code\.
++ You can upload new code\. Choose **Upload your code**, and then choose **Upload**\. You can upload new application code from a local file, or you can specify the URL for the Amazon S3 bucket that contains your application code\.
 **Note**  
 Depending on the platform version you selected, you can upload your application in a ZIP [source bundle](applications-sourcebundle.md), a [WAR file](java-tomcat-platform.md), or a [plaintext Docker configuration](single-container-docker.md)\. The file size limit is 512 MB\.
 
-![\[Providing application code in the Create New Environment wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-environment-appcode.png)
+  When you choose to upload new code, you can also provide tags to associate with your code\. For more information about tagging, see [Tagging Resources in Your Elastic Beanstalk Environments](using-features.tagging.md)\.  
+![\[Uploading new application code in the Create New Environment wizard of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-environment-appcode-upload.png)
 
 Now choose **Create environment** to create your new environment\. Choose **Configure more options** to make additional configuration changes, as described in the following sections\.
 

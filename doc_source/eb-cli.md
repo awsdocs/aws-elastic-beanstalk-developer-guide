@@ -1,4 +1,4 @@
-# EB CLI 2\.6 \(Deprecated\)<a name="eb-cli"></a>
+# EB CLI 2\.6 \(Retired\)<a name="eb-cli"></a>
 
  This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md)\. 
 
@@ -20,7 +20,7 @@ For more information about using EB CLI 3 commands to create and manage an appli
 
 ## Migrating to EB CLI 3 and CodeCommit<a name="eb-cli2-migrating"></a>
 
-Elastic Beanstalk has not only deprecated EB CLI 2\.6, but is also removing some 2\.6 functionality\. The most significant change from 2\.6 is that EB CLI no longer natively supports incremental code updates \(eb push, `git aws.push`\) or branching \(eb branch\)\. This section describes how to migrate from EB CLI 2\.6 to the latest version of EB CLI and use CodeCommit as your code repository\.
+Elastic Beanstalk has not only retired EB CLI 2\.6, but has also removed some 2\.6 functionality\. The most significant change from 2\.6 is that EB CLI no longer natively supports incremental code updates \(eb push, `git aws.push`\) or branching \(eb branch\)\. This section describes how to migrate from EB CLI 2\.6 to the latest version of EB CLI and use CodeCommit as your code repository\.
 
 If you have not done so already, create a code repository in CodeCommit, as described in [Migrate to CodeCommit](https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-migrate-repository.html)\.
 

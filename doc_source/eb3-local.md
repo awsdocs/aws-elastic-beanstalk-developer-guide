@@ -9,7 +9,8 @@ eb local setenv and eb local printenv let you set and view environment variables
 You must run all eb local commands in the project directory of a Docker application that has been initialized as an EB CLI repository by using eb init\.
 
 **Note**  
-Use eb local on a local computer running Linux\. The command doesn't support Windows\.
+Use eb local on a local computer running Linux or macOS\. The command doesn't support Windows\.  
+Before using the command on macOS, install Docker for Mac, and ensure that boot2docker isn't installed \(or isn't in the execution path\)\. The eb local command tries to use boot2docker if it's present, but doesn't work well with it on macOS\.
 
 ## Syntax<a name="eb3-localsyntax"></a>
 

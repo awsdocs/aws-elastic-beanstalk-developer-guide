@@ -91,5 +91,3 @@ Because the recommended values are set at the API level, they will override valu
 + Namespace: `aws:elb:policies`
 
   Option Names: `ConnectionDrainingEnabled`
-
-If you use the Elastic Beanstalk console or EB CLI to create environments, and you want to set these options using configuration files or saved configurations, you can remove the options settings [with the AWS CLI](environment-configuration-methods-after.md#configuration-options-remove-awscli) or [EB CLI](environment-configuration-methods-after.md#configuration-options-remove-ebcli) after the environment is created\.

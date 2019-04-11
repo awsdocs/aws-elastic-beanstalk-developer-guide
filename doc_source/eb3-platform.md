@@ -88,6 +88,7 @@ Builds a new version of the platform and returns the ARN for the new version\. I
 |  `-p` OR `--patch-incremeint`  | Increments the patch version number \(the N in n\.n\.N\)\. | 
 |  `-i INSTANCE_TYPE` OR \-\-instance\-type *INSTANCE\_TYPE*  | Use *INSTANCE\_TYPE* as the instance type, such as **t1\.micro**\. | 
 |  `-ip INSTANCE_PROFILE` OR `--instance-profile INSTANCE_PROFILE`  | Use *INSTANCE\_PROFILE* as the instance profile when creating AMIs for a custom platform\. If the `-ip` option isn't specified, creates the instance profile `aws-elasticbeanstalk-custom-platforme-ec2-role` and uses it for the custom platform\. | 
+|  `-﻿-﻿tags key1=value1[,key2=value2 ...]`  |  Tag your custom platform version\. Tags are specified as a comma\-separated list of `key=value` pairs\. For more details, see [Tagging Custom Platform Versions](custom-platforms-tagging.md)\.  | 
 |  `--timeout` *minutes*  |  Set number of minutes before the command times out\.  | 
 |  `--vpc.id VPC_ID`  | The ID of the VPC in which Packer builds\. | 
 |  `--vpc.subnets VPC_SUBNETS`  | The VPC subnets in which Packer builds\. | 

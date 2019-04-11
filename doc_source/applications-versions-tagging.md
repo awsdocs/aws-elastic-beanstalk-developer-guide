@@ -1,12 +1,20 @@
 # Tagging Application Versions<a name="applications-versions-tagging"></a>
 
-You can apply tags to your AWS Elastic Beanstalk application versions\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging AWS Elastic Beanstalk Application ResourcesTagging Resources](applications-tagging-resources.md)\.
+You can apply tags to your AWS Elastic Beanstalk application versions\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging AWS Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
 
-You can specify tags when you create an application version\. In an existing application version, you can add or remove tags, and update the values of existing tags\. You can add up to 50 tags to each application version\. At this time, you can manage application version tags using the API or the AWS CLI\.
+You can specify tags when you create an application version\. In an existing application version, you can add or remove tags, and update the values of existing tags\. You can add up to 50 tags to each application version\.
 
 ## Adding Tags during Application Version Creation<a name="applications-versions-tagging.create"></a>
 
-With the AWS CLI or other API\-based clients, add tags by using the `--tags` parameter on the `[create\-application\-version](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-application-version.html)` command\.
+When you use the Elastic Beanstalk console to [create an environment](environments-create-wizard.md), and you choose to upload a version of your application code, you can specify tag keys and values to associate with the new application version\.
+
+![\[Uploading new application code in the Create New Environment wizard of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-environment-appcode-upload.png)
+
+You can also use the Elastic Beanstalk console to [upload an application version](applications-versions.md) without immediately using it in an environment\. You can specify tag keys and values in the **Upload Application Version** dialog box\.
+
+![\[Upload Application Version dialog box on the Application Versions page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-version-upload-dialog.png)
+
+With the AWS CLI or other API\-based clients, add tags by using the `--tags` parameter on the [create\-application\-version](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-application-version.html) command\.
 
 ```
 $ aws elasticbeanstalk create-application-version \
@@ -14,17 +22,58 @@ $ aws elasticbeanstalk create-application-version \
       --application-name my-app --version-label v1
 ```
 
+When you use the EB CLI to create or update an environment, an application version is created from the code that you deploy\. There isn't a direct way to tag an application version during its creation through the EB CLI\. See the following section to learn about adding tags to an existing application version\.
+
 ## Managing Tags of an Existing Application Version<a name="applications-versions-tagging.manage"></a>
 
 You can add, update, and delete tags in an existing Elastic Beanstalk application version\.
 
-With the AWS CLI or other API\-based clients, use the `[list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/list-tags-for-resource.html)` command to list the tags of an application version\.
+**To manage an application version's tags using the Elastic Beanstalk console**
+
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+
+1. Select the application whose application version you want to manage\.
+
+1. In the side navigation pane, choose **Application versions**\.
+
+1. Select the application version to manage, and then choose **Actions**\.
+
+1. Choose **Manage tags**\.
+
+   The **Manage Tags** dialog box shows the list of tags that are currently applied to the application version\.  
+![\[Manage Tags dialog box shows tags for an application version in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/tagging-manage-tags-dialog-appversion.png)
+
+1. Add, update, or delete tags:
+   + To add a tag, enter it into the empty boxes at the bottom of the list\.
+   + To update a tag's key or value, edit the respective box in the tag's row\.
+   + To delete a tag, choose ![\[Remove tag\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/x.png) next to the tag's value box\.
+
+1. Choose **Apply**\.
+
+If you use the EB CLI to update your application version, use [eb tags](eb3-tags.md) to add, update, delete, or list tags\.
+
+For example, the following command lists the tags in an application version\.
+
+```
+~/workspace/my-app$ eb tags --list --resource "arn:aws:elasticbeanstalk:us-east-2:my-account-id:applicationversion/my-app/my-version"
+```
+
+The following command updates the tag `mytag1` and deletes the tag `mytag2`\.
+
+```
+~/workspace/my-app$ eb tags --update mytag1=newvalue --delete mytag2 \
+      --resource "arn:aws:elasticbeanstalk:us-east-2:my-account-id:applicationversion/my-app/my-version"
+```
+
+For a complete list of options and more examples, see `[eb tags](eb3-tags.md)`\.
+
+With the AWS CLI or other API\-based clients, use the [list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/list-tags-for-resource.html) command to list the tags of an application version\.
 
 ```
 $ aws elasticbeanstalk list-tags-for-resource --resource-arn "arn:aws:elasticbeanstalk:us-east-2:my-account-id:applicationversion/my-app/my-version"
 ```
 
-Use the `[update\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-tags-for-resource.html)` command to add, update, or delete tags in an application version\.
+Use the [update\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-tags-for-resource.html) command to add, update, or delete tags in an application version\.
 
 ```
 $ aws elasticbeanstalk update-tags-for-resource \
@@ -32,10 +81,10 @@ $ aws elasticbeanstalk update-tags-for-resource \
       --resource-arn "arn:aws:elasticbeanstalk:us-east-2:my-account-id:applicationversion/my-app/my-version"
 ```
 
-Specify both tags to add and tags to update in the `--tags-to-add` parameter of `update-tags-for-resource`\. A nonexisting tag is added, and an existing tag's value is updated\.
+Specify both tags to add and tags to update in the `--tags-to-add` parameter of update\-tags\-for\-resource\. A nonexisting tag is added, and an existing tag's value is updated\.
 
 **Note**  
-To use these two AWS CLI commands with an Elastic Beanstalk application version, you need the application version's ARN\. You can retrieve the ARN by using the following command\.  
+To use some of the EB CLI and AWS CLI commands with an Elastic Beanstalk application version, you need the application version's ARN\. You can retrieve the ARN by using the following command\.  
 
 ```
 $ aws elasticbeanstalk describe-application-versions --application-name my-app --version-label my-version

@@ -19,13 +19,14 @@ You can apply tags to an application version when you create it, and edit tags o
 
 1. Enter a **Version label** for this version\.
 
-1. \(Optional\) Enter a brief **Description** for this version\.
-
 1. Choose **Browse** to specify the location of the [source bundle](applications-sourcebundle.md)\.
 **Note**  
 The source bundle's file size limit is 512 MB\.
 
-1. Choose **Upload**\.
+1. Optionally, provide a brief description, and add tag keys and values\.
+
+1. Choose **Upload**\.  
+![\[Upload Application Version dialog box on the Application Versions page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-version-upload-dialog.png)
 
 The file you specified is associated with your application\. You can deploy the application version to a new or existing environment\.
 
@@ -46,7 +47,7 @@ Deleting an application version doesn't affect environments currently running th
 ![\[Deleting an application version on the Application Versions page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-version-delete.png)
 
 1. \(Optional\) To leave the application source bundle for this application version in your Amazon Simple Storage Service \(Amazon S3\) bucket, clear the box for **Delete versions from Amazon S3**\.  
-![\[Delete Application Versions dialog in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-version-delete-s3.png)
+![\[Delete Application Versions dialog box in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-version-delete-s3.png)
 
 1. Choose **Apply**\.
 

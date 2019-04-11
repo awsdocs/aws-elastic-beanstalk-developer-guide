@@ -22,6 +22,8 @@ The following describes the syntax for using the eb config command to work with 
 + eb config put *filename* – Uploads the named saved configuration to an Amazon S3 bucket\. The *filename* must have the file extension `.cfg.yml`\. To specify the file name without a path, you can save the file to the `.elasticbeanstalk` folder or to the `.elasticbeanstalk/saved_configs/` folder before you run the command\. Alternatively, you can specify the *filename* by providing the full path\.
 + eb config save – Saves the environment configuration settings for the current running environment to `.elasticbeanstalk/saved_configs/` with the filename `[configuration-name].cfg.yml`\. By default, the EB CLI saves the configuration settings with a *configuration\-name* based on the environment name\. You can specify a different configuration name by including the `--cfg` option with your desired configuration name when you run the command\.
 
+  You can tag your saved configuration using the `--tags` option\.
+
 ## Options<a name="eb3-configoptions"></a>
 
 
@@ -29,7 +31,8 @@ The following describes the syntax for using the eb config command to work with 
 
 |  Name  |  Description  | 
 | --- | --- | 
-|  `--cfg config-name`  |  The name to use for a saved configuration \(which you can later specify to create or update an environment from a saved configuration\)\.  | 
+|  `--cfg config-name`  |  The name to use for a saved configuration \(which you can later specify to create or update an environment from a saved configuration\)\. This option works with eb config save only\.  | 
+|  `-﻿-﻿tags key1=value1[,key2=value2 ...]`  |  Tags to add to your saved configuration\. Tags are specified as a comma\-separated list of `key=value` pairs\. For more details, see [Tagging Saved Configurations](environment-configuration-savedconfig-tagging.md)\. This option works with eb config save only\.  | 
 |  `--timeout timeout`  |  The number of minutes before the command times out\.  | 
 |  [Common options](eb3-cmd-options.md)  |  | 
 

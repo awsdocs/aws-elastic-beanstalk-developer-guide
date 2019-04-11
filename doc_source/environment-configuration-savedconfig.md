@@ -16,13 +16,18 @@ Create a saved configuration from the current state of your environment in the E
 1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Actions**, and then choose **Save Configuration**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-saveconfiguration.png)
+![\[Save a configuration on the environment dashboard on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-saveconfiguration.png)
 
-1. Enter a configuration name and description, and then choose **Save**\.
+1. Enter a configuration name\.
+
+1. Optionally, provide a brief description, and add tag keys and values\.
+
+1. Choose **Save**\.  
+![\[Save Configuration page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-saveconfiguration-dialog.png)
 
 The saved configuration includes any settings that you have applied to the environment with the console or any other client that uses the Elastic Beanstalk API\. You can then apply the saved configuration to your environment at a later date to restore it to its previous state, or apply it to a new environment during [environment creation](environments-create-wizard.md)\.
 
-You can download a configuration using the EB CLI [eb config](eb3-config.md) command, as shown in the following example, *NAME* is the name of your saved configuration\. 
+You can download a configuration using the EB CLI [eb config](eb3-config.md) command, as shown in the following example\. *NAME* is the name of your saved configuration\. 
 
 ```
 eb config get NAME

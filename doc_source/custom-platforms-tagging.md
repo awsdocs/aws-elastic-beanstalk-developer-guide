@@ -1,12 +1,18 @@
 # Tagging Custom Platform Versions<a name="custom-platforms-tagging"></a>
 
-You can apply tags to your AWS Elastic Beanstalk custom platform versions\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging AWS Elastic Beanstalk Application ResourcesTagging Resources](applications-tagging-resources.md)\.
+You can apply tags to your AWS Elastic Beanstalk custom platform versions\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging AWS Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
 
-You can specify tags when you create a custom platform version\. In an existing custom platform version, you can add or remove tags, and update the values of existing tags\. You can add up to 50 tags to each custom platform version\. At this time, you can manage custom platform version tags using the API or the AWS CLI\.
+You can specify tags when you create a custom platform version\. In an existing custom platform version, you can add or remove tags, and update the values of existing tags\. You can add up to 50 tags to each custom platform version\.
 
 ## Adding Tags during Custom Platform Version Creation<a name="custom-platforms-tagging.create"></a>
 
-With the AWS CLI or other API\-based clients, add tags by using the `--tags` parameter on the `[create\-platform\-version](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-platform-version.html)` command\.
+If you use the EB CLI to create your custom platform version, use the `--tags` option with [eb platform create](eb3-platform.md#eb3-platform-create) to add tags\.
+
+```
+~/workspace/my-app$ eb platform create --tags mytag1=value1,mytag2=value2
+```
+
+With the AWS CLI or other API\-based clients, add tags by using the `--tags` parameter on the [create\-platform\-version](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-platform-version.html) command\.
 
 ```
 $ aws elasticbeanstalk create-platform-version \
@@ -18,25 +24,41 @@ $ aws elasticbeanstalk create-platform-version \
 
 You can add, update, and delete tags in an existing Elastic Beanstalk custom platform version\.
 
-With the AWS CLI or other API\-based clients, use the `[list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/list-tags-for-resource.html)` command to list the tags of a custom platform version\.
+If you use the EB CLI to update your custom platform version, use [eb tags](eb3-tags.md) to add, update, delete, or list tags\.
+
+For example, the following command lists the tags in a custom platform version\.
+
+```
+~/workspace/my-app$ eb tags --list --resource "arn:aws:elasticbeanstalk:us-east-2:my-account-id:platform/my-platform/1.0.0"
+```
+
+The following command updates the tag `mytag1` and deletes the tag `mytag2`\.
+
+```
+~/workspace/my-app$ eb tags --update mytag1=newvalue --delete mytag2 \
+      --resource "arn:aws:elasticbeanstalk:us-east-2:my-account-id:platform/my-platform/1.0.0"
+```
+
+For a complete list of options and more examples, see `[eb tags](eb3-tags.md)`\.
+
+With the AWS CLI or other API\-based clients, use the [list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/list-tags-for-resource.html) command to list the tags of a custom platform version\.
 
 ```
 $ aws elasticbeanstalk list-tags-for-resource --resource-arn "arn:aws:elasticbeanstalk:us-east-2:my-account-id:platform/my-platform/1.0.0"
 ```
 
-Use the `[update\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-tags-for-resource.html)` command to add, update, or delete tags in a custom platform version\.
+Use the [update\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-tags-for-resource.html) command to add, update, or delete tags in a custom platform version\.
 
 ```
 $ aws elasticbeanstalk update-tags-for-resource \
       --tags-to-add Key=mytag1,Value=newvalue --tags-to-remove mytag2 \
-      --resource-arn
-      "arn:aws:elasticbeanstalk:us-east-2:my-account-id:platform/my-platform/1.0.0"
+      --resource-arn "arn:aws:elasticbeanstalk:us-east-2:my-account-id:platform/my-platform/1.0.0"
 ```
 
-Specify both tags to add and tags to update in the `--tags-to-add` parameter of `update-tags-for-resource`\. A nonexisting tag is added, and an existing tag's value is updated\.
+Specify both tags to add and tags to update in the `--tags-to-add` parameter of update\-tags\-for\-resource\. A nonexisting tag is added, and an existing tag's value is updated\.
 
 **Note**  
-To use these two AWS CLI commands with an Elastic Beanstalk custom platform version, you need the custom platform version's ARN\. You can retrieve the ARN by using the following command\.  
+To use some of the EB CLI and AWS CLI commands with an Elastic Beanstalk custom platform version, you need the custom platform version's ARN\. You can retrieve the ARN by using the following command\.  
 
 ```
 $ aws elasticbeanstalk list-platform-versions

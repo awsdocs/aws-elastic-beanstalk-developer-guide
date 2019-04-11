@@ -1,6 +1,6 @@
 # Tagging Resources in Your Elastic Beanstalk Environments<a name="using-features.tagging"></a>
 
-You can apply tags to your AWS Elastic Beanstalk environments\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging AWS Elastic Beanstalk Application ResourcesTagging Resources](applications-tagging-resources.md)\.
+You can apply tags to your AWS Elastic Beanstalk environments\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging AWS Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
 
 You can also use tags to manage permissions at the specific resource level within an environment\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
@@ -19,13 +19,13 @@ When you use the Elastic Beanstalk console to create an environment, you can spe
 
 ![\[Tags page where you specify tag keys and values\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-create-tags.png)
 
-If you use the EB CLI to create environments, use the `--tags` option with `[eb create](eb3-create.md)` to add tags\.
+If you use the EB CLI to create an environment, use the `--tags` option with [eb create](eb3-create.md) to add tags\.
 
 ```
 ~/workspace/my-app$ eb create --tags mytag1=value1,mytag2=value2
 ```
 
-With the AWS CLI or other API\-based clients, use the `--tags` parameter on the `[create\-environment](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-environment.html)` command\.
+With the AWS CLI or other API\-based clients, use the `--tags` parameter on the [create\-environment](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-environment.html) command\.
 
 ```
 $ aws elasticbeanstalk create-environment \
@@ -57,7 +57,7 @@ However, you can't edit the default tags that Elastic Beanstalk applies to your 
 
 1. Choose **Apply**\.
 
-If you use the EB CLI to update environments, use `[eb tags](eb3-tags.md)` to add, update, delete, or list tags\.
+If you use the EB CLI to update your environment, use [eb tags](eb3-tags.md) to add, update, delete, or list tags\.
 
 For example, the following command lists the tags in your default environment\.
 
@@ -73,13 +73,13 @@ The following command updates the tag `mytag1` and deletes the tag `mytag2`\.
 
 For a complete list of options and more examples, see `[eb tags](eb3-tags.md)`\.
 
-With the AWS CLI or other API\-based clients, use the `[list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/list-tags-for-resource.html)` command to list the tags of an environment\.
+With the AWS CLI or other API\-based clients, use the [list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/list-tags-for-resource.html) command to list the tags of an environment\.
 
 ```
 $ aws elasticbeanstalk list-tags-for-resource --resource-arn "arn:aws:elasticbeanstalk:us-east-2:my-account-id:environment/my-app/my-env"
 ```
 
-Use the `[update\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-tags-for-resource.html)` command to add, update, or delete tags in an environment\.
+Use the [update\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/update-tags-for-resource.html) command to add, update, or delete tags in an environment\.
 
 ```
 $ aws elasticbeanstalk update-tags-for-resource \
@@ -87,7 +87,7 @@ $ aws elasticbeanstalk update-tags-for-resource \
       --resource-arn "arn:aws:elasticbeanstalk:us-east-2:my-account-id:environment/my-app/my-env"
 ```
 
-Specify both tags to add and tags to update in the `--tags-to-add` parameter of `update-tags-for-resource`\. A nonexisting tag is added, and an existing tag's value is updated\.
+Specify both tags to add and tags to update in the `--tags-to-add` parameter of update\-tags\-for\-resource\. A nonexisting tag is added, and an existing tag's value is updated\.
 
 **Note**  
 To use these two AWS CLI commands with an Elastic Beanstalk environment, you need the environment's ARN\. You can retrieve the ARN by using the following command\.  

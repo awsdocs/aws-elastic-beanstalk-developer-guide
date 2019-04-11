@@ -12,7 +12,7 @@ In Elastic Beanstalk, an *application version* refers to a specific, labeled ite
 
 ## Environment<a name="concepts-environment"></a>
 
-An *environment* is a version that is deployed onto AWS resources\. Each environment runs only a single application version at a time, however you can run the same version or different versions in many environments at the same time\. When you create an environment, Elastic Beanstalk provisions the resources needed to run the application version you specified\.
+An *environment* is a collection of AWS resources running an application version\. Each environment runs only one application version at a time, however, you can run the same application version or different application versions in many environments simultaneously\. When you create an environment, Elastic Beanstalk provisions the resources needed to run the application version you specified\.
 
 ## Environment Tier<a name="concepts-tier"></a>
 

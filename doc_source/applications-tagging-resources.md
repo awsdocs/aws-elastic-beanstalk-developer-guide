@@ -11,7 +11,9 @@ You can add up to 50 tags to each resource\. Environments are slightly different
 
 The following constraints apply to tag keys and values:
 + Keys and values can contain letters, numbers, white space, and the following symbols: `_ . : / = + - @`
-+ Keys can contain up to 128 characters\. Values can contain up to 256 characters\.
++ Keys can contain up to 127 characters\. Values can contain up to 255 characters\.
+**Note**  
+These length limits are for Unicode characters in UTF\-8\. For other multibyte encodings, the limits might be lower\.
 + Keys are case sensitive\.
 + Keys cannot begin with `aws:` or `elasticbeanstalk:`\.
 

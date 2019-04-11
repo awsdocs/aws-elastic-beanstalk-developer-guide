@@ -34,5 +34,5 @@ For information about installing the EB CLI, configuring a repository, and worki
 + [Managing Multiple AWS Elastic Beanstalk Environments as a Group with the EB CLI](ebcli-compose.md)
 + [Troubleshooting issues with the EB CLI](eb-cli-troubleshooting.md)
 + [EB CLI Command Reference](eb3-cmd-commands.md)
-+ [EB CLI 2\.6 \(Deprecated\)](eb-cli.md)
-+ [Elastic Beanstalk API Command Line Interface \(deprecated\)](using-api-cli.md)
++ [EB CLI 2\.6 \(Retired\)](eb-cli.md)
++ [Elastic Beanstalk API Command Line Interface \(Retired\)](using-api-cli.md)
