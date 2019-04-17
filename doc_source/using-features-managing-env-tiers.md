@@ -28,16 +28,7 @@ The [\.NET on Windows Server platform](create_deploy_NET.md) doesn't support wor
 
 Worker environments run a daemon process provided by Elastic Beanstalk\. This daemon is updated regularly to add features and fix bugs\. To get the latest version of the daemon, update to the latest [platform version](concepts.platforms.md)\.
 
-
-****  
-
-| Feature | Release Date | Description | 
-| --- | --- | --- | 
-| [Enhanced Health Reporting](health-enhanced.md) | August 11, 2015 | Monitor environment health with more detail and accuracy\. | 
-| [Periodic Tasks](#worker-periodictasks) | February 17, 2015 | Run cron jobs that you configure in a `cron.yaml` file in your application source code\. | 
-| [Dead Letter Queues](#worker-deadletter) | May 27, 2014 |  Send failed jobs to a dead letter queue for troubleshooting\. Changed the default visibility timeout from 30 seconds to 300 seconds\.  | 
-
-When the application in the worker environment returns a `200 OK` response to acknowledge that it has received and successfully processed the request, the daemon sends a `DeleteMessage` call to the Amazon SQS queue so that the message will be deleted from the queue\. If the application returns any response other than `200 OK`, Elastic Beanstalk waits to put the message back in the queue after the configured `ErrorVisibilityTimeout` period\. If there is no response, Elastic Beanstalk waits to put the message back in the queue after the `InactivityTimeout` period so that the message is available for another attempt at processing\.
+When the application in the worker environment returns a `200 OK` response to acknowledge that it has received and successfully processed the request, the daemon sends a `DeleteMessage` call to the Amazon SQS queue to delete the message from the queue\. If the application returns any response other than `200 OK`, Elastic Beanstalk waits to put the message back in the queue after the configured `ErrorVisibilityTimeout` period\. If there is no response, Elastic Beanstalk waits to put the message back in the queue after the `InactivityTimeout` period so that the message is available for another attempt at processing\.
 
 **Note**  
 The properties of Amazon SQS queues \(message order, at\-least\-once delivery, and message sampling\) can affect how you design a web application for a worker environment\. For more information, see [Properties of Distributed Queues](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/DistributedQueues.html) in the [Amazon Simple Queue Service Developer Guide](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/Welcome.html)\.
