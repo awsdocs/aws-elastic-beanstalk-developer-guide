@@ -179,17 +179,11 @@ When you launch an environment using the [eb create](eb3-create.md) command of t
 
 If you use the `CreateEnvironment` action of the Elastic Beanstalk API to create an environment, specify a service role with the `ServiceRole` configuration option in the `aws:elasticbeanstalk:environment` namespace\. See [Using Enhanced Health Reporting with the AWS Elastic Beanstalk API](health-enhanced-api.md) for details on using enhanced health monitoring with the Elastic Beanstalk API\. 
 
-When you create an environment by using the Elastic Beanstalk API, and don't specify a service role, Elastic Beanstalk creates a service\-linked role for your account, if it doesn't already exist, and uses it for the new environment\. A service\-linked role is a unique type of service role that is predefined by Elastic Beanstalk to include all the permissions that the service requires to call other AWS services on your behalf\. The service\-linked role is associated with your account\. Elastic Beanstalk creates it once, then reuses it when creating additional environments\. You can also use IAM to create your account's service\-linked role in advance\. When your account has a service\-linked role, you can use it to create an environment by using the Elastic Beanstalk API, the Elastic Beanstalk console, or the EB CLI\. For details about using service\-linked roles with Elastic Beanstalk environments, see [Using Service\-Linked Roles for Elastic Beanstalk](using-service-linked-roles.md)\.
+When you create an environment by using the Elastic Beanstalk API, and don't specify a service role, Elastic Beanstalk creates a monitoring service\-linked role for your account, if it doesn't already exist, and uses it for the new environment\. A service\-linked role is a unique type of service role that is predefined by Elastic Beanstalk to include all the permissions that the service requires to call other AWS services on your behalf\. The service\-linked role is associated with your account\. Elastic Beanstalk creates it once, then reuses it when creating additional environments\. You can also use IAM to create your account's monitoring service\-linked role in advance\. When your account has a monitoring service\-linked role, you can use it to create an environment by using the Elastic Beanstalk API, the Elastic Beanstalk console, or the EB CLI\. For details about using service\-linked roles with Elastic Beanstalk environments, see [Using Service\-Linked Roles for Elastic Beanstalk](using-service-linked-roles.md)\.
 
 **Note**  
-When Elastic Beanstalk tries to create a service\-linked role for your account when you create an environment, you must have the `iam:CreateServiceLinkedRole` permission\. If you don't have this permission, environment creation fails, and you see a message explaining the issue\.
-
-**Topics**
-+ [Verifying the Default Service Role's Permissions](#iam-servicerole-verify)
-+ [Updating an Out\-of\-Date Default Service Role](#iam-servicerole-update)
-+ [Adding Permissions to the Default Service Role](#iam-servicerole-addperms)
-+ [Creating a Service Role](#iam-servicerole-create)
-+ [Using Service\-Linked Roles for Elastic Beanstalk](using-service-linked-roles.md)
+When Elastic Beanstalk tries to create the monitoring service\-linked role for your account when you create an environment, you must have the `iam:CreateServiceLinkedRole` permission\. If you don't have this permission, environment creation fails, and you see a message explaining the issue\.  
+As an alternative, another user with permission to create service\-linked roles can use IAM to create the service linked\-role in advance\. You can then create your environment even without having the `iam:CreateServiceLinkedRole` permission\.
 
 ## Verifying the Default Service Role's Permissions<a name="iam-servicerole-verify"></a>
 

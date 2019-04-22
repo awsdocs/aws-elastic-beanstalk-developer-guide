@@ -9,6 +9,7 @@ The [IAM User Guide](https://docs.aws.amazon.com/IAM/latest/UserGuide/IAMGetting
 **Topics**
 + [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md)
 + [Managing Elastic Beanstalk Service Roles](iam-servicerole.md)
++ [Using Service\-Linked Roles for Elastic Beanstalk](using-service-linked-roles.md)
 + [Controlling Access to Elastic Beanstalk](AWSHowTo.iam.managed-policies.md)
 + [Amazon Resource Name Format for Elastic Beanstalk](AWSHowTo.iam.policies.arn.md)
 + [Resources and Conditions for Elastic Beanstalk Actions](AWSHowTo.iam.policies.actions.md)

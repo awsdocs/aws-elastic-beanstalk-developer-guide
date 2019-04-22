@@ -66,7 +66,7 @@ This section discusses security considerations related to notifications using Am
 
 ### Permissions for a Default Topic<a name="configuration-notifications-permissions-default"></a>
 
-When you configure notifications for your environment, Elastic Beanstalk creates an Amazon SNS topic for your environment\. To send messages to an Amazon SNS topic, Elastic Beanstalk must have the required permission\. If your environment uses the [service role](iam-servicerole.md) that the Elastic Beanstalk console or the EB CLI generated for it, or the account's [service\-linked role](using-service-linked-roles.md), you don't need to do anything else\. These managed roles include the necessary permission\.
+When you configure notifications for your environment, Elastic Beanstalk creates an Amazon SNS topic for your environment\. To send messages to an Amazon SNS topic, Elastic Beanstalk must have the required permission\. If your environment uses the [service role](iam-servicerole.md) that the Elastic Beanstalk console or the EB CLI generated for it, or your account's [monitoring service\-linked role](using-service-linked-roles-monitoring.md), you don't need to do anything else\. These managed roles include the necessary permission\.
 
 However, if you provided a custom service role when you created your environment, be sure that this custom service role includes the following policy\.
 
