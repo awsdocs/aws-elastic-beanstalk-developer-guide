@@ -15,7 +15,9 @@ The following tables list existing platform components that are either marked as
 
 |  OS version  |  Availability end date  | 
 | --- | --- | 
-| Windows Server 2008 R2 | March 1, 2020 | 
+| Windows Server 2008 R2\[1\] | October 16, 2019 | 
+
+\[1\] Previously, we published a retirement date of March 1, 2020 for Windows Server 2008 R2\. Due to changes in Microsoft's licensing policy we now have a scheduled retirement date of *October 16, 2019* for the platform\. If you have questions about your licensing or rights to Microsoft software, please consult your legal team, Microsoft, or your Microsoft reseller\.
 
 
 **Web server versions**  
@@ -32,6 +34,7 @@ The following tables list existing platform components that are either marked as
 | --- | --- | 
 | GlassFish 4\.x | March 1, 2020 | 
 | Go 1\.3–1\.10 | March 1, 2020 | 
+| Java 6 | March 1, 2020 | 
 | Node\.js 4\.x–8\.x | March 1, 2020 | 
 | PHP 5\.4–5\.6 | March 1, 2020 | 
 | PHP 7\.0–7\.1 | March 1, 2020 | 

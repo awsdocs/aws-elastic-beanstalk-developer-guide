@@ -11,7 +11,7 @@ eb setenv *key*=*value*
 You can include as many properties as you want, but the total size of all properties cannot exceed 4096 bytes\. You can delete a variable by leaving the value blank\. See [Configuring Environment Properties](environments-cfg-softwaresettings.md#environments-cfg-softwaresettings-console) for limits\.
 
 **Note**  
-If the `value` contains a [special character](http://tldp.org/LDP/abs/html/special-chars.html), you must escape that character by preceeding it with a `\` character\.
+If the `value` contains a [special character](http://tldp.org/LDP/abs/html/special-chars.html), you must escape that character by preceding it with a `\` character\.
 
 ## Options<a name="eb3-setenvoptions"></a>
 

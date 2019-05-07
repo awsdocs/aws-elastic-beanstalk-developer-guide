@@ -155,9 +155,9 @@ This tells Rails to route requests to the root of the website to the welcome pag
 
 ## Configure Rails Settings<a name="ruby-rails-tutorial-configure"></a>
 
-Use the Elastic Beanstalk console to configure Rails with environment properties\. Set the `SECRET_KEY_BASE` environment property to a string of up to 256 alphanumeric characters\. The `secrets.yml` file in the `config` folder of your project refers to this property\.
+Use the Elastic Beanstalk console to configure Rails with environment properties\. Set the `SECRET_KEY_BASE` environment property to a string of up to 256 alphanumeric characters\.
 
-This property is used to create keys and should be a secret, as the name suggests\. This is why you don't want it stored in source control where other people might see it\. Set the `SECRET_KEY_BASE` environment property to any value\.
+Rails uses this property to create keys\. Therefore you should keep it a secret and not store it in source control in plain text\. Instead, you provide it to Rails code on your environment through an environment property\.
 
 **To configure environment properties in the Elastic Beanstalk console**
 

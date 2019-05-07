@@ -135,9 +135,9 @@ With Docker version 1\.6\.2 and earlier, the docker login command creates the au
   }
 }
 ```
-To convert a `config.json` file, remove the outer `auths` key, add an `email` key, and flatten the JSON document to match the old format\. Obs: the file has to be explicitly called `.dockercfg`\.
+To convert a `config.json` file, remove the outer `auths` key, add an `email` key, and flatten the JSON document to match the old format\.
 
-Upload the authentication file to a secure Amazon S3 bucket\. The Amazon S3 bucket must be hosted in the same region as the environment that is using it\. Elastic Beanstalk cannot download files from an Amazon S3 bucket hosted in other regions\. Grant permissions for the `s3:GetObject` operation to the IAM role in the instance profile\. For details, see [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md)\.
+Upload a copy named `.dockercfg` of the authentication file to a secure Amazon S3 bucket\. The Amazon S3 bucket must be hosted in the same region as the environment that is using it\. Elastic Beanstalk cannot download files from an Amazon S3 bucket hosted in other regions\. Grant permissions for the `s3:GetObject` operation to the IAM role in the instance profile\. For details, see [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md)\.
 
 Include the Amazon S3 bucket information in the `Authentication` \(v1\) or `authentication` \(v2\) parameter in your `Dockerrun.aws.json` file\.
 
