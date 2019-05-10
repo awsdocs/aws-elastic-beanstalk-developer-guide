@@ -4,7 +4,7 @@ You can avoid version requirement conflicts with other `pip` packages by install
 
 **To install the EB CLI in a virtual environment**
 
-1. Install `virtualenv` with pip\.
+1. Install `virtualenv` with `pip`\.
 
    ```
    $ pip install --user virtualenv
@@ -16,15 +16,15 @@ You can avoid version requirement conflicts with other `pip` packages by install
    $ virtualenv ~/eb-ve
    ```
 
-   You can use the `-p` option to use a Python executable other than the default\.
+   To use a Python executable other than the default, use the `-p` option\. 
 
    ```
-   $ virtualenv -p /usr/bin/python3.4 ~/eb-ve
+   $ virtualenv -p /usr/bin/python3.7 ~/eb-ve
    ```
 
 1. Activate the virtual environment\.
 
-   **Linux, macOS, or Unix**
+   **Linux, Unix, or macOS**
 
    ```
    $ source ~/eb-ve/bin/activate
@@ -46,7 +46,7 @@ You can avoid version requirement conflicts with other `pip` packages by install
 
    ```
    $ eb --version
-   EB CLI 3.7.8 (Python 3.4.1)
+   EB CLI 3.14.8 (Python 3.7)
    ```
 
 You can use the `deactivate` command to exit the virtual environment\. Whenever you start a new session, run the activation command again\.

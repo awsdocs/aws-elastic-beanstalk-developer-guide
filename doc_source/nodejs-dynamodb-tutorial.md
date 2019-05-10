@@ -35,7 +35,7 @@ You can run all commands in this tutorial on a Linux virtual machine, an OS X ma
 
   1. Add the path to the binaries to your Windows PATH user variable\. For example, `C:\Program Files (x86)\UnxUtils\usr\local\wbin`\.
 
-     1. Press the Windows key, and then type **environment variables**\.
+     1. Press the Windows key, and then enter **environment variables**\.
 
      1. Choose **Edit environment variables for your account**\.
 
@@ -45,7 +45,7 @@ You can run all commands in this tutorial on a Linux virtual machine, an OS X ma
 
      1. Choose **OK** twice to apply the new settings\.
 
-     1. Close any running command prompts and reopen command prompt\.
+     1. Close any running Command Prompt windows, and then reopen a Command Prompt window\.
 
   1. Open a new command prompt window and run the `zip` command to verify that it works\.
 

@@ -7,7 +7,7 @@ This example creates AWS resources, which you might be charged for\. For more in
 
 ## Step 1: Set Up Your Git Repository<a name="create_deploy_nodejs_geddy_elasticache_gitinit"></a>
 
-The EB CLI is a command line interface that you can use with Git to deploy applications quickly and more easily\. The EB CLI is available as part of the Elastic Beanstalk command line tools package\. For instructions to install the EB CLI, see [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md)\.
+The EB CLI is a command line interface that you can use with Git to deploy applications quickly and more easily\. The EB CLI is available as part of the Elastic Beanstalk command line tools package\. For instructions to install the EB CLI, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md)\.
 
 Initialize your Git repository\. After you run the following command, when you run `eb init`, the EB CLI recognizes that your application is set up with Git\.
 

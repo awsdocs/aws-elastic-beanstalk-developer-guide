@@ -32,7 +32,7 @@ For all Python applications that you'll deploy with Elastic Beanstalk, these pre
 
 1. A working `ssh` installation\. This is used to connect with your running instances when you need to examine or debug a deployment\.
 
-For instructions on installing Python, pip, and the EB CLI, see [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md)\.
+For instructions on installing Python, pip, and the EB CLI, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md)\.
 
 ## Using a Virtual Environment<a name="python-common-setup-venv"></a>
 

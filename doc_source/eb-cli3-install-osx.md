@@ -1,14 +1,14 @@
 # Install the EB CLI on macOS<a name="eb-cli3-install-osx"></a>
 
-If you use the Homebrew package manager, you can install the EB CLI with the `brew` command\. You can also install Python and `pip`, and then use `pip` to install the EB CLI\.
+If you use the `Homebrew` package manager, you can install the EB CLI by using the `brew` command\. You can also install Python and `pip`, and then use `pip` to install the EB CLI\.
 
 ## Install the EB CLI with Homebrew<a name="eb-cli3-install-osx-homebrew"></a>
 
-If you have Homebrew, you can use it to install the EB CLI\. The latest version of the EB CLI is typically available from Homebrew a couple of days after it appears in `pip`\.
+The latest version of the EB CLI is typically available from `Homebrew` a couple of days after it appears in `pip`\.
 
-**To install the EB CLI with Homebrew**
+**To install the EB CLI with `Homebrew`**
 
-1. Ensure you have the latest version of Homebrew\.
+1. Ensure you have the latest version of `Homebrew`\.
 
    ```
    $ brew update
@@ -24,7 +24,7 @@ If you have Homebrew, you can use it to install the EB CLI\. The latest version 
 
    ```
    $ eb --version
-   EB CLI 3.2.2 (Python 3.4.3)
+   EB CLI 3.14.8 (Python 3.7)
    ```
 
 ## Install Python, pip, and the EB CLI on macOS<a name="eb-cli3-install-osx-pip"></a>
@@ -33,11 +33,11 @@ You can install the latest version of Python and `pip` and then use them to inst
 
 **To install the EB CLI on macOS**
 
-1. Download and install Python from the [downloads page](https://www.python.org/downloads/release/python) of [Python\.org](https://www.python.org)\. This tutorial uses version 3\.4 to demonstrate\.
+1. Download and install Python from the [downloads page](https://www.python.org/downloads/release/python) of [Python\.org](https://www.python.org)\. We use version 3\.7 to demonstrate\.
 **Note**  
-The EB CLI requires Python 2 version 2\.7, or Python 3 in the versions range of 3\.4 to 3\.6\.
+The EB CLI requires Python 2 version 2\.7, or Python 3 version in the range of 3\.4 to 3\.7\.
 
-1. Install `pip` with the script provided by the Python Packaging Authority\.
+1. Install `pip` with the script that the Python Packaging Authority provides\.
 
    ```
    $ curl -O https://bootstrap.pypa.io/get-pip.py
@@ -50,9 +50,9 @@ The EB CLI requires Python 2 version 2\.7, or Python 3 in the versions range of 
    $ pip3 install awsebcli --upgrade --user
    ```
 
-1. Add the executable path, `~/Library/Python/3.4/bin`, to your PATH variable\.
+1. Add the executable path, `~/Library/Python/3.7/bin`, to your `PATH` variable\.
 
-   To modify your PATH variable \(Linux, macOS, or Unix\):
+   To modify your `PATH` variable \(Linux, Unix, or macOS\):
 
    1. Find your shell's profile script in your user folder\. If you are not sure which shell you have, run `echo $SHELL`\.
 
@@ -64,13 +64,13 @@ The EB CLI requires Python 2 version 2\.7, or Python 3 in the versions range of 
       + **Zsh** – `.zshrc`
       + **Tcsh** – `.tcshrc`, `.cshrc` or `.login`\.
 
-   1. Add an export command to your profile script\. The following example adds the path represented by *LOCAL\_PATH* to the current PATH variable\.
+   1. Add an export command to your profile script\. The following example adds the path represented by *LOCAL\_PATH* to the current `PATH` variable\.
 
       ```
       export PATH=LOCAL_PATH:$PATH
       ```
 
-   1. Load the profile script described in the first step into your current session\. The following example loads the profile script represented by *PROFILE\_SCRIPT* into your current session\.
+   1. Load the profile script described in the first step into your current session\. The following example loads the profile script represented by *PROFILE\_SCRIPT*\. 
 
       ```
       $ source ~/PROFILE_SCRIPT
@@ -80,7 +80,7 @@ The EB CLI requires Python 2 version 2\.7, or Python 3 in the versions range of 
 
    ```
    $ eb --version
-   EB CLI 3.7.8 (Python 3.4.1)
+   EB CLI 3.14.8 (Python 3.7)
    ```
 
 To upgrade to the latest version, run the installation command again\.

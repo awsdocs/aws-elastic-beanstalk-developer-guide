@@ -27,7 +27,7 @@ Flask requires Python 2\.7 or 3\.4 or newer\. In this tutorial we use Python 3\.
 
 The [Flask](http://flask.pocoo.org/) framework will be installed as part of the tutorial\.
 
-This tutorial also uses the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
+This tutorial also uses the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
 
 ## Set Up a Python Virtual Environment with Flask<a name="python-flask-setup-venv"></a>
 

@@ -10,7 +10,7 @@ Ensure that you are using the latest version of the EB CLI by running `pip insta
 ```
 $ sudo pip install --upgrade awsebcli
 ```
-For complete EB CLI installation instructions, see [Install the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3-install.md)\.
+For complete EB CLI installation instructions, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md)\.
 
 To use the EB CLI to monitor your environment's health, you must first configure a local project folder by running eb init and following the prompts\. For complete instructions, see [Configure the EB CLI](eb-cli3-configuration.md)\.
 

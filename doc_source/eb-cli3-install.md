@@ -1,115 +1,64 @@
-# Install the Elastic Beanstalk Command Line Interface \(EB CLI\)<a name="eb-cli3-install"></a>
+# Install the EB CLI Using Setup Scripts<a name="eb-cli3-install"></a>
 
-The Elastic Beanstalk Command Line Interface \(EB CLI\) is a command line client that you can use to create, configure, and manage Elastic Beanstalk environments\. The EB CLI is developed in Python and requires Python version 2\.7, version 3\.4, or newer\.
-
-**Note**  
-Amazon Linux, starting with version 2015\.03, comes with Python 2\.7 and `pip`\.
+The Elastic Beanstalk Command Line Interface \(EB CLI\) is a command line client that you can use to create, configure, and manage Elastic Beanstalk environments\.
 
 **Topics**
-+ [Compatibility notes](#eb-cli3-install.compat)
-+ [Install the EB CLI](#eb-cli3-install.cli-only)
-+ [Install Python, pip, and the EB CLI on Linux](eb-cli3-install-linux.md)
-+ [Install Python, pip, and the EB CLI on Windows](eb-cli3-install-windows.md)
-+ [Install the EB CLI on macOS](eb-cli3-install-osx.md)
-+ [Install the EB CLI in a Virtual Environment](eb-cli3-install-virtualenv.md)
++ [Install the EB CLI](#eb-cli3-install.scripts)
++ [Prerequisites](#eb-cli3-install.scripts.prereqs)
++ [Install the EB CLI on Linux and macOS](#eb-cli3-install.scripts.linux)
++ [Install the EB CLI on Windows](#eb-cli3-install.scripts.windows)
++ [Update the EB CLI](#eb-cli3-install.scripts.update)
++ [Manually Install the EB CLI](eb-cli3-install-advanced.md)
 
-## Compatibility notes<a name="eb-cli3-install.compat"></a>
+## Install the EB CLI<a name="eb-cli3-install.scripts"></a>
 
-The EB CLI and the [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/) \(AWS CLI\) share a dependency on the [botocore](https://botocore.amazonaws.com/v1/documentation/api/latest/index.html) Python package\. Due to a breaking change in botocore, different versions of these two CLI tools depend on different versions of botocore\.
+Use the [EB CLI setup scripts](https://github.com/aws/aws-elastic-beanstalk-cli-setup) to install the EB CLI on Linux, macOS, or Windows\. The scripts install the EB CLI and its dependencies, including Python and `pip`\. The scripts also create a virtual environment for the EB CLI\. Use the following procedures to download the scripts and install the EB CLI\.
 
-The latest versions of the two CLIs are compatible\. If you need to use previous versions, consult the following table to ensure you use compatible versions\.
+## Prerequisites<a name="eb-cli3-install.scripts.prereqs"></a>
 
-
-|  **EB CLI version**  |  **Compatible AWS CLI version**  | 
-| --- | --- | 
-|  3\.14\.5 or earlier  |  1\.16\.9 or earlier  | 
-|  3\.14\.6 or later  |  1\.16\.11 or later  | 
-
-## Install the EB CLI<a name="eb-cli3-install.cli-only"></a>
-
-The primary distribution method for the EB CLI on Linux, Windows, and macOS is `pip`\. This is a package manager for Python that provides an easy way to install, upgrade, and remove Python packages and their dependencies\. For macOS, you can also get the latest version of the EB CLI with Homebrew\.
-
-If you don't have Python and `pip`, use the procedure for your operating system\. If you already have `pip` and a supported version of Python, use the following procedure to install the EB CLI\.
-
-**To install the EB CLI**
-
-1. Run the following command\.
-
-   ```
-   $ pip install awsebcli --upgrade --user
-   ```
-
-   The `--upgrade` option tells `pip` to upgrade any requirements that are already installed\. The `--user` option tells `pip` to install the program to a subdirectory of your user directory to avoid modifying libraries used by your operating sytem\.
-**Note**  
-If you encounter issues when you attempt to install the EB CLI with `pip`, you can [install the EB CLI in a virtual environment](eb-cli3-install-virtualenv.md) to isolate the tool and its dependencies, or use a different version of Python than you normally do\.
-
-1. Add the path to the executable file to your PATH variable:
-   + On Linux and macOS:
-
-     **Linux** – `~/.local/bin`
-
-     **macOS** – `~/Library/Python/3.4/bin`
-
-     To modify your PATH variable \(Linux, macOS, or Unix\):
-
-     1. Find your shell's profile script in your user folder\. If you are not sure which shell you have, run `echo $SHELL`\.
-
-        ```
-        $ ls -a ~
-        .  ..  .bash_logout  .bash_profile  .bashrc  Desktop  Documents  Downloads
-        ```
-        + **Bash** – `.bash_profile`, `.profile`, or `.bash_login`\.
-        + **Zsh** – `.zshrc`
-        + **Tcsh** – `.tcshrc`, `.cshrc` or `.login`\.
-
-     1. Add an export command to your profile script\. The following example adds the path represented by *LOCAL\_PATH* to the current PATH variable\.
-
-        ```
-        export PATH=LOCAL_PATH:$PATH
-        ```
-
-     1. Load the profile script described in the first step into your current session\. The following example loads the profile script represented by *PROFILE\_SCRIPT* into your current session\.
-
-        ```
-        $ source ~/PROFILE_SCRIPT
-        ```
-   + On Windows:
-
-     **Python 3\.6** – `%USERPROFILE%\AppData\Roaming\Python\Python36\Scripts`
-
-     **Python 3\.5** – `%USERPROFILE%\AppData\Roaming\Python\Python3.5\Scripts`
-
-     **Python previous versions** – `%USERPROFILE%\AppData\Roaming\Python\Scripts`
-
-     To modify your PATH variable \(Windows\):
-
-     1. Press the Windows key, and then type **environment variables**\.
-
-     1. Choose **Edit environment variables for your account**\.
-
-     1. Choose **PATH**, and then choose **Edit**\.
-
-     1. Add paths to the **Variable value** field, separated by semicolons\. For example: `C:\item1\path;C:\item2\path`
-
-     1. Choose **OK** twice to apply the new settings\.
-
-     1. Close any running command prompts and reopen command prompt\.
-
-1. Verify that the EB CLI installed correctly by running eb \-\-version\.
-
-   ```
-   $ eb --version
-   EB CLI 3.7.8 (Python 3.4.3)
-   ```
-
-The EB CLI is updated regularly to add functionality that supports [the latest Elastic Beanstalk features](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/)\. To update to the latest version of the EB CLI, run the installation command again\.
+You must have Git installed\. To see which version of Git you have, use the following command\.
 
 ```
-$ pip install awsebcli --upgrade --user
+$ git --version
+git version version-number
 ```
 
-If you need to uninstall the EB CLI, use `pip uninstall`\.
+If you don't have Git, install it\. You can install Git from websites such as [Git Downloads](https://git-scm.com/downloads)\.
 
-```
-$ pip uninstall awsebcli
-```
+## Install the EB CLI on Linux and macOS<a name="eb-cli3-install.scripts.linux"></a>
+
+**For Bash and Zsh**
+
+1. Clone the `aws-elastic-beanstalk-cli-setup` repository from GitHub\.
+
+   ```
+   $ git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
+   ```
+
+1. Run the bundled installer\.
+
+   ```
+   $ ./aws-elastic-beanstalk-cli-setup/scripts/bundled_installer
+   ```
+
+1. Follow the instructions that the bundled installer outputs to add Python and the EB CLI to your `PATH` variable\. 
+
+## Install the EB CLI on Windows<a name="eb-cli3-install.scripts.windows"></a>
+
+**In PowerShell or the Command Prompt window**
+
+1. Clone the `aws-elastic-beanstalk-cli-setup` repository from GitHub\.
+
+   ```
+   $ git clone https://github.com/aws/aws-elastic-beanstalk-cli-setup.git
+   ```
+
+1. Run the bundled installer\.
+
+   ```
+   $ .\aws-elastic-beanstalk-cli-setup\scripts\bundled_installer
+   ```
+
+## Update the EB CLI<a name="eb-cli3-install.scripts.update"></a>
+
+To upgrade to the latest version of the EB CLI, download the latest version of the [EB CLI setup scripts](https://github.com/aws/aws-elastic-beanstalk-cli-setup) and rerun the bundled installer\. 
