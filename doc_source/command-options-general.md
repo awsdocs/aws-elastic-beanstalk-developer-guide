@@ -236,14 +236,14 @@ Configure your environment's default process\.
 |  DeregistrationDelay  |  Time, in seconds, to wait for active requests to complete before deregistering\.  |  `20`  |  `0` to `3600`  | 
 |  HealthCheckInterval  |  The interval, in seconds, at which Elastic Load Balancing will check the health of your application's Amazon EC2 instances\.  |  With classic or application load balancer: `15` With network load balancer: `30`  |  With classic or application load balancer: `5` to `300` With network load balancer: `10`, `30`  | 
 |  HealthCheckPath  |  Path to which to send HTTP requests for health checks\.  |  `/`   |  A routable path\.  | 
-|  HealthCheckTimeout  |  Time, in seconds, to wait for a response during a health check\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `5`  |  `1` to `60`  | 
+|  HealthCheckTimeout  |  Time, in seconds, to wait for a response during a health check\. This option is only applicable to environments with an application load balancer\.  |  `5`  |  `1` to `60`  | 
 |  HealthyThresholdCount  |  Consecutive successful requests before Elastic Load Balancing changes the instance health status\.  |  With classic or application load balancer: `3` With network load balancer: `5`  |  `2` to `10`  | 
 |  MatcherHTTPCode  |  A comma\-separated list of HTTP code\(s\) that indicate that an instance is healthy\.  |  `200`  |  `200` to `399`  | 
 |  Port  |  Port on which the process listens\.  |  `80`  |  `1` to `65535`  | 
 |  Protocol  |  Protocol that the process uses\. With an application load balancer, you can only set this option to `HTTP` or `HTTPS`\. With a network load balancer, you can only set this option to `TCP`\.  |  With classic or application load balancer: `HTTP` With network load balancer: `TCP`  |  `TCP` `HTTP` `HTTPS`  | 
-|  StickinessEnabled  |  Set to true to enable sticky sessions\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `'false'`  |  `'false'` `'true'`  | 
-|  StickinessLBCookieDuration  |  Lifetime, in seconds, of the sticky session cookie\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `86400` \(one day\)  |  `1` to `604800`  | 
-|  StickinessType  |  Set to `lb_cookie` to use cookies for sticky sessions\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `lb_cookie`  |  `lb_cookie`  | 
+|  StickinessEnabled  |  Set to true to enable sticky sessions\. This option is only applicable to environments with an application load balancer\.  |  `'false'`  |  `'false'` `'true'`  | 
+|  StickinessLBCookieDuration  |  Lifetime, in seconds, of the sticky session cookie\. This option is only applicable to environments with an application load balancer\.  |  `86400` \(one day\)  |  `1` to `604800`  | 
+|  StickinessType  |  Set to `lb_cookie` to use cookies for sticky sessions\. This option is only applicable to environments with an application load balancer\.  |  `lb_cookie`  |  `lb_cookie`  | 
 |  UnhealthyThresholdCount  |  Consecutive unsuccessful requests before Elastic Load Balancing changes the instance health status\.  |  `5`  |  `2` to `10`  | 
 
 ## aws:elasticbeanstalk:environment:process:process\_name<a name="command-options-general-environmentprocess-process"></a>
@@ -258,14 +258,14 @@ Configure additional processes for your environment\.
 |  DeregistrationDelay  |  Time, in seconds, to wait for active requests to complete before deregistering\.  |  `20`  |  `0` to `3600`  | 
 |  HealthCheckInterval  |  The interval, in seconds, at which Elastic Load Balancing will check the health of your application's Amazon EC2 instances\.  |  With classic or application load balancer: `15` With network load balancer: `30`  |  With classic or application load balancer: `5` to `300` With network load balancer: `10`, `30`  | 
 |  HealthCheckPath  |  Path to which to send HTTP requests for health checks\.  |  `/`   |  A routable path\.  | 
-|  HealthCheckTimeout  |  Time, in seconds, to wait for a response during a health check\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `5`  |  `1` to `60`  | 
+|  HealthCheckTimeout  |  Time, in seconds, to wait for a response during a health check\. This option is only applicable to environments with an application load balancer\.  |  `5`  |  `1` to `60`  | 
 |  HealthyThresholdCount  |  Consecutive successful requests before Elastic Load Balancing changes the instance health status\.  |  With classic or application load balancer: `3` With network load balancer: `5`  |  `2` to `10`  | 
 |  MatcherHTTPCode  |  A comma\-separated list of HTTP code\(s\) that indicate that an instance is healthy\.  |  `200`  |  `200` to `399`  | 
 |  Port  |  Port on which the process listens\.  |  `80`  |  `1` to `65535`  | 
 |  Protocol  |  Protocol that the process uses\. With an application load balancer, you can only set this option to `HTTP` or `HTTPS`\. With a network load balancer, you can only set this option to `TCP`\.  |  With classic or application load balancer: `HTTP` With network load balancer: `TCP`  |  `TCP` `HTTP` `HTTPS`  | 
-|  StickinessEnabled  |  Set to true to enable sticky sessions\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `'false'`  |  `'false'` `'true'`  | 
-|  StickinessLBCookieDuration  |  Lifetime, in seconds, of the sticky session cookie\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `86400` \(one day\)  |  `1` to `604800`  | 
-|  StickinessType  |  Set to `lb_cookie` to use cookies for sticky sessions\. This option is only applicable to environments with a classic load balancer or an application load balancer\.  |  `lb_cookie`  |  `lb_cookie`  | 
+|  StickinessEnabled  |  Set to true to enable sticky sessions\. This option is only applicable to environments with an application load balancer\.  |  `'false'`  |  `'false'` `'true'`  | 
+|  StickinessLBCookieDuration  |  Lifetime, in seconds, of the sticky session cookie\. This option is only applicable to environments with an application load balancer\.  |  `86400` \(one day\)  |  `1` to `604800`  | 
+|  StickinessType  |  Set to `lb_cookie` to use cookies for sticky sessions\. This option is only applicable to environments with an application load balancer\.  |  `lb_cookie`  |  `lb_cookie`  | 
 |  UnhealthyThresholdCount  |  Consecutive unsuccessful requests before Elastic Load Balancing changes the instance health status\.  |  `5`  |  `2` to `10`  | 
 
 ## aws:elasticbeanstalk:healthreporting:system<a name="command-options-general-elasticbeanstalkhealthreporting"></a>
