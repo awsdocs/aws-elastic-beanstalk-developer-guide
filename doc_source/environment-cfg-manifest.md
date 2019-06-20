@@ -4,7 +4,7 @@ You can include a YAML formatted environment manifest in the root of your applic
 
 This file format includes support for environment groups\. To use groups, specify the environment name in the manifest with a \+ symbol at the end\. When you create or update the environment, specify the group name with `--group-name` \(AWS CLI\) or `--env-group-suffix` \(EB CLI\)\. For more information on groups, see [Creating and Updating Groups of AWS Elastic Beanstalk Environments](environment-mgmt-compose.md)\.
 
-The following example manifest defines an web server environment with a link to a worker environment component that it is dependent upon\. The manifest uses groups to allow creating multiple environments with the same source bundle:
+The following example manifest defines a web server environment with a link to a worker environment component that it is dependent upon\. The manifest uses groups to allow creating multiple environments with the same source bundle:
 
 **`~/myapp/frontend/env.yaml`**
 
