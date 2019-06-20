@@ -24,7 +24,7 @@ You can add a DB instance to your environment by using the Elastic Beanstalk con
 
 1. Choose **Configuration**\.
 
-1. On the **Database** configuration card, choose **Modify**\.
+1. In the **Database** configuration category, choose **Modify**\.
 
 1. Choose a DB engine, and enter a user name and password\.
 
@@ -84,7 +84,7 @@ You can view and modify configuration settings for your DB instance in the **Dat
 
 1. Choose **Configuration**\.
 
-1. On the **Database** configuration card, choose **Modify**\.
+1. In the **Database** configuration category, choose **Modify**\.
 
 You can modify the **Instance class**, ****Storage**, Password**, **Retention**, and **Availability** settings after database creation\. If you change the instance class, Elastic Beanstalk re\-provisions the DB instance\.
 

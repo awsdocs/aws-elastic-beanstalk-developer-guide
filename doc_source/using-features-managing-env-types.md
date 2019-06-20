@@ -27,8 +27,8 @@ You can change your environment type to a single\-instance or load\-balancing, a
 
 1. Choose **Configuration**\.
 
-1. On the **Capacity** card, choose **Modify**\.  
-![\[The capacity configuration card\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-scaling.png)
+1. In the **Capacity** category, choose **Modify**\.  
+![\[The capacity configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-scaling.png)
 
 1. From the **Environment Type** list, select the type of environment that you want\.  
 ![\[The Auto Scaling group section of the modify capacity page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-capacity.png)

@@ -12,7 +12,7 @@ If you are using Amazon RDS for the first time, add a DB instance to a test envi
 
 1. Choose **Configuration**\.
 
-1. On the **Database** configuration card, choose **Modify**\.
+1. In the **Database** configuration category, choose **Modify**\.
 
 1. Choose a DB engine, and enter a user name and password\.
 
@@ -258,7 +258,7 @@ As an example, the preceding is acceptable\. But in actual applications, keep yo
 
 1. Choose **Configuration**\.
 
-1. On the **Database** configuration card, choose **Modify**\.
+1. In the **Database** configuration category, choose **Modify**\.
 
 1. Next to **Endpoint**, choose the Amazon RDS console link\.
 

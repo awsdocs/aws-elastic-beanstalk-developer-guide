@@ -10,7 +10,7 @@ To improve performance, you can configure the proxy server to serve static files
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 1. In the **Static files** section, enter a path for serving static files and the directory of the static files to serve into the empty row at the bottom of the list\.
 

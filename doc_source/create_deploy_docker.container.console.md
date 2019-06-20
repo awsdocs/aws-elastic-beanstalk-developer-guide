@@ -10,7 +10,7 @@ You can use the Elastic Beanstalk console to configure the software running on y
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 The Log Options section has two settings:
 + **Instance profile** – Your environment's [instance profile](concepts-roles-instance.md), which must have write access to your environment's Amazon S3 storage bucket in order to upload logs\.

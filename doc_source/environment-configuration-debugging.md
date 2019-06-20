@@ -47,7 +47,7 @@ You can enable the X\-Ray daemon on a running environment in the Elastic Beansta
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 1. For **X\-Ray Daemon**, choose **Enabled**\.
 

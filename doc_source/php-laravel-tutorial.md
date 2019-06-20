@@ -133,7 +133,7 @@ To serve the Laravel application at the root path, use the Elastic Beanstalk con
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 1. For **Document Root**, type **/public**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-laravel-docroot.png)
@@ -161,7 +161,7 @@ Running an Amazon RDS instance in your Elastic Beanstalk environment is great fo
 
 1. Choose **Configuration**\.
 
-1. On the **Database** configuration card, choose **Modify**\.
+1. In the **Database** configuration category, choose **Modify**\.
 
 1. For **Engine**, choose **mysql**\.
 

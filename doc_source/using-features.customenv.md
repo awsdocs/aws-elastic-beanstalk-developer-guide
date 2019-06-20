@@ -18,8 +18,8 @@ A custom AMI also allows you to make changes to low\-level components, such as t
 
 1. Choose **Configuration**\.
 
-1. On the **Instances** configuration card, note the value next to the **EC2 image ID** label\.  
-![\[Instances configuration card with EC2 image ID highlighted\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-customami-imageid.png)
+1. In the **Instances** configuration category, note the value next to the **EC2 image ID** label\.  
+![\[Instances configuration category with EC2 image ID highlighted\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-customami-imageid.png)
 
 1. Terminate the environment\.
 
@@ -88,7 +88,7 @@ These settings configure the lock\-on\-launch feature\. This causes the AMI to u
 
 1. Choose **Configuration**\.
 
-1. On the **Instances** configuration card, choose **Modify**\.
+1. In the **Instances** configuration category, choose **Modify**\.
 
 1. For **Custom AMI ID**, type your custom AMI ID\.
 

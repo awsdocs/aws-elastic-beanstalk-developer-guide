@@ -10,7 +10,7 @@ The Auto Scaling Group in your environment manages the EC2 instances that run yo
 
 ## Configuring Your Environment's EC2 Instances<a name="using-features.managing.ec2.console"></a>
 
-You can modify your Elastic Beanstalk environment's Auto Scaling Group configuration in the Elastic Beanstalk console\.
+You can modify your Elastic Beanstalk environment's EC2 instance configuration in the Elastic Beanstalk console\.
 
 **To configure EC2 instances in the Elastic Beanstalk console**
 
@@ -20,7 +20,7 @@ You can modify your Elastic Beanstalk environment's Auto Scaling Group configura
 
 1. Choose **Configuration**\.
 
-1. On the **Instances** configuration card, choose **Modify**\.  
+1. In the **Instances** configuration category, choose **Modify**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-instances.png)
 
 The following settings are available\.

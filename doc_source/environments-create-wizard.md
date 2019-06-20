@@ -73,9 +73,9 @@ The third preset, **Custom configuration**, removes all recommended values excep
 
 ## Customize Your Configuration<a name="environments-create-wizard-customize"></a>
 
-In addition to \(or instead of\) choosing a configuration preset, you can fine\-tune [configuration options](command-options.md) in your environment\. When you choose **Configure more options**, the wizard shows several configuration cards\. Each configuration card displays a summary of values for a group of configuration settings\. Choose **Modify** to edit this group of settings\. The following example shows the **Capacity** configuration card\.
+In addition to \(or instead of\) choosing a configuration preset, you can fine\-tune [configuration options](command-options.md) in your environment\. When you choose **Configure more options**, the wizard shows several configuration categories\. Each configuration category displays a summary of values for a group of configuration settings\. Choose **Modify** to edit this group of settings\. The following example shows the **Capacity** configuration category\.
 
-![\[Capacity configuration card\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-capacity.png)
+![\[Capacity configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-capacity.png)
 
 **Topics**
 + [Software Settings](#environments-create-wizard-software)

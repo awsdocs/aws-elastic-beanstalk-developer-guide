@@ -14,7 +14,7 @@ You can configure the triggers that adjust the number of instances in your envir
 
 1. Choose **Configuration**\.
 
-1. On the **Capacity** configuration card, choose **Modify**\.
+1. In the **Capacity** configuration category, choose **Modify**\.
 
 1. In the **Scaling triggers** section, configure the following settings:
    + **Metric** – Metric used for your Auto Scaling trigger\.

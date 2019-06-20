@@ -71,7 +71,7 @@ You can use the Elastic Beanstalk Console to configure your environment to publi
 
 1. Choose **Configuration**\.
 
-1. On the **Monitoring** configuration card, choose **Modify**\.
+1. In the **Monitoring** configuration category, choose **Modify**\.
 
 1. Under **Health reporting**, select the instance and environment metrics to publish to CloudWatch\. To select multiple metrics, press the **Ctrl** key while choosing\.
 

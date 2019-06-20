@@ -29,7 +29,7 @@ The Elastic Beanstalk console lets you enter an email address to create an Amazo
 
 1. Choose **Configuration**\.
 
-1. On the **Notifications** configuration card, choose **Modify**\.
+1. In the **Notifications** configuration category, choose **Modify**\.
 
 1. Enter an email address\.  
 ![\[Elastic Beanstalk notifications configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-sns.png)

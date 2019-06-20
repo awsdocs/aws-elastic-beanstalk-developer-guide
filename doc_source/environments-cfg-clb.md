@@ -40,9 +40,9 @@ You can use the Elastic Beanstalk console to configure a Classic Load Balancer's
 
 1. Choose the **High availability** configuration preset\.
 
-   Alternatively, on the **Capacity** configuration card, configure a **Load balanced** environment type\. For details, see [Capacity](environments-create-wizard.md#environments-create-wizard-capacity)\.
+   Alternatively, in the **Capacity** configuration category, configure a **Load balanced** environment type\. For details, see [Capacity](environments-create-wizard.md#environments-create-wizard-capacity)\.
 
-1. On the **Load balancer** configuration card, choose **Modify**\.
+1. In the **Load balancer** configuration category, choose **Modify**\.
 
 1. Select the **Classic Load Balancer** option, if it isn't already selected\.  
 ![\[Load balancer configuration page - choosing load balancer type\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-elb-type-chooser.png)
@@ -61,9 +61,9 @@ You can use the Elastic Beanstalk console to configure a Classic Load Balancer's
 
 1. Choose **Configuration**\.
 
-1. On the **Load balancer** configuration card, choose **Modify**\.
+1. In the **Load balancer** configuration category, choose **Modify**\.
 **Note**  
-If the **Load balancer** configuration card doesn't have a **Modify** button, your environment doesn't have a load balancer\. To learn how to set one up, see [Changing Environment Type](using-features-managing-env-types.md#using-features.managing.changetype)\.
+If the **Load balancer** configuration category doesn't have a **Modify** button, your environment doesn't have a load balancer\. To learn how to set one up, see [Changing Environment Type](using-features-managing-env-types.md#using-features.managing.changetype)\.
 
 1. Make the Classic Load Balancer configuration changes that your environment requires\.
 

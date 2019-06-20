@@ -19,7 +19,7 @@ Enhanced health reporting requires an [instance profile](concepts-roles-instance
 
 1. Choose **Configuration**\.
 
-1. On the **Monitoring** configuration card, choose **Modify**\.
+1. In the **Monitoring** configuration category, choose **Modify**\.
 
 1. Under **Health reporting**, for **System**, choose **Enhanced**\.  
 ![\[Choosing the enhanced health reporting system\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-dashboard-option.png)
@@ -38,7 +38,7 @@ The Elastic Beanstalk console defaults to enhanced health reporting when you cre
 
 1. [Create an environment](using-features.environments.md)\. On the **Create a new environment** page, before choosing **Create environment**, choose **Configure more options**\.
 
-1. On the **Monitoring** configuration card, choose **Modify**\.
+1. In the **Monitoring** configuration category, choose **Modify**\.
 
 1. Under **Health reporting**, for **System**, choose **Basic**\.  
 ![\[Choosing the basic health reporting system\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/basic-health-dashboard-option.png)

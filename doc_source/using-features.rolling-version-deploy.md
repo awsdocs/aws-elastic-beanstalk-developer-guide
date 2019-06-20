@@ -24,7 +24,7 @@ In the [environment management console](environments-console.md), enable and con
 
 1. Choose **Configuration**\.
 
-1. On the **Rolling updates and deployments** configuration card, choose **Modify**\.
+1. In the **Rolling updates and deployments** configuration category, choose **Modify**\.
 
 1. In the **Application Deployments** section, choose a **Deployment policy**, batch settings, and health check options\.
 

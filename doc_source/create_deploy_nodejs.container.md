@@ -26,7 +26,7 @@ The Node\.js settings lets you fine\-tune the behavior of your Amazon EC2 instan
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 ### Container Options<a name="nodejs-platform-console-settings"></a>
 

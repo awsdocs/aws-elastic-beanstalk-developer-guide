@@ -26,7 +26,7 @@ The [elastic\-beanstalk\-samples](https://github.com/awsdocs/elastic-beanstalk-s
 
 1. Choose **Next** and follow the instructions to create a stack with the resources in the template\.
 
-When stack creation completes, check the **Outputs** tab to find the VPC ID and subnet IDs\. Use these to configure the VPC in the new environment wizard [network card](environments-create-wizard.md#environments-create-wizard-network)\.
+When stack creation completes, check the **Outputs** tab to find the VPC ID and subnet IDs\. Use these to configure the VPC in the new environment wizard [network configuration category](environments-create-wizard.md#environments-create-wizard-network)\.
 
 ## VPC with Public Subnets<a name="services-vpc-public"></a>
 

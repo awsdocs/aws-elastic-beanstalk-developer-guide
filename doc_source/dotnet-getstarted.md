@@ -18,7 +18,7 @@ Download any of the sample applications and deploy it to Elastic Beanstalk by us
 
 **Note**  
 For a Windows production environment, we recommend changing the default Amazon EC2 instance type to t2\.medium or better\. Be aware that the t2\.medium instance type isn’t eligible for the [AWS Free Tier](https://aws.amazon.com/free)\.   
-To change the instance type, choose **Configure more options** during the procedure, and then choose **Modify** on the **Instances** configuration card\. 
+To change the instance type, choose **Configure more options** during the procedure, and then choose **Modify** in the **Instances** configuration category\. 
 
 **To launch an environment with a sample application \(console\)**
 

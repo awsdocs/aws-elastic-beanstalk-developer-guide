@@ -31,7 +31,7 @@ During managed platform updates with instance replacement enabled, immutable upd
 
 1. Choose **Configuration**\.
 
-1. On the **Rolling updates and deployments** configuration card, choose **Modify**\.
+1. In the **Rolling updates and deployments** configuration category, choose **Modify**\.
 
 1. In the **Application Deployments** section, choose a [Deployment policy](using-features.rolling-version-deploy.md) and batch settings\.
 

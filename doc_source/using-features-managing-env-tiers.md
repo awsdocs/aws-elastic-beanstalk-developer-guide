@@ -112,7 +112,7 @@ You can also set other CloudWatch alarms, as needed, by using the AWS Management
 
 ## Configuring Worker Environments<a name="using-features-managing-env-tiers-worker-settings"></a>
 
-You can manage a worker environment's configuration by editing the **Worker Configuration** card on the **Configuration** page in the [environment management console](environments-console.md)\.
+You can manage a worker environment's configuration by editing the **Worker Configuration** category on the **Configuration** page in the [environment management console](environments-console.md)\.
 
 ![\[Elastic Beanstalk Worker Details configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-worker.png)
 

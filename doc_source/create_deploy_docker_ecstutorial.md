@@ -2,7 +2,7 @@
 
 You can launch a cluster of multicontainer instances in a single\-instance or autoscaling Elastic Beanstalk environment using the AWS Management Console\. This tutorial details container configuration and source code preparation for an environment that uses two containers\. 
 
-The containers, a PHP application and an nginx proxy, run side by side on each of the Amazon EC2 instances in an Elastic Beanstalk environment\. After creating the environment and verifying that the applications are running, you'll connect to a container instance to see how it all fits together\.
+The containers, a PHP application and an nginx proxy, run side by side on each of the Amazon Elastic Compute Cloud \(Amazon EC2\) instances in an Elastic Beanstalk environment\. After creating the environment and verifying that the applications are running, you'll connect to a container instance to see how it all fits together\.
 
 **Topics**
 + [Define Docker Containers](#create_deploy_docker_ecstutorial_config)
@@ -18,7 +18,7 @@ The first step in creating a new Docker environment is to create a directory for
 **Note**  
 All of the code for this tutorial is available in the awslabs repository on GitHub at [https://github\.com/awslabs/eb\-docker\-nginx\-proxy](https://github.com/awslabs/eb-docker-nginx-proxy)
 
-The file that Elastic Beanstalk uses to configure the containers on an EC2 instance is a JSON\-formatted text file named `Dockerrun.aws.json`\. Create a text file with this name at the root of your application and add the following text: 
+The file that Elastic Beanstalk uses to configure the containers on an Amazon EC2 instance is a JSON\-formatted text file named `Dockerrun.aws.json`\. Create a text file with this name at the root of your application and add the following text: 
 
 ```
 {
@@ -180,21 +180,11 @@ The AWS Management Console redirects you to the management dashboard for your ne
 
 ## Connect to a Container Instance<a name="create_deploy_docker_ecstutorial_connect"></a>
 
-So how does it all work? Next you will connect to an EC2 instance in your Elastic Beanstalk environment to see some of the moving parts in action\. 
+Next you will connect to an Amazon EC2 instance in your Elastic Beanstalk environment to see some of the moving parts in action\. 
 
-First, identify the instance and note its public IP address, which is available in the Amazon EC2 console at [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\. If multiple instances are running and you have trouble identifying the one the belongs to your environment, read through the events on the environment dashboard and find the instance ID\. This ID appears in an event listing when Elastic Beanstalk launches an EC2 instance\. Search for the instance ID in the Amazon EC2 console and view its details to find the public IP address\. 
+The easiest way to connect to an instance in your environment is by using the EB CLI\. To use it, [install the EB CLI](eb-cli3-install.md), if you haven't done so already\. You'll also need to configure your environment with an Amazon EC2 SSH key pair\. Use either the console's [security configuration page](using-features.managing.security.md) or the EB CLI [eb init](eb3-init.md) command to do that\. To connect to an environment instance, use the EB CLI [eb ssh](eb3-ssh.md) command\.
 
-Next, use an SSH client and your private key file to connect to the instance\. Use the following settings: 
-
-**SSH Settings**
-+ **Address** – The public IP address or DNS name of the EC2 instance\.
-+ **Port** – **22**\. This port is opened for ingress by Elastic BeanstalkBeanstalk when you select an Amazon EC2 key pair during environment configuration\.
-+ **User Name** – **ec2\-user**\. This is the default user name for EC2 instances running Amazon Linux\.
-+ **Private Key** – Your private key file\.
-
-For full instructions on using SSH to connect to an EC2 instance, see [ Connecting to Your Linux Instance Using SSH ](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
-
-Now that your connected to the EC2 instance hosting your docker containers, you can see how things are set up\. Run `ls` on `/var/app/current`: 
+Now that your connected to an Amazon EC2 instance hosting your docker containers, you can see how things are set up\. Run `ls` on `/var/app/current`: 
 
 ```
 [ec2-user@ip-10-0-0-117 ~]$ ls /var/app/current
@@ -226,7 +216,7 @@ This shows the two running containers that you deployed, as well as the Amazon E
 
 ## Inspect the Amazon ECS Container Agent<a name="create_deploy_docker_ecstutorial_connect_inspect"></a>
 
-EC2 instances in a Multicontainer Docker environment on Elastic Beanstalk run an agent process in a Docker container\. This agent connects to the Amazon ECS service in order to coordinate container deployments\. These deployments run as tasks in Amazon ECS, which are configured in task definition files\. Elastic Beanstalk creates these task definition files based on the `Dockerrun.aws.json` that you upload in a source bundle\. 
+Amazon EC2 instances in a Multicontainer Docker environment on Elastic Beanstalk run an agent process in a Docker container\. This agent connects to the Amazon ECS service in order to coordinate container deployments\. These deployments run as tasks in Amazon ECS, which are configured in task definition files\. Elastic Beanstalk creates these task definition files based on the `Dockerrun.aws.json` that you upload in a source bundle\. 
 
 Check the status of the container agent with an HTTP get request to `http://localhost:51678/v1/metadata`: 
 
@@ -238,7 +228,7 @@ Check the status of the container agent with an HTTP get request to `http://loca
 }
 ```
 
-This structure shows the name of the Amazon ECS cluster, and the ARN \([Amazon Resource Name](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\) of the cluster instance \(the EC2 instance that you are connected to\)\. 
+This structure shows the name of the Amazon ECS cluster, and the ARN \([Amazon Resource Name](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\) of the cluster instance \(the Amazon EC2 instance that you are connected to\)\. 
 
 For more information, make an HTTP get request to information is available at `http://localhost:51678/v1/tasks`:
 

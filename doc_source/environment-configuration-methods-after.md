@@ -1,4 +1,4 @@
-# Setting Configuration Options After Environment Creation<a name="environment-configuration-methods-after"></a>
+# Setting Configuration Options after Environment Creation<a name="environment-configuration-methods-after"></a>
 
 You can modify the option settings on a running environment by applying saved configurations, uploading a new source bundle with configuration files \(`.ebextensions`\), or using a JSON document\. The EB CLI and Elastic Beanstalk console also have client\-specific functionality for setting and updating configuration options\.
 
@@ -63,7 +63,7 @@ See [Saved Configurations](environment-configuration-methods-before.md#configura
 
 ### Using the Environment Management Console<a name="configuration-options-after-console-configpage"></a>
 
-The Elastic Beanstalk console presents several configuration options on the **Configuration** page for each environment\.
+The Elastic Beanstalk console presents many configuration options on the **Configuration** page for each environment\.
 
 **To change configuration options on a running environment \(Elastic Beanstalk console\)**
 
@@ -73,15 +73,20 @@ The Elastic Beanstalk console presents several configuration options on the **Co
 
 1. Choose **Configuration**\.
 
-1. Choose **Modify** on the configuration card that contains the option that you want to modify\.
+1. Find the configuration page you want to edit:
+   + If you see the option you're interested in, or you know which configuration category it's in, choose **Modify** in the configuration category for it\.
+   + To look for an option, turn on **Table View**, and then enter search terms into the search box\. As you type, the list gets shorter and shows only options that match your search terms\.
+
+     When you see the option you're looking for, choose **Modify** in the configuration category that contains it\.  
+![\[Table view of the configuration overview page of the Elastic Beanstalk console, showing an option search\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-console.overview.table.search1.png)
 
 1. Change settings, and then choose **Save**\.
 
-1. Repeat the previous two steps on additional configuration cards as needed\.
+1. Repeat the previous two steps in additional configuration categories, as needed\.
 
 1. Choose **Apply**\.
 
-Changes made to configuration options in the environment management console are applied directly to the environment, overriding settings for the same options in configuration files or saved configurations\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
+Changes made to configuration options in the environment management console are applied directly to the environment\. These changes override settings for the same options in configuration files or saved configurations\. For details, see [Precedence](command-options.md#configuration-options-precedence)\.
 
 For details about changing configuration options on a running environment using the Elastic Beanstalk console, see the topics under [AWS Elastic Beanstalk Environment Configuration](customize-containers.md)\.
 

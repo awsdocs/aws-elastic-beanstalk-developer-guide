@@ -17,9 +17,9 @@ Single\-instance environments don't have a load balancer and don't support HTTPS
 
 1. Choose **Configuration**\.
 
-1. On the **Load balancer** configuration card, choose **Modify**\.
+1. In the **Load balancer** configuration category, choose **Modify**\.
 **Note**  
-If the **Load balancer** configuration card doesn't have a **Modify** button, your environment doesn't have a [load balancer](using-features-managing-env-types.md#using-features.managing.changetype)\.
+If the **Load balancer** configuration category doesn't have a **Modify** button, your environment doesn't have a [load balancer](using-features-managing-env-types.md#using-features.managing.changetype)\.
 
 1. On the **Modify load balancer** page, the procedure varies depending on the type of load balancer associated with your environment\.
    + **Classic Load Balancer**

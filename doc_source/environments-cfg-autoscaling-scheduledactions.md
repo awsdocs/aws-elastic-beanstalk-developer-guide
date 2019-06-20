@@ -16,7 +16,7 @@ You can create scheduled actions for your environment's Auto Scaling group in th
 
 1. Choose **Configuration**\.
 
-1. On the **Capacity** configuration card, choose **Modify**\.
+1. In the **Capacity** configuration category, choose **Modify**\.
 
 1. In the **Time\-based Scaling** section, choose **Add scheduled action**\.  
 ![\[Elastic Beanstalk Auto Scaling Scheduled Actions Configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-autoscaling-scheduledactions.png)

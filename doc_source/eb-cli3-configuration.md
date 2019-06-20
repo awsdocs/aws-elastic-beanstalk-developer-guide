@@ -28,6 +28,8 @@ The following example shows the configuration steps when running eb init for the
    15) ca-central-1 : Canada (Central)
    16) eu-west-2 : EU (London)
    17) eu-west-3 : EU (Paris)
+   18) eu-north-1 : EU (Stockholm)
+   19) ap-east-1 : Asia Pacific (Hong Kong)
    (default is 3): 3
    ```
 

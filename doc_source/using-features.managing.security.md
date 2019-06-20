@@ -18,7 +18,7 @@ You can modify your Elastic Beanstalk environment security configuration in the 
 
 1. Choose **Configuration**\.
 
-1. On the **Security** configuration card, choose **Modify**\.
+1. In the **Security** configuration category, choose **Modify**\.
 
 The following settings are available\.
 

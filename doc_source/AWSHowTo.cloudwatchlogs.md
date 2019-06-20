@@ -121,7 +121,7 @@ Before you enable it, set up IAM permissions to use with the CloudWatch Logs age
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 1. Under **Instance log streaming to CloudWatch Logs**:
    + Enable **Log streaming**\.
@@ -134,7 +134,7 @@ The example in the following figure saves the logs for seven days and keeps the 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/log-streaming-screen.png)
 
-After you enable log streaming, you can return to the **Software** configuration card or page and find the **Log Groups** link\. Click this link to see your logs in the CloudWatch console\.
+After you enable log streaming, you can return to the **Software** configuration category or page and find the **Log Groups** link\. Click this link to see your logs in the CloudWatch console\.
 
 ### Instance Log Streaming Using the EB CLI<a name="AWSHowTo.cloudwatchlogs.streaming.ebcli"></a>
 

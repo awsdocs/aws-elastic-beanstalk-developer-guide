@@ -16,7 +16,7 @@ A `Dockerrun.aws.json` file can be used on its own or zipped up with additional 
 The `Dockerrun.aws.json` file includes three sections:
 
 **AWSEBDockerrunVersion**  
-Specifies the version number as the value "2" for multicontainer Docker environments\.
+Specifies the version number as the value `2` for multicontainer Docker environments\.
 
 **containerDefinitions**  
 An array of container definitions, detailed below\.

@@ -28,7 +28,7 @@ You can use the AWS Management Console to enable log rotation to Amazon S3 and c
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 ### JVM Container Options<a name="java-tomcat-options-jvm"></a>
 

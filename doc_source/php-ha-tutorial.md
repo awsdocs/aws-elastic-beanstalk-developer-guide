@@ -126,7 +126,7 @@ Add the security group of your DB instance to your running environment\. This pr
 
     1. Choose **Configuration**\.
 
-    1. On the **Instances** configuration card, choose **Modify**\.
+    1. In the **Instances** configuration category, choose **Modify**\.
 
     1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
@@ -145,7 +145,7 @@ Next, use environment properties to pass the connection information to your envi
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 1. In the **Environment properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following\.
    + **RDS\_HOSTNAME** – The hostname of the DB instance\.
@@ -175,7 +175,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. Choose **Configuration**\.
 
-1. On the **Capacity** configuration card, choose **Modify**\.
+1. In the **Capacity** configuration category, choose **Modify**\.
 
 1. In the **Auto Scaling Group** section, set **Min instances** to **2**\.
 

@@ -204,7 +204,7 @@ Select a different platform from which new versions are built\.
 
 ## Using eb platform for environments<a name="eb3-platform-environment"></a>
 
-Lists supported platforms and enables you to set the default platform and platform version to use when you launch an environment\. Use eb platform list to view a list of all supported platforms\. Use eb platform use to change the platform for your project\. Use eb platform show to view your project's selected platform\.
+Lists supported platforms and enables you to set the default platform and platform version to use when you launch an environment\. Use eb platform list to view a list of all supported platforms\. Use eb platform select to change the platform for your project\. Use eb platform show to view your project's selected platform\.
 
 ### Syntax<a name="eb3-platformenvsyntax"></a>
 

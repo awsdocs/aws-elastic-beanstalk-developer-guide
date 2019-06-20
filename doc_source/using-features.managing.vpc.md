@@ -18,7 +18,7 @@ If you chose a custom VPC when you created your environment, you can modify its 
 
 1. Choose **Configuration**\.
 
-1. On the **Network** configuration card, choose **Modify**\.
+1. In the **Network** configuration category, choose **Modify**\.
 
 The following settings are available\.
 
@@ -63,7 +63,7 @@ When you run an Amazon RDS database attached to your Elastic Beanstalk environme
 
 You can use the configuration options in the `[aws:ec2:vpc](command-options-general.md#command-options-general-ec2vpc)` namespace to configure your environment's network settings\.
 
-The following [configuration file](ebextensions.md) uses options in this namespace to set the environment's VPC and subnets for a public\-private configuration\. In order to set the VPC ID in a configuration file, the file must be included in the application source bundle during environment creation\. See [Setting Configuration Options During Environment Creation](environment-configuration-methods-during.md) for other methods of configuring these settings during environment creation\.
+The following [configuration file](ebextensions.md) uses options in this namespace to set the environment's VPC and subnets for a public\-private configuration\. In order to set the VPC ID in a configuration file, the file must be included in the application source bundle during environment creation\. See [Setting Configuration Options during Environment Creation](environment-configuration-methods-during.md) for other methods of configuring these settings during environment creation\.
 
 **Example \.ebextensions/vpc\.config – Public\-Private**  
 

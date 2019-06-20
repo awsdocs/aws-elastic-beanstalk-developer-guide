@@ -22,7 +22,7 @@ You can use the AWS Management Console to enable log rotation to Amazon S3, conf
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 ### Container Options<a name="dotnet-console-framework"></a>
 + **Target \.NET runtime** – Set to `2.0` to run CLR v2\.

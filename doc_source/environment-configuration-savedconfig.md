@@ -153,6 +153,6 @@ The following keys are supported\.
 The **CName**, **EnvironmentName** and **EnvironmentLinks** keys can be used to create [environment groups](environment-mgmt-compose.md) and [links to other environments](environment-cfg-links.md)\. These features are currently supported when using the EB CLI, AWS CLI or an SDK\. When using these features, you can include the saved configuration in your source code as an [environment manifest](environment-cfg-manifest.md) instead of referencing a saved configuration stored in Amazon S3\. See the corresponding topics for more information\.
 
 See the following topics for alternate methods of creating and applying saved configurations:
-+ [Setting Configuration Options Before Environment Creation](environment-configuration-methods-before.md)
-+ [Setting Configuration Options During Environment Creation](environment-configuration-methods-during.md)
-+ [Setting Configuration Options After Environment Creation](environment-configuration-methods-after.md)
++ [Setting Configuration Options before Environment Creation](environment-configuration-methods-before.md)
++ [Setting Configuration Options during Environment Creation](environment-configuration-methods-during.md)
++ [Setting Configuration Options after Environment Creation](environment-configuration-methods-after.md)

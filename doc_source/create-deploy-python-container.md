@@ -24,7 +24,7 @@ You can use the AWS Management Console to enable log rotation to Amazon S3, conf
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 ### Python Settings<a name="python-console-settings"></a>
 + **WSGI Path** – The name of or path to your main application file\. For example, `application.py`, or `django/wsgi.py`\.

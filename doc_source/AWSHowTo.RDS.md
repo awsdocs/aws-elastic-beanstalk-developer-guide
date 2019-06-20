@@ -91,7 +91,7 @@ Next, add the DB instance's security group to your running environment\. This pr
 
     1. Choose **Configuration**\.
 
-    1. On the **Instances** configuration card, choose **Modify**\.
+    1. In the **Instances** configuration category, choose **Modify**\.
 
     1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
@@ -110,7 +110,7 @@ Next, pass the connection information to your environment by using environment p
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 1. In the **Environment properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following\.
    + **RDS\_HOSTNAME** – The hostname of the DB instance\.
@@ -222,7 +222,7 @@ Next, add the bridge security group to your running environment\. This procedure
 
     1. Choose **Configuration**\.
 
-    1. On the **Instances** configuration card, choose **Modify**\.
+    1. In the **Instances** configuration category, choose **Modify**\.
 
     1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
@@ -241,7 +241,7 @@ Next, pass the connection information to your environment by using environment p
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 1. In the **Environment Properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS instance, use the following:
    + **RDS\_DB\_NAME** – The **DB Name** shown in the Amazon RDS console\.
@@ -373,14 +373,7 @@ This configuration file does two things\. The `Resources` key adds an authentica
 
 Deploy your application with the configuration file in `.ebextensions` folder at the root of your source code\. If you configured permissions correctly, the deployment will succeed and the file will be downloaded to all of the instances in your environment\. If not, the deployment will fail\.
 
-Finally, add code to your application to read the JSON file and use the connection string to connect to the database\. See the following language\-specific topics for more information:
-+ Java SE – [Connecting to a Database \(Java SE Platforms\)](java-rds.md#java-rds-javase)
-+ Java with Tomcat – [Connecting to a Database \(Tomcat Platforms\)](java-rds.md#java-rds-tomcat)
-+ Node\.js – [Connecting to a Database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
-+ \.NET – [Connecting to a Database](create_deploy_NET.rds.md#dotnet-rds-connect)
-+ PHP – [Connecting to a Database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
-+ Python – [Connecting to a Database](create-deploy-python-rds.md#python-rds-connect)
-+ Ruby – [Connecting to a Database](create_deploy_Ruby.rds.md#ruby-rds-connect)
+Finally, add code to your application to read the JSON file and use the connection string to connect to the database\.
 
 ## Cleaning Up an External Amazon RDS Instance<a name="rds-external-cleanup"></a>
 

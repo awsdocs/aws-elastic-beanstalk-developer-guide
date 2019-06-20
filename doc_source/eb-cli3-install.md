@@ -8,6 +8,7 @@ The Elastic Beanstalk Command Line Interface \(EB CLI\) is a command line client
 + [Install the EB CLI on Linux and macOS](#eb-cli3-install.scripts.linux)
 + [Install the EB CLI on Windows](#eb-cli3-install.scripts.windows)
 + [Update the EB CLI](#eb-cli3-install.scripts.update)
++ [Troubleshooting](#eb-cli3-install.scripts.troubleshooting)
 + [Manually Install the EB CLI](eb-cli3-install-advanced.md)
 
 ## Install the EB CLI<a name="eb-cli3-install.scripts"></a>
@@ -62,3 +63,7 @@ If you don't have Git, install it\. You can install Git from websites such as [G
 ## Update the EB CLI<a name="eb-cli3-install.scripts.update"></a>
 
 To upgrade to the latest version of the EB CLI, download the latest version of the [EB CLI setup scripts](https://github.com/aws/aws-elastic-beanstalk-cli-setup) and rerun the bundled installer\. 
+
+## Troubleshooting<a name="eb-cli3-install.scripts.troubleshooting"></a>
+
+If you encounter issues when using the EB CLI setup scripts, we recommend creating an issue in the [https://github.com/aws/aws-elastic-beanstalk-cli-setup](https://github.com/aws/aws-elastic-beanstalk-cli-setup) repository on GitHub\.

@@ -42,7 +42,6 @@ Logs are stored in standard locations on the Amazon EC2 instances in your enviro
 **Linux**
 + `/var/log/eb-activity.log`
 + `/var/log/eb-commandprocessor.log`
-+ `/var/log/eb-version-deployment.log`
 
 **Windows Server**
 + `C:\Program Files\Amazon\ElasticBeanstalk\logs\`

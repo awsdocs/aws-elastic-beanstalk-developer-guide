@@ -29,7 +29,7 @@ You can configure how Amazon EC2 Auto Scaling works by editing **Capacity** on t
 
 1. Choose **Configuration**\.
 
-1. On the **Capacity** configuration card, choose **Modify**\.  
+1. In the **Capacity** configuration category, choose **Modify**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-capacity.png)
 
 1. In the **Auto Scaling Group** section, configure the following settings\.

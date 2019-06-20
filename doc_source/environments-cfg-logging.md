@@ -20,7 +20,7 @@ To view instance logs, you can enable instance log rotation and log streaming in
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 1. Under **S3 log storage**, choose **Rotate logs** to enable uploading rotated logs to Amazon S3\.
 
@@ -31,7 +31,7 @@ To view instance logs, you can enable instance log rotation and log streaming in
 
 1. Choose **Apply**\.
 
-After you enable log streaming, you can return to the **Software** configuration card or page and find the **Log Groups** link\. Click this link to see your instance logs in the CloudWatch console\.
+After you enable log streaming, you can return to the **Software** configuration category or page and find the **Log Groups** link\. Click this link to see your instance logs in the CloudWatch console\.
 
 ![\[CloudWatch logs settings for instance log streaming\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/log-streaming-screen.png)
 
@@ -47,7 +47,7 @@ To view environment health logs, you can enable environment health log streaming
 
 1. Choose **Configuration**\.
 
-1. On the **Monitoring** configuration card, choose **Modify**\.
+1. In the **Monitoring** configuration category, choose **Modify**\.
 
 1. Under **Health event streaming to CloudWatch Logs**, configure the following settings:
    + **Log streaming** – Choose to enable log streaming\.
@@ -56,7 +56,7 @@ To view environment health logs, you can enable environment health log streaming
 
 1. Choose **Apply**\.
 
-After you enable log streaming, you can return to the **Monitoring** configuration card or page and find the **Log Group** link\. Click this link to see your environment health logs in the CloudWatch console\.
+After you enable log streaming, you can return to the **Monitoring** configuration category or page and find the **Log Group** link\. Click this link to see your environment health logs in the CloudWatch console\.
 
 ![\[CloudWatch logs settings for health event streaming\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/log-streaming-health-screen.png)
 

@@ -26,7 +26,7 @@ You can use the AWS Management Console to enable log rotation to Amazon S3, conf
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 ### PHP Settings<a name="php-console-settings"></a>
 + **Document root** – The folder that contains your site's default page\. If your welcome page is not at the root of your source bundle, specify the folder that contains it relative to the root path\. For example, `/public` if the welcome page is in a folder named `public`\.

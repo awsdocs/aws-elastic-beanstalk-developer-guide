@@ -140,7 +140,7 @@ In this task, you edit your environment's capacity settings\. You configure a lo
 
 1. Choose **Configuration**\.
 
-1. On the **Capacity** configuration card, choose **Modify**\.  
+1. In the **Capacity** configuration category, choose **Modify**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-capacity.png)
 
 1. In the **Auto Scaling Group** section, change **Environment type** to **Load balanced**\.

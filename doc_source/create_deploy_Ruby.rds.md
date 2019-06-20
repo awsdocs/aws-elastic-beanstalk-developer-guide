@@ -23,7 +23,7 @@ For production environments, create a DB instance outside of your Elastic Beanst
 
 1. Choose **Configuration**\.
 
-1. On the **Database** configuration card, choose **Modify**\.
+1. In the **Database** configuration category, choose **Modify**\.
 
 1. Choose a DB engine, and enter a user name and password\.
 

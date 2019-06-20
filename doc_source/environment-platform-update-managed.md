@@ -19,7 +19,7 @@ Use the Elastic Beanstalk environment management console to enable managed platf
 
 1. Choose **Configuration**\.
 
-1. On the **Managed Updates** card, choose **Modify**\.  
+1. In the **Managed Updates** category, choose **Modify**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-managedupdates.png)
 
 1. Select **Enable managed updates**\.

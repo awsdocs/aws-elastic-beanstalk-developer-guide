@@ -125,7 +125,7 @@ To serve the Symfony application at the root path, use the Elastic Beanstalk con
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 1. For **Document root**, type **/web**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-symfony-docroot.png)

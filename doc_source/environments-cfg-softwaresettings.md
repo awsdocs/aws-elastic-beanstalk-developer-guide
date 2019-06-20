@@ -43,7 +43,7 @@ Environment properties appear in the Elastic Beanstalk console under **Software 
 
 1. Choose **Configuration**\.
 
-1. On the **Software** configuration card, choose **Modify**\.
+1. In the **Software** configuration category, choose **Modify**\.
 
 1. Under **Environment properties**, enter key\-value pairs\.
 

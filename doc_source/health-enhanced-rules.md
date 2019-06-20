@@ -19,7 +19,7 @@ You can use the Elastic Beanstalk console to configure enhanced health rules in 
 
 1. Choose **Configuration**\.
 
-1. On the **Monitoring** configuration card, choose **Modify**\.
+1. In the **Monitoring** configuration category, choose **Modify**\.
 
 1. Under **Health monitoring rule customization**, enable the **Ignore HTTP 4xx** option\.  
 ![\[Health monitoring rule customization section on the Monitoring configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-rule-customization.png)
