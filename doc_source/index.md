@@ -234,8 +234,6 @@ Amazon's trademarks and trade dress may not be used in
       + [Multicontainer Docker Configuration](create_deploy_docker_v2config.md)
       + [Multicontainer Docker Environments with the AWS Management Console](create_deploy_docker_ecstutorial.md)
    + [Preconfigured Docker Containers](create_deploy_dockerpreconfig.md)
-      + [Getting Started with Preconfigured Docker Containers](create_deploy_dockerpreconfig.walkthrough.md)
-      + [Example: Using a Dockerfile to Customize and Configure a Preconfigured Docker Platform](create_deploy_dockerpreconfig.dockerfile.md)
    + [Configuring Docker Environments](create_deploy_docker.container.console.md)
    + [Running a Docker Environment Locally with the EB CLI](create_deploy_docker-eblocal.md)
 + [Deploying Go Applications to Elastic Beanstalk Applications](create_deploy_go.md)
