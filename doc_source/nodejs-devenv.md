@@ -9,7 +9,6 @@ For common setup steps and tools that apply to all languages, see [Configuring y
 + [Installing npm](#nodejs-devenv-npm)
 + [Installing the AWS SDK for Node\.js](#nodejs-devenv-awssdk)
 + [Installing Express](#nodejs-devenv-express)
-+ [Installing Geddy](#nodejs-devenv-geddy)
 
 ## Installing Node\.js<a name="nodejs-devenv-nodejs"></a>
 
@@ -37,9 +36,19 @@ Visit the [AWS SDK for JavaScript in Node\.js](https://aws.amazon.com/sdk-for-no
 
 ## Installing Express<a name="nodejs-devenv-express"></a>
 
-Express is a web application framework that runs on Node\.js\.
+Express is a web application framework that runs on Node\.js\. To use it, set up Express and create the project structure\. The following walks you through setting up Express on a Linux operating system\.
+
+**Note**  
+Depending on your permission level to system directories, you might need to prefix some of these commands with `sudo`\.
 
 **To set up your Express development environment on your local computer**
+
+1. Create a directory for your Express application\.
+
+   ```
+   ~$ mkdir node-express
+   ~$ cd node-express
+   ```
 
 1. Install Express globally so that you have access to the `express` command\.
 
@@ -53,7 +62,7 @@ Express is a web application framework that runs on Node\.js\.
    ~/node-express$ export PATH=$PATH:/usr/local/share/npm/bin/express
    ```
 
-1. Run the `express` command\. This generates `package.json`\.
+1. Run the `express` command\. This generates `package.json`, `app.js`, and a few directories\.
 
    ```
    ~/node-express$ express
@@ -80,38 +89,6 @@ Express is a web application framework that runs on Node\.js\.
    > node ./bin/www
    ```
 
-   Press **Ctrl\+C** to stop the server\.
-
-## Installing Geddy<a name="nodejs-devenv-geddy"></a>
-
-Geddy is another web application framework that runs on Node\.js\.
-
-**To set up your Geddy development environment on your local computer**
-
-1. Install Geddy globally so that you have geddy generators or start the server\.
-
-   ```
-   ~/node-geddy$ npm install -g geddy
-   ```
-
-1. Depending on your operating system, you may need to set your path to run the `geddy`code> command\. If you need to set your path, use the output from the previous step when you installed Geddy\. The following is an example\. 
-
-   ```
-   ~/node-geddy$ export:PATH=$PATH:/usr/local/share/npm/bin/geddy
-   ```
-
-1. Create the directory for your application\.
-
-   ```
-   ~/node-geddy$ geddy app myapp
-   ~/node-geddy$ cd myapp
-   ```
-
-1. Start the server\. Verify everything is working, and then stop the server\.
-
-   ```
-   ~/node-geddy/myapp$ geddy
-   ~/node-geddy/myapp$ curl localhost:4000
-   ```
+   The server runs on port 3000 by default\. To test it, run `curl http://localhost:3000` in another terminal, or open a browser on the local computer and go to `http://localhost:3000`\.
 
    Press **Ctrl\+C** to stop the server\.

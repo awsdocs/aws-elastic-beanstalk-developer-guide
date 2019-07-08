@@ -1,64 +1,21 @@
 # Deploying an Express Application to Elastic Beanstalk<a name="create_deploy_nodejs_express"></a>
 
-This section walks you through deploying a sample application to Elastic Beanstalk using Elastic Beanstalk Command Line Interface \(EB CLI\) and git, and then updating the application to use the [Express](http://expressjs.com/) framework\. 
+This section walks you through deploying a sample application to Elastic Beanstalk using Elastic Beanstalk Command Line Interface \(EB CLI\) and Git, and then updating the application to use the [Express](http://expressjs.com/) framework\. 
 
-## Prerequisites<a name="nodejs-express-tutorial-prerequisites"></a>
+## Prerequisites<a name="create_deploy_nodejs_express.prerequisites"></a>
 
-This tutorial requires the Node\.js language and its package manager, NPM\. See [Setting Up your Node\.js Development Environment](nodejs-devenv.md) for details on setting up your local development environment\. This tutorial also requires the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
+This tutorial requires the Node\.js language, its package manager called npm, and the Express web application framework\. For details on installing these components and setting up your local development environment, see [Setting Up your Node\.js Development Environment](nodejs-devenv.md)\.
 
-## Install Express and Generate a Project<a name="create_deploy_nodejs_express_setup"></a>
+**Note**  
+For this tutorial, you don't need to install the AWS SDK for Node\.js, which is also mentioned in [Setting Up your Node\.js Development Environment](nodejs-devenv.md)\.
 
-Set up Express and create the project structure\. The following walks you through setting up Express on a Linux operating system\.
+The tutorial also requires the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
 
-**To set up your Express development environment on your local computer**
+## Initialize Git<a name="create_deploy_nodejs_express.git"></a>
 
-1. Create a directory for your Express application\.
+The prerequisite Node\.js and Express setup results in an Express project structure in the `node-express` folder\. Now let's set up a Git repository in this folder\.
 
-   ```
-   ~$ mkdir node-express
-   ~$ cd node-express
-   ```
-
-1. Install Express globally so that you have access to the `express` command\.
-
-   ```
-   ~/node-express$ npm install -g express-generator
-   ```
-
-1. Depending on your operating system, you may need to set your path to run the `express` command\. If you need to set your path, use the output from the previous step when you installed Express\. The following is an example\. 
-
-   ```
-   ~/node-express$ export PATH=$PATH:/usr/local/share/npm/bin/express
-   ```
-
-1. Run the `express` command\. This generates `package.json`\. 
-
-   ```
-   ~/node-express$ express
-   ```
-
-   When prompted if you want to continue, type **y**\.
-
-1. Set up local dependencies\.
-
-   ```
-   ~/node-express$ npm install
-   ```
-
-1. Verify it works\.
-
-   ```
-   ~/node-express$ npm start
-   ```
-
-   You should see output similar to the following:
-
-   ```
-   > nodejs@0.0.0 start /home/local/user/node-express
-   > node ./bin/www
-   ```
-
-   Press **Ctrl\+C** to stop the server\.
+**To set up a Git repository**
 
 1. Initialize the Git repository\. If you don't have Git installed, download it from the [Git downloads site](https://git-scm.com/downloads)\.
 
@@ -76,14 +33,14 @@ Set up Express and create the project structure\. The following walks you throug
    .elasticbeanstalk/
    ```
 
-## Create an Elastic Beanstalk Environment<a name="create_deploy_nodejs_express_eb_init-rds"></a>
+## Create an Elastic Beanstalk Environment<a name="create_deploy_nodejs_express.eb_init-rds"></a>
 
 Configure an EB CLI repository for your application and create an Elastic Beanstalk environment running the Node\.js platform\.
 
 1. Create a repository with the eb init command\.
 
    ```
-   ~/node-express$ eb init --platform node.js --region us-west-2
+   ~/node-express$ eb init --platform node.js --region us-east-2
    Application node-express has been created.
    ```
 
@@ -114,11 +71,13 @@ Configure an EB CLI repository for your application and create an Elastic Beanst
    ~/node-express$ eb open
    ```
 
-## Update the Application<a name="create_deploy_nodejs_express_update"></a>
+## Update the Application<a name="create_deploy_nodejs_express.update"></a>
 
 After you have created an environment with a sample application, you can update it with your own application\. In this step, we update the sample application to use the Express framework\.
 
 **To update your application to use Express**
+
+1. On your local computer, create an `.ebextensions` directory in the top\-level directory of your source bundle\. In this example, we use `node-express/.ebextensions`\.
 
 1. Add a configuration file that sets the Node Command to "npm start":
 
@@ -236,7 +195,7 @@ Next, let's update the Express application to serve static files and add a new p
 
    You should see a web page titled **My Hiking Log**\.
 
-## Clean Up<a name="create_deploy_nodejs_express_delete"></a>
+## Clean Up<a name="create_deploy_nodejs_express.delete"></a>
 
 If you are done working with Elastic Beanstalk, you can terminate your environment\.
 

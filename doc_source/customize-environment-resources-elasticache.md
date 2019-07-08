@@ -124,7 +124,7 @@ Resources:
       CacheNodeType:
         Fn::GetOptionSetting:
           OptionName : "CacheNodeType"
-          DefaultValue : "cache.t1.micro"
+          DefaultValue : "cache.t2.micro"
       NumCacheNodes:
         Fn::GetOptionSetting:
           OptionName : "NumCacheNodes"
@@ -155,13 +155,13 @@ Next, name the options configuration file `options.config` and define the custom
 ```
 option_settings:
   "aws:elasticbeanstalk:customoption":
-    CacheNodeType : cache.t1.micro
+    CacheNodeType : cache.t2.micro
     NumCacheNodes : 1
     Engine : redis
     CachePort : 6379
 ```
 
-These lines tell Elastic Beanstalk to get the values for the `CacheNodeType`, `NumCacheNodes`, `Engine`, and `CachePort` properties from the `CacheNodeType`, `NumCacheNodes`, `Engine`, and `CachePort` values in a config file \(`options.config` in our example\)\. That file includes an `aws:elasticbeanstalk:customoption` section \(under `option_settings`\) that contains name\-value pairs with the actual values to use\. In the preceding example, `cache.t1.micro`, `1`, `redis`, and `6379` would be used for the values\. For more information about `Fn::GetOptionSetting`, see [Functions](ebextensions-functions.md)\.
+These lines tell Elastic Beanstalk to get the values for the `CacheNodeType`, `NumCacheNodes`, `Engine`, and `CachePort` properties from the `CacheNodeType`, `NumCacheNodes`, `Engine`, and `CachePort` values in a config file \(`options.config` in our example\)\. That file includes an `aws:elasticbeanstalk:customoption` section \(under `option_settings`\) that contains name\-value pairs with the actual values to use\. In the preceding example, `cache.t2.micro`, `1`, `redis`, and `6379` would be used for the values\. For more information about `Fn::GetOptionSetting`, see [Functions](ebextensions-functions.md)\.
 
 ## EC2\-VPC \(Custom\)<a name="customize-environment-resources-elasticache-targetedvpc"></a>
 
@@ -199,7 +199,7 @@ Resources:
       CacheNodeType:
         Fn::GetOptionSetting:
           OptionName : "CacheNodeType"
-          DefaultValue : "cache.t1.micro"
+          DefaultValue : "cache.t2.micro"
       NumCacheNodes:
         Fn::GetOptionSetting:
           OptionName : "NumCacheNodes"
@@ -258,7 +258,7 @@ In the following example, replace the example `CacheSubnets` and `VpcId` values 
 ```
 option_settings:
   "aws:elasticbeanstalk:customoption":
-    CacheNodeType : cache.t1.micro
+    CacheNodeType : cache.t2.micro
     NumCacheNodes : 1
     Engine : redis
     CachePort : 6379
@@ -269,4 +269,4 @@ option_settings:
     VpcId: vpc-4d4d4d4d
 ```
 
-These lines tell Elastic Beanstalk to get the values for the `CacheNodeType`, `NumCacheNodes`, `Engine`, `CachePort`, `CacheSubnets`, and `VpcId` properties from the `CacheNodeType`, `NumCacheNodes`, `Engine`, `CachePort`, `CacheSubnets`, and `VpcId` values in a config file \(`options.config` in our example\)\. That file includes an `aws:elasticbeanstalk:customoption` section \(under `option_settings`\) that contains name\-value pairs with sample values\. In the example above, `cache.t1.micro`, `1`, `redis`, `6379`, `subnet-1a1a1a1a`, `subnet-2b2b2b2b`, `subnet-3c3c3c3c`, and `vpc-4d4d4d4d` would be used for the values\. For more information about `Fn::GetOptionSetting`, see [Functions](ebextensions-functions.md)\.
+These lines tell Elastic Beanstalk to get the values for the `CacheNodeType`, `NumCacheNodes`, `Engine`, `CachePort`, `CacheSubnets`, and `VpcId` properties from the `CacheNodeType`, `NumCacheNodes`, `Engine`, `CachePort`, `CacheSubnets`, and `VpcId` values in a config file \(`options.config` in our example\)\. That file includes an `aws:elasticbeanstalk:customoption` section \(under `option_settings`\) that contains name\-value pairs with sample values\. In the example above, `cache.t2.micro`, `1`, `redis`, `6379`, `subnet-1a1a1a1a`, `subnet-2b2b2b2b`, `subnet-3c3c3c3c`, and `vpc-4d4d4d4d` would be used for the values\. For more information about `Fn::GetOptionSetting`, see [Functions](ebextensions-functions.md)\.

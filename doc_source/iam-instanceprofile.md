@@ -1,6 +1,6 @@
 # Managing Elastic Beanstalk Instance Profiles<a name="iam-instanceprofile"></a>
 
-An instance profile is a container for an AWS Identity and Access Management \(IAM\) role that you can use to pass role information to an Amazon EC2 instance when the instance starts\. When you launch an environment in the AWS Elastic Beanstalk environment management console, the console creates a default instance profile, called `aws-elasticbeanstalk-ec2-role`, and assigns managed policies with default permissions to it\. 
+An instance profile is a container for an AWS Identity and Access Management \(IAM\) role that you can use to pass role information to an Amazon EC2 instance when the instance starts\. When you launch an environment using the Elastic Beanstalk console or the EB CLI, Elastic Beanstalk creates a default instance profile, called `aws-elasticbeanstalk-ec2-role`, and assigns managed policies with default permissions to it\. 
 
 Elastic Beanstalk provides three managed policies: one for the web server tier, one for the worker tier, and one with additional permissions required for multicontainer Docker environments\. The console assigns all of these policies to the role attached to the default instance profile\. The policies follow\.
 
