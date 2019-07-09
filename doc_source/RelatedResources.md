@@ -23,8 +23,6 @@ Some samples use features that may have been released since the release of the p
 + **Single Container Docker** – [docker\-singlecontainer\-v1\.zip](samples/docker-singlecontainer-v1.zip)
 + **Multicontainer Docker** – [docker\-multicontainer\-v2\.zip](samples/docker-multicontainer-v2.zip)
 + **Preconfigured Docker \(Glassfish\)** – [docker\-glassfish\-v1\.zip](samples/docker-glassfish-v1.zip)
-+ **Preconfigured Docker \(Python 3\)** – [docker\-python\-v1\.zip](samples/docker-python-v1.zip)
-+ **Preconfigured Docker \(Go\)** – [docker\-golang\-v1\.zip](samples/docker-golang-v1.zip)
 + **Go** – [go\-v1\.zip](samples/go-v1.zip)
 + **Java SE** – [java\-se\-jetty\-gradle\-v3\.zip](samples/java-se-jetty-gradle-v3.zip)
 + **Tomcat \(default\)** – [java\-tomcat\-v3\.zip](samples/java-tomcat-v3.zip)

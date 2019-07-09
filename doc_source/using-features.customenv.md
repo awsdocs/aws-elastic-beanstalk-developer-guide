@@ -10,20 +10,27 @@ A custom AMI also allows you to make changes to low\-level components, such as t
 
 **To identify the base Elastic Beanstalk AMI**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. In a command window, run a command like the following\. Specify the AWS Region where you want to use your custom AMI, and replace the platform ARN and version number with the Elastic Beanstalk platform that your application is based on\.
 
-1. Create an Elastic Beanstalk environment running your application\. For more information about how to launch an Elastic Beanstalk application, go to the [Getting Started Using Elastic Beanstalk](GettingStarted.md)\.
+   ```
+   $ aws elasticbeanstalk describe-platform-version --region us-east-2 \
+         --resource-arn "arn:aws:elasticbeanstalk:us-east-2::platform/Tomcat 8.5 with Java 8 running on 64bit Amazon Linux/3.1.6" \
+         --query PlatformDescription.CustomAmiList
+   [
+       {
+           "VirtualizationType": "pv",
+           "ImageId": ""
+       },
+       {
+           "VirtualizationType": "hvm",
+           "ImageId": "ami-020ae06fdda6a0f66"
+       }
+   ]
+   ```
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. Take note of the `ImageId` value that looks like `ami-020ae06fdda6a0f66` in the result\.
 
-1. Choose **Configuration**\.
-
-1. In the **Instances** configuration category, note the value next to the **EC2 image ID** label\.  
-![\[Instances configuration category with EC2 image ID highlighted\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-customami-imageid.png)
-
-1. Terminate the environment\.
-
-The value in the **Custom AMI ID** field is the stock Elastic Beanstalk AMI for the platform version, EC2 instance architecture, and AWS Region in which you created your environment\. If you need to create AMIs for multiple platforms, architectures or regions, repeat this process to identify the correct base AMI for each combination\.
+The value is the stock Elastic Beanstalk AMI for the platform version, EC2 instance architecture, and AWS Region that are relevant for your application\. If you need to create AMIs for multiple platforms, architectures or AWS Regions, repeat this process to identify the correct base AMI for each combination\.
 
 **Note**  
 Do not create an AMI from an instance that has been launched in an Elastic Beanstalk environment\. Elastic Beanstalk makes changes to instances during provisioning that can cause issues in the saved AMI\. Saving an image from an instance in an Elastic Beanstalk environment will also make the version of your application that was deployed to the instance a fixed part of the image\.
