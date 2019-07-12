@@ -77,7 +77,7 @@ https://console.aws.amazon.com/elasticbeanstalk/?region=us-west-2#/newApplicatio
 
 When users choose a Launch Now URL, Elastic Beanstalk displays a page similar to the following\.
 
-![\[Elastic Beanstalk mamagement console page for a Launch Now URL\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-launch-now-page.png)
+![\[Elastic Beanstalk management console page for a Launch Now URL\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-launch-now-page.png)
 
 **To use the Launch Now URL**
 

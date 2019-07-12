@@ -85,7 +85,7 @@ Builds a new version of the platform and returns the ARN for the new version\. I
 |  *version*  |  If *version* isn't specified, creates a new version based on the most\-recent platform with the patch version \(N in n\.n\.N\) incremented\.  | 
 |  `-M` OR `--major-increment`  | Increments the major version number \(the N in N\.n\.n\)\. | 
 |  `-m` OR `--minor-increment`  | Increments the minor version number \(the N in n\.N\.n\)\. | 
-|  `-p` OR `--patch-incremeint`  | Increments the patch version number \(the N in n\.n\.N\)\. | 
+|  `-p` OR `--patch-increment`  | Increments the patch version number \(the N in n\.n\.N\)\. | 
 |  `-i INSTANCE_TYPE` OR \-\-instance\-type *INSTANCE\_TYPE*  | Use *INSTANCE\_TYPE* as the instance type, such as **t1\.micro**\. | 
 |  `-ip INSTANCE_PROFILE` OR `--instance-profile INSTANCE_PROFILE`  | Use *INSTANCE\_PROFILE* as the instance profile when creating AMIs for a custom platform\. If the `-ip` option isn't specified, creates the instance profile `aws-elasticbeanstalk-custom-platforme-ec2-role` and uses it for the custom platform\. | 
 |  `-﻿-﻿tags key1=value1[,key2=value2 ...]`  |  Tag your custom platform version\. Tags are specified as a comma\-separated list of `key=value` pairs\. For more details, see [Tagging Custom Platform Versions](custom-platforms-tagging.md)\.  | 

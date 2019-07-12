@@ -17,10 +17,13 @@ Install PHP and some common extensions\. If you don't have a preference, get the
 On Amazon Linux, use yum:
 
 ```
-$ sudo yum install php70
-$ sudo yum install php70-mbstring
-$ sudo yum install php70-intl
+$ sudo yum install php
+$ sudo yum install php-mbstring
+$ sudo yum install php-intl
 ```
+
+**Note**  
+To get specific PHP package versions that match the version on your Elastic Beanstalk [PHP platform version](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.PHP), use the command `yum search php` to find available package versions, such as `php72`, `php72-mbstring`, and `php72-intl`\. Then use `sudo yum install package` to install them\.
 
 On Ubuntu, use apt:
 
@@ -33,9 +36,13 @@ $ sudo apt install php-mbstring
 On OS\-X, use brew:
 
 ```
-$ brew install php70
-$ brew install php70-intl
+$ brew install php
+$ brew install php-intl
 ```
+
+**Note**  
+To get specific PHP package versions that match the version on your Elastic Beanstalk [PHP platform version](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.PHP), see [Homebrew Formulae](https://formulae.brew.sh/formula/) for available PHP versions, such as `php@7.2`\. Then use `brew install package` to install them\.  
+Depending on the version, `php-intl` might be included in the main PHP package and not exist as a separate package\.
 
 On Windows 10, [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get Ubuntu and install PHP with apt\. For earlier versions, visit the download page at [windows\.php\.net](http://windows.php.net/download/) to get PHP, and read [this page](http://php.net/manual/en/install.windows.legacy.index.php#install.windows.legacy.extensions) for information about extensions\.
 

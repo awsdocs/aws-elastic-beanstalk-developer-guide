@@ -20,7 +20,7 @@ Deployment manifests and related features require a Windows Server platform [ver
 
 ## \.NET Core Apps<a name="dotnet-manifest-dotnetcore"></a>
 
-You can use a deployment manifest to run \.NET Core applications on Elastic Beanstalk\. \.NET Core is a cross\-platform version of \.NET that comes with a commandline tool \(`dotnet`\) that you can use to generate an application, run it locally, and prepare it for publishing\.
+You can use a deployment manifest to run \.NET Core applications on Elastic Beanstalk\. \.NET Core is a cross\-platform version of \.NET that comes with a command line tool \(`dotnet`\) that you can use to generate an application, run it locally, and prepare it for publishing\.
 
 **Note**  
 See [Deploying an ASP\.NET Core Application with AWS Elastic Beanstalk](dotnet-core-tutorial.md) for a tutorial and sample application that use a deployment manifest to run a \.NET Core application on Elastic Beanstalk\.

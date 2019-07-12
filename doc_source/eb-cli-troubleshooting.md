@@ -4,7 +4,7 @@ This topic lists common error messages encountered when using the EB CLI and pos
 
 **ERROR: An error occurred while handling git command\. Error code: 128 Error: fatal: Not a valid object name HEAD**
 
-**Cause:** This error message is shown when you have initialized a Git repository but have not yet commited\. The EB CLI looks for the HEAD revision when your project folder contains a Git repository\.
+**Cause:** This error message is shown when you have initialized a Git repository but have not yet committed\. The EB CLI looks for the HEAD revision when your project folder contains a Git repository\.
 
 **Solution:** Add the files in your project folder to the staging area and commit:
 

@@ -49,7 +49,7 @@ You don't need to manually create a service\-linked role\. When you create an El
 **Important**  
   This service\-linked role can appear in your account if you completed an action in another service that uses the features supported by this role\.  If you were using the Elastic Beanstalk service before April 18, 2019, when it began supporting the AWSServiceRoleForElasticBeanstalkMaintenance service\-linked role, and your account needed it, then Elastic Beanstalk created the AWSServiceRoleForElasticBeanstalkMaintenance role in your account\.  To learn more, see [A New Role Appeared in My IAM Account](https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_roles.html#troubleshoot_roles_new-role-appeared)\.
 
-If you delete this service\-linke role, and then need to create it again, you can use the same process to recreate the role in your account\. When you create an Elastic Beanstalk environment using the Elastic Beanstalk API and don't specify an instance profile, Elastic Beanstalk creates the service\-linked role for you again\. 
+If you delete this service\-linked role, and then need to create it again, you can use the same process to recreate the role in your account\. When you create an Elastic Beanstalk environment using the Elastic Beanstalk API and don't specify an instance profile, Elastic Beanstalk creates the service\-linked role for you again\. 
 
 ## Editing a Service\-Linked Role for Elastic Beanstalk<a name="edit-service-linked-role-maintenance"></a>
 

@@ -74,7 +74,7 @@ option_settings:
     API_ENDPOINT: www.example.com/api
 ```
 
-If you use configuration files or AWS CloudFormation templates to create [custom resources](environment-resources.md), you can use an AWS CloudFormation function to get information about the resource and assign it to an environment property dynamically during deployment\. The following example from the the [elastic\-beanstalk\-samples](https://github.com/awsdocs/elastic-beanstalk-samples/) GitHub repository uses the [Ref function](ebextensions-functions.md) to get the ARN of an Amazon SNS topic that it creates, and assigns it to an environment property named `NOTIFICATION_TOPIC`\.
+If you use configuration files or AWS CloudFormation templates to create [custom resources](environment-resources.md), you can use an AWS CloudFormation function to get information about the resource and assign it to an environment property dynamically during deployment\. The following example from the [elastic\-beanstalk\-samples](https://github.com/awsdocs/elastic-beanstalk-samples/) GitHub repository uses the [Ref function](ebextensions-functions.md) to get the ARN of an Amazon SNS topic that it creates, and assigns it to an environment property named `NOTIFICATION_TOPIC`\.
 
 **Note**  
 The [Multicontainer Docker](create_deploy_docker_ecs.md) platform doesn't use AWS CloudFormation to create container resources\. As a result, this platform doesn't support defining environment properties using AWS CloudFormation functions\.

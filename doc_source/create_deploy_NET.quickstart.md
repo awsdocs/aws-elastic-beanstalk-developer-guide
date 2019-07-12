@@ -21,7 +21,7 @@ First, use the Create New Application wizard in the Elastic Beanstalk console to
 
 1. Review the available options\. When you're satisfied with them, choose **Create app**\.
 
-When the environmentis up and running, add an Amazon RDS database instance that the application uses to store data\. For **DB engine**, choose **sqlserver\-ex**\.
+When the environment is up and running, add an Amazon RDS database instance that the application uses to store data\. For **DB engine**, choose **sqlserver\-ex**\.
 
 **To add a DB instance to your environment**
 

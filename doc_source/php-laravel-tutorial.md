@@ -171,7 +171,7 @@ Running an Amazon RDS instance in your Elastic Beanstalk environment is great fo
 
 Creating a database instance takes about 10 minutes\. In the meantime, you can update your source code to read connection information from the environment\. Elastic Beanstalk provides connection details using environment variables, such as `RDS_HOSTNAME`, that you can access from your application\.
 
-Laravel's database configuration is stored in a file named `database.php` in the `config` folder in your project code\. Find the `mysql` and modify the the `host`, `database`, `username`, `and password` variables to read the corresponding values from Elastic Beanstalk:
+Laravel's database configuration is stored in a file named `database.php` in the `config` folder in your project code\. Find the `mysql` entry and modify the `host`, `database`, `username`, `and password` variables to read the corresponding values from Elastic Beanstalk:
 
 **Example \~/eb\-laravel/config/database\.php**  
 

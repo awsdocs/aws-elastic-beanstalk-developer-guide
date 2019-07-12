@@ -126,9 +126,9 @@ When Elastic Beanstalk tries to create the AWSServiceRoleForElasticBeanstalk ser
 
 As an alternative, another user with permission to create service\-linked roles can use IAM to pre\-create the service linked\-role in advance\. You can then create your environment even without having the `iam:CreateServiceLinkedRole` permission\.
 
-You \(or another user\) can use the IAM console to create a service\-linked role with the **Elastic Beanstalk** use case\. In the IAM CLI or the IAM API, create a service\-linked role with the `elasticbeanstalk.amazonaws.com` service name\. For more information, see [Creating a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#create-service-linked-role) in the *IAM User Guide*\. If you delete this service\-linke role, you can use this same process to create the role again\.
+You \(or another user\) can use the IAM console to create a service\-linked role with the **Elastic Beanstalk** use case\. In the IAM CLI or the IAM API, create a service\-linked role with the `elasticbeanstalk.amazonaws.com` service name\. For more information, see [Creating a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#create-service-linked-role) in the *IAM User Guide*\. If you delete this service\-linked role, you can use this same process to create the role again\.
 
-If you delete this service\-linke role, and then need to create it again, you can use the same process to recreate the role in your account\. When you create an Elastic Beanstalk environment using the Elastic Beanstalk API and don't specify a service role, Elastic Beanstalk creates the service\-linked role for you again\. 
+If you delete this service\-linked role, and then need to create it again, you can use the same process to recreate the role in your account\. When you create an Elastic Beanstalk environment using the Elastic Beanstalk API and don't specify a service role, Elastic Beanstalk creates the service\-linked role for you again\. 
 
 ## Editing a Service\-Linked Role for Elastic Beanstalk<a name="edit-service-linked-role-monitoring"></a>
 
