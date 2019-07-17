@@ -1,20 +1,19 @@
-# Getting Started with \.NET on Elastic Beanstalk<a name="dotnet-getstarted"></a>
+# Getting Started with Go on Elastic Beanstalk<a name="go-getstarted"></a>
 
-To get started with \.NET applications on AWS Elastic Beanstalk, all you need is an application [source bundle](applications-sourcebundle.md) to upload as your first application version and to deploy to an environment\. When you create an environment, Elastic Beanstalk allocates all of the AWS resources needed to run a highly scalable web application\.
+To get started with Go applications on AWS Elastic Beanstalk, all you need is an application [source bundle](applications-sourcebundle.md) to upload as your first application version, and deploy it to an environment\. When you create an environment, Elastic Beanstalk allocates all of the AWS resources needed to run a highly scalable web application\.
 
-## Launching an Environment with a Sample \.NET Application<a name="dotnet-getstarted-samples"></a>
+## Launching an Environment with a Sample Go Application<a name="go-getstarted-samples"></a>
 
-Elastic Beanstalk provides single page sample applications for each platform as well as more complex examples that show the use of additional AWS resources such as Amazon RDS and language or platform\-specific features and APIs\.
+Elastic Beanstalk provides single\-page sample applications for each platform\. Elastic Beanstalk also provides more complex examples that show the use of additional AWS resources, such as Amazon RDS, and language or platform\-specific features and APIs\.
 
 
 **Samples**  
 
-|  Name  |  Supported Configurations  |  Environment Type  |  Source  |  Description  | 
-| --- | --- | --- | --- | --- | 
-|  \.NET Default  |  WS 2012 R2 WS 2012 R2 Server Core WS 2012 WS 2008 R2  |  Web Server  |   [dotnet\-asp\-v1\.zip](samples/dotnet-asp-v1.zip)   |  ASP\.NET web application with a single page configured to be displayed at the website root\.  | 
-|  ASP\.NET MVC5  |  WS 2012 R2  |  Web Server  |  [dotnet\-aspmvc5\-v1\.zip](samples/dotnet-aspmvc5-v1.zip)  |  ASP\.NET web application with a classic model\-view\-control architecture\.  | 
+|  Supported Configurations  |  Environment Type  |  Source Bundle  |  Description  | 
+| --- | --- | --- | --- | 
+|  Go  |  Web server  |  [go\-v1\.zip](samples/go-v1.zip)  |  Single page application\.  | 
 
-Download any of the sample applications and deploy it to Elastic Beanstalk by using the following procedure\.
+Download the sample application and deploy it to Elastic Beanstalk by following these steps\.
 
 **To launch an environment with a sample application \(console\)**
 
@@ -52,8 +51,8 @@ Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most o
 
 1. Choose **Create environment**\.
 
-## Next Steps<a name="dotnet-getstarted-next"></a>
+## Next Steps<a name="go-getstarted-next"></a>
 
-After you have an environment running an application, you can [deploy a new version](using-features.deploy-existing-version.md) of the application or a completely different application at any time\. Deploying a new application version is very quick because it doesn't require provisioning or restarting EC2 instances\.
+After you have an environment running an application, you can deploy a new version of the application or a different application at any time\. Deploying a new application version is very quick because it doesn't require provisioning or restarting EC2 instances\.
 
-After you've deployed a sample application or two and are ready to start developing locally, see [the next section](dotnet-devenv.md) to set up a \.NET development environment\.
+After you deploy a sample application or two and are ready to start developing and running Go applications locally, see [Setting Up Your Go Development Environment](go-devenv.md)\.

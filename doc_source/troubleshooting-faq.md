@@ -8,10 +8,6 @@ In a DNS server, register a CNAME record such as **www\.mydomain\.com CNAME mydo
 
 You can pick specific Availability Zones using the APIs, CLI, Eclipse plugin, or Visual Studio plugin\. For instructions about using the AWS Management Console to specify an Availability Zone, see [Auto Scaling Group for Your AWS Elastic Beanstalk Environment](using-features.managing.as.md)\.
 
-**Question:** *How do I avoid getting charged for my applications?*
-
-The default set of resources used by an Elastic Beanstalk environment don't incur charges in the Free Tier\. However, if you change the Amazon EC2 instance type, add Amazon EC2 instances, or run resources outside of your Elastic Beanstalk environment, charges may be accrued\. For information about the Free Tier, see [AWS Free Tier](https://aws.amazon.com/free)\. If you have questions about your account, contact our [ customer service team](https://aws-portal.amazon.com/gp/aws/html-forms-controller/contactus/aws-account-and-billing) directly\.
-
 **Question:** *How do I change my environment's instance type?*
 
 On the environment configuration page, choose **Modify** in the **Instances** configuration category\. Select a new instance type and choose **Apply** to update your environment\. Elastic Beanstalk will terminate all running instances and replace them with new ones\.

@@ -16,31 +16,31 @@ Follow this procedure to launch a new environment running the default applicatio
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. Choose an application or [create a new one](applications.md)\.
+1. Choose an existing application or [create one](applications.md)\.
 
-1. From the **Actions** menu in the upper right corner, choose **Create environment**\.  
+1. From the **Actions** menu in the upper\-right corner, choose **Create environment**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/application-actions-createnewenvironment.png)
 
-1. Choose either the **Web server environment** or **Worker environment** [environment tier](concepts.md#concepts-tier)\. You cannot change an environment's tier after creation\.
+1. Choose the **Web server environment** or **Worker environment** [environment tier](concepts.md#concepts-tier)\. You can't change an environment's tier after creation\.
 **Note**  
 The [\.NET on Windows Server platform](create_deploy_NET.md) doesn't support the worker environment tier\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-choosetier.png)
 
 1. Choose a **Platform** that matches the language used by your application\.
 **Note**  
-Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most platforms listed\. By default, the console selects the latest version of the language, web container, or framework [supported by Elastic Beanstalk](concepts.platforms.md)\. If your application requires an older version, choose **Configure more options**, as described below\.
+Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most of the platforms that are listed\. By default, the console selects the latest version of the language, web container, or framework [supported by Elastic Beanstalk](concepts.platforms.md)\. If your application requires an earlier version, choose **Configure more options**, as described in step 7\.
 
 1. For **App code**, choose **Sample application**\.
 
-1. If you want to further customize your environment, choose **Configure more options**\. The following options can be set only during environment creation:
+1. To further customize your environment, choose **Configure more options**\. You can set the following options only during environment creation:
    + Environment name
    + Domain name
    + Platform version \(configuration\)
    + VPC
    + Tier
 
-   The following settings can be changed after environment creation, but require new instances or other resources to be provisioned and can take a long time to apply:
-   + Instance type, root volume, key pair, and IAM role
+   You can change the following settings after environment creation, but they require new instances or other resources to be provisioned and can take a long time to apply:
+   + Instance type, root volume, key pair, and AWS Identity and Access Management \(IAM\) role
    + Internal Amazon RDS database
    + Load balancer
 
