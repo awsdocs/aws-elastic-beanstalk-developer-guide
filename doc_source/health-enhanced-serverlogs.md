@@ -41,7 +41,7 @@ The enhanced health log format includes the following information:
 + The upstream time
 + The `X-Forwarded-For` HTTP header
 
-For nginx proxies, times are printed in floating\-point seconds, with three decimal places\. For Apache, whole milliseconds are used\.
+For nginx proxies, times are printed in floating\-point seconds, with three decimal places\. For Apache, whole microseconds are used\.
 
 **Note**  
 If you see a warning similar to the following in a log file, where `DATE-TIME` is a date and time, and you are using a custom proxy, such as in a multi\-container Docker environment, you must use an \.ebextension to configure your environment so that `healthd` can read your log files:  
