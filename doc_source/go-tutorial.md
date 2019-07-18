@@ -62,8 +62,6 @@ func main() {
 }
 ```
 
-This example prints a customized greeting that varies based on the path used to access the service\.
-
 ## Deploy Your Go Application with the EB CLI<a name="go-tutorial-deploy"></a>
 
 Next, you create your application environment and deploy your configured application with Elastic Beanstalk\.

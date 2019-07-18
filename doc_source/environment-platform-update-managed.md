@@ -53,7 +53,10 @@ If an update fails, you can find the reason for the failure on the [Managed Upda
 
 ## Managed Update Maintenance Window<a name="environment-platform-update-managed-window"></a>
 
-When AWS releases a new version of your environment's platform, Elastic Beanstalk schedules a managed platform update during the next weekly maintenance window\. Maintenance windows are two hours long\. Elastic Beanstalk starts a scheduled update during the maintenance window, but the update might not complete until after the window ends\.
+When AWS releases a new version of your environment's platform, Elastic Beanstalk schedules a managed platform update during the next weekly maintenance window\. Maintenance windows are two hours long\. Elastic Beanstalk starts a scheduled update during the maintenance window\. The update might not complete until after the window ends\.
+
+**Note**  
+In most cases, Elastic Beanstalk schedules your managed update to occur during your coming weekly maintenance window\. The system considers various aspects of update safety and service availability when scheduling managed updates\. In rare cases, an update might not be scheduled for the first coming maintenance window\. If this happens, the system tries again during the next maintenance window\. To manually apply the managed update, choose **Apply now** as explained in [Managing Managed Updates](#environment-platform-update-managed-managing) on this page\.
 
 ## Minor and Patch Version Updates<a name="environment-platform-update-managed-versioning"></a>
 
