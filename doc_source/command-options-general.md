@@ -94,7 +94,7 @@ Configure scaling triggers for your environment's Auto Scaling group\.
 **Note**  
 Three options in this namespace determine how long a trigger's metric can remain beyond its defined limits before the trigger fires\. These options are related as follows:  
 `BreachDuration = Period * EvaluationPeriods`  
-When you specify any two of these three options, the value of the remaining one is inferred\.
+The default values for these options \(5, 5, and 1, respectively\) satisfy this equation\. If you specify inconsistent values, Elastic Beanstalk might modify one of the values so that the equation is still satisfied\.
 
 
 **Namespace: `aws:autoscaling:trigger`**  

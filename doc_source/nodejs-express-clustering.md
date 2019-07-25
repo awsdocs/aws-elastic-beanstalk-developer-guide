@@ -1,6 +1,6 @@
 # Deploying an Express Application with Clustering to Elastic Beanstalk<a name="nodejs-express-clustering"></a>
 
-This tutorial walks you through deploying a sample application to Elastic Beanstalk using the Elastic Beanstalk Command Line Interface \(EB CLI\), and then updating the application to use the [Express](http://expressjs.com/) framework and [Amazon ElastiCache](https://aws.amazon.com/elasticache/) for clustering\. Clustering enhances your web application's high availability, performance, and security\. To learn more about Amazon ElastiCache, go to [What Is Amazon ElastiCache for Memcached?](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Introduction.html) in the *Amazon ElastiCache for Memcached User Guide*\.
+This tutorial walks you through deploying a sample application to Elastic Beanstalk using the Elastic Beanstalk Command Line Interface \(EB CLI\), and then updating the application to use the [Express](http://expressjs.com/) framework, [Amazon ElastiCache](https://aws.amazon.com/elasticache/), and clustering\. Clustering enhances your web application's high availability, performance, and security\. To learn more about Amazon ElastiCache, go to [What Is Amazon ElastiCache for Memcached?](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Introduction.html) in the *Amazon ElastiCache for Memcached User Guide*\.
 
 **Note**  
 This example creates AWS resources, which you might be charged for\. For more information about AWS pricing, see [https://aws.amazon.com/pricing/](https://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you can test drive these services for free\. See [https://aws.amazon.com/free/](https://aws.amazon.com/free/) for more information\.
@@ -310,9 +310,15 @@ YAML relies on consistent indentation\. Match the indentation level when replaci
      }
    
      app.get('/', function(req, resp){
-         resp.writeHead(200, "Content-type: text/html");
-         resp.write("You are session: " + req.session.id);
-         resp.end();
+     if (req.session.views) {
+         req.session.views++
+         resp.setHeader('Content-Type', 'text/html')
+         resp.write('Views: ' + req.session.views)
+         resp.end()
+      } else {
+         req.session.views = 1
+         resp.end('Refresh the page!')
+       }
      });
    
      if (!module.parent) {
@@ -370,6 +376,13 @@ YAML relies on consistent indentation\. Match the indentation level when replaci
    ```
 
 1. Your environment will be updated after a few minutes\. After your environment is green and ready, verify that the code worked\.
+
+   1. Check the [Amazon CloudWatch console](https://console.aws.amazon.com/cloudwatch/home) to view your ElastiCache metrics\. To view your ElastiCache metrics, select **Metrics** in the left pane, and then search for **CurrItems**\. Select **ElastiCache > Cache Node Metrics**, and then select your cache node to view the number of items in the cache\.  
+![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/elasticache-express.png)
+**Note**  
+Make sure you are looking at the same region that you deployed your application to\.
+
+      If you copy and paste your application URL into another web browser and refresh the page, you should see your CurrItem count go up after 5 minutes\.
 
    1. Take a snapshot of your logs\. For more information about retrieving logs, see [Viewing Logs from Amazon EC2 Instances in Your Elastic Beanstalk Environment](using-features.logging.md)\.
 
