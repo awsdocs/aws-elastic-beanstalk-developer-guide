@@ -67,6 +67,7 @@ Select a default region
 17) eu-west-3 : EU (Paris)
 18) eu-north-1 : EU (Stockholm)
 19) ap-east-1 : Asia Pacific (Hong Kong)
+20) me-south-1 : Middle East (Bahrain)
 (default is 3): 3
 
 Select an application to use

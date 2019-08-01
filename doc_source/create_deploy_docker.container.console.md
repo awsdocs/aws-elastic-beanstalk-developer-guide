@@ -43,7 +43,7 @@ You do, however, need to provide your instances with permission to access the im
 
 ```
 {
-  "Version": "2008-10-17",
+  "Version": "2012-10-17",
   "Statement": [
     {
       "Sid": "AllowEbAuth",
