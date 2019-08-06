@@ -22,6 +22,9 @@ Elastic Beanstalk stores tail and bundle logs in an Amazon S3 bucket, and genera
 **Warning**  
 Anyone in possession of the presigned Amazon S3 URL can access the files before they are deleted\. Make the URL available only to trusted parties\.
 
+**Note**  
+Your user policy must have the `s3:DeleteObject` permission\. Elastic Beanstalk uses your user permissions to delete the logs from Amazon S3\.
+
 To persist logs, you can configure your environment to publish logs to Amazon S3 automatically after they are rotated\. To enable log rotation to Amazon S3, follow the procedure in [Configuring Instance Log Viewing](environments-cfg-logging.md#environments-cfg-logging-console)\. Instances in your environment will attempt to upload logs that have been rotated once per hour\.
 
 If your application generates logs in a location that isn't part of the default configuration for your environment's platform, you can extend the default configuration by using configuration files \(`[\.ebextensions](ebextensions.md)`\)\. You can add your application's log files to tail logs, bundle logs, or log rotation\.
