@@ -24,9 +24,6 @@ On supported platforms, you can use a configuration option to run the X\-Ray dae
 
 To upload data to X\-Ray, the X\-Ray daemon requires IAM permissions in the **AWSXrayWriteOnlyAccess** managed policy\. These permissions are included in [the Elastic Beanstalk instance profile](concepts-roles-instance.md)\. If you don't use the default instance profile, see [Giving the Daemon Permission to Send Data to X\-Ray](https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon.html#xray-daemon-permissions) in the *AWS X\-Ray Developer Guide*\.
 
-**Note**  
-Windows Server platform versions earlier than v2\.0\.0 include version 1 of the X\-Ray daemon\. With this version, sampling rules aren't fully supported\. You can define sampling rules locally with any version of the daemon; to use the SDK to call the X\-Ray service to get centrally\-defined sampling rules and report sampling statistics, you need version 3\.0\.0 and later\. For details, see [Configuring Sampling Rules in the AWS X\-Ray Console](https://docs.aws.amazon.com/xray/latest/devguide/xray-console-sampling.html) in the *AWS X\-Ray Developer Guide*\.
-
 Debugging with X\-Ray requires the use of the X\-Ray SDK\. See the [Getting Started with AWS X\-Ray](https://docs.aws.amazon.com/xray/latest/devguide/xray-gettingstarted.html) in the *AWS X\-Ray Developer Guide* for instructions and sample applications\.
 
 If you use a platform version that doesn't include the daemon, you can still run it with a script in a configuration file\. For more information, see [ Downloading and Running the X\-Ray Daemon Manually \(Advanced\)](https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-beanstalk.html#xray-daemon-beanstalk-manual) in the *AWS X\-Ray Developer Guide*\.

@@ -93,7 +93,7 @@ If you run into any issues installing Laravel, go to the installation topic in t
 Create a [source bundle](applications-sourcebundle.md) containing the files created by Composer\. The following command creates a source bundle named `laravel-default.zip`\. It excludes files in the `vendor` folder, which take up a lot of space and are not necessary for deploying your application to Elastic Beanstalk\.
 
 ```
-eb-laravel zip ../laravel-default.zip -r * .[^.]* -x "vendor/*"
+~/eb-laravel$ zip ../laravel-default.zip -r * .[^.]* -x "vendor/*"
 ```
 
 Upload the source bundle to Elastic Beanstalk to deploy Laravel to your environment\.
