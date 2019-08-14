@@ -41,7 +41,7 @@ The following policy limits this power and denies unauthorized users permission 
       ],
       "Resource": "*",
       "Condition": {
-        "ForAllValues:StringEquals": {
+        "ForAnyValue:StringEquals": {
           "aws:TagKeys": ["stage"]
         }
       }
@@ -81,7 +81,7 @@ The following policy limits this power and denies unauthorized users permission 
 
 **Example 3: Allow actions based on tags in the request**  <a name="example_policy_tags.allow_by_request_tag"></a>
 The following policy grants users permission to create Elastic Beanstalk development applications\.   
-To do that, it allows the `CreateApplication`and `AddTags` actions if the request specifies a tag named `stage` with the value `development`\. The `aws:TagKeys` condition ensures tag key case sensitivity\. Notice that this policy is useful for IAM users that don't have the Elastic Beanstalk **AWSElasticBeanstalkFullAccess** managed user policy attached\. The managed policy gives users unlimited permission to perform any Elastic Beanstalk action on any resource\.  
+To do that, it allows the `CreateApplication`and `AddTags` actions if the request specifies a tag named `stage` with the value `development`\. The `aws:TagKeys` condition ensures that the user can't add other tag keys\. In particular, it ensures case sensitivity of the `stage` tag key\. Notice that this policy is useful for IAM users that don't have the Elastic Beanstalk **AWSElasticBeanstalkFullAccess** managed user policy attached\. The managed policy gives users unlimited permission to perform any Elastic Beanstalk action on any resource\.  
 
 ```
 {
@@ -109,7 +109,7 @@ To do that, it allows the `CreateApplication`and `AddTags` actions if the reques
 
 **Example 4: Allow actions based on resource tags**  <a name="example_policy_tags.allow_by_request_tag"></a>
 The following policy grants users permission to perform actions on, and get information about, Elastic Beanstalk development applications\.   
-To do that, it allows specific actions if the application has a tag named `stage` with the value `development`\. The `aws:TagKeys` condition ensures tag key case sensitivity\. Notice that this policy is useful for IAM users that don't have the Elastic Beanstalk **AWSElasticBeanstalkFullAccess** managed user policy attached\. The managed policy gives users unlimited permission to perform any Elastic Beanstalk action on any resource\.  
+To do that, it allows specific actions if the application has a tag named `stage` with the value `development`\. The `aws:TagKeys` condition ensures that the user can't add other tag keys\. In particular, it ensures case sensitivity of the `stage` tag key\. Notice that this policy is useful for IAM users that don't have the Elastic Beanstalk **AWSElasticBeanstalkFullAccess** managed user policy attached\. The managed policy gives users unlimited permission to perform any Elastic Beanstalk action on any resource\.  
 
 ```
 {
