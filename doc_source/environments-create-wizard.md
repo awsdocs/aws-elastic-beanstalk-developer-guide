@@ -37,7 +37,7 @@ Select one of the available custom platforms\.
 
 ![\[Selecting a custom platform in the Create New Environment wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-selectcustomenvironment.png)
 
-After selecting the platform from which the new environment is created, you can also change the platform version\. Choose **Configure more options** and then **Change platform configuration**\. When the **Change a platform version** page appears, select the version to use for your new environment, and then choose **Save**\.
+After selecting the platform from which the new environment is created, you can also change the platform version\. Choose **Configure more options** and then **Change platform version**\. When the **Choose a platform version** page appears, select the version to use for your new environment, and then choose **Save**\.
 
 ![\[Changing the platform version in the Create New Environment wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-selectnewversion.png)
 

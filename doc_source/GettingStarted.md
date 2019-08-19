@@ -69,7 +69,7 @@ If you are not currently viewing the dashboard, return to it now\.
 1. Choose **GettingStartedApp\-env**\.  
 ![\[Elastic beanstalk console showing list of applications and environments.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-chooseenvironment.png)
 
-The dashboard shows a subset of useful information about your environment\. This includes its URL, its current health status, the name of the currently deployed application version, its five most recent events, and the platform version \(configuration\) on which the application runs\.
+The dashboard shows a subset of useful information about your environment\. This includes its URL, its current health status, the name of the currently deployed application version, its five most recent events, and the platform version on which the application runs\.
 
 ![\[Environment dashboard.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-dashboard.png)
 
