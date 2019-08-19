@@ -14,7 +14,7 @@ A custom AMI also allows you to make changes to low\-level components, such as t
 
    ```
    $ aws elasticbeanstalk describe-platform-version --region us-east-2 \
-         --resource-arn "arn:aws:elasticbeanstalk:us-east-2::platform/Tomcat 8.5 with Java 8 running on 64bit Amazon Linux/3.1.6" \
+         --platform-arn "arn:aws:elasticbeanstalk:us-east-2::platform/Tomcat 8.5 with Java 8 running on 64bit Amazon Linux/3.2.1" \
          --query PlatformDescription.CustomAmiList
    [
        {
@@ -23,12 +23,12 @@ A custom AMI also allows you to make changes to low\-level components, such as t
        },
        {
            "VirtualizationType": "hvm",
-           "ImageId": "ami-020ae06fdda6a0f66"
+           "ImageId": "ami-0afc41eee457447aa"
        }
    ]
    ```
 
-1. Take note of the `ImageId` value that looks like `ami-020ae06fdda6a0f66` in the result\.
+1. Take note of the `ImageId` value that looks like `ami-0afc41eee457447aa` in the result\.
 
 The value is the stock Elastic Beanstalk AMI for the platform version, EC2 instance architecture, and AWS Region that are relevant for your application\. If you need to create AMIs for multiple platforms, architectures or AWS Regions, repeat this process to identify the correct base AMI for each combination\.
 
