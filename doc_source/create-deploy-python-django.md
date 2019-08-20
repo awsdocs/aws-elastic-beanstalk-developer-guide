@@ -76,8 +76,8 @@ The remainder of these instructions show the Linux command prompt in your home d
    ```
 **Note**  
 The Django version you install must be compatible with the Python version on the Elastic Beanstalk Python configuration that you choose for deploying your application\. For deployment details, see [Deploy Your Site With the EB CLI](#python-django-deploy) in this topic\.  
-For details on current Python configurations, see [Python](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.python) in the *AWS Elastic Beanstalk Platforms* document\.  
-For Django version compatibility with Python, see [What Python version can I use with Django?](https://docs.djangoproject.com/en/2.1/faq/install/#what-python-version-can-i-use-with-django)
+For details on current Python platform versions, see [Python](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.python) in the *AWS Elastic Beanstalk Platforms* document\.  
+For Django version compatibility with Python, see [What Python version can I use with Django?](https://docs.djangoproject.com/en/2.1/faq/install/#what-python-version-can-i-use-with-django) However, please note that Django 2\.2 is incompatible with the Elastic Beanstalk Python 3\.6 platform\. The latest compatible version is Django 2\.1\.
 
 1. To verify that Django has been installed, type:
 
