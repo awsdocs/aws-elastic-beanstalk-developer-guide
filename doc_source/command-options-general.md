@@ -474,10 +474,8 @@ Configure the default listener \(port 80\) on an application load balancer or a 
 | --- | --- | --- | --- | 
 |  DefaultProcess  |  Name of the [process](#command-options-general-environmentprocess) to which to forward traffic when no rules match\.  |  `default`  |  A process name\.  | 
 |  ListenerEnabled  |  Set to `false` to disable the listener\. You can use this option to disable the default listener on port 80\.  |  `true`  |  `true` `false`  | 
-|  Protocol  |  Protocol of traffic to process\.  |  With application load balancer: `HTTP` With network load balancer: `TCP`  |  With application load balancer: `HTTP`, `HTTPS` With network load balancer: `TCP`  | 
+|  Protocol  |  Protocol of traffic to process\.  |  With application load balancer: `HTTP` With network load balancer: `TCP`  |  With application load balancer: `HTTP`, With network load balancer: `TCP`  | 
 |  Rules  |  List of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener This option is only applicable to environments with an application load balancer\.  |  None  |  Comma separated list of rule names\.  | 
-|  SSLCertificateArns  |  The ARN of the SSL certificate to bind to the listener\. This option is only applicable to environments with an application load balancer\.  |  None  |  The ARN of a certificate stored in IAM or ACM\.  | 
-|  SSLPolicy  |  Specify a security policy to apply to the listener\. This option is only applicable to environments with an application load balancer\.  | None \(ELB default\) |  The name of a load balancer security policy\.  | 
 
 ## aws:elbv2:listener:listener\_port<a name="command-options-general-elbv2-listener"></a>
 
