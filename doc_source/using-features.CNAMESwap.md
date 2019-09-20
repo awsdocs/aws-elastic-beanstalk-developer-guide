@@ -10,7 +10,7 @@ For details on configuring your application to connect to an external \(not mana
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. [Clone your current environment](using-features.managing.clone.md), or launch a new environment running the configuration you want\.
+1. [Clone your current environment](using-features.managing.clone.md), or launch a new environment running the platform version you want\.
 
 1. [Deploy the new application version](using-features.deploy-existing-version.md#deployments-newversion) to the new environment\.
 

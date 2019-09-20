@@ -99,7 +99,7 @@ Visit the [AWS SDK for Ruby homepage](https://aws.amazon.com/sdk-for-ruby/) for 
 ## Installing an IDE or Text Editor<a name="ruby-development-environment-ide"></a>
 
 Integrated development environments \(IDEs\) provide a wide range of features that facilitate application development\. If you haven't used an IDE for Ruby development, try Aptana and RubyMine and see which works best for you\.
-+  [Install Aptana](http://www.aptana.com/products/studio3.html) 
++  [Install Aptana](https://github.com/aptana/studio3) 
 +  [RubyMine](https://www.jetbrains.com/ruby/) 
 
 **Note**  

@@ -73,7 +73,7 @@ files:
       service nginx start
 
 container_commands:
- removeconfig:
+  removeconfig:
     command: "rm -f /tmp/deployment/config/#etc#nginx#conf.d#00_elastic_beanstalk_proxy.conf /etc/nginx/conf.d/00_elastic_beanstalk_proxy.conf"
 ```
 The example configuration, `/etc/nginx/conf.d/proxy.conf`, uses the default configuration at `/etc/nginx/conf.d/00_elastic_beanstalk_proxy.conf` as a base to include the default server block with compression and log settings, and a static file mapping\.  

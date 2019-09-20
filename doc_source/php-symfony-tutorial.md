@@ -24,7 +24,7 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Symfony 3 requires PHP 5\.5\.9 or later and the `intl` extension for PHP\. In this tutorial we use PHP 7\.0 and the corresponding Elastic Beanstalk platform version\. Install PHP and Composer by following the instructions at [Setting Up your PHP Development Environment](php-development-environment.md)\.
+Symfony 4\.3 requires PHP 7\.1 or later and the `intl` extension for PHP\. In this tutorial we use PHP 7\.2 and the corresponding Elastic Beanstalk platform version\. Install PHP and Composer by following the instructions at [Setting Up your PHP Development Environment](php-development-environment.md)\.
 
 ## Launch an Elastic Beanstalk Environment<a name="php-symfony-tutorial-launch"></a>
 
@@ -65,22 +65,35 @@ The Amazon S3 bucket that Elastic Beanstalk creates is shared between environmen
 Composer can install Symfony and create a working project with one command:
 
 ```
-~$ composer create-project --prefer-dist symfony/framework-standard-edition eb-symfony 3.4
-Installing symfony/framework-standard-edition (v3.4.8)
-  - Installing symfony/framework-standard-edition (v3.4.8): Downloading (100%)
-Created project in symfony3-beanstalk-comp
+~$ composer create-project symfony/website-skeleton eb-symfony
+Installing symfony/website-skeleton (v4.3.99)
+  - Installing symfony/website-skeleton (v4.3.99): Downloading (100%)
+Created project in eb-symfony
 Loading composer repositories with package information
-Installing dependencies (including require-dev) from lock file
-Package operations: 38 installs, 0 updates, 0 removals
-  - Installing doctrine/lexer (v1.0.1): Loading from cache
+Updating dependencies (including require-dev)
+Package operations: 1 install, 0 updates, 0 removals
+  - Installing symfony/flex (v1.4.5): Downloading (100%)
+Symfony operations: 1 recipe (539d006017ad5ef71beab4a2e2870e9a)
+  - Configuring symfony/flex (>=1.0): From github.com/symfony/recipes:master
+Loading composer repositories with package information
+Updating dependencies (including require-dev)
+Restricting packages listed in "symfony/symfony" to "4.3.*"
+Package operations: 103 installs, 0 updates, 0 removals
+  - Installing ocramius/package-versions (1.4.0): Loading from cache
 ...
 ```
 
 Composer installs Symfony and its dependencies, and generates a default project\.
 
-If you run into any issues installing Symfony, go to the installation topic in the official documentation: [symfony\.com/doc/3\.4/setup\.html](https://symfony.com/doc/3.4/setup.html)
+If you run into any issues installing Symfony, go to the installation topic in the official documentation: [symfony\.com/doc/current/setup\.html](https://symfony.com/doc/current/setup.html)
 
 ## Deploy Your Application<a name="php-symfony-tutorial-deploy"></a>
+
+Go to the project directory\.
+
+```
+~$ cd eb-symfony
+```
 
 Create a [source bundle](applications-sourcebundle.md) containing the files created by Composer\. The following command creates a source bundle named `symfony-default.zip`\. It excludes files in the `vendor` folder, which take up a lot of space and are not necessary for deploying your application to Elastic Beanstalk\.
 
@@ -113,7 +126,7 @@ When the deployment completes, click the URL to open your Symfony application in
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-symfony-403.png)
 
-What's this? By default, Elastic Beanstalk serves the root of your project at the root path of the web site\. In this case, though, the default page \(`app.php`\) is one level down in the `web` folder\. You can verify this by adding `/web` to the URL\. For example, `http://symfony.us-east-2.elasticbeanstalk.com/web`\.
+What's this? By default, Elastic Beanstalk serves the root of your project at the root path of the web site\. In this case, though, the default page \(`app.php`\) is one level down in the `web` folder\. You can verify this by adding `/public` to the URL\. For example, `http://symfony.us-east-2.elasticbeanstalk.com/public`\.
 
 To serve the Symfony application at the root path, use the Elastic Beanstalk console to configure the *document root* for the web site\.
 
@@ -127,7 +140,7 @@ To serve the Symfony application at the root path, use the Elastic Beanstalk con
 
 1. In the **Software** configuration category, choose **Modify**\.
 
-1. For **Document root**, type **/web**\.  
+1. For **Document root**, type **/public**\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-symfony-docroot.png)
 
 1. Choose **Apply**\.
@@ -165,7 +178,7 @@ In this tutorial, you used the Elastic Beanstalk console to configure composer o
 ```
 option_settings:
   aws:elasticbeanstalk:container:php:phpini:
-    document_root: /web
+    document_root: /public
 ```
 
 For more information, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.
