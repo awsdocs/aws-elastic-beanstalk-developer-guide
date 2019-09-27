@@ -1,4 +1,4 @@
-# Deploying Go Applications to Elastic Beanstalk Applications<a name="create_deploy_go"></a>
+# Creating and Deploying Go Applications on AWS Elastic Beanstalk<a name="create_deploy_go"></a>
 
 **Topics**
 + [Getting Started with Go on Elastic Beanstalk](go-getstarted.md)

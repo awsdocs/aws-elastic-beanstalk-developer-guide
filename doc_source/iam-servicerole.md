@@ -136,7 +136,6 @@ Elastic Beanstalk provides a managed policy for [enhanced health monitoring](hea
                   "s3:GetObjectMetadata",
                   "s3:ListBucket",
                   "s3:listBuckets",
-                  "s3:ListObjects",
                   "sns:CreateTopic",
                   "sns:GetTopicAttributes",
                   "sns:ListSubscriptionsByTopic",

@@ -114,7 +114,7 @@ The following keys are supported\.
   ```
   OptionSettings:
     aws:autoscaling:launchconfiguration:
-    InstanceType: t2.micro
+      InstanceType: t2.micro
   ```
 + **Tags** – Up to 47 tags to apply to resources created within the environment\.
 
@@ -129,28 +129,6 @@ The following keys are supported\.
     Name: Worker
     Type: SQS/HTTP
   ```
-+ **CName** – The CNAME for the environment\. Include a \+ character at the end of the name to enable groups\.
-
-  ```
-  CName: front-A08G28LG+
-  ```
-+ **EnvironmentName** – The name of the environment to create\. Include a \+ character at the end of the name to enable groups\.
-
-  ```
-  EnvironmentName: front+
-  ```
-
-  With groups enabled, you must specify a group name when you create the environments\. Elastic Beanstalk appends the group name to the environment name with a hyphen\. For example, with the environment name `front+` and the group name `dev`, Elastic Beanstalk will create the environment with the name `front-dev`\.
-+ **EnvironmentLinks** – A map of variable names and environment names of dependencies\. The following example makes the `worker+` environment a dependency and tells Elastic Beanstalk to save the link information to a variable named `WORKERQUEUE`\.
-
-  ```
-  EnvironmentLinks:
-    "WORKERQUEUE" : "worker+"
-  ```
-
-  The value of the link variable varies depending on the type of the linked environment\. For a web server environment, the link is the environment's CNAME\. For a worker environment, the link is the name of the environment's Amazon Simple Queue Service \(Amazon SQS\) queue\.
-
-The **CName**, **EnvironmentName** and **EnvironmentLinks** keys can be used to create [environment groups](environment-mgmt-compose.md) and [links to other environments](environment-cfg-links.md)\. These features are currently supported when using the EB CLI, AWS CLI or an SDK\. When using these features, you can include the saved configuration in your source code as an [environment manifest](environment-cfg-manifest.md) instead of referencing a saved configuration stored in Amazon S3\. See the corresponding topics for more information\.
 
 See the following topics for alternate methods of creating and applying saved configurations:
 + [Setting Configuration Options before Environment Creation](environment-configuration-methods-before.md)
