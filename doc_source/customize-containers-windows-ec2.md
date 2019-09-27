@@ -58,7 +58,7 @@ The following example specifies an Amazon S3 object as the MSI file location\.
 ```
 packages:
   msi:
-    mymsi: https://s3.amazonaws.com/mybucket/myobject.msi
+    mymsi: https://mybucket.s3.amazonaws.com/myobject.msi
 ```
 
 ## Sources<a name="windows-sources"></a>
@@ -84,7 +84,7 @@ The following example downloads a public \.zip file from an Amazon S3 bucket and
 
 ```
 sources:  
-  "c:/myproject/myapp": https://s3.amazonaws.com/mybucket/myobject.zip
+  "c:/myproject/myapp": https://mybucket.s3.amazonaws.com/myobject.zip
 ```
 
 ## Files<a name="windows-files"></a>
@@ -143,7 +143,7 @@ The following example uses the Resources key to add an authentication method nam
 ```
 files:
   "c:\\targetdirectory\\targetfile.zip":
-    source: https://s3.amazonaws.com/elasticbeanstalk-us-east-2-123456789012/prefix/myfile.zip
+    source: https://elasticbeanstalk-us-east-2-123456789012.s3.amazonaws.com/prefix/myfile.zip
     authentication: S3Auth
 
 Resources:

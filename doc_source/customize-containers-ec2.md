@@ -155,7 +155,7 @@ sources:
 
 ### Supported Formats<a name="linux-sources-support"></a>
 
-Supported formats are tar, tar\+gzip, tar\+bz2, and zip\. You can reference external locations such as Amazon Simple Storage Service \(Amazon S3\) \(e\.g\., `https://s3.amazonaws.com/mybucket/myobject`\) as long as the URL is publicly accessible\.
+Supported formats are tar, tar\+gzip, tar\+bz2, and zip\. You can reference external locations such as Amazon Simple Storage Service \(Amazon S3\) \(e\.g\., `https://mybucket.s3.amazonaws.com/myobject`\) as long as the URL is publicly accessible\.
 
 ### Example Snippet<a name="linux-sources-example"></a>
 
@@ -163,7 +163,7 @@ The following example downloads a public \.zip file from an Amazon S3 bucket and
 
 ```
 sources:  
-  /etc/myapp: https://s3.amazonaws.com/mybucket/myobject
+  /etc/myapp: https://mybucket.s3.amazonaws.com/myobject
 ```
 
 **Note**  

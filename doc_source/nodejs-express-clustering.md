@@ -244,7 +244,7 @@ YAML relies on consistent indentation\. Match the indentation level when replaci
          runas=root
    
    sources :
-     "/home/ec2-user/elasticache" : "https://s3.amazonaws.com/elasticache-downloads/AmazonElastiCacheCli-latest.zip"
+     "/home/ec2-user/elasticache" : "https://elasticache-downloads.s3.amazonaws.com/AmazonElastiCacheCli-latest.zip"
    
    commands: 
      make-elasticache-executable:

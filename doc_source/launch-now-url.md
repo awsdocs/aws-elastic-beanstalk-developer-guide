@@ -48,7 +48,7 @@ The URL must contain the following parameters, which are case\-sensitive:
   ```
 
 A Launch Now URL can optionally contain the following parameters\. If you don't include the optional parameters in your Launch Now URL, Elastic Beanstalk uses default values to create and run your application\. When you don't include the **sourceBundleUrl** parameter, Elastic Beanstalk uses the default sample application for the specified **platform**\.
-+ **sourceBundleUrl** – Specify the location of your web application source bundle in URL format\. For example, if you uploaded your source bundle to an Amazon S3 bucket, you might specify the value of the **sourceBundleUrl** parameter as `https://s3.amazonaws.com/mybucket/myobject`\.
++ **sourceBundleUrl** – Specify the location of your web application source bundle in URL format\. For example, if you uploaded your source bundle to an Amazon S3 bucket, you might specify the value of the **sourceBundleUrl** parameter as `https://mybucket.s3.amazonaws.com/myobject`\.
 **Note**  
 You can specify the value of the **sourceBundleUrl** parameter as an HTTP URL, but the user's web browser will convert characters as needed by applying HTML URL encoding\.
 + **environmentType** – Specify whether the environment is load balancing and automatically scaling or just a single instance\. For more information, see [Environment Types](using-features-managing-env-types.md)\. You can specify either `LoadBalancing` or `SingleInstance` as the parameter value\.

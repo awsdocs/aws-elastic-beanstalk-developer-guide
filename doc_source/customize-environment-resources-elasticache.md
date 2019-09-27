@@ -7,7 +7,7 @@ The following samples add an Amazon ElastiCache cluster to EC2\-Classic and EC2\
 
 ## EC2\-Classic Platforms<a name="customize-environment-resources-elasticache-classic"></a>
 
-This sample adds an Amazon ElastiCache cluster to an environment with instances launched into the EC2\-Classic platform\. All of the properties that are listed in this example are the minimum required properties that must be set for each resource type\. You can download the example at [ElastiCache Example](https://s3.amazonaws.com/elasticbeanstalk/extensions/ElastiCache.config)\. 
+This sample adds an Amazon ElastiCache cluster to an environment with instances launched into the EC2\-Classic platform\. All of the properties that are listed in this example are the minimum required properties that must be set for each resource type\. You can download the example at [ElastiCache Example](https://elasticbeanstalk.s3.amazonaws.com/extensions/ElastiCache.config)\. 
 
 **Note**  
 This example creates AWS resources, which you might be charged for\. For more information about AWS pricing, see [https://aws.amazon.com/pricing/](https://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you can test drive these services for free\. See [https://aws.amazon.com/free/](https://aws.amazon.com/free/) for more information\.
