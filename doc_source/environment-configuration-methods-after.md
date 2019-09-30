@@ -88,7 +88,7 @@ The Elastic Beanstalk console presents many configuration options on the **Confi
 
 Changes made to configuration options in the environment management console are applied directly to the environment\. These changes override settings for the same options in configuration files or saved configurations\. For details, see [Precedence](command-options.md#configuration-options-precedence)\.
 
-For details about changing configuration options on a running environment using the Elastic Beanstalk console, see the topics under [AWS Elastic Beanstalk Environment Configuration](customize-containers.md)\.
+For details about changing configuration options on a running environment using the Elastic Beanstalk console, see the topics under [Configuring AWS Elastic Beanstalk Environments](customize-containers.md)\.
 
 ## The EB CLI<a name="configuration-options-after-ebcli"></a>
 

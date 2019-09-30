@@ -55,10 +55,10 @@ Enter the information requested and press **Enter**\. The following table descri
 
 You can submit the signing request to a third party for signing, or sign it yourself for development and testing\. Self\-signed certificates can also be used for backend HTTPS between a load balancer and EC2 instances\.
 
-To sign the certificate, use the openssl x509 command\. The following example uses the private key from the previous step \(*privatekey\.pem*\) and the signing request \(*csr\.pem*\) to create a public certificate named *server\.crt* that is valid for *365* days :
+To sign the certificate, use the openssl x509 command\. The following example uses the private key from the previous step \(*privatekey\.pem*\) and the signing request \(*csr\.pem*\) to create a public certificate named *public\.crt* that is valid for *365* days :
 
 ```
-$ openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out server.crt
+$ openssl x509 -req -days 365 -in csr.pem -signkey privatekey.pem -out public.crt
 Signature ok
 subject=/C=us/ST=washington/L=seattle/O=example corporation/OU=marketing/CN=www.example.com/emailAddress=someone@example.com
 Getting Private key

@@ -1,4 +1,4 @@
-# Configuring your development environment for use with AWS Elastic Beanstalk<a name="chapter-devenv"></a>
+# Configuring Your Development Machine for Use with AWS Elastic Beanstalk<a name="chapter-devenv"></a>
 
 **Topics**
 + [Creating a Project Folder](#devenv-project-folder)

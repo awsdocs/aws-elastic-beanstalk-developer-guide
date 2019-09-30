@@ -1,6 +1,6 @@
 # Customizing Software on Windows Servers<a name="customize-containers-windows-ec2"></a>
 
-You may want to customize and configure the software that your application depends on\. These files could be either dependencies required by the application—for example, additional packages or services that need to be run\. For general information on customizing and configuring your Elastic Beanstalk environments, see [AWS Elastic Beanstalk Environment Configuration](customize-containers.md)\.
+You may want to customize and configure the software that your application depends on\. These files could be either dependencies required by the application—for example, additional packages or services that need to be run\. For general information on customizing and configuring your Elastic Beanstalk environments, see [Configuring AWS Elastic Beanstalk Environments](customize-containers.md)\.
 
 **Note**  
 YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.

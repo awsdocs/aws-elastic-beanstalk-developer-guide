@@ -1,4 +1,4 @@
-# AWS Elastic Beanstalk Environment Configuration<a name="customize-containers"></a>
+# Configuring AWS Elastic Beanstalk Environments<a name="customize-containers"></a>
 
 Elastic Beanstalk provides a wide range of options for customizing the resources in your environment, and Elastic Beanstalk behavior and platform settings\. When you create a web server environment, Elastic Beanstalk creates several resources to support the operation of your application\.
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.

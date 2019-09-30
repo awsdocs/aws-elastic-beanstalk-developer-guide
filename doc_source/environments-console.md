@@ -108,7 +108,7 @@ The **Configuration overview** page shows the current configuration of your envi
 
 ![\[The configuration overview page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-configuration.png)
 
-For more information, see [AWS Elastic Beanstalk Environment Configuration](customize-containers.md)\.
+For more information, see [Configuring AWS Elastic Beanstalk Environments](customize-containers.md)\.
 
 ## Logs<a name="environments-console-logs"></a>
 
