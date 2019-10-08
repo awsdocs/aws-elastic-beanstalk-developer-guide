@@ -271,7 +271,7 @@ files:
     owner: root
     group: root
     authentication: "S3Auth"
-    source: https://s3-us-west-2.amazonaws.com/elasticbeanstalk-us-west-2-123456789012/data.json
+    source: https://elasticbeanstalk-us-west-2-123456789012.s3-us-west-2.amazonaws.com/data.json
 ```
 
 ## Commands<a name="linux-commands"></a>

@@ -135,7 +135,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Setting Up Your Python Development Environment](python-development-environment.md)
       + [Using the AWS Elastic Beanstalk Python Platform](create-deploy-python-container.md)
          + [Requirements File](python-configuration-requirements.md)
-      + [Deploying a Flask Application to AWS Elastic Beanstalk](create-deploy-python-flask.md)
+      + [Deploying a Flask Application to Elastic Beanstalk](create-deploy-python-flask.md)
       + [Deploying a Django Application to Elastic Beanstalk](create-deploy-python-django.md)
       + [Adding an Amazon RDS DB Instance to Your Python Application Environment](create-deploy-python-rds.md)
       + [Python Tools and Resources](create-deploy-python-tools-resources.md)

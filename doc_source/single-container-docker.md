@@ -20,7 +20,7 @@ If you haven't already, follow the instructions in [Getting Started Using Elasti
 
 ## Containerize an Elastic Beanstalk Application<a name="single-container-docker.setup"></a>
 
-For this example, we create a Docker image of the sample Flask application from [Deploying a Flask Application to AWS Elastic Beanstalk](create-deploy-python-flask.md)\. The application consists of one main file, `application.py`\. We also need a `Dockerfile`\. Put both files at the root of a directory\.
+For this example, we create a Docker image of the sample Flask application from [Deploying a Flask Application to Elastic Beanstalk](create-deploy-python-flask.md)\. The application consists of one main file, `application.py`\. We also need a `Dockerfile`\. Put both files at the root of a directory\.
 
 ```
 ~/eb-docker-flask/

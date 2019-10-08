@@ -1,14 +1,12 @@
-# Deploying a Flask Application to AWS Elastic Beanstalk<a name="create-deploy-python-flask"></a>
+# Deploying a Flask Application to Elastic Beanstalk<a name="create-deploy-python-flask"></a>
 
 Flask is an open source web application framework for Python\. This tutorial walks you through the process of generating a Flask application and deploying it to an AWS Elastic Beanstalk environment\.
 
-**Topics**
-+ [Prerequisites](#python-flask-prereq)
+In this tutorial, you’ll do the following:
 + [Set Up a Python Virtual Environment with Flask](#python-flask-setup-venv)
 + [Create a Flask Application](#python-flask-create-app)
-+ [Deploy Your Site With the EB CLI](#python-flask-deploy)
-+ [Cleanup](#python-flask-tutorial-cleanup)
-+ [Next Steps](#python-flask-more-info)
++ [Deploy Your Site With the EB CLI](#python-flask-deploy) 
++ [Cleanup](#python-flask-tutorial-cleanup) 
 
 ## Prerequisites<a name="python-flask-prereq"></a>
 

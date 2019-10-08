@@ -13,7 +13,11 @@ Rails is an open source, model\-view\-controller \(MVC\) framework for Ruby\. Th
 
 ## Prerequisites<a name="ruby-rails-tutorial-prereqs"></a>
 
+### Basic AWS Elastic Beanstalk Knowledge<a name="ruby-rails-tutorial-prereqs-basic"></a>
+
 This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
+
+### Command Line<a name="ruby-rails-tutorial-prereqs-cmdline"></a>
 
 To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings preceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
 
@@ -24,7 +28,14 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Rails requires Ruby 2\.2\.2 or newer\. In this tutorial we use Ruby 2\.5\.1 and the corresponding Elastic Beanstalk platform version\. Install Ruby by following the instructions at [Setting Up your Ruby Development Environment](ruby-development-environment.md)\.
+### Rails Dependencies<a name="ruby-rails-tutorial-prereqs-railsreqs"></a>
+
+The Rails framework has the following dependencies\. Be sure you have all of them installed\.
++ **Ruby 2\.2\.2 or newer** – For installation instructions, see [Setting Up your Ruby Development Environment](ruby-development-environment.md)\.
+
+  In this tutorial we use Ruby 2\.5\.1 and the corresponding Elastic Beanstalk platform version\.
++ **Node\.js** – For installation instructions, see [Installing Node\.js via package manager](https://nodejs.org/en/download/package-manager/)\.
++ **Yarn** – For installation instructions, see [Installation](https://yarnpkg.com/lang/en/docs/install/) on the *Yarn* website\.
 
 ## Launch an Elastic Beanstalk Environment<a name="ruby-rails-tutorial-launch"></a>
 

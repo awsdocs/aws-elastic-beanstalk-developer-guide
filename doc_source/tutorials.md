@@ -12,7 +12,7 @@ These tutorials are targeted at intermediate users and may not contain instructi
 + **PHP 7 and WordPress HA Configuration** \- [Deploying a High\-Availability WordPress Website with an External Amazon RDS Database to Elastic Beanstalk](php-hawordpress-tutorial.md)
 + **Node\.js with DynamoDB HA Configuration** \- [Deploying a Node\.js Application with DynamoDB to Elastic Beanstalk](nodejs-dynamodb-tutorial.md)
 + **ASP\.NET Core** \- [Deploying an ASP\.NET Core Application with AWS Elastic Beanstalk](dotnet-core-tutorial.md)
-+ **Python and Flask 0\.10** \- [Deploying a Flask Application to AWS Elastic Beanstalk](create-deploy-python-flask.md)
++ **Python and Flask 0\.10** \- [Deploying a Flask Application to Elastic Beanstalk](create-deploy-python-flask.md)
 + **Python and Django 1\.9** \- [Deploying a Django Application to Elastic Beanstalk](create-deploy-python-django.md)
 + **Node\.js and Express 4** \- [Deploying an Express Application to Elastic Beanstalk](create_deploy_nodejs_express.md)
 + **Docker, PHP and nginx** \- [Multicontainer Docker Environments with the AWS Management Console](create_deploy_docker_ecstutorial.md)
