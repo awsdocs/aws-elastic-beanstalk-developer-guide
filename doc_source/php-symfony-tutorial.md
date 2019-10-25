@@ -111,7 +111,7 @@ Upload the source bundle to Elastic Beanstalk to deploy Symfony to your environm
 
 1. Choose **Upload and Deploy**\.
 
-1. Choose **Choose File** and use the dialog box to select the source bundle\.
+1. Use the on\-screen dialog box to upload the source bundle\.
 
 1. Choose **Deploy**\.
 
@@ -140,8 +140,7 @@ To serve the Symfony application at the root path, use the Elastic Beanstalk con
 
 1. In the **Software** configuration category, choose **Modify**\.
 
-1. For **Document root**, type **/public**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-symfony-docroot.png)
+1. For **Document root**, enter **/public**\.
 
 1. Choose **Apply**\.
 
@@ -161,7 +160,7 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 1. Choose **Actions**, and then choose **Terminate Environment**\.
 
-1. In the **Confirm Termination** dialog box, enter the environment name, and then choose **Terminate**\.
+1. Use the on\-screen dialog box to confirm environment termination\.
 
 With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 

@@ -56,6 +56,8 @@ Configure an EB CLI repository for your application and create an Elastic Beanst
 
 Update the sample application in the Elastic Beanstalk environment to use the Express framework\.
 
+You can download the final source code from [nodejs\-example\-express\-elasticache\.zip](samples/nodejs-example-express-elasticache.zip)\.
+
 **Note**  
 The prerequisite development environment setup results in an Express project structure in the `node-express` folder\. If you haven't already generated an Express project, run the following command\. For more details, see [Installing Express](nodejs-devenv.md#nodejs-devenv-express)\.  
 
@@ -122,7 +124,7 @@ Next, let's update the Express application to use Amazon ElastiCache\.
 
 1. On your local computer, create an `.ebextensions` directory in the top\-level directory of your source bundle\. In this example, we use `node-express/.ebextensions`\.
 
-1. Create a configuration file `node-express/.ebextensions/elasticache-iam-with-script.config` with the following snippet\. For more information about the configuration file, see [Node\.js Configuration Namespaces](create_deploy_nodejs.container.md#nodejs-namespaces)\. This creates an IAM user with the permissions required to discover the elasticache nodes and writes to a file anytime the cache changes\. You can also copy the file from [https://elasticbeanstalk\-samples\-us\-east\-2\.s3\.amazonaws\.com/nodejs\-example\-express\-elasticache\.zip](https://elasticbeanstalk-samples-us-east-2.s3.amazonaws.com/nodejs-example-express-elasticache.zip)\. For more information on the ElastiCache properties, see [Example Snippets: ElastiCache](customize-environment-resources-elasticache.md)\.
+1. Create a configuration file `node-express/.ebextensions/elasticache-iam-with-script.config` with the following snippet\. For more information about the configuration file, see [Node\.js Configuration Namespaces](create_deploy_nodejs.container.md#nodejs-namespaces)\. This creates an IAM user with the permissions required to discover the elasticache nodes and writes to a file anytime the cache changes\. You can also copy the file from [nodejs\-example\-express\-elasticache\.zip](samples/nodejs-example-express-elasticache.zip)\. For more information on the ElastiCache properties, see [Example: ElastiCache](customize-environment-resources-elasticache.md)\.
 **Note**  
 YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 

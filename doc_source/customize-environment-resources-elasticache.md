@@ -1,4 +1,4 @@
-# Example Snippets: ElastiCache<a name="customize-environment-resources-elasticache"></a>
+# Example: ElastiCache<a name="customize-environment-resources-elasticache"></a>
 
 The following samples add an Amazon ElastiCache cluster to EC2\-Classic and EC2\-VPC \(both default and custom [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\) platforms\. For more information about these platforms and how you can determine which ones EC2 supports for your region and your AWS account, see [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html)\. Then refer to the section in this topic that applies to your platform\.
 + [EC2\-Classic Platforms](#customize-environment-resources-elasticache-classic)

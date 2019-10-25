@@ -49,10 +49,6 @@ You can enable environment health streaming to CloudWatch Logs using the Elastic
 
 1. Choose **Apply**\.
 
-The example in the following figure saves the logs for 7 days and keeps the logs after terminating the environment\.
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/log-streaming-health-screen.png)
-
 After you enable log streaming, you can return to the **Monitoring** configuration category or page and find the **Log Group** link\. Click this link to see your environment health logs in the CloudWatch console\.
 
 ### Environment Health Log Streaming Using the EB CLI<a name="AWSHowTo.cloudwatchlogs.envhealth.streaming.ebcli"></a>

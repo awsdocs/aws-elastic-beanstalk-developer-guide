@@ -127,7 +127,7 @@ Download the source bundle from GitHub if you haven't already: [eb\-node\-expres
 
 1. Choose **Upload and Deploy**\.
 
-1. Choose **Choose File** and use the dialog box to select the source bundle\.
+1. Use the on\-screen dialog box to upload the source bundle\.
 
 1. Choose **Deploy**\.
 
@@ -290,7 +290,7 @@ Deploy the nodejs\-tutorial\.zip source bundle to your environment\.
 
 1. Choose **Upload and Deploy**\.
 
-1. Choose **Choose File** and use the dialog box to select the source bundle\.
+1. Use the on\-screen dialog box to upload the source bundle\.
 
 1. Choose **Deploy**\.
 
@@ -342,7 +342,7 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 1. Choose **Actions**, and then choose **Terminate Environment**\.
 
-1. In the **Confirm Termination** dialog box, enter the environment name, and then choose **Terminate**\.
+1. Use the on\-screen dialog box to confirm environment termination\.
 
 With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 

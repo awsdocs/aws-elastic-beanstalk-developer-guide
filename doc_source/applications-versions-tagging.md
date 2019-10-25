@@ -8,11 +8,7 @@ You can specify tags when you create an application version\. In an existing app
 
 When you use the Elastic Beanstalk console to [create an environment](environments-create-wizard.md), and you choose to upload a version of your application code, you can specify tag keys and values to associate with the new application version\.
 
-![\[Uploading new application code in the Create New Environment wizard of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-environment-appcode-upload.png)
-
-You can also use the Elastic Beanstalk console to [upload an application version](applications-versions.md) without immediately using it in an environment\. You can specify tag keys and values in the **Upload Application Version** dialog box\.
-
-![\[Upload Application Version dialog box on the Application Versions page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-version-upload-dialog.png)
+You can also use the Elastic Beanstalk console to [upload an application version](applications-versions.md) without immediately using it in an environment\. You can specify tag keys and values when you upload an application version\.
 
 With the AWS CLI or other API\-based clients, add tags by using the `--tags` parameter on the [create\-application\-version](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/create-application-version.html) command\.
 
@@ -40,13 +36,7 @@ You can add, update, and delete tags in an existing Elastic Beanstalk applicatio
 
 1. Choose **Manage tags**\.
 
-   The **Manage Tags** dialog box shows the list of tags that are currently applied to the application version\.  
-![\[Manage Tags dialog box shows tags for an application version in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/tagging-manage-tags-dialog-appversion.png)
-
-1. Add, update, or delete tags:
-   + To add a tag, enter it into the empty boxes at the bottom of the list\.
-   + To update a tag's key or value, edit the respective box in the tag's row\.
-   + To delete a tag, choose ![\[Remove tag\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/x.png) next to the tag's value box\.
+1. Use the on\-screen form to add, update, or delete tags\.
 
 1. Choose **Apply**\.
 

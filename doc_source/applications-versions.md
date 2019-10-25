@@ -14,19 +14,13 @@ You can apply tags to an application version when you create it, and edit tags o
 
 1. In the navigation pane, choose **Application Versions**\.
 
-1. Choose **Upload**\.  
-![\[Uploading an application version on the Application Versions page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-version-upload.png)
-
-1. Enter a **Version label** for this version\.
-
-1. Choose **Browse** to specify the location of the [source bundle](applications-sourcebundle.md)\.
+1. Choose **Upload**\. Use the on\-screen form to upload your application's [source bundle](applications-sourcebundle.md)\.
 **Note**  
 The source bundle's file size limit is 512 MB\.
 
 1. Optionally, provide a brief description, and add tag keys and values\.
 
-1. Choose **Upload**\.  
-![\[Upload Application Version dialog box on the Application Versions page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-version-upload-dialog.png)
+1. Choose **Upload**\.
 
 The file you specified is associated with your application\. You can deploy the application version to a new or existing environment\.
 
@@ -43,13 +37,16 @@ Deleting an application version doesn't affect environments currently running th
 
 1. In the navigation pane, choose **Application Versions**\.
 
-1. In the list of application versions, select the box next to the application version that you want to delete, and then choose **Delete**\.  
-![\[Deleting an application version on the Application Versions page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-version-delete.png)
+1. Use the on\-screen form to select application versions\.
 
-1. \(Optional\) To leave the application source bundle for this application version in your Amazon Simple Storage Service \(Amazon S3\) bucket, clear the box for **Delete versions from Amazon S3**\.  
-![\[Delete Application Versions dialog box in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-version-delete-s3.png)
+1. Choose **Delete**\.
 
-1. Choose **Apply**\.
+1. Use the on\-screen dialog to confirm deletion of the application versions\.
+
+   You can optionally do the following on the **Application versions** page\.
+   + Configure a maximum number of versions to keep
+   + Configure a maximum age for application versions
+   + Choose to keep the source bundle in Amazon S3
 
 If you configure application lifecycle settings, they're applied when you create new application versions\. For example, if you configure a maximum of 25 application versions, Elastic Beanstalk deletes the oldest version when you upload a 26th version\. If you set a maximum age of 90 days, any versions older than 90 days are deleted when you upload a new version\. For details, see [Configuring Application Version Lifecycle Settings](applications-lifecycle.md)\.
 

@@ -36,13 +36,7 @@ You can add, update, and delete tags in an existing Elastic Beanstalk applicatio
 
 1. Choose **Manage tags**\.
 
-   The **Manage Tags** dialog box shows the list of tags that are currently applied to the application\.  
-![\[Manage Tags dialog box shows tags for an application in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/tagging-manage-tags-dialog-app.png)
-
-1. Add, update, or delete tags:
-   + To add a tag, enter it into the empty boxes at the bottom of the list\.
-   + To update a tag's key or value, edit the respective box in the tag's row\.
-   + To delete a tag, choose ![\[Remove tag\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/x.png) next to the tag's value box\.
+1. Use the on\-screen form to add, update, or delete tags\.
 
 1. Choose **Apply**\.
 

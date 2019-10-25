@@ -26,18 +26,19 @@ You can update configuration option settings in the AWS Management Console by de
 
 Update configuration files in your source directory, create a new source bundle, and deploy the new version to your Elastic Beanstalk environment to apply the changes\.
 
-**To deploy an updated source bundle to your environment \(Elastic Beanstalk console\)**
+**To deploy a source bundle**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
 1. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Choose **Upload and Deploy**  
-![\[Upload and Deploy\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-upload.png)
+1. Choose **Upload and Deploy**\.
 
-1. Choose **Browse** and open the application source bundle\.
+1. Use the on\-screen dialog box to upload the source bundle\.
 
 1. Choose **Deploy**\.
+
+1. When the deployment completes, choose the site URL to open your website in a new tab\.
 
 Changes made to configuration files will not override option settings in saved configurations or settings applied directly to the environment at the API level\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
 

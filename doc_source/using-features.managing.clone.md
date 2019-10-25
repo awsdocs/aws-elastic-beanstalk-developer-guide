@@ -13,13 +13,11 @@ Elastic Beanstalk doesn't include any unmanaged changes to resources in the clon
 
 1. From the region list, select the region that includes the environment that you want to work with\.
 
-1. On the Elastic Beanstalk console applications page, choose the name of the application, and then the name of the environment to clone\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-app-page-env.png)
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. On the environment dashboard, choose **Actions**, and then do one of the following: 
    + Choose **Clone Environment** to clone the environment without any changes to the solution stack version\.
-   + Choose **Clone with Latest Platform** to clone the environment, but with a newer version of the original environment's solution stack\.  
-![\[Actions menu on the Dashboard page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-dashboard-action.png)
+   + Choose **Clone with Latest Platform** to clone the environment, but with a newer version of the original environment's solution stack\.
 
 1. On the **Clone Environment** page, review the information in the **Original Environment** section to verify that you chose the environment from which you want to create a clone\.
 

@@ -153,7 +153,7 @@ If the Elastic Beanstalk service is using the role when you try to terminate the
 
 1. Choose **Actions**, and then choose **Terminate Environment**\.
 
-1. In the **Confirm Termination** dialog box, type the environment name, and then choose **Terminate**\.
+1. Use the on\-screen dialog box to confirm environment termination\.
 
 See [eb terminate](eb3-terminate.md) for details about terminating an Elastic Beanstalk environment using the EB CLI\.
 

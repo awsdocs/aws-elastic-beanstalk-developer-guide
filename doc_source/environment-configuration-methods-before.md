@@ -87,9 +87,9 @@ Create a saved configuration to save settings that you have applied to an existi
 
 1. Navigate to the [management page](environments-console.md) for your environment\.
 
-1. Click **Actions** and then click **Save Configuration**\.
+1. Choose **Actions** and then choose **Save Configuration**\.
 
-1. Enter a configuration name and description and then click **Save**\.
+1. Use the on\-screen dialog box to complete the action\.
 
 Saved configurations are stored in the Elastic Beanstalk S3 bucket in a folder named after your application\. For example, configurations for an application named `my-app` in the us\-west\-2 region for account number 123456789012 can be found at `s3://elasticbeanstalk-us-west-2-123456789012/resources/templates/my-app`\.
 

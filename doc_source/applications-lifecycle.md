@@ -26,19 +26,13 @@ You can specify the lifecycle settings in the console\.
 
 1. In the navigation pane, select **Application versions**\.
 
-1. Select **Settings**\.  
-![\[Application lifecycle settings\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/app-version-lifecycle.png)
+1. Select **Settings**\.
 
-1. Select **Enable** for **Lifecycle policy** to enable lifecycle settings\.
+1. Use the on\-screen form to configure application lifecycle settings\.
 
-1. Select either **Set the application versions limit by total count** or **Set the application versions limit by age**\.
+1. Choose **Save** to save your application lifecycle settings\.
 
-1. If you selected **Set the application versions limit by total count**, enter a value from **1** to **1000** for **Application Versions** to specify the maximum number of application versions to keep before deleting old versions\.
-
-1. If you selected **Set the application versions limit by age**, specify the maximum age, in days from 1 to 180, of application versions to keep\.
-
-1. For **Retention**, specify whether to delete the source bundle from S3 when the application version is deleted\.
-
-1. For **Service role**, specify the role under which the application version is deleted\. To include all permissions required for version deletion, choose the default Elastic Beanstalk service role, named `aws-elasticbeanstalk-service-role`, or another service role using the Elastic Beanstalk managed service policies\. For more information, see [Managing Elastic Beanstalk Service Roles](iam-servicerole.md)\.
-
-1. Select **Save** to save your application lifecycle settings\.
+On the settings page, you can do the following\.
++ Configure lifecycle settings based on the total count of application versions or the age of application versions\.
++ Specify whether to delete the source bundle from S3 when the application version is deleted\.
++ Specify the service role under which the application version is deleted\. To include all permissions required for version deletion, choose the default Elastic Beanstalk service role, named `aws-elasticbeanstalk-service-role`, or another service role using the Elastic Beanstalk managed service policies\. For more information, see [Managing Elastic Beanstalk Service Roles](iam-servicerole.md)\.

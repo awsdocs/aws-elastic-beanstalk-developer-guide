@@ -68,10 +68,7 @@ You can perform deployments from your environment's dashboard\.
 
 1. Choose **Upload and Deploy**\.
 
-1. Choose **Browse** to select the application source bundle for the application version you want to deploy\.  
-![\[The Upload and Deploy dialog box\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-app-version-upload-loadbalancing.png)
-
-1. Type a unique **Version label** to represent the new application version\.
+1. Use the on\-screen form to upload the application source bundle\.
 
 1. Choose **Deploy**\.
 
@@ -85,6 +82,6 @@ You can also deploy a previously uploaded version of your application to any of 
 
 1. Choose **Actions** next to the application name, and then choose **View application versions**\.
 
-1. Select the application version to deploy, and then click **Deploy**\.
+1. Use the on\-screen form to select the application version to deploy\.
 
 1. Choose an environment, and then choose **Deploy**\.

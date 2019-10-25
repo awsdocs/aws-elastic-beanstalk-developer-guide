@@ -8,13 +8,10 @@ The first step in using Elastic Beanstalk is to create an application, which rep
 
 1. Choose **Create New Application**\.
 
-1. Enter the name of the application\.
-
-1. Optionally, provide a description, and add tag keys and values\.
+1. Use the on\-screen form to provide the required details\.
+   + Optionally, provide a description, and add tag keys and values\.
 
 1. Choose **Create**\.
-
-![\[Create New Application dialog box in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-create-dialog.png)
 
 After creating the application, the console prompts you to create an environment for it\. For detailed information about all of the options available, see [Creating an AWS Elastic Beanstalk Environment](using-features.environments.md)\.
 

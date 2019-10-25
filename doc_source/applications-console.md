@@ -6,7 +6,7 @@ You can use the AWS Management Console to manage applications, application versi
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. The console displays a list of all environments running in the current AWS Region, sorted by application\. Choose an application name to view the management console for that application\.  
+1. The console displays a list of all environments running in the current AWS Region, sorted by application\. Choose an application to view the management console for that application\.  
 ![\[The All Applications page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-choose-application.png)
 **Note**  
 If you have many applications, use the search bar in the upper\-right corner to filter the list of applications\.

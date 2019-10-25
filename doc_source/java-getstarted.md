@@ -33,8 +33,7 @@ Download any of the sample applications and deploy it to Elastic Beanstalk by fo
 
 1. Choose the **Web server environment** or **Worker environment** [environment tier](concepts.md#concepts-tier)\. You can't change an environment's tier after creation\.
 **Note**  
-The [\.NET on Windows Server platform](create_deploy_NET.md) doesn't support the worker environment tier\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-choosetier.png)
+The [\.NET on Windows Server platform](create_deploy_NET.md) doesn't support the worker environment tier\.
 
 1. Choose a **Platform** that matches the language used by your application\.
 **Note**  

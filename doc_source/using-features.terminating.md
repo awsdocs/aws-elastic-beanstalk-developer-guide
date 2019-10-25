@@ -15,13 +15,12 @@ Elastic Beanstalk might fail to terminate your environment\. One common reason f
 
 1. From the region list, select the region that includes the environment that you want to terminate\.
 
-1. From the Elastic Beanstalk console applications page, choose the name of the environment that you want to terminate\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-app-page-env.png)
+1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. Choose **Actions**, and then select **Terminate Environment**\.  
 ![\[Actions menu on the Dashboard page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-dashboard-action.png)
 
-1. Confirm that you are terminating the correct environment, and then choose **Terminate**\.
+1. Use the on\-screen dialog box to confirm environment termination\.
 **Note**  
 When you terminate your environment, the CNAME associated with the terminated environment becomes available for anyone to use\. 
 

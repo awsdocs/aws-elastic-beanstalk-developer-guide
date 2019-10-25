@@ -248,9 +248,7 @@ Next, pass the connection information to your environment by using environment p
    + **RDS\_USERNAME** – The **Master Username** that you enter when you add the database to your environment\.
    + **RDS\_PASSWORD** – The **Master Password** that you enter when you add the database to your environment\.
    + **RDS\_HOSTNAME** – The **Endpoint** of the DB instance shown in the Amazon RDS console\. 
-   + **RDS\_PORT** – The **Port** shown in the Amazon RDS console\.
-
-   Choose the plus symbol to add more properties\.  
+   + **RDS\_PORT** – The **Port** shown in the Amazon RDS console\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
 
 1. Choose **Apply**

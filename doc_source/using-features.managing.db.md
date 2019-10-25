@@ -36,8 +36,8 @@ You can configure the following options:
 + **Engine version** – Choose a specific version of the database engine\.
 + **Instance class** – Choose the DB instance class\. For information about the DB instance classes, see [https://aws\.amazon\.com/rds/](http://aws.amazon.com/rds/)\.
 + **Storage** – Choose the amount of storage to provision for your database\. You can increase allocated storage later, but you cannot decrease it\. For information about storage allocation, see [Features](https://aws.amazon.com/rds/#features)\.
-+ **Username** – Type a user name of your choice using alphanumeric characters\.
-+ **Password** – Type a password of your choice containing 8–16 printable ASCII characters \(excluding `/`, `\`, and `@`\)\.
++ **Username** – Enter a user name of your choice using alphanumeric characters\.
++ **Password** – Enter a password of your choice containing 8–16 printable ASCII characters \(excluding `/`, `\`, and `@`\)\.
 + **Retention** – Choose **Create snapshot** to create a snapshot of the database when you terminate your environment\.
 + **Availability** – Choose **High \(Multi\-AZ\)** to run a warm backup in a second Availability Zone for high availability\.
 

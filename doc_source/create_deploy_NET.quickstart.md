@@ -43,8 +43,7 @@ Use the AWS Toolkit for Visual Studio to publish your application to Elastic Bea
 
 **To publish your application to Elastic Beanstalk**
 
-1. Ensure that your environment launched successfully by checking the **Health** status in the Elastic Beanstalk console\. It should be **Green**\.  
-![\[Elastic Beanstalk .NET tutorial environment health Green\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-environment-health-green.png)
+1. Ensure that your environment launched successfully by checking the **Health** status in the Elastic Beanstalk console\. It should be **Green**\.
 
 1. In Visual Studio, open **BeanstalkDotNetSample\.sln**\.
 **Note**  
@@ -72,8 +71,7 @@ If you haven't done so already, you can get the sample [here](samples/dotnet-asp
    When the application has successfully been deployed, the **Output** box displays **completed successfully**\.  
 ![\[Elastic Beanstalk .NET tutorial output completed successfully\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-visual-studio-output-completed-successfully.png)
 
-1. Return to the Elastic Beanstalk console and choose the name of the application, which appears next to the environment name\.  
-![\[Elastic Beanstalk .NET tutorial launch sample app from console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-launch-sample-app-from-console.png)
+1. Return to the Elastic Beanstalk console and choose the name of the application, which appears next to the environment name\.
 
    Your ASP\.NET application opens in a new tab\.  
 ![\[Elastic Beanstalk .NET tutorial see your ASP.NET application running in the Web browser\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-my-asp-net-application.png)

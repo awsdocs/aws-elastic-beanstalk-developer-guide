@@ -138,7 +138,7 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 1. Choose **Actions**, and then choose **Terminate Environment**\.
 
-1. In the **Confirm Termination** dialog box, enter the environment name, and then choose **Terminate**\.
+1. Use the on\-screen dialog box to confirm environment termination\.
 
 With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 
