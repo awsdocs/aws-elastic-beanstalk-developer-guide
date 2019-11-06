@@ -71,7 +71,7 @@ You can use a [configuration file](ebextensions.md) to set configuration options
 
 The Node\.js platform defines options in the `aws:elasticbeanstalk:container:nodejs:staticfiles` and `aws:elasticbeanstalk:container:nodejs` namespaces\.
 
-The following configuration file tells Elastic Beanstalk to use `npm start` to run the application, sets the proxy type to Apache, enables compression, and configures the proxy to serve static images from the `myimages` directory at the `/images` path\.
+The following configuration file tells Elastic Beanstalk to use `npm start` to run the application, sets the proxy type to Apache, enables compression, and configures the proxy to serve static images from the `staticimages` directory at the `/images` path\.
 
 **Example \.ebextensions/node\-settings\.config**  
 
