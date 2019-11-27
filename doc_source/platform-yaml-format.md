@@ -46,7 +46,9 @@ Required\. The JSON file containing the settings for *provisioner\-type*\.
 *provisioner\-flavor*  
 Optional\. The base operating system used for the AMI\. One of the following:     
 amazon \(default\)  
-Amazon Linux\. If not specified, the latest version of Amazon Linux when the platform is created\.  
+Amazon Linux\. If not specified, the latest version of Amazon Linux when the platform is created\.      
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platform-yaml-format.html)
+Amazon Linux 2 isn't a supported operating system flavor\.  
 ubuntu1604  
 Ubuntu 16\.04 LTS  
 rhel7  

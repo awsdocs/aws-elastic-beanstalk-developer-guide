@@ -17,8 +17,8 @@ This topic focuses on the resource configuration options available in the Elasti
 
 **Topics**
 + [Environment Configuration Using the Elastic Beanstalk Console](environments-cfg-console.md)
-+ [Your AWS Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.managing.ec2.md)
-+ [Auto Scaling Group for Your AWS Elastic Beanstalk Environment](using-features.managing.as.md)
++ [Your Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.managing.ec2.md)
++ [Auto Scaling Group for Your Elastic Beanstalk Environment](using-features.managing.as.md)
 + [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)
 + [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)
 + [Your AWS Elastic Beanstalk Environment Security](using-features.managing.security.md)

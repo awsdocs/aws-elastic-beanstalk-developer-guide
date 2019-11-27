@@ -27,3 +27,10 @@ In the preceding example, the `web` application listens on port 5000, `cache` li
 Standard output and error streams from processes started with a `Procfile` are captured in log files named after the process and stored in `/var/log`\. For example, the `web` process in the preceding example generates logs named `web-1.log` and `web-1.error.log` for `stdout` and `stderr`, respectively\.
 
 Elastic Beanstalk assumes that all entries in the Procfile should run at all times and automatically restarts any application defined in the Procfile that terminates\. To run commands that will terminate and should not be restarted, use a [`Buildfile`](java-se-buildfile.md)\.
+
+
+|  | 
+| --- |
+| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
+
+All Amazon Linux 2 platforms support a uniform Procfile feature\. For the new Corretto platform versions running Amazon Linux 2, expand the *Procfile* section in [Extending Elastic Beanstalk Linux Platforms](platforms-linux-extend.md)\.

@@ -177,6 +177,7 @@ To customize permissions, you can add policies to the role attached to the defau
 + [Updating an Out\-of\-Date Default Instance Profile](#iam-instanceprofile-update)
 + [Adding Permissions to the Default Instance Profile](#iam-instanceprofile-addperms)
 + [Creating an Instance Profile](#iam-instanceprofile-create)
++ [Instance Profiles with Amazon Linux 2 Platforms](#iam-instanceprofile-al2)
 
 ## Verifying the Permissions Assigned to the Default Instance Profile<a name="iam-instanceprofile-verify"></a>
 
@@ -254,3 +255,12 @@ An instance profile is a wrapper around a standard IAM role that allows an EC2 i
 1. Enter a name for the role\.
 
 1. Choose **Create role**\.
+
+## Instance Profiles with Amazon Linux 2 Platforms<a name="iam-instanceprofile-al2"></a>
+
+
+|  | 
+| --- |
+| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
+
+Amazon Linux 2 platforms require an instance profile for proper operation\. For example, all Amazon Linux 2 platform versions enable enhanced health by default during environment creation\. Instances need the right permissions to collect and report enhanced health information\.

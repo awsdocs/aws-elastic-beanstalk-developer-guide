@@ -4,7 +4,12 @@ Elastic Beanstalk regularly releases new platform versions to update all Linux\-
 
 You can use the Elastic Beanstalk console or the EB CLI to update your environment's platform version\. Depending on the platform version you'd like to update to, Elastic Beanstalk recommends one of two methods for performing platform updates\.
 + [Method 1 – Update your Environment's Platform Version](#using-features.platform.upgrade.config)\. We recommend this method when you're updating to the latest platform version, without a change in runtime, web server, or application server versions, and without a change in the major platform version\. This is the most common and routine platform update\.
-+ [Method 2 – Perform a Blue/Green Deployment](#using-features.platform.upgrade.bluegreen)\. We recommend this method when you're updating to a different runtime, web server, or application server versions, or to a different major platform version\. This is a good approach when you want to take advantage of new runtime capabilities or the latest Elastic Beanstalk functionality\.
++ [Method 2 – Perform a Blue/Green Deployment](#using-features.platform.upgrade.bluegreen)\. We recommend this method when you're updating to a different runtime, web server, application server, or operating system versions, or to a different major platform version\. This is a good approach when you want to take advantage of new runtime capabilities or the latest Elastic Beanstalk functionality\.
+
+  [Migrating from a legacy platform version](using-features.migration.md) requires a blue/green deployment, because these platform versions are incompatible with currently supported versions\.    
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.platform.upgrade.html)
+
+  [Migrating a Linux application to Amazon Linux 2](using-features.migration-al.md) requires a blue/green deployment, because Amazon Linux 2 platform versions are incompatible with previous Amazon Linux AMI platform versions\.
 
 For more help with choosing the best platform update method, expand the section for your environment's platform\.
 

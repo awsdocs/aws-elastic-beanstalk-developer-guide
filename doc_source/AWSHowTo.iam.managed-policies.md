@@ -166,6 +166,16 @@ You can create your own IAM policy to allow or deny specific Elastic Beanstalk A
 While you can restrict how a user interacts with Elastic Beanstalk APIs, there is not currently an effective way to prevent users who have permission to create the necessary underlying resources from creating other resources in Amazon EC2 and other services\.  
 Think of these policies as an effective way to distribute Elastic Beanstalk responsibilities, not as a way to secure all underlying resources\.
 
+In November 2019, Elastic Beanstalk released support for [Amazon EC2 launch templates](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2019-11-25-launchtemplates.html)\. This is a new resource type that your environment's Auto Scaling Group can use to launch Amazon EC2 instances, and it requires new permissions\. Most customers shouldn't be affected, because environments can still use the legacy resource, launch configurations, if your user policy lacks the required permissions\. However, if you're trying to use a new feature that requires Amazon EC2 launch templates, and you have a custom policy, your environment creation or update might fail\. In this case, ensure that your custom policy has the following permissions:
+
+**Required permissions for Amazon EC2 launch templates**
++ `EC2:CreateLauchTemplate`
++ `EC2:CreateLauchTemplateVersions`
++ `EC2:DeleteLaunchTemplate`
++ `EC2:DeleteLaunchTemplateVersions`
++ `EC2:DescribeLaunchTemplate`
++ `EC2:DescribeLaunchTemplateVersions`
+
 An IAM policy contains policy statements that describe the permissions that you want to grant\. When you create a policy statement for Elastic Beanstalk, you need to understand how to use the following four parts of a policy statement:
 + **Effect** specifies whether to allow or deny the actions in the statement\.
 + **Action** specifies the [API operations](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_Operations.html) that you want to control\. For example, use `elasticbeanstalk:CreateEnvironment` to specify the `CreateEnvironment` operation\. Certain operations, such as creating an environment, require additional permissions to perform those actions\. For more information, see [Resources and Conditions for Elastic Beanstalk Actions](AWSHowTo.iam.policies.actions.md)\. 

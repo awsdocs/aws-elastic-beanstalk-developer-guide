@@ -2,6 +2,8 @@
 
 Because AWS Elastic Beanstalk performs an in\-place update when you update your application versions, your application can become unavailable to users for a short period of time\. You can avoid this downtime by performing a blue/green deployment, where you deploy the new version to a separate environment, and then swap CNAMEs of the two environments to redirect traffic to the new version instantly\.
 
+A blue/green deployment is also required when you want to update an environment to an incompatible platform version\. For more information, see [Updating Your Elastic Beanstalk Environment's Platform Version](using-features.platform.upgrade.md)\.
+
 Blue/green deployments require that your environment runs independently of your production database, if your application uses one\. If your environment has an Amazon RDS DB instance attached to it, the data will not transfer over to your second environment, and will be lost if you terminate the original environment\.
 
 For details on configuring your application to connect to an external \(not managed by Elastic Beanstalk\) Amazon RDS instance, see [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)\.

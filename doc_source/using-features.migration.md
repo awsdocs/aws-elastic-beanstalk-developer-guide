@@ -1,8 +1,8 @@
-# Migrating Your Application from a Legacy Container Type<a name="using-features.migration"></a>
+# Migrating Your Application from a Legacy Platform Version<a name="using-features.migration"></a>
 
-If you have deployed an Elastic Beanstalk application that uses a legacy container type, you should migrate your application to a new environment using a non\-legacy container type so that you can get access to new features\. If you are unsure whether you are running your application using a legacy container type, you can check in the Elastic Beanstalk console\. For instructions, see [To check if you are using a legacy container type](#using-features.migration-proc)\.
+If you have deployed an Elastic Beanstalk application that uses a legacy platform version, you should migrate your application to a new environment using a non\-legacy platform version so that you can get access to new features\. If you are unsure whether you are running your application using a legacy platform version, you can check in the Elastic Beanstalk console\. For instructions, see [To check if you are using a legacy platform version](#using-features.migration-proc)\.
 
-## What new features are legacy containers missing?<a name="using-features.migration.missing"></a>
+## What new features are legacy platform versions missing?<a name="using-features.migration.missing"></a>
 
 Legacy platforms do not support the following features:
 + Configuration files, as described in the [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md) topic
@@ -15,20 +15,20 @@ Legacy platforms do not support the following features:
 + Tags, as described in the [Tagging Resources in Your Elastic Beanstalk Environments](using-features.tagging.md) topic
 + Rolling Updates, as described in the [Elastic Beanstalk Rolling Environment Configuration Updates](using-features.rollingupdates.md) topic
 
-## Why are some container types marked legacy?<a name="using-features.migration.why"></a>
+## Why are some platform version marked legacy?<a name="using-features.migration.why"></a>
 
-Some older platform versions do not support the latest Elastic Beanstalk features\. These versions are marked **\(legacy\)** on the environment configuration page in the AWS Management Console\. <a name="using-features.migration-proc"></a>
+Some older platform versions do not support the latest Elastic Beanstalk features\. These versions are marked **\(legacy\)** on the environment overview page in the Elastic Beanstalk console\. <a name="using-features.migration-proc"></a>
 
-**To check if you are using a legacy container type**
+**To check if you are using a legacy platform version**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
-1. From the Elastic Beanstalk console applications page, click the environment that you want to verify\.  
+1. From the **All applications** page, choose the environment that you want to verify\.  
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-app-page-env.png)
 
-1. In the **Overview** section of the environment dashboard, view the **Configuration** name\.
+1. In the **Overview** section of the environment dashboard, view the **Platform** name\.
 
-   Your application is using a legacy container type if you see **\(legacy\)** next to the configuration\.
+   Your application is using a legacy platform version if you see **\(legacy\)** next to the platform name\.
 
 **To migrate your application**
 

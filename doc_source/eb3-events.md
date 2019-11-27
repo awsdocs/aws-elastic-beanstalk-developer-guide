@@ -35,7 +35,6 @@ $ eb events
 2014-10-29 21:55:40     INFO    Using elasticbeanstalk-us-west-2-111122223333 as Amazon S3 storage bucket for environment data.
 2014-10-29 21:55:57     INFO    Created load balancer named: awseb-e-r-AWSEBLoa-NSKUOK5X6Z9J
 2014-10-29 21:56:16     INFO    Created security group named: awseb-e-rxgrhjr9bx-stack-AWSEBSecurityGroup-1UUHU5LZ20ZY7
-2014-10-29 21:56:20     INFO    Created Auto Scaling launch configuration named:awseb-e-rxgrhjr9bx-stack-AWSEBAutoScalingLaunchConfiguration-AG68JQHE9NWO
 2014-10-29 21:57:18     INFO    Waiting for EC2 instances to launch. This may take a few minutes.
 2014-10-29 21:57:18     INFO    Created Auto Scaling group named: awseb-e-rxgrhjr9bx-stack-AWSEBAutoScalingGroup-1TE320ZCJ9RPD
 2014-10-29 21:57:22     INFO    Created Auto Scaling group policy named: arn:aws:autoscaling:us-east-2:11122223333:scalingPolicy:2cced9e6-859b-421a-be63-8ab34771155a:autoScalingGroupName/awseb-e-rxgrhjr9bx-stack-AWSEBAutoScalingGroup-1TE320ZCJ9RPD:policyName/awseb-e-rxgrhjr9bx-stack-AWSEBAutoScalingScaleUpPolicy-1I2ZSNVU4APRY

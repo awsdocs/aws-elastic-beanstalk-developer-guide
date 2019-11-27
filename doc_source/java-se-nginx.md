@@ -90,3 +90,10 @@ http {
   }
 }
 ```
+
+
+|  | 
+| --- |
+| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
+
+All Amazon Linux 2 platforms support a uniform proxy configuration feature\. For the new Amazon Corretto platform versions running Amazon Linux 2, expand the *Reverse Proxy Configuration* section in [Extending Elastic Beanstalk Linux Platforms](platforms-linux-extend.md)\.

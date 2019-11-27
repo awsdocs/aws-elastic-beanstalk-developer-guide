@@ -15,11 +15,18 @@ You can view health status in real time by using the [environment dashboard](hea
 Enhanced health reporting requires a version 2 or newer [ platform version](concepts.platforms.md)\. To monitor resources and publish metrics, your environment must have both an [instance profile and service](#health-enhanced) role\. The Multicontainer Docker platform doesn't include a web server by default, but can be used with enhanced health reporting if you configure your web server to [provide logs in the proper format](health-enhanced-serverlogs.md)\.
 
 **Windows platform notes**  
-This feature isn't available on [Windows Server platform configurations](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) that use IIS versions earlier than IIS 8\.5\.
+This feature isn't available on [Windows Server platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) earlier than version 2 \(v2\)\.
 When you enable enhanced health reporting on a Windows Server environment, don't change [IIS logging configuration](https://docs.microsoft.com/en-us/iis/manage/provisioning-and-managing-iis/configure-logging-in-iis)\. For enhanced health monitoring to work correctly, IIS logging must be configured with the **W3C** format and the **ETW event only** or **Both log file and ETW event** log event destinations\.  
 In addition, don't disable or stop the [Elastic Beanstalk health agent](#health-enhanced-agent) Windows service on any of your environment's instances\. To collect and report enhanced health information on an instance, this service should be enabled and running\.
 
-The first time you create an environment with a v2 platform version in the AWS Management Console, Elastic Beanstalk prompts you to create the required roles and enables enhanced health reporting by default\. Continue reading for details on how enhanced health reporting works, or see [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) to get started using it right away\.
+Enhanced health requires the environment to have an instance profile\. The instance profile should have roles that provide permissions for your environment instances to collect and report enhanced health information\. The first time you create an environment with a v2 platform version in the Elastic Beanstalk console, Elastic Beanstalk prompts you to create the required roles and enables enhanced health reporting by default\. Continue reading for details on how enhanced health reporting works, or see [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) to get started using it right away\.
+
+
+|  | 
+| --- |
+| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
+
+Amazon Linux 2 platforms require instance profiles, so they can support enhanced health unconditionally\. When you create an environment using an Amazon Linux 2 platform, Elastic Beanstalk always enables enhanced health\. This is true regardless of how you create the environment—using the Elastic Beanstalk console, the EB CLI, the AWS CLI, or the API\.
 
 **Topics**
 + [The Elastic Beanstalk Health Agent](#health-enhanced-agent)

@@ -86,7 +86,7 @@ For single\-instance environments, load balancing, autoscaling, and the health c
 
       If you do not have an instance profile, select **Create a default instance profile**\. For information about using instance profiles with Elastic Beanstalk, see [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md)\.
 
-   1. If you have a custom VPC that you would like to use with your environment, click **Launch into VPC**\. You can configure the VPC information on the next page\. For more information about Amazon VPC, go to [Amazon Virtual Private Cloud \(Amazon VPC\)](https://aws.amazon.com/vpc/)\. For a list of supported nonlegacy container types, see [Why are some container types marked legacy?](using-features.migration.md#using-features.migration.why)\.   
+   1. If you have a custom VPC that you would like to use with your environment, click **Launch into VPC**\. You can configure the VPC information on the next page\. For more information about Amazon VPC, go to [Amazon Virtual Private Cloud \(Amazon VPC\)](https://aws.amazon.com/vpc/)\. For a list of supported nonlegacy container types, see [Why are some platform version marked legacy?](using-features.migration.md#using-features.migration.why)\.   
 ![\[Publish to Beanstalk Wizard 4\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-publish-beanstalk3b_iam.png)
 
    1.  Click **Next**\. 

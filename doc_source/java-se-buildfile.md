@@ -19,3 +19,10 @@ The Java SE platform includes the following build tools, which you can invoke fr
 + `ant` – Apache Ant
 + `mvn` – Apache Maven
 + `gradle` – Gradle
+
+
+|  | 
+| --- |
+| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
+
+All Amazon Linux 2 platforms support a uniform Buildfile feature\. For the new Corretto platform versions running Amazon Linux 2, expand the *Buildfile* section in [Extending Elastic Beanstalk Linux Platforms](platforms-linux-extend.md)\.

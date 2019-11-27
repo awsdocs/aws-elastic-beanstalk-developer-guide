@@ -6,7 +6,11 @@ Web server environments have the following resources\.
 
 **Web server environments**
 + `AWSEBAutoScalingGroup` \([AWS::AutoScaling::AutoScalingGroup](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html)\) – The Auto Scaling group attached to your environment\.
-+ `AWSEBAutoScalingLaunchConfiguration` \([AWS::AutoScaling::LaunchConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html)\) – The launch configuration attached to your environment's Auto Scaling group\.
++ One of the following two resources\.
+  + `AWSEBAutoScalingLaunchConfiguration` \([AWS::AutoScaling::LaunchConfiguration](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html)\) – The launch configuration attached to your environment's Auto Scaling Group\.
+  + `AWSEBEC2LaunchTemplate` \([AWS::EC2::LaunchTemplate](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html)\) – The Amazon EC2 launch template used by your environment's Auto Scaling Group\.
+**Note**  
+If your environment uses functionality that requires Amazon EC2 launch templates, and your user policy lacks the required permissions, creating or updating the environment might fail\. Use the **AWSElasticBeanstalkFullAccess** [managed user policy](AWSHowTo.iam.managed-policies.md), or add the required permissions to your [custom policy](AWSHowTo.iam.managed-policies.md#AWSHowTo.iam.policies)\.
 + `AWSEBEnvironmentName` \([AWS::ElasticBeanstalk::Environment](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html)\) – Your environment\.
 + `AWSEBSecurityGroup` \([AWS::EC2::SecurityGroup](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html)\) – The security group attached to your Auto Scaling group\.
 + `AWSEBRDSDatabase` \([AWS::RDS::DBInstance](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html)\) – The Amazon RDS DB instance attached to your environment \(if applicable\)\.

@@ -63,13 +63,13 @@ Now choose **Create environment** to create your new environment\. Choose **Conf
 
 ## Configuration Presets<a name="environments-create-wizard-presets"></a>
 
-Elastic Beanstalk provides configuration presets for low\-cost development and high\-availability use cases\. Each preset includes recommended values for several [configuration options](command-options.md)\.
+Elastic Beanstalk provides several configuration presets for different use cases\. Each preset includes recommended values for several [configuration options](command-options.md)\.
 
 ![\[Configuration presets in the configuration page of the Create New Environment wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-presets.png)
 
-The **High availability** preset includes a load balancer; the **Low cost** preset does not\. Choose this option if you want a load\-balanced environment that can run multiple instances for high availability and scale in response to load\.
+The **High availability** presets include a load balancer, and are recommended for production environments\. Choose them if you want an environment that can run multiple instances for high availability and scale in response to load\. The **Single instance** presets are primarily recommended for development\. Two of the presets enable Spot Fleet requests\. For details about Elastic Beanstalk capacity configuration, see [Auto Scaling Group](using-features.managing.as.md)\.
 
-The third preset, **Custom configuration**, removes all recommended values except role settings and uses the API defaults\. Choose this option if you are deploying a source bundle with [configuration files](ebextensions.md) that set configuration options\. **Custom configuration** is also selected automatically if you modify either the **Low cost** or **High availability** configuration presets\.
+The last preset, **Custom configuration**, removes all recommended values except role settings and uses the API defaults\. Choose this option if you are deploying a source bundle with [configuration files](ebextensions.md) that set configuration options\. **Custom configuration** is also selected automatically if you modify either the **Low cost** or **High availability** configuration presets\.
 
 ## Customize Your Configuration<a name="environments-create-wizard-customize"></a>
 
@@ -162,7 +162,7 @@ For load\-balanced environments, choose a **Deployment policy** to configure how
 + **Deployment policy** – **Rolling** deployments take one batch of instances out of service at a time to deploy a new version\. **Rolling with additional batch** launches a new batch first to ensure that capacity is not affected during the deployment\. **Immutable** performs an [immutable update](environmentmgmt-updates-immutable.md) when you deploy\. 
 + **Batch size** – The number or percentage of instances to update in each batch\.
 
-[Rolling updates](using-features.rollingupdates.md) occur when you change instance launch configuration settings or [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) settings, which require terminating and replacing the instances in your environment\. Other configuration changes are made in place without affecting capacity\. For more information, see [Configuration Changes](environments-updating.md)\.
+[Rolling updates](using-features.rollingupdates.md) or [immutable updates](environmentmgmt-updates-immutable.md) occur when you change instance launch configuration settings or [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) settings, which require terminating and replacing the instances in your environment\. Other configuration changes are made in place without affecting capacity\. For more information, see [Configuration Changes](environments-updating.md)\.
 
 ![\[Configuration updates section in the Modify rolling updates and deployments configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-rolling-updates.png)
 + **Rolling update type** – Time based, where AWS CloudFormation waits for the specified amount of time after new instances are registered before moving on to the next batch, or health based, where AWS CloudFormation waits for instances to pass health checks\. **Immutable** performs an [immutable update](environmentmgmt-updates-immutable.md) when a configuration change would normally trigger a rolling update\.

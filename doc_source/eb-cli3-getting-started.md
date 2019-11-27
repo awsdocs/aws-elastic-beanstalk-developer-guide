@@ -110,7 +110,6 @@ Use eb events to see a list of events output by Elastic Beanstalk\.
 2015-06-29 23:21:10    INFO    Using elasticbeanstalk-us-east-2-EXAMPLE as Amazon S3 storage bucket for environment data.
 2015-06-29 23:21:23    INFO    Created load balancer named: awseb-e-g-AWSEBLoa-EXAMPLE
 2015-06-29 23:21:42    INFO    Created security group named: awseb-e-gbzqc3jcra-stack-AWSEBSecurityGroup-EXAMPLE
-2015-06-29 23:21:45    INFO    Created Auto Scaling launch configuration named: awseb-e-gbzqc3jcra-stack-AWSEBAutoScalingLaunchConfiguration-EXAMPLE
 ...
 ```
 

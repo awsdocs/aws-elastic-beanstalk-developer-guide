@@ -50,7 +50,6 @@ lingScaleUpPolicy-1876U27JEC34J
 lingScaleDownPolicy-SL4LHODMOMU
 2018-07-11 21:06:48    INFO: Waiting for EC2 instances to terminate. This may take a few minutes.
 2018-07-11 21:08:55    INFO: Deleted Auto Scaling group named: awseb-e-2cpfjbra9a-stack-AWSEBAutoScalingGroup-7AXY7U13ZQ6E
-2018-07-11 21:08:57    INFO: Deleted Auto Scaling launch configuration named: awseb-e-2cpfjbra9a-stack-AWSEBAutoScalingLaunchConfiguration-19UFHYGYWORZ
 2018-07-11 21:09:10    INFO: Deleted security group named: awseb-e-2cpfjbra9a-stack-AWSEBSecurityGroup-XT4YYGFL7I99
 2018-07-11 21:09:40    INFO: Deleted load balancer named: awseb-e-2-AWSEBLoa-AK6RRYFQVV3S
 2018-07-11 21:09:42    INFO: Deleting SNS topic for environment tmp-dev.
