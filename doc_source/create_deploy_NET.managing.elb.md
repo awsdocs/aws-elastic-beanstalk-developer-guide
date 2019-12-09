@@ -54,7 +54,7 @@ To turn off the HTTPS port, select **OFF** for **HTTPS Listener Port**\.
 
 ## Health Checks<a name="create_deploy_NET.managing.elb.healthchecks"></a>
 
-The health check definition includes a URL to be queried for instance health\. By default, Elastic Beanstalk uses TCP:80 for nonlegacy containers and HTTP:80 for legacy containers\. You can override the default URL to match an existing resource in your application \(e\.g\., `/myapp/default.aspx`\) by entering it in the **Application Health Check URL** box\. If you override the default URL, then Elastic Beanstalk uses HTTP to query the resource\. To check if you are using a legacy container type, see [Why are some platform version marked legacy?](using-features.migration.md#using-features.migration.why)\. 
+The health check definition includes a URL to be queried for instance health\. By default, Elastic Beanstalk uses TCP:80 for nonlegacy containers and HTTP:80 for legacy containers\. You can override the default URL to match an existing resource in your application \(e\.g\., `/myapp/default.aspx`\) by entering it in the **Application Health Check URL** box\. If you override the default URL, then Elastic Beanstalk uses HTTP to query the resource\. To check if you are using a legacy container type, see [Why are some platform versions marked legacy?](using-features.migration.md#using-features.migration.why)\. 
 
  You can control the settings for the health check using the **EC2 Instance Health Check** section of the **Load Balancing** panel\.
 

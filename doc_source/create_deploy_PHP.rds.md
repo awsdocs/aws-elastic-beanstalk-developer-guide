@@ -84,12 +84,12 @@ $pdo = new PDO($dsn, $username, $password);
 
 For other drivers, replace `mysql` with the name of your driver – `pgsql`, `oci`, or `sqlsrv`\.
 
-For MySQLi, pass the hostname, user name, password, database name, and port to the `mysql_connect` function\.
+For MySQLi, pass the hostname, user name, password, database name, and port to the `mysqli` constructor\.
 
 **Example Connect to an RDS database with mysqli\_connect\(\)**  
 
 ```
-$link = mysqli_connect($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
+$link = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
 ```
 
 ## Connecting to a Database with Symfony<a name="php-rds-symfony"></a>

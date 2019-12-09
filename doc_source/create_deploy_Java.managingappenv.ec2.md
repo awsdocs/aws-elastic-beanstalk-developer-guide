@@ -19,7 +19,7 @@ You can control access to your Elastic Beanstalk application using an *Amazon EC
 You can set up your Amazon EC2 security groups using the AWS Management Console or by using the AWS Toolkit for Eclipse\. You can specify which Amazon EC2 security groups control access to your Elastic Beanstalk application by entering the names of one or more Amazon EC2 security group names \(delimited by commas\) into the **EC2 Security Groups** box\. 
 
 **Note**  
-If you are running your application using a legacy container type, make sure port 80 \(HTTP\) is accessible from 0\.0\.0\.0/0 as the source CIDR range if you want to enable health checks for your application\. For more information about health checks, see [Health Checks](create_deploy_Java.managingappenv.elb.md#create_deploy_Java.managingappenv.elb.healthchecks)\. To check if you are using a legacy container type, see [Why are some platform version marked legacy?](using-features.migration.md#using-features.migration.why)\.
+If you are running your application using a legacy container type, make sure port 80 \(HTTP\) is accessible from 0\.0\.0\.0/0 as the source CIDR range if you want to enable health checks for your application\. For more information about health checks, see [Health Checks](create_deploy_Java.managingappenv.elb.md#create_deploy_Java.managingappenv.elb.healthchecks)\. To check if you are using a legacy container type, see [Why are some platform versions marked legacy?](using-features.migration.md#using-features.migration.why)\.
 
 **To create a security group using the AWS Toolkit for Eclipse**
 

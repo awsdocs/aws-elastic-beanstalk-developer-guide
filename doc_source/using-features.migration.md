@@ -15,7 +15,7 @@ Legacy platforms do not support the following features:
 + Tags, as described in the [Tagging Resources in Your Elastic Beanstalk Environments](using-features.tagging.md) topic
 + Rolling Updates, as described in the [Elastic Beanstalk Rolling Environment Configuration Updates](using-features.rollingupdates.md) topic
 
-## Why are some platform version marked legacy?<a name="using-features.migration.why"></a>
+## Why are some platform versions marked legacy?<a name="using-features.migration.why"></a>
 
 Some older platform versions do not support the latest Elastic Beanstalk features\. These versions are marked **\(legacy\)** on the environment overview page in the Elastic Beanstalk console\. <a name="using-features.migration-proc"></a>
 

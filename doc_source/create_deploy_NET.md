@@ -22,4 +22,5 @@ The topics in this chapter assume some knowledge of Elastic Beanstalk environmen
 + [Deploying an ASP\.NET Core Application with AWS Elastic Beanstalk](dotnet-core-tutorial.md)
 + [Adding an Amazon RDS DB Instance to Your \.NET Application Environment](create_deploy_NET.rds.md)
 + [The AWS Toolkit for Visual Studio](dotnet-toolkit.md)
++ [Migrating Your On\-Premises \.NET Application to Elastic Beanstalk](dotnet-onpremmigration.md)
 + [Resources](create_deploy_NET.resources.md)

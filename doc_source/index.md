@@ -107,6 +107,7 @@ Amazon's trademarks and trade dress may not be used in
          + [Listing and Connecting to Server Instances](create_deploy_NET.ec2connect.md)
          + [Monitoring Application Health](create_deploy_NET.healthstatus.md)
          + [Deploying Elastic Beanstalk Applications in .NET Using the Deployment Tool](deploy_NET_standalone_tool.md)
+      + [Migrating Your On-Premises .NET Application to Elastic Beanstalk](dotnet-onpremmigration.md)
       + [Resources](create_deploy_NET.resources.md)
    + [Deploying Node.js Applications to AWS Elastic Beanstalk](create_deploy_nodejs.md)
       + [Getting Started with Node.js on Elastic Beanstalk](nodejs-getstarted.md)
