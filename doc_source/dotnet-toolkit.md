@@ -35,7 +35,7 @@ After testing your application, you are ready to deploy it to Elastic Beanstalk\
 
    1. For **AWS account to use for deployment**, select your account or select **Other** to enter new account information\. 
 
-   1. For **Region**, select the region where you want to deploy your application\. For information about this product's regions, go to [Regions and Endpoints](http://docs.aws.amazon.com/general/latest/gr/rande.html?r=1166) in the *Amazon Web Services General Reference*\. If you select a region that is not supported by Elastic Beanstalk, then the option to deploy to Elastic Beanstalk will become unavailable\.
+   1. For **Region**, select the region where you want to deploy your application\. For information about available AWS Regions, see [AWS Elastic Beanstalk Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html) in the *AWS General Reference*\. If you select a region that is not supported by Elastic Beanstalk, then the option to deploy to Elastic Beanstalk will become unavailable\.
 
    1.  Click **Deploy new application with template** and select **Elastic Beanstalk**\. Then click **Next**\.  
 ![\[Publish to AWS Wizard 1\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-create-newapp-template.png)

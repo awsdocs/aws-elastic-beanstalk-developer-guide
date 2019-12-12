@@ -9,7 +9,7 @@ A Launch Now URL uses standard URL syntax\. For more information, see [RFC 3986 
 ## URL Parameters<a name="launch-now-url.params"></a>
 
 The URL must contain the following parameters, which are case\-sensitive:
-+ **region** – Specify an AWS Region\. For a list of regions supported by Elastic Beanstalk, see [AWS Elastic Beanstalk](http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region) in the *Amazon Web Services General Reference*\.
++ **region** – Specify an AWS Region\. For a list of regions supported by Elastic Beanstalk, see [AWS Elastic Beanstalk Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html) in the *AWS General Reference*\.
 + **applicationName** – Specify the name of your application\. Elastic Beanstalk displays the application name in the AWS Management Console to distinguish it from other applications\. By default, the application name also forms the basis of the environment name and environment URL\.
 + **platform** – Specify the platform version to use for the environment\. Use one of the following methods, then URL\-encode your choice:
   + Specify a platform ARN without a version\. Elastic Beanstalk selects the latest platform version of the corresponding platform major version\. For example, to select the latest Python 3\.6 platform version, specify:

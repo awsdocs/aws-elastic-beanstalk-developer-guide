@@ -228,7 +228,7 @@ Check the status of the container agent with an HTTP get request to `http://loca
 }
 ```
 
-This structure shows the name of the Amazon ECS cluster, and the ARN \([Amazon Resource Name](http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\) of the cluster instance \(the Amazon EC2 instance that you are connected to\)\. 
+This structure shows the name of the Amazon ECS cluster, and the ARN \([Amazon Resource Name](https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html)\) of the cluster instance \(the Amazon EC2 instance that you are connected to\)\. 
 
 For more information, make an HTTP get request to information is available at `http://localhost:51678/v1/tasks`:
 

@@ -1,6 +1,6 @@
 # Configuring Application Version Lifecycle Settings<a name="applications-lifecycle"></a>
 
-Each time you upload a new version of your application with the Elastic Beanstalk console or the EB CLI, Elastic Beanstalk creates an [application version](applications-versions.md)\. If you don't delete versions that you no longer use, you will eventually reach the [application version limit](https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_elastic_beanstalk) and be unable to create new versions of that application\.
+Each time you upload a new version of your application with the Elastic Beanstalk console or the EB CLI, Elastic Beanstalk creates an [application version](applications-versions.md)\. If you don't delete versions that you no longer use, you will eventually reach the [application version quota](https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html#limits_elastic_beanstalk) and be unable to create new versions of that application\.
 
 You can avoid hitting the limit by applying an *application version lifecycle policy* to your applications\. A lifecycle policy tells Elastic Beanstalk to delete application versions that are old, or to delete application versions when the total number of versions for an application exceeds a specified number\.
 

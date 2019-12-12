@@ -86,4 +86,4 @@ Use the IAM console, the IAM CLI, or the IAM API to delete the AWSServiceRoleFor
 
 ## Supported Regions for Elastic Beanstalk Service\-Linked Roles<a name="slr-regions-maintenance"></a>
 
-Elastic Beanstalk supports using service\-linked roles in all of the regions where the service is available\. For more information, see [Elastic Beanstalk Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region)\.
+Elastic Beanstalk supports using service\-linked roles in all of the regions where the service is available\. For more information, see [AWS Elastic Beanstalk Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html)\.

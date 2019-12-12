@@ -258,7 +258,7 @@ The above policy shows how to grant limited access to Elastic Beanstalk operatio
 
 ### Enabling Access to Elastic Beanstalk Logs Stored in Amazon S3<a name="AWSHowTo.iam.policy.view-s3-logs"></a>
 
-The policy in the following example enables a user to view and pull Elastic Beanstalk logs that are stored in Amazon S3\.
+The policy in the following example enables a user to pull Elastic Beanstalk logs, stage them in Amazon S3, and retrieve them\.
 
 ```
 {
