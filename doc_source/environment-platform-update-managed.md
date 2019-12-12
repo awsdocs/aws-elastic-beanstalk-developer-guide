@@ -5,7 +5,7 @@ AWS Elastic Beanstalk regularly releases [platform updates](using-features.platf
 **Note**  
 This feature isn't available on [Windows Server platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) earlier than version 2 \(v2\)\.
 
-You can configure your environment to automatically apply [patch version updates](#environment-platform-update-managed-versioning), or both patch and minor version updates\. Managed platform updates don't support updates across platform branches \(updates to different major versions of platform components such as operating system, runtime, or Elastic Beanstalk components\), because these can introduce changes that are backward incompatible\.
+You can configure your environment to automatically apply [patch version updates](#environment-platform-update-managed-versioning), or both patch and minor version updates\. Managed platform updates don't support major version updates, which can introduce changes that are backward incompatible\.
 
 You can also configure Elastic Beanstalk to replace all instances in your environment during the maintenance window, even if a platform update isn't available\. Replacing all instances in your environment is helpful if your application encounters bugs or memory issues when running for a long period\.
 
