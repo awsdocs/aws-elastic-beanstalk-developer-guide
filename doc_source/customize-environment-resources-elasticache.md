@@ -229,7 +229,7 @@ Resources:
             Fn::GetOptionSetting:
               OptionName : "CachePort"
               DefaultValue: "6379"
-          SourceSecurityGroupId:
+          SourceSecurityGroupName:
             Ref: "AWSEBSecurityGroup"
   MyCacheSubnets:
     Type: "AWS::ElastiCache::SubnetGroup"
