@@ -32,7 +32,7 @@ This tutorial uses the \.NET Core SDK to generate a basic \.NET Core application
 
 1. Run the installer and follow the instructions\.
 
-This tutorial uses a command line ZIP utility to create a source bundle that you can deploy to Elastic Beanstalk\. To use the `zip` command in Windows, you can install `UnxUtils`, a lightweight collection of useful command line utilities like `zip` and `ls`\. Alternatively, you can [use Windows Explorer](applications-sourcebundle.md#using-features.deployment.source.gui) or any other ZIP utility to create source bundle archives\.
+This tutorial uses a command line ZIP utility to create a source bundle that you can deploy to Elastic Beanstalk\. To use the `zip` command in Windows, you can install `UnxUtils`, a lightweight collection of useful command line utilities like `zip` and `ls`\. Alternatively, you can [use Windows Explorer](applications-sourcebundle.md#using-features.deployment.source.gui) or any other ZIP utility to create source bundle archives\. Make sure the zip doesn't have any sub folders(inside site.zip) otherwise the deployment would fail by checking for web.config file
 
 **To install UnxUtils**
 
