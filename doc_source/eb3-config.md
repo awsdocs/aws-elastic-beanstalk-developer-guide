@@ -7,7 +7,7 @@ Changes the environment configuration settings\. This command saves the environm
 If the root directory contains a `platform.yaml` file specifying a custom platform, this command also changes the builder configuration settings, based on the values set in `platform.yaml`\.
 
 **Note**  
-eb config does not show environment properties\. To set environment properties that you can read from within your application, use [eb setenv](environment-configuration-methods-after.md#configuration-options-after-ebcli-ebsetenv)
+eb config does not show environment properties\. To set environment properties that you can read from within your application, use [eb setenv](environment-configuration-methods-after.md#configuration-options-after-ebcli-ebsetenv)\.
 
 ## Syntax<a name="eb3-configsyntax"></a>
 

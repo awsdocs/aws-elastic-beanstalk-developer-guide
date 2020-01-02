@@ -18,7 +18,7 @@ Do one of the following:
 
 ## Test Locally<a name="create_deploy_NET.sdlc.testlocal"></a>
 
-Visual Studio makes it easy for you to test your application locally\. To test or run ASP\.NET web applications, you need a web server\. Visual Studio offers several options, such as Internet Information Services \(IIS\), IIS Express, or the built\-in Visual Studio Development Server\. To learn about each of these options and to decide which one is best for you, go to [Web Servers in Visual Studio for ASP\.NET Web Projects ](http://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)\.
+Visual Studio makes it easy for you to test your application locally\. To test or run ASP\.NET web applications, you need a web server\. Visual Studio offers several options, such as Internet Information Services \(IIS\), IIS Express, or the built\-in Visual Studio Development Server\. To learn about each of these options and to decide which one is best for you, see [Web Servers in Visual Studio for ASP\.NET Web Projects](http://msdn.microsoft.com/en-us/library/58wxa9w5.aspx)\.
 
 ## Create an Elastic Beanstalk Environment<a name="create_deploy_NET.sdlc.deploy"></a>
 
@@ -44,9 +44,9 @@ After testing your application, you are ready to deploy it to Elastic Beanstalk\
 
    1. For **Name**, type the name of the application\.
 
-   1. For **Description**, type a description of the application\. This step is optional\. 
+   1. For **Description**, type a description of the application\. This step is optional\.
 
-   1. The version label of the application automatically appears in the **Deployment version label** 
+   1. The version label of the application automatically appears in the **Deployment version label**\.
 
    1. Select **Deploy application incrementally** to deploy only the changed files\. An incremental deployment is faster because you are updating only the files that changed instead of all the files\. If you choose this option, an application version will be set from the Git commit ID\. If you choose to not deploy your application incrementally, then you can update the version label in the **Deployment version label** box\.   
 ![\[Publish to Beanstalk Wizard 2\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-publish-beanstalk1.png)
@@ -86,26 +86,26 @@ For single\-instance environments, load balancing, autoscaling, and the health c
 
       If you do not have an instance profile, select **Create a default instance profile**\. For information about using instance profiles with Elastic Beanstalk, see [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md)\.
 
-   1. If you have a custom VPC that you would like to use with your environment, click **Launch into VPC**\. You can configure the VPC information on the next page\. For more information about Amazon VPC, go to [Amazon Virtual Private Cloud \(Amazon VPC\)](https://aws.amazon.com/vpc/)\. For a list of supported nonlegacy container types, see [Why are some platform versions marked legacy?](using-features.migration.md#using-features.migration.why)\.   
+   1. If you have a custom VPC that you would like to use with your environment, click **Launch into VPC**\. You can configure the VPC information on the next page\. For more information about Amazon VPC, go to [Amazon Virtual Private Cloud \(Amazon VPC\)](https://aws.amazon.com/vpc/)\. For a list of supported nonlegacy container types, see [Why are some platform versions marked legacy?](using-features.migration.md#using-features.migration.why)  
 ![\[Publish to Beanstalk Wizard 4\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-publish-beanstalk3b_iam.png)
 
    1.  Click **Next**\. 
 
 1. If you selected to launch your environment inside a VPC, the **VPC Options** page appears; otherwise, the **Additional Options** page appears\. Here you'll configure your VPC options\.  
-![\[VPC options for load-balanced, autoscaled environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-publish-beanstalk3b_vpc.png)  
+![\[VPC options for load balanced, autoscaled environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-publish-beanstalk3b_vpc.png)  
 ![\[VPC options for single-instance environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-publish-beanstalk3b_vpc-single.png)
 
    1. Select the VPC ID of the VPC in which you would like to launch your environment\. 
 
-   1. For a load\-balanced, autoscaled environment, select **private** for **ELB Scheme** if you do not want your elastic load balancer to be available to the Internet\.
+   1. For a load balanced, autoscaled environment, select **private** for **ELB Scheme** if you do not want your elastic load balancer to be available to the Internet\.
 
       For a single\-instance environment, this option is not applicable because the environment doesn't have a load balancer\. For more information, see [Environment Types](using-features-managing-env-types.md)\.
 
-   1. For a load\-balanced, autoscaled environment, select the subnets for the elastic load balancer and the EC2 instances\. If you created public and private subnets, make sure the elastic load balancer and the EC2 instances are associated with the correct subnet\. By default, Amazon VPC creates a default public subnet using 10\.0\.0\.0/24 and a private subnet using 10\.0\.1\.0/24\. You can view your existing subnets in the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+   1. For a load balanced, autoscaled environment, select the subnets for the elastic load balancer and the EC2 instances\. If you created public and private subnets, make sure the elastic load balancer and the EC2 instances are associated with the correct subnet\. By default, Amazon VPC creates a default public subnet using 10\.0\.0\.0/24 and a private subnet using 10\.0\.1\.0/24\. You can view your existing subnets in the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
       For a single\-instance environment, your VPC only needs a public subnet for the instance\. Selecting a subnet for the load balancer is not applicable because the environment doesn't have a load balancer\. For more information, see [Environment Types](using-features-managing-env-types.md)\.
 
-   1. For a load\-balanced, autoscaled environment, select the security group you created for your instances, if applicable\.
+   1. For a load balanced, autoscaled environment, select the security group you created for your instances, if applicable\.
 
       For a single\-instance environment, you don't need a NAT device\. Select the default security group\. Elastic Beanstalk assigns an Elastic IP address to the instance that lets the instance access the Internet\.
 

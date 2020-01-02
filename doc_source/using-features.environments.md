@@ -47,7 +47,7 @@ Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most o
 
 1. Choose **Create environment**\.
 
-While Elastic Beanstalk creates your environment, you are redirected to the [The AWS Elastic Beanstalk Environment Management Console](environments-console.md)\. Once the environment health turns green, click on the URL next to the environment name to view the running application\. This URL is generally accessible from the Internet unless you configure your environment to use a [custom VPC with an internal load balancer](environments-create-wizard.md#environments-create-wizard-network)\.
+While Elastic Beanstalk creates your environment, you are redirected to the [Elastic Beanstalk console](environments-console.md)\. When the environment health turns green, choose on the URL next to the environment name to view the running application\. This URL is generally accessible from the Internet unless you configure your environment to use a [custom VPC with an internal load balancer](environments-create-wizard.md#environments-create-wizard-network)\.
 
 **Topics**
 + [The Create New Environment Wizard](environments-create-wizard.md)
@@ -56,4 +56,4 @@ While Elastic Beanstalk creates your environment, you are redirected to the [The
 + [Creating Elastic Beanstalk Environments with the AWS CLI](environments-create-awscli.md)
 + [Creating Elastic Beanstalk Environments with the API](environments-create-api.md)
 + [Constructing a Launch Now URL](launch-now-url.md)
-+ [Creating and Updating Groups of AWS Elastic Beanstalk Environments](environment-mgmt-compose.md)
++ [Creating and Updating Groups of Elastic Beanstalk Environments](environment-mgmt-compose.md)

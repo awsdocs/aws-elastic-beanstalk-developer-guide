@@ -2,7 +2,7 @@
 
 Set up a Java development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with AWS Elastic Beanstalk](chapter-devenv.md)
+For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with AWS Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
 + [Installing the Java Development Kit](#java-development-environment-jdk)
@@ -30,7 +30,7 @@ Elastic Beanstalk platforms include few libraries by default\. Download librarie
 
 If you've installed Tomcat locally, you can copy the servlet API and JavaServer Pages \(JSP\) API libraries from the installation folder\. If you deploy to a Tomcat platform version, you don't need to include these files in your source bundle, but you do need to have them in your `classpath` to compile any classes that use them\.
 
-JUnit, Google Guava, and Apache Commons provide several useful libraries\. Visit their homepages to learn more:
+JUnit, Google Guava, and Apache Commons provide several useful libraries\. Visit their home pages to learn more:
 +  [Download JUnit](https://github.com/junit-team/junit/wiki/Download-and-Install) 
 +  [Download Google Guava](https://code.google.com/p/guava-libraries/) 
 +  [Download Apache Commons](http://commons.apache.org/downloads/) 
@@ -39,7 +39,7 @@ JUnit, Google Guava, and Apache Commons provide several useful libraries\. Visit
 
 If you need to manage AWS resources from within your application, install the AWS SDK for Java\. For example, with the AWS SDK for Java, you can use Amazon DynamoDB \(DynamoDB\) to share session states of Apache Tomcat applications across multiple web servers\. For more information, see [Manage Tomcat Session State with Amazon DynamoDB](http://docs.aws.amazon.com/AWSSdkDocsJava/latest/DeveloperGuide/java-dg-tomcat-session-manager.html) in the AWS SDK for Java documentation\.
 
-Visit the [AWS SDK for Java homepage](https://aws.amazon.com/sdk-for-java/) for more information and installation instructions\.
+Visit the [AWS SDK for Java home page](https://aws.amazon.com/sdk-for-java/) for more information and installation instructions\.
 
 ## Installing an IDE or Text Editor<a name="java-development-environment-ide"></a>
 
@@ -54,4 +54,4 @@ If you just want to begin coding and don't need all of the features of an IDE, c
 
 ## Installing the AWS Toolkit for Eclipse<a name="java-development-environment-toolkit"></a>
 
-The [AWS Toolkit for Eclipse](java-eclipsetoolkit.md) is an open source plug\-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using AWS\. Visit the [AWS Toolkit for Eclipse homepage](https://aws.amazon.com/eclipse/) for installation instructions\. 
+The [AWS Toolkit for Eclipse](java-eclipsetoolkit.md) is an open source plug\-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using AWS\. Visit the [AWS Toolkit for Eclipse home page](https://aws.amazon.com/eclipse/) for installation instructions\. 

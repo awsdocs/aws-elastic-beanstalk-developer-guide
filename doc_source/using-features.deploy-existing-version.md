@@ -14,7 +14,7 @@ During managed platform updates with instance replacement enabled, immutable upd
 
 **Supported Deployment Policies**  
 
-| Deployment Policy | Load\-Balanced Environments | Single\-Instance Environments | Legacy Windows Server Environments† | 
+| Deployment Policy | Load Balanced Environments | Single\-Instance Environments | Legacy Windows Server Environments† | 
 | --- | --- | --- | --- | 
 |  All at Once  |  ✓  |  ✓  |  ✓  | 
 |  Rolling  |  ✓  |  ☓  |  ✓  | 

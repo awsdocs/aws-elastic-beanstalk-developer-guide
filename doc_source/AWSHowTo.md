@@ -13,7 +13,7 @@ To implement your application's environments, Elastic Beanstalk manages resource
 + [Using Elastic Beanstalk with Amazon ElastiCache](AWSHowTo.ElastiCache.md)
 + [Using Elastic Beanstalk with Amazon Elastic File System](services-efs.md)
 + [Using Elastic Beanstalk with AWS Identity and Access Management](AWSHowTo.iam.md)
-+ [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)
++ [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)
 + [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)
 + [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md)
 
@@ -23,6 +23,6 @@ The following diagram illustrates an example architecture of Elastic Beanstalk a
 
 ![\[Elastic Beanstalk Architecture Diagram\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-architecture_crossaws2.png)
 
-To plan for fault\-tolerance, it is advisable to have N\+1 Amazon EC2 instances and spread your instances across multiple Availability Zones\. In the unlikely case that one Availability Zone goes down, you will still have your other Amazon EC2 instances running in another Availability Zone\. You can adjust Amazon EC2 Auto Scaling to allow for a minimum number of instances as well as multiple Availability Zones\. For instructions on how to do this, see [Auto Scaling Group for Your Elastic Beanstalk Environment](using-features.managing.as.md)\. For more information about building fault\-tolerant applications, go to [ Building Fault\-Tolerant Applications on AWS](http://media.amazonwebservices.com/AWS_Building_Fault_Tolerant_Applications.pdf)\. 
+To plan for fault\-tolerance, it is advisable to have N\+1 Amazon EC2 instances and spread your instances across multiple Availability Zones\. In the unlikely case that one Availability Zone goes down, you will still have your other Amazon EC2 instances running in another Availability Zone\. You can adjust Amazon EC2 Auto Scaling to allow for a minimum number of instances as well as multiple Availability Zones\. For instructions on how to do this, see [Auto Scaling group for Your Elastic Beanstalk Environment](using-features.managing.as.md)\. For more information about building fault\-tolerant applications, go to [ Building Fault\-Tolerant Applications on AWS](http://media.amazonwebservices.com/AWS_Building_Fault_Tolerant_Applications.pdf)\. 
 
 The following sections discuss in more detail integration with Amazon CloudFront, Amazon CloudWatch, Amazon DynamoDB Amazon ElastiCache, Amazon RDS, Amazon Route 53, Amazon Simple Storage Service, Amazon VPC , and IAM\.

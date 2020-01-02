@@ -14,7 +14,7 @@ AWS Elastic Beanstalk can launch single container Docker environments by buildin
 
 ## Prerequisites<a name="single-container-docker.prereqs"></a>
 
-This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations, [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md), and Docker\. To follow this tutorial, you need a working local installation of Docker\. For more information about installing Docker, see the [Docker installation guide](https://docs.docker.com/install/)\.
+This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations, [Using the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md), and Docker\. To follow this tutorial, you need a working local installation of Docker\. For more information about installing Docker, see the [Docker installation guide](https://docs.docker.com/install/)\.
 
 If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\. This tutorial uses the EB CLI, but you can also create environments and upload applications by using the Elastic Beanstalk console\. To learn more about configuring single container Docker environments, see [Single Container Docker Configuration](single-container-docker-configuration.md)\.
 

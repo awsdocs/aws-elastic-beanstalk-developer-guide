@@ -105,4 +105,4 @@ The following policy allows access to the actions used to create and manage Elas
 
 Elastic Beanstalk also provides a read\-only managed policy named `AWSElasticBeanstalkReadOnlyAccess`\. This policy allows a user to view, but not modify or create, Elastic Beanstalk environments\.
 
-For more information about user policies, see [Controlling Access to Elastic Beanstalk](AWSHowTo.iam.managed-policies.md)\.
+For more information about user policies, see [Managing Elastic Beanstalk User Policies](AWSHowTo.iam.managed-policies.md)\.

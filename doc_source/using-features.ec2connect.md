@@ -32,6 +32,8 @@ By default, Elastic Beanstalk does not enable remote connections to EC2 instance
 
 1.  Make a note of the instance's public DNS address on the **Description** tab\.
 
-1.  Connect to an instance running Linux by using the SSH client of your choice, and then type **ssh \-i \.ec2/mykeypair\.pem ec2\-user@<public\-DNS\-of\-the\-instance> **\. For instructions on how to connect to an instance running Windows, see [Connect to your Windows Instance](http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2Win_GetStarted.html#connecting_to_windows_instance) in the *Amazon Elastic Compute Cloud Microsoft Windows Guide*\. 
+1.  Connect to an instance running Linux by using the SSH client of your choice, and then type **ssh \-i \.ec2/mykeypair\.pem ec2\-user@<public\-DNS\-of\-the\-instance> **\.
 
- For more information on connecting to an Amazon EC2 instance, see the [Amazon Elastic Compute Cloud Getting Started Guide](http://docs.aws.amazon.com/AWSEC2/latest/GettingStartedGuide/)\. 
+For more information on connecting to an Amazon EC2 Linux instance, see [Getting Started with Amazon EC2 Linux Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html) in the *Amazon EC2 User Guide for Linux Instances*\.
+
+If your Elastic Beanstalk environment uses the [\.NET on Windows Server platform](create_deploy_NET.container.console.md), see [Getting Started with Amazon EC2 Windows Instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/EC2_GetStarted.html) in the *Amazon EC2 User Guide for Windows Instances*\.

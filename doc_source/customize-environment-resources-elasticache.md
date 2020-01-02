@@ -14,7 +14,7 @@ This example creates AWS resources, which you might be charged for\. For more in
 
 To use this example, do the following:
 
-1. Create an `.ebextensions` directory in the top\-level directory of your source bundle\. 
+1. Create an `[\.ebextensions](ebextensions.md)` directory in the top\-level directory of your source bundle\. 
 
 1. Create two configuration files with the `.config` extension and place them in your `.ebextensions` directory\. One configuration file defines the resources, and the other configuration file defines the options\.
 
@@ -84,7 +84,7 @@ This example creates AWS resources, which you might be charged for\. For more in
 
 To use this example, do the following:
 
-1. Create an `.ebextensions` directory in the top\-level directory of your source bundle\. 
+1. Create an `[\.ebextensions](ebextensions.md)` directory in the top\-level directory of your source bundle\. 
 
 1. Create two configuration files with the `.config` extension and place them in your `.ebextensions` directory\. One configuration file defines the resources, and the other configuration file defines the options\.
 
@@ -172,7 +172,7 @@ This example creates AWS resources, which you might be charged for\. For more in
 
 To use this example, do the following:
 
-1. Create an `.ebextensions` directory in the top\-level directory of your source bundle\. 
+1. Create an `[\.ebextensions](ebextensions.md)` directory in the top\-level directory of your source bundle\. 
 
 1. Create two configuration files with the `.config` extension and place them in your `.ebextensions` directory\. One configuration file defines the resources, and the other configuration file defines the options\.
 

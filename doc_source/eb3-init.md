@@ -43,7 +43,7 @@ If successful, the command guides you through setting up a new Elastic Beanstalk
 
 ## Example<a name="eb3-initexample"></a>
 
-The following example request initializes EB CLI and prompts you to enter information about your application\. Replace the red placeholder text with your own values\.
+The following example request initializes EB CLI and prompts you to enter information about your application\. Replace *placeholder* text with your own values\.
 
 ```
 $ eb init -i

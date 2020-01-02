@@ -4,8 +4,8 @@ This configuration file sets up the DynamoDB table as a session handler for a PH
 
  You can download the sample that we'll use in this step at [DynamoDB Session Support Example](https://elasticbeanstalk.s3.amazonaws.com/extensions/PHP-DynamoDB-Session-Support.zip)\. The sample contains the following files:
 + The sample application, `index.php`
-+ A configuration file, `dynamodb.config`, to create and configure a DynamoDB table and other AWS resources as well as install software on the EC2 instances that host the application in an Elastic Beanstalk environment
-+ An configuration file, `options.config`, that overrides the defaults in `dynamodb.config` with specific settings for this particular installation
++ A configuration file, `dynamodb.config`, to create and configure a DynamoDB table and other AWS resources and install software on the EC2 instances that host the application in an Elastic Beanstalk environment
++ A configuration file, `options.config`, that overrides the defaults in `dynamodb.config` with specific settings for this particular installation
 
 **`index.php`**
 

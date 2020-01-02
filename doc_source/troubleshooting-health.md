@@ -14,4 +14,4 @@ Your environment's load balancer may have been removed out\-of\-band\. Only make
 
 **Event:** *EC2 Instance Launch Failure\. Waiting for a New EC2 Instance to Launch\.\.\.*
 
-Availability for your environment's instance type may be low, or you may have reached the instance limit for your account\. Check the [service health dashboard](http://status.aws.amazon.com/) to ensure that the Elastic Compute Cloud \(Amazon EC2\) service is green, or [request a limit increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-ec2-instances)\.
+Availability for your environment's instance type may be low, or you may have reached the instance quota for your account\. Check the [service health dashboard](http://status.aws.amazon.com/) to ensure that the Elastic Compute Cloud \(Amazon EC2\) service is green, or [request a quota increase](https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&limitType=service-code-ec2-instances)\.

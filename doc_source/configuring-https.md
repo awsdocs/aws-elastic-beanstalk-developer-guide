@@ -29,7 +29,7 @@ The [Does it have Snakes?](https://github.com/awslabs/eb-tomcat-snakes) sample a
 + [Upload a Certificate to IAM](configuring-https-ssl-upload.md)
 + [Configuring Your Elastic Beanstalk Environment's Load Balancer to Terminate HTTPS](configuring-https-elb.md)
 + [Configuring Your Application to Terminate HTTPS Connections at the Instance](https-singleinstance.md)
-+ [Configuring End\-to\-End Encryption in a Load\-Balanced Elastic Beanstalk Environment](configuring-https-endtoend.md)
++ [Configuring End\-to\-End Encryption in a Load Balanced Elastic Beanstalk Environment](configuring-https-endtoend.md)
 + [Configuring Your Environment's Load Balancer for TCP Passthrough](https-tcp-passthrough.md)
 + [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)
 + [Configuring HTTP to HTTPS Redirection](configuring-https-httpredirect.md)

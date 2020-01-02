@@ -132,7 +132,7 @@ For information about generating and uploading the authentication file, see [Usi
 
 The container definition and volumes sections of `Dockerrun.aws.json` use the same formatting as the corresponding sections of an Amazon ECS task definition file\.
 
-The following examples show a subset of parameters that are commonly used\. More optional parameters are available\. For more information on the task definition format and a full list of task definition parameters, see [Amazon ECS Task Definitions](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html) in the Amazon ECS Developer Guide\.
+The following examples show a subset of parameters that are commonly used\. More optional parameters are available\. For more information on the task definition format and a full list of task definition parameters, see [Amazon ECS Task Definitions](http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html) in the *Amazon Elastic Container Service Developer Guide*\.
 
 A `Dockerrun.aws.json` file contains an array of one or more container definition objects with the following fields:
 

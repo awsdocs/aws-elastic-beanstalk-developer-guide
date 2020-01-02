@@ -262,9 +262,8 @@ To deploy the application to Elastic Beanstalk, bundle the site archive with a [
 **To create a source bundle**
 
 1. Add the files in the site folder to a ZIP archive\.
-
-   **Note**  
-   If you use a different ZIP utility, be sure to add all files to the root folder of the resulting ZIP archive. This is required for a successful deployment of the application to your Elastic Beanstalk environment.
+**Note**  
+If you use a different ZIP utility, be sure to add all files to the root folder of the resulting ZIP archive\. This is required for a successful deployment of the application to your Elastic Beanstalk environment\.
 
    ```
    C:\users\username\dotnet-core-tutorial> cd site

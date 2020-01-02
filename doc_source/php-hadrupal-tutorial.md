@@ -27,7 +27,7 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
+The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
 
 The sample application uses Amazon EFS\. It only works in AWS Regions that support Amazon EFS\. To learn about supporting AWS Regions, see [Amazon Elastic File System Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/elasticfilesystem.html) in the *AWS General Reference*\.
 
@@ -422,7 +422,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. In the **Capacity** configuration category, choose **Modify**\.
 
-1. In the **Auto Scaling Group** section, set **Min instances** to **2**\.
+1. In the **Auto Scaling group** section, set **Min instances** to **2**\.
 
 1. Choose **Apply**\.
 

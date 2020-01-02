@@ -4,7 +4,7 @@ The EB CLI provides integration with Git\. This section provides an overview of 
 
 **To install Git and initialize your Git repository**
 
-1. Download the most recent version of Git by going to [http://git\-scm\.com](http://git-scm.com)
+1. Download the most recent version of Git by visiting [http://git\-scm\.com](http://git-scm.com)\.
 
 1. Initialize your Git repository by typing the following:
 

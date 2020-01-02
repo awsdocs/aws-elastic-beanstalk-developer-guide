@@ -52,7 +52,7 @@ Requests are being added to your worker environment's queue faster than they can
 
 *5 messages in Dead Letter Queue \(15 seconds ago\)*
 
-Worker requests are failing repeatedly and being added to the [Dead Letter Queue](using-features-managing-env-tiers.md#worker-deadletter)\. Check the requests in the dead letter queue to see why they are failing\. 
+Worker requests are failing repeatedly and being added to the [Dead\-Letter Queues](using-features-managing-env-tiers.md#worker-deadletter)\. Check the requests in the dead\-letter queue to see why they are failing\. 
 
 ## Other Resources<a name="environments-health-enhanced-notifications-other"></a>
 

@@ -194,7 +194,7 @@ To apply configuration files to an environment that you create with the AWS CLI,
    $ aws elasticbeanstalk create-application-version --application-name my-app --version-label v1 --description MyAppv1 --source-bundle S3Bucket="elasticbeanstalk-us-west-2-123456789012",S3Key="my-app/sourcebundle.zip" --auto-create-application
    ```
 
-1. Create the environment:
+1. Create the environment\.
 
    ```
    $ aws elasticbeanstalk create-environment --application-name my-app --environment-name my-env --version-label v1 --solution-stack-name "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8"

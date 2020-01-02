@@ -7,7 +7,7 @@ This example creates AWS resources, which you might be charged for\. For more in
 
 To use this example, do the following:
 
-1. Create an `.ebextensions` directory in the top\-level directory of your source bundle\. 
+1. Create an `[\.ebextensions](ebextensions.md)` directory in the top\-level directory of your source bundle\. 
 
 1. Create two configuration files with the `.config` extension and place them in your `.ebextensions` directory\. One configuration file defines the resources, and the other configuration file defines the options\.
 
@@ -81,4 +81,4 @@ option_settings:
      AlarmEmail : "nobody@example.com"
 ```
 
-These lines tell Elastic Beanstalk to get the values for the **VisibilityTimeout and Subscription Endpoint** properties from the **VisibilityTimeout and Subscription Endpoint** values in a config file \(options\.config in our example\) that contains an option\_settings section with an **aws:elasticbeanstalk:customoption** section that contains a name\-value pair that contains the actual value to use\. In the example above, this means 30 and "nobody@amazon\.com" would be used for the values\. For more information about `Fn::GetOptionSetting`, see [Functions](ebextensions-functions.md)
+These lines tell Elastic Beanstalk to get the values for the **VisibilityTimeout and Subscription Endpoint** properties from the **VisibilityTimeout and Subscription Endpoint** values in a config file \(options\.config in our example\) that contains an option\_settings section with an **aws:elasticbeanstalk:customoption** section that contains a name\-value pair that contains the actual value to use\. In the example above, this means 30 and "nobody@amazon\.com" would be used for the values\. For more information about `Fn::GetOptionSetting`, see [Functions](ebextensions-functions.md)\.

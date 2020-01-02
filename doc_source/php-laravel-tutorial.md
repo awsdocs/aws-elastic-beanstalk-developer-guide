@@ -150,7 +150,7 @@ So far, so good\. Next you'll add a database to your environment and configure L
 Launch an RDS DB instance in your Elastic Beanstalk environment\. You can use MySQL, SQLServer, or PostgreSQL databases with Laravel on Elastic Beanstalk\. For this example, we'll use MySQL\.
 
 **Note**  
-Running an Amazon RDS instance in your Elastic Beanstalk environment is great for development and testing, but it ties the lifecycle of your database to your environment\. See [Launching and Connecting to an External Amazon RDS Instance in a Default VPC](AWSHowTo.RDS.md#rds-external-defaultvpc) for instructions on connecting to a database running outside of your environment\.
+Running an Amazon RDS instance in your Elastic Beanstalk environment is great for development and testing, but it ties the lifecycle of your database to your environment\. See [Launching and Connecting to an External Amazon RDS Instance in a Default VPC](rds-external-defaultvpc.md) for instructions on connecting to a database running outside of your environment\.
 
 **To add an RDS DB instance to your Elastic Beanstalk environment**
 

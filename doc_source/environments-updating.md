@@ -14,7 +14,7 @@ During managed platform updates with instance replacement enabled, immutable upd
 
 **Supported Update Types**  
 
-| Rolling Update Setting | Load\-Balanced Environments | Single\-Instance Environments | Legacy Windows Server Environments† | 
+| Rolling Update Setting | Load Balanced Environments | Single\-Instance Environments | Legacy Windows Server Environments† | 
 | --- | --- | --- | --- | 
 |  Disabled  |  ✓  |  ✓  |  ✓  | 
 |  Rolling Based on Health  |  ✓  |  ☓  |  ✓  | 

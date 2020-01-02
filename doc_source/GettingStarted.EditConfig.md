@@ -6,7 +6,7 @@ Some configuration changes are simple and happen quickly\. Some changes require 
 
 ## Make a Configuration Change<a name="GettingStarted.EditConfig.Edit"></a>
 
-In this example of a configuration change, you edit your environment's capacity settings\. You configure a load\-balanced, automatically scaling environment that has between two and four Amazon EC2 instances in its Auto Scaling group, and then you verify that the change occurred\. Elastic Beanstalk creates an additional Amazon EC2 instance, adding to the single instance that it created initially\. Then, Elastic Beanstalk associates both instances with the environment's load balancer\. As a result, your application's responsiveness is improved and its availability is increased\.
+In this example of a configuration change, you edit your environment's capacity settings\. You configure a load balanced, automatically scaling environment that has between two and four Amazon EC2 instances in its Auto Scaling group, and then you verify that the change occurred\. Elastic Beanstalk creates an additional Amazon EC2 instance, adding to the single instance that it created initially\. Then, Elastic Beanstalk associates both instances with the environment's load balancer\. As a result, your application's responsiveness is improved and its availability is increased\.
 
 **To change your environment's capacity**
 
@@ -19,7 +19,7 @@ In this example of a configuration change, you edit your environment's capacity 
 1. In the **Capacity** configuration category, choose **Modify**\.  
 ![\[Capacity configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-capacity.png)
 
-1. In the **Auto Scaling Group** section, change **Environment type** to **Load balanced**\.
+1. In the **Auto Scaling group** section, change **Environment type** to **Load balanced**\.
 
 1. In the **Instances** row, change **Max** to **4**, and then change **Min** to **2**\.
 

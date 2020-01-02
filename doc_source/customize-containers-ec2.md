@@ -342,7 +342,7 @@ commands:
 
 ### Example Snippet<a name="linux-commands-snippet"></a>
 
-The following example snippet runs a python script\.
+The following example snippet runs a Python script\.
 
 ```
 commands:

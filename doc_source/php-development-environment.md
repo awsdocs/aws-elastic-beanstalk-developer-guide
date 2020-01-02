@@ -2,7 +2,7 @@
 
 Set up a PHP development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with AWS Elastic Beanstalk](chapter-devenv.md)
+For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with AWS Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
 + [Installing PHP](#php-development-environment-php)
@@ -72,7 +72,7 @@ $ composer require twig/twig
 
 Composer adds libraries that you install locally to your project's [`composer.json` file](php-configuration-composer.md)\. When you deploy your project code, Elastic Beanstalk uses Composer to install the libraries listed in this file on your environment's application instances\.
 
-If you run into issues installing Composer, visit the official documentation: [https://getcomposer\.org/](https://getcomposer.org/)
+If you run into issues installing Composer, see the [composer documentation](https://getcomposer.org/)\.
 
 ## Installing the AWS SDK for PHP<a name="php-development-environment-sdk"></a>
 

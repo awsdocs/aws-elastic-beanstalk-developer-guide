@@ -33,7 +33,7 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
   Amazon RDS console label – **Username**
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
-For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\. For instructions on configuring an external database for use with Elastic Beanstalk, see [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)\.
+For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\. For instructions on configuring an external database for use with Elastic Beanstalk, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\.
 
 To connect to the database, add the appropriate driver JAR file to your application, load the driver class in your code, and create a connection object with the environment properties provided by Elastic Beanstalk\.
 

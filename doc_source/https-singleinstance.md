@@ -20,7 +20,7 @@ Resources:
       CidrIp: 0.0.0.0/0
 ```
 
-In a load balanced environment in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\), you can modify this policy to only accept traffic from the load balancer\. See [Configuring End\-to\-End Encryption in a Load\-Balanced Elastic Beanstalk Environment](configuring-https-endtoend.md) for an example\.
+In a load balanced environment in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\), you can modify this policy to only accept traffic from the load balancer\. See [Configuring End\-to\-End Encryption in a Load Balanced Elastic Beanstalk Environment](configuring-https-endtoend.md) for an example\.
 
 **Topics**
 + [Terminating HTTPS on EC2 Instances Running Docker](https-singleinstance-docker.md)

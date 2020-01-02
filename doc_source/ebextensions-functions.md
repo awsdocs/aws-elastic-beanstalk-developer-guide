@@ -59,7 +59,7 @@ Use `Fn::Join` to combine strings with a delimiter\. The strings can be hard\-co
 { "Fn::Join" : [ "delimiter", [ "string1", "string2" ] ] }
 ```
 
-See [Fn::Join](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-join.html) fore more information\.
+See [Fn::Join](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-join.html) for more information\.
 
 ## Fn::GetOptionSetting<a name="ebextensions-functions-getoptionsetting"></a>
 

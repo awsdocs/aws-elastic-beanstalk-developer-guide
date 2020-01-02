@@ -37,7 +37,7 @@ You also need permissions to perform actions in CodeBuild itself\. The Elastic B
   "codebuild:BatchGetBuilds",
   "codebuild:StartBuild"
 ```
-For details, see [Controlling Access to Elastic Beanstalk](AWSHowTo.iam.managed-policies.md)\.
+For details, see [Managing Elastic Beanstalk User Policies](AWSHowTo.iam.managed-policies.md)\.
 
 `ComputeType`  
 The amount of resources used by the Docker container in the CodeBuild build environment\. Valid values are BUILD\_GENERAL1\_SMALL, BUILD\_GENERAL1\_MEDIUM, and BUILD\_GENERAL1\_LARGE\.

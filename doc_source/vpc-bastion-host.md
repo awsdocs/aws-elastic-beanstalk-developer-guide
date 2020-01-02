@@ -4,7 +4,7 @@ If your Amazon EC2 instances are located inside a private subnet, you will not b
 
 ![\[Elastic Beanstalk and VPC Topology with Bastion Host\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vpc-bastion-topo-ngw.png)
 
-To deploy an Elastic Beanstalk application inside a VPC using a bastion host, you need to complete the following:
+To deploy an Elastic Beanstalk application inside a VPC using a bastion host, complete the steps described in the following subsections\.
 
 **Topics**
 + [Create a VPC with a Public and Private Subnet](#vpc-bastion-host-create)

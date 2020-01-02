@@ -21,7 +21,7 @@ Step 1: `commands`, `files` and `packages` defined in [configuration files](ebex
 Step 2: `Buildfile` command
 Step 3: `container_commands` in configuration files
 Step 4: `Procfile` commands \(all commands are run simultaneously\)
-For more information on using `commands`, `files`, `packages` and `container_commands` in configuration files, see [Customizing Software on Linux Servers](customize-containers-ec2.md)
+For more information on using `commands`, `files`, `packages` and `container_commands` in configuration files, see [Customizing Software on Linux Servers](customize-containers-ec2.md)\.
 
 ## Configuring Your Java SE Environment<a name="java-se-options"></a>
 

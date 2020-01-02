@@ -7,7 +7,7 @@ When you use the AWS Elastic Beanstalk console to deploy a new application or an
 
 If you want to deploy a worker application that processes periodic background tasks, your application source bundle must also include a `cron.yaml` file\. For more information, see [Periodic Tasks](using-features-managing-env-tiers.md#worker-periodictasks)\.
 
-If you are deploying your application with the Elastic Beanstalk Command Line Interface \(EB CLI\), the AWS Toolkit for Eclipse, or the AWS Toolkit for Visual Studio, the ZIP or WAR file will automatically be structured correctly\. For more information, see [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md), [Creating and Deploying Java Applications on AWS Elastic Beanstalk](create_deploy_Java.md), and [The AWS Toolkit for Visual Studio](dotnet-toolkit.md)\.
+If you are deploying your application with the Elastic Beanstalk Command Line Interface \(EB CLI\), the AWS Toolkit for Eclipse, or the AWS Toolkit for Visual Studio, the ZIP or WAR file will automatically be structured correctly\. For more information, see [Using the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md), [Creating and Deploying Java Applications on AWS Elastic Beanstalk](create_deploy_Java.md), and [The AWS Toolkit for Visual Studio](dotnet-toolkit.md)\.
 
 **Topics**
 + [Creating a Source Bundle from the Command Line](#using-features.deployment.source.commandline)

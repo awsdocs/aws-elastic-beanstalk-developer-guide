@@ -16,7 +16,7 @@ The containers, a PHP application and an nginx proxy, run side by side on each o
 The first step in creating a new Docker environment is to create a directory for your application data\. This folder can be located anywhere on your local machine and have any name you choose\. In addition to a container configuration file, this folder will contain the content that you will upload to Elastic Beanstalk and deploy to your environment\. 
 
 **Note**  
-All of the code for this tutorial is available in the awslabs repository on GitHub at [https://github\.com/awslabs/eb\-docker\-nginx\-proxy](https://github.com/awslabs/eb-docker-nginx-proxy)
+All of the code for this tutorial is available in the awslabs repository on GitHub at [https://github\.com/awslabs/eb\-docker\-nginx\-proxy](https://github.com/awslabs/eb-docker-nginx-proxy)\.
 
 The file that Elastic Beanstalk uses to configure the containers on an Amazon EC2 instance is a JSON\-formatted text file named `Dockerrun.aws.json`\. Create a text file with this name at the root of your application and add the following text: 
 

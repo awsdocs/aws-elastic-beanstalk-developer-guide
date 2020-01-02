@@ -1,4 +1,4 @@
-# Configuring End\-to\-End Encryption in a Load\-Balanced Elastic Beanstalk Environment<a name="configuring-https-endtoend"></a>
+# Configuring End\-to\-End Encryption in a Load Balanced Elastic Beanstalk Environment<a name="configuring-https-endtoend"></a>
 
 Terminating secure connections at the load balancer and using HTTP on the backend might be sufficient for your application\. Network traffic between AWS resources can't be listened to by instances that are not part of the connection, even if they are running under the same account\.
 

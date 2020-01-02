@@ -67,7 +67,7 @@ Elastic Beanstalk provides several configuration presets for different use cases
 
 ![\[Configuration presets in the configuration page of the Create New Environment wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-presets.png)
 
-The **High availability** presets include a load balancer, and are recommended for production environments\. Choose them if you want an environment that can run multiple instances for high availability and scale in response to load\. The **Single instance** presets are primarily recommended for development\. Two of the presets enable Spot Fleet requests\. For details about Elastic Beanstalk capacity configuration, see [Auto Scaling Group](using-features.managing.as.md)\.
+The **High availability** presets include a load balancer, and are recommended for production environments\. Choose them if you want an environment that can run multiple instances for high availability and scale in response to load\. The **Single instance** presets are primarily recommended for development\. Two of the presets enable Spot Instance requests\. For details about Elastic Beanstalk capacity configuration, see [Auto Scaling group](using-features.managing.as.md)\.
 
 The last preset, **Custom configuration**, removes all recommended values except role settings and uses the API defaults\. Choose this option if you are deploying a source bundle with [configuration files](ebextensions.md) that set configuration options\. **Custom configuration** is also selected automatically if you modify either the **Low cost** or **High availability** configuration presets\.
 
@@ -119,9 +119,9 @@ Configure the Amazon EC2 instances that serve requests in your environment\.
 
 ### Capacity<a name="environments-create-wizard-capacity"></a>
 
-Configure the compute capacity of your environment and **Auto Scaling Group** settings to optimize the number of instances you're using\.
+Configure the compute capacity of your environment and **Auto Scaling group** settings to optimize the number of instances you're using\.
 
-![\[Auto Scaling Group section in the Modify capacity configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-capacity.png)
+![\[Auto Scaling group section in the Modify capacity configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-capacity.png)
 + **Environment type** – Choose **Load balanced** to run the Amazon EC2 instances in your environment behind a load balancer, or **Single instance** to run one instance without a load balancer\.
 **Warning**  
 A single\-instance environment isn't production ready\. If the instance becomes unstable during deployment, or Elastic Beanstalk terminates and restarts the instance during a configuration update, your application can be unavailable for a period of time\. Use single\-instance environments for development, testing, or staging\. Use load\-balanced environments for production\.
@@ -129,7 +129,7 @@ A single\-instance environment isn't production ready\. If the instance becomes 
 + **Instances** – Set the minimum and maximum number of instances to run\.
 + **Placement** – Choose Availability Zones that must have instances at all times\. If you assign Availability Zones here, the minimum number of instances must be at least the number of Availability Zones that you choose\.
 
-A load\-balanced environment can run multiple instances for high availability and prevent downtime during configuration updates and deployments\. In a load\-balanced environment, the domain name maps to the load balancer\. In a single\-instance environment, it maps to an elastic IP address on the instance\.
+A load balanced environment can run multiple instances for high availability and prevent downtime during configuration updates and deployments\. In a load balanced environment, the domain name maps to the load balancer\. In a single\-instance environment, it maps to an elastic IP address on the instance\.
 
 A **scaling trigger** is an Amazon CloudWatch alarm that lets Amazon EC2 Auto Scaling know when to scale the number of instances in your environment\. By default, your environment includes two triggers: a high trigger to scale up, and a low trigger to scale down\.
 
@@ -146,7 +146,7 @@ For more information on CloudWatch metrics and alarms, see [Amazon CloudWatch Co
 
 ### Load Balancer<a name="environments-create-wizard-loadbalancer"></a>
 
-In a load\-balanced environment, your environment's load balancer is the entry point for all traffic headed for your application\. Elastic Beanstalk supports several types of load balancer\. Use the **Modify load balancer** configuration page to select a load balancer type and to configure settings for it\. By default, the Elastic Beanstalk console creates an Application Load Balancer and configures it to serve HTTP traffic on port 80\.
+In a load balanced environment, your environment's load balancer is the entry point for all traffic headed for your application\. Elastic Beanstalk supports several types of load balancer\. Use the **Modify load balancer** configuration page to select a load balancer type and to configure settings for it\. By default, the Elastic Beanstalk console creates an Application Load Balancer and configures it to serve HTTP traffic on port 80\.
 
 For more details about load balancer types and settings, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md) and [Configuring HTTPS for Your Elastic Beanstalk Environment](configuring-https.md)\.
 
@@ -156,7 +156,7 @@ For more details about load balancer types and settings, see [Load Balancer for 
 
  For single\-instance environments, choose a **Deployment policy** to configure how to deploy new application versions and changes to the software configuration for instances\. **All at once** completes deployments as quickly as possible, but can result in downtime\. **Immutable** deployments ensure the new instance passes health checks before switching over to the new version; otherwise, the old version remains untouched\. See [Deployment Policies and Settings](using-features.rolling-version-deploy.md) for more information\.
 
-For load\-balanced environments, choose a **Deployment policy** to configure how to deploy new application versions and changes to the software configuration for instances\. **All at once** completes deployments as quickly as possible, but can result in downtime\. Rolling deployments ensure that some instances remain in service during the entire deployment process\. See [Deployment Policies and Settings](using-features.rolling-version-deploy.md) for more information\.
+For load balanced environments, choose a **Deployment policy** to configure how to deploy new application versions and changes to the software configuration for instances\. **All at once** completes deployments as quickly as possible, but can result in downtime\. Rolling deployments ensure that some instances remain in service during the entire deployment process\. See [Deployment Policies and Settings](using-features.rolling-version-deploy.md) for more information\.
 
 ![\[Application deployments section in the Modify rolling updates and deployments configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-rolling.png)
 + **Deployment policy** – **Rolling** deployments take one batch of instances out of service at a time to deploy a new version\. **Rolling with additional batch** launches a new batch first to ensure that capacity is not affected during the deployment\. **Immutable** performs an [immutable update](environmentmgmt-updates-immutable.md) when you deploy\. 
@@ -192,7 +192,7 @@ The Elastic Beanstalk console looks for an instance profile named `aws-elasticbe
 
 ### Monitoring<a name="environments-create-wizard-monitoring"></a>
 
-Configure health checks for your load\-balanced environment\.
+Configure health checks for your load balanced environment\.
 
 ![\[Modify monitoring configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-monitoring.png)
 + **Health check** – The path to send health check requests to\. If not set, the load balancer attempts to make a TCP connection on port 80 to verify health\. Set to another path to send an HTTP GET request to that path\. The path must start with `/` and is relative to the root of your application\. You can also include a protocol \(HTTP, HTTPS, TCP, or SSL\) and port before the path to check HTTPS connectivity or use a non\-default port\. For example, `HTTPS:443/health`\.

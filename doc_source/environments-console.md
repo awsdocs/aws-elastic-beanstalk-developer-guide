@@ -1,6 +1,6 @@
-# The AWS Elastic Beanstalk Environment Management Console<a name="environments-console"></a>
+# Using the Elastic Beanstalk Environment Management Console<a name="environments-console"></a>
 
- The AWS Management Console provides a management page for each of your AWS Elastic Beanstalk environments\. From this page, you can manage your environment's configuration and perform common actions including restarting the web servers running in your environment, cloning the environment, or rebuilding it from scratch\.
+ The Elastic Beanstalk console provides a management page for each of your AWS Elastic Beanstalk environments\. From this page, you can manage your environment's configuration and perform common actions including restarting the web servers running in your environment, cloning the environment, or rebuilding it from scratch\.
 
 ![\[Elastic Beanstalk environment management console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-dashboard.png)
 

@@ -179,7 +179,7 @@ commands:
 ### Options<a name="windows-commands-options"></a>
 
 `command`  
-Either an array or a string specifying the command to run\. If you use an array, you do not need to escape space characters or enclose command parameters in quotes\.
+Either an array or a string specifying the command to run\. If you use an array, you don't need to escape space characters or enclose command parameters in quotation marks\.
 
 `cwd`  
 \(Optional\) The working directory\. By default, Elastic Beanstalk attempts to find the directory location of your project\. If not found, it uses `c:\Windows\System32` as the default\.
@@ -188,7 +188,7 @@ Either an array or a string specifying the command to run\. If you use an array,
 \(Optional\) Sets environment variables for the command\. This property overwrites, rather than appends, the existing environment\.
 
 `ignoreErrors`  
-\(Optional\) A boolean value that determines if other commands should run if the command contained in the `command` key fails \(returns a nonzero value\)\. Set this value to `true` if you want to continue running commands even if the command fails\. Set it to `false` if you want to stop running commands if the command fails\. The default value is `false`\.
+\(Optional\) A Boolean value that determines if other commands should run if the command contained in the `command` key fails \(returns a nonzero value\)\. Set this value to `true` if you want to continue running commands even if the command fails\. Set it to `false` if you want to stop running commands if the command fails\. The default value is `false`\.
 
 `test`  
 \(Optional\) A command that must return the value `true` \(exit code 0\) in order for Elastic Beanstalk to process the command contained in the `command` key\.

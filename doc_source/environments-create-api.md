@@ -1,7 +1,5 @@
 # Creating Elastic Beanstalk Environments with the API<a name="environments-create-api"></a>
 
-**To launch a new environment**
-
 1. Call `CheckDNSAvailability` with the following parameter:
    + `CNAMEPrefix` = `SampleApp`  
 **Example**  

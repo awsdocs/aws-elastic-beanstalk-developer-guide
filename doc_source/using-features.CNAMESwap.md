@@ -6,7 +6,7 @@ A blue/green deployment is also required when you want to update an environment 
 
 Blue/green deployments require that your environment runs independently of your production database, if your application uses one\. If your environment has an Amazon RDS DB instance attached to it, the data will not transfer over to your second environment, and will be lost if you terminate the original environment\.
 
-For details on configuring your application to connect to an external \(not managed by Elastic Beanstalk\) Amazon RDS instance, see [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md)\.
+For details on configuring your application to connect to an external \(not managed by Elastic Beanstalk\) Amazon RDS instance, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\.
 
 **To perform a blue/green deployment**
 

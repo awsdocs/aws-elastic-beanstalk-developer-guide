@@ -11,7 +11,7 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with AWS Elastic Beanstalk](chapter-devenv.md)
+For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with AWS Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
 + [Installing Python and Pip](#python-common-prereq)
@@ -22,7 +22,7 @@ For common setup steps and tools that apply to all languages, see [Configuring Y
 
 For all Python applications that you'll deploy with Elastic Beanstalk, these prerequisites are common:
 
-1. Python 2\.7 or 3\.4
+1. Python 2\.7 or 3\.4\.
 
 1. The `pip` utility, matching your Python version\. This is used to install and list dependencies for your project, so that Elastic Beanstalk knows how to set up your application's environment\.
 

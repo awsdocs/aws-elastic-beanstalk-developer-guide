@@ -18,7 +18,7 @@ When you deploy your application, Elastic Beanstalk configures a number of AWS c
 
 **To edit an application's environment settings**
 
-1. If Eclipse isn't displaying the **AWS Explorer** view, in the menu click **Window** > **Show View** > **AWS Explorer**\. Expand the Elastic Beanstalk node and your application node\. 
+1. If Eclipse isn't displaying the **AWS Explorer** view, in the menu choose **Window**, **Show View**, **AWS Explorer**\. Expand the Elastic Beanstalk node and your application node\. 
 
 1. In **AWS Explorer**, double\-click your Elastic Beanstalk environment\.
 
@@ -38,14 +38,14 @@ When you deploy your application, Elastic Beanstalk configures a number of AWS c
 The following example sets the `JDBC_CONNECTION_STRING` system property in the AWS Toolkit for Eclipse\. After you set this properties, it becomes available to your Elastic Beanstalk application as system properties called `JDBC_CONNECTION_STRING`\.
 
 **Note**  
- The AWS Toolkit for Eclipse does not yet support modifying environment configuration, including system properties, for environments in a VPC\. Unless you have an older account using EC2 Classic, you must use the AWS Management Console \(described in the next section\) or the [EB CLI](eb-cli3.md) 
+ The AWS Toolkit for Eclipse does not yet support modifying environment configuration, including system properties, for environments in a VPC\. Unless you have an older account using EC2 Classic, you must use the AWS Management Console \(described in the next section\) or the [EB CLI](eb-cli3.md)\. 
 
 **Note**  
 Environment configuration settings can contain any printable ASCII character except the grave accent \(`, ASCII 96\) and cannot exceed 200 characters in length\.
 
  **To set system properties for your Elastic Beanstalk application** 
 
-1. If Eclipse isn't displaying the **AWS Explorer** view, choose **Window**, **Show View**, **Other**\. Expand **AWS Toolkit** and then click **AWS Explorer**\.
+1. If Eclipse isn't displaying the **AWS Explorer** view, choose **Window**, **Show View**, **Other**\. Expand **AWS Toolkit** and then choose **AWS Explorer**\.
 
 1. In the **AWS Explorer** pane, expand **Elastic Beanstalk**, expand the node for your application, and then double\-click your Elastic Beanstalk environment\.
 

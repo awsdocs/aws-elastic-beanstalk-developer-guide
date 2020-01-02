@@ -38,7 +38,7 @@ We recommend that you delete specific unnecessary objects from your Elastic Bean
 
 **To delete an Elastic Beanstalk storage bucket \(console\)**
 
-1. Open the [Amazon S3 console](https://console.aws.amazon.com/s3)
+1. Open the [Amazon S3 console](https://console.aws.amazon.com/s3)\.
 
 1. Open the Elastic Beanstalk storage bucket's page by choosing the bucket name\.  
 ![\[Opening a bucket's page on the Amazon S3 console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/services-s3-open-bucket.png)

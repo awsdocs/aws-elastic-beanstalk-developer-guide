@@ -1,6 +1,6 @@
-# Creating and Updating Groups of AWS Elastic Beanstalk Environments<a name="environment-mgmt-compose"></a>
+# Creating and Updating Groups of Elastic Beanstalk Environments<a name="environment-mgmt-compose"></a>
 
-With AWS Elastic Beanstalk's \(Elastic Beanstalk's\) `Compose Environments` API, you can create and update groups of Elastic Beanstalk environments within a single application\. Each environment in the group can run a separate component of a service\-oriented architecture application\. The `Compose Environments` API takes a list of application versions and an optional group name\. Elastic Beanstalk creates an environment for each application version, or, if the environments already exist, deploys the application versions to them\.
+With the AWS Elastic Beanstalk `Compose Environments` API, you can create and update groups of Elastic Beanstalk environments within a single application\. Each environment in the group can run a separate component of a service\-oriented architecture application\. The `Compose Environments` API takes a list of application versions and an optional group name\. Elastic Beanstalk creates an environment for each application version, or, if the environments already exist, deploys the application versions to them\.
 
 Create links between Elastic Beanstalk environments to designate one environment as a dependency of another\. When you create a group of environments with the `Compose Environments` API, Elastic Beanstalk creates dependent environments only after their dependencies are up and running\. For more information on environment links, see [Creating Links Between AWS Elastic Beanstalk Environments](environment-cfg-links.md)\.
 

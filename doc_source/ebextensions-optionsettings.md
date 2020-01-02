@@ -39,7 +39,9 @@ option_settings:
 
 ## Examples<a name="ebextensions-optionsettings-snippet"></a>
 
-The following examples set a Tomcat platform\-specific option in the `aws:elasticbeanstalk:container:tomcat:jvmoptions` namespace and an environment property named `MYPARAMETER`\. In standard YAML format:
+The following examples set a Tomcat platform\-specific option in the `aws:elasticbeanstalk:container:tomcat:jvmoptions` namespace and an environment property named `MYPARAMETER`\.
+
+In standard YAML format:
 
 **Example \.ebextensions/options\.config**  
 

@@ -12,7 +12,7 @@ This tutorial describes how you [launch an Amazon RDS DB instance](AWSHowTo.RDS.
 + [Install WordPress](#php-hawordpress-tutorial-install)
 + [Update Keys and Salts](#php-hawordpress-tutorial-updatesalts)
 + [Remove Access Restrictions](#php-hawordpress-tutorial-updateenv)
-+ [Configure Your Auto Scaling Group](#php-hawordpress-tutorial-autoscaling)
++ [Configure Your Auto Scaling group](#php-hawordpress-tutorial-autoscaling)
 + [Upgrade WordPress](#php-hawordpress-tutorial-upgrade)
 + [Cleanup](#php-hawordpress-tutorial-cleanup)
 + [Next Steps](#php-hawordpress-tutorial-nextsteps)
@@ -30,7 +30,7 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
+The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
 
 The sample application uses Amazon EFS\. It only works in AWS Regions that support Amazon EFS\. To learn about supporting AWS Regions, see [Amazon Elastic File System Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/elasticfilesystem.html) in the *AWS General Reference*\.
 
@@ -367,7 +367,7 @@ Upload the source bundle to Elastic Beanstalk to deploy WordPress to your enviro
 
 1. When the deployment completes, choose the site URL to open your website in a new tab\.
 
-## Configure Your Auto Scaling Group<a name="php-hawordpress-tutorial-autoscaling"></a>
+## Configure Your Auto Scaling group<a name="php-hawordpress-tutorial-autoscaling"></a>
 
 Finally, configure your environment's Auto Scaling group with a higher minimum instance count\. Run at least two instances at all times to prevent the web servers in your environment from being a single point of failure\. This also allows you to deploy changes without taking your site out of service\.
 
@@ -381,7 +381,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. In the **Capacity** configuration category, choose **Modify**\.
 
-1. In the **Auto Scaling Group** section, set **Min instances** to **2**\.
+1. In the **Auto Scaling group** section, set **Min instances** to **2**\.
 
 1. Choose **Apply**\.
 

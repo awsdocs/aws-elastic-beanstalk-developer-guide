@@ -1,6 +1,6 @@
 # EB CLI 2\.6 \(Retired\)<a name="eb-cli"></a>
 
- This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md)\. 
+ This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see [Using the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md)\. 
 
 You should migrate to the latest version of EB CLI 3\. It can manage environments that you launched using EB CLI 2\.6 or earlier versions of EB CLI\.
 

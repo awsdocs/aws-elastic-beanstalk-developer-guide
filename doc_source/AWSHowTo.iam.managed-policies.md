@@ -1,4 +1,4 @@
-# Controlling Access to Elastic Beanstalk<a name="AWSHowTo.iam.managed-policies"></a>
+# Managing Elastic Beanstalk User Policies<a name="AWSHowTo.iam.managed-policies"></a>
 
 AWS Elastic Beanstalk provides two managed policies that enable you to assign full access or read\-only access to all Elastic Beanstalk resources\. You can attach the policies to AWS Identity and Access Management \(IAM\) users or groups\.
 
@@ -166,7 +166,7 @@ You can create your own IAM policy to allow or deny specific Elastic Beanstalk A
 While you can restrict how a user interacts with Elastic Beanstalk APIs, there is not currently an effective way to prevent users who have permission to create the necessary underlying resources from creating other resources in Amazon EC2 and other services\.  
 Think of these policies as an effective way to distribute Elastic Beanstalk responsibilities, not as a way to secure all underlying resources\.
 
-In November 2019, Elastic Beanstalk released support for [Amazon EC2 launch templates](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2019-11-25-launchtemplates.html)\. This is a new resource type that your environment's Auto Scaling Group can use to launch Amazon EC2 instances, and it requires new permissions\. Most customers shouldn't be affected, because environments can still use the legacy resource, launch configurations, if your user policy lacks the required permissions\. However, if you're trying to use a new feature that requires Amazon EC2 launch templates, and you have a custom policy, your environment creation or update might fail\. In this case, ensure that your custom policy has the following permissions:
+In November 2019, Elastic Beanstalk released support for [Amazon EC2 launch templates](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2019-11-25-launchtemplates.html)\. This is a new resource type that your environment's Auto Scaling group can use to launch Amazon EC2 instances, and it requires new permissions\. Most customers shouldn't be affected, because environments can still use the legacy resource, launch configurations, if your user policy lacks the required permissions\. However, if you're trying to use a new feature that requires Amazon EC2 launch templates, and you have a custom policy, your environment creation or update might fail\. In this case, ensure that your custom policy has the following permissions\.
 
 **Required permissions for Amazon EC2 launch templates**
 + `EC2:CreateLauchTemplate`

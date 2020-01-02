@@ -95,9 +95,9 @@ These settings configure the lock\-on\-launch feature\. This causes the AMI to u
 
 1. Choose **Configuration**\.
 
-1. In the **Instances** configuration category, choose **Modify**\.
+1. In the **Capacity** configuration category, choose **Modify**\.
 
-1. For **Custom AMI ID**, type your custom AMI ID\.
+1. For **AMI ID**, enter your custom AMI ID\.
 
 1. Choose **Apply**\.
 

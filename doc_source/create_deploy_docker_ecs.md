@@ -123,7 +123,7 @@ Resources:
       SourceSecurityGroupName: { "Fn::GetAtt": ["AWSEBLoadBalancer", "SourceSecurityGroup.GroupName"] }
 ```
 
-For more information on the configuration file format, see [Adding and Customizing Elastic Beanstalk Environment Resources](environment-resources.md) and [Option Settings](ebextensions-optionsettings.md) 
+For more information on the configuration file format, see [Adding and Customizing Elastic Beanstalk Environment Resources](environment-resources.md) and [Option Settings](ebextensions-optionsettings.md)\. 
 
  In addition to adding a listener to the Elastic Load Balancing configuration and opening a port in the security group, you need to map the port on the host instance to a port on the Docker container in the `containerDefinitions` section of the `Dockerrun.aws.json` file\. The following excerpt shows an example: 
 

@@ -17,7 +17,7 @@ The tutorial uses a [sample PHP application](https://github.com/awslabs/eb-demo-
 
 Before you start, download the sample application source bundle from GitHub: [eb\-demo\-php\-simple\-app\-1\.3\.zip](https://github.com/aws-samples/eb-demo-php-simple-app/releases/download/v1.3/eb-demo-php-simple-app-v1.3.zip)
 
-The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon Relational Database Service](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
+The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
 
 ## Launch a DB Instance in Amazon RDS<a name="php-hawrds-tutorial-database"></a>
 
@@ -177,7 +177,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 1. In the **Capacity** configuration category, choose **Modify**\.
 
-1. In the **Auto Scaling Group** section, set **Min instances** to **2**\.
+1. In the **Auto Scaling group** section, set **Min instances** to **2**\.
 
 1. Choose **Apply**\.
 

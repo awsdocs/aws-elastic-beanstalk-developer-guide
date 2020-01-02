@@ -6,7 +6,7 @@ In addition to the Elastic Beanstalk console, you can use the following tools to
 
 ## EB CLI<a name="GettingStarted.UsingAEB.cli"></a>
 
-The EB CLI is a command line tool for creating and managing environments\. See [The Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md) for details\.
+The EB CLI is a command line tool for creating and managing environments\. See [Using the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md) for details\.
 
 ## AWS SDK for Java<a name="GettingStarted.UsingAEB.JavaSDK"></a>
 

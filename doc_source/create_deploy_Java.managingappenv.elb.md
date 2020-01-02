@@ -58,7 +58,7 @@ You can control the settings for the health check using the **EC2 Instance Healt
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-eclipse-lb-healthcheck.png)
 
 The following list describes the health check parameters you can set for your application\. 
-+ To determine instance health, Elastic Beanstalk looks for a 200 response code on a URL it queries\. By default, Elastic Beanstalk checks TCP:80 for nonlegacy containers and HTTP:80 for legacy containers\. You can override to match an existing resource in your application \(e\.g\., **/myapp/index\.jsp**\) by entering it in the **Application Health Check URL** box\. If you override the default URL, Elastic Beanstalk uses HTTP to query the resource\. To check if you are using a legacy container type, see [Why are some platform versions marked legacy?](using-features.migration.md#using-features.migration.why)\. 
++ To determine instance health, Elastic Beanstalk looks for a 200 response code on a URL it queries\. By default, Elastic Beanstalk checks TCP:80 for nonlegacy containers and HTTP:80 for legacy containers\. You can override to match an existing resource in your application \(e\.g\., **/myapp/index\.jsp**\) by entering it in the **Application Health Check URL** box\. If you override the default URL, Elastic Beanstalk uses HTTP to query the resource\. To check if you are using a legacy container type, see [Why are some platform versions marked legacy?](using-features.migration.md#using-features.migration.why) 
 + For **Health Check Interval \(seconds\)**, enter the number of seconds between your application's Amazon EC2 instances health checks\. 
 + For **Health Check Timeout**, specify the number of seconds for Elastic Load Balancing to wait for a response before it considers an instance unresponsive\. 
 + Use the **Healthy Check Count Threshold** and **Unhealthy Check Count Threshold** boxes, specify the number of consecutive successful or unsuccessful URL probes before Elastic Load Balancing changes the instance health status\. For example, specifying 5 in the **Unhealthy Check Count Threshold** text box means that the URL would have to return an error message or timeout five consecutive times before Elastic Load Balancing considers the health check "failed\." 
@@ -73,4 +73,4 @@ Under **Load Balancer** in the **Sessions** section, specify whether or not the 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-eclipse-lb-sessions.png)
 
-For more information on Elastic Load Balancing, go to the [Elastic Load Balancing Developer Guide](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/)\. 
+For more information on Elastic Load Balancing, see the [Elastic Load Balancing Developer Guide](http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/)\. 
