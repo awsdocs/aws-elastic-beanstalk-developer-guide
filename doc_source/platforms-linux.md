@@ -4,7 +4,7 @@ AWS Elastic Beanstalk provides a variety of platforms on which you can build you
 
 Elastic Beanstalk provides platforms for different programming languages, application servers, and Docker containers\. Some platforms have multiple concurrently\-supported versions\.
 
-For full coverage of Elastic Beanstalk platforms, see [AWS Elastic Beanstalk Platforms](concepts-all-platforms.md)\.
+For full coverage of Elastic Beanstalk platforms, see [Elastic Beanstalk Platforms](concepts-all-platforms.md)\.
 
 Many of the platforms that Elastic Beanstalk supports are based on the Linux operating system \(OS\)\. Specifically, these platforms are based on Amazon Linux, a Linux distribution provided by AWS\. Elastic Beanstalk Linux platforms use Amazon Elastic Compute Cloud \(Amazon EC2\) instances, and these instances run Amazon Linux\. To learn more, see [Amazon Linux](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/amazon-linux-ami-basics.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
@@ -27,7 +27,7 @@ AWS provides two versions of Amazon Linux: [Amazon Linux 2](https://aws.amazon.c
 + Amazon Linux 2 is available as virtual machine images for on\-premises development and testing\.
 + Amazon Linux 2 comes with updated components: the Linux kernel, C library, compiler, and tools\. It also uses the systemd service and systems manager as opposed to System V init system in Amazon Linux AMI\.
 
-Elastic Beanstalk maintains platform versions with both Amazon Linux versions\. For details about supported platform versions, see [AWS Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
+Elastic Beanstalk maintains platform versions with both Amazon Linux versions\. For details about supported platform versions, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
 
 Amazon Linux 2 platform versions are incompatible with previous Amazon Linux AMI platform versions\. If you're migrating your Elastic Beanstalk application to Amazon Linux 2, read [Migrating Your Elastic Beanstalk Linux Application to Amazon Linux 2](using-features.migration-al.md)\.
 

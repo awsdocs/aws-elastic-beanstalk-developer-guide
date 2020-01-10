@@ -1,6 +1,6 @@
-# AWS Elastic Beanstalk Platform Support Policy<a name="platforms-support-policy"></a>
+# Elastic Beanstalk Platform Support Policy<a name="platforms-support-policy"></a>
 
-AWS Elastic Beanstalk provides a variety of platforms for running applications on AWS\. Elastic Beanstalk supports platform versions that still receive ongoing minor and patch updates from their suppliers \(owners or community\)\. For a complete definition of related terms, see [AWS Elastic Beanstalk Platforms Glossary](platforms-glossary.md)\.
+AWS Elastic Beanstalk provides a variety of platforms for running applications on AWS\. Elastic Beanstalk supports platform versions that still receive ongoing minor and patch updates from their suppliers \(owners or community\)\. For a complete definition of related terms, see [Elastic Beanstalk Platforms Glossary](platforms-glossary.md)\.
 
 When a component \(operating system \[OS\], runtime, application server, or web server\) of a supported platform version is marked End of Life \(EOL\) by its supplier, Elastic Beanstalk marks the platform version as retired\. When a platform version is marked as retired, Elastic Beanstalk no longer makes it available to both existing and new Elastic Beanstalk customers for deployments to new environments\. Retired platform versions are available to existing customer environments for a period of 90 days from the published retirement date\.
 

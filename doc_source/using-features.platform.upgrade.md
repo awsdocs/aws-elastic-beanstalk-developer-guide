@@ -1,6 +1,6 @@
 # Updating Your Elastic Beanstalk Environment's Platform Version<a name="using-features.platform.upgrade"></a>
 
-Elastic Beanstalk regularly releases new platform versions to update all Linux\-based and Windows Server\-based [platforms](concepts.platforms.md)\. New platform versions provide updates to existing software components and support for new features and configuration options\. To learn about platforms and platform versions, see [AWS Elastic Beanstalk Platforms Glossary](platforms-glossary.md)\.
+Elastic Beanstalk regularly releases new platform versions to update all Linux\-based and Windows Server\-based [platforms](concepts.platforms.md)\. New platform versions provide updates to existing software components and support for new features and configuration options\. To learn about platforms and platform versions, see [Elastic Beanstalk Platforms Glossary](platforms-glossary.md)\.
 
 You can use the Elastic Beanstalk console or the EB CLI to update your environment's platform version\. Depending on the platform version you'd like to update to, Elastic Beanstalk recommends one of two methods for performing platform updates\.
 + [Method 1 – Update your Environment's Platform Version](#using-features.platform.upgrade.config)\. We recommend this method when you're updating to the latest platform version, without a change in runtime, web server, or application server versions, and without a change in the major platform version\. This is the most common and routine platform update\.

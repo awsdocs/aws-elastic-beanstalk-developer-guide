@@ -1,4 +1,4 @@
-# Using the AWS Elastic Beanstalk Node\.js Platform<a name="create_deploy_nodejs.container"></a>
+# Using the Elastic Beanstalk Node\.js Platform<a name="create_deploy_nodejs.container"></a>
 
 The AWS Elastic Beanstalk Node\.js platform is a [platform version](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.nodejs) for Node\.js web applications that can run behind an nginx proxy server, behind an Apache server, or standalone\.
 
@@ -32,7 +32,7 @@ The Node\.js settings lets you fine\-tune the behavior of your Amazon EC2 instan
 
 On the configuration page, specify the following:
 + **Proxy Server**– Specifies which web server to use to proxy connections to Node\.js\. By default, nginx is used\. If you select **none**, static file mappings do not take effect, and gzip compression is disabled\.
-+ **Node Version**– Specifies the version of Node\.js\. For information about what versions are supported, see [AWS Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
++ **Node Version**– Specifies the version of Node\.js\. For information about what versions are supported, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
 **Note**  
 When support for the version of Node\.js that you are using is removed from the platform configuration, you must change or remove the version setting prior to doing a [platform upgrade](using-features.platform.upgrade.md)\. This may occur when a security vulnerability is identified for one or more versions of Node\.js  
 When this occurs, attempting to upgrade to a new version of the platform that does not support the configured [NodeVersion](command-options-specific.md#command-options-nodejs) fails\. To avoid needing to create a new environment, change the *NodeVersion* configuration option to a version that is supported by both the old configuration version and the new one, or [remove the option setting](environment-configuration-methods-after.md), and then perform the platform upgrade\.

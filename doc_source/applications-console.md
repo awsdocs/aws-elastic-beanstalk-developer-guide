@@ -1,6 +1,6 @@
-# AWS Elastic Beanstalk Application Management Console<a name="applications-console"></a>
+# Elastic Beanstalk Application Management Console<a name="applications-console"></a>
 
-You can use the AWS Management Console to manage applications, application versions, and saved configurations\.
+You can use the AWS Elastic Beanstalk console to manage applications, application versions, and saved configurations\.
 
 **To access the application management console**
 

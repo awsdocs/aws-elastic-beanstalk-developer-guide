@@ -94,7 +94,7 @@ Creating a DB instance takes about 10 minutes\. In the meantime, launch your Ela
 
 ## Launch an Elastic Beanstalk Environment<a name="php-hadrupal-tutorial-launch"></a>
 
-Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\. After you launch the environment, you can configure the environment to connect to the database, then deploy the Drupal code to the environment\.
+Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\. After you launch the environment, you can configure the environment to connect to the database, then deploy the Drupal code to the environment\.
 
 **To launch an environment \(console\)**
 

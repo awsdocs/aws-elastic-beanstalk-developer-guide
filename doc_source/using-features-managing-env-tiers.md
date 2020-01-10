@@ -1,6 +1,6 @@
-# AWS Elastic Beanstalk Worker Environments<a name="using-features-managing-env-tiers"></a>
+# Elastic Beanstalk Worker Environments<a name="using-features-managing-env-tiers"></a>
 
-If your application performs operations or workflows that take a long time to complete, you can offload those tasks to a dedicated *worker environment*\. Decoupling your web application front end from a process that performs blocking operations is a common way to ensure that your application stays responsive under load\.
+If your AWS Elastic Beanstalk application performs operations or workflows that take a long time to complete, you can offload those tasks to a dedicated *worker environment*\. Decoupling your web application front end from a process that performs blocking operations is a common way to ensure that your application stays responsive under load\.
 
 A long\-running task is anything that substantially increases the time it takes to complete a request, such as processing images or videos, sending email, or generating a ZIP archive\. These operations can take only a second or two to complete, but a delay of a few seconds is a lot for a web request that would otherwise complete in less than 500 ms\.
 
@@ -111,7 +111,7 @@ Together, Amazon EC2 Auto Scaling and CloudWatch monitor the CPU utilization of 
 **Note**  
 Messages that have not been processed at the time an instance is terminated are returned to the queue where they can be processed by another daemon on an instance that is still running\.
 
-You can also set other CloudWatch alarms, as needed, by using the AWS Management Console, CLI, or the options file\. For more information, see [Using Elastic Beanstalk with Amazon CloudWatch](AWSHowTo.cloudwatch.md) and [Create an Auto Scaling group with Step Scaling Policies](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#policy-creating-asg-console)\.
+You can also set other CloudWatch alarms, as needed, by using the Elastic Beanstalk console, CLI, or the options file\. For more information, see [Using Elastic Beanstalk with Amazon CloudWatch](AWSHowTo.cloudwatch.md) and [Create an Auto Scaling group with Step Scaling Policies](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#policy-creating-asg-console)\.
 
 ## Configuring Worker Environments<a name="using-features-managing-env-tiers-worker-settings"></a>
 

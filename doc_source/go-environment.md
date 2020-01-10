@@ -1,4 +1,4 @@
-# Using the AWS Elastic Beanstalk Go Platform<a name="go-environment"></a>
+# Using the Elastic Beanstalk Go Platform<a name="go-environment"></a>
 
 You can use AWS Elastic Beanstalk to run, build, and configure Go\-based applications\. For simple Go applications, there are two ways to deploy your application:
 + Provide a source bundle with a source file at the root called `application.go` that contains the main package for your application\. Elastic Beanstalk builds the binary using the following command:
@@ -28,7 +28,7 @@ For more information on using `commands`, `files`, `packages` and `container_com
 
 The Elastic Beanstalk Go platform provides a few platform\-specific options in addition to the standard options that all platforms have\. These options let you configure the nginx proxy that runs in front of your application to serve static files\.
 
-You can use the AWS Management Console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
+You can use the Elastic Beanstalk console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
 
 **To configure your Go environment in the Elastic Beanstalk console**
 

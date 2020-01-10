@@ -1,4 +1,6 @@
-# Configuring Your Development Machine for Use with AWS Elastic Beanstalk<a name="chapter-devenv"></a>
+# Configuring Your Development Machine for Use with Elastic Beanstalk<a name="chapter-devenv"></a>
+
+This page shows you how to set up your local machine for development of an AWS Elastic Beanstalk application\. It covers folder structure, source control, and CLI tools\.
 
 **Topics**
 + [Creating a Project Folder](#devenv-project-folder)

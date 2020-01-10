@@ -1,12 +1,12 @@
-# Creating and Deploying Go Applications on AWS Elastic Beanstalk<a name="create_deploy_go"></a>
+# Creating and Deploying Go Applications on Elastic Beanstalk<a name="create_deploy_go"></a>
 
 **Topics**
 + [Getting Started with Go on Elastic Beanstalk](go-getstarted.md)
 + [Setting Up Your Go Development Environment](go-devenv.md)
-+ [Using the AWS Elastic Beanstalk Go Platform](go-environment.md)
-+ [Deploying a Go Application to AWS Elastic Beanstalk](go-tutorial.md)
++ [Using the Elastic Beanstalk Go Platform](go-environment.md)
++ [Deploying a Go Application to Elastic Beanstalk](go-tutorial.md)
 
-Elastic Beanstalk for Go makes it easy to deploy, manage, and scale your Go web applications using Amazon Web Services\. Elastic Beanstalk for Go is available to anyone developing or hosting a web application using Go\. This chapter provides step\-by\-step instructions for deploying your web application to Elastic Beanstalk\.
+AWS Elastic Beanstalk for Go makes it easy to deploy, manage, and scale your Go web applications using Amazon Web Services\. Elastic Beanstalk for Go is available to anyone developing or hosting a web application using Go\. This chapter provides step\-by\-step instructions for deploying your web application to Elastic Beanstalk\.
 
 After you deploy your Elastic Beanstalk application, you can continue to use the EB CLI to manage your application and environment, or you can use the Elastic Beanstalk console, AWS CLI, or the APIs\. 
 

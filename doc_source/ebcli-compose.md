@@ -1,6 +1,6 @@
-# Managing Multiple AWS Elastic Beanstalk Environments as a Group with the EB CLI<a name="ebcli-compose"></a>
+# Managing Multiple Elastic Beanstalk Environments as a Group with the EB CLI<a name="ebcli-compose"></a>
 
-You can use the EB CLI to create groups of environments, each running a separate component of a service\-oriented architecture application\. The EB CLI manages such groups by using the [ComposeEnvironments](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ComposeEnvironments.html) API\.
+You can use the EB CLI to create groups of AWS Elastic Beanstalk environments, each running a separate component of a service\-oriented architecture application\. The EB CLI manages such groups by using the [ComposeEnvironments](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ComposeEnvironments.html) API\.
 
 **Note**  
 Environment groups are different than multiple containers in a Multicontainer Docker environment\. With environment groups, each component of your application runs in a separate Elastic Beanstalk environment, with its own dedicated set of Amazon EC2 instances\. Each component can scale separately\. With Multicontainer Docker, you combine several components of an application into a single environment\. All components share the same set of Amazon EC2 instances, with each instance running multiple Docker containers\. Choose one of these architectures according to your application's needs\.  

@@ -32,7 +32,7 @@ For an existing environment, use the Elastic Beanstalk console anytime to config
 
 1. Choose **Apply**\.
 
-Managed platform updates depend on [enhanced health reporting](health-enhanced.md) to determine that your application is healthy enough to consider the platform update successful\. See [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) for instructions\.
+Managed platform updates depend on [enhanced health reporting](health-enhanced.md) to determine that your application is healthy enough to consider the platform update successful\. See [Enabling Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) for instructions\.
 
 **Topics**
 + [Permissions Required to Perform Managed Platform Updates](#environment-platform-update-managed-perms)

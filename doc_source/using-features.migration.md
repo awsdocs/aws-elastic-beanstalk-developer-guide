@@ -32,7 +32,7 @@ Some older platform versions do not support the latest Elastic Beanstalk feature
 
 **To migrate your application**
 
-1. Deploy your application to a new environment\. For instructions, go to [Creating an AWS Elastic Beanstalk Environment](using-features.environments.md)\.
+1. Deploy your application to a new environment\. For instructions, go to [Creating an Elastic Beanstalk Environment](using-features.environments.md)\.
 
 1. If you have an Amazon RDS DB Instance, update your database security group to allow access to your EC2 security group for your new environment\. For instructions on how to find the name of your EC2 security group using the AWS Management Console, see [Security Groups](using-features.managing.ec2.md#using-features.managing.ec2.securitygroups)\. For more information about configuring your EC2 security group, go to the "Authorizing Network Access to an Amazon EC2 Security Group" section of [Working with DB Security Groups](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithSecurityGroups.html) in the *Amazon Relational Database Service User Guide*\.
 

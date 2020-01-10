@@ -5,7 +5,7 @@ You may want to customize and configure the software that your application depen
 **Note**  
 YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
-This section describes the type of information you can include in a configuration file to customize the software on your EC2 instances running Linux\. For general information about customizing and configuring your Elastic Beanstalk environments, see [Configuring AWS Elastic Beanstalk Environments](customize-containers.md)\. For information about customizing software on your EC2 instances running Windows, see [Customizing Software on Windows Servers](customize-containers-windows-ec2.md)\.
+This section describes the type of information you can include in a configuration file to customize the software on your EC2 instances running Linux\. For general information about customizing and configuring your Elastic Beanstalk environments, see [Configuring Elastic Beanstalk Environments](customize-containers.md)\. For information about customizing software on your EC2 instances running Windows, see [Customizing Software on Windows Servers](customize-containers-windows-ec2.md)\.
 
 Configuration files support the following keys that affect the Linux server your application runs on\.
 

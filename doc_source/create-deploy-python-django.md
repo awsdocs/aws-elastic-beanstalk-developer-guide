@@ -252,7 +252,7 @@ Immediately after deployment, you'll edit Django's configuration to add the doma
 
 **To create an environment and deploy your Django application**
 **Note**  
-This tutorial uses the EB CLI as a deployment mechanism, but you can also use the AWS Management Console to deploy a \.zip file containing your project's contents\. 
+This tutorial uses the EB CLI as a deployment mechanism, but you can also use the Elastic Beanstalk console to deploy a \.zip file containing your project's contents\. 
 
 1. Initialize your EB CLI repository with the eb init command\.
 

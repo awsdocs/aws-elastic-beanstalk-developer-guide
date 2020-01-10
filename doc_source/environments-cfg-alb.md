@@ -2,7 +2,7 @@
 
 When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports several load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. 
 
-This topic describes the configuration of an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)\.
+This topic describes the configuration of an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load Balancer for Your Elastic Beanstalk Environment](using-features.managing.elb.md)\.
 
 **Note**  
 You can choose the type of load balancer that your environment uses only during environment creation\. You can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.

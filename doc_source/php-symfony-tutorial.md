@@ -28,7 +28,7 @@ Symfony 4\.3 requires PHP 7\.1 or later and the `intl` extension for PHP\. In th
 
 ## Launch an Elastic Beanstalk Environment<a name="php-symfony-tutorial-launch"></a>
 
-Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\.
+Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\.
 
 **To launch an environment \(console\)**
 

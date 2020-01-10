@@ -1,4 +1,4 @@
-# Using the AWS Elastic Beanstalk \.NET Platform<a name="create_deploy_NET.container.console"></a>
+# Using the Elastic Beanstalk \.NET Platform<a name="create_deploy_NET.container.console"></a>
 
 AWS Elastic Beanstalk supports a number of platforms for different versions of the \.NET programming framework and Windows Server\. See [\.NET on Windows Server with IIS](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) in the *AWS Elastic Beanstalk Platforms* document for a full list\.
 
@@ -10,9 +10,9 @@ To save settings in your source code, you can include [configuration files](ebex
 
 Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
 
-## Configuring your \.NET Environment in the AWS Management Console<a name="dotnet-console"></a>
+## Configuring your \.NET Environment in the Elastic Beanstalk Console<a name="dotnet-console"></a>
 
-You can use the AWS Management Console to enable log rotation to Amazon S3, configure variables that your application can read from the environment, and change \.NET framework settings\.
+You can use the Elastic Beanstalk console to enable log rotation to Amazon S3, configure variables that your application can read from the environment, and change \.NET framework settings\.
 
 **To configure your \.NET environment in the Elastic Beanstalk console**
 

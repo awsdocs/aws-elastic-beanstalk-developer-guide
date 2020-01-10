@@ -2,13 +2,13 @@
 
 With the AWS Elastic Beanstalk `Compose Environments` API, you can create and update groups of Elastic Beanstalk environments within a single application\. Each environment in the group can run a separate component of a service\-oriented architecture application\. The `Compose Environments` API takes a list of application versions and an optional group name\. Elastic Beanstalk creates an environment for each application version, or, if the environments already exist, deploys the application versions to them\.
 
-Create links between Elastic Beanstalk environments to designate one environment as a dependency of another\. When you create a group of environments with the `Compose Environments` API, Elastic Beanstalk creates dependent environments only after their dependencies are up and running\. For more information on environment links, see [Creating Links Between AWS Elastic Beanstalk Environments](environment-cfg-links.md)\.
+Create links between Elastic Beanstalk environments to designate one environment as a dependency of another\. When you create a group of environments with the `Compose Environments` API, Elastic Beanstalk creates dependent environments only after their dependencies are up and running\. For more information on environment links, see [Creating Links Between Elastic Beanstalk Environments](environment-cfg-links.md)\.
 
 The `Compose Environments` API uses an [environment manifest](environment-cfg-manifest.md) to store configuration details that are shared by groups of environments\. Each component application must have an `env.yaml` configuration file in its application source bundle that specifies the parameters used to create its environment\.
 
 `Compose Environments` requires the `EnvironmentName` and `SolutionStack` to be specified in the environment manifest for each component application\.
 
-You can use the `Compose Environments` API with the Elastic Beanstalk command line interface \(EB CLI\), the AWS CLI, or an SDK\. See [Managing Multiple AWS Elastic Beanstalk Environments as a Group with the EB CLI](ebcli-compose.md) for EB CLI instructions\.
+You can use the `Compose Environments` API with the Elastic Beanstalk command line interface \(EB CLI\), the AWS CLI, or an SDK\. See [Managing Multiple Elastic Beanstalk Environments as a Group with the EB CLI](ebcli-compose.md) for EB CLI instructions\.
 
 ## Using the `Compose Environments` API<a name="environment-mgmt-compose-example"></a>
 
@@ -96,4 +96,4 @@ After [creating an application version](applications-versions.md) for the front\
 
 The third call creates two environments, `front-dev` and `worker-dev`\. The API creates the names of the environments by concatenating the `EnvironmentName` specified in the `env.yaml` file with the `group name` option specified in the `Compose Environments` call, separated by a hyphen\. The total length of these two options and the hyphen must not exceed the maximum allowed environment name length of 23 characters\.
 
-The application running in the `front-dev` environment can access the name of the Amazon SQS queue attached to the `worker-dev` environment by reading the `WORKERQUEUE` variable\. For more information on environment links, see [Creating Links Between AWS Elastic Beanstalk Environments](environment-cfg-links.md)\.
+The application running in the `front-dev` environment can access the name of the Amazon SQS queue attached to the `worker-dev` environment by reading the `WORKERQUEUE` variable\. For more information on environment links, see [Creating Links Between Elastic Beanstalk Environments](environment-cfg-links.md)\.

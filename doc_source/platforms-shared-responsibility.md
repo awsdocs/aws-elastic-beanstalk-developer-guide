@@ -1,10 +1,10 @@
-# Shared Responsibility Model for AWS Elastic Beanstalk Platform Maintenance<a name="platforms-shared-responsibility"></a>
+# Shared Responsibility Model for Elastic Beanstalk Platform Maintenance<a name="platforms-shared-responsibility"></a>
 
 AWS and our customers share responsibility for achieving a high level of software component security and compliance\. This shared model reduces your operational burden\.
 
 For details, see the AWS [Shared Responsibility Model](https://aws.amazon.com/compliance/shared-responsibility-model/)\.
 
-Elastic Beanstalk helps you perform your side of the shared responsibility model by providing a *managed updates* feature\. This feature automatically applies patch and minor updates for an Elastic Beanstalk supported platform version\. If a managed update fails, Elastic Beanstalk notifies you of the failure to ensure that you are aware of it and can take immediate action\.
+AWS Elastic Beanstalk helps you perform your side of the shared responsibility model by providing a *managed updates* feature\. This feature automatically applies patch and minor updates for an Elastic Beanstalk supported platform version\. If a managed update fails, Elastic Beanstalk notifies you of the failure to ensure that you are aware of it and can take immediate action\.
 
 For more information, see [Managed Platform Updates](environment-platform-update-managed.md)\.
 

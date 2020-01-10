@@ -1,4 +1,4 @@
-# Deploying a Go Application to AWS Elastic Beanstalk<a name="go-tutorial"></a>
+# Deploying a Go Application to Elastic Beanstalk<a name="go-tutorial"></a>
 
 This tutorial walks you through the process of creating a Go application and deploying it to an AWS Elastic Beanstalk environment\.
 

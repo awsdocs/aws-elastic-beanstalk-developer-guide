@@ -1,4 +1,4 @@
-# Using the AWS Elastic Beanstalk PHP Platform<a name="create_deploy_PHP.container"></a>
+# Using the Elastic Beanstalk PHP Platform<a name="create_deploy_PHP.container"></a>
 
 AWS Elastic Beanstalk supports a number of platforms for different versions of the PHP programming language\. These platforms support PHP web applications that can run alone or under Composer\. Learn more at [PHP](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.PHP) in the *AWS Elastic Beanstalk Platforms* document\.
 
@@ -16,7 +16,7 @@ Settings applied in the AWS Management Console override the same settings in con
 
 ## Configuring your PHP Environment<a name="php-console"></a>
 
-You can use the AWS Management Console to enable log rotation to Amazon S3, configure variables that your application can read from the environment, and change PHP settings\.
+You can use the Elastic Beanstalk console to enable log rotation to Amazon S3, configure variables that your application can read from the environment, and change PHP settings\.
 
 **To configure your PHP environment in the Elastic Beanstalk console**
 
@@ -58,7 +58,7 @@ See [Environment Properties and Other Software Settings](environments-cfg-softwa
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
-The PHP platform defines options in the `aws:elasticbeanstalk:container:php:phpini` namespace, including one that is not available in the AWS Management Console\. `composer_options` sets custom options to use when installing dependencies using Composer through `composer.phar install`\. For more information including available options, go to [http://getcomposer\.org/doc/03\-cli\.md\#install](http://getcomposer.org/doc/03-cli.md#install)\.
+The PHP platform defines options in the `aws:elasticbeanstalk:container:php:phpini` namespace, including one that is not available in the Elastic Beanstalk console\. `composer_options` sets custom options to use when installing dependencies using Composer through `composer.phar install`\. For more information including available options, go to [http://getcomposer\.org/doc/03\-cli\.md\#install](http://getcomposer.org/doc/03-cli.md#install)\.
 
 The following example [configuration file](ebextensions.md) shows settings for each of the options available in this namespace:
 

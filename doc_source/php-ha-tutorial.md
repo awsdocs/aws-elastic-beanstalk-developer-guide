@@ -80,7 +80,7 @@ Creating a DB instance takes about 10 minutes\. In the meantime, create your Ela
 
 ## Create an Elastic Beanstalk Environment<a name="php-hawrds-tutorial-create"></a>
 
-Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\. After you launch the environment, you can configure the environment to connect to the database, then deploy the sample application that you downloaded from GitHub\.
+Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\. After you launch the environment, you can configure the environment to connect to the database, then deploy the sample application that you downloaded from GitHub\.
 
 **To launch an environment \(console\)**
 

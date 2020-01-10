@@ -189,7 +189,7 @@ Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrate
 |  composer\_options  |  Sets custom options to use when installing dependencies using Composer through composer\.phar install\. For more information including available options, go to [http://getcomposer\.org/doc/03\-cli\.md\#install](http://getcomposer.org/doc/03-cli.md#install)\.  |  n/a  |  n/a  | 
 
 **Note**  
-For more information about the PHP platform, see [Using the AWS Elastic Beanstalk PHP Platform](create_deploy_PHP.container.md)\.
+For more information about the PHP platform, see [Using the Elastic Beanstalk PHP Platform](create_deploy_PHP.container.md)\.
 
 ## Python Platform Options<a name="command-options-python"></a>
 

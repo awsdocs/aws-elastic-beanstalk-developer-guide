@@ -29,7 +29,7 @@ You can download a configuration using the EB CLI [eb config](eb3-config.md) com
 eb config get NAME
 ```
 
-**To apply a saved configuration during environment creation \(AWS Management Console\)**
+**To apply a saved configuration during environment creation \(Elastic Beanstalk console\)**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 
@@ -41,7 +41,7 @@ eb config get NAME
 
 1. Proceed through the wizard to create your environment\.
 
-Saved configurations don't include settings applied with [configuration files](ebextensions.md) in your application's source code\. If the same setting is applied in both a configuration file and saved configuration, the setting in the saved configuration takes precedence\. Likewise, options specified in the AWS Management Console override options in saved configurations\. For more information, see [Precedence](command-options.md#configuration-options-precedence)\.
+Saved configurations don't include settings applied with [configuration files](ebextensions.md) in your application's source code\. If the same setting is applied in both a configuration file and saved configuration, the setting in the saved configuration takes precedence\. Likewise, options specified in the Elastic Beanstalk console override options in saved configurations\. For more information, see [Precedence](command-options.md#configuration-options-precedence)\.
 
 Saved configurations are stored in the Elastic Beanstalk S3 bucket in a folder named after your application\. For example, configurations for an application named `my-app` in the us\-west\-2 region for account number 123456789012 can be found at `s3://elasticbeanstalk-us-west-2-123456789012/resources/templates/my-app/`\.
 

@@ -13,12 +13,12 @@ Version 2 \(v2\) of the Elastic Beanstalk Windows Server platform was [released 
 The Windows Server platform now supports the following:
 + *Versioning* – Each release gets a new version number, and you can refer to past versions \(that are still available to you\) when creating and managing environments\.
 + *Enhanced health* – For details, see [Enhanced Health Reporting and Monitoring](health-enhanced.md)\.
-+ *Immutable* and *Rolling with an Additional Batch* deployments – For details about deployment policies, see [Deploying Applications to AWS Elastic Beanstalk Environments](using-features.deploy-existing-version.md)\.
++ *Immutable* and *Rolling with an Additional Batch* deployments – For details about deployment policies, see [Deploying Applications to Elastic Beanstalk Environments](using-features.deploy-existing-version.md)\.
 + *Immutable updates* – For details about update types, see [Configuration Changes](environments-updating.md)\.
 + *Managed platform updates* – For details, see [Managed Platform Updates](environment-platform-update-managed.md)\.
 
 **Note**  
-The new deployment and update features depend on enhanced health\. Enable enhanced health to use them\. For details, see [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md)\.
+The new deployment and update features depend on enhanced health\. Enable enhanced health to use them\. For details, see [Enabling Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md)\.
 
 ### Windows Server Platform V1<a name="dotnet-v2migration.diffs.v1"></a>
 
@@ -55,7 +55,7 @@ The Windows Server platform v2 doesn't support \.NET Core 1\.x and 2\.0\. If you
 If your application uses a custom Amazon Machine Image \(AMI\), create a new custom AMI based on a Windows Server platform v2 AMI\. To learn more, see [Using a Custom Amazon Machine Image \(AMI\)](using-features.customenv.md)\.
 
 **Note**  
-The deployment and update features that are new to Windows Server v2 depend on enhanced health\. When you migrate an environment to v2, enhanced health is disabled\. Enable it to use these features\. For details, see [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md)\.
+The deployment and update features that are new to Windows Server v2 depend on enhanced health\. When you migrate an environment to v2, enhanced health is disabled\. Enable it to use these features\. For details, see [Enabling Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md)\.
 
 ### From Pre\-V1<a name="dotnet-v2migration.migration.fromv0"></a>
 

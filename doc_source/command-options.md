@@ -14,7 +14,7 @@ For a complete list of namespaces and options, including default and supported v
 ## Precedence<a name="configuration-options-precedence"></a>
 
 During environment creation, configuration options are applied from multiple sources with the following precedence, from highest to lowest:
-+ **Settings applied directly to the environment** – Settings specified during a create environment or update environment operation on the Elastic Beanstalk API by any client, including the AWS Management Console, EB CLI, AWS CLI, and SDKs\. The AWS Management Console and EB CLI also apply [recommended values](#configuration-options-recommendedvalues) for some options that apply at this level unless overridden\.
++ **Settings applied directly to the environment** – Settings specified during a create environment or update environment operation on the Elastic Beanstalk API by any client, including the Elastic Beanstalk console, EB CLI, AWS CLI, and SDKs\. The Elastic Beanstalk console and EB CLI also apply [recommended values](#configuration-options-recommendedvalues) for some options that apply at this level unless overridden\.
 + **Saved Configurations** – Settings for any options that are not applied directly to the environment are loaded from a saved configuration, if specified\.
 + **Configuration Files \(\.ebextensions\)** – Settings for any options that are not applied directly to the environment, and also not specified in a saved configuration, are loaded from configuration files in the `.ebextensions` folder at the root of the application source bundle\.
 
@@ -25,7 +25,7 @@ If the same configuration option is defined in more than one location, the setti
 
 Settings in configuration files are not applied directly to the environment and cannot be removed without modifying the configuration files and deploying a new application version\. If a setting applied with one of the other methods is removed, the same setting will be loaded from configuration files in the source bundle\.
 
-For example, say you set the minimum number of instances in your environment to 5 during environment creation, using either the AWS Management Console, a command line option, or a saved configuration\. The source bundle for your application also includes a configuration file that sets the minimum number of instances to 2\.
+For example, say you set the minimum number of instances in your environment to 5 during environment creation, using either the Elastic Beanstalk console, a command line option, or a saved configuration\. The source bundle for your application also includes a configuration file that sets the minimum number of instances to 2\.
 
 When you create the environment, Elastic Beanstalk sets the `MinSize` option in the `aws:autoscaling:asg` namespace to 5\. If you then remove the option from the environment configuration, the value in the configuration file is loaded, and the minimum number of instances is set to 2\. If you then remove the configuration file from the source bundle and redeploy, Elastic Beanstalk uses the default setting of 1\.
 

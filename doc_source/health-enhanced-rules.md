@@ -11,7 +11,7 @@ Currently, this is the only available enhanced heath rule customization\. You ca
 
 You can use the Elastic Beanstalk console to configure enhanced health rules in your environment\.
 
-**To ignore application HTTP 4xx status codes using the AWS Management Console**
+**To ignore application HTTP 4xx status codes using the Elastic Beanstalk console**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
 

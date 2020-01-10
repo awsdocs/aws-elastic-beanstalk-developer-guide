@@ -9,18 +9,18 @@ You can remove option settings from an environment with EB CLI or AWS CLI comman
 Settings in saved configurations and configuration files can be overridden by setting the same option directly on the environment with one of the other configuration methods\. However, these can only be removed completely by applying an updated saved configuration or configuration file\. When an option is not set in a saved configuration, in a configuration file, or directly on an environment, the default value applies, if there is one\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
 
 **Topics**
-+ [The Elastic Beanstalk console](#configuration-options-after-console)
++ [The Elastic Beanstalk Console](#configuration-options-after-console)
 + [The EB CLI](#configuration-options-after-ebcli)
 + [The AWS CLI](#configuration-options-after-awscli)
 
-## The Elastic Beanstalk console<a name="configuration-options-after-console"></a>
+## The Elastic Beanstalk Console<a name="configuration-options-after-console"></a>
 
-You can update configuration option settings in the AWS Management Console by deploying an application source bundle that contains configuration files, applying a saved configuration, or modifying the environment directly with the **Configuration** page in the environment management console\.
+You can update configuration option settings in the Elastic Beanstalk console by deploying an application source bundle that contains configuration files, applying a saved configuration, or modifying the environment directly with the **Configuration** page in the environment management console\.
 
 **Topics**
 + [Using Configuration Files \(`.ebextensions`\)](#configuration-options-after-console-ebextensions)
 + [Using a Saved Configuration](#configuration-options-after-console-savedconfig)
-+ [Using the Environment Management Console](#configuration-options-after-console-configpage)
++ [Using the Elastic Beanstalk Console](#configuration-options-after-console-configpage)
 
 ### Using Configuration Files \(`.ebextensions`\)<a name="configuration-options-after-console-ebextensions"></a>
 
@@ -62,7 +62,7 @@ Settings defined in a saved configuration override settings in configuration fil
 
 See [Saved Configurations](environment-configuration-methods-before.md#configuration-options-before-savedconfig) for details on creating saved configurations\.
 
-### Using the Environment Management Console<a name="configuration-options-after-console-configpage"></a>
+### Using the Elastic Beanstalk Console<a name="configuration-options-after-console-configpage"></a>
 
 The Elastic Beanstalk console presents many configuration options on the **Configuration** page for each environment\.
 
@@ -89,7 +89,7 @@ The Elastic Beanstalk console presents many configuration options on the **Confi
 
 Changes made to configuration options in the environment management console are applied directly to the environment\. These changes override settings for the same options in configuration files or saved configurations\. For details, see [Precedence](command-options.md#configuration-options-precedence)\.
 
-For details about changing configuration options on a running environment using the Elastic Beanstalk console, see the topics under [Configuring AWS Elastic Beanstalk Environments](customize-containers.md)\.
+For details about changing configuration options on a running environment using the Elastic Beanstalk console, see the topics under [Configuring Elastic Beanstalk Environments](customize-containers.md)\.
 
 ## The EB CLI<a name="configuration-options-after-ebcli"></a>
 

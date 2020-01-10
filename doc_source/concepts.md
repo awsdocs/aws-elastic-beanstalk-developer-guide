@@ -1,4 +1,4 @@
-# AWS Elastic Beanstalk Concepts<a name="concepts"></a>
+# Elastic Beanstalk Concepts<a name="concepts"></a>
 
 AWS Elastic Beanstalk enables you to manage all of the resources that run your *application* as *environments*\. Here are some key Elastic Beanstalk concepts\.
 
@@ -30,4 +30,4 @@ A *saved configuration* is a template that you can use as a starting point for c
 
 A *platform* is a combination of an operating system, programming language runtime, web server, application server, and Elastic Beanstalk components\. You design and target your web application to a platform\. Elastic Beanstalk provides a variety of platforms on which you can build your applications\.
 
-For details, see [AWS Elastic Beanstalk Platforms](concepts-all-platforms.md)\.
+For details, see [Elastic Beanstalk Platforms](concepts-all-platforms.md)\.

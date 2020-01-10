@@ -1,4 +1,4 @@
-# Using Enhanced Health Reporting with the AWS Elastic Beanstalk API<a name="health-enhanced-api"></a>
+# Using Enhanced Health Reporting with the Elastic Beanstalk API<a name="health-enhanced-api"></a>
 
 Because AWS Elastic Beanstalk enhanced health reporting has role and solution stack requirements, you must update scripts and code that you used prior to the release of enhanced health reporting before you can use it\. To maintain backward compatibility, enhanced health reporting is not enabled by default when you create an environment using the Elastic Beanstalk API\.
 

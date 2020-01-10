@@ -31,7 +31,7 @@ For information about installing the EB CLI, configuring a repository, and worki
 + [Using the EB CLI with Git](eb3-cli-git.md)
 + [Using the EB CLI with AWS CodeCommit](eb-cli-codecommit.md)
 + [Using the EB CLI to Monitor Environment Health](health-enhanced-ebcli.md)
-+ [Managing Multiple AWS Elastic Beanstalk Environments as a Group with the EB CLI](ebcli-compose.md)
++ [Managing Multiple Elastic Beanstalk Environments as a Group with the EB CLI](ebcli-compose.md)
 + [Troubleshooting issues with the EB CLI](eb-cli-troubleshooting.md)
 + [EB CLI Command Reference](eb3-cmd-commands.md)
 + [EB CLI 2\.6 \(Retired\)](eb-cli.md)

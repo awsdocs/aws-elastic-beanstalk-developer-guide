@@ -1,4 +1,4 @@
-# Enabling AWS Elastic Beanstalk Enhanced Health Reporting<a name="health-enhanced-enable"></a>
+# Enabling Elastic Beanstalk Enhanced Health Reporting<a name="health-enhanced-enable"></a>
 
 New environments created with the latest [platform versions](concepts.platforms.md) include the AWS Elastic Beanstalk [health agent](health-enhanced.md#health-enhanced-agent), which supports enhanced health reporting\. If you create your environment in the Elastic Beanstalk console or with the EB CLI, enhanced health is enabled by default\. You can also set your health reporting preference in your application's source code using [configuration files](ebextensions.md)\.
 

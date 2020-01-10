@@ -1,4 +1,4 @@
-# Tagging AWS Elastic Beanstalk Application Resources<a name="applications-tagging-resources"></a>
+# Tagging Elastic Beanstalk Application Resources<a name="applications-tagging-resources"></a>
 
 You can apply tags to resources of your AWS Elastic Beanstalk applications\. Tags are key\-value pairs associated with AWS resources\. Tags can help you categorize resources\. They're particularly useful if you manage many resources as part of multiple AWS applications\.
 

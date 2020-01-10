@@ -1,6 +1,6 @@
-# Deploying Applications to AWS Elastic Beanstalk Environments<a name="using-features.deploy-existing-version"></a>
+# Deploying Applications to Elastic Beanstalk Environments<a name="using-features.deploy-existing-version"></a>
 
-You can use the AWS Management Console to upload an updated [source bundle](applications-sourcebundle.md) and deploy it to your AWS Elastic Beanstalk environment, or redeploy a previously uploaded version\.
+You can use the AWS Elastic Beanstalk console to upload an updated [source bundle](applications-sourcebundle.md) and deploy it to your Elastic Beanstalk environment, or redeploy a previously uploaded version\.
 
 Deploying a new version of your application to an environment is typically a fairly quick process\. The new source bundle is deployed to an instance and extracted\. Then the web container or application server picks up the new version and, if necessary, restarts\. During deployment, your application might still become unavailable to users for a few seconds\. You can prevent this by configuring your environment to use [rolling deployments](using-features.rolling-version-deploy.md) to deploy the new version to instances in batches\.
 

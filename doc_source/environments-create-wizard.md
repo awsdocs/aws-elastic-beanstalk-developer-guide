@@ -1,6 +1,6 @@
 # The Create New Environment Wizard<a name="environments-create-wizard"></a>
 
-In [Creating an AWS Elastic Beanstalk Environment](using-features.environments.md) we show how to open the **Create New Environment** wizard and quickly create an environment\. Choose **Create environment** to launch an environment with a default environment name, automatically generated domain, sample application code, and recommended settings\.
+In [Creating an Elastic Beanstalk Environment](using-features.environments.md) we show how to open the **Create New Environment** wizard and quickly create an environment\. Choose **Create environment** to launch an environment with a default environment name, automatically generated domain, sample application code, and recommended settings\.
 
 This topic describes the **Create New Environment** wizard and all the ways you can use it to configure the environment you want to create\.
 
@@ -148,7 +148,7 @@ For more information on CloudWatch metrics and alarms, see [Amazon CloudWatch Co
 
 In a load balanced environment, your environment's load balancer is the entry point for all traffic headed for your application\. Elastic Beanstalk supports several types of load balancer\. Use the **Modify load balancer** configuration page to select a load balancer type and to configure settings for it\. By default, the Elastic Beanstalk console creates an Application Load Balancer and configures it to serve HTTP traffic on port 80\.
 
-For more details about load balancer types and settings, see [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md) and [Configuring HTTPS for Your Elastic Beanstalk Environment](configuring-https.md)\.
+For more details about load balancer types and settings, see [Load Balancer for Your Elastic Beanstalk Environment](using-features.managing.elb.md) and [Configuring HTTPS for Your Elastic Beanstalk Environment](configuring-https.md)\.
 
 ![\[Load balancer configuration during environment creation\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-elb-type-chooser.png)
 

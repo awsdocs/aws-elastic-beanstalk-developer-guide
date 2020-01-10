@@ -13,14 +13,14 @@ In addition to the standard set of options available for all environments, most 
 + **Configuration options** – Most platforms define [configuration options](command-options.md) in platform\-specific or shared namespaces, such as `aws:elasticbeanstalk:xray` or `aws:elasticbeanstalk:container:python`\.
 
 For information about platform\-specific options, and about getting environment property values in your code, see the platform topic for your language or framework:
-+ Go – [Using the AWS Elastic Beanstalk Go Platform](go-environment.md)
-+ Java SE – [Using the AWS Elastic Beanstalk Java SE Platform](java-se-platform.md)
-+ Tomcat – [Using the AWS Elastic Beanstalk Tomcat Platform](java-tomcat-platform.md)
-+ \.NET – [Using the AWS Elastic Beanstalk \.NET Platform](create_deploy_NET.container.console.md)
-+ Node\.js – [Using the AWS Elastic Beanstalk Node\.js Platform](create_deploy_nodejs.container.md)
-+ PHP – [Using the AWS Elastic Beanstalk PHP Platform](create_deploy_PHP.container.md)
-+ Python – [Using the AWS Elastic Beanstalk Python Platform](create-deploy-python-container.md)
-+ Ruby – [Using the AWS Elastic Beanstalk Ruby Platform](create_deploy_Ruby.container.md)
++ Go – [Using the Elastic Beanstalk Go Platform](go-environment.md)
++ Java SE – [Using the Elastic Beanstalk Java SE Platform](java-se-platform.md)
++ Tomcat – [Using the Elastic Beanstalk Tomcat Platform](java-tomcat-platform.md)
++ \.NET – [Using the Elastic Beanstalk \.NET Platform](create_deploy_NET.container.console.md)
++ Node\.js – [Using the Elastic Beanstalk Node\.js Platform](create_deploy_nodejs.container.md)
++ PHP – [Using the Elastic Beanstalk PHP Platform](create_deploy_PHP.container.md)
++ Python – [Using the Elastic Beanstalk Python Platform](create-deploy-python-container.md)
++ Ruby – [Using the Elastic Beanstalk Ruby Platform](create_deploy_Ruby.container.md)
 
 Also, when you [add a database to your environment](using-features.managing.db.md), Elastic Beanstalk sets environment properties, such as `RDS_HOSTNAME`, that you can read in your application code to construct a connection object or string\.
 

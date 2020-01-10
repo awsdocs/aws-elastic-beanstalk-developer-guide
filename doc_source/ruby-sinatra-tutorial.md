@@ -1,4 +1,4 @@
-# Deploying a Sinatra Application to AWS Elastic Beanstalk<a name="ruby-sinatra-tutorial"></a>
+# Deploying a Sinatra Application to Elastic Beanstalk<a name="ruby-sinatra-tutorial"></a>
 
 This walkthrough shows how to deploy a simple [Sinatra](http://www.sinatrarb.com/) web application to AWS Elastic Beanstalk\.
 
@@ -19,7 +19,7 @@ Sinatra requires Ruby 1\.9 or newer\. In this tutorial we use Ruby 2\.5\.1 and t
 
 ## Launch an Elastic Beanstalk Environment<a name="ruby-sinatra-tutorial-launch"></a>
 
-Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **Ruby** platform and accept the default settings and sample code\.
+Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. Choose the **Ruby** platform and accept the default settings and sample code\.
 
 **To launch an environment \(console\)**
 

@@ -28,7 +28,7 @@ CakePHP requires PHP 5\.5\.9 or newer, and the `mbstring` and `intl` extensions 
 
 ## Launch an Elastic Beanstalk Environment<a name="php-cakephp-tutorial-launch"></a>
 
-Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\.
+Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\.
 
 **To launch an environment \(console\)**
 

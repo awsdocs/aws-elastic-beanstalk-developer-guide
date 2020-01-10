@@ -1,6 +1,6 @@
 # Listing and Connecting to Server Instances<a name="using-features.ec2connect"></a>
 
- You can view a list of Amazon EC2 instances running your AWS Elastic Beanstalk application environment through the AWS Management Console\. You can connect to the instances using any SSH client\. You can connect to the instances running Windows using Remote Desktop\.
+ You can view a list of Amazon EC2 instances running your AWS Elastic Beanstalk application environment through the Elastic Beanstalk console\. You can connect to the instances using any SSH client\. You can connect to the instances running Windows using Remote Desktop\.
 
 Some notes about specific development environments:
 + For more information about listing and connecting to server instances using the AWS Toolkit for Eclipse, see [Listing and Connecting to Server Instances](create_deploy_Java.ec2connect.md)\.

@@ -1,6 +1,6 @@
-# Deploying an ASP\.NET Core Application with AWS Elastic Beanstalk<a name="dotnet-core-tutorial"></a>
+# Deploying an ASP\.NET Core Application with Elastic Beanstalk<a name="dotnet-core-tutorial"></a>
 
-In this tutorial, you will walk through the process of building a new ASP\.NET Core application and deploying it to Elastic Beanstalk\.
+In this tutorial, you will walk through the process of building a new ASP\.NET Core application and deploying it to AWS Elastic Beanstalk\.
 
  First, you will use the \.NET Core SDK's `dotnet` command line tool to generate a basic \.NET Core command line application, install dependencies, compile code, and run applications locally\.  Next, you will create the default `Program.cs` class, and add an ASP\.NET `Startup.cs` class and configuration files to make an application that serves HTTP requests with ASP\.NET and IIS\. 
 
@@ -111,7 +111,7 @@ Use the `dotnet` command line tool to generate a new C\# \.NET Core project and 
 
 ## Launch an Elastic Beanstalk Environment<a name="dotnet-core-tutorial-launch"></a>
 
-Use the AWS Management Console to launch an Elastic Beanstalk environment\. For this example, you will launch with a \.NET platform\. After you launch and configure your environment, you can deploy new source code at any time\.
+Use the Elastic Beanstalk console to launch an Elastic Beanstalk environment\. For this example, you will launch with a \.NET platform\. After you launch and configure your environment, you can deploy new source code at any time\.
 
 **To launch an environment \(console\)**
 

@@ -4,7 +4,7 @@ You can publish the data gathered by AWS Elastic Beanstalk enhanced health repor
 
 By publishing metrics to CloudWatch, you also make them available for use with [monitoring graphs](environment-health-console.md#environment-health-console-graphs) and [alarms](using-features.alarms.md)\. One free metric, *EnvironmentHealth*, is enabled automatically when you use enhanced health reporting\. Custom metrics other than *EnvironmentHealth* incur standard [CloudWatch charges](https://aws.amazon.com/cloudwatch/pricing/)\. 
 
-To publish CloudWatch custom metrics for an environment, you must first enable enhanced health reporting on the environment\. See [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) for instructions\.
+To publish CloudWatch custom metrics for an environment, you must first enable enhanced health reporting on the environment\. See [Enabling Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) for instructions\.
 
 **Topics**
 + [Enhanced Health Reporting Metrics](#health-enhanced-cloudwatch-metrics)
@@ -61,7 +61,7 @@ Instance only\. Indicates the percentage of time that the CPU has spent in each 
 
 ## Configuring CloudWatch Metrics Using the Elastic Beanstalk Console<a name="health-enhanced-cloudwatch-console"></a>
 
-You can use the Elastic Beanstalk Console to configure your environment to publish enhanced health reporting metrics to CloudWatch and make them available for use with monitoring graphs and alarms\.
+You can use the Elastic Beanstalk console to configure your environment to publish enhanced health reporting metrics to CloudWatch and make them available for use with monitoring graphs and alarms\.
 
 **To configure CloudWatch custom metrics in the Elastic Beanstalk console**
 

@@ -8,4 +8,4 @@ The following diagram shows the different components and their interactions acro
 
 Amazon CloudWatch is used for alarms and health monitoring\. For more information, go to [Basic Health Reporting](using-features.healthstatus.md)\.
 
-For details about how the worker environment tier works, see [AWS Elastic Beanstalk Worker Environments](using-features-managing-env-tiers.md)\.
+For details about how the worker environment tier works, see [Elastic Beanstalk Worker Environments](using-features-managing-env-tiers.md)\.

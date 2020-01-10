@@ -1,11 +1,11 @@
-# Creating an AWS Elastic Beanstalk Environment<a name="using-features.environments"></a>
+# Creating an Elastic Beanstalk Environment<a name="using-features.environments"></a>
 
-You can deploy multiple environments when you need to run multiple versions of an application\. For example, you might have development, integration, and production environments\.
+You can deploy multiple AWS Elastic Beanstalk environments when you need to run multiple versions of an application\. For example, you might have development, integration, and production environments\.
 
 **Note**  
 For instructions on creating and managing environments with the EB CLI, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
 
-The **Create New Environment** wizard in the AWS Management Console guides you through the creation of an environment step by step, with a bevy of options for configuring the resources that Elastic Beanstalk deploys on your behalf\. If you are just getting started, you can use the default values for many of these options without issue\.
+The **Create New Environment** wizard in the Elastic Beanstalk console guides you through the creation of an environment step by step, with a bevy of options for configuring the resources that Elastic Beanstalk deploys on your behalf\. If you are just getting started, you can use the default values for many of these options without issue\.
 
 **Note**  
 Creating an environment requires the permissions in the Elastic Beanstalk full access managed policy\. See [Elastic Beanstalk User Policy](concepts-roles-user.md) for details\.

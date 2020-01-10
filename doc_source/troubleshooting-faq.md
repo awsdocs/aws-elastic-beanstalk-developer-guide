@@ -6,7 +6,7 @@ In a DNS server, register a CNAME record such as **www\.mydomain\.com CNAME mydo
 
 **Question:** *How do I specify a specific Availability Zone for my Elastic Beanstalk application?*
 
-You can pick specific Availability Zones using the APIs, CLI, Eclipse plugin, or Visual Studio plugin\. For instructions about using the AWS Management Console to specify an Availability Zone, see [Auto Scaling group for Your Elastic Beanstalk Environment](using-features.managing.as.md)\.
+You can pick specific Availability Zones using the APIs, CLI, Eclipse plugin, or Visual Studio plugin\. For instructions about using the Elastic Beanstalk console to specify an Availability Zone, see [Auto Scaling group for Your Elastic Beanstalk Environment](using-features.managing.as.md)\.
 
 **Question:** *How do I change my environment's instance type?*
 

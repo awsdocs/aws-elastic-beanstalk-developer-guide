@@ -1,4 +1,4 @@
-# Using the AWS Elastic Beanstalk Java SE Platform<a name="java-se-platform"></a>
+# Using the Elastic Beanstalk Java SE Platform<a name="java-se-platform"></a>
 
 The AWS Elastic Beanstalk Java SE platform is a set of [platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.javase) for Java web applications that can run on their own from a compiled JAR file\. You can compile your application locally or upload the source code with a build script to compile it on\-instance\. Each platform version corresponds to a major version of Java, including *Java 8* and *Java 7*\.
 
@@ -27,7 +27,7 @@ For more information on using `commands`, `files`, `packages` and `container_com
 
 The Elastic Beanstalk Java SE platform provides a few platform\-specific options in addition to the standard options that all platforms have\. These options let you configure the nginx proxy that runs in front of your application to serve static files\.
 
-You can use the AWS Management Console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
+You can use the Elastic Beanstalk console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
 
 **To configure your Java SE environment in the Elastic Beanstalk console**
 

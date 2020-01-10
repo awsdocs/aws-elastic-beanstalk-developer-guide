@@ -1,6 +1,6 @@
-# Creating and Deploying PHP Applications on AWS Elastic Beanstalk<a name="create_deploy_PHP_eb"></a>
+# Creating and Deploying PHP Applications on Elastic Beanstalk<a name="create_deploy_PHP_eb"></a>
 
-Elastic Beanstalk for PHP makes it easy to deploy, manage, and scale your PHP web applications using Amazon Web Services\. Elastic Beanstalk for PHP is available to anyone developing or hosting a web application using PHP\. This section provides instructions for deploying your PHP web application to Elastic Beanstalk\. You can deploy your application in just a few minutes using the Elastic Beanstalk Command Line Interface \(EB CLI\) or by using the Elastic Beanstalk Management Console\. It also provides walkthroughs for common frameworks such as CakePHP and Symfony\.
+AWS Elastic Beanstalk for PHP makes it easy to deploy, manage, and scale your PHP web applications using Amazon Web Services\. Elastic Beanstalk for PHP is available to anyone developing or hosting a web application using PHP\. This section provides instructions for deploying your PHP web application to Elastic Beanstalk\. You can deploy your application in just a few minutes using the Elastic Beanstalk Command Line Interface \(EB CLI\) or by using the Elastic Beanstalk Management Console\. It also provides walkthroughs for common frameworks such as CakePHP and Symfony\.
 
 The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
@@ -18,7 +18,7 @@ If you need help with PHP application development, there are several places you 
 
 **Topics**
 + [Setting Up your PHP Development Environment](php-development-environment.md)
-+ [Using the AWS Elastic Beanstalk PHP Platform](create_deploy_PHP.container.md)
++ [Using the Elastic Beanstalk PHP Platform](create_deploy_PHP.container.md)
 + [Deploying a Laravel Application to Elastic Beanstalk](php-laravel-tutorial.md)
 + [Deploying a CakePHP Application to Elastic Beanstalk](php-cakephp-tutorial.md)
 + [Deploying a Symfony Application to Elastic Beanstalk](php-symfony-tutorial.md)

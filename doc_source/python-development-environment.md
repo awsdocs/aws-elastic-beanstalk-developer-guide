@@ -11,7 +11,7 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with AWS Elastic Beanstalk](chapter-devenv.md)\.
+For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
 + [Installing Python and Pip](#python-common-prereq)
@@ -88,4 +88,4 @@ You can use the Elastic Beanstalk CLI to prepare your Python applications for de
 
 1. Configure the EB CLI repository with the eb init command\. Follow the prompts to choose a region, platform and other options\. For detailed instructions, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
 
-By default, Elastic Beanstalk looks for a file called `application.py` to start your application\. If this doesn't exist in the Python project that you've created, some adjustment of your application's environment is necessary\. You will also need to set environment variables so that your application's modules can be loaded\. See [Using the AWS Elastic Beanstalk Python Platform](create-deploy-python-container.md) for more information\.
+By default, Elastic Beanstalk looks for a file called `application.py` to start your application\. If this doesn't exist in the Python project that you've created, some adjustment of your application's environment is necessary\. You will also need to set environment variables so that your application's modules can be loaded\. See [Using the Elastic Beanstalk Python Platform](create-deploy-python-container.md) for more information\.

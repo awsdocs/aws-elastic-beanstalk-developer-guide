@@ -11,7 +11,7 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with AWS Elastic Beanstalk](chapter-devenv.md)
+For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with Elastic Beanstalk](chapter-devenv.md)
 
 **Topics**
 + [Installing Ruby](#ruby-development-environment-ruby)

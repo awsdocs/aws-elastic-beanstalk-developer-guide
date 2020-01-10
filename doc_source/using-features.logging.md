@@ -179,11 +179,11 @@ For example, your application writes to a log file named `my_log.log`, and you s
 
 ## Streaming Log Files to Amazon CloudWatch Logs<a name="health-logs-cloudwatchlogs"></a>
 
-You can configure your environment to stream logs to Amazon CloudWatch Logs in the AWS Management Console or by using [configuration options](command-options.md)\. With CloudWatch Logs, each instance in your environment streams logs to log groups that you can configure to be retained for weeks or years, even after your environment is terminated\.
+You can configure your environment to stream logs to Amazon CloudWatch Logs in the Elastic Beanstalk console or by using [configuration options](command-options.md)\. With CloudWatch Logs, each instance in your environment streams logs to log groups that you can configure to be retained for weeks or years, even after your environment is terminated\.
 
 The set of logs streamed varies per environment, but always includes `eb-activity.log` and access logs from the nginx or Apache proxy server that runs in front of your application\.
 
-You can configure log streaming in the AWS Management Console either [during environment creation](environments-create-wizard.md#environments-create-wizard-software) or [for an existing environment](environments-cfg-logging.md#environments-cfg-logging-console)\. In the following example, logs are saved for up to seven days, even when the environment is terminated\.
+You can configure log streaming in the Elastic Beanstalk console either [during environment creation](environments-create-wizard.md#environments-create-wizard-software) or [for an existing environment](environments-cfg-logging.md#environments-cfg-logging-console)\. In the following example, logs are saved for up to seven days, even when the environment is terminated\.
 
 ![\[CloudWatch Logs settings\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/log-streaming-screen.png)
 

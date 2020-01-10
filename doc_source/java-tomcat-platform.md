@@ -1,4 +1,4 @@
-# Using the AWS Elastic Beanstalk Tomcat Platform<a name="java-tomcat-platform"></a>
+# Using the Elastic Beanstalk Tomcat Platform<a name="java-tomcat-platform"></a>
 
 The AWS Elastic Beanstalk Tomcat platform is a set of [environment configurations](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.java) for Java web applications that can run in a Tomcat web container\. Each configuration corresponds to a major version of Tomcat, like *Java 8 with Tomcat 8*\.
 
@@ -18,7 +18,7 @@ Settings applied in the AWS Management Console override the same settings in con
 
 The Elastic Beanstalk Tomcat platform provides a few platform\-specific options in addition to the standard options that all platforms have\. These options enable you to configure the Java virtual machine \(JVM\) that runs on your environment's web servers, and define system properties that provide information configuration strings to your application\.
 
-You can use the AWS Management Console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
+You can use the Elastic Beanstalk console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
 
 **To configure your Tomcat environment in the Elastic Beanstalk console**
 

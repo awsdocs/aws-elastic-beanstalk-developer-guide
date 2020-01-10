@@ -10,7 +10,7 @@ To provide detailed health information about the Amazon EC2 instances running in
 
 In addition to collecting and presenting information about your environment's resources, Elastic Beanstalk monitors the resources in your environment for several error conditions and provides notifications to help you avoid failures and resolve configuration issues\. [Factors that influence your environment's health](#health-enhanced-factors) include the results of each request served by your application, metrics from your instances' operating system, and the status of the most recent deployment\.
 
-You can view health status in real time by using the [environment dashboard](health-enhanced-console.md) in the AWS Management Console or the [eb health](health-enhanced-ebcli.md) command in the [Elastic Beanstalk command line interface](eb-cli3.md) \(EB CLI\)\. To record and track environment and instance health over time, you can configure your environment to publish the information gathered by Elastic Beanstalk for enhanced health reporting to Amazon CloudWatch as custom metrics\. CloudWatch [charges](https://aws.amazon.com/cloudwatch/pricing/) for custom metrics apply to all metrics other than `EnvironmentHealth`, which is free of charge\.
+You can view health status in real time by using the [environment dashboard](health-enhanced-console.md) in the Elastic Beanstalk console or the [eb health](health-enhanced-ebcli.md) command in the [Elastic Beanstalk command line interface](eb-cli3.md) \(EB CLI\)\. To record and track environment and instance health over time, you can configure your environment to publish the information gathered by Elastic Beanstalk for enhanced health reporting to Amazon CloudWatch as custom metrics\. CloudWatch [charges](https://aws.amazon.com/cloudwatch/pricing/) for custom metrics apply to all metrics other than `EnvironmentHealth`, which is free of charge\.
 
 Enhanced health reporting requires a version 2 or newer [ platform version](concepts.platforms.md)\. To monitor resources and publish metrics, your environment must have both an [instance profile and service](#health-enhanced) role\. The Multicontainer Docker platform doesn't include a web server by default, but can be used with enhanced health reporting if you configure your web server to [provide logs in the proper format](health-enhanced-serverlogs.md)\.
 
@@ -19,7 +19,7 @@ This feature isn't available on [Windows Server platform versions](https://docs.
 When you enable enhanced health reporting on a Windows Server environment, don't change [IIS logging configuration](https://docs.microsoft.com/en-us/iis/manage/provisioning-and-managing-iis/configure-logging-in-iis)\. For enhanced health monitoring to work correctly, IIS logging must be configured with the **W3C** format and the **ETW event only** or **Both log file and ETW event** log event destinations\.  
 In addition, don't disable or stop the [Elastic Beanstalk health agent](#health-enhanced-agent) Windows service on any of your environment's instances\. To collect and report enhanced health information on an instance, this service should be enabled and running\.
 
-Enhanced health requires the environment to have an instance profile\. The instance profile should have roles that provide permissions for your environment instances to collect and report enhanced health information\. The first time you create an environment with a v2 platform version in the Elastic Beanstalk console, Elastic Beanstalk prompts you to create the required roles and enables enhanced health reporting by default\. Continue reading for details on how enhanced health reporting works, or see [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) to get started using it right away\.
+Enhanced health requires the environment to have an instance profile\. The instance profile should have roles that provide permissions for your environment instances to collect and report enhanced health information\. The first time you create an environment with a v2 platform version in the Elastic Beanstalk console, Elastic Beanstalk prompts you to create the required roles and enables enhanced health reporting by default\. Continue reading for details on how enhanced health reporting works, or see [Enabling Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) to get started using it right away\.
 
 
 |  | 
@@ -35,13 +35,13 @@ Amazon Linux 2 platforms require instance profiles, so they can support enhanced
 + [Enhanced Health Roles](#health-enhanced-roles)
 + [Enhanced Health Events](#health-enhanced-events)
 + [Enhanced Health Reporting Behavior during Updates, Deployments, and Scaling](#health-enhanced-effects)
-+ [Enabling AWS Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md)
++ [Enabling Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md)
 + [Enhanced Health Monitoring with the Environment Management Console](health-enhanced-console.md)
 + [Health Colors and Statuses](health-enhanced-status.md)
 + [Instance Metrics](health-enhanced-metrics.md)
 + [Configuring Enhanced Health Rules for an Environment](health-enhanced-rules.md)
 + [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md)
-+ [Using Enhanced Health Reporting with the AWS Elastic Beanstalk API](health-enhanced-api.md)
++ [Using Enhanced Health Reporting with the Elastic Beanstalk API](health-enhanced-api.md)
 + [Enhanced Health Log Format](health-enhanced-serverlogs.md)
 + [Notifications and Troubleshooting](environments-health-enhanced-notifications.md)
 
@@ -128,7 +128,7 @@ Elastic Beanstalk enhanced health reporting relies on a set of rules to determin
 
 Enhanced health reporting requires two roles—a service role for Elastic Beanstalk and an instance profile for the environment\. The service role allows Elastic Beanstalk to interact with other AWS services on your behalf to gather information about the resources in your environment\. The instance profile allows the instances in your environment to write logs to Amazon S3\.
 
-When you create an Elastic Beanstalk environment in the AWS Management Console, the console prompts you to create an instance profile and service role with appropriate permissions\. The EB CLI also assists you in creating these roles when you call eb create to create an environment\.
+When you create an Elastic Beanstalk environment in the Elastic Beanstalk console, the console prompts you to create an instance profile and service role with appropriate permissions\. The EB CLI also assists you in creating these roles when you call eb create to create an environment\.
 
 If you use the API, an SDK, or the AWS CLI to create environments, you must create these roles in advance, and specify them during environment creation to use enhanced health\. For instructions on creating appropriate roles for your environments, see [Service Roles, Instance Profiles, and User Policies](concepts-roles.md)\.
 

@@ -23,7 +23,7 @@ Elastic Beanstalk doesn't include any unmanaged changes to resources in the clon
 
 1. In the **New Environment** section, you can optionally change the **Environment name**, **Environment URL**, **Description**, **Platform**, and **Service role** values that Elastic Beanstalk automatically set based on the original environment\.
 **Note**  
-For **Platform**, only solution stacks with the same language and web server configuration are shown\. If a newer version of the solution stack used with the original environment is available, you are prompted to update, but you cannot choose a different stack, even if it is for a different version of the same language\. For more information, see [AWS Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.  
+For **Platform**, only solution stacks with the same language and web server configuration are shown\. If a newer version of the solution stack used with the original environment is available, you are prompted to update, but you cannot choose a different stack, even if it is for a different version of the same language\. For more information, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.  
 ![\[Elastic Beanstalk Clone Environment configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-clone-env-latest.png)
 
 1. When you are ready, choose **Clone**\.

@@ -1,4 +1,4 @@
-# Tutorial: How to Deploy a \.NET Sample Application Using AWS Elastic Beanstalk<a name="create_deploy_NET.quickstart"></a>
+# Tutorial: How to Deploy a \.NET Sample Application Using Elastic Beanstalk<a name="create_deploy_NET.quickstart"></a>
 
 In this tutorial, you will learn how to deploy a \.NET sample application to AWS Elastic Beanstalk using the AWS Toolkit for Visual Studio\.
 
@@ -92,4 +92,4 @@ If you are done working with Elastic Beanstalk for now, you can terminate your \
 
 Elastic Beanstalk cleans up all AWS resources associated with your environment, including EC2 instances, DB instance, load balancer, security groups, CloudWatch alarms, etc\.
 
-For more information, see [Creating and Deploying \.NET Applications on AWS Elastic Beanstalk](create_deploy_NET.md), the [ AWS \.NET Development Blog ](http://aws.amazon.com/blogs/developer/category/net/), or the [AWS Application Management Blog](http://aws.amazon.com/blogs/devops/)\.
+For more information, see [Creating and Deploying \.NET Applications on Elastic Beanstalk](create_deploy_NET.md), the [ AWS \.NET Development Blog ](http://aws.amazon.com/blogs/developer/category/net/), or the [AWS Application Management Blog](http://aws.amazon.com/blogs/devops/)\.

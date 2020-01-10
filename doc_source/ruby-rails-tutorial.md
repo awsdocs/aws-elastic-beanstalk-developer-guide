@@ -13,7 +13,7 @@ Rails is an open source, model\-view\-controller \(MVC\) framework for Ruby\. Th
 
 ## Prerequisites<a name="ruby-rails-tutorial-prereqs"></a>
 
-### Basic AWS Elastic Beanstalk Knowledge<a name="ruby-rails-tutorial-prereqs-basic"></a>
+### Basic Elastic Beanstalk Knowledge<a name="ruby-rails-tutorial-prereqs-basic"></a>
 
 This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
 
@@ -39,7 +39,7 @@ The Rails framework has the following dependencies\. Be sure you have all of the
 
 ## Launch an Elastic Beanstalk Environment<a name="ruby-rails-tutorial-launch"></a>
 
-Use the AWS Management Console to create an Elastic Beanstalk environment\. Choose the **Ruby** platform and accept the default settings and sample code\.
+Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. Choose the **Ruby** platform and accept the default settings and sample code\.
 
 **To launch an environment \(console\)**
 

@@ -1,4 +1,4 @@
-# Using the AWS Elastic Beanstalk Ruby Platform<a name="create_deploy_Ruby.container"></a>
+# Using the Elastic Beanstalk Ruby Platform<a name="create_deploy_Ruby.container"></a>
 
 The AWS Elastic Beanstalk Ruby platform is a set of [environment configurations](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.ruby) for Ruby web applications that can run behind an nginx proxy server under a Puma or Passenger application server\. Each configuration corresponds to a version of Ruby\.
 
@@ -14,7 +14,7 @@ Settings applied in the AWS Management Console override the same settings in con
 
 ## Configuring Your Ruby Environment<a name="create-deploy_Ruby.container.CON"></a>
 
-You can use the AWS Management Console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
+You can use the Elastic Beanstalk console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
 
 **To access the software configuration settings for your environment**
 

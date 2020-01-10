@@ -17,7 +17,7 @@ For information about the AWS services offered in each region, see [Region Table
 + [Using Multiple Elastic Load Balancing Listeners](#create_deploy_docker_ecs_listeners)
 + [Failed Container Deployments](#create_deploy_docker_ecs_rollback)
 + [Multicontainer Docker Configuration](create_deploy_docker_v2config.md)
-+ [Multicontainer Docker Environments with the AWS Management Console](create_deploy_docker_ecstutorial.md)
++ [Multicontainer Docker Environments with the Elastic Beanstalk console](create_deploy_docker_ecstutorial.md)
 
 ## Multicontainer Docker Platform<a name="create_deploy_docker_ecs_platform"></a>
 
@@ -140,7 +140,7 @@ See [Dockerrun\.aws\.json v2](create_deploy_docker_v2config.md#create_deploy_doc
 
 ## Failed Container Deployments<a name="create_deploy_docker_ecs_rollback"></a>
 
- If an Amazon ECS task fails, one or more containers in your Elastic Beanstalk environment will not start\. Elastic Beanstalk does not roll back multicontainer environments due to a failed Amazon ECS task\. If a container fails to start in your environment, redeploy the current version or a previous working version from the AWS Management Console\. 
+ If an Amazon ECS task fails, one or more containers in your Elastic Beanstalk environment will not start\. Elastic Beanstalk does not roll back multicontainer environments due to a failed Amazon ECS task\. If a container fails to start in your environment, redeploy the current version or a previous working version from the Elastic Beanstalk console\. 
 
 **To deploy an existing version**
 

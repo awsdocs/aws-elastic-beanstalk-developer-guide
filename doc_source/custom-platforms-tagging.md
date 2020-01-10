@@ -1,6 +1,6 @@
 # Tagging Custom Platform Versions<a name="custom-platforms-tagging"></a>
 
-You can apply tags to your AWS Elastic Beanstalk custom platform versions\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging AWS Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
+You can apply tags to your AWS Elastic Beanstalk custom platform versions\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
 
 You can specify tags when you create a custom platform version\. In an existing custom platform version, you can add or remove tags, and update the values of existing tags\. You can add up to 50 tags to each custom platform version\.
 

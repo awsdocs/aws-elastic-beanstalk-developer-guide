@@ -4,7 +4,7 @@
 
 Add, delete, update, and list tags of an Elastic Beanstalk resource\.
 
-For details about resource tagging in Elastic Beanstalk, see [Tagging AWS Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
+For details about resource tagging in Elastic Beanstalk, see [Tagging Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
 
 ## Syntax<a name="eb3-tagsyntax"></a>
 

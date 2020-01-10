@@ -35,7 +35,7 @@ For examples of commonly used \.ebextensions, see the [Elastic Beanstalk Configu
 If you use a key \(for example, `option_settings`\) twice in the same configuration file, one of the sections will be dropped\. Combine duplicate sections into a single section, or place them in separate configuration files\.
 
 The process for deploying varies slightly depending on the client that you use to manage your environments\. See the following sections for details:
-+ [Elastic Beanstalk Console](environment-configuration-methods-during.md#configuration-options-during-console-ebextensions)
++ [Elastic Beanstalk console](environment-configuration-methods-during.md#configuration-options-during-console-ebextensions)
 + [EB CLI](environment-configuration-methods-during.md#configuration-options-during-ebcli-ebextensions)
 + [AWS CLI](environment-configuration-methods-during.md#configuration-options-during-awscli-ebextensions)
 

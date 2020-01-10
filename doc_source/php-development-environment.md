@@ -2,7 +2,7 @@
 
 Set up a PHP development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with AWS Elastic Beanstalk](chapter-devenv.md)\.
+For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
 + [Installing PHP](#php-development-environment-php)

@@ -1,6 +1,6 @@
-# Configuring AWS Elastic Beanstalk Environments<a name="customize-containers"></a>
+# Configuring Elastic Beanstalk Environments<a name="customize-containers"></a>
 
-Elastic Beanstalk provides a wide range of options for customizing the resources in your environment, and Elastic Beanstalk behavior and platform settings\. When you create a web server environment, Elastic Beanstalk creates several resources to support the operation of your application\.
+AWS Elastic Beanstalk provides a wide range of options for customizing the resources in your environment, and Elastic Beanstalk behavior and platform settings\. When you create a web server environment, Elastic Beanstalk creates several resources to support the operation of your application\.
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
   Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
@@ -13,13 +13,13 @@ Elastic Beanstalk provides a wide range of options for customizing the resources
 + **AWS CloudFormation stack** – Elastic Beanstalk uses AWS CloudFormation to launch the resources in your environment and propagate configuration changes\. The resources are defined in a template that you can view in the [AWS CloudFormation console](https://console.aws.amazon.com/cloudformation)\.
 + **Domain name** – A domain name that routes to your web app in the form **subdomain*\.*region*\.elasticbeanstalk\.com*\.
 
-This topic focuses on the resource configuration options available in the Elastic Beanstalk console\. The following topics show how to configure your environment in the console\. They also describe the underlying namespaces that correspond to the console options for use with configuration files or API configuration options\. To learn about advanced configuration methods, see [Configuring AWS Elastic Beanstalk Environments \(Advanced\)](beanstalk-environment-configuration-advanced.md)\.
+This topic focuses on the resource configuration options available in the Elastic Beanstalk console\. The following topics show how to configure your environment in the console\. They also describe the underlying namespaces that correspond to the console options for use with configuration files or API configuration options\. To learn about advanced configuration methods, see [Configuring Elastic Beanstalk Environments \(Advanced\)](beanstalk-environment-configuration-advanced.md)\.
 
 **Topics**
 + [Environment Configuration Using the Elastic Beanstalk Console](environments-cfg-console.md)
 + [Your Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.managing.ec2.md)
 + [Auto Scaling group for Your Elastic Beanstalk Environment](using-features.managing.as.md)
-+ [Load Balancer for Your AWS Elastic Beanstalk Environment](using-features.managing.elb.md)
++ [Load Balancer for Your Elastic Beanstalk Environment](using-features.managing.elb.md)
 + [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)
 + [Your AWS Elastic Beanstalk Environment Security](using-features.managing.security.md)
 + [Tagging Resources in Your Elastic Beanstalk Environments](using-features.tagging.md)

@@ -1,4 +1,4 @@
-# Load Balancer for Your AWS Elastic Beanstalk Environment<a name="using-features.managing.elb"></a>
+# Load Balancer for Your Elastic Beanstalk Environment<a name="using-features.managing.elb"></a>
 
 When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), AWS Elastic Beanstalk creates an [Elastic Load Balancing](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/) load balancer for your environment\. The load balancer distributes traffic among your environment's instances\.
 

@@ -16,7 +16,7 @@ Elastic Beanstalk [Enhanced Health Reporting](health-enhanced.md) has native sup
 
 This example uses commands and option settings in an \.ebextensions configuration file to download, install, and run monitoring scripts provided by Amazon CloudWatch\.
 
-To use this sample, save it to a file named `cloudwatch.config` in a directory named `.ebextensions` at the top level of your project directory, then deploy your application using the AWS Management Console \(include the \.ebextensions directory in your [source bundle](applications-sourcebundle.md)\) or the [EB CLI](eb-cli3.md)\.
+To use this sample, save it to a file named `cloudwatch.config` in a directory named `.ebextensions` at the top level of your project directory, then deploy your application using the Elastic Beanstalk console \(include the \.ebextensions directory in your [source bundle](applications-sourcebundle.md)\) or the [EB CLI](eb-cli3.md)\.
 
 For more information about configuration files, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.
 
@@ -63,7 +63,7 @@ In order to publish custom Amazon CloudWatch metrics, the instances in your envi
 
 1. In the navigation pane, choose **Roles**\.
 
-1. Choose your environment's instance profile role\. By default, when you create an environment with the AWS Management Console or [EB CLI](eb-cli3.md), this is `aws-elasticbeanstalk-ec2-role`\.
+1. Choose your environment's instance profile role\. By default, when you create an environment with the Elastic Beanstalk console or [EB CLI](eb-cli3.md), this is `aws-elasticbeanstalk-ec2-role`\.
 
 1. Choose the **Permissions** tab\.
 
