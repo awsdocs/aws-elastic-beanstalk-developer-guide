@@ -1,4 +1,4 @@
-# Configuring Enhanced Health Rules for an Environment<a name="health-enhanced-rules"></a>
+# Configuring enhanced health rules for an environment<a name="health-enhanced-rules"></a>
 
 Elastic Beanstalk enhanced health reporting relies on a set of rules to determine the health of your environment\. Some of these rules might not be appropriate for your particular application\. A common case is when frequent HTTP client \(4xx\) errors are expected, for example, as a result of using client\-side test tools\. 
 
@@ -7,7 +7,7 @@ By default, Elastic Beanstalk includes all application HTTP 4xx errors when dete
 **Note**  
 Currently, this is the only available enhanced heath rule customization\. You can't configure enhanced health to ignore HTTP errors returned by an environment's load balancer, or other HTTP errors in addition to 4xx\.
 
-## Configuring Enhanced Health Rules Using the Elastic Beanstalk Console<a name="health-enhanced-rules.console"></a>
+## Configuring enhanced health rules using the Elastic Beanstalk console<a name="health-enhanced-rules.console"></a>
 
 You can use the Elastic Beanstalk console to configure enhanced health rules in your environment\.
 
@@ -22,11 +22,11 @@ You can use the Elastic Beanstalk console to configure enhanced health rules in 
 1. In the **Monitoring** configuration category, choose **Modify**\.
 
 1. Under **Health monitoring rule customization**, enable the **Ignore HTTP 4xx** option\.  
-![\[Health monitoring rule customization section on the Monitoring configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-rule-customization.png)
+![\[Health monitoring rule customization section on the monitoring configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-rule-customization.png)
 
 1. Choose **Apply**\.
 
-## Configuring Enhanced Health Rules Using the EB CLI<a name="health-enhanced-rules.ebcli"></a>
+## Configuring enhanced health rules using the EB CLI<a name="health-enhanced-rules.ebcli"></a>
 
 You can use the EB CLI to configure enhanced health rules by saving your environment's configuration locally, adding an entry that configures enhanced health rules, and then uploading the configuration to Elastic Beanstalk\. You can apply the saved configuration to an environment during or after creation\.
 
@@ -62,7 +62,7 @@ You can use the EB CLI to configure enhanced health rules by saving your environ
    ...
    ```
 **Note**  
-You can combine `Rules` and `CloudWatchMetrics` in the same `ConfigDocument` option setting\. `CloudWatchMetrics` are described in [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md)\.  
+You can combine `Rules` and `CloudWatchMetrics` in the same `ConfigDocument` option setting\. `CloudWatchMetrics` are described in [Publishing Amazon CloudWatch custom metrics for an environment](health-enhanced-cloudwatch.md)\.  
 If you previously enabled `CloudWatchMetrics`, then the configuration file that you retrieve using the eb config save command already has a `ConfigDocument` key with a `CloudWatchMetrics` section\. *Do not delete it*—add a `Rules` section into the same `ConfigDocument` option value\.
 
 1. Save the configuration file and close the text editor\. In this example, the updated configuration file is saved with a name \(`02-cloudwatch-enabled.cfg.yml`\) that's different from the downloaded configuration file\. This creates a separate saved configuration when the file is uploaded\. You can use the same name as the downloaded file to overwrite the existing configuration without creating a new one\.
@@ -83,7 +83,7 @@ If you previously enabled `CloudWatchMetrics`, then the configuration file that 
 
    The `--cfg` option specifies a named configuration file that is applied to the environment\. You can save the configuration file locally or in Elastic Beanstalk\. If a configuration file with the specified name exists in both locations, the EB CLI uses the local file\.
 
-## Configuring Enhanced Health Rules Using a Config Document<a name="health-enhanced-rules.configdocument"></a>
+## Configuring enhanced health rules using a config document<a name="health-enhanced-rules.configdocument"></a>
 
 The configuration \(config\) document for enhanced health rules is a JSON document that lists the rules to configure\. The following example shows a config document that disables the checking of application HTTP 4xx status codes \(the only rule currently available for customization\)\.
 

@@ -1,4 +1,4 @@
-# What Is AWS Elastic Beanstalk?<a name="Welcome"></a>
+# What is AWS Elastic Beanstalk?<a name="Welcome"></a>
 
 Amazon Web Services \(AWS\) comprises over one hundred services, each of which exposes an area of functionality\. While the variety of services offers flexibility for how you want to manage your AWS infrastructure, it can be challenging to figure out which services to use and how to provision them\.
 
@@ -14,7 +14,7 @@ You can also perform most deployment tasks, such as changing the size of your fl
 
 To use Elastic Beanstalk, you create an application, upload an application version in the form of an application source bundle \(for example, a Java \.war file\) to Elastic Beanstalk, and then provide some information about the application\. Elastic Beanstalk automatically launches an environment and creates and configures the AWS resources needed to run your code\. After your environment is launched, you can then manage your environment and deploy new application versions\. The following diagram illustrates the workflow of Elastic Beanstalk\.
 
-![\[Elastic Beanstalk Flow\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clearbox-flow-00.png)
+![\[Elastic Beanstalk flow\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clearbox-flow-00.png)
 
 After you create and deploy your application, information about the application—including metrics, events, and environment status—is available through the Elastic Beanstalk console, APIs, or Command Line Interfaces, including the unified AWS CLI\.
 
@@ -22,14 +22,14 @@ After you create and deploy your application, information about the application�
 
 There is no additional charge for Elastic Beanstalk\. You pay only for the underlying AWS resources that your application consumes\. For details about pricing, see the [Elastic Beanstalk service detail page](https://aws.amazon.com/elasticbeanstalk)\.
 
-## Where to Go Next<a name="Welcome.WhereToGo"></a>
+## Where to Go next<a name="Welcome.WhereToGo"></a>
 
 This guide contains conceptual information about the Elastic Beanstalk web service, as well as information about how to use the service to deploy web applications\. Separate sections describe how to use the Elastic Beanstalk console, command line interface \(CLI\) tools, and API to deploy and manage your Elastic Beanstalk environments\. This guide also documents how Elastic Beanstalk is integrated with other services provided by Amazon Web Services\.
 
-We recommend that you first read [Getting Started Using Elastic Beanstalk](GettingStarted.md) to learn how to start using Elastic Beanstalk\. *Getting Started* steps you through creating, viewing, and updating your Elastic Beanstalk application, as well as editing and terminating your Elastic Beanstalk environment\. *Getting Started* also describes different ways you can access Elastic Beanstalk\.
+We recommend that you first read [Getting started using Elastic Beanstalk](GettingStarted.md) to learn how to start using Elastic Beanstalk\. *Getting Started* steps you through creating, viewing, and updating your Elastic Beanstalk application, as well as editing and terminating your Elastic Beanstalk environment\. *Getting Started* also describes different ways you can access Elastic Beanstalk\.
 
 To learn more about an Elastic Beanstalk application and its components, see the following pages\.
-+ [Elastic Beanstalk Concepts](concepts.md)
-+ [Elastic Beanstalk Platforms Glossary](platforms-glossary.md)
-+ [Shared Responsibility Model for Elastic Beanstalk Platform Maintenance](platforms-shared-responsibility.md)
-+ [Elastic Beanstalk Platform Support Policy](platforms-support-policy.md)
++ [Elastic Beanstalk concepts](concepts.md)
++ [Elastic Beanstalk platforms glossary](platforms-glossary.md)
++ [Shared responsibility model for Elastic Beanstalk platform maintenance](platforms-shared-responsibility.md)
++ [Elastic Beanstalk platform Support policy](platforms-support-policy.md)

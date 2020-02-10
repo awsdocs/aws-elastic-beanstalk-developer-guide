@@ -1,18 +1,18 @@
-# Managing Elastic Beanstalk Application Environments<a name="create_deploy_Java.managingappenv"></a>
+# Managing Elastic Beanstalk application environments<a name="create_deploy_Java.managingappenv"></a>
 
 **Topics**
-+ [Changing Environment Configuration Settings](#create_deploy_Java.managingappenv.env)
-+ [Changing Environment Type](create_deploy_Java.managingappenv.envtype.md)
-+ [Configuring EC2 Server Instances Using AWS Toolkit for Eclipse](create_deploy_Java.managingappenv.ec2.md)
-+ [Configuring Elastic Load Balancing Using AWS Toolkit for Eclipse](create_deploy_Java.managingappenv.elb.md)
-+ [Configuring Auto Scaling Using AWS Toolkit for Eclipse](create_deploy_Java.managingappenv.as.md)
-+ [Configuring Notifications Using AWS Toolkit for Eclipse](create_deploy_Java.managingappenv.sns.md)
-+ [Configuring Java Containers Using AWS Toolkit for Eclipse](create_deploy_Java.container.md)
-+ [Setting System Properties with AWS Toolkit for Eclipse](#create_deploy_Java.managing.customenv.eclipse)
++ [Changing environment configuration settings](#create_deploy_Java.managingappenv.env)
++ [Changing environment type](create_deploy_Java.managingappenv.envtype.md)
++ [Configuring EC2 server instances using AWS Toolkit for Eclipse](create_deploy_Java.managingappenv.ec2.md)
++ [Configuring Elastic Load Balancing using AWS Toolkit for Eclipse](create_deploy_Java.managingappenv.elb.md)
++ [Configuring Auto Scaling using AWS Toolkit for Eclipse](create_deploy_Java.managingappenv.as.md)
++ [Configuring notifications using AWS Toolkit for Eclipse](create_deploy_Java.managingappenv.sns.md)
++ [Configuring Java containers using AWS Toolkit for Eclipse](create_deploy_Java.container.md)
++ [Setting system properties with AWS Toolkit for Eclipse](#create_deploy_Java.managing.customenv.eclipse)
 
- With the AWS Toolkit for Eclipse, you can change the provisioning and configuration of the AWS resources that are used by your application environments\. For information on how to manage your application environments using the AWS Management Console, see [Managing Environments](using-features.managing.md)\. This section discusses the specific service settings you can edit in the AWS Toolkit for Eclipse as part of your application environment configuration\. For more about AWS Toolkit for Eclipse, see [AWS Toolkit for Eclipse Getting Started Guide](https://docs.aws.amazon.com/AWSToolkitEclipse/latest/GettingStartedGuide/)\. 
+ With the AWS Toolkit for Eclipse, you can change the provisioning and configuration of the AWS resources that are used by your application environments\. For information on how to manage your application environments using the AWS Management Console, see [Managing environments](using-features.managing.md)\. This section discusses the specific service settings you can edit in the AWS Toolkit for Eclipse as part of your application environment configuration\. For more about AWS Toolkit for Eclipse, see [AWS Toolkit for Eclipse Getting Started Guide](https://docs.aws.amazon.com/AWSToolkitEclipse/latest/GettingStartedGuide/)\. 
 
-## Changing Environment Configuration Settings<a name="create_deploy_Java.managingappenv.env"></a>
+## Changing environment configuration settings<a name="create_deploy_Java.managingappenv.env"></a>
 
 When you deploy your application, Elastic Beanstalk configures a number of AWS cloud computing services\. You can control how these individual services are configured using the AWS Toolkit for Eclipse\.
 
@@ -33,7 +33,7 @@ When you deploy your application, Elastic Beanstalk configures a number of AWS c
    + Environment types
    + Environment properties
 
-## Setting System Properties with AWS Toolkit for Eclipse<a name="create_deploy_Java.managing.customenv.eclipse"></a>
+## Setting system properties with AWS Toolkit for Eclipse<a name="create_deploy_Java.managing.customenv.eclipse"></a>
 
 The following example sets the `JDBC_CONNECTION_STRING` system property in the AWS Toolkit for Eclipse\. After you set this properties, it becomes available to your Elastic Beanstalk application as system properties called `JDBC_CONNECTION_STRING`\.
 

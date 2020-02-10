@@ -1,8 +1,8 @@
-# Using Elastic Beanstalk Saved Configurations<a name="environment-configuration-savedconfig"></a>
+# Using Elastic Beanstalk saved configurations<a name="environment-configuration-savedconfig"></a>
 
 You can save your environment's configuration as an object in Amazon Simple Storage Service \(Amazon S3\) that can be applied to other environments during environment creation, or applied to a running environment\. *Saved configurations* are YAML formatted templates that define an environment's [platform version](concepts.platforms.md), [tier](concepts.md#concepts-tier), [configuration option](command-options.md) settings, and tags\.
 
-You can apply tags to a saved configuration when you create it, and edit tags of existing saved configurations\. For details, see [Tagging Saved Configurations](environment-configuration-savedconfig-tagging.md)\.
+You can apply tags to a saved configuration when you create it, and edit tags of existing saved configurations\. For details, see [Tagging saved configurations](environment-configuration-savedconfig-tagging.md)\.
 
 **Note**  
 The tags applied to a saved configuration aren't related to the tags specified in a saved configuration using the `Tags:` key\. The latter are applied to an environment when you apply the saved configuration to the environment\.
@@ -127,6 +127,6 @@ The following keys are supported\.
   ```
 
 See the following topics for alternate methods of creating and applying saved configurations:
-+ [Setting Configuration Options before Environment Creation](environment-configuration-methods-before.md)
-+ [Setting Configuration Options during Environment Creation](environment-configuration-methods-during.md)
-+ [Setting Configuration Options after Environment Creation](environment-configuration-methods-after.md)
++ [Setting configuration options before environment creation](environment-configuration-methods-before.md)
++ [Setting configuration options during environment creation](environment-configuration-methods-during.md)
++ [Setting configuration options after environment creation](environment-configuration-methods-after.md)

@@ -1,4 +1,4 @@
-# Deploying an ASP\.NET Core Application with Elastic Beanstalk<a name="dotnet-core-tutorial"></a>
+# Deploying an ASP\.NET core application with Elastic Beanstalk<a name="dotnet-core-tutorial"></a>
 
 In this tutorial, you will walk through the process of building a new ASP\.NET Core application and deploying it to AWS Elastic Beanstalk\.
 
@@ -12,12 +12,12 @@ The deployable source bundle is available here: [dotnet\-core\-tutorial\-bundle\
 
 **Topics**
 + [Prerequisites](#dotnet-core-tutorial-prereqs)
-+ [Generate a \.NET Core Project](#dotnet-core-tutorial-generate)
-+ [Launch an Elastic Beanstalk Environment](#dotnet-core-tutorial-launch)
-+ [Update the Source Code](#dotnet-core-tutorial-update)
-+ [Deploy Your Application](#dotnet-core-tutorial-deploy)
++ [Generate a \.NET Core project](#dotnet-core-tutorial-generate)
++ [Launch an Elastic Beanstalk environment](#dotnet-core-tutorial-launch)
++ [Update the source code](#dotnet-core-tutorial-update)
++ [Deploy your application](#dotnet-core-tutorial-deploy)
 + [Cleanup](#dotnet-core-tutorial-cleanup)
-+ [Next Steps](#dotnet-core-tutorial-nextsteps)
++ [Next steps](#dotnet-core-tutorial-nextsteps)
 
 ## Prerequisites<a name="dotnet-core-tutorial-prereqs"></a>
 
@@ -63,7 +63,7 @@ This tutorial uses a command line ZIP utility to create a source bundle that you
    ...
    ```
 
-## Generate a \.NET Core Project<a name="dotnet-core-tutorial-generate"></a>
+## Generate a \.NET Core project<a name="dotnet-core-tutorial-generate"></a>
 
 Use the `dotnet` command line tool to generate a new C\# \.NET Core project and run it locally\. The default \.NET Core application is a command line utility that prints `Hello World!` and then exits\. 
 
@@ -109,7 +109,7 @@ Use the `dotnet` command line tool to generate a new C\# \.NET Core project and 
    Hello World!
    ```
 
-## Launch an Elastic Beanstalk Environment<a name="dotnet-core-tutorial-launch"></a>
+## Launch an Elastic Beanstalk environment<a name="dotnet-core-tutorial-launch"></a>
 
 Use the Elastic Beanstalk console to launch an Elastic Beanstalk environment\. For this example, you will launch with a \.NET platform\. After you launch and configure your environment, you can deploy new source code at any time\.
 
@@ -127,7 +127,7 @@ Use the Elastic Beanstalk console to launch an Elastic Beanstalk environment\. F
 
 Environment creation takes about 10 minutes\. During this time you can update your source code\.
 
-## Update the Source Code<a name="dotnet-core-tutorial-update"></a>
+## Update the source code<a name="dotnet-core-tutorial-update"></a>
 
 Modify the default application into a web application that uses ASP\.NET and IIS\. 
 + ASP\.NET is the website framework for \.NET\. 
@@ -136,7 +136,7 @@ Modify the default application into a web application that uses ASP\.NET and IIS
 The source code examples to follow are available here: [dotnet\-core\-tutorial\-source\.zip](samples/dotnet-core-tutorial-source.zip)
 
 **Note**  
-The following procedure shows how to convert the project code into a web application\. To simplify the process, you can generate the project as a web application right from the start\. In the previous section [Generate a \.NET Core Project](#dotnet-core-tutorial-generate), modify the `dotnet new` step's command with the following command\.  
+The following procedure shows how to convert the project code into a web application\. To simplify the process, you can generate the project as a web application right from the start\. In the previous section [Generate a \.NET Core project](#dotnet-core-tutorial-generate), modify the `dotnet new` step's command with the following command\.  
 
 ```
 C:\Users\username> dotnet new web -o dotnet-core-tutorial
@@ -343,7 +343,7 @@ If you use a different ZIP utility, be sure to add all files to the root folder 
      adding: aws-windows-deployment-manifest.json (164 bytes security) (deflated 50%)
    ```
 
-## Deploy Your Application<a name="dotnet-core-tutorial-deploy"></a>
+## Deploy your application<a name="dotnet-core-tutorial-deploy"></a>
 
 Deploy the source bundle to the Elastic Beanstalk environment that you created\.
 
@@ -401,12 +401,12 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 
-## Next Steps<a name="dotnet-core-tutorial-nextsteps"></a>
+## Next steps<a name="dotnet-core-tutorial-nextsteps"></a>
 
 As you continue to develop your application, you'll probably want to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
 
 If you use Visual Studio to develop your application, you can also use the AWS Toolkit for Visual Studio to deploy changed, manage your Elastic Beanstalk environments, and manage other AWS resources\. See [The AWS Toolkit for Visual Studio](dotnet-toolkit.md) for more information\.
 
-For developing and testing, you might want to use the Elastic Beanstalk functionality for adding a managed DB instance directly to your environment\. For instructions on setting up a database inside your environment, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
+For developing and testing, you might want to use the Elastic Beanstalk functionality for adding a managed DB instance directly to your environment\. For instructions on setting up a database inside your environment, see [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md)\.
 
 Finally, if you plan to use your application in a production environment, [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.

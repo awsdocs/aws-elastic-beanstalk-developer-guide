@@ -1,4 +1,4 @@
-# Elastic Beanstalk User Policy<a name="concepts-roles-user"></a>
+# Elastic Beanstalk user policy<a name="concepts-roles-user"></a>
 
 Create IAM users for each person who uses Elastic Beanstalk to avoid using your root account or sharing credentials\. For increased security, only grant these users permission to access services and features that they need\.
 
@@ -105,4 +105,4 @@ The following policy allows access to the actions used to create and manage Elas
 
 Elastic Beanstalk also provides a read\-only managed policy named `AWSElasticBeanstalkReadOnlyAccess`\. This policy allows a user to view, but not modify or create, Elastic Beanstalk environments\.
 
-For more information about user policies, see [Managing Elastic Beanstalk User Policies](AWSHowTo.iam.managed-policies.md)\.
+For more information about user policies, see [Managing Elastic Beanstalk user policies](AWSHowTo.iam.managed-policies.md)\.

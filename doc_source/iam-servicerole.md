@@ -1,4 +1,4 @@
-# Managing Elastic Beanstalk Service Roles<a name="iam-servicerole"></a>
+# Managing Elastic Beanstalk service roles<a name="iam-servicerole"></a>
 
 To manage and monitor your environment, AWS Elastic Beanstalk performs actions on the environment's resources on your behalf\. Elastic Beanstalk needs certain permissions to perform these actions, and it assumes AWS Identity and Access Management \(IAM\) service roles to get these permissions\.
 
@@ -186,15 +186,15 @@ To allow Elastic Beanstalk to assume the `aws-elasticbeanstalk-service-role` rol
 
 When you launch an environment using the [eb create](eb3-create.md) command of the Elastic Beanstalk Command Line Interface \(EB CLI\) and don't specify a service role through the `--service-role` option, Elastic Beanstalk creates the default service role `aws-elasticbeanstalk-service-role`\. If the default service role already exists, Elastic Beanstalk uses it for the new environment\.
 
-If you use the `CreateEnvironment` action of the Elastic Beanstalk API to create an environment, specify a service role with the `ServiceRole` configuration option in the `aws:elasticbeanstalk:environment` namespace\. See [Using Enhanced Health Reporting with the Elastic Beanstalk API](health-enhanced-api.md) for details on using enhanced health monitoring with the Elastic Beanstalk API\. 
+If you use the `CreateEnvironment` action of the Elastic Beanstalk API to create an environment, specify a service role with the `ServiceRole` configuration option in the `aws:elasticbeanstalk:environment` namespace\. See [Using enhanced health reporting with the Elastic Beanstalk API](health-enhanced-api.md) for details on using enhanced health monitoring with the Elastic Beanstalk API\. 
 
-When you create an environment by using the Elastic Beanstalk API, and don't specify a service role, Elastic Beanstalk creates a monitoring service\-linked role for your account, if it doesn't already exist, and uses it for the new environment\. A service\-linked role is a unique type of service role that is predefined by Elastic Beanstalk to include all the permissions that the service requires to call other AWS services on your behalf\. The service\-linked role is associated with your account\. Elastic Beanstalk creates it once, then reuses it when creating additional environments\. You can also use IAM to create your account's monitoring service\-linked role in advance\. When your account has a monitoring service\-linked role, you can use it to create an environment by using the Elastic Beanstalk API, the Elastic Beanstalk console, or the EB CLI\. For details about using service\-linked roles with Elastic Beanstalk environments, see [Using Service\-Linked Roles for Elastic Beanstalk](using-service-linked-roles.md)\.
+When you create an environment by using the Elastic Beanstalk API, and don't specify a service role, Elastic Beanstalk creates a monitoring service\-linked role for your account, if it doesn't already exist, and uses it for the new environment\. A service\-linked role is a unique type of service role that is predefined by Elastic Beanstalk to include all the permissions that the service requires to call other AWS services on your behalf\. The service\-linked role is associated with your account\. Elastic Beanstalk creates it once, then reuses it when creating additional environments\. You can also use IAM to create your account's monitoring service\-linked role in advance\. When your account has a monitoring service\-linked role, you can use it to create an environment by using the Elastic Beanstalk API, the Elastic Beanstalk console, or the EB CLI\. For details about using service\-linked roles with Elastic Beanstalk environments, see [Using service\-linked roles for Elastic Beanstalk](using-service-linked-roles.md)\.
 
 **Note**  
 When Elastic Beanstalk tries to create the monitoring service\-linked role for your account when you create an environment, you must have the `iam:CreateServiceLinkedRole` permission\. If you don't have this permission, environment creation fails, and you see a message explaining the issue\.  
 As an alternative, another user with permission to create service\-linked roles can use IAM to create the service linked\-role in advance\. You can then create your environment even without having the `iam:CreateServiceLinkedRole` permission\.
 
-## Verifying the Default Service Role's Permissions<a name="iam-servicerole-verify"></a>
+## Verifying the default service role's permissions<a name="iam-servicerole-verify"></a>
 
 The permissions granted by your default service role can vary depending on when it was created, the last time you launched an environment, and which client you used\. You can verify the permissions granted by the default service role in the IAM console\.
 
@@ -208,7 +208,7 @@ The permissions granted by your default service role can vary depending on when 
 
 1. To view the permissions that a policy grants, choose the policy\.
 
-## Updating an Out\-of\-Date Default Service Role<a name="iam-servicerole-update"></a>
+## Updating an out\-of\-date default service role<a name="iam-servicerole-update"></a>
 
 If the default service role lacks the required permissions, you can update it by [creating a new environment](using-features.environments.md) in the Elastic Beanstalk environment management console\.
 
@@ -228,7 +228,7 @@ Alternatively, you can add the managed policies to the default service role manu
    + `AWSElasticBeanstalkEnhancedHealth`
    + `AWSElasticBeanstalkService`
 
-## Adding Permissions to the Default Service Role<a name="iam-servicerole-addperms"></a>
+## Adding permissions to the default service role<a name="iam-servicerole-addperms"></a>
 
 If your application includes configuration files that refer to AWS resources for which permissions aren't included in the default service role, Elastic Beanstalk might need additional permissions to resolve these references when it processes the configuration files during a managed update\. If permissions are missing, the update fails and Elastic Beanstalk returns a message indicating which permission it needs\. Add permissions for additional services to the default service role in the IAM console\.
 
@@ -244,7 +244,7 @@ If your application includes configuration files that refer to AWS resources for
 
 1. Choose **Attach policy**\.
 
-## Creating a Service Role<a name="iam-servicerole-create"></a>
+## Creating a service role<a name="iam-servicerole-create"></a>
 
 If you can't use the default service role, create a service role\.
 

@@ -1,16 +1,16 @@
-# Deploying a Flask Application to Elastic Beanstalk<a name="create-deploy-python-flask"></a>
+# Deploying a flask application to Elastic Beanstalk<a name="create-deploy-python-flask"></a>
 
 Flask is an open source web application framework for Python\. This tutorial walks you through the process of generating a Flask application and deploying it to an AWS Elastic Beanstalk environment\.
 
 In this tutorial, you’ll do the following:
-+ [Set Up a Python Virtual Environment with Flask](#python-flask-setup-venv)
-+ [Create a Flask Application](#python-flask-create-app)
-+ [Deploy Your Site With the EB CLI](#python-flask-deploy) 
++ [Set up a Python virtual environment with flask](#python-flask-setup-venv)
++ [Create a flask application](#python-flask-create-app)
++ [Deploy your site with the EB CLI](#python-flask-deploy) 
 + [Cleanup](#python-flask-tutorial-cleanup) 
 
 ## Prerequisites<a name="python-flask-prereq"></a>
 
-This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
+This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
 
 To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings preceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
 
@@ -21,13 +21,13 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Flask requires Python 2\.7 or 3\.4 or newer\. In this tutorial we use Python 3\.6 and the corresponding Elastic Beanstalk platform version\. Install Python by following the instructions at [Setting Up Your Python Development Environment](python-development-environment.md)\.
+Flask requires Python 2\.7 or 3\.4 or newer\. In this tutorial we use Python 3\.6 and the corresponding Elastic Beanstalk platform version\. Install Python by following the instructions at [Setting up your Python development environment](python-development-environment.md)\.
 
 The [Flask](http://flask.pocoo.org/) framework will be installed as part of the tutorial\.
 
-This tutorial also uses the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
+This tutorial also uses the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
 
-## Set Up a Python Virtual Environment with Flask<a name="python-flask-setup-venv"></a>
+## Set up a Python virtual environment with flask<a name="python-flask-setup-venv"></a>
 
 Create a project directory and virtual environment for your application, and install Flask\.
 
@@ -76,9 +76,9 @@ Create a project directory and virtual environment for your application, and ins
    (virt)~/eb-flask$ pip freeze > requirements.txt
    ```
 
-   This file tells Elastic Beanstalk to install the libraries during deployment\. For more information, see [Requirements File](python-configuration-requirements.md)\.
+   This file tells Elastic Beanstalk to install the libraries during deployment\. For more information, see [Specifying dependencies using a requirements file](python-configuration-requirements.md)\.
 
-## Create a Flask Application<a name="python-flask-create-app"></a>
+## Create a flask application<a name="python-flask-create-app"></a>
 
 Next, create an application that you'll deploy using Elastic Beanstalk\. We'll create a "Hello World" RESTful web service\.
 
@@ -153,7 +153,7 @@ Check the server log to see the output from your request\. You can stop the web 
 
 If you got debug output instead, fix the errors and make sure the application is running locally before configuring it for Elastic Beanstalk\.
 
-## Deploy Your Site With the EB CLI<a name="python-flask-deploy"></a>
+## Deploy your site with the EB CLI<a name="python-flask-deploy"></a>
 
 You've added everything you need to deploy your application on Elastic Beanstalk\. Your project directory should now look like this:
 
@@ -166,7 +166,7 @@ You've added everything you need to deploy your application on Elastic Beanstalk
 
 The `virt` folder, however, is not required for the application to run on Elastic Beanstalk\. When you deploy, Elastic Beanstalk creates a new virtual environment on the server instances and installs the libraries listed in `requirements.txt`\. To minimize the size of the source bundle that you upload during deployment, add an [\.ebignore](eb-cli3-configuration.md#eb-cli3-ebignore) file that tells the EB CLI to leave out the `virt` folder\.
 
-**Example \~/eb\-flask/\.ebignore**  
+**Example \~/Eb\-flask/\.ebignore**  
 
 ```
 virt
@@ -174,7 +174,7 @@ virt
 
 Next, you'll create your application environment and deploy your configured application with Elastic Beanstalk\.
 
-**To create an environment and deploy your Flask application**
+**To create an environment and deploy your flask application**
 
 1. Initialize your EB CLI repository with the eb init command:
 
@@ -258,8 +258,8 @@ Or, with the EB CLI:
 ~/eb-flask$ eb terminate flask-env
 ```
 
-## Next Steps<a name="python-flask-more-info"></a>
+## Next steps<a name="python-flask-more-info"></a>
 
 For more information about Flask, visit [flask\.pocoo\.org](http://flask.pocoo.org/)\.
 
-If you'd like to try out another Python web framework, check out [Deploying a Django Application to Elastic Beanstalk](create-deploy-python-django.md)\.
+If you'd like to try out another Python web framework, check out [Deploying a Django application to Elastic Beanstalk](create-deploy-python-django.md)\.

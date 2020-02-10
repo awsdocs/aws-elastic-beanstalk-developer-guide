@@ -1,4 +1,4 @@
-# General Options for All Environments<a name="command-options-general"></a>
+# General options for all environments<a name="command-options-general"></a>
 
 **Topics**
 + [aws:autoscaling:asg](#command-options-general-autoscalingasg)
@@ -42,7 +42,7 @@ Configure your environment's Auto Scaling group\.
 
 **Namespace: `aws:autoscaling:asg`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  Availability Zones  |  Availability Zones \(AZs\) are distinct locations within a region that are engineered to be isolated from failures in other AZs and provide inexpensive, low\-latency network connectivity to other AZs in the same region\. Choose the number of AZs for your instances\.  |  `Any`  |  `Any` `Any 1` `Any 2` `Any 3`  | 
 |  Cooldown  |  Cooldown periods help prevent Amazon EC2 Auto Scaling from initiating additional scaling activities before the effects of previous activities are visible\. A cooldown period is the amount of time, in seconds, after a scaling activity completes before another scaling activity can start\.  |   `360`   |  `0` to `10000`  | 
@@ -59,12 +59,12 @@ Your environment's instances are created using either an Amazon EC2 launch templ
 
 **Namespace: `aws:autoscaling:launchconfiguration`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  EC2KeyName  |  A key pair enables you to securely log into your EC2 instance\.  If you use the Elastic Beanstalk console to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console overrides this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  None  |   | 
 |  IamInstanceProfile  |  An instance profile enables AWS Identity and Access Management \(IAM\) users and AWS services to access temporary security credentials to make AWS API calls\. Specify the instance profile's name or its ARN\. Examples: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html)  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  None  |  Instance profile name or ARN  | 
 |  ImageId  |  You can override the default Amazon Machine Image \(AMI\) by specifying your own custom AMI ID\. Example: `ami-1f316660`  |  None  |   | 
-|   InstanceType  |  The instance type used to run your application in an Elastic Beanstalk environment\. The `InstanceType` option is obsolete\. It's replaced by the newer and more powerful `InstanceTypes` option in the [`aws:ec2:instances`](#command-options-general-ec2instances) namespace\. The new option allows you to specify a list of one or more instance types for your environment\. The first value on that list is equivalent to the value of the `InstanceType` option included in the `aws:autoscaling:launchconfiguration` namespace described here\. The recommended way to specify instance types is by using the new option\. If specified, the new option takes precedence over the old one\. For more information, see [The aws:ec2:instances Namespace](using-features.managing.as.md#environments-cfg-autoscaling-namespace.instances)\. The instance types available depend on platform, solution stack \(configuration\) and region\. To get a list of available instance types for your solution stack of choice, use the [DescribeConfigurationOptions ](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationOptions.html)action in the API, [describe\-configuration\-options](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-configuration-options.html) command in the [AWS CLI](https://aws.amazon.com/cli/)\. For example, the following command lists the available instance types for version 1\.4\.3 of the PHP 5\.6 stack in the current region: $ `aws elasticbeanstalk describe-configuration-options --options Namespace=aws:autoscaling:launchconfiguration,OptionName=InstanceType --solution-stack-name "64bit Amazon Linux 2015.03 v1.4.3 running PHP 5.6"`  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  Region dependent  |  | 
+|   InstanceType  |  The instance type used to run your application in an Elastic Beanstalk environment\. The `InstanceType` option is obsolete\. It's replaced by the newer and more powerful `InstanceTypes` option in the [`aws:ec2:instances`](#command-options-general-ec2instances) namespace\. The new option allows you to specify a list of one or more instance types for your environment\. The first value on that list is equivalent to the value of the `InstanceType` option included in the `aws:autoscaling:launchconfiguration` namespace described here\. The recommended way to specify instance types is by using the new option\. If specified, the new option takes precedence over the old one\. For more information, see [The aws:ec2:instances namespace](using-features.managing.as.md#environments-cfg-autoscaling-namespace.instances)\. The instance types available depend on platform, solution stack \(configuration\) and region\. To get a list of available instance types for your solution stack of choice, use the [DescribeConfigurationOptions ](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationOptions.html)action in the API, [describe\-configuration\-options](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-configuration-options.html) command in the [AWS CLI](https://aws.amazon.com/cli/)\. For example, the following command lists the available instance types for version 1\.4\.3 of the PHP 5\.6 stack in the current region: $ `aws elasticbeanstalk describe-configuration-options --options Namespace=aws:autoscaling:launchconfiguration,OptionName=InstanceType --solution-stack-name "64bit Amazon Linux 2015.03 v1.4.3 running PHP 5.6"`  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  Region dependent  |  | 
 |  MonitoringInterval  |  Interval at which you want Amazon CloudWatch metrics returned\.  |  `5 minute`  |  `1 minute` `5 minute`  | 
 |  SecurityGroups  |  Lists the Amazon EC2 security groups to assign to the EC2 instances in the Auto Scaling group in order to define firewall rules for the instances\. You can provide a single string of comma\-separated values that contain the name of existing Amazon EC2 security groups or references to AWS::EC2::SecurityGroup resources created in the template\. Security group names are case sensitive\. If you use [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) with Elastic Beanstalk so that your instances are launched within a virtual private cloud \(VPC\), specify security group IDs instead of security group names\.  |   `elasticbeanstalk-default`   |   | 
 |   SSHSourceRestriction  |  Used to lock down SSH access to an environment\. For instance, you can lock down SSH access to the EC2 instances so that only a bastion host can access the instances in the private subnet\. This string takes the following form: `protocol, fromPort, toPort, source_restriction` [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html) Example: `tcp, 22, 22, 54.240.196.185/32` Example: `tcp, 22, 22, my-security-group` Example \(EC2\-Classic\): `tcp, 22, 22, 123456789012/their-security-group` Example \(VPC\): `tcp, 22, 22, sg-903004f8`  |  None  |   | 
@@ -75,12 +75,12 @@ Your environment's instances are created using either an Amazon EC2 launch templ
 
 ## aws:autoscaling:scheduledaction<a name="command-options-general-autoscalingscheduledaction"></a>
 
-Configure [scheduled actions](environments-cfg-autoscaling-scheduledactions.md) for your environment's Auto Scaling group\. For each action, specify a `resource_name` in addition to the option name, namespace, and value for each setting\. See [The aws:autoscaling:scheduledaction Namespace](environments-cfg-autoscaling-scheduledactions.md#environments-cfg-autoscaling-scheduledactions-namespace) for examples\.
+Configure [scheduled actions](environments-cfg-autoscaling-scheduledactions.md) for your environment's Auto Scaling group\. For each action, specify a `resource_name` in addition to the option name, namespace, and value for each setting\. See [The aws:autoscaling:scheduledaction namespace](environments-cfg-autoscaling-scheduledactions.md#environments-cfg-autoscaling-scheduledactions-namespace) for examples\.
 
 
 **Namespace: `aws:autoscaling:scheduledaction`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  StartTime  |  For one\-time actions, choose the date and time to run the action\. For recurrent actions, choose when to activate the action\.  |  None  |  A [ISO\-8601 timestamp](http://www.w3.org/TR/NOTE-datetime) unique across all scheduled scaling actions\.  | 
 |  EndTime  |  A date and time in the future \(in the UTC/GMT time zone\) when you want the scheduled scaling action to stop repeating\. If you don't specify an **EndTime**, the action recurs according to the `Recurrence` expression\. Example: `2015-04-28T04:07:2Z` When a scheduled action ends, Amazon EC2 Auto Scaling does not automatically go back to its previous settings\. Configure a second scheduled action to return to the original settings as needed\.  |  None  |  A [ISO\-8601 timestamp](http://www.w3.org/TR/NOTE-datetime) unique across all scheduled scaling actions\.  | 
@@ -102,7 +102,7 @@ The default values for these options \(5, 5, and 1, respectively\) satisfy this 
 
 **Namespace: `aws:autoscaling:trigger`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  BreachDuration  |  Amount of time, in minutes, a metric can be beyond its defined limit \(as specified in the `UpperThreshold` and `LowerThreshold`\) before the trigger fires\.  |   `5`   |  `1` to `600`  | 
 |  LowerBreachScaleIncrement  |  How many Amazon EC2 instances to remove when performing a scaling activity\.  |   `-1`   |   | 
@@ -122,7 +122,7 @@ Configure rolling updates your environment's Auto Scaling group\.
 
 **Namespace: `aws:autoscaling:updatepolicy:rollingupdate`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  MaxBatchSize  |  The number of instances included in each batch of the rolling update\.  |  One\-third of the minimum size of the autoscaling group, rounded to the next highest integer\.  |  `1` to `10000`  | 
 |  MinInstancesInService  |  The minimum number of instances that must be in service within the autoscaling group while other instances are terminated\.  |  The minimum size of the AutoScaling group or one less than the maximum size of the autoscaling group, whichever is lower\.  |  `0` to `9999`  | 
@@ -133,12 +133,12 @@ Configure rolling updates your environment's Auto Scaling group\.
 
 ## aws:ec2:instances<a name="command-options-general-ec2instances"></a>
 
-Configure your environment's instances, including Spot options\. This namespace complements [`aws:autoscaling:launchconfiguration`](#command-options-general-autoscalinglaunchconfiguration) and [`aws:autoscaling:asg`](#command-options-general-autoscalingasg)\. For more information, see [Auto Scaling group for Your Elastic Beanstalk Environment](using-features.managing.as.md)\.
+Configure your environment's instances, including Spot options\. This namespace complements [`aws:autoscaling:launchconfiguration`](#command-options-general-autoscalinglaunchconfiguration) and [`aws:autoscaling:asg`](#command-options-general-autoscalingasg)\. For more information, see [Auto Scaling group for your Elastic Beanstalk environment](using-features.managing.as.md)\.
 
 
 **Namespace: `aws:ec2:instances`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  EnableSpot  |  Enable Spot Instance requests for your environment\. When `false`, some options in this namespace don't take effect\.  |  `false`  |  `true` `false`  | 
 |  InstanceTypes  |  A comma\-separated list of instance types you want your environment to use\. For example: `t2.micro,t3.micro` When Spot Instances are disabled \(`EnableSpot` is `false`\), only the first instance type on the list is used\. The first instance type on the list in this option is equivalent to the value of the `InstanceType` option in the [`aws:autoscaling:launchconfiguration`](#command-options-general-autoscalinglaunchconfiguration) namespace\. The latter is obsolete, and we don't recommend using it\. If you specify both, the first instance type on the list in the `InstanceTypes` option is used, and `InstanceType` is ignored\.  Some older AWS accounts might provide Elastic Beanstalk with default instance types that don't support Spot Instances \(for example, t1\.micro\)\. If you enable Spot Instance requests and you get an error about an instance type that doesn’t support Spot, be sure to configure instance types that support Spot\. To choose Spot Instance types, use the [Spot Instance Advisor](https://aws.amazon.com/ec2/spot/instance-advisor/)\.   |  A list of two instance types\. Varies by account, region, and platform\.  |  `1` to `10` EC2 instance types \(at least two recommended\)  | 
@@ -153,7 +153,7 @@ Configure your environment to launch resources in a custom [Amazon Virtual Priva
 
 **Namespace: `aws:ec2:vpc`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  VPCId  |  The ID for your Amazon VPC\.  |  None  |   | 
 |  Subnets  |  The IDs of the Auto Scaling group subnet or subnets\. If you have multiple subnets, specify the value as a single comma\-delimited string of subnet IDs \(for example, `"subnet-11111111,subnet-22222222"`\)\.  |  None  |   | 
@@ -164,16 +164,16 @@ Configure your environment to launch resources in a custom [Amazon Virtual Priva
 
 ## aws:elasticbeanstalk:application<a name="command-options-general-elasticbeanstalkapplication"></a>
 
-Configure a health check path for your application\. For more information, see [Basic Health Reporting](using-features.healthstatus.md)\.
+Configure a health check path for your application\. For more information, see [Basic health reporting](using-features.healthstatus.md)\.
 
 
 **Namespace: `aws:elasticbeanstalk:application`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  Application Healthcheck URL  |  The path to which to send health check requests\. If not set, the load balancer attempts to make a TCP connection on port 80 to verify health\. Set to a path starting with `/` to send an HTTP GET request to that path\. You can also include a protocol \(HTTP, HTTPS, TCP, or SSL\) and port prior to the path to check HTTPS connectivity or use a non\-default port\.  If you use the Elastic Beanstalk console to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console overrides this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  None  |  `/` \(HTTP GET to root path\) `/health` `HTTPS:443/` `HTTPS:443/health` etc  | 
 
-The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended values](command-options.md#configuration-options-recommendedvalues) for details\.
 
 ## aws:elasticbeanstalk:application:environment<a name="command-options-general-elasticbeanstalkapplicationenvironment"></a>
 
@@ -182,11 +182,11 @@ Configure environment properties for your application\.
 
 **Namespace: `aws:elasticbeanstalk:application:environment`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  Any environment variable name\.  |  Pass in key\-value pairs\.  |  None  |  Any environment variable value\.  | 
 
-See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
+See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.
 
 ## aws:elasticbeanstalk:cloudwatch:logs<a name="command-options-general-cloudwatchlogs"></a>
 
@@ -195,7 +195,7 @@ Configure instance log streaming for your application\.
 
 **Namespace: `aws:elasticbeanstalk:cloudwatch:logs`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  StreamLogs  |  Whether to create groups in CloudWatch Logs for proxy and deployment logs, and stream logs from each instance in your environment\.  |  `false`  |  `true` `false`  | 
 |  DeleteOnTerminate  |  Whether to delete the log groups when the environment is terminated\. If `false`, the logs are kept `RetentionInDays` days\.  |  `false`  |  `true` `false`  | 
@@ -208,7 +208,7 @@ Configure environment health log streaming for your application\.
 
 **Namespace: `aws:elasticbeanstalk:cloudwatch:logs:health`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  HealthStreamingEnabled  |  For environments with enhanced health reporting enabled, whether to create a group in CloudWatch Logs for environment health and archive Elastic Beanstalk environment health data\. For information about enabling enhanced health, see [`aws:elasticbeanstalk:healthreporting:system`](#command-options-general-elasticbeanstalkhealthreporting)\.  |  `false`  |  `true` `false`  | 
 |  DeleteOnTerminate  |  Whether to delete the log group when the environment is terminated\. If `false`, the health data is kept `RetentionInDays` days\.  |  `false`  |  `true` `false`  | 
@@ -221,7 +221,7 @@ Configure rolling deployments for your application code\.
 
 **Namespace: `aws:elasticbeanstalk:command`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  DeploymentPolicy  |  Choose a [deployment policy](using-features.rolling-version-deploy.md) for application version deployments\.  If you use the Elastic Beanstalk console to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console overrides this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  `AllAtOnce`  |  `AllAtOnce` `Rolling` `RollingWithAdditionalBatch` `Immutable`  | 
 |  Timeout  |  Number of seconds to wait for an instance to complete executing commands\. Elastic Beanstalk internally adds 240 seconds \(four minutes\) to the `Timeout` value\. For example, the effective timeout by default is 840 seconds \(600 \+ 240\), or 14 minutes\.  |   `600`   |  `1` to `3600`  | 
@@ -236,7 +236,7 @@ Configure your environment's architecture and service role\.
 
 **Namespace: `aws:elasticbeanstalk:environment`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  EnvironmentType  |  Set to `SingleInstance` to launch one EC2 instance with no load balancer\.  |   `LoadBalanced`   |   `SingleInstance`   `LoadBalanced`   | 
 |  ServiceRole  |  The name of an IAM role that Elastic Beanstalk uses to manage resources for the environment\. Specify a role name \(optionally prefixed with a custom path\) or its ARN\. Examples: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html)  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  None  |  IAM role name, path/name, or ARN  | 
@@ -249,7 +249,7 @@ Configure your environment's default process\.
 
 **Namespace: `aws:elasticbeanstalk:environment:process:default`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  DeregistrationDelay  |  Time, in seconds, to wait for active requests to complete before deregistering\.  |  `20`  |  `0` to `3600`  | 
 |  HealthCheckInterval  |  The interval, in seconds, at which Elastic Load Balancing will check the health of your application's Amazon EC2 instances\.  |  With classic or application load balancer: `15` With network load balancer: `30`  |  With classic or application load balancer: `5` to `300` With network load balancer: `10`, `30`  | 
@@ -271,7 +271,7 @@ Configure additional processes for your environment\.
 
 **Namespace: `aws:elasticbeanstalk:environment:process:process_name`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  DeregistrationDelay  |  Time, in seconds, to wait for active requests to complete before deregistering\.  |  `20`  |  `0` to `3600`  | 
 |  HealthCheckInterval  |  The interval, in seconds, at which Elastic Load Balancing will check the health of your application's Amazon EC2 instances\.  |  With classic or application load balancer: `15` With network load balancer: `30`  |  With classic or application load balancer: `5` to `300` With network load balancer: `10`, `30`  | 
@@ -293,7 +293,7 @@ Configure enhanced health reporting for your environment\.
 
 **Namespace: `aws:elasticbeanstalk:healthreporting:system`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  SystemType  |  Health reporting system \([basic](using-features.healthstatus.md) or [enhanced](health-enhanced.md)\)\. Enhanced health reporting requires a [service role](concepts-roles-service.md) and a version 2 or newer [platform version](concepts.platforms.md)\.  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |   `basic`   |   `basic`   `enhanced`   | 
 | ConfigDocument | A JSON document describing the environment and instance metrics to publish to CloudWatch\. | None |  | 
@@ -306,7 +306,7 @@ Configure the EC2 instances in your environment to upload rotated logs to Amazon
 
 **Namespace: `aws:elasticbeanstalk:hostmanager`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  LogPublicationControl  |  Copy the log files for your application's Amazon EC2 instances to the Amazon S3 bucket associated with your application\.  |   `false`   |   `true`   `false`   | 
 
@@ -317,7 +317,7 @@ Configure managed platform updates for your environment\.
 
 **Namespace: `aws:elasticbeanstalk:managedactions`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  ManagedActionsEnabled  |  Enable [managed platform updates](environment-platform-update-managed.md#environment-platform-update-managed-namespace)\. When you set this to `true`, you must also specify a `PreferredStartTime` and `[UpdateLevel](#command-options-general-elasticbeanstalkmanagedactionsplatformupdate)`\.  |   `true`   |   `true`   `false`   | 
 |  PreferredStartTime  |  Configure a maintenance window for managed actions in UTC\. For example, `"Tue:09:00"`\.  | None | Day and time in *day*:*hour*:*minute* format\. | 
@@ -329,7 +329,7 @@ Configure managed platform updates for your environment\.
 
 **Namespace: `aws:elasticbeanstalk:managedactions:platformupdate`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  UpdateLevel  |  The highest level of update to apply with managed platform updates\. Platforms are versioned *major*\.*minor*\.*patch*\. For example, 2\.0\.8 has a major version of 2, a minor version of 0, and a patch version of 8\.  |  None  |   `patch` for patch version updates only\.  `minor` for both minor and patch version updates\.  | 
 |  InstanceRefreshEnabled  |  Enable weekly instance replacement\. Requires `ManagedActionsEnabled` to be set to `true`\.  | false |   `true`   `false`   | 
@@ -341,7 +341,7 @@ Configure your environment to terminate EC2 instances that fail health checks\.
 
 **Namespace: `aws:elasticbeanstalk:monitoring`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  Automatically Terminate Unhealthy Instances  |  Terminate an instance if it fails health checks\.  This option was only supported on [legacy environments](using-features.migration.md)\. It determined the health of an instance based on being able to reach it and on other instance\-based metrics\. Elastic Beanstalk doesn't provide a way to automatically terminate instances based on application health\.   |   `true`   |   `true`   `false`   | 
 
@@ -352,7 +352,7 @@ Configure notifications for your environment\.
 
 **Namespace: `aws:elasticbeanstalk:sns:topics`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  Notification Endpoint  |  Endpoint where you want to be notified of important events affecting your application\.  If you use the Elastic Beanstalk console to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console overrides this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  None  |   | 
 |  Notification Protocol  |  Protocol used to send notifications to your endpoint\.  |   `email`   |   `http`   `https`   `email`   `email-json`   `sqs`   | 
@@ -366,7 +366,7 @@ Configure the Amazon SQS queue for a worker environment\.
 
 **Namespace: `aws:elasticbeanstalk:sqsd`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  WorkerQueueURL  |  The URL of the queue from which the daemon in the worker environment tier reads messages  When you don't specify a value, the queue that Elastic Beanstalk automatically creates is a [standard](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html) Amazon SQS queue\. When you provide a value, you can provide the URL of either a standard or a [FIFO](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html) Amazon SQS queue\. Be aware that if you provide a FIFO queue, [periodic tasks](using-features-managing-env-tiers.md#worker-periodictasks) aren't supported\.   |  automatically generated  |  If you don't specify a value, then Elastic Beanstalk automatically creates a queue\.  | 
 |  HttpPath  |  The relative path to the application to which HTTP POST messages are sent  |  /  |   | 
@@ -386,7 +386,7 @@ Configure healthchecks for a classic load balancer\.
 
 **Namespace: `aws:elb:healthcheck`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  HealthyThreshold  |  Consecutive successful requests before Elastic Load Balancing changes the instance health status\.  |   `3`   |  `2` to `10`  | 
 |  Interval  |  The interval at which Elastic Load Balancing will check the health of your application's Amazon EC2 instances\.  |   `10`   |  `5` to `300`  | 
@@ -403,7 +403,7 @@ Several of the options in this namespace have been deprecated in favor of listen
 
 **Namespace: `aws:elb:loadbalancer`**  
 
-| Name | Description | Default | Valid Values | 
+| Name | Description | Default | Valid values | 
 | --- | --- | --- | --- | 
 |  CrossZone  |  Configure the load balancer to route traffic evenly across all instances in all Availability Zones rather than only within each zone\.  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |   `false`   |   `true`   `false`   | 
 |  SecurityGroups  |  Assign one or more security groups that you created to the load balancer\.  |  None  |  One or more security group IDs\.  | 
@@ -421,7 +421,7 @@ Configure the default listener \(port 80\) on a classic load balancer\.
 
 **Namespace: `aws:elb:listener`**  
 
-| Name | Description | Default | Valid Values | 
+| Name | Description | Default | Valid values | 
 | --- | --- | --- | --- | 
 | ListenerProtocol | The protocol used by the listener\. |  HTTP  |  HTTP TCP  | 
 | InstancePort | The port that this listener uses to communicate with the EC2 instances\. | 80 | 1 to 65535 | 
@@ -436,7 +436,7 @@ Configure additional listeners on a classic load balancer\.
 
 **Namespace: `aws:elb:listener:listener_port`**  
 
-| Name | Description | Default | Valid Values | 
+| Name | Description | Default | Valid values | 
 | --- | --- | --- | --- | 
 |  ListenerProtocol  | The protocol used by the listener\. |  HTTP  |  HTTP HTTPS TCP SSL  | 
 |  InstancePort  | The port that this listener uses to communicate with the EC2 instances\. | The same as listener\_port\. | 1 to 65535 | 
@@ -452,7 +452,7 @@ Modify the default stickiness and global load balancer policies for a classic lo
 
 **Namespace: `aws:elb:policies`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  ConnectionDrainingEnabled  |  Specifies whether the load balancer maintains existing connections to instances that have become unhealthy or deregistered to complete in\-progress requests\.  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |   `false`   |   `true`   `false`   | 
 |  ConnectionDrainingTimeout  |  The maximum number of seconds that the load balancer maintains existing connections to an instance during connection draining before forcibly closing the connections\.  If you use the Elastic Beanstalk console to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console overrides this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |   `20`   |  `1` to `3600`  | 
@@ -468,7 +468,7 @@ Create additional load balancer policies for a classic load balancer\.
 
 **Namespace: `aws:elb:policies:policy_name`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  CookieName  | The name of the application\-generated cookie that controls the session lifetimes of a AppCookieStickinessPolicyType policy\. This policy can be associated only with HTTP/HTTPS listeners\.  | None |  | 
 |  InstancePorts  |  A comma\-separated list of the instance ports that this policy applies to\.  | None | A list of ports, or :all | 
@@ -488,7 +488,7 @@ Configure the default listener \(port 80\) on an application load balancer or a 
 
 **Namespace: `aws:elbv2:listener:default`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  DefaultProcess  |  Name of the [process](#command-options-general-environmentprocess) to which to forward traffic when no rules match\.  |  `default`  |  A process name\.  | 
 |  ListenerEnabled  |  Set to `false` to disable the listener\. You can use this option to disable the default listener on port 80\.  |  `true`  |  `true` `false`  | 
@@ -504,7 +504,7 @@ Configure additional listeners on an application load balancer or a network load
 
 **Namespace: `aws:elbv2:listener:listener_port`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  DefaultProcess  |  Name of the [process](#command-options-general-environmentprocess) where traffic is forwarded when no rules match\.  |  `default`  |  A process name\.  | 
 |  ListenerEnabled  |  Set to `false` to disable the listener\. You can use this option to disable the default listener on port 80\.  |  `true`  |  `true` `false`  | 
@@ -523,7 +523,7 @@ This namespace isn't applicable to environments with a network load balancer\.
 
 **Namespace: `aws:elbv2:listenerrule:rule_name`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  HostHeaders  |  List of host names to match\. For example, `my.example.com`\.  |  None  |  Each name can be up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and up to three wildcard characters \(\* matches zero or more characters; ? matches exactly one character\)  | 
 |  PathPatterns  |  A path pattern to match\. For example, `/img/*`\. This option is only applicable to environments with an application load balancer\.  |  None  |  A pattern can be up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and can include up to three wildcard characters \(\* matches zero or more characters; ? matches exactly one character\)  | 
@@ -540,7 +540,7 @@ This namespace isn't applicable to environments with a network load balancer\.
 
 **Namespace: `aws:elbv2:loadbalancer`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  AccessLogsS3Bucket  |  Amazon S3 bucket in which to store access logs\. The bucket must be in the same region as the environment and allow the load balancer write access\.  |  None  |  A bucket name\.  | 
 |  AccessLogsS3Enabled  |  Enable access log storage\.  |  `false`  |  `true` `false`  | 
@@ -556,7 +556,7 @@ Configure an attached Amazon RDS DB instance\.
 
 **Namespace: `aws:rds:dbinstance`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  DBAllocatedStorage  |  The allocated database storage size, specified in gigabytes\.  |  MySQL: `5` Oracle: `10` sqlserver\-se: `200` sqlserver\-ex: `30` sqlserver\-web: `30`  |  MySQL: `5`\-`1024` Oracle: `10`\-`1024` sqlserver: cannot be modified  | 
 |  DBDeletionPolicy  |  Decides whether to delete or snapshot the DB instance on environment termination\.  Deleting a DB instance results in permanent data loss\.   |   `Delete`   |   `Delete`   `Snapshot`   | 

@@ -1,8 +1,8 @@
-# Setting Up your \.NET Development Environment<a name="dotnet-devenv"></a>
+# Setting up your \.NET development environment<a name="dotnet-devenv"></a>
 
 Set up a \.NET development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with Elastic Beanstalk](chapter-devenv.md)\.
+For common setup steps and tools that apply to all languages, see [Configuring your development machine for use with Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
 + [Installing an IDE](#dotnet-devenv-ide)

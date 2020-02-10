@@ -92,16 +92,16 @@ The following example shows the configuration steps when running eb init for the
    (default is 1): 1
    ```
 
-Your EB CLI installation is now configured and ready to use\. See [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md) for instructions on creating and working with an Elastic Beanstalk environment\.
+Your EB CLI installation is now configured and ready to use\. See [Managing Elastic Beanstalk environments with the EB CLI](eb-cli3-getting-started.md) for instructions on creating and working with an Elastic Beanstalk environment\.
 
 **Topics**
-+ [Ignoring Files Using \.ebignore](#eb-cli3-ebignore)
-+ [Using Named Profiles](#eb-cli3-profile)
-+ [Deploying an Artifact Instead of the Project Folder](#eb-cli3-artifact)
-+ [Configuration Settings and Precedence](#eb-cli3-credentials)
-+ [Instance Metadata](#eb-cli3-metadata)
++ [Ignoring files using \.ebignore](#eb-cli3-ebignore)
++ [Using named profiles](#eb-cli3-profile)
++ [Deploying an Artifact instead of the project folder](#eb-cli3-artifact)
++ [Configuration settings and precedence](#eb-cli3-credentials)
++ [Instance metadata](#eb-cli3-metadata)
 
-## Ignoring Files Using \.ebignore<a name="eb-cli3-ebignore"></a>
+## Ignoring files using \.ebignore<a name="eb-cli3-ebignore"></a>
 
 You can tell the EB CLI to ignore certain files in your project directory by adding the file `.ebignore` to the directory\. This file works like a `.gitignore` file\. When you deploy your project directory to Elastic Beanstalk and create a new application version, the EB CLI doesn't include files specified by `.ebignore` in the source bundle that it creates\.
 
@@ -112,7 +112,7 @@ When `.ebignore` is present, the EB CLI doesn't use git commands to create your 
 **Note**  
 In Windows, adding `.ebignore` causes the EB CLI to follow symbolic links and include the linked file when creating a source bundle\. This is a known issue and will be fixed in a future update\.
 
-## Using Named Profiles<a name="eb-cli3-profile"></a>
+## Using named profiles<a name="eb-cli3-profile"></a>
 
 If you store your credentials as a named profile in a `credentials` or `config` file, you can use the [`--profile`](eb3-cmd-options.md) option to explicitly specify a profile\. For example, the following command creates a new application using the `user2` profile\.
 
@@ -134,7 +134,7 @@ $ export AWS_EB_PROFILE=user2
 > set AWS_EB_PROFILE=user2
 ```
 
-## Deploying an Artifact Instead of the Project Folder<a name="eb-cli3-artifact"></a>
+## Deploying an Artifact instead of the project folder<a name="eb-cli3-artifact"></a>
 
 You can tell the EB CLI to deploy a ZIP file or WAR file that you generate as part of a separate build process by adding the following lines to `.elasticbeanstalk/config.yml` in your project folder\.
 
@@ -149,7 +149,7 @@ If you configure the EB CLI in your [Git repository](eb3-cli-git.md), and you do
 ~/eb$ eb deploy --staged
 ```
 
-## Configuration Settings and Precedence<a name="eb-cli3-credentials"></a>
+## Configuration settings and precedence<a name="eb-cli3-credentials"></a>
 
 The EB CLI uses a *provider chain* to look for AWS credentials in a number of different places, including system or user environment variables and local AWS configuration files\.
 
@@ -169,7 +169,7 @@ The EB CLI looks for credentials and configuration settings in the following ord
 
 If the credentials file contains a named profile with the name "eb\-cli", the EB CLI will prefer that profile over the default profile\. If no profiles are found, or a profile is found but does not have permission to use Elastic Beanstalk, the EB CLI prompts you to enter keys\.
 
-## Instance Metadata<a name="eb-cli3-metadata"></a>
+## Instance metadata<a name="eb-cli3-metadata"></a>
 
 To use the EB CLI from an Amazon EC2 instance, create a role that has access to the resources needed and assign that role to the instance when it is launched\. Launch the instance and install the EB CLI by using `pip`\.
 

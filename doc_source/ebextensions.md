@@ -1,4 +1,4 @@
-# Advanced Environment Customization with Configuration Files \(`.ebextensions`\)<a name="ebextensions"></a>
+# Advanced environment customization with configuration files \(`.ebextensions`\)<a name="ebextensions"></a>
 
 You can add AWS Elastic Beanstalk configuration files \(`.ebextensions`\) to your web application's source code to configure your environment and customize the AWS resources that it contains\. Configuration files are YAML\- or JSON\-formatted documents with a `.config` file extension that you place in a folder named `.ebextensions` and deploy in your application source bundle\.
 
@@ -25,7 +25,7 @@ The other sections of a configuration file \(`packages`, `sources`, `files`, `us
 For examples of commonly used \.ebextensions, see the [Elastic Beanstalk Configuration Files Repository](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files)\.
 
 **Requirements**
-+ **Location** – Place all of your configuration files in a single folder, named `.ebextensions`, in the root of your source bundle\. Folders starting with a dot can be hidden by file browsers, so make sure that the folder is added when you create your source bundle\. See [Create an Application Source Bundle](applications-sourcebundle.md) for instructions\.
++ **Location** – Place all of your configuration files in a single folder, named `.ebextensions`, in the root of your source bundle\. Folders starting with a dot can be hidden by file browsers, so make sure that the folder is added when you create your source bundle\. See [Create an application source bundle](applications-sourcebundle.md) for instructions\.
 + **Naming** – Configuration files must have the `.config` file extension\.
 + **Formatting** – Configuration files must conform to YAML or JSON specifications\.
 
@@ -40,7 +40,7 @@ The process for deploying varies slightly depending on the client that you use t
 + [AWS CLI](environment-configuration-methods-during.md#configuration-options-during-awscli-ebextensions)
 
 **Topics**
-+ [Option Settings](ebextensions-optionsettings.md)
-+ [Customizing Software on Linux Servers](customize-containers-ec2.md)
-+ [Customizing Software on Windows Servers](customize-containers-windows-ec2.md)
-+ [Adding and Customizing Elastic Beanstalk Environment Resources](environment-resources.md)
++ [Option settings](ebextensions-optionsettings.md)
++ [Customizing software on Linux servers](customize-containers-ec2.md)
++ [Customizing software on Windows servers](customize-containers-windows-ec2.md)
++ [Adding and customizing Elastic Beanstalk environment resources](environment-resources.md)

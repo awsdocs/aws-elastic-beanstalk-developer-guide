@@ -1,11 +1,11 @@
-# Elastic Beanstalk Environment Notifications with Amazon SNS<a name="using-features.managing.sns"></a>
+# Elastic Beanstalk environment notifications with Amazon SNS<a name="using-features.managing.sns"></a>
 
 You can configure your AWS Elastic Beanstalk environment to use Amazon Simple Notification Service \(Amazon SNS\) to notify you of important events that affect your application\. Specify an email address during or after environment creation to receive emails from AWS when an error occurs, or when your environment's health changes\.
 
 **Note**  
 Elastic Beanstalk uses Amazon SNS for notifications\. For details about Amazon SNS pricing, see [https://aws\.amazon\.com/sns/pricing/](https://aws.amazon.com/sns/pricing/)\.
 
-When you configure notifications for your environment, Elastic Beanstalk creates an Amazon SNS topic for your environment\. To send messages to an Amazon SNS topic, Elastic Beanstalk must have the required permission\. For details, see [Configuring Permissions to Send Notifications](#configuration-notifications-permissions)\.
+When you configure notifications for your environment, Elastic Beanstalk creates an Amazon SNS topic for your environment\. To send messages to an Amazon SNS topic, Elastic Beanstalk must have the required permission\. For details, see [Configuring permissions to send notifications](#configuration-notifications-permissions)\.
 
 When a notable [event](using-features.events.md) occurs, Elastic Beanstalk sends a message to the topic\. Amazon SNS relays messages it receives to the topic's subscribers\. Notable events include environment creation errors and all changes in [environment and instance health](health-enhanced.md)\. Events for Amazon EC2 Auto Scaling operations \(adding and removing instances from the environment\) and other informational events don't trigger notifications\.
 
@@ -17,7 +17,7 @@ The `aws:elasticbeanstalk:sns:topics` namespace provides options for configuring
 
 You can only turn Amazon SNS notifications on or off\. Depending on the size and composition of your environment, the frequency of notifications sent to the topic can be high\. For notifications that are sent only under specific circumstances, you can [configure your environment to publish custom metrics](health-enhanced-cloudwatch.md) and [set Amazon CloudWatch alarms](using-features.alarms.md) to notify you when those metrics reach an unhealthy threshold\.
 
-## Configuring Notifications Using the Elastic Beanstalk Console<a name="configuration-notifications-console"></a>
+## Configuring notifications using the Elastic Beanstalk console<a name="configuration-notifications-console"></a>
 
 The Elastic Beanstalk console lets you enter an email address to create an Amazon SNS topic for your environment\.
 
@@ -38,7 +38,7 @@ The Elastic Beanstalk console lets you enter an email address to create an Amazo
 
 When you enter an email address for notifications, Elastic Beanstalk creates an Amazon SNS topic for your environment and adds a subscription\. Amazon SNS sends an email to the subscribed address to confirm the subscription\. You must click the link in the confirmation email to activate the subscription and receive notifications\.
 
-## Configuring Notifications Using Configuration Options<a name="configuration-notifications-namespace"></a>
+## Configuring notifications using configuration options<a name="configuration-notifications-namespace"></a>
 
 Use the options in the [`aws:elasticbeanstalk:sns:topics` namespace](command-options-general.md#command-options-general-elasticbeanstalksnstopics) to configure Amazon SNS notifications for your environment\. You can set these options by using [configuration files](ebextensions.md), a CLI, or an SDK\.
 
@@ -58,13 +58,13 @@ If you attach an existing SNS topic to an environment with `Notification Topic N
 
 Changing this option also changes the `Notification Topic ARN`\. If a topic is already attached to the environment, Elastic Beanstalk deletes the old topic, and then creates a new topic and subscription\.
 
-The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended values](command-options.md#configuration-options-recommendedvalues) for details\.
 
-## Configuring Permissions to Send Notifications<a name="configuration-notifications-permissions"></a>
+## Configuring permissions to send notifications<a name="configuration-notifications-permissions"></a>
 
 This section discusses security considerations related to notifications using Amazon SNS\. There are two distinct cases: using the default Amazon SNS topic that Elastic Beanstalk creates for your environment, and providing an external Amazon SNS topic through configuration options\.
 
-### Permissions for a Default Topic<a name="configuration-notifications-permissions-default"></a>
+### Permissions for a default topic<a name="configuration-notifications-permissions-default"></a>
 
 When you configure notifications for your environment, Elastic Beanstalk creates an Amazon SNS topic for your environment\. To send messages to an Amazon SNS topic, Elastic Beanstalk must have the required permission\. If your environment uses the [service role](iam-servicerole.md) that the Elastic Beanstalk console or the EB CLI generated for it, or your account's [monitoring service\-linked role](using-service-linked-roles-monitoring.md), you don't need to do anything else\. These managed roles include the necessary permission\.
 
@@ -87,9 +87,9 @@ However, if you provided a custom service role when you created your environment
 }
 ```
 
-### Permissions for an External Topic<a name="configuration-notifications-permissions-external"></a>
+### Permissions for an external topic<a name="configuration-notifications-permissions-external"></a>
 
-In [Configuring Notifications Using Configuration Options](#configuration-notifications-namespace), we explain how you can replace the Amazon SNS topic that Elastic Beanstalk provides with another Amazon SNS topic\. If you did that, Elastic Beanstalk needs to verify that you have permission to publish to this SNS topic in order to allow you to associate the SNS topic with the environment\. You should have the same permission that the service role has, `sns:Publish`\. To verify that, Elastic Beanstalk sends a test notification to SNS as part of your action to create or update the environment\. If this test fails, then your attempt to create or update the environment fails, and Elastic Beanstalk shows a message explaining the failure\.
+In [Configuring notifications using configuration options](#configuration-notifications-namespace), we explain how you can replace the Amazon SNS topic that Elastic Beanstalk provides with another Amazon SNS topic\. If you did that, Elastic Beanstalk needs to verify that you have permission to publish to this SNS topic in order to allow you to associate the SNS topic with the environment\. You should have the same permission that the service role has, `sns:Publish`\. To verify that, Elastic Beanstalk sends a test notification to SNS as part of your action to create or update the environment\. If this test fails, then your attempt to create or update the environment fails, and Elastic Beanstalk shows a message explaining the failure\.
 
 If you provide a custom service role for your environment, be sure that your custom service role includes the following policy\. Replace *`sns_topic_name`* with the name of the Amazon SNS topic you provided in the configuration options\.
 

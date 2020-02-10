@@ -1,4 +1,4 @@
-# Bundling Multiple WAR Files for Tomcat Environments<a name="java-tomcat-multiple-war-files"></a>
+# Bundling multiple WAR files for Tomcat environments<a name="java-tomcat-multiple-war-files"></a>
 
 If your web app comprises multiple web application components, you can simplify deployments and reduce operating costs by running components in a single environment, instead of running a separate environment for each component\. This strategy is effective for lightweight applications that don't require a lot of resources, and for development and test environments\.
 
@@ -34,4 +34,4 @@ The source bundle can include only an optional `.ebextensions` folder and WAR fi
 
 1. Review the available settings, and then choose **Create app**\.
 
-For information about creating source bundles, see [Create an Application Source Bundle](applications-sourcebundle.md)\.
+For information about creating source bundles, see [Create an application source bundle](applications-sourcebundle.md)\.

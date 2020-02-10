@@ -1,4 +1,4 @@
-# Using the EB CLI to Monitor Environment Health<a name="health-enhanced-ebcli"></a>
+# Using the EB CLI to monitor environment health<a name="health-enhanced-ebcli"></a>
 
 The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) is a command line tool for managing AWS Elastic Beanstalk environments\. You also can use the EB CLI to monitor your environment's health in real time and with more granularity than is currently available in the Elastic Beanstalk console
 
@@ -10,7 +10,7 @@ Ensure that you are using the latest version of the EB CLI by running `pip insta
 ```
 $ sudo pip install --upgrade awsebcli
 ```
-For complete EB CLI installation instructions, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md)\.
+For complete EB CLI installation instructions, see [Install the EB CLI](eb-cli3-install.md)\.
 
 To use the EB CLI to monitor your environment's health, you must first configure a local project folder by running eb init and following the prompts\. For complete instructions, see [Configure the EB CLI](eb-cli3-configuration.md)\.
 
@@ -105,7 +105,7 @@ If you already have an environment running in Elastic Beanstalk and want to use 
      i-065716fba0e08a351   Deployed   2    Sample Application   4 hours
    ```
 
-## Reading the Output<a name="health-enhanced-ebcli-output"></a>
+## Reading the output<a name="health-enhanced-ebcli-output"></a>
 
 The output displays the name of the environment, the environment's overall health, and the current date at the top of the screen\.
 
@@ -133,7 +133,7 @@ The rest of the output is split into four sections\. The first displays the *sta
   i-8b2cf575     Ok
 ```
 
-For information about health statuses and colors, see [Health Colors and Statuses](health-enhanced-status.md)\.
+For information about health statuses and colors, see [Health colors and statuses](health-enhanced-status.md)\.
 
 The **requests** section displays information from the web server logs on each instance\. In this example, each instance is taking requests normally and there are no errors\.
 
@@ -165,7 +165,7 @@ Here is the output for Windows environments\.
   i-065716fba0e08a351   t2.large   1b   4 hours             0.2                  0.0         99.8
 ```
 
-For information about the server and operating system metrics shown, see [Instance Metrics](health-enhanced-metrics.md)\.
+For information about the server and operating system metrics shown, see [Instance metrics](health-enhanced-metrics.md)\.
 
 The final section, **deployments**, shows the deployment status of each instance\. If a rolling deployment fails, you can use the deployment ID, status, and version label shown to identify instances in your environment that are running the wrong version\.
 
@@ -178,7 +178,7 @@ The final section, **deployments**, shows the deployment status of each instance
   i-8b2cf575    Deployed   1    Sample Application   1 hour
 ```
 
-## Interactive Health View<a name="health-enhanced-ebcli-interactive"></a>
+## Interactive health view<a name="health-enhanced-ebcli-interactive"></a>
 
 The eb health command displays a snapshot of your environment's health\. To refresh the displayed information every 10 seconds, use the `--refresh` option\.
 
@@ -226,7 +226,7 @@ This example shows an environment that has recently been scaled up from one to f
 
 In the lower\-left corner, the report displays a list of options\. To exit interactive mode, press **Q**\. To scroll, press the arrow keys\. To see a list of additional commands, press **H**\.
 
-## Interactive Health View Options<a name="health-enhanced-ebcli-options"></a>
+## Interactive health view options<a name="health-enhanced-ebcli-options"></a>
 
 When viewing environment health interactively, you can use keyboard keys to adjust the view and tell Elastic Beanstalk to replace or reboot individual instances\. To see a list of available commands while viewing the health report in interactive mode, press **H** \.
 

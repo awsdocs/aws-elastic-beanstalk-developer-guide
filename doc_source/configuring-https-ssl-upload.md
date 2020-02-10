@@ -1,4 +1,4 @@
-# Upload a Certificate to IAM<a name="configuring-https-ssl-upload"></a>
+# Upload a certificate to IAM<a name="configuring-https-ssl-upload"></a>
 
 To use your certificate with your Elastic Beanstalk environment's load balancer, upload the certificate and private key to AWS Identity and Access Management \(IAM\)\. You can use a certificate stored in IAM with Elastic Load Balancing load balancers and Amazon CloudFront distributions\.
 

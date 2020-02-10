@@ -6,7 +6,7 @@
 Some regions don't offer CodeBuild\. The integration between Elastic Beanstalk and CodeBuild doesn't work in these regions\.  
 For information about the AWS services offered in each region, see [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)\.
 
-## Creating an Application<a name="eb-cli-codebuild-using"></a>
+## Creating an application<a name="eb-cli-codebuild-using"></a>
 
 **To create an Elastic Beanstalk application that uses CodeBuild**
 
@@ -37,7 +37,7 @@ You also need permissions to perform actions in CodeBuild itself\. The Elastic B
   "codebuild:BatchGetBuilds",
   "codebuild:StartBuild"
 ```
-For details, see [Managing Elastic Beanstalk User Policies](AWSHowTo.iam.managed-policies.md)\.
+For details, see [Managing Elastic Beanstalk user policies](AWSHowTo.iam.managed-policies.md)\.
 
 `ComputeType`  
 The amount of resources used by the Docker container in the CodeBuild build environment\. Valid values are BUILD\_GENERAL1\_SMALL, BUILD\_GENERAL1\_MEDIUM, and BUILD\_GENERAL1\_LARGE\.
@@ -50,7 +50,7 @@ The `Image` value is optional\. If you omit it, the eb init command attempts to 
 The duration, in minutes, that the CodeBuild build runs before timing out\. This value is optional\. For details about valid and default values, see [Create a Build Project in CodeBuild](https://docs.aws.amazon.com/codebuild/latest/userguide/create-project.html)\.  
 This timeout controls the maximum duration for a CodeBuild run, and the EB CLI also respects it as part of its first step to create an application version\. It's distinct from the value you can specify with the `--timeout` option of the [eb create](eb3-create.md) or [eb deploy](eb3-deploy.md) commands\. The latter value controls the maximum duration that for EB CLI to wait for environment creation or update\.
 
-## Building and Deploying Your Application Code<a name="eb-cli-codebuild-using"></a>
+## Building and deploying your application code<a name="eb-cli-codebuild-using"></a>
 
 Whenever your application code needs to be deployed, the EB CLI uses CodeBuild to run a build, then deploys the resulting build artifacts to your environment\. This happens when you create an Elastic Beanstalk environment for your application using the [eb create](eb3-create.md) command, and each time you later deploy code changes to the environment using the [eb deploy](eb3-deploy.md) command\.
 

@@ -1,4 +1,4 @@
-# Running Multiple Applications and ASP\.NET Core Applications with a Deployment Manifest<a name="dotnet-manifest"></a>
+# Running multiple applications and ASP\.NET core applications with a deployment manifest<a name="dotnet-manifest"></a>
 
 You can use a deployment manifest to tell Elastic Beanstalk how to deploy your application\. For example, instead of using `MSDeploy` to generate a source bundle for a single ASP\.NET application that runs at the root path of your website, you can use a manifest file to run multiple applications at different paths, or tell Elastic Beanstalk to deploy and run the app with ASP\.NET Core\. You can also use a deployment manifest to configure an application pool in which to run your applications\.
 
@@ -13,17 +13,17 @@ For full customization, you can [write your own deployment scripts](#dotnet-mani
 Deployment manifests and related features require a Windows Server platform [version 1\.2\.0 or newer](dotnet-v2migration.md)\.
 
 **Topics**
-+ [\.NET Core Apps](#dotnet-manifest-dotnetcore)
-+ [Run Multiple Applications](#dotnet-manifest-multiapp)
-+ [Configure Application Pools](#dotnet-manifest-apppool)
-+ [Define Custom Deployments](#dotnet-manifest-custom)
++ [\.NET Core apps](#dotnet-manifest-dotnetcore)
++ [Run multiple applications](#dotnet-manifest-multiapp)
++ [Configure application pools](#dotnet-manifest-apppool)
++ [Define custom deployments](#dotnet-manifest-custom)
 
-## \.NET Core Apps<a name="dotnet-manifest-dotnetcore"></a>
+## \.NET Core apps<a name="dotnet-manifest-dotnetcore"></a>
 
 You can use a deployment manifest to run \.NET Core applications on Elastic Beanstalk\. \.NET Core is a cross\-platform version of \.NET that comes with a command line tool \(`dotnet`\) that you can use to generate an application, run it locally, and prepare it for publishing\.
 
 **Note**  
-See [Deploying an ASP\.NET Core Application with Elastic Beanstalk](dotnet-core-tutorial.md) for a tutorial and sample application that use a deployment manifest to run a \.NET Core application on Elastic Beanstalk\.
+See [Deploying an ASP\.NET core application with Elastic Beanstalk](dotnet-core-tutorial.md) for a tutorial and sample application that use a deployment manifest to run a \.NET Core application on Elastic Beanstalk\.
 
 To run a \.NET Core application on Elastic Beanstalk, run `dotnet publish` and package the output in a ZIP archive, not including any containing directories\. Place the site archive in a source bundle with a deployment manifest with a deployment target of type `aspNetCoreWeb`\.
 
@@ -102,7 +102,7 @@ The site archive contains the compiled application code, dependencies, and `web.
 
 See [the tutorial](dotnet-core-tutorial.md) for a full example\.
 
-## Run Multiple Applications<a name="dotnet-manifest-multiapp"></a>
+## Run multiple applications<a name="dotnet-manifest-multiapp"></a>
 
 You can run multiple applications with a deployment manifest by defining multiple deployment targets\.
 
@@ -138,7 +138,7 @@ A sample application with multiple applications is available here:
 + **Deployable source bundle** \- [dotnet\-multiapp\-sample\-bundle\-v2\.zip](samples/dotnet-multiapp-sample-bundle-v2.zip)
 + **Source code** \- [dotnet\-multiapp\-sample\-source\-v2\.zip](samples/dotnet-multiapp-sample-source-v2.zip)
 
-## Configure Application Pools<a name="dotnet-manifest-apppool"></a>
+## Configure application pools<a name="dotnet-manifest-apppool"></a>
 
 You can use a deployment manifest to configure an application pool in IIS and use it to run one or more applications\.
 
@@ -178,7 +178,7 @@ The `appPools` block under `iisConfig` defines the application pool\.
 
 Each deployment in the `deployments` block specifies an archive, a path to run it at, and an `appPool` in which to run it\.
 
-## Define Custom Deployments<a name="dotnet-manifest-custom"></a>
+## Define custom deployments<a name="dotnet-manifest-custom"></a>
 
 For even more control, you can completely customize an application deployment by defining a *custom deployment*\.
 
@@ -212,7 +212,7 @@ The following deployment manifest tells Elastic Beanstalk to run an `install` sc
 
 Include any artifacts required to run the application in your source bundle with the manifest and scripts\.
 
-**Example custom\-site\-bundle\.zip**  
+**Example Custom\-site\-bundle\.zip**  
 
 ```
 .

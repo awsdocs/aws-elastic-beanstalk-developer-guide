@@ -1,10 +1,10 @@
-# EB CLI 2\.6 \(Retired\)<a name="eb-cli"></a>
+# EB CLI 2\.6 \(retired\)<a name="eb-cli"></a>
 
- This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see [Using the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md)\. 
+ This version of the EB CLI and its documentation have been replaced with version 3 \(in this section, EB CLI 3 represents version 3 and later of the EB CLI\)\. For information on the new version, see [Using the Elastic Beanstalk command line interface \(EB CLI\)](eb-cli3.md)\. 
 
 You should migrate to the latest version of EB CLI 3\. It can manage environments that you launched using EB CLI 2\.6 or earlier versions of EB CLI\.
 
-## Differences from Version 3 of EB CLI<a name="eb-cli2-differences"></a>
+## Differences from version 3 of EB CLI<a name="eb-cli2-differences"></a>
 
 EB is a command line interface \(CLI\) tool for Elastic Beanstalk that you can use to deploy applications quickly and more easily\. The latest version of EB was introduced by Elastic Beanstalk in EB CLI 3\. EB CLI automatically retrieves settings from an environment created using EB if the environment is running\. Note that EB CLI 3 does not store option settings locally, as in earlier versions\.
 
@@ -16,7 +16,7 @@ EB CLI introduces the commands eb create, eb deploy, eb open, eb console, eb sca
 + **eb update** – EB CLI 3 does not include the command eb update\. Use eb config to update an environment\.
 + **eb branch** – EB CLI 3 does not include the command eb branch\.
 
-For more information about using EB CLI 3 commands to create and manage an application, see [EB CLI Command Reference](eb3-cmd-commands.md)\. For a walkthrough of how to deploy a sample application using EB CLI 3, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
+For more information about using EB CLI 3 commands to create and manage an application, see [EB CLI command reference](eb3-cmd-commands.md)\. For a walkthrough of how to deploy a sample application using EB CLI 3, see [Managing Elastic Beanstalk environments with the EB CLI](eb-cli3-getting-started.md)\.
 
 ## Migrating to EB CLI 3 and CodeCommit<a name="eb-cli2-migrating"></a>
 

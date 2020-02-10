@@ -6,7 +6,7 @@ Manages your Elastic Beanstalk application versions, including deleting a versio
 
 Use the `--delete` option to delete a version of the application\.
 
-Use the `lifecycle` option to display or create the application version lifecycle policy\. Learn more at [Configuring Application Version Lifecycle Settings](applications-lifecycle.md)\.
+Use the `lifecycle` option to display or create the application version lifecycle policy\. Learn more at [Configuring application version lifecycle settings](applications-lifecycle.md)\.
 
 ## Syntax<a name="eb3-appversion-syntax"></a>
 

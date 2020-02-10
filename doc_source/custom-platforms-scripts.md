@@ -1,4 +1,4 @@
-# Platform Scripts<a name="custom-platforms-scripts"></a>
+# Platform scripts<a name="custom-platforms-scripts"></a>
 
 Elastic Beanstalk installs the shell script `get-config` that you can use to get environment variables and other information in hooks that run on\-instance in environments launched with your custom platform\.
 

@@ -1,11 +1,11 @@
-# Manage Alarms<a name="using-features.alarms"></a>
+# Manage alarms<a name="using-features.alarms"></a>
 
 You can create alarms for metrics that you are monitoring by using the Elastic Beanstalk console\. Alarms help you monitor changes to your AWS Elastic Beanstalk environment so that you can easily identify and mitigate problems before they occur\. For example, you can set an alarm that notifies you when CPU utilization in an environment exceeds a certain threshold, ensuring that you are notified before a potential problem occurs\. For more information, see [Using Elastic Beanstalk with Amazon CloudWatch](AWSHowTo.cloudwatch.md)\.
 
 **Note**  
 Elastic Beanstalk uses CloudWatch for monitoring and alarms, meaning CloudWatch costs are applied to your AWS account for any alarms that you use\.
 
-For more information about monitoring specific metrics, see [Basic Health Reporting](using-features.healthstatus.md)\.
+For more information about monitoring specific metrics, see [Basic health reporting](using-features.healthstatus.md)\.
 
 **To check the state of your alarms**
 

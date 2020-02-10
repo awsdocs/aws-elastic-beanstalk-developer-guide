@@ -1,8 +1,8 @@
-# Step 1: Create an Example Application<a name="GettingStarted.CreateApp"></a>
+# Step 1: Create an example application<a name="GettingStarted.CreateApp"></a>
 
 In this step, you create a new application starting from a preexisting example application\. Elastic Beanstalk supports platforms for different programming languages, application servers, and Docker containers\. You choose a platform when you create the application\.
 
-## Create an Application and an Environment<a name="GettingStarted.CreateApp.Create"></a>
+## Create an application and an environment<a name="GettingStarted.CreateApp.Create"></a>
 
 To create your example application, you'll use the **Create a web app** console wizard\. It creates an Elastic Beanstalk application and launches an environment within it\. An environment is the collection of AWS resources required to run your application code\.
 
@@ -24,7 +24,7 @@ To run the example application on AWS resources, Elastic Beanstalk takes the fol
    + An AWS CloudFormation stack 
    + A domain name
 
-   For details about these AWS resources, see [AWS Resources Created for the Example Application](#GettingStarted.CreateApp.AWSresources)\.
+   For details about these AWS resources, see [AWS resources created for the example application](#GettingStarted.CreateApp.AWSresources)\.
 
 1. Creates a new application version named **Sample Application**\. This is the default Elastic Beanstalk example application file\.
 
@@ -36,7 +36,7 @@ During the environment creation process, the console tracks progress and display
 
 When all of the resources are launched and the EC2 instances running the application pass health checks, the environment's health changes to `Ok`\. You can now use your web application's website\.
 
-## AWS Resources Created for the Example Application<a name="GettingStarted.CreateApp.AWSresources"></a>
+## AWS resources created for the example application<a name="GettingStarted.CreateApp.AWSresources"></a>
 
 When you create the example application, Elastic Beanstalk creates the following AWS resources:
 + **EC2 instance** – An Amazon EC2 virtual machine configured to run web apps on the platform you choose\.

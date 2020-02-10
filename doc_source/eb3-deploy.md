@@ -9,7 +9,7 @@ If git is installed, EB CLI uses the `git archive` command to create a `.zip` fi
 However, when `.ebignore` is present in your project directory, the EB CLI doesn't use git commands and semantics to create your source bundle\. This means that EB CLI ignores files specified in `.ebignore`, and includes all other files\. In particular, it includes uncommitted source files\.
 
 **Note**  
-You can configure the EB CLI to deploy an artifact from your build process instead of creating a ZIP file of your project folder\. See [Deploying an Artifact Instead of the Project Folder](eb-cli3-configuration.md#eb-cli3-artifact) for details\.
+You can configure the EB CLI to deploy an artifact from your build process instead of creating a ZIP file of your project folder\. See [Deploying an Artifact instead of the project folder](eb-cli3-configuration.md#eb-cli3-artifact) for details\.
 
 ## Syntax<a name="eb3-deploysyntax"></a>
 

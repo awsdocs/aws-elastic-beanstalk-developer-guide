@@ -1,4 +1,4 @@
-# Terminating HTTPS on EC2 Instances Running Node\.js<a name="https-singleinstance-nodejs"></a>
+# Terminating HTTPS on EC2 instances running Node\.js<a name="https-singleinstance-nodejs"></a>
 
 The following example configuration file [extends the default nginx configuration](nodejs-platform-proxy.md) to listen on port 443 and terminate SSL/TLS connections with a public certificate and private key\.
 
@@ -94,7 +94,7 @@ If you have intermediate certificates, include them in `server.crt` after your s
 Creates the private key file on the instance\. Replace *private key contents* with the contents of the private key used to create the certificate request or self\-signed certificate\. 
 
 **Note**  
-Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)\.
+Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing private keys securely in Amazon S3](https-storingprivatekeys.md)\.
 
 In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation [function](ebextensions-functions.md) and adds a rule to it\.
 

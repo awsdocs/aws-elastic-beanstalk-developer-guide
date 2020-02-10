@@ -1,4 +1,4 @@
-# Adding a Database to Your Elastic Beanstalk Environment<a name="using-features.managing.db"></a>
+# Adding a database to your Elastic Beanstalk environment<a name="using-features.managing.db"></a>
 
 Elastic Beanstalk provides integration with Amazon Relational Database Service \(Amazon RDS\) to help you add a database instance to your Elastic Beanstalk environment\. You can use Elastic Beanstalk to add a MySQL, PostgreSQL, Oracle, or SQL Server database to your environment during or after environment creation\. When you add a database instance to your environment, Elastic Beanstalk provides connection information to your application by setting environment properties for the database hostname, port, user name, password, and database name\.
 
@@ -7,12 +7,12 @@ A database instance that is part of your environment is tied to the lifecycle of
 For a production environment, you can [launch a database instance outside of your environment](AWSHowTo.RDS.md) and configure your application to connect to it outside of the functionality provided by Elastic Beanstalk\. Using a database instance that is external to your environment requires additional security group and connection string configuration\. However, it also lets you connect to the database from multiple environments, use database types not supported with integrated databases, perform blue/green deployments, and tear down your environment without affecting the database instance\.
 
 **Topics**
-+ [Adding an Amazon RDS DB Instance to Your Environment](#environments-cfg-rds-create)
++ [Adding an Amazon RDS DB instance to your environment](#environments-cfg-rds-create)
 + [Connecting to the database](#environments-cfg-rds-connect)
-+ [Configuring an Integrated RDS DB Instance Using the Console](#using-features.managing.db.CON)
-+ [Configuring an Integrated RDS DB Instance Using Configuration Files](#using-features.managing.db.namespace)
++ [Configuring an integrated RDS DB Instance using the console](#using-features.managing.db.CON)
++ [Configuring an integrated RDS DB Instance using configuration files](#using-features.managing.db.namespace)
 
-## Adding an Amazon RDS DB Instance to Your Environment<a name="environments-cfg-rds-create"></a>
+## Adding an Amazon RDS DB instance to your environment<a name="environments-cfg-rds-create"></a>
 
 You can add a DB instance to your environment by using the Elastic Beanstalk console\.
 
@@ -44,7 +44,7 @@ You can configure the following options:
 **Note**  
 Elastic Beanstalk creates a master user for the database using the user name and password you provide\. To learn more about the master user and its privileges, see [Master User Account Privileges](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.MasterAccounts.html)\.
 
-![\[Elastic Beanstalk Auto Scaling Configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-rds-create.png)
+![\[Elastic Beanstalk Auto Scaling configuration window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-rds-create.png)
 
 Adding a DB instance takes about 10 minutes\. When the environment update is complete, the DB instance's hostname and other connection information are available to your application through the following environment properties:
 + **RDS\_HOSTNAME** – The hostname of the DB instance\.
@@ -64,15 +64,15 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
 ## Connecting to the database<a name="environments-cfg-rds-connect"></a>
 
 Use the connectivity information to connect to your DB from inside your application through environment variables\. For more information about using Amazon RDS with your applications, see the following topics\.
-+ Java SE – [Connecting to a Database \(Java SE Platforms\)](java-rds.md#java-rds-javase)
-+ Java with Tomcat – [Connecting to a Database \(Tomcat Platforms\)](java-rds.md#java-rds-tomcat)
-+ Node\.js – [Connecting to a Database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
-+ \.NET – [Connecting to a Database](create_deploy_NET.rds.md#dotnet-rds-connect)
-+ PHP – [Connecting to a Database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
-+ Python – [Connecting to a Database](create-deploy-python-rds.md#python-rds-connect)
-+ Ruby – [Connecting to a Database](create_deploy_Ruby.rds.md#ruby-rds-connect)
++ Java SE – [Connecting to a database \(Java SE platforms\)](java-rds.md#java-rds-javase)
++ Java with Tomcat – [Connecting to a database \(Tomcat platforms\)](java-rds.md#java-rds-tomcat)
++ Node\.js – [Connecting to a database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
++ \.NET – [Connecting to a database](create_deploy_NET.rds.md#dotnet-rds-connect)
++ PHP – [Connecting to a database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
++ Python – [Connecting to a database](create-deploy-python-rds.md#python-rds-connect)
++ Ruby – [Connecting to a database](create_deploy_Ruby.rds.md#ruby-rds-connect)
 
-## Configuring an Integrated RDS DB Instance Using the Console<a name="using-features.managing.db.CON"></a>
+## Configuring an integrated RDS DB Instance using the console<a name="using-features.managing.db.CON"></a>
 
 You can view and modify configuration settings for your DB instance in the **Database** section on the environment's **Configuration** page in the [Elastic Beanstalk console](environments-console.md)\.
 
@@ -92,7 +92,7 @@ You can modify the **Instance class**, ****Storage**, Password**, **Retention**,
 Don't modify settings on the DB instance outside of the functionality provided by Elastic Beanstalk \(for example, in the Amazon RDS console\)\. If you do, your Amazon RDS DB configuration might be out of sync with your environment's definition\. When you update or restart your environment, the settings specified in the environment override any settings you made outside of Elastic Beanstalk\.  
 If you need to modify settings that Elastic Beanstalk doesn't directly support, use Elastic Beanstalk [configuration files](#using-features.managing.db.namespace)\.
 
-## Configuring an Integrated RDS DB Instance Using Configuration Files<a name="using-features.managing.db.namespace"></a>
+## Configuring an integrated RDS DB Instance using configuration files<a name="using-features.managing.db.namespace"></a>
 
 You can configure your environment's DB instance using [configuration files](ebextensions.md)\. Use the options in the [`aws:rds:dbinstance`](command-options-general.md#command-options-general-rdsdbinstance) namespace\. The following example modifies the allocated database storage size to 100 GB\.
 

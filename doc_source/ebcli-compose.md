@@ -1,10 +1,10 @@
-# Managing Multiple Elastic Beanstalk Environments as a Group with the EB CLI<a name="ebcli-compose"></a>
+# Managing multiple Elastic Beanstalk environments as a group with the EB CLI<a name="ebcli-compose"></a>
 
 You can use the EB CLI to create groups of AWS Elastic Beanstalk environments, each running a separate component of a service\-oriented architecture application\. The EB CLI manages such groups by using the [ComposeEnvironments](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ComposeEnvironments.html) API\.
 
 **Note**  
 Environment groups are different than multiple containers in a Multicontainer Docker environment\. With environment groups, each component of your application runs in a separate Elastic Beanstalk environment, with its own dedicated set of Amazon EC2 instances\. Each component can scale separately\. With Multicontainer Docker, you combine several components of an application into a single environment\. All components share the same set of Amazon EC2 instances, with each instance running multiple Docker containers\. Choose one of these architectures according to your application's needs\.  
-For details about Multicontainer Docker, see [Multicontainer Docker Environments](create_deploy_docker_ecs.md)\.
+For details about Multicontainer Docker, see [Multicontainer Docker environments](create_deploy_docker_ecs.md)\.
 
 Organize your application components into the following folder structure:
 
@@ -16,7 +16,7 @@ Organize your application components into the following folder structure:
     `-- env.yaml
 ```
 
-Each subfolder contains the source code for an independent component of an application that will run in its own environment and an environment definition file named `env.yaml`\. For details on the `env.yaml` format, see [Environment Manifest \(`env.yaml`\)](environment-cfg-manifest.md)\. 
+Each subfolder contains the source code for an independent component of an application that will run in its own environment and an environment definition file named `env.yaml`\. For details on the `env.yaml` format, see [Environment manifest \(`env.yaml`\)](environment-cfg-manifest.md)\. 
 
 To use the `Compose Environments` API, first run eb init from the project folder, specifying each component by the name of the folder that contains it with the `--modules` option:
 

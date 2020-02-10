@@ -1,14 +1,14 @@
-# Setting Up your PHP Development Environment<a name="php-development-environment"></a>
+# Setting up your PHP development environment<a name="php-development-environment"></a>
 
 Set up a PHP development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with Elastic Beanstalk](chapter-devenv.md)\.
+For common setup steps and tools that apply to all languages, see [Configuring your development machine for use with Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
 + [Installing PHP](#php-development-environment-php)
 + [Install Composer](#php-development-environment-libraries)
 + [Installing the AWS SDK for PHP](#php-development-environment-sdk)
-+ [Installing an IDE or Text Editor](#php-development-environment-ide)
++ [Installing an IDE or text editor](#php-development-environment-ide)
 
 ## Installing PHP<a name="php-development-environment-php"></a>
 
@@ -86,7 +86,7 @@ $ composer require aws/aws-sdk-php
 
 Visit the [AWS SDK for PHP homepage](https://aws.amazon.com/sdk-for-php/) for more information and installation instructions\.
 
-## Installing an IDE or Text Editor<a name="php-development-environment-ide"></a>
+## Installing an IDE or text editor<a name="php-development-environment-ide"></a>
 
 Integrated development environments \(IDEs\) provide a wide range of features that facilitate application development\. If you haven't used an IDE for PHP development, try Eclipse and PHPStorm and see which works best for you\.
 +  [Install Eclipse](https://www.eclipse.org/downloads/) 

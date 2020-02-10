@@ -1,4 +1,4 @@
-# Adding an Amazon RDS DB Instance to Your PHP Application Environment<a name="create_deploy_PHP.rds"></a>
+# Adding an Amazon RDS DB instance to your PHP application environment<a name="create_deploy_PHP.rds"></a>
 
 You can use an Amazon Relational Database Service \(Amazon RDS\) DB instance to store data gathered and modified by your application\. The database can be attached to your environment and managed by Elastic Beanstalk, or created and managed externally\.
 
@@ -11,12 +11,12 @@ For learning purposes or test environments, you can use Elastic Beanstalk to add
 For production environments, you can create a DB instance outside of your Elastic Beanstalk environment to decouple your environment resources from your database resources\. This way, when you terminate your environment, the DB instance isn’t deleted\. An external DB instance also lets you connect to the same database from multiple environments and perform [blue\-green deployments](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.CNAMESwap.html)\. For instructions, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\.
 
 **Topics**
-+ [Adding a DB Instance to Your Environment](#php-rds-create)
-+ [Downloading a Driver](#php-rds-drivers)
-+ [Connecting to a Database with a PDO or MySQLi](#php-rds-connect)
-+ [Connecting to a Database with Symfony](#php-rds-symfony)
++ [Adding a DB instance to your environment](#php-rds-create)
++ [Downloading a driver](#php-rds-drivers)
++ [Connecting to a database with a PDO or MySQLi](#php-rds-connect)
++ [Connecting to a database with Symfony](#php-rds-symfony)
 
-## Adding a DB Instance to Your Environment<a name="php-rds-create"></a>
+## Adding a DB instance to your environment<a name="php-rds-create"></a>
 
 **To add a DB instance to your environment**
 
@@ -47,9 +47,9 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
   Amazon RDS console label – **Username**
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
-For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
+For more information about configuring an internal DB instance, see [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md)\.
 
-## Downloading a Driver<a name="php-rds-drivers"></a>
+## Downloading a driver<a name="php-rds-drivers"></a>
 
 To use PHP Data Objects \(PDO\) to connect to the database, install the driver that matches the database engine that you chose\.
 + **MySQL** – [http://php.net/manual/en/ref.pdo-mysql.php](http://php.net/manual/en/ref.pdo-mysql.php)
@@ -59,7 +59,7 @@ To use PHP Data Objects \(PDO\) to connect to the database, install the driver t
 
 For more information, see [http://php.net/manual/en/pdo.installation.php](http://php.net/manual/en/pdo.installation.php)\.
 
-## Connecting to a Database with a PDO or MySQLi<a name="php-rds-connect"></a>
+## Connecting to a database with a PDO or MySQLi<a name="php-rds-connect"></a>
 
 You can use `$_SERVER[`VARIABLE`]` to read connection information from the environment\.
 
@@ -92,7 +92,7 @@ For MySQLi, pass the hostname, user name, password, database name, and port to t
 $link = new mysqli($_SERVER['RDS_HOSTNAME'], $_SERVER['RDS_USERNAME'], $_SERVER['RDS_PASSWORD'], $_SERVER['RDS_DB_NAME'], $_SERVER['RDS_PORT']);
 ```
 
-## Connecting to a Database with Symfony<a name="php-rds-symfony"></a>
+## Connecting to a database with Symfony<a name="php-rds-symfony"></a>
 
 For Symfony version 3\.2 and newer, you can use `%env(PROPERTY_NAME)%` to set database parameters in a configuration file based on the environment properties set by Elastic Beanstalk\.
 

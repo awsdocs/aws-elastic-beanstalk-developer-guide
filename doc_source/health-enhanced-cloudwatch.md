@@ -1,18 +1,18 @@
-# Publishing Amazon CloudWatch Custom Metrics for an Environment<a name="health-enhanced-cloudwatch"></a>
+# Publishing Amazon CloudWatch custom metrics for an environment<a name="health-enhanced-cloudwatch"></a>
 
 You can publish the data gathered by AWS Elastic Beanstalk enhanced health reporting to Amazon CloudWatch as custom metrics\. Publishing metrics to CloudWatch lets you monitor changes in application performance over time and identify potential issues by tracking how resource usage and request latency scale with load\.
 
 By publishing metrics to CloudWatch, you also make them available for use with [monitoring graphs](environment-health-console.md#environment-health-console-graphs) and [alarms](using-features.alarms.md)\. One free metric, *EnvironmentHealth*, is enabled automatically when you use enhanced health reporting\. Custom metrics other than *EnvironmentHealth* incur standard [CloudWatch charges](https://aws.amazon.com/cloudwatch/pricing/)\. 
 
-To publish CloudWatch custom metrics for an environment, you must first enable enhanced health reporting on the environment\. See [Enabling Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) for instructions\.
+To publish CloudWatch custom metrics for an environment, you must first enable enhanced health reporting on the environment\. See [Enabling Elastic Beanstalk enhanced health reporting](health-enhanced-enable.md) for instructions\.
 
 **Topics**
-+ [Enhanced Health Reporting Metrics](#health-enhanced-cloudwatch-metrics)
-+ [Configuring CloudWatch Metrics Using the Elastic Beanstalk Console](#health-enhanced-cloudwatch-console)
-+ [Configuring CloudWatch Custom Metrics Using the EB CLI](#health-enhanced-cloudwatch-ebcli)
-+ [Providing Custom Metric Config Documents](#health-enhanced-cloudwatch-configdocument)
++ [Enhanced health reporting metrics](#health-enhanced-cloudwatch-metrics)
++ [Configuring CloudWatch metrics using the Elastic Beanstalk console](#health-enhanced-cloudwatch-console)
++ [Configuring CloudWatch custom metrics using the EB CLI](#health-enhanced-cloudwatch-ebcli)
++ [Providing custom metric config documents](#health-enhanced-cloudwatch-configdocument)
 
-## Enhanced Health Reporting Metrics<a name="health-enhanced-cloudwatch-metrics"></a>
+## Enhanced health reporting metrics<a name="health-enhanced-cloudwatch-metrics"></a>
 
 When you enable enhanced health reporting in your environment, the enhanced health reporting system automatically publishes one [CloudWatch custom metric](https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html), *EnvironmentHealth*\. To publish additional metrics to CloudWatch, configure your environment with those metrics by using the [Elastic Beanstalk console](#health-enhanced-cloudwatch-console), [EB CLI](#health-enhanced-cloudwatch-ebcli), or [\.ebextensions](command-options.md)\.
 
@@ -59,7 +59,7 @@ You can publish the following enhanced health metrics from your environment to C
 `CPUIdle``CPUUser``CPUPriveleged`  
 Instance only\. Indicates the percentage of time that the CPU has spent in each state over the last minute\.
 
-## Configuring CloudWatch Metrics Using the Elastic Beanstalk Console<a name="health-enhanced-cloudwatch-console"></a>
+## Configuring CloudWatch metrics using the Elastic Beanstalk console<a name="health-enhanced-cloudwatch-console"></a>
 
 You can use the Elastic Beanstalk console to configure your environment to publish enhanced health reporting metrics to CloudWatch and make them available for use with monitoring graphs and alarms\.
 
@@ -79,7 +79,7 @@ You can use the Elastic Beanstalk console to configure your environment to publi
 
 Enabling CloudWatch custom metrics adds them to the list of metrics available on the [**Monitoring** page](environment-health-console.md)\.
 
-## Configuring CloudWatch Custom Metrics Using the EB CLI<a name="health-enhanced-cloudwatch-ebcli"></a>
+## Configuring CloudWatch custom metrics using the EB CLI<a name="health-enhanced-cloudwatch-ebcli"></a>
 
 You can use the EB CLI to configure custom metrics by saving your environment's configuration locally, adding an entry that defines the metrics to publish, and then uploading the configuration to Elastic Beanstalk\. You can apply the saved configuration to an environment during or after creation\.
 
@@ -118,7 +118,7 @@ You can use the EB CLI to configure custom metrics by saving your environment's 
 
    In the example, 60 indicates the number of seconds between measurements\. Currently, this is the only supported value\.
 **Note**  
-You can combine `CloudWatchMetrics` and `Rules` in the same `ConfigDocument` option setting\. `Rules` are described in [Configuring Enhanced Health Rules for an Environment](health-enhanced-rules.md)\.  
+You can combine `CloudWatchMetrics` and `Rules` in the same `ConfigDocument` option setting\. `Rules` are described in [Configuring enhanced health rules for an environment](health-enhanced-rules.md)\.  
 If you previously used `Rules` to configure enhanced health rules, then the configuration file that you retrieve using the eb config save command already has a `ConfigDocument` key with a `Rules` section\. *Do not delete it*—add a `CloudWatchMetrics` section into the same `ConfigDocument` option value\.
 
 1. Save the configuration file and close the text editor\. In this example, the updated configuration file is saved with a name \(`02-cloudwatch-enabled.cfg.yml`\) that is different from the downloaded configuration file\. This creates a separate saved configuration when the file is uploaded\. You can use the same name as the downloaded file to overwrite the existing configuration without creating a new one\.
@@ -139,7 +139,7 @@ If you previously used `Rules` to configure enhanced health rules, then the conf
 
    The `--cfg` option specifies a named configuration file that is applied to the environment\. You can save the configuration file locally or in Elastic Beanstalk\. If a configuration file with the specified name exists in both locations, the EB CLI uses the local file\.
 
-## Providing Custom Metric Config Documents<a name="health-enhanced-cloudwatch-configdocument"></a>
+## Providing custom metric config documents<a name="health-enhanced-cloudwatch-configdocument"></a>
 
 The configuration \(config\) document for Amazon CloudWatch custom metrics is a JSON document that lists the metrics to publish at the environment and instance levels\. The following example shows a config document that enables all custom metrics available on Linux\.
 

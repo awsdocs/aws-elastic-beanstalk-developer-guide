@@ -1,10 +1,10 @@
-# Listing and Connecting to Server Instances<a name="using-features.ec2connect"></a>
+# Listing and connecting to server instances<a name="using-features.ec2connect"></a>
 
  You can view a list of Amazon EC2 instances running your AWS Elastic Beanstalk application environment through the Elastic Beanstalk console\. You can connect to the instances using any SSH client\. You can connect to the instances running Windows using Remote Desktop\.
 
 Some notes about specific development environments:
-+ For more information about listing and connecting to server instances using the AWS Toolkit for Eclipse, see [Listing and Connecting to Server Instances](create_deploy_Java.ec2connect.md)\.
-+ For more information about listing and connecting to server instances using the AWS Toolkit for Visual Studio, see [Listing and Connecting to Server Instances](create_deploy_NET.ec2connect.md)\.
++ For more information about listing and connecting to server instances using the AWS Toolkit for Eclipse, see [Listing and connecting to server instances](create_deploy_Java.ec2connect.md)\.
++ For more information about listing and connecting to server instances using the AWS Toolkit for Visual Studio, see [Listing and connecting to server instances](create_deploy_NET.ec2connect.md)\.
 
 **Important**  
 Before you can access your Elastic Beanstalk–provisioned Amazon EC2 instances, you must create an Amazon EC2 key pair and configure your Elastic Beanstalk–provisioned Amazon EC2instances to use the Amazon EC2 key pair\. You can set up your Amazon EC2 key pairs using the [AWS Management Console](https://console.aws.amazon.com/)\. For instructions on creating a key pair for Amazon EC2, see the *Amazon EC2 Getting Started Guide*\. For more information on how to configure your Amazon EC2 instances to use an Amazon EC2 key pair, see [EC2 key pair](using-features.managing.security.md#using-features.managing.security.keypair)\.   

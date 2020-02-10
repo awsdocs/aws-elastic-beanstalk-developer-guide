@@ -1,4 +1,4 @@
-# Enhanced Health Reporting and Monitoring<a name="health-enhanced"></a>
+# Enhanced health reporting and monitoring<a name="health-enhanced"></a>
 
 Enhanced health reporting is a feature that you can enable on your environment to allow AWS Elastic Beanstalk to gather additional information about resources in your environment\. Elastic Beanstalk analyzes the information gathered to provide a better picture of overall environment health and aid in the identification of issues that can cause your application to become unavailable\.
 
@@ -19,7 +19,7 @@ This feature isn't available on [Windows Server platform versions](https://docs.
 When you enable enhanced health reporting on a Windows Server environment, don't change [IIS logging configuration](https://docs.microsoft.com/en-us/iis/manage/provisioning-and-managing-iis/configure-logging-in-iis)\. For enhanced health monitoring to work correctly, IIS logging must be configured with the **W3C** format and the **ETW event only** or **Both log file and ETW event** log event destinations\.  
 In addition, don't disable or stop the [Elastic Beanstalk health agent](#health-enhanced-agent) Windows service on any of your environment's instances\. To collect and report enhanced health information on an instance, this service should be enabled and running\.
 
-Enhanced health requires the environment to have an instance profile\. The instance profile should have roles that provide permissions for your environment instances to collect and report enhanced health information\. The first time you create an environment with a v2 platform version in the Elastic Beanstalk console, Elastic Beanstalk prompts you to create the required roles and enables enhanced health reporting by default\. Continue reading for details on how enhanced health reporting works, or see [Enabling Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) to get started using it right away\.
+Enhanced health requires the environment to have an instance profile\. The instance profile should have roles that provide permissions for your environment instances to collect and report enhanced health information\. The first time you create an environment with a v2 platform version in the Elastic Beanstalk console, Elastic Beanstalk prompts you to create the required roles and enables enhanced health reporting by default\. Continue reading for details on how enhanced health reporting works, or see [Enabling Elastic Beanstalk enhanced health reporting](health-enhanced-enable.md) to get started using it right away\.
 
 
 |  | 
@@ -29,23 +29,23 @@ Enhanced health requires the environment to have an instance profile\. The insta
 Amazon Linux 2 platforms require instance profiles, so they can support enhanced health unconditionally\. When you create an environment using an Amazon Linux 2 platform, Elastic Beanstalk always enables enhanced health\. This is true regardless of how you create the environment—using the Elastic Beanstalk console, the EB CLI, the AWS CLI, or the API\.
 
 **Topics**
-+ [The Elastic Beanstalk Health Agent](#health-enhanced-agent)
-+ [Factors in Determining Instance and Environment Health](#health-enhanced-factors)
-+ [Health Check Rule Customization](#health-enhanced.rules)
-+ [Enhanced Health Roles](#health-enhanced-roles)
-+ [Enhanced Health Events](#health-enhanced-events)
-+ [Enhanced Health Reporting Behavior during Updates, Deployments, and Scaling](#health-enhanced-effects)
-+ [Enabling Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md)
-+ [Enhanced Health Monitoring with the Environment Management Console](health-enhanced-console.md)
-+ [Health Colors and Statuses](health-enhanced-status.md)
-+ [Instance Metrics](health-enhanced-metrics.md)
-+ [Configuring Enhanced Health Rules for an Environment](health-enhanced-rules.md)
-+ [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md)
-+ [Using Enhanced Health Reporting with the Elastic Beanstalk API](health-enhanced-api.md)
-+ [Enhanced Health Log Format](health-enhanced-serverlogs.md)
-+ [Notifications and Troubleshooting](environments-health-enhanced-notifications.md)
++ [The Elastic Beanstalk health agent](#health-enhanced-agent)
++ [Factors in determining instance and environment health](#health-enhanced-factors)
++ [Health check rule customization](#health-enhanced.rules)
++ [Enhanced health roles](#health-enhanced-roles)
++ [Enhanced health events](#health-enhanced-events)
++ [Enhanced health reporting behavior during updates, deployments, and scaling](#health-enhanced-effects)
++ [Enabling Elastic Beanstalk enhanced health reporting](health-enhanced-enable.md)
++ [Enhanced health monitoring with the environment management console](health-enhanced-console.md)
++ [Health colors and statuses](health-enhanced-status.md)
++ [Instance metrics](health-enhanced-metrics.md)
++ [Configuring enhanced health rules for an environment](health-enhanced-rules.md)
++ [Publishing Amazon CloudWatch custom metrics for an environment](health-enhanced-cloudwatch.md)
++ [Using enhanced health reporting with the Elastic Beanstalk API](health-enhanced-api.md)
++ [Enhanced health log format](health-enhanced-serverlogs.md)
++ [Notifications and troubleshooting](environments-health-enhanced-notifications.md)
 
-## The Elastic Beanstalk Health Agent<a name="health-enhanced-agent"></a>
+## The Elastic Beanstalk health agent<a name="health-enhanced-agent"></a>
 
 The Elastic Beanstalk health agent is a daemon process \(or service, on Windows environments\) that runs on each Amazon EC2 instance in your environment, monitoring operating system and application\-level health metrics and reporting issues to Elastic Beanstalk\. The health agent is included in all platform versions starting with version 2\.0 of each platform\.
 
@@ -59,13 +59,13 @@ For an additional charge, you can choose to publish individual instance and envi
 
 Enhanced health reporting only incurs a charge if you choose to publish enhanced health metrics to CloudWatch\. When you use enhanced health, you still get the basic health metrics published for free, even if you don't choose to publish enhanced health metrics\. 
 
-See [Instance Metrics](health-enhanced-metrics.md) for details on the metrics reported by the health agent\. For details on publishing enhanced health metrics to CloudWatch, see [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md)\.
+See [Instance metrics](health-enhanced-metrics.md) for details on the metrics reported by the health agent\. For details on publishing enhanced health metrics to CloudWatch, see [Publishing Amazon CloudWatch custom metrics for an environment](health-enhanced-cloudwatch.md)\.
 
-## Factors in Determining Instance and Environment Health<a name="health-enhanced-factors"></a>
+## Factors in determining instance and environment health<a name="health-enhanced-factors"></a>
 
-In addition to the basic health reporting system checks, including [Elastic Load Balancing Health Checks](using-features.healthstatus.md#using-features.healthstatus.understanding) and [resource monitoring](using-features.healthstatus.md#monitoring-basic-additionalchecks), Elastic Beanstalk enhanced health reporting gathers additional data about the state of the instances in your environment\. This includes operating system metrics, server logs, and the state of ongoing environment operations such as deployments and updates\. The Elastic Beanstalk health reporting service combines information from all available sources and analyzes it to determine the overall health of the environment\.
+In addition to the basic health reporting system checks, including [Elastic Load Balancing health checks](using-features.healthstatus.md#using-features.healthstatus.understanding) and [resource monitoring](using-features.healthstatus.md#monitoring-basic-additionalchecks), Elastic Beanstalk enhanced health reporting gathers additional data about the state of the instances in your environment\. This includes operating system metrics, server logs, and the state of ongoing environment operations such as deployments and updates\. The Elastic Beanstalk health reporting service combines information from all available sources and analyzes it to determine the overall health of the environment\.
 
-### Operations and Commands<a name="health-enhanced-factors-operations"></a>
+### Operations and commands<a name="health-enhanced-factors-operations"></a>
 
 When you perform an operation on your environment, such as deploying a new version of an application, Elastic Beanstalk makes several changes that affect the environment's health status\.
 
@@ -95,7 +95,7 @@ Instance health information also includes details about the most recent deployme
 
 In the cause column, Elastic Beanstalk includes informational messages about successful operations and other healthy states across multiple health checks, but they don't persist indefinitely\. Causes for unhealthy environment statuses persist until the environment returns to a healthy status\.
 
-### Command Timeout<a name="health-enhanced-factors-timeout"></a>
+### Command timeout<a name="health-enhanced-factors-timeout"></a>
 
 Elastic Beanstalk applies a command timeout from the time an operation begins to allow an instance to transition into a healthy state\. This command timeout is set in your environment's update and deployment configuration \(in the [aws:elasticbeanstalk:command](command-options-general.md#command-options-general-elasticbeanstalkcommand) namespace\) and defaults to 10 minutes\. 
 
@@ -106,33 +106,33 @@ If your application does not pass health checks with an **OK** status but is sta
 
 For a web server environment to be considered healthy, each instance in the environment or batch must pass 12 consecutive health checks over the course of two minutes\. For a worker tier environment, each instance must pass 18 health checks\. Before the command times out, Elastic Beanstalk doesn't lower an environment's health status when health checks fail\. If the instances in the environment become healthy within the command timeout, the operation succeeds\.
 
-### HTTP Requests<a name="health-enhanced-factors-requests"></a>
+### HTTP requests<a name="health-enhanced-factors-requests"></a>
 
 When no operation is in progress on an environment, the primary source of information about instance and environment health is the web server logs for each instance\. To determine the health of an instance and the overall health of the environment, Elastic Beanstalk considers the number of requests, the result of each request, and the speed at which each request was resolved\.
 
 On Linux\-based platforms, Elastic Beanstalk reads and parses web server logs to get information about HTTP requests\. On the Windows Server platform, Elastic Beanstalk receives this information [directly from the IIS web server](health-enhanced-metrics-server-iis.md)\.
 
-Your environment might not have an active web server\. For example, the Multicontainer Docker platform doesn't include a web server\. Other platforms include a web server, and your application might disable it\. In these cases, your environment requires additional configuration to provide the [Elastic Beanstalk health agent](#health-enhanced-agent) with logs in the format that it needs to relay health information to the Elastic Beanstalk service\. See [Enhanced Health Log Format](health-enhanced-serverlogs.md) for details\.
+Your environment might not have an active web server\. For example, the Multicontainer Docker platform doesn't include a web server\. Other platforms include a web server, and your application might disable it\. In these cases, your environment requires additional configuration to provide the [Elastic Beanstalk health agent](#health-enhanced-agent) with logs in the format that it needs to relay health information to the Elastic Beanstalk service\. See [Enhanced health log format](health-enhanced-serverlogs.md) for details\.
 
-### Operating System Metrics<a name="health-enhanced-factors-healthcheck"></a>
+### Operating system metrics<a name="health-enhanced-factors-healthcheck"></a>
 
 Elastic Beanstalk monitors operating system metrics reported by the health agent to identify instances that are consistently low on system resources\.
 
-See [Instance Metrics](health-enhanced-metrics.md) for details on the metrics reported by the health agent\.
+See [Instance metrics](health-enhanced-metrics.md) for details on the metrics reported by the health agent\.
 
-## Health Check Rule Customization<a name="health-enhanced.rules"></a>
+## Health check rule customization<a name="health-enhanced.rules"></a>
 
-Elastic Beanstalk enhanced health reporting relies on a set of rules to determine the health of your environment\. Some of these rules might not be appropriate for your particular application\. A common case is an application that returns frequent HTTP 4xx errors by design\. Elastic Beanstalk, using one of its default rules, concludes that something is going wrong, and changes your environment health status from OK to Warning, Degraded, or Severe, depending on the error rate\. To handle this case correctly, Elastic Beanstalk allows you to configure this rule and ignore application HTTP 4xx errors\. For details, see [Configuring Enhanced Health Rules for an Environment](health-enhanced-rules.md)\.
+Elastic Beanstalk enhanced health reporting relies on a set of rules to determine the health of your environment\. Some of these rules might not be appropriate for your particular application\. A common case is an application that returns frequent HTTP 4xx errors by design\. Elastic Beanstalk, using one of its default rules, concludes that something is going wrong, and changes your environment health status from OK to Warning, Degraded, or Severe, depending on the error rate\. To handle this case correctly, Elastic Beanstalk allows you to configure this rule and ignore application HTTP 4xx errors\. For details, see [Configuring enhanced health rules for an environment](health-enhanced-rules.md)\.
 
-## Enhanced Health Roles<a name="health-enhanced-roles"></a>
+## Enhanced health roles<a name="health-enhanced-roles"></a>
 
 Enhanced health reporting requires two roles—a service role for Elastic Beanstalk and an instance profile for the environment\. The service role allows Elastic Beanstalk to interact with other AWS services on your behalf to gather information about the resources in your environment\. The instance profile allows the instances in your environment to write logs to Amazon S3\.
 
 When you create an Elastic Beanstalk environment in the Elastic Beanstalk console, the console prompts you to create an instance profile and service role with appropriate permissions\. The EB CLI also assists you in creating these roles when you call eb create to create an environment\.
 
-If you use the API, an SDK, or the AWS CLI to create environments, you must create these roles in advance, and specify them during environment creation to use enhanced health\. For instructions on creating appropriate roles for your environments, see [Service Roles, Instance Profiles, and User Policies](concepts-roles.md)\.
+If you use the API, an SDK, or the AWS CLI to create environments, you must create these roles in advance, and specify them during environment creation to use enhanced health\. For instructions on creating appropriate roles for your environments, see [Service roles, instance profiles, and user policies](concepts-roles.md)\.
 
-## Enhanced Health Events<a name="health-enhanced-events"></a>
+## Enhanced health events<a name="health-enhanced-events"></a>
 
 The enhanced health system generates events when an environment transitions between states\. The following example shows events output by an environment transitioning between **Info**, **OK**, and **Severe** states\.
 
@@ -144,7 +144,7 @@ Not all changes in status at an instance level cause Elastic Beanstalk to emit a
 
 Real\-time environment\-level health information, including status, color, and cause, is available in the [environment dashboard](environments-console.md#environments-dashboard) and the [EB CLI](eb-cli3.md)\. By attaching the EB CLI to your environment and running the [eb health](health-enhanced-ebcli.md) command, you can also view real\-time statuses from each of the instances in your environment\.
 
-## Enhanced Health Reporting Behavior during Updates, Deployments, and Scaling<a name="health-enhanced-effects"></a>
+## Enhanced health reporting behavior during updates, deployments, and scaling<a name="health-enhanced-effects"></a>
 
 Enabling enhanced health reporting can affect how your environment behaves during configuration updates and deployments\. Elastic Beanstalk won't complete a batch of updates until all of the instances pass health checks consistently\. Also, because enhanced health reporting applies a higher standard for health and monitors more factors, instances that pass basic health reporting's [ELB health check](using-features.healthstatus.md#using-features.healthstatus.understanding) won't necessarily pass with enhanced health reporting\. See the topics on [rolling configuration updates](using-features.rollingupdates.md) and [rolling deployments](using-features.rolling-version-deploy.md) for details on how health checks affect the update process\.
 

@@ -1,30 +1,30 @@
-# Setting Up your Java Development Environment<a name="java-development-environment"></a>
+# Setting up your Java development environment<a name="java-development-environment"></a>
 
 Set up a Java development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with Elastic Beanstalk](chapter-devenv.md)\.
+For common setup steps and tools that apply to all languages, see [Configuring your development machine for use with Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
-+ [Installing the Java Development Kit](#java-development-environment-jdk)
-+ [Installing a Web Container](#java-development-environment-tomcat)
-+ [Downloading Libraries](#java-development-environment-libraries)
++ [Installing the Java development kit](#java-development-environment-jdk)
++ [Installing a web container](#java-development-environment-tomcat)
++ [Downloading libraries](#java-development-environment-libraries)
 + [Installing the AWS SDK for Java](#java-development-environment-sdk)
-+ [Installing an IDE or Text Editor](#java-development-environment-ide)
-+ [Installing the AWS Toolkit for Eclipse](#java-development-environment-toolkit)
++ [Installing an IDE or text editor](#java-development-environment-ide)
++ [Installing the AWS toolkit for Eclipse](#java-development-environment-toolkit)
 
-## Installing the Java Development Kit<a name="java-development-environment-jdk"></a>
+## Installing the Java development kit<a name="java-development-environment-jdk"></a>
 
 Install the Java Development Kit \(JDK\)\. If you don't have a preference, get the latest version\. Download the JDK at [oracle\.com](http://www.oracle.com/technetwork/java/javase/downloads/index.html) 
 
 The JDK includes the Java compiler, which you can use to build your source files into class files that can be executed on an Elastic Beanstalk web server\.
 
-## Installing a Web Container<a name="java-development-environment-tomcat"></a>
+## Installing a web container<a name="java-development-environment-tomcat"></a>
 
 If you don't already have another web container or framework, install the appropriate version of Tomcat:
 +  [Download Tomcat 8 \(requires Java 7 or later\)](http://tomcat.apache.org/download-80.cgi) 
 +  [Download Tomcat 7 \(requires Java 6 or later\)](http://tomcat.apache.org/download-70.cgi) 
 
-## Downloading Libraries<a name="java-development-environment-libraries"></a>
+## Downloading libraries<a name="java-development-environment-libraries"></a>
 
 Elastic Beanstalk platforms include few libraries by default\. Download libraries that your application will use and save them in your project folder to deploy in your application source bundle\.
 
@@ -41,7 +41,7 @@ If you need to manage AWS resources from within your application, install the AW
 
 Visit the [AWS SDK for Java home page](https://aws.amazon.com/sdk-for-java/) for more information and installation instructions\.
 
-## Installing an IDE or Text Editor<a name="java-development-environment-ide"></a>
+## Installing an IDE or text editor<a name="java-development-environment-ide"></a>
 
 Integrated development environments \(IDEs\) provide a wide range of features that facilitate application development\. If you haven't used an IDE for Java development, try Eclipse and IntelliJ and see which works best for you\.
 +  [Install Eclipse IDE for Java EE Developers](https://www.eclipse.org/downloads/) 
@@ -52,6 +52,6 @@ An IDE might add files to your project folder that you might not want to commit 
 
 If you just want to begin coding and don't need all of the features of an IDE, consider [installing Sublime Text](http://www.sublimetext.com/)\.
 
-## Installing the AWS Toolkit for Eclipse<a name="java-development-environment-toolkit"></a>
+## Installing the AWS toolkit for Eclipse<a name="java-development-environment-toolkit"></a>
 
 The [AWS Toolkit for Eclipse](java-eclipsetoolkit.md) is an open source plug\-in for the Eclipse Java IDE that makes it easier for developers to develop, debug, and deploy Java applications using AWS\. Visit the [AWS Toolkit for Eclipse home page](https://aws.amazon.com/eclipse/) for installation instructions\. 

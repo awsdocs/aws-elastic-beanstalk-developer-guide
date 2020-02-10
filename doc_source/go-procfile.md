@@ -1,4 +1,4 @@
-# Configuring the Application Process with a Procfile<a name="go-procfile"></a>
+# Configuring the application process with a Procfile<a name="go-procfile"></a>
 
 To specify custom commands to start a Go application, include a file called `Procfile` at the root of your source bundle\. The file name is case sensitive\. Use the following format for the `Procfile`: 
 
@@ -35,7 +35,7 @@ option_settings:
     value:  <first_port_number>
 ```
 
-For more information about setting environment variables for your application, see [Option Settings](ebextensions-optionsettings.md)\.
+For more information about setting environment variables for your application, see [Option settings](ebextensions-optionsettings.md)\.
 
 Elastic Beanstalk also runs any application whose name does not have the `web_` prefix, but these applications are not available from outside of your instance\.
 

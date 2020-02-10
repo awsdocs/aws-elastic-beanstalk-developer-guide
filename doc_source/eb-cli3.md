@@ -1,15 +1,17 @@
-# Using the Elastic Beanstalk Command Line Interface \(EB CLI\)<a name="eb-cli3"></a>
+# Using the Elastic Beanstalk command line interface \(EB CLI\)<a name="eb-cli3"></a>
 
 The EB CLI is a command line interface for AWS Elastic Beanstalk that provides interactive commands that simplify creating, updating and monitoring environments from a local repository\. Use the EB CLI as part of your everyday development and testing cycle as an alternative to the Elastic Beanstalk console\.
 
 **Note**  
 The current version of the EB CLI has a different base set of commands than versions prior to version 3\.0\. If you are using an older version, see [Migrating to EB CLI 3 and CodeCommit](eb-cli.md#eb-cli2-migrating) for migration information\.
 
-Once you've installed the EB CLI and configured a repository, you can create environments with a single command:
+After you [install the EB CLI](eb-cli3-install.md) and configure a project directory, you can create environments with a single command:
 
 ```
 ~/my-app$ eb create my-env
 ```
+
+The source code for the EB CLI is an open\-source project\. It resides in the `[aws/aws\-elastic\-beanstalk\-cli](https://github.com/aws/aws-elastic-beanstalk-cli)` GitHub repository\. You can participate by reporting issues, making suggestions, and submitting pull requests\. We value your contributions\! For an environment where you only intend to use the EB CLI as is, we recommend that you install it using one of the EB CLI setup scripts, as detailed in [Install the EB CLI using setup scripts](eb-cli3-install.md#eb-cli3-install.scripts)\.
 
 Previously, Elastic Beanstalk supported a separate CLI that provided direct access to API operations called the [Elastic Beanstalk API CLI](using-api-cli.md)\. This has been replaced with the [AWS CLI](chapter-devenv.md#devenv-awscli), which provides the same functionality but for all AWS services' APIs\.
 
@@ -24,15 +26,15 @@ With the AWS CLI you have direct access to the Elastic Beanstalk API\. The AWS C
 For information about installing the EB CLI, configuring a repository, and working with environments, see the following topics\.
 
 **Topics**
-+ [Install the EB CLI Using Setup Scripts](eb-cli3-install.md)
++ [Install the EB CLI](eb-cli3-install.md)
 + [Configure the EB CLI](eb-cli3-configuration.md)
-+ [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)
++ [Managing Elastic Beanstalk environments with the EB CLI](eb-cli3-getting-started.md)
 + [Using the EB CLI with AWS CodeBuild](eb-cli-codebuild.md)
 + [Using the EB CLI with Git](eb3-cli-git.md)
 + [Using the EB CLI with AWS CodeCommit](eb-cli-codecommit.md)
-+ [Using the EB CLI to Monitor Environment Health](health-enhanced-ebcli.md)
-+ [Managing Multiple Elastic Beanstalk Environments as a Group with the EB CLI](ebcli-compose.md)
++ [Using the EB CLI to monitor environment health](health-enhanced-ebcli.md)
++ [Managing multiple Elastic Beanstalk environments as a group with the EB CLI](ebcli-compose.md)
 + [Troubleshooting issues with the EB CLI](eb-cli-troubleshooting.md)
-+ [EB CLI Command Reference](eb3-cmd-commands.md)
-+ [EB CLI 2\.6 \(Retired\)](eb-cli.md)
-+ [Elastic Beanstalk API Command Line Interface \(Retired\)](using-api-cli.md)
++ [EB CLI command reference](eb3-cmd-commands.md)
++ [EB CLI 2\.6 \(retired\)](eb-cli.md)
++ [Elastic Beanstalk API command line interface \(retired\)](using-api-cli.md)

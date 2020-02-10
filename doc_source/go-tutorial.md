@@ -1,16 +1,16 @@
-# Deploying a Go Application to Elastic Beanstalk<a name="go-tutorial"></a>
+# Deploying a Go application to Elastic Beanstalk<a name="go-tutorial"></a>
 
 This tutorial walks you through the process of creating a Go application and deploying it to an AWS Elastic Beanstalk environment\.
 
 **Topics**
 + [Prerequisites](#go-tutorial-prereq)
-+ [Create a Go Application](#go-tutorial-create-app)
-+ [Deploy Your Go Application with the EB CLI](#go-tutorial-deploy)
-+ [Clean Up](#go-tutorial-cleanup)
++ [Create a Go application](#go-tutorial-create-app)
++ [Deploy your Go application with the EB CLI](#go-tutorial-deploy)
++ [Clean up](#go-tutorial-cleanup)
 
 ## Prerequisites<a name="go-tutorial-prereq"></a>
 
-This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
+This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
 
 To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings preceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
 
@@ -21,9 +21,9 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-This tutorial uses the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
+This tutorial uses the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
 
-## Create a Go Application<a name="go-tutorial-create-app"></a>
+## Create a Go application<a name="go-tutorial-create-app"></a>
 
 Create a project directory\.
 
@@ -62,7 +62,7 @@ func main() {
 }
 ```
 
-## Deploy Your Go Application with the EB CLI<a name="go-tutorial-deploy"></a>
+## Deploy your Go application with the EB CLI<a name="go-tutorial-deploy"></a>
 
 Next, you create your application environment and deploy your configured application with Elastic Beanstalk\.
 
@@ -126,7 +126,7 @@ If you don't see your application running, or get an error message, see [Trouble
 
 If you *do* see your application running, then congratulations, you've deployed a Go application with Elastic Beanstalk\!
 
-## Clean Up<a name="go-tutorial-cleanup"></a>
+## Clean up<a name="go-tutorial-cleanup"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 

@@ -28,7 +28,7 @@ The [elastic\-beanstalk\-samples](https://github.com/awsdocs/elastic-beanstalk-s
 
 When stack creation completes, check the **Outputs** tab to find the VPC ID and subnet IDs\. Use these to configure the VPC in the new environment wizard [network configuration category](environments-create-wizard.md#environments-create-wizard-network)\.
 
-## VPC with Public Subnets<a name="services-vpc-public"></a>
+## VPC with public subnets<a name="services-vpc-public"></a>
 
 **AWS CloudFormation template** – [vpc\-public\.yaml](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/cfn-templates/vpc-public.yaml)
 
@@ -51,7 +51,7 @@ A basic *public\-only* VPC layout includes one or more public subnets, an Intern
 
 This is similar to the way that Elastic Beanstalk manages networking when you use the default VPC\. Security in a public subnet depends on the load balancer and instance security groups created by Elastic Beanstalk\. It is the least expensive configuration as it does not require a NAT Gateway\.
 
-## VPC with Private and Public Subnets<a name="services-vpc-privatepublic"></a>
+## VPC with private and public subnets<a name="services-vpc-privatepublic"></a>
 
 **AWS CloudFormation template** – [vpc\-privatepublic\.yaml](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/cfn-templates/vpc-privatepublic.yaml)
 
@@ -67,7 +67,7 @@ For additional security, add private subnets to your VPC to create a *public\-pr
 For internal applications that you don't want to be accessible from the Internet, you can run everything in private subnets and configure the load balancer to be internal facing \(change **Load balancer visibility** to **Internal**\. Use this layout for applications that should only be accessible from the same VPC or an attached VPN\.
 
 **Topics**
-+ [VPC with Public Subnets](#services-vpc-public)
-+ [VPC with Private and Public Subnets](#services-vpc-privatepublic)
-+ [Example: Launching an Elastic Beanstalk Application in a VPC with Bastion Hosts](vpc-bastion-host.md)
++ [VPC with public subnets](#services-vpc-public)
++ [VPC with private and public subnets](#services-vpc-privatepublic)
++ [Example: Launching an Elastic Beanstalk application in a VPC with bastion hosts](vpc-bastion-host.md)
 + [Example: Launching an Elastic Beanstalk in a VPC with Amazon RDS](vpc-rds.md)

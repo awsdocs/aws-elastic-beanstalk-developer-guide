@@ -1,4 +1,4 @@
-# Serving Static Files<a name="environment-cfg-staticfiles"></a>
+# Serving static files<a name="environment-cfg-staticfiles"></a>
 
 To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\.
 
@@ -17,13 +17,13 @@ To improve performance, you can configure the proxy server to serve static files
    Start the path with a slash \(`/`\)\. Specify a directory name in the root of your application's source code; don't start it with a slash\.
 
    When you add a mapping, an extra row appears in case you want to add another one\. To remove a mapping, click the **Remove** icon\.  
-![\[Static file configuration in the Modify software configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-static-files.png)
+![\[Static file configuration in the modify software configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-static-files.png)
 
    If you aren't seeing the **Static files** section, you have to add at least one mapping by using a [configuration file](ebextensions.md)\. The specific option namespace to use depends on your environment's platform\. For details, see one of the following pages:
-   + [Go Configuration Namespaces](go-environment.md#go-namespaces)
-   + [Java SE Configuration Namespaces](java-se-platform.md#java-se-namespaces)
-   + [Tomcat Configuration Namespaces](java-tomcat-platform.md#java-tomcat-namespaces)
-   + [Node\.js Configuration Namespaces](create_deploy_nodejs.container.md#nodejs-namespaces)
-   + [Python Configuration Namespaces](create-deploy-python-container.md#python-namespaces)
+   + [Go configuration namespaces](go-environment.md#go-namespaces)
+   + [Java SE configuration namespaces](java-se-platform.md#java-se-namespaces)
+   + [Tomcat configuration namespaces](java-tomcat-platform.md#java-tomcat-namespaces)
+   + [Node\.js configuration namespaces](create_deploy_nodejs.container.md#nodejs-namespaces)
+   + [Python configuration namespaces](create-deploy-python-container.md#python-namespaces)
 
 1. Choose **Apply**\.

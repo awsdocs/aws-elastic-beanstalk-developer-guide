@@ -4,7 +4,7 @@
 
 Add, delete, update, and list tags of an Elastic Beanstalk resource\.
 
-For details about resource tagging in Elastic Beanstalk, see [Tagging Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
+For details about resource tagging in Elastic Beanstalk, see [Tagging Elastic Beanstalk application resources](applications-tagging-resources.md)\.
 
 ## Syntax<a name="eb3-tagsyntax"></a>
 
@@ -30,11 +30,11 @@ None of these options are required\. If you run eb create without any options, y
 |  Name  |  Description  | 
 | --- | --- | 
 |  `-l` or `--list`  |  List all tags that are currently applied to the resource\.  | 
-|  `-﻿a key1=value1[,key2=value2 ...]` or `-﻿-﻿add key1=value1[,key2=value2 ...]`  |  Apply new tags to the resource\. Specify tags as a comma\-separated list of `key=value` pairs\. You can't specify keys of existing tags\. Valid values: See [Tagging Resources](applications-tagging-resources.md)\.  | 
-|  `-﻿u key1=value1[,key2=value2 ...]` or `-﻿-﻿update key1=value1[,key2=value2 ...]`  |  Update the values of existing resource tags\. Specify tags as a comma\-separated list of `key=value` pairs\. You must specify keys of existing tags\. Valid values: See [Tagging Resources](applications-tagging-resources.md)\.  | 
-|  `-﻿d key1[,key2 ...]` or `-﻿-﻿delete key1[,key2 ...]`  |  Delete existing resource tags\. Specify tags as a comma\-separated list of keys\. You must specify keys of existing tags\. Valid values: See [Tagging Resources](applications-tagging-resources.md)\.  | 
+|  `-﻿a key1=value1[,key2=value2 ...]` or `-﻿-﻿add key1=value1[,key2=value2 ...]`  |  Apply new tags to the resource\. Specify tags as a comma\-separated list of `key=value` pairs\. You can't specify keys of existing tags\. Valid values: See [Tagging resources](applications-tagging-resources.md)\.  | 
+|  `-﻿u key1=value1[,key2=value2 ...]` or `-﻿-﻿update key1=value1[,key2=value2 ...]`  |  Update the values of existing resource tags\. Specify tags as a comma\-separated list of `key=value` pairs\. You must specify keys of existing tags\. Valid values: See [Tagging resources](applications-tagging-resources.md)\.  | 
+|  `-﻿d key1[,key2 ...]` or `-﻿-﻿delete key1[,key2 ...]`  |  Delete existing resource tags\. Specify tags as a comma\-separated list of keys\. You must specify keys of existing tags\. Valid values: See [Tagging resources](applications-tagging-resources.md)\.  | 
 |  `-r` *region* or `--region` *region*  |  The AWS Region in which your resource exists\. Default: the configured default region\. For the list of values you can specify for this option, see [AWS Elastic Beanstalk Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html) in the *AWS General Reference*\.  | 
-|  `-﻿-﻿resource ARN`  |  The ARN of the resource that the command modifies or lists tags for\. If not specified, the command refers to the \(default or specified\) environment in the current directory's application\. Valid values: See one of the sub\-topic of [Tagging Resources](applications-tagging-resources.md) that is specific to the resource you're interested in\. These topics show how the resource's ARN is constructed and explain how to get a list of this resource's ARNs that exist for your application or account\.  | 
+|  `-﻿-﻿resource ARN`  |  The ARN of the resource that the command modifies or lists tags for\. If not specified, the command refers to the \(default or specified\) environment in the current directory's application\. Valid values: See one of the sub\-topic of [Tagging resources](applications-tagging-resources.md) that is specific to the resource you're interested in\. These topics show how the resource's ARN is constructed and explain how to get a list of this resource's ARNs that exist for your application or account\.  | 
 
 ## Output<a name="eb3-tagsoutput"></a>
 

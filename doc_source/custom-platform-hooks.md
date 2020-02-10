@@ -1,4 +1,4 @@
-# Custom Platform Hooks<a name="custom-platform-hooks"></a>
+# Custom platform hooks<a name="custom-platform-hooks"></a>
 
 Elastic Beanstalk uses a standardized directory structure for hooks on custom platforms\. These are scripts that are run during lifecycle events and in response to management operations: when instances in your environment are launched, or when a user initiates a deployment or uses the restart application server feature\.
 
@@ -27,4 +27,4 @@ When your scripts encounter errors, they can exit with a non\-zero status and wr
 | --- |
 | AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
 
-On Amazon Linux 2 platforms, custom platform hooks in the `/opt/elasticbeanstalk/hooks/` folder are entirely unsupported\. Elastic Beanstalk doesn't read or execute them\. Amazon Linux 2 platforms support a new kind of platform hooks, specifically designed to extend Elastic Beanstalk managed platforms\. You can add custom scripts and programs directly to a hooks directory in your application source bundle\. Elastic Beanstalk runs them during various instance provisioning stages\. For more information, expand the *Platform Hooks* section in [Extending Elastic Beanstalk Linux Platforms](platforms-linux-extend.md)\.
+On Amazon Linux 2 platforms, custom platform hooks in the `/opt/elasticbeanstalk/hooks/` folder are entirely unsupported\. Elastic Beanstalk doesn't read or execute them\. Amazon Linux 2 platforms support a new kind of platform hooks, specifically designed to extend Elastic Beanstalk managed platforms\. You can add custom scripts and programs directly to a hooks directory in your application source bundle\. Elastic Beanstalk runs them during various instance provisioning stages\. For more information, expand the *Platform Hooks* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.

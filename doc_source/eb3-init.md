@@ -30,7 +30,7 @@ To use eb init to create a new key pair, you must have `ssh-keygen` installed on
 |  `--modules folder-1 folder-2`  |  List of child directories to initialize\. Only for use with [Compose Environments](ebcli-compose.md)\.  |  | 
 |  `-p` *platform\-configuration*  `--platform` *platform\-configuration*  |  The [platform version \(configuration\)](concepts.platforms.md) to use\. You can specify a platform name, a platform name and version, a solution stack name, or a solution stack ARN\. For example: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-init.html) Use [`eb platform list`](eb3-platform.md) to get a list of available configurations\. Specify the `--platform` option to skip interactive configuration\.  When you specify this option, then EB CLI does not prompt you for values for any other options\. Instead, it assumes default values for each option\. You can specify options for anything for which you do not want to use default values\.   |  | 
 |  `--source codecommit/repository-name/branch-name`  |  CodeCommit repository and branch\. See [Using the EB CLI with AWS CodeCommit](eb-cli-codecommit.md)\.  |  | 
-|  `-﻿-﻿tags key1=value1[,key2=value2 ...]`  |  Tag your application\. Tags are specified as a comma\-separated list of `key=value` pairs\. For more details, see [Tagging Applications](applications-tagging.md)\.  | 
+|  `-﻿-﻿tags key1=value1[,key2=value2 ...]`  |  Tag your application\. Tags are specified as a comma\-separated list of `key=value` pairs\. For more details, see [Tagging applications](applications-tagging.md)\.  | 
 |  [Common options](eb3-cmd-options.md)  |  |  | 
 
 ## CodeBuild Support<a name="eb3-init-codebuild"></a>

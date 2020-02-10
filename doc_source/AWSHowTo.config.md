@@ -1,4 +1,4 @@
-# Finding and Tracking Elastic Beanstalk Resources with AWS Config<a name="AWSHowTo.config"></a>
+# Finding and tracking Elastic Beanstalk resources with AWS Config<a name="AWSHowTo.config"></a>
 
 [AWS Config](https://aws.amazon.com/config/) provides a detailed view of the configuration of AWS resources in your AWS account\. You can see how resources are related, get a history of configuration changes, and see how relationships and configurations change over time\. You can use AWS Config to define rules that evaluate resource configurations for data compliance\.
 
@@ -17,7 +17,7 @@ To initially set up AWS Config, see the following topics in the [AWS Config Deve
 + [Setting up AWS Config with the Console](https://docs.aws.amazon.com/config/latest/developerguide/gs-console.html)
 + [Setting up AWS Config with the AWS CLI](https://docs.aws.amazon.com/config/latest/developerguide/gs-cli.html)
 
-## Configuring AWS Config to Record Elastic Beanstalk Resources<a name="AWSHowTo.config.record"></a>
+## Configuring AWS Config to record Elastic Beanstalk resources<a name="AWSHowTo.config.record"></a>
 
 By default, AWS Config records configuration changes for all supported types of *regional resources* that it discovers in the region in which your environment is running\. You can customize AWS Config to record changes only for specific resource types, or changes to *global resources*\. For example, you can configure AWS Config to record changes for Elastic Beanstalk resources and a subset of other AWS resources that Elastic Beanstalk starts for you\.
 
@@ -31,7 +31,7 @@ After you select a few resource types, this is how the **Specific types** list a
 
 To learn about *regional* vs\. *global* resources, and for the full customization procedure, see [Selecting which Resources AWS Config Records](https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html)\.
 
-## Viewing Elastic Beanstalk Configuration Details in the AWS Config Console<a name="AWSHowTo.config.viewing"></a>
+## Viewing Elastic Beanstalk configuration details in the AWS Config console<a name="AWSHowTo.config.viewing"></a>
 
 You can use the AWS Config console to look for Elastic Beanstalk resources, and get current and historical details about their configurations\. The following example shows how to find information about an Elastic Beanstalk environment\.
 
@@ -63,7 +63,7 @@ To see the full details of the recorded configuration, choose **View Details**\.
 
 To learn more ways to find a resource and view information on this page, see [Viewing AWS Resource Configurations and History](https://docs.aws.amazon.com/config/latest/developerguide/view-manage-resource.html) in the *AWS Config Developer Guide*\.
 
-## Evaluating Elastic Beanstalk Resources Using AWS Config Rules<a name="AWSHowTo.config.rules"></a>
+## Evaluating Elastic Beanstalk resources using AWS Config rules<a name="AWSHowTo.config.rules"></a>
 
 You can create AWS Config rules, which represent the ideal configuration settings for your Elastic Beanstalk resources\. You can use predefined *AWS Managed Config Rules*, or define custom rules\. AWS Config continuously tracks changes to the configuration of your resources to determine whether those changes violate any of the conditions in your rules\. The AWS Config console shows the compliance status of your rules and resources\.
 

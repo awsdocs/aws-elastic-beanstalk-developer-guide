@@ -1,4 +1,4 @@
-# Monitoring Environment Health in the AWS Management Console<a name="environment-health-console"></a>
+# Monitoring environment health in the AWS management console<a name="environment-health-console"></a>
 
 You can access operational information about your application from the Elastic Beanstalk console at [https://console\.aws\.amazon\.com/elasticbeanstalk](https://console.aws.amazon.com/elasticbeanstalk)\. 
 
@@ -22,13 +22,13 @@ An overview of the environment's health is shown near the top of the screen\.
 
 The overview panel shows a customizable summary of the activity in your environment over the last hour\. Click the **Time Range** drop\-down and select a different length of time to view information for a time period of five minutes to one day\.
 
-## Monitoring Graphs<a name="environment-health-console-graphs"></a>
+## Monitoring graphs<a name="environment-health-console-graphs"></a>
 
 Below the overview are graphs that show data about overall environment health over the last twelve hours\. Click the **Time Range** drop\-down and select a different length of time to view information for a time period of three hours and two weeks\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-monitoring.png)
 
-## Customizing the Monitoring Console<a name="environment-health-console-customize"></a>
+## Customizing the monitoring console<a name="environment-health-console-customize"></a>
 
 Click **Edit** next to either monitoring section to customize the information shown\.
 
@@ -42,7 +42,7 @@ To remove any of the existing items, click the ![\[Image NOT FOUND\]](http://doc
 
 1. Select a **Resource**\. The supported resources are your environment's Auto Scaling group, Elastic Load Balancing load balancer, and the environment itself\.
 
-1. Select a **CloudWatch metric** for the resource\. See [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md) for a full list of supported metrics\.
+1. Select a **CloudWatch metric** for the resource\. See [Publishing Amazon CloudWatch custom metrics for an environment](health-enhanced-cloudwatch.md) for a full list of supported metrics\.
 
 1. Select a **Statistic**\. The default statistic is the average value of the selected cloudwatch metric during the time range \(overview\) or between plot points \(graph\)\.
 
@@ -61,4 +61,4 @@ With [enhanced health](health-enhanced.md), the EnvironmentHealth metric is enab
 **Note**  
 When you enable additional CloudWatch metrics for your environment, it takes a few minutes for them to start being reported and appear in the list of metrics that you use to add graphs and overview stats\.
 
-See [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md) for a list of available enhanced health metrics\.
+See [Publishing Amazon CloudWatch custom metrics for an environment](health-enhanced-cloudwatch.md) for a list of available enhanced health metrics\.

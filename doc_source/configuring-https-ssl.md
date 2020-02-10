@@ -1,4 +1,4 @@
-# Create and Sign an X509 Certificate<a name="configuring-https-ssl"></a>
+# Create and sign an X509 certificate<a name="configuring-https-ssl"></a>
 
 You can create an X509 certificate for your application with `OpenSSL`\. OpenSSL is a standard, open source library that supports a wide range of cryptographic functions, including the creation and signing of x509 certificates\. For more information about OpenSSL, visit [www\.openssl\.org](https://www.openssl.org/)\.
 

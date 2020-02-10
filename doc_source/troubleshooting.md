@@ -12,9 +12,9 @@ If the health of your environment changes to red, try the following:
 
 **Topics**
 + [Connectivity](troubleshooting-connectivity.md)
-+ [Environment Creation and Instance Launches](troubleshooting-envcreate.md)
++ [Environment creation and instance launches](troubleshooting-envcreate.md)
 + [Deployments](troubleshooting-deployments.md)
 + [Health](troubleshooting-health.md)
 + [Configuration](troubleshooting-configuration.md)
-+ [Troubleshooting Docker Containers](troubleshooting-docker.md)
++ [Troubleshooting Docker containers](troubleshooting-docker.md)
 + [FAQ](troubleshooting-faq.md)

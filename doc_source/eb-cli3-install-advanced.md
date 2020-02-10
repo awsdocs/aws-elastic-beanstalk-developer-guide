@@ -1,4 +1,4 @@
-# Manually Install the EB CLI<a name="eb-cli3-install-advanced"></a>
+# Manually install the EB CLI<a name="eb-cli3-install-advanced"></a>
 
 ## <a name="eb-cli3-install-advanced.intro"></a>
 

@@ -1,4 +1,4 @@
-# Using Enhanced Health Reporting with the Elastic Beanstalk API<a name="health-enhanced-api"></a>
+# Using enhanced health reporting with the Elastic Beanstalk API<a name="health-enhanced-api"></a>
 
 Because AWS Elastic Beanstalk enhanced health reporting has role and solution stack requirements, you must update scripts and code that you used prior to the release of enhanced health reporting before you can use it\. To maintain backward compatibility, enhanced health reporting is not enabled by default when you create an environment using the Elastic Beanstalk API\.
 
@@ -11,7 +11,7 @@ To use the API, SDKs, or AWS command line interface \(CLI\) to create an environ
 
 Use the following configuration options in the `aws:elasticbeanstalk:healthreporting:system`, `aws:autoscaling:launchconfiguration`, and `aws:elasticbeanstalk:environment` namespaces to configure your environment for enhanced health reporting\. 
 
-## Enhanced Health Configuration Options<a name="health-enhanced-api-options"></a>
+## Enhanced health configuration options<a name="health-enhanced-api-options"></a>
 
 **SystemType**
 
@@ -57,4 +57,4 @@ A JSON document that defines the and instance and environment metrics to publish
 ```
 
 **Note**  
-Config documents may require special formatting, such as escaping quotes, depending on how you provide them to Elastic Beanstalk\. See [Providing Custom Metric Config Documents](health-enhanced-cloudwatch.md#health-enhanced-cloudwatch-configdocument) for examples\.
+Config documents may require special formatting, such as escaping quotes, depending on how you provide them to Elastic Beanstalk\. See [Providing custom metric config documents](health-enhanced-cloudwatch.md#health-enhanced-cloudwatch-configdocument) for examples\.

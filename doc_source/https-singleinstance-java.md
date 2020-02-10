@@ -1,4 +1,4 @@
-# Terminating HTTPS on EC2 Instances Running Java SE<a name="https-singleinstance-java"></a>
+# Terminating HTTPS on EC2 instances running Java SE<a name="https-singleinstance-java"></a>
 
 For Java SE container types, you enable HTTPS with an \.ebextensions [configuration file](ebextensions.md), and an nginx configuration file that configures the nginx server to use HTTPS\.
 
@@ -46,9 +46,9 @@ container_commands:
 ```
 
 **Note**  
-Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)\.
+Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing private keys securely in Amazon S3](https-storingprivatekeys.md)\.
 
-Place the following in a file with the `.conf` extension in the `.ebextensions/nginx/conf.d/` directory of your source bundle \(e\.g\., `.ebextensions/nginx/conf.d/https.conf`\)\. Replace *app\_port* with the port number that your application listens on\. This example configures the nginx server to listen on port 443 using SSL\. For more information about these configuration files on the Java SE platform, see [Configuring the Reverse Proxy](java-se-nginx.md)\.
+Place the following in a file with the `.conf` extension in the `.ebextensions/nginx/conf.d/` directory of your source bundle \(e\.g\., `.ebextensions/nginx/conf.d/https.conf`\)\. Replace *app\_port* with the port number that your application listens on\. This example configures the nginx server to listen on port 443 using SSL\. For more information about these configuration files on the Java SE platform, see [Configuring the reverse proxy](java-se-nginx.md)\.
 
 **Example \.ebextensions/nginx/conf\.d/https\.conf**  
 

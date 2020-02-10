@@ -1,4 +1,4 @@
-# Configuring Your Tomcat Environment's Proxy Server<a name="java-tomcat-proxy"></a>
+# Configuring your Tomcat environment's proxy server<a name="java-tomcat-proxy"></a>
 
 The Tomcat platform uses a reverse proxy to relay requests from port 80 on the instance to your Tomcat web container listening on port 8080\. Elastic Beanstalk provides a default proxy configuration that you can extend or override completely with your own configuration\.
 
@@ -14,14 +14,14 @@ option_settings:
 
 **Topics**
 + [Migrating from Apache 2\.2 to Apache 2\.4](#java-tomcat-proxy-apache-migrate)
-+ [Extending and Overriding the Default Apache Configuration](#java-tomcat-proxy-apache)
-+ [Extending the Default nginx Configuration](#java-tomcat-proxy-nginx)
++ [Extending and overriding the default Apache configuration](#java-tomcat-proxy-apache)
++ [Extending the default nginx configuration](#java-tomcat-proxy-nginx)
 
 ## Migrating from Apache 2\.2 to Apache 2\.4<a name="java-tomcat-proxy-apache-migrate"></a>
 
 If your application was developed for [Apache 2\.2](https://httpd.apache.org/docs/2.2/), read this section to learn about migrating to [Apache 2\.4](https://httpd.apache.org/docs/2.4/)\.
 
-Starting with Tomcat platform version 3\.0\.0 configurations, which were released with the [Java with Tomcat platform update on May 24, 2018](https://aws.amazon.com/releasenotes/release-aws-elastic-beanstalk-platform-update-for-the-java-with-tomcat-platform-on-may-24-2018/), Apache 2\.4 is the default proxy of the Tomcat platform\. The Apache 2\.4 `.conf` files are mostly, but not entirely, backward compatible with those of Apache 2\.2\. Elastic Beanstalk includes default `.conf` files that work correctly with each Apache version\. If your application doesn't customize Apache's configuration, as explained in [Extending and Overriding the Default Apache Configuration](#java-tomcat-proxy-apache), it should migrate to Apache 2\.4 without any issues\.
+Starting with Tomcat platform version 3\.0\.0 configurations, which were released with the [Java with Tomcat platform update on May 24, 2018](https://aws.amazon.com/releasenotes/release-aws-elastic-beanstalk-platform-update-for-the-java-with-tomcat-platform-on-may-24-2018/), Apache 2\.4 is the default proxy of the Tomcat platform\. The Apache 2\.4 `.conf` files are mostly, but not entirely, backward compatible with those of Apache 2\.2\. Elastic Beanstalk includes default `.conf` files that work correctly with each Apache version\. If your application doesn't customize Apache's configuration, as explained in [Extending and overriding the default Apache configuration](#java-tomcat-proxy-apache), it should migrate to Apache 2\.4 without any issues\.
 
 If your application extends or overrides Apache's configuration, you might have to make some changes to migrate to Apache 2\.4\. For more information, see [Upgrading to 2\.4 from 2\.2](https://httpd.apache.org/docs/current/upgrading.html) on *The Apache Software Foundation*'s site\. As a temporary measure, until you successfully migrate to Apache 2\.4, you can choose to use Apache 2\.2 with your application by including the following [configuration file](ebextensions.md) in your source code\.
 
@@ -49,9 +49,9 @@ For a quick fix, you can also select the proxy server in the Elastic Beanstalk c
 
 1. Choose **Apply**\.
 
-![\[Choosing the proxy for a Tomcat environment in the Elastic Beanstalk console's Software configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/java-tomcat-proxy-selection.png)
+![\[Choosing the proxy for a Tomcat environment in the Elastic Beanstalk console's software configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/java-tomcat-proxy-selection.png)
 
-## Extending and Overriding the Default Apache Configuration<a name="java-tomcat-proxy-apache"></a>
+## Extending and overriding the default Apache configuration<a name="java-tomcat-proxy-apache"></a>
 
 You can extend the Elastic Beanstalk default Apache configuration with your additional configuration files\. Alternatively, you can override the Elastic Beanstalk default Apache configuration completely\.
 
@@ -96,7 +96,7 @@ To override the Elastic Beanstalk default Apache configuration completely, inclu
 `-- index.jsp
 ```
 
-If you override the Elastic Beanstalk Apache configuration, add the following lines to your `httpd.conf` to pull in the Elastic Beanstalk configurations for [Enhanced Health Reporting and Monitoring](health-enhanced.md), response compression, and static files\.
+If you override the Elastic Beanstalk Apache configuration, add the following lines to your `httpd.conf` to pull in the Elastic Beanstalk configurations for [Enhanced health reporting and monitoring](health-enhanced.md), response compression, and static files\.
 
 ```
 IncludeOptional conf.d/*.conf
@@ -110,7 +110,7 @@ To override the default listener on port 80, include a file named `00_applicatio
 
 For a working example, take a look at the Elastic Beanstalk default configuration file at `/etc/httpd/conf/httpd.conf` on an instance in your environment\. All files in the `.ebextensions/httpd` folder in your source bundle are copied to `/etc/httpd` during deployments\.
 
-## Extending the Default nginx Configuration<a name="java-tomcat-proxy-nginx"></a>
+## Extending the default nginx configuration<a name="java-tomcat-proxy-nginx"></a>
 
 To extend Elastic Beanstalk's default nginx configuration, add `.conf` configuration files to a folder named `.ebextensions/nginx/conf.d/` in your application source bundle\. The Elastic Beanstalk nginx configuration includes `.conf` files in this folder automatically\.
 
@@ -146,7 +146,7 @@ If you override the Elastic Beanstalk nginx configuration, add the following lin
 **Note**  
 To override the default listener on port 80, include a file named `00_application.conf` at `.ebextensions/nginx/conf.d/elasticbeanstalk/` to overwrite the Elastic Beanstalk configuration\.
 
-Also include the following line in your configuration's `http` block to pull in the Elastic Beanstalk configurations for [Enhanced Health Reporting and Monitoring](health-enhanced.md) and logging\.
+Also include the following line in your configuration's `http` block to pull in the Elastic Beanstalk configurations for [Enhanced health reporting and monitoring](health-enhanced.md) and logging\.
 
 ```
     include       conf.d/*.conf;

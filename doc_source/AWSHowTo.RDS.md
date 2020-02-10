@@ -3,7 +3,7 @@
 AWS Elastic Beanstalk provides support for [running Amazon Relational Database Service \(Amazon RDS\) instances in your Elastic Beanstalk environment](using-features.managing.db.md)\. This works great for development and testing environments\. However, it isn't ideal for a production environment because it ties the lifecycle of the database instance to the lifecycle of your application's environment\.
 
 **Note**  
-If you haven't used a DB instance with your application before, try adding one to a test environment with the Elastic Beanstalk console first\. This lets you verify that your application is able to read environment properties, construct a connection string, and connect to a DB instance before you add [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) and security group configuration to the mix\. See [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md) for details\.
+If you haven't used a DB instance with your application before, try adding one to a test environment with the Elastic Beanstalk console first\. This lets you verify that your application is able to read environment properties, construct a connection string, and connect to a DB instance before you add [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) and security group configuration to the mix\. See [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md) for details\.
 
 To decouple your database instance from your environment, you can run a database instance in Amazon RDS and configure your application to connect to it on launch\. This enables you to connect multiple environments to a database, terminate an environment without affecting the database, and perform seamless updates with blue\-green deployments\. For a detailed procedure, see [How do I decouple an Amazon RDS instance from an Elastic Beanstalk environment without downtime, database sync issues, or data loss?](https://aws.amazon.com/premiumsupport/knowledge-center/decouple-rds-from-beanstalk/)
 
@@ -17,11 +17,11 @@ After launching your database instance and configuring security groups, you can 
 For additional security, you can store your connection information in Amazon S3, and configure Elastic Beanstalk to retrieve it during deployment\. With [configuration files \(`.ebextensions`\)](ebextensions.md), you can configure the instances in your environment to securely retrieve files from Amazon S3 when you deploy your application\.
 
 **Topics**
-+ [Launching and Connecting to an External Amazon RDS Instance in a Default VPC](rds-external-defaultvpc.md)
-+ [Launching and Connecting to an External Amazon RDS Instance in EC2 Classic](rds-external-ec2classic.md)
-+ [Storing the Connection String in Amazon S3](rds-external-credentials.md)
-+ [Cleaning Up an External Amazon RDS Instance](#rds-external-cleanup)
++ [Launching and connecting to an external Amazon RDS instance in a default VPC](rds-external-defaultvpc.md)
++ [Launching and connecting to an external Amazon RDS instance in EC2 classic](rds-external-ec2classic.md)
++ [Storing the connection string in Amazon S3](rds-external-credentials.md)
++ [Cleaning up an external Amazon RDS instance](#rds-external-cleanup)
 
-## Cleaning Up an External Amazon RDS Instance<a name="rds-external-cleanup"></a>
+## Cleaning up an external Amazon RDS instance<a name="rds-external-cleanup"></a>
 
 When you connect an external Amazon RDS instance to your Elastic Beanstalk environment, the database instance isn't tied to your environment's lifecycle, and isn't deleted when you terminate your environment\. To ensure that personal information that you might have stored in the database instance isn't unnecessarily retained, delete any records that you don't need anymore, or delete the database instance\.

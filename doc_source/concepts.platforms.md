@@ -1,4 +1,4 @@
-# Elastic Beanstalk Supported Platforms<a name="concepts.platforms"></a>
+# Elastic Beanstalk supported platforms<a name="concepts.platforms"></a>
 
 AWS Elastic Beanstalk provides a variety of platforms on which you can build your applications\. You design your web application to one of these platforms, and Elastic Beanstalk deploys your code to the platform version you selected to create an active application environment\.
 
@@ -9,12 +9,12 @@ Elastic Beanstalk provisions the resources needed to run your application, inclu
 You can use the solution stack name listed under the platform version name to launch an environment with the [EB CLI](eb-cli3.md), [Elastic Beanstalk API](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/), or [AWS CLI](https://aws.amazon.com/cli/)\. You can also retrieve solution stack names from the service with the [ListAvailableSolutionStacks](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html) API \([aws elasticbeanstalk list\-available\-solution\-stacks](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/list-available-solution-stacks.html) in the AWS CLI\)\. This operation returns all of the solution stacks that you can use to create an environment\.
 
 **Note**  
-Each platform has supported and retired platform versions\. You can always create an environment based on a supported platform version\. Retired platform versions are available only to existing customer environments for a period of 90 days from the published retirement date\. For a list of published platform version retirement dates, see [Retired Platform Version Schedule](platforms-support-policy.md#platforms-support-policy.depracation)\.  
+Each platform has supported and retired platform versions\. You can always create an environment based on a supported platform version\. Retired platform versions are available only to existing customer environments for a period of 90 days from the published retirement date\. For a list of published platform version retirement dates, see [Retired platform version schedule](platforms-support-policy.md#platforms-support-policy.depracation)\.  
 When Elastic Beanstalk updates a platform, previous platform versions are still supported, but they lack the most up\-to\-date components and aren't recommended for use\. We recommend that you transition to the latest platform version\. You can still create an environment based on a previous platform version if you've used it in an environment in the last 30 days \(using the same account, in the same region\)\.
 
-You can customize and configure the software that your application depends on in your platform\. Learn more at [Customizing Software on Linux Servers](customize-containers-ec2.md) and [Customizing Software on Windows Servers](customize-containers-windows-ec2.md)\. Detailed release notes are available for recent releases at [AWS Elastic Beanstalk Release Notes](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/)\. 
+You can customize and configure the software that your application depends on in your platform\. Learn more at [Customizing software on Linux servers](customize-containers-ec2.md) and [Customizing software on Windows servers](customize-containers-windows-ec2.md)\. Detailed release notes are available for recent releases at [AWS Elastic Beanstalk Release Notes](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/)\. 
 
-## Supported Platform Versions<a name="concepts.platforms.list"></a>
+## Supported platform versions<a name="concepts.platforms.list"></a>
 
 All currently supported platform versions are listed in [Elastic Beanstalk Supported Platforms](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html)\. For direct access to the version list of a specific platform, use one of the following links\.
 + [Packer Builder](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.packer)

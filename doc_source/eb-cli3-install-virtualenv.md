@@ -1,4 +1,4 @@
-# Install the EB CLI in a Virtual Environment<a name="eb-cli3-install-virtualenv"></a>
+# Install the EB CLI in a virtual environment<a name="eb-cli3-install-virtualenv"></a>
 
 You can avoid version requirement conflicts with other `pip` packages by installing the EB CLI in a virtual environment\.
 

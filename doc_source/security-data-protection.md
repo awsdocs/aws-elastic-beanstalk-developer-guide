@@ -1,4 +1,4 @@
-# Data Protection in Elastic Beanstalk<a name="security-data-protection"></a>
+# Data protection in Elastic Beanstalk<a name="security-data-protection"></a>
 
 AWS Elastic Beanstalk conforms to the AWS [shared responsibility model](http://aws.amazon.com/compliance/shared-responsibility-model/), which includes regulations and guidelines for data protection\. AWS is responsible for protecting the global infrastructure that runs all the AWS services\. AWS maintains control over data hosted on this infrastructure, including the security configuration controls for handling customer content and personal data\. AWS customers and APN partners, acting either as data controllers or data processors, are responsible for any personal data that they put in the AWS Cloud\. 
 
@@ -13,8 +13,8 @@ We strongly recommend that you never put sensitive identifying information, such
 
 For more information about data protection, see the [AWS Shared Responsibility Model and GDPR](http://aws.amazon.com/blogs/security/the-aws-shared-responsibility-model-and-gdpr/) blog post on the *AWS Security Blog*\.
 
-For other Elastic Beanstalk security topics, see [AWS Elastic Beanstalk Security](security.md)\.
+For other Elastic Beanstalk security topics, see [AWS Elastic Beanstalk security](security.md)\.
 
 **Topics**
-+ [Protecting Data Using Encryption](security-data-protection-encryption.md)
-+ [Internetwork Traffic Privacy](security-data-protection-internetwork.md)
++ [Protecting data using encryption](security-data-protection-encryption.md)
++ [Internetwork traffic privacy](security-data-protection-internetwork.md)

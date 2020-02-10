@@ -1,4 +1,4 @@
-# Configuration Changes<a name="environments-updating"></a>
+# Configuration changes<a name="environments-updating"></a>
 
 When you modify configuration option settings in the **Configuration** section of the [environment management console](environments-console.md), AWS Elastic Beanstalk propagates the change to all affected resources\. These resources include the load balancer that distributes traffic to the Amazon EC2 instances running your application, the Auto Scaling group that manages those instances, and the EC2 instances themselves\.
 
@@ -14,7 +14,7 @@ During managed platform updates with instance replacement enabled, immutable upd
 
 **Supported Update Types**  
 
-| Rolling Update Setting | Load Balanced Environments | Single\-Instance Environments | Legacy Windows Server Environments† | 
+| Rolling update setting | Load balanced environments | Single\-instance environments | Legacy Windows server environments† | 
 | --- | --- | --- | --- | 
 |  Disabled  |  ✓  |  ✓  |  ✓  | 
 |  Rolling Based on Health  |  ✓  |  ☓  |  ✓  | 
@@ -24,5 +24,5 @@ During managed platform updates with instance replacement enabled, immutable upd
 † For the purpose of this table, a *Legacy Windows Server Environment* is an environment based on a [Windows Server platform configuration](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) that use an IIS version earlier than IIS 8\.5\.
 
 **Topics**
-+ [Elastic Beanstalk Rolling Environment Configuration Updates](using-features.rollingupdates.md)
-+ [Immutable Environment Updates](environmentmgmt-updates-immutable.md)
++ [Elastic Beanstalk rolling environment configuration updates](using-features.rollingupdates.md)
++ [Immutable environment updates](environmentmgmt-updates-immutable.md)

@@ -1,11 +1,11 @@
-# Customizing Software on Linux Servers<a name="customize-containers-ec2"></a>
+# Customizing software on Linux servers<a name="customize-containers-ec2"></a>
 
 You may want to customize and configure the software that your application depends on\. These files could be either dependencies required by the application—for example, additional packages from the yum repository—or they could be configuration files such as a replacement for `httpd.conf` to override specific settings that are defaulted by Elastic Beanstalk\. 
 
 **Note**  
 YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
-This section describes the type of information you can include in a configuration file to customize the software on your EC2 instances running Linux\. For general information about customizing and configuring your Elastic Beanstalk environments, see [Configuring Elastic Beanstalk Environments](customize-containers.md)\. For information about customizing software on your EC2 instances running Windows, see [Customizing Software on Windows Servers](customize-containers-windows-ec2.md)\.
+This section describes the type of information you can include in a configuration file to customize the software on your EC2 instances running Linux\. For general information about customizing and configuring your Elastic Beanstalk environments, see [Configuring Elastic Beanstalk environments](customize-containers.md)\. For information about customizing software on your EC2 instances running Windows, see [Customizing software on Windows servers](customize-containers-windows-ec2.md)\.
 
 Configuration files support the following keys that affect the Linux server your application runs on\.
 
@@ -17,8 +17,8 @@ Configuration files support the following keys that affect the Linux server your
 + [Files](#linux-files)
 + [Commands](#linux-commands)
 + [Services](#linux-services)
-+ [Container Commands](#linux-container-commands)
-+ [Example: Using Custom Amazon CloudWatch Metrics](customize-containers-cw.md)
++ [Container commands](#linux-container-commands)
++ [Example: Using custom Amazon CloudWatch metrics](customize-containers-cw.md)
 
 Keys are processed in the order that they are listed here\.
 
@@ -43,20 +43,20 @@ packages:
 
 You can specify multiple packages under each package manager's key\.
 
-### Supported Package Formats<a name="linux-packages-support"></a>
+### Supported package formats<a name="linux-packages-support"></a>
 
 Elastic Beanstalk currently supports the following package managers: yum, rubygems, python, and rpm\. Packages are processed in the following order: rpm, yum, and then rubygems and python\. There is no ordering between rubygems and python\. Within each package manager, package installation order isn't guaranteed\. Use a package manager supported by your operating system\.
 
 **Note**  
-Elastic Beanstalk supports two underlying package managers for Python, pip and easy\_install\. However, in the syntax of the configuration file, you must specify the package manager name as `python`\. When you use a configuration file to specify a Python package manager, Elastic Beanstalk uses Python 2\.7\. If your application relies on a different version of Python, you can specify the packages to install in a `requirements.txt` file\. For more information, see [Requirements File](python-configuration-requirements.md)\.
+Elastic Beanstalk supports two underlying package managers for Python, pip and easy\_install\. However, in the syntax of the configuration file, you must specify the package manager name as `python`\. When you use a configuration file to specify a Python package manager, Elastic Beanstalk uses Python 2\.7\. If your application relies on a different version of Python, you can specify the packages to install in a `requirements.txt` file\. For more information, see [Specifying dependencies using a requirements file](python-configuration-requirements.md)\.
 
-### Specifying Versions<a name="linux-packages-versions"></a>
+### Specifying versions<a name="linux-packages-versions"></a>
 
 Within each package manager, each package is specified as a package name and a list of versions\. The version can be a string, a list of versions, or an empty string or list\. An empty string or list indicates that you want the latest version\. For rpm manager, the version is specified as a path to a file on disk or a URL\. Relative paths are not supported\.
 
 If you specify a version of a package, Elastic Beanstalk attempts to install that version even if a newer version of the package is already installed on the instance\. If a newer version is already installed, the deployment fails\. Some package managers support multiple versions, but others may not\. Please check the documentation for your package manager for more information\. If you do not specify a version and a version of the package is already installed, Elastic Beanstalk does not install a new version—it assumes that you want to keep and use the existing version\.
 
-### Example Snippet<a name="linux-packages-snippet"></a>
+### Example snippet<a name="linux-packages-snippet"></a>
 
 The following snippet specifies a version URL for rpm, requests the latest version from yum, and version 0\.10\.2 of chef from rubygems\.
 
@@ -91,7 +91,7 @@ groups:
 A group ID number\.  
 If a group ID is specified, and the group already exists by name, the group creation will fail\. If another group has the specified group ID, the operating system may reject the group creation\.
 
-### Example Snippet<a name="linux-groups-snippet"></a>
+### Example snippet<a name="linux-groups-snippet"></a>
 
 The following snippet specifies a group named groupOne without assigning a group ID and a group named groupTwo that specified a group ID value of 45\.
 
@@ -130,7 +130,7 @@ The user's home directory\.
 
 Users are created as noninteractive system users with a shell of `/sbin/nologin`\. This is by design and cannot be modified\.
 
-### Example Snippet<a name="linux-users-snippet"></a>
+### Example snippet<a name="linux-users-snippet"></a>
 
 ```
 users:
@@ -153,11 +153,11 @@ sources:
   target directory: location of archive file
 ```
 
-### Supported Formats<a name="linux-sources-support"></a>
+### Supported formats<a name="linux-sources-support"></a>
 
 Supported formats are tar, tar\+gzip, tar\+bz2, and zip\. You can reference external locations such as Amazon Simple Storage Service \(Amazon S3\) \(e\.g\., `https://mybucket.s3.amazonaws.com/myobject`\) as long as the URL is publicly accessible\.
 
-### Example Snippet<a name="linux-sources-example"></a>
+### Example snippet<a name="linux-sources-example"></a>
 
 The following example downloads a public \.zip file from an Amazon S3 bucket and unpacks it into `/etc/myapp`:
 
@@ -221,7 +221,7 @@ A six\-digit octal value representing the mode for this file\. Not supported for
 `authentication`  
 The name of a [AWS CloudFormation authentication method](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html) to use\. You can add authentication methods to the autoscaling group metadata with the Resources key\. See below for an example\.
 
-### Example Snippet<a name="linux-files-snippet"></a>
+### Example snippet<a name="linux-files-snippet"></a>
 
 ```
 files:
@@ -340,7 +340,7 @@ commands:
 `ignoreErrors`  
 \(Optional\) A boolean value that determines if other commands should run if the command contained in the `command` key fails \(returns a nonzero value\)\. Set this value to `true` if you want to continue running commands even if the command fails\. Set it to `false` if you want to stop running commands if the command fails\. The default value is `false`\.
 
-### Example Snippet<a name="linux-commands-snippet"></a>
+### Example snippet<a name="linux-commands-snippet"></a>
 
 The following example snippet runs a Python script\.
 
@@ -401,7 +401,7 @@ A map of the package manager to a list of package names\. If Elastic Beanstalk i
 `commands`  
 A list of command names\. If Elastic Beanstalk runs the specified command, the service is restarted\.
 
-### Example Snippet<a name="linux-services-snippet"></a>
+### Example snippet<a name="linux-services-snippet"></a>
 
 The following is an example snippet:
 
@@ -413,7 +413,7 @@ services:
       ensureRunning: true
 ```
 
-## Container Commands<a name="linux-container-commands"></a>
+## Container commands<a name="linux-container-commands"></a>
 
 You can use the `container_commands` key to execute commands that affect your application source code\. Container commands run after the application and web server have been set up and the application version archive has been extracted, but before the application version is deployed\. Non\-container commands and other customization operations are performed prior to the application source code being extracted\.
 
@@ -454,7 +454,7 @@ A string or array of strings to run\.
 `ignoreErrors`  
 \(Optional\) Do not fail deployments if the container command returns a value other than 0 \(success\)\. Set to `true` to enable\.
 
-### Example Snippet<a name="linux-container-commands-snippet"></a>
+### Example snippet<a name="linux-container-commands-snippet"></a>
 
 The following is an example snippet\.
 

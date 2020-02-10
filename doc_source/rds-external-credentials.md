@@ -1,4 +1,4 @@
-# Storing the Connection String in Amazon S3<a name="rds-external-credentials"></a>
+# Storing the connection string in Amazon S3<a name="rds-external-credentials"></a>
 
 Providing connection information to your application with environment properties is a good way to keep passwords out of your code, but it's not a perfect solution\. Environment properties are discoverable in the [environment management console](environments-console.md), and can be viewed by any user that has permission to [describe configuration settings](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeConfigurationSettings.html) on your environment\. Depending on the platform, environment properties may also appear in [instance logs](using-features.logging.md)\.
 

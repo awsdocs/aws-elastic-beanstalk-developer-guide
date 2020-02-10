@@ -1,4 +1,4 @@
-# Viewing Events<a name="create_deploy_Java.events"></a>
+# Viewing events<a name="create_deploy_Java.events"></a>
 
 You can use the AWS Toolkit for Eclipse to access events and notifications associated with your application\.
 

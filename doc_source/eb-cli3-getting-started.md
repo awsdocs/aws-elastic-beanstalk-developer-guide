@@ -1,4 +1,4 @@
-# Managing Elastic Beanstalk Environments with the EB CLI<a name="eb-cli3-getting-started"></a>
+# Managing Elastic Beanstalk environments with the EB CLI<a name="eb-cli3-getting-started"></a>
 
 After [installing the EB CLI](eb-cli3-install.md) and [configuring your project directory](eb-cli3-configuration.md), you are ready to create an Elastic Beanstalk environment using the EB CLI, deploy source and configuration updates, and pull logs and events\.
 
@@ -10,17 +10,17 @@ The EB CLI returns a zero \(`0`\) exit code for all successful commands, and a n
 The following examples use an empty project folder named `eb` that was initialized with the EB CLI for use with a sample Docker application\.
 
 **Topics**
-+ [eb create](#ebcli3-basics-create)
-+ [eb status](#ebcli3-basics-status)
-+ [eb health](#ebcli3-basics-health)
-+ [eb events](#ebcli3-basics-events)
-+ [eb logs](#ebcli3-basics-logs)
-+ [eb open](#ebcli3-basics-open)
-+ [eb deploy](#ebcli3-basics-deploy)
-+ [eb config](#ebcli3-basics-config)
-+ [eb terminate](#ebcli3-basics-terminate)
++ [Eb create](#ebcli3-basics-create)
++ [Eb status](#ebcli3-basics-status)
++ [Eb health](#ebcli3-basics-health)
++ [Eb events](#ebcli3-basics-events)
++ [Eb logs](#ebcli3-basics-logs)
++ [Eb open](#ebcli3-basics-open)
++ [Eb deploy](#ebcli3-basics-deploy)
++ [Eb config](#ebcli3-basics-config)
++ [Eb terminate](#ebcli3-basics-terminate)
 
-## eb create<a name="ebcli3-basics-create"></a>
+## Eb create<a name="ebcli3-basics-create"></a>
 
 To create your first environment, run [eb create](eb3-create.md) and follow the prompts\. If your project directory has source code in it, the EB CLI will bundle it up and deploy it to your environment\. Otherwise, a sample application will be used\.
 
@@ -47,7 +47,7 @@ INFO: createEnvironment is starting.
 
 Your environment can take several minutes to become ready\. Press **Ctrl\+C** to return to the command line while the environment is created\.
 
-## eb status<a name="ebcli3-basics-status"></a>
+## Eb status<a name="ebcli3-basics-status"></a>
 
 Run eb status to see the current status of your environment\. When the status is `ready`, the sample application is available at elasticbeanstalk\.com and the environment is ready to be updated\.
 
@@ -66,7 +66,7 @@ Environment details for: elasticBeanstalkExa-env
   Health: Green
 ```
 
-## eb health<a name="ebcli3-basics-health"></a>
+## Eb health<a name="ebcli3-basics-health"></a>
 
 Use the eb health command to view [health information](health-enhanced.md) about the instances in your environment and the state of your environment overall\. Use the `--refresh` option to view health in an interactive view that updates every 10 seconds\.
 
@@ -100,7 +100,7 @@ WebServer                                                               Java 8
   i-04703409d90d7c353   Deployed   28   app-bc1b-160915_181041   27 mins
 ```
 
-## eb events<a name="ebcli3-basics-events"></a>
+## Eb events<a name="ebcli3-basics-events"></a>
 
 Use eb events to see a list of events output by Elastic Beanstalk\.
 
@@ -113,7 +113,7 @@ Use eb events to see a list of events output by Elastic Beanstalk\.
 ...
 ```
 
-## eb logs<a name="ebcli3-basics-logs"></a>
+## Eb logs<a name="ebcli3-basics-logs"></a>
 
 Use eb logs to pull logs from an instance in your environment\. By default, eb logs pull logs from the first instance launched and displays them in standard output\. You can specify an instance ID with the \-\-instance option to get logs from a specific instance\.
 
@@ -126,7 +126,7 @@ Logs were saved to /home/local/ANT/mwunderl/ebcli/environments/test/.elasticbean
 Updated symlink at /home/local/ANT/mwunderl/ebcli/environments/test/.elasticbeanstalk/logs/latest
 ```
 
-## eb open<a name="ebcli3-basics-open"></a>
+## Eb open<a name="ebcli3-basics-open"></a>
 
 To open your environment's website in a browser, use eb open:
 
@@ -136,7 +136,7 @@ To open your environment's website in a browser, use eb open:
 
 In a windowed environment, your default browser will open in a new window\. In a terminal environment, a command line browser \(e\.g\. w3m\) will be used if available\.
 
-## eb deploy<a name="ebcli3-basics-deploy"></a>
+## Eb deploy<a name="ebcli3-basics-deploy"></a>
 
 Once the environment is up and ready, you can update it using eb deploy\.
 
@@ -175,7 +175,7 @@ When you run eb deploy, the EB CLI bundles up the contents of your project direc
 **Note**  
 If you have initialized a git repository in your project folder, the EB CLI will always deploy the latest commit, even if you have pending changes\. Commit your changes prior to running eb deploy to deploy them to your environment\.
 
-## eb config<a name="ebcli3-basics-config"></a>
+## Eb config<a name="ebcli3-basics-config"></a>
 
 Take a look at the configuration options available for your running environment with the eb config command:
 
@@ -195,9 +195,9 @@ settings:
 ...
 ```
 
-This command populates a list of available configuration options in a text editor\. Many of the options shown have a `null` value, these are not set by default but can be modified to update the resources in your environment\. See [Configuration Options](command-options.md) for more information about these options\.
+This command populates a list of available configuration options in a text editor\. Many of the options shown have a `null` value, these are not set by default but can be modified to update the resources in your environment\. See [Configuration options](command-options.md) for more information about these options\.
 
-## eb terminate<a name="ebcli3-basics-terminate"></a>
+## Eb terminate<a name="ebcli3-basics-terminate"></a>
 
 If you are done using the environment for now, use eb terminate to terminate it\.
 
@@ -214,4 +214,4 @@ INFO: Waiting for EC2 instances to terminate. This may take a few minutes.
  -- Events -- (safe to Ctrl+C)
 ```
 
-For a full list of available EB CLI commands, check out the [EB CLI Command Reference](eb3-cmd-commands.md)\.
+For a full list of available EB CLI commands, check out the [EB CLI command reference](eb3-cmd-commands.md)\.

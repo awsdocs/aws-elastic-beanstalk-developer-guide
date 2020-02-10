@@ -1,6 +1,6 @@
-# EB CLI Command Reference<a name="eb3-cmd-commands"></a>
+# EB CLI command reference<a name="eb3-cmd-commands"></a>
 
-You can use the Elastic Beanstalk command line interface \(EB CLI\) to perform a variety of operations to deploy and manage your Elastic Beanstalk applications and environments\. The EB CLI integrates with Git if you want to deploy application source code that is under Git source control\. For more information, see [Using the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md) and [Using the EB CLI with Git](eb3-cli-git.md)\.
+You can use the Elastic Beanstalk command line interface \(EB CLI\) to perform a variety of operations to deploy and manage your Elastic Beanstalk applications and environments\. The EB CLI integrates with Git if you want to deploy application source code that is under Git source control\. For more information, see [Using the Elastic Beanstalk command line interface \(EB CLI\)](eb-cli3.md) and [Using the EB CLI with Git](eb3-cli-git.md)\.
 
 **Topics**
 + [eb abort](eb3-abort.md)
@@ -31,4 +31,4 @@ You can use the Elastic Beanstalk command line interface \(EB CLI\) to perform a
 + [eb terminate](eb3-terminate.md)
 + [eb upgrade](eb3-upgrade.md)
 + [eb use](eb3-use.md)
-+ [Common Options](eb3-cmd-options.md)
++ [Common options](eb3-cmd-options.md)

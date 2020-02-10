@@ -1,4 +1,4 @@
-# Adding an Amazon RDS DB Instance to Your Java Application Environment<a name="java-rds"></a>
+# Adding an Amazon RDS DB instance to your Java application environment<a name="java-rds"></a>
 
 You can use an Amazon Relational Database Service \(Amazon RDS\) DB instance to store data that your application gathers and modifies\. The database can be attached to your environment and managed by Elastic Beanstalk, or created and managed externally\.
 
@@ -33,17 +33,17 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
   Amazon RDS console label – **Username**
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
-For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\. For instructions on configuring an external database for use with Elastic Beanstalk, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\.
+For more information about configuring an internal DB instance, see [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md)\. For instructions on configuring an external database for use with Elastic Beanstalk, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\.
 
 To connect to the database, add the appropriate driver JAR file to your application, load the driver class in your code, and create a connection object with the environment properties provided by Elastic Beanstalk\.
 
 **Topics**
-+ [Downloading the JDBC Driver](#java-rds-drivers)
-+ [Connecting to a Database \(Java SE Platforms\)](#java-rds-javase)
-+ [Connecting to a Database \(Tomcat Platforms\)](#java-rds-tomcat)
-+ [Troubleshooting Database Connections](#create_deploy_Java.rds.troubleshooting)
++ [Downloading the JDBC driver](#java-rds-drivers)
++ [Connecting to a database \(Java SE platforms\)](#java-rds-javase)
++ [Connecting to a database \(Tomcat platforms\)](#java-rds-tomcat)
++ [Troubleshooting database connections](#create_deploy_Java.rds.troubleshooting)
 
-## Downloading the JDBC Driver<a name="java-rds-drivers"></a>
+## Downloading the JDBC driver<a name="java-rds-drivers"></a>
 
 You will need the JAR file of the JDBC driver for the DB engine that you choose\. Save the JAR file in your source code and include it in your classpath when you compile the class that creates connections to the database\.
 
@@ -70,7 +70,7 @@ You can retrieve the hostname, port, database name, user name, and password from
 + `oracle:kprb` for Oracle KPRB
 + `sqlserver` for SQL Server
 
-## Connecting to a Database \(Java SE Platforms\)<a name="java-rds-javase"></a>
+## Connecting to a database \(Java SE platforms\)<a name="java-rds-javase"></a>
 
 In a Java SE environment, use `System.getenv()` to read the connection variables from the environment\. The following example code shows a class that creates a connection to a PostgreSQL database\.
 
@@ -97,7 +97,7 @@ private static Connection getRemoteConnection() {
   }
 ```
 
-## Connecting to a Database \(Tomcat Platforms\)<a name="java-rds-tomcat"></a>
+## Connecting to a database \(Tomcat platforms\)<a name="java-rds-tomcat"></a>
 
 In a Tomcat environment, environment properties are provided as system properties that are accessible with `System.getProperty()`\.
 
@@ -216,11 +216,11 @@ To display the results, place the following code in the body of the HTML portion
 <p>Established connection to RDS. Read first two rows: <%= results %></p>
 ```
 
-## Troubleshooting Database Connections<a name="create_deploy_Java.rds.troubleshooting"></a>
+## Troubleshooting database connections<a name="create_deploy_Java.rds.troubleshooting"></a>
 
 If you run into issues connecting to a database from within your application, review the web container log and database\.
 
-### Reviewing Logs<a name="create_deploy_Java.rds.troubleshooting.logs"></a>
+### Reviewing logs<a name="create_deploy_Java.rds.troubleshooting.logs"></a>
 
 You can view all the logs from your Elastic Beanstalk environment from within Eclipse\. If you don't have the AWS Explorer view open, choose the arrow next to the orange AWS icon in the toolbar, and then choose **Show AWS Explorer View**\. Expand **AWS Elastic Beanstalk** and your environment name, and then open the context \(right\-click\) menu for the server\. Choose **Open in WTP Server Editor**\. 
 

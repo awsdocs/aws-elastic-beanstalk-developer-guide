@@ -10,10 +10,10 @@ For information about the AWS services offered in each region, see [Region Table
 
 **Topics**
 + [Prerequisites](#eb-cli-codecommit-prereqs)
-+ [Creating a CodeCommit Repository with the EB CLI](#eb-cli-codecommit-create)
-+ [Deploying from Your CodeCommit Repository](#eb-cli-codecommit-deploy)
-+ [Configuring Additional Branches and Environments](#eb-cli-codecommit-config)
-+ [Using an Existing CodeCommit Repository](#eb-cli-codecommit-existing)
++ [Creating a CodeCommit repository with the EB CLI](#eb-cli-codecommit-create)
++ [Deploying from your CodeCommit repository](#eb-cli-codecommit-deploy)
++ [Configuring additional branches and environments](#eb-cli-codecommit-config)
++ [Using an existing CodeCommit repository](#eb-cli-codecommit-existing)
 
 ## Prerequisites<a name="eb-cli-codecommit-prereqs"></a>
 
@@ -39,7 +39,7 @@ To use CodeCommit with AWS Elastic Beanstalk, you need a local Git repository \(
    ~/my-app$ git commit -m "Elastic Beanstalk application"
    ```
 
-## Creating a CodeCommit Repository with the EB CLI<a name="eb-cli-codecommit-create"></a>
+## Creating a CodeCommit repository with the EB CLI<a name="eb-cli-codecommit-create"></a>
 
 To get started with CodeCommit, run [eb init](eb3-init.md)\. During repository configuration, the EB CLI prompts you to use CodeCommit to store your code and speed up deployments\. Even if you previously configured your project with eb init, you can run it again to configure CodeCommit\.
 
@@ -79,7 +79,7 @@ To get started with CodeCommit, run [eb init](eb3-init.md)\. During repository c
    Successfully created branch: master
    ```
 
-## Deploying from Your CodeCommit Repository<a name="eb-cli-codecommit-deploy"></a>
+## Deploying from your CodeCommit repository<a name="eb-cli-codecommit-deploy"></a>
 
 When you configure CodeCommit with your EB CLI repository, the EB CLI uses the contents of the repository to create source bundles\. When you run eb deploy or eb create, the EB CLI pushes new commits and uses the HEAD revision of your branch to create the archive that it deploys to the EC2 instances in your environment\.
 
@@ -129,7 +129,7 @@ When you configure CodeCommit with your EB CLI repository, the EB CLI uses the c
 
    Deploying with the `--staged` option performs a standard deployment, bypassing CodeCommit\.
 
-## Configuring Additional Branches and Environments<a name="eb-cli-codecommit-config"></a>
+## Configuring additional branches and environments<a name="eb-cli-codecommit-config"></a>
 
 CodeCommit configuration applies to a single branch\. You can use eb use and eb codesource to configure additional branches or modify the current branch's configuration\.
 
@@ -182,7 +182,7 @@ CodeCommit configuration applies to a single branch\. You can use eb use and eb 
    Default set to use local sources
    ```
 
-## Using an Existing CodeCommit Repository<a name="eb-cli-codecommit-existing"></a>
+## Using an existing CodeCommit repository<a name="eb-cli-codecommit-existing"></a>
 
 If you already have a CodeCommit repository and want to use it with Elastic Beanstalk, run eb init at the root of your local Git repository\.
 

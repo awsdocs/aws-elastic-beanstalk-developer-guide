@@ -1,4 +1,4 @@
-# Resources and Conditions for Elastic Beanstalk Actions<a name="AWSHowTo.iam.policies.actions"></a>
+# Resources and conditions for Elastic Beanstalk actions<a name="AWSHowTo.iam.policies.actions"></a>
 
 This section describes the resources and conditions that you can use in policy statements to grant permissions that allow specific Elastic Beanstalk actions to be performed on specific Elastic Beanstalk resources\.
 
@@ -36,17 +36,17 @@ In contrast, we mention a few condition keys used across AWS services, and we in
 Policy examples always show full condition key names, including the prefix\.
 
 **Topics**
-+ [Policy Information for Elastic Beanstalk Actions](#AWSHowTo.iam.policies.actions.table)
-+ [Condition Keys for Elastic Beanstalk Actions](#AWSHowTo.iam.policies.conditions)
++ [Policy information for Elastic Beanstalk actions](#AWSHowTo.iam.policies.actions.table)
++ [Condition keys for Elastic Beanstalk actions](#AWSHowTo.iam.policies.conditions)
 
-## Policy Information for Elastic Beanstalk Actions<a name="AWSHowTo.iam.policies.actions.table"></a>
+## Policy information for Elastic Beanstalk actions<a name="AWSHowTo.iam.policies.actions.table"></a>
 
 The following table lists all Elastic Beanstalk actions, the resource that each action acts upon, and the additional contextual information that can be provided using conditions\.
 
 
 **Policy information for Elastic Beanstalk actions, including resources, conditions, examples, and dependencies**  
 
-| Resource | Conditions | Example Statement | 
+| Resource | Conditions | Example statement | 
 | --- | --- | --- | 
 | **Action: **[http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_AbortEnvironmentUpdate.html](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_AbortEnvironmentUpdate.html) | 
 |  `application` `environment`  |  `aws:ResourceTag/key-name` \(Optional\) `aws:TagKeys` \(Optional\)  |  The following policy allows a user to abort environment update operations on environments in an application named `My App`\. <pre>{<br />  "Version": "2012-10-17",<br />  "Statement": [<br />    {<br />      "Action": [<br />        "elasticbeanstalk:AbortEnvironmentUpdate"<br />      ],<br />      "Effect": "Allow",<br />      "Resource": [<br />        "arn:aws:elasticbeanstalk:us-east-2:123456789012:application/My App"<br />      ]<br />    }<br />  ]<br />}</pre>  | 
@@ -131,7 +131,7 @@ The following table lists all Elastic Beanstalk actions, the resource that each 
 | **Action: **[http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ValidateConfigurationSettings.html](http://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ValidateConfigurationSettings.html) | 
 |  `template` `environment`  |  `InApplication` `aws:ResourceTag/key-name` \(Optional\) `aws:TagKeys` \(Optional\)  |  The following policy allows the `ValidateConfigurationSettings` action to validates configuration settings against the environment **myenv** in the application **My App**\. <pre>{<br />  "Version": "2012-10-17",<br />  "Statement": [<br />    {<br />      "Action": [<br />        "elasticbeanstalk:ValidateConfigurationSettings"<br />      ],<br />      "Effect": "Allow",<br />      "Resource": [<br />        "arn:aws:elasticbeanstalk:us-east-2:123456789012:environment/My App/myenv"<br />      ],<br />      "Condition": {<br />        "StringEquals": {<br />          "elasticbeanstalk:InApplication": ["arn:aws:elasticbeanstalk:us-east-2:123456789012:application/My App"]<br />        }<br />      }<br />    }<br />  ]<br />}</pre>  | 
 
-## Condition Keys for Elastic Beanstalk Actions<a name="AWSHowTo.iam.policies.conditions"></a>
+## Condition keys for Elastic Beanstalk actions<a name="AWSHowTo.iam.policies.conditions"></a>
 
 Keys enable you to specify conditions that express dependencies, restrict permissions, or specify constraints on the input parameters for an action\. Elastic Beanstalk supports the following keys\.
 
@@ -273,4 +273,4 @@ The following policy allows the `CreateConfigurationTemplate` action to create c
 ```
 
 `aws:ResourceTag/key-name``aws:RequestTag/key-name``aws:TagKeys`  
-Specify tag\-based conditions\. For details, see [Using Tags to Control Access to Elastic Beanstalk Resources](AWSHowTo.iam.policies.access-tags.md)\.
+Specify tag\-based conditions\. For details, see [Using tags to control access to Elastic Beanstalk resources](AWSHowTo.iam.policies.access-tags.md)\.

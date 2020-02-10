@@ -1,22 +1,22 @@
-# Example: Launching an Elastic Beanstalk Application in a VPC with Bastion Hosts<a name="vpc-bastion-host"></a>
+# Example: Launching an Elastic Beanstalk application in a VPC with bastion hosts<a name="vpc-bastion-host"></a>
 
 If your Amazon EC2 instances are located inside a private subnet, you will not be able to connect to them remotely\. To connect to your instances, you can set up bastion servers in the public subnet to act as proxies\. For example, you can set up SSH port forwarders or RDP gateways in the public subnet to proxy the traffic going to your database servers from your own network\. This section provides an example of how to create a VPC with a private and public subnet\. The instances are located inside the private subnet, and the bastion host, NAT gateway, and load balancer are located inside the public subnet\. Your infrastructure will look similar to the following diagram:
 
-![\[Elastic Beanstalk and VPC Topology with Bastion Host\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vpc-bastion-topo-ngw.png)
+![\[Elastic Beanstalk and VPC topology with bastion host\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vpc-bastion-topo-ngw.png)
 
 To deploy an Elastic Beanstalk application inside a VPC using a bastion host, complete the steps described in the following subsections\.
 
 **Topics**
-+ [Create a VPC with a Public and Private Subnet](#vpc-bastion-host-create)
-+ [Create and Configure the Bastion Host Security Group](#vpc-bastion-create-host-sg)
-+ [Update the Instance Security Group](#vpc-bastion-update-instance-sg)
-+ [Create a Bastion Host](#vpc-bastion-host-launch)
++ [Create a VPC with a public and private subnet](#vpc-bastion-host-create)
++ [Create and configure the bastion host security group](#vpc-bastion-create-host-sg)
++ [Update the instance security group](#vpc-bastion-update-instance-sg)
++ [Create a bastion host](#vpc-bastion-host-launch)
 
-## Create a VPC with a Public and Private Subnet<a name="vpc-bastion-host-create"></a>
+## Create a VPC with a public and private subnet<a name="vpc-bastion-host-create"></a>
 
-Complete all of the procedures in [VPC with Private and Public Subnets](vpc.md#services-vpc-privatepublic)\. When deploying the application, you must specify an Amazon EC2 key pair for the instances so you can connect to them remotely\. For more information about how to specify the instance key pair, see [Your Elastic Beanstalk Environment's Amazon EC2 Instances](using-features.managing.ec2.md)\.
+Complete all of the procedures in [VPC with private and public subnets](vpc.md#services-vpc-privatepublic)\. When deploying the application, you must specify an Amazon EC2 key pair for the instances so you can connect to them remotely\. For more information about how to specify the instance key pair, see [Your Elastic Beanstalk environment's Amazon EC2 instances](using-features.managing.ec2.md)\.
 
-## Create and Configure the Bastion Host Security Group<a name="vpc-bastion-create-host-sg"></a>
+## Create and configure the bastion host security group<a name="vpc-bastion-create-host-sg"></a>
 
 Create a security group for the bastion host, and add rules that allow inbound SSH traffic from the Internet, and outbound SSH traffic to the private subnet that contains the Amazon EC2 instances\.
 
@@ -53,7 +53,7 @@ Select your VPC\.
    If your bastion host is a Windows instance, under **Type**, select **RDP**\.
 
 1. Enter the desired source CIDR range in the **Source** field and choose **Save**\.  
-![\[Bastion Host Security Group\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/vpc-bh-sg-inbound.png)
+![\[Bastion host security group\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/vpc-bh-sg-inbound.png)
 
 1. On the **Outbound Rules** tab, choose **Edit**\.
 
@@ -76,7 +76,7 @@ If you have hosts in multiple availability zones, create an outbound rule for ea
 
 1. Choose **Save**\.
 
-## Update the Instance Security Group<a name="vpc-bastion-update-instance-sg"></a>
+## Update the instance security group<a name="vpc-bastion-update-instance-sg"></a>
 
 By default, the security group you created for your instances does not allow incoming traffic\. While Elastic Beanstalk will modify the default group for the instances to allow SSH traffic, you must modify your custom instance security group to allow RDP traffic if your instances are Windows instances\.
 
@@ -98,7 +98,7 @@ By default, the security group you created for your instances does not allow inc
 **Source**  
 Enter the ID of the bastion host security group \(e\.g\., `sg-8a6f71e8`\) and choose **Save**\.
 
-## Create a Bastion Host<a name="vpc-bastion-host-launch"></a>
+## Create a bastion host<a name="vpc-bastion-host-launch"></a>
 
 To create a bastion host, you launch an Amazon EC2 instance in your public subnet that will act as the bastion host\.
 

@@ -1,4 +1,4 @@
-# Deploying Elastic Beanstalk Applications from Docker Containers<a name="create_deploy_docker"></a>
+# Deploying Elastic Beanstalk applications from Docker containers<a name="create_deploy_docker"></a>
 
 Elastic Beanstalk supports the deployment of web applications from Docker containers\. With Docker containers, you can define your own runtime environment\. You can choose your own platform, programming language, and any application dependencies \(such as package managers or tools\), that aren't supported by other platforms\. Docker containers are self\-contained and include all the configuration information and software your web application requires to run\. All environment variables defined in the Elastic Beanstalk console are passed to the containers\. 
 
@@ -9,7 +9,7 @@ If a Docker container running in an Elastic Beanstalk environment crashes or is 
 
 The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
-## Docker Platforms<a name="docker-platform"></a>
+## Docker platforms<a name="docker-platform"></a>
 
 The Docker platform family for Elastic Beanstalk has two generic platforms \(single container and multicontainer\), and several preconfigured containers\.
 
@@ -19,16 +19,16 @@ See the [Supported Platforms](https://docs.aws.amazon.com/elasticbeanstalk/lates
 
 The single container platform can be used to deploy a Docker image \(described in a Dockerfile or Dockerrun\.aws\.json definition\) and source code to EC2 instances running in an Elastic Beanstalk environment\. Use the single container platform when you only need to run one container per instance\.
 
-For samples and help getting started with a single container Docker environment, see [Single Container Docker Environments](single-container-docker.md)\. For detailed information on the container definition formats and their use, see [Single Container Docker Configuration](single-container-docker-configuration.md)\.
+For samples and help getting started with a single container Docker environment, see [Single Container Docker environments](single-container-docker.md)\. For detailed information on the container definition formats and their use, see [Single Container Docker configuration](single-container-docker-configuration.md)\.
 
 ### Multicontainer Docker<a name="docker-platform-multi"></a>
 
 The other basic platform, Multicontainer Docker, uses the Amazon Elastic Container Service to coordinate a deployment of multiple Docker containers to an Amazon ECS cluster in an Elastic Beanstalk environment\. The instances in the environment each run the same set of containers, which are defined in a `Dockerrun.aws.json` file\. Use the multicontainer platform when you need to deploy multiple Docker containers to each instance\.
 
-For more details on the Multicontainer Docker platform and its use, see [Multicontainer Docker Environments](create_deploy_docker_ecs.md)\. The [Multicontainer Docker Configuration](create_deploy_docker_v2config.md) topic details version 2 of the Dockerrun\.aws\.json format, which is similar to but not compatible with the version used with the single container platform\. There is also a [tutorial](create_deploy_docker_ecstutorial.md) available that guides you through a from scratch deployment of a multicontainer environment running a PHP website with an nginx proxy running in front of it in a separate container\.
+For more details on the Multicontainer Docker platform and its use, see [Multicontainer Docker environments](create_deploy_docker_ecs.md)\. The [Multicontainer Docker configuration](create_deploy_docker_v2config.md) topic details version 2 of the Dockerrun\.aws\.json format, which is similar to but not compatible with the version used with the single container platform\. There is also a [tutorial](create_deploy_docker_ecstutorial.md) available that guides you through a from scratch deployment of a multicontainer environment running a PHP website with an nginx proxy running in front of it in a separate container\.
 
-### Preconfigured Docker Containers<a name="docker-platform-preconfigured"></a>
+### Preconfigured Docker containers<a name="docker-platform-preconfigured"></a>
 
 In addition to the two generic Docker platforms, there are several *preconfigured* Docker platform versions that you can use to run your application in a popular software stack such as *Java with Glassfish* or *Python with uWSGI*\. Use a preconfigured container if it matches the software used by your application\.
 
-For more information, see [Preconfigured Docker Containers](create_deploy_dockerpreconfig.md)\.
+For more information, see [Preconfigured Docker containers](create_deploy_dockerpreconfig.md)\.

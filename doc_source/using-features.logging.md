@@ -1,4 +1,4 @@
-# Viewing Logs from Amazon EC2 Instances in Your Elastic Beanstalk Environment<a name="using-features.logging"></a>
+# Viewing logs from Amazon EC2 instances in your Elastic Beanstalk environment<a name="using-features.logging"></a>
 
 The Amazon EC2 instances in your Elastic Beanstalk environment generate logs that you can view to troubleshoot issues with your application or configuration files\. Logs created by the web server, application server, Elastic Beanstalk platform scripts, and AWS CloudFormation are stored locally on individual instances\. You can easily retrieve them by using the [environment management console](environments-console.md) or the EB CLI\. You can also configure your environment to stream logs to Amazon CloudWatch Logs in real time\.
 
@@ -13,7 +13,7 @@ To upload rotated logs to Amazon S3, the instances in your environment must have
 
 To retrieve logs in the environment management console, navigate to **Logs**, choose **Request Logs**, and then choose the type of logs to retrieve\. To get tail logs, choose **Last 100 Lines**\. To get bundle logs, choose **Full Logs**\.
 
-![\[Environment Logs page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-logs.png)
+![\[Environment logs page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-logs.png)
 
 When Elastic Beanstalk finishes retrieving your logs, choose **Download**\.
 
@@ -25,20 +25,20 @@ Anyone in possession of the presigned Amazon S3 URL can access the files before 
 **Note**  
 Your user policy must have the `s3:DeleteObject` permission\. Elastic Beanstalk uses your user permissions to delete the logs from Amazon S3\.
 
-To persist logs, you can configure your environment to publish logs to Amazon S3 automatically after they are rotated\. To enable log rotation to Amazon S3, follow the procedure in [Configuring Instance Log Viewing](environments-cfg-logging.md#environments-cfg-logging-console)\. Instances in your environment will attempt to upload logs that have been rotated once per hour\.
+To persist logs, you can configure your environment to publish logs to Amazon S3 automatically after they are rotated\. To enable log rotation to Amazon S3, follow the procedure in [Configuring instance log viewing](environments-cfg-logging.md#environments-cfg-logging-console)\. Instances in your environment will attempt to upload logs that have been rotated once per hour\.
 
 If your application generates logs in a location that isn't part of the default configuration for your environment's platform, you can extend the default configuration by using configuration files \(`[\.ebextensions](ebextensions.md)`\)\. You can add your application's log files to tail logs, bundle logs, or log rotation\.
 
 For real\-time log streaming and long\-term storage, configure your environment to [stream logs to Amazon CloudWatch Logs](#health-logs-cloudwatchlogs)\.
 
 **Topics**
-+ [Log Location on Amazon EC2 Instances](#health-logs-instancelocation)
-+ [Log Location in Amazon S3](#health-logs-s3location)
-+ [Log Rotation Settings on Linux](#health-logs-logrotate)
-+ [Extending the Default Log Task Configuration](#health-logs-extend)
-+ [Streaming Log Files to Amazon CloudWatch Logs](#health-logs-cloudwatchlogs)
++ [Log location on Amazon EC2 instances](#health-logs-instancelocation)
++ [Log location in Amazon S3](#health-logs-s3location)
++ [Log rotation settings on Linux](#health-logs-logrotate)
++ [Extending the default log task configuration](#health-logs-extend)
++ [Streaming log files to Amazon CloudWatch Logs](#health-logs-cloudwatchlogs)
 
-## Log Location on Amazon EC2 Instances<a name="health-logs-instancelocation"></a>
+## Log location on Amazon EC2 instances<a name="health-logs-instancelocation"></a>
 
 Logs are stored in standard locations on the Amazon EC2 instances in your environment\. Elastic Beanstalk generates the following logs\.
 
@@ -62,7 +62,7 @@ Each application and web server stores logs in its own folder:
 + **Python** – `/opt/python/log/`
 + **Tomcat** – `/var/log/tomcat8/`
 
-## Log Location in Amazon S3<a name="health-logs-s3location"></a>
+## Log location in Amazon S3<a name="health-logs-s3location"></a>
 
 When you request tail or bundle logs from your environment, or when instances upload rotated logs, they're stored in your Elastic Beanstalk bucket in Amazon S3\. Elastic Beanstalk creates a bucket named `elasticbeanstalk-region-account-id` for each AWS Region in which you create environments\. Within this bucket, logs are stored under the path `resources/environments/logs/logtype/environment-id/instance-id`\. 
 
@@ -80,9 +80,9 @@ For example, logs from instance `i-0a1fd158`, in Elastic Beanstalk environment `
 **Note**  
 You can find your environment ID in the environment management console\.
 
-Elastic Beanstalk deletes tail and bundle logs from Amazon S3 automatically 15 minutes after they are created\. Rotated logs persist until you delete them or move them to Glacier\.
+Elastic Beanstalk deletes tail and bundle logs from Amazon S3 automatically 15 minutes after they are created\. Rotated logs persist until you delete them or move them to S3 Glacier\.
 
-## Log Rotation Settings on Linux<a name="health-logs-logrotate"></a>
+## Log rotation settings on Linux<a name="health-logs-logrotate"></a>
 
 On Linux platforms, Elastic Beanstalk uses `logrotate` to rotate logs periodically\. If configured, after a log is rotated locally, the log rotation task picks it up and uploads it to Amazon S3\. Logs that are rotated locally don't appear in tail or bundle logs by default\.
 
@@ -90,7 +90,7 @@ You can find Elastic Beanstalk configuration files for `logrotate` in `/etc/logr
 
 The configuration files are invoked by cron jobs in `/etc/cron.hourly/`\. For more information about `cron`, run `man cron`\.
 
-## Extending the Default Log Task Configuration<a name="health-logs-extend"></a>
+## Extending the default log task configuration<a name="health-logs-extend"></a>
 
 Elastic Beanstalk uses files in subfolders of `/opt/elasticbeanstalk/tasks` \(Linux\) or `C:\Program Files\Amazon\ElasticBeanstalk\config` \(Windows Server\) on the Amazon EC2 instance to configure tasks for tail logs, bundle logs, and log rotation\.
 
@@ -161,15 +161,15 @@ files:
 **Note**  
 Log task configurations don't support wildcard characters on Windows platforms\.
 
-For more information about using configuration files, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.
+For more information about using configuration files, see [Advanced environment customization with configuration files \(`.ebextensions`\)](ebextensions.md)\.
 
 Much like extending tail logs and bundle logs, you can extend log rotation using a configuration file\. Whenever Elastic Beanstalk rotates its own logs and uploads them to Amazon S3, it also rotates and uploads your additional logs\. Log rotation extension behaves differently depending on the platform's operating system\. The following sections describe the two cases\.
 
-### Extending Log Rotation on Linux<a name="health-logs-extend-rotation-linux"></a>
+### Extending log rotation on Linux<a name="health-logs-extend-rotation-linux"></a>
 
-As explained in [Log Rotation Settings on Linux](#health-logs-logrotate), Elastic Beanstalk uses `logrotate` to rotate logs on Linux platforms\. When you configure your application's log files for log rotation, the application doesn't need to create copies of log files\. Elastic Beanstalk configures `logrotate` to create a copy of your application's log files for each rotation\. Therefore, the application must keep log files unlocked when it isn't actively writing to them\.
+As explained in [Log rotation settings on Linux](#health-logs-logrotate), Elastic Beanstalk uses `logrotate` to rotate logs on Linux platforms\. When you configure your application's log files for log rotation, the application doesn't need to create copies of log files\. Elastic Beanstalk configures `logrotate` to create a copy of your application's log files for each rotation\. Therefore, the application must keep log files unlocked when it isn't actively writing to them\.
 
-### Extending Log Rotation on Windows Server<a name="health-logs-extend-rotation-windows"></a>
+### Extending log rotation on Windows server<a name="health-logs-extend-rotation-windows"></a>
 
 On Windows Server, when you configure your application's log files for log rotation, the application must rotate the log files periodically\. Elastic Beanstalk looks for files with names starting with the pattern you configured, and picks them up for uploading to Amazon S3\. In addition, periods in the file name are ignored, and Elastic Beanstalk considers the name up to the period to be the base log file name\.
 
@@ -177,7 +177,7 @@ Elastic Beanstalk uploads all versions of a base log file except for the newest 
 
 For example, your application writes to a log file named `my_log.log`, and you specify this name in your `.conf` file\. The application periodically rotates the file\. During the Elastic Beanstalk rotation cycle, it finds the following files in the log file's folder: `my_log.log`, `my_log.0800.log`, `my_log.0830.log`\. Elastic Beanstalk considers all of them to be versions of the base name `my_log`\. The file `my_log.log` has the latest modification time, so Elastic Beanstalk uploads only the other two files, `my_log.0800.log` and `my_log.0830.log`\.
 
-## Streaming Log Files to Amazon CloudWatch Logs<a name="health-logs-cloudwatchlogs"></a>
+## Streaming log files to Amazon CloudWatch Logs<a name="health-logs-cloudwatchlogs"></a>
 
 You can configure your environment to stream logs to Amazon CloudWatch Logs in the Elastic Beanstalk console or by using [configuration options](command-options.md)\. With CloudWatch Logs, each instance in your environment streams logs to log groups that you can configure to be retained for weeks or years, even after your environment is terminated\.
 

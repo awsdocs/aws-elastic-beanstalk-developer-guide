@@ -1,4 +1,4 @@
-# Managed Platform Updates<a name="environment-platform-update-managed"></a>
+# Managed platform updates<a name="environment-platform-update-managed"></a>
 
 AWS Elastic Beanstalk regularly releases [platform updates](using-features.platform.upgrade.md) to provide fixes, software updates, and new features\. With managed platform updates, you can configure your environment to automatically upgrade to the latest version of a platform during a scheduled [maintenance window](#environment-platform-update-managed-window)\. Your application remains in service during the update process with no reduction in capacity\. Managed updates are available on both single\-instance and load balanced environments\. 
 
@@ -32,17 +32,17 @@ For an existing environment, use the Elastic Beanstalk console anytime to config
 
 1. Choose **Apply**\.
 
-Managed platform updates depend on [enhanced health reporting](health-enhanced.md) to determine that your application is healthy enough to consider the platform update successful\. See [Enabling Elastic Beanstalk Enhanced Health Reporting](health-enhanced-enable.md) for instructions\.
+Managed platform updates depend on [enhanced health reporting](health-enhanced.md) to determine that your application is healthy enough to consider the platform update successful\. See [Enabling Elastic Beanstalk enhanced health reporting](health-enhanced-enable.md) for instructions\.
 
 **Topics**
-+ [Permissions Required to Perform Managed Platform Updates](#environment-platform-update-managed-perms)
-+ [Managed Update Maintenance Window](#environment-platform-update-managed-window)
-+ [Minor and Patch Version Updates](#environment-platform-update-managed-versioning)
-+ [Immutable Environment Updates](#environment-platform-update-managed-immutable)
-+ [Managing Managed Updates](#environment-platform-update-managed-managing)
-+ [Managed Action Option Namespaces](#environment-platform-update-managed-namespace)
++ [Permissions required to perform managed platform updates](#environment-platform-update-managed-perms)
++ [Managed update maintenance window](#environment-platform-update-managed-window)
++ [Minor and patch version updates](#environment-platform-update-managed-versioning)
++ [Immutable environment updates](#environment-platform-update-managed-immutable)
++ [Managing managed updates](#environment-platform-update-managed-managing)
++ [Managed action option namespaces](#environment-platform-update-managed-namespace)
 
-## Permissions Required to Perform Managed Platform Updates<a name="environment-platform-update-managed-perms"></a>
+## Permissions required to perform managed platform updates<a name="environment-platform-update-managed-perms"></a>
 
 Elastic Beanstalk needs permission to initiate a platform update on your behalf\. When you use the default [service role](concepts-roles-service.md) for your environment, the console adds the required permissions when you enable managed platform updates\. If you aren't using the default service role, or you're managing your environments with a different client, add the [`AWSElasticBeanstalkService`](iam-servicerole.md#iam-servicerole-update) managed policy to your service role\.
 
@@ -53,20 +53,20 @@ If you use [configuration files](ebextensions.md) to extend your environment to 
 
 If an update fails, you can find the reason for the failure on the [Managed Updates](#environment-platform-update-managed-managing) page\.
 
-## Managed Update Maintenance Window<a name="environment-platform-update-managed-window"></a>
+## Managed update maintenance window<a name="environment-platform-update-managed-window"></a>
 
 When AWS releases a new version of your environment's platform, Elastic Beanstalk schedules a managed platform update during the next weekly maintenance window\. Maintenance windows are two hours long\. Elastic Beanstalk starts a scheduled update during the maintenance window\. The update might not complete until after the window ends\.
 
 **Note**  
-In most cases, Elastic Beanstalk schedules your managed update to occur during your coming weekly maintenance window\. The system considers various aspects of update safety and service availability when scheduling managed updates\. In rare cases, an update might not be scheduled for the first coming maintenance window\. If this happens, the system tries again during the next maintenance window\. To manually apply the managed update, choose **Apply now** as explained in [Managing Managed Updates](#environment-platform-update-managed-managing) on this page\.
+In most cases, Elastic Beanstalk schedules your managed update to occur during your coming weekly maintenance window\. The system considers various aspects of update safety and service availability when scheduling managed updates\. In rare cases, an update might not be scheduled for the first coming maintenance window\. If this happens, the system tries again during the next maintenance window\. To manually apply the managed update, choose **Apply now** as explained in [Managing managed updates](#environment-platform-update-managed-managing) on this page\.
 
-## Minor and Patch Version Updates<a name="environment-platform-update-managed-versioning"></a>
+## Minor and patch version updates<a name="environment-platform-update-managed-versioning"></a>
 
 You can enable managed platform updates to apply patch version updates only, or for both minor and patch version updates\. Patch version updates provide bug fixes and performance improvements, and can include minor configuration changes to the on\-instance software, scripts, and configuration options\. Minor version updates provide support for new Elastic Beanstalk features\. You can't apply major version updates, which might make changes that are backward incompatible, with managed platform updates\.
 
 In a platform version number, the second number is the minor update version, and the third number is the patch version\. For example, a version 2\.0\.7 platform version has a minor version of 0 and a patch version of 7\.
 
-## Immutable Environment Updates<a name="environment-platform-update-managed-immutable"></a>
+## Immutable environment updates<a name="environment-platform-update-managed-immutable"></a>
 
 Managed platform updates perform [immutable environment updates](environmentmgmt-updates-immutable.md) to upgrade your environment to a new platform version\. Immutable updates update your environment without taking any instances out of service or modifying your environment, before confirming that instances running the new version pass health checks\. 
 
@@ -77,7 +77,7 @@ Managed platform updates always perform immutable updates, even when you apply t
 **Warning**  
 During managed platform updates with instance replacement enabled, immutable updates, and deployments with immutable updates enabled all instances are replaced\. This causes all accumulated [Amazon EC2 Burst Balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\.
 
-## Managing Managed Updates<a name="environment-platform-update-managed-managing"></a>
+## Managing managed updates<a name="environment-platform-update-managed-managing"></a>
 
 The Elastic Beanstalk console shows detailed information about managed updates on the **Managed Updates** page\.
 
@@ -105,7 +105,7 @@ You can choose to apply a scheduled update immediately, instead of waiting until
 ![\[The managed updates page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-managedupdateoverview.png)
 
 1. Choose **Apply**\.  
-![\[The Apply Managed Update page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-applymanagedaction.png)
+![\[The apply managed update page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-applymanagedaction.png)
 
 When you apply a managed platform update outside of the maintenance window, Elastic Beanstalk performs an immutable update\. If you update the environment's platform from the [Dashboard](environments-console.md#environments-dashboard), or by using a different client, Elastic Beanstalk uses the update type that you selected for [configuration changes](environments-updating.md)\.
 
@@ -116,7 +116,7 @@ If you don't have a managed update scheduled, your environment might already be 
 
 When your maintenance window starts or when you choose **Apply now**, scheduled updates go into pending status before execution\. 
 
-## Managed Action Option Namespaces<a name="environment-platform-update-managed-namespace"></a>
+## Managed action option namespaces<a name="environment-platform-update-managed-namespace"></a>
 
 You can use [configuration options](command-options.md) in the `[aws:elasticbeanstalk:managedactions](command-options-general.md#command-options-general-elasticbeanstalkmanagedactions)` and `[aws:elasticbeanstalk:managedactions:platformupdate](command-options-general.md#command-options-general-elasticbeanstalkmanagedactionsplatformupdate)` namespaces to enable and configure managed platform updates\.
 

@@ -1,8 +1,8 @@
-# Your Elastic Beanstalk Environment's Amazon EC2 Instances<a name="using-features.managing.ec2"></a>
+# Your Elastic Beanstalk environment's Amazon EC2 instances<a name="using-features.managing.ec2"></a>
 
 When you create a web server environment, AWS Elastic Beanstalk creates one or more Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machines, known as *Instances*\.
 
-The instances in your environment are configured to run web apps on the platform that you choose\. You can make changes to various properties and behaviors of your environment's instances during environment creation, after creation on a running environment, or as part of the source code that you deploy to the environment\. For details, see [Configuration Options](command-options.md)\.
+The instances in your environment are configured to run web apps on the platform that you choose\. You can make changes to various properties and behaviors of your environment's instances during environment creation, after creation on a running environment, or as part of the source code that you deploy to the environment\. For details, see [Configuration options](command-options.md)\.
 
 **Note**  
 The [Auto Scaling group](using-features.managing.as.md) in your environment manages the Amazon EC2 instances that run your application\. When you make configuration changes described on this page, the launch configuration \(either an Amazon EC2 launch template or an Auto Scaling group launch configuration resource\) changes\. This change requires [replacement of all instances](environments-updating.md) and trigger a [rolling update](using-features.rollingupdates.md) or [immutable update](environmentmgmt-updates-immutable.md), depending on which one is configured\.
@@ -12,10 +12,10 @@ During environment creation you choose an [instance type](https://docs.aws.amazo
 Elastic Beanstalk supports several Amazon EC2 [instance purchasing options](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-purchasing-options.html): *On\-Demand Instances*, *Reserved Instances*, and *Spot Instances*\. An On\-Demand Instance is a pay\-as\-you\-go resource—there is no long\-term commitment required when you use it\. A Reserved Instance is a pre\-purchased billing discount applied automatically to matching On\-Demand instances in your environment\. A Spot Instance is an unused Amazon EC2 instance that is available for less than the On\-Demand price\. You can enable Spot Instances in your environment by setting a single option\. You can configure Spot Instance usage, including the mix of On\-Demand and Spot Instances, using additional options\. For more information, see [Auto Scaling group](using-features.managing.as.md)\.
 
 **Topics**
-+ [Configuring Your Environment's Amazon EC2 Instances](#using-features.managing.ec2.console)
-+ [The aws:autoscaling:launchconfiguration Namespace](#using-features.managing.ec2.namespace)
++ [Configuring your environment's Amazon EC2 instances](#using-features.managing.ec2.console)
++ [The aws:autoscaling:launchconfiguration namespace](#using-features.managing.ec2.namespace)
 
-## Configuring Your Environment's Amazon EC2 Instances<a name="using-features.managing.ec2.console"></a>
+## Configuring your environment's Amazon EC2 instances<a name="using-features.managing.ec2.console"></a>
 
 You can modify your Elastic Beanstalk environment's Amazon EC2 instance configuration in the Elastic Beanstalk console\.
 
@@ -27,23 +27,23 @@ You can modify your Elastic Beanstalk environment's Amazon EC2 instance configur
 
 1. Choose **Configuration**\.
 
-1. In the **Capacity** configuration category, choose **Modify**\. Make changes to settings in this category, and then choose **Continue**\. For setting descriptions, see the section [Capacity Category Settings](#using-features.managing.ec2.console.capacity) on this page\.  
+1. In the **Capacity** configuration category, choose **Modify**\. Make changes to settings in this category, and then choose **Continue**\. For setting descriptions, see the section [Capacity category settings](#using-features.managing.ec2.console.capacity) on this page\.  
 ![\[Elastic Beanstalk Auto Scaling configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-capacity.png)
 
-1. In the **Instances** configuration category, choose **Modify**\. Make changes to settings in this category, and then choose **Apply**\. For setting descriptions, see the section [Instances Category Settings](#using-features.managing.ec2.console.instances) on this page\.  
-![\[Elastic Beanstalk Instances configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-instances.png)
+1. In the **Instances** configuration category, choose **Modify**\. Make changes to settings in this category, and then choose **Apply**\. For setting descriptions, see the section [Instances category settings](#using-features.managing.ec2.console.instances) on this page\.  
+![\[Elastic Beanstalk instances configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-instances.png)
 
-### Capacity Category Settings<a name="using-features.managing.ec2.console.capacity"></a>
+### Capacity category settings<a name="using-features.managing.ec2.console.capacity"></a>
 
 The following settings related to Amazon EC2 instances are available in the **Capacity** configuration category\.
 
 **Topics**
-+ [Instance Type](#using-features.managing.ec2.instancetypes)
++ [Instance type](#using-features.managing.ec2.instancetypes)
 + [AMI ID](#using-features.managing.ec2.customami)
 
-![\[Amazon EC2 instance settings on Elastic Beanstalk Capacity configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-ec2-capacity-page.png)
+![\[Amazon EC2 instance settings on Elastic Beanstalk capacity configuration window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-ec2-capacity-page.png)
 
-#### Instance Type<a name="using-features.managing.ec2.instancetypes"></a>
+#### Instance type<a name="using-features.managing.ec2.instancetypes"></a>
 
 The **Instance type** setting determines the type of Amazon EC2 instance launched to run your application\. Choose an instance that is powerful enough to run your application under load, but not so powerful that it's idle most of the time\. For development purposes, the t2 family of instances provides a moderate amount of power with the ability to burst for short periods of time\.
 
@@ -51,7 +51,7 @@ For large\-scale, high\-availability applications, use a pool of instances to en
 
 For more information about Amazon EC2 instance families and types, see [Instance Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon Elastic Compute Cloud User Guide*\. 
 
-When you enable Spot Instance requests for your environment, this configuration page shows a list of **Instance types** instead of a single setting\. You can select one or more instance types for your Spot Instances\. For details, see [Spot Instance Support](using-features.managing.as.md#environments-cfg-autoscaling-spot)\.
+When you enable Spot Instance requests for your environment, this configuration page shows a list of **Instance types** instead of a single setting\. You can select one or more instance types for your Spot Instances\. For details, see [Spot instance Support](using-features.managing.as.md#environments-cfg-autoscaling-spot)\.
 
 #### AMI ID<a name="using-features.managing.ec2.customami"></a>
 
@@ -59,24 +59,24 @@ The Amazon Machine Image \(AMI\) is the Amazon Linux or Windows Server machine i
 
 Elastic Beanstalk selects a default AMI for your environment based on the region, platform, and instance type that you choose\. If you have created a [custom AMI](using-features.customenv.md), replace the default AMI ID with yours\.
 
-### Instances Category Settings<a name="using-features.managing.ec2.console.instances"></a>
+### Instances category settings<a name="using-features.managing.ec2.console.instances"></a>
 
 The following settings related to Amazon EC2 instances are available in the **Instances** configuration category\.
 
 **Topics**
-+ [Monitoring Interval](#using-features.managing.ec2.monitoring-interval)
-+ [Root Volume \(Boot Device\)](#using-features.managing.ec2.rootvolume)
-+ [Security Groups](#using-features.managing.ec2.securitygroups)
++ [Monitoring interval](#using-features.managing.ec2.monitoring-interval)
++ [Root volume \(boot device\)](#using-features.managing.ec2.rootvolume)
++ [Security groups](#using-features.managing.ec2.securitygroups)
 
-![\[Amazon EC2 instance settings on Elastic Beanstalk Instances configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-ec2-instances-page.png)
+![\[Amazon EC2 instance settings on Elastic Beanstalk instances configuration window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-ec2-instances-page.png)
 
-#### Monitoring Interval<a name="using-features.managing.ec2.monitoring-interval"></a>
+#### Monitoring interval<a name="using-features.managing.ec2.monitoring-interval"></a>
 
 By default, the instances in your environment publish [basic health metrics](using-features.healthstatus.md) to CloudWatch at five\-minute intervals at no additional cost\.
 
 For more detailed reporting, you can set the **Monitoring interval** to **1 minute** to increase the frequency with which the resources in your environment publish [basic health metrics](using-features.healthstatus.md#monitoring-basic-cloudwatch) to CloudWatch\. Amazon CloudWatch service charges apply for one\-minute interval metrics\. See [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) for more information\.
 
-#### Root Volume \(Boot Device\)<a name="using-features.managing.ec2.rootvolume"></a>
+#### Root volume \(boot device\)<a name="using-features.managing.ec2.rootvolume"></a>
 
 Each instance in your environment is configured with a root volume\. The root volume is the Amazon EBS block device attached to the instance to store the operating system, libraries, scripts, and your application source code\. By default, all platforms use general\-purpose SSD block devices for storage\.
 
@@ -84,7 +84,7 @@ You can modify **Root volume type** to use magnetic storage or provisioned IOPS 
 
 For more information, see [Amazon EBS Volume Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) and [Amazon EBS Product Details](https://aws.amazon.com/ebs/details/)\.
 
-#### Security Groups<a name="using-features.managing.ec2.securitygroups"></a>
+#### Security groups<a name="using-features.managing.ec2.securitygroups"></a>
 
 The security groups attached to your instances determine which traffic is allowed to reach the instances \(ingress\), and which traffic is allowed to leave the instances \(egress\)\. Elastic Beanstalk creates a security group that allows traffic from the load balancer on the standard ports for HTTP \(80\) and HTTPS \(443\)\.
 
@@ -96,7 +96,7 @@ A safer approach would be to create a separate security group, attach it to envi
 
 For more information on Amazon Amazon EC2 security groups, see [Amazon EC2 Security Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) in the *Amazon Elastic Compute Cloud User Guide*\.
 
-## The aws:autoscaling:launchconfiguration Namespace<a name="using-features.managing.ec2.namespace"></a>
+## The aws:autoscaling:launchconfiguration namespace<a name="using-features.managing.ec2.namespace"></a>
 
 You can use the [configuration options](command-options.md) in the `[aws:autoscaling:launchconfiguration](command-options-general.md#command-options-general-autoscalinglaunchconfiguration)` namespace to configure your environment's instances, including additional options that are not available in the console\.
 
@@ -116,6 +116,6 @@ option_settings:
 `BlockDeviceMappings` lets you configure additional block devices for your instances\. For more information, see [Block Device Mapping](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html) in the *Amazon Elastic Cloud Computer User Guide*\.
 
 **Note**  
-The `InstanceType` option is obsolete\. It's replaced by the newer and more powerful `InstanceTypes` option in the [`aws:ec2:instances`](command-options-general.md#command-options-general-ec2instances) namespace\. The new option allows you to specify a list of one or more instance types for your environment\. The first value on that list is equivalent to the value of the `InstanceType` option included in the `aws:autoscaling:launchconfiguration` namespace described here\. The recommended way to specify instance types is by using the new option\. If specified, the new option takes precedence over the old one\. For more information, see [The aws:ec2:instances Namespace](using-features.managing.as.md#environments-cfg-autoscaling-namespace.instances)\.
+The `InstanceType` option is obsolete\. It's replaced by the newer and more powerful `InstanceTypes` option in the [`aws:ec2:instances`](command-options-general.md#command-options-general-ec2instances) namespace\. The new option allows you to specify a list of one or more instance types for your environment\. The first value on that list is equivalent to the value of the `InstanceType` option included in the `aws:autoscaling:launchconfiguration` namespace described here\. The recommended way to specify instance types is by using the new option\. If specified, the new option takes precedence over the old one\. For more information, see [The aws:ec2:instances namespace](using-features.managing.as.md#environments-cfg-autoscaling-namespace.instances)\.
 
-The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended values](command-options.md#configuration-options-recommendedvalues) for details\.

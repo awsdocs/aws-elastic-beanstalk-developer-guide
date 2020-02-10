@@ -1,10 +1,10 @@
-# Step 4: Configure Your Environment<a name="GettingStarted.EditConfig"></a>
+# Step 4: Configure your environment<a name="GettingStarted.EditConfig"></a>
 
 You can configure your environment to better suit your application\. For example, if you have a compute\-intensive application, you can change the type of Amazon Elastic Compute Cloud \(Amazon EC2\) instance that is running your application\. To apply configuration changes, Elastic Beanstalk performs an environment update\.
 
 Some configuration changes are simple and happen quickly\. Some changes require deleting and recreating AWS resources, which can take several minutes\. When you change configuration settings, Elastic Beanstalk warns you about potential application downtime\. 
 
-## Make a Configuration Change<a name="GettingStarted.EditConfig.Edit"></a>
+## Make a configuration change<a name="GettingStarted.EditConfig.Edit"></a>
 
 In this example of a configuration change, you edit your environment's capacity settings\. You configure a load balanced, automatically scaling environment that has between two and four Amazon EC2 instances in its Auto Scaling group, and then you verify that the change occurred\. Elastic Beanstalk creates an additional Amazon EC2 instance, adding to the single instance that it created initially\. Then, Elastic Beanstalk associates both instances with the environment's load balancer\. As a result, your application's responsiveness is improved and its availability is increased\.
 
@@ -33,7 +33,7 @@ In this example of a configuration change, you edit your environment's capacity 
 
    The environment update can take a few minutes\. To find out that it's complete, look for the event **Successfully deployed new configuration to environment** in the event list\. This confirms that the Auto Scaling minimum instance count has been set to 2\. Elastic Beanstalk automatically launches the second instance\. 
 
-## Verify the Configuration Change<a name="GettingStarted.EditConfig.Verify"></a>
+## Verify the configuration change<a name="GettingStarted.EditConfig.Verify"></a>
 
 When the environment update is complete and the environment is ready, verify your change\.
 
@@ -44,4 +44,4 @@ When the environment update is complete and the environment is ready, verify you
 1. Look at the **Enhanced Health Overview** page\.
 
    You can see that the **Total** number of instances is **2**\. You can also see that two Amazon EC2 instances are listed under the **Overall** line\. Your environment capacity has increased to two instances\.  
-![\[Enhanced Health Overview page on the Elastic Beanstalk Console showing two Amazon EC2 instances\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-health.png)
+![\[Enhanced health overview page on the Elastic Beanstalk console showing two Amazon EC2 instances\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-health.png)

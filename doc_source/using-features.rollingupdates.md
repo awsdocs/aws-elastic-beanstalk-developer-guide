@@ -1,4 +1,4 @@
-# Elastic Beanstalk Rolling Environment Configuration Updates<a name="using-features.rollingupdates"></a>
+# Elastic Beanstalk rolling environment configuration updates<a name="using-features.rollingupdates"></a>
 
 When a [configuration change requires replacing instances](environments-updating.md), Elastic Beanstalk can perform the update in batches to avoid downtime while the change is propagated\. During a rolling update, capacity is only reduced by the size of a single batch, which you can configure\. Elastic Beanstalk takes one batch of instances out of service, terminates them, and then launches a batch with the new configuration\. After the new batch starts serving requests, Elastic Beanstalk moves on to the next batch\.
 
@@ -14,9 +14,9 @@ If the rolling update process fails, Elastic Beanstalk starts another rolling up
 
 A failed rollback ends the update process and leaves your environment in an unhealthy state\. Unprocessed batches are still running instances with the old configuration, while any batches that completed successfully have the new configuration\. To fix an environment after a failed rollback, first resolve the underlying issue that caused the update to fail, and then initiate another environment update\.
 
-An alternative method is to deploy the new version of your application to a different environment and then perform a CNAME swap to redirect traffic with zero downtime\. See [Blue/Green Deployments with Elastic Beanstalk](using-features.CNAMESwap.md) for more information\.
+An alternative method is to deploy the new version of your application to a different environment and then perform a CNAME swap to redirect traffic with zero downtime\. See [Blue/Green deployments with Elastic Beanstalk](using-features.CNAMESwap.md) for more information\.
 
-## Rolling Updates versus Rolling Deployments<a name="environments-cfg-rollingupdates-deployments"></a>
+## Rolling updates versus rolling deployments<a name="environments-cfg-rollingupdates-deployments"></a>
 
 Rolling updates occur when you change settings that require new Amazon EC2 instances to be provisioned for your environment\. This includes changes to the Auto Scaling group configuration, such as instance type and key\-pair settings, and changes to VPC settings\. In a rolling update, each batch of instances is terminated before a new batch is provisioned to replace it\.
 
@@ -26,7 +26,7 @@ The exception to this is if you change settings that require instance replacemen
 
 Anytime new instances are provisioned as part of an environment update, there is a deployment phase where your application's source code is deployed to the new instances and any configuration settings that modify the operating system or software on the instances are applied\. [Deployment health check settings](using-features.rolling-version-deploy.md#environments-cfg-rollingdeployments-console) \(**Ignore health check**, **Healthy threshold**, and **Command timeout**\) also apply to health\-based rolling updates and immutable updates during the deployment phase\.
 
-## Configuring Rolling Updates<a name="rollingupdates-configure"></a>
+## Configuring rolling updates<a name="rollingupdates-configure"></a>
 
 You can enable and configure rolling updates in the Elastic Beanstalk console\.
 
@@ -97,4 +97,4 @@ option_settings:
 
 `Timeout` and `PauseTime` values must be specified in [ISO8601 duration](http://en.wikipedia.org/wiki/ISO_8601#Durations): `PT#H#M#S`, where each \# is the number of hours, minutes, or seconds, respectively\.
 
-The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended values](command-options.md#configuration-options-recommendedvalues) for details\.

@@ -1,13 +1,13 @@
 # Example: ElastiCache<a name="customize-environment-resources-elasticache"></a>
 
 The following samples add an Amazon ElastiCache cluster to EC2\-Classic and EC2\-VPC \(both default and custom [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\) platforms\. For more information about these platforms and how you can determine which ones EC2 supports for your region and your AWS account, see [https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html)\. Then refer to the section in this topic that applies to your platform\.
-+ [EC2\-Classic Platforms](#customize-environment-resources-elasticache-classic)
-+ [EC2\-VPC \(Default\)](#customize-environment-resources-elasticache-defaultvpc)
-+ [EC2\-VPC \(Custom\)](#customize-environment-resources-elasticache-targetedvpc)
++ [EC2\-classic platforms](#customize-environment-resources-elasticache-classic)
++ [EC2\-VPC \(default\)](#customize-environment-resources-elasticache-defaultvpc)
++ [EC2\-VPC \(custom\)](#customize-environment-resources-elasticache-targetedvpc)
 
-## EC2\-Classic Platforms<a name="customize-environment-resources-elasticache-classic"></a>
+## EC2\-classic platforms<a name="customize-environment-resources-elasticache-classic"></a>
 
-This sample adds an Amazon ElastiCache cluster to an environment with instances launched into the EC2\-Classic platform\. All of the properties that are listed in this example are the minimum required properties that must be set for each resource type\. You can download the example at [ElastiCache Example](https://elasticbeanstalk.s3.amazonaws.com/extensions/ElastiCache.config)\. 
+This sample adds an Amazon ElastiCache cluster to an environment with instances launched into the EC2\-Classic platform\. All of the properties that are listed in this example are the minimum required properties that must be set for each resource type\. You can download the example at [ElastiCache example](https://elasticbeanstalk.s3.amazonaws.com/extensions/ElastiCache.config)\. 
 
 **Note**  
 This example creates AWS resources, which you might be charged for\. For more information about AWS pricing, see [https://aws.amazon.com/pricing/](https://aws.amazon.com/pricing/)\. Some services are part of the AWS Free Usage Tier\. If you are a new customer, you can test drive these services for free\. See [https://aws.amazon.com/free/](https://aws.amazon.com/free/) for more information\.
@@ -75,7 +75,7 @@ option_settings:
 
 These lines tell Elastic Beanstalk to get the values for the **CacheNodeType, NumCacheNodes, and Engine** properties from the **CacheNodeType, NumCacheNodes, and Engine** values in a config file \(options\.config in our example\) that contains an option\_settings section with an **aws:elasticbeanstalk:customoption** section that contains a name\-value pair that contains the actual value to use\. In the example above, this means cache\.m1\.small, 1, and memcached would be used for the values\. For more information about `Fn::GetOptionSetting`, see [Functions](ebextensions-functions.md)\.
 
-## EC2\-VPC \(Default\)<a name="customize-environment-resources-elasticache-defaultvpc"></a>
+## EC2\-VPC \(default\)<a name="customize-environment-resources-elasticache-defaultvpc"></a>
 
 This sample adds an Amazon ElastiCache cluster to an environment with instances launched into the EC2\-VPC platform\. Specifically, the information in this section applies to a scenario where EC2 launches instances into the default VPC\. All of the properties in this example are the minimum required properties that must be set for each resource type\. For more information about default VPCs, see [Your Default VPC and Subnets](https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html)\.
 
@@ -163,7 +163,7 @@ option_settings:
 
 These lines tell Elastic Beanstalk to get the values for the `CacheNodeType`, `NumCacheNodes`, `Engine`, and `CachePort` properties from the `CacheNodeType`, `NumCacheNodes`, `Engine`, and `CachePort` values in a config file \(`options.config` in our example\)\. That file includes an `aws:elasticbeanstalk:customoption` section \(under `option_settings`\) that contains name\-value pairs with the actual values to use\. In the preceding example, `cache.t2.micro`, `1`, `redis`, and `6379` would be used for the values\. For more information about `Fn::GetOptionSetting`, see [Functions](ebextensions-functions.md)\.
 
-## EC2\-VPC \(Custom\)<a name="customize-environment-resources-elasticache-targetedvpc"></a>
+## EC2\-VPC \(custom\)<a name="customize-environment-resources-elasticache-targetedvpc"></a>
 
 If you create a custom VPC on the EC2\-VPC platform and specify it as the VPC into which EC2 launches instances, the process of adding an Amazon ElastiCache cluster to your environment differs from that of a default VPC\. The main difference is that you must create a subnet group for the ElastiCache cluster\. All of the properties in this example are the minimum required properties that must be set for each resource type\.
 

@@ -1,4 +1,4 @@
-# Setting Configuration Options before Environment Creation<a name="environment-configuration-methods-before"></a>
+# Setting configuration options before environment creation<a name="environment-configuration-methods-before"></a>
 
 AWS Elastic Beanstalk supports a large number of [configuration options](command-options.md) that let you modify the settings that are applied to resources in your environment\. Several of these options have default values that can be overridden to customize your environment\. Other options can be configured to enable additional features\.
 
@@ -11,15 +11,15 @@ Settings defined in configuration files and saved configurations have lower prec
 
 Options can also be specified in a JSON document and provided directly to Elastic Beanstalk when you create or update an environment with the EB CLI or AWS CLI\. Options provided directly to Elastic Beanstalk in this manner override all other methods\.
 
-For a full list of available options, see [Configuration Options](command-options.md)\.
+For a full list of available options, see [Configuration options](command-options.md)\.
 
 **Topics**
-+ [Configuration Files \(`.ebextensions`\)](#configuration-options-before-ebextensions)
-+ [Saved Configurations](#configuration-options-before-savedconfig)
-+ [JSON Document](#configuration-options-before-json)
-+ [EB CLI Configuration](#configuration-options-before-configyml)
++ [Configuration files \(`.ebextensions`\)](#configuration-options-before-ebextensions)
++ [Saved configurations](#configuration-options-before-savedconfig)
++ [JSON document](#configuration-options-before-json)
++ [EB CLI configuration](#configuration-options-before-configyml)
 
-## Configuration Files \(`.ebextensions`\)<a name="configuration-options-before-ebextensions"></a>
+## Configuration files \(`.ebextensions`\)<a name="configuration-options-before-ebextensions"></a>
 
 Use `.ebextensions` to configure options that are required to make your application work, and provide default values for other options that can be overridden at a higher level of [precedence](command-options.md#configuration-options-precedence)\. Options specified in `.ebextensions` have the lowest level of precedence and are overridden by settings at any other level\.
 
@@ -68,18 +68,18 @@ YAML relies on consistent indentation\. Match the indentation level when replaci
 
 Include the `.ebextensions` directory in your [Application Source Bundle](applications-sourcebundle.md) and deploy it to a new or existing Elastic Beanstalk environment\.
 
-Configuration files support several sections in addition to `option_settings` for customizing the software and files that run on the servers in your environment\. For more information, see [Customizing Software on Linux Servers](customize-containers-ec2.md) and [Customizing Software on Windows Servers](customize-containers-windows-ec2.md)\.
+Configuration files support several sections in addition to `option_settings` for customizing the software and files that run on the servers in your environment\. For more information, see [Customizing software on Linux servers](customize-containers-ec2.md) and [Customizing software on Windows servers](customize-containers-windows-ec2.md)\.
 
-## Saved Configurations<a name="configuration-options-before-savedconfig"></a>
+## Saved configurations<a name="configuration-options-before-savedconfig"></a>
 
 Create a saved configuration to save settings that you have applied to an existing environment during or after environment creation by using the Elastic Beanstalk console, EB CLI, or AWS CLI\. Saved configurations belong to an application and can be applied to new or existing environments for that application\.
 
 **Topics**
-+ [Elastic Beanstalk Console](#configuration-options-before-savedconfig-console)
++ [Elastic Beanstalk console](#configuration-options-before-savedconfig-console)
 + [EB CLI](#configuration-options-before-savedconfig-ebcli)
 + [AWS CLI](#configuration-options-before-savedconfig-awscli)
 
-### Elastic Beanstalk Console<a name="configuration-options-before-savedconfig-console"></a>
+### Elastic Beanstalk console<a name="configuration-options-before-savedconfig-console"></a>
 
 **To create a saved configuration \(Elastic Beanstalk console\)**
 
@@ -160,7 +160,7 @@ Create a saved configuration from a running environment with `aws elasticbeansta
 
 Elastic Beanstalk saves the configuration to your Elastic Beanstalk bucket in Amazon S3\.
 
-## JSON Document<a name="configuration-options-before-json"></a>
+## JSON document<a name="configuration-options-before-json"></a>
 
 If you use the AWS CLI to create and update environments, you can also provide configuration options in JSON format\. A library of configuration files in JSON is useful if you use the AWS CLI to create and manage environments\.
 
@@ -178,7 +178,7 @@ For example, the following JSON document sets the application's health check url
 ]
 ```
 
-## EB CLI Configuration<a name="configuration-options-before-configyml"></a>
+## EB CLI configuration<a name="configuration-options-before-configyml"></a>
 
 In addition to supporting saved configurations and direct environment configuration with eb config commands, the EB CLI has a configuration file with an option named `default_ec2_keyname` that you can use to specify an Amazon EC2 key pair for SSH access to the instances in your environment\. The EB CLI uses this option to set the `EC2KeyName` configuration option in the `aws:autoscaling:launchconfiguration` namespace\. 
 

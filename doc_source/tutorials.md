@@ -1,22 +1,22 @@
-# Tutorials and Samples<a name="tutorials"></a>
+# Tutorials and samples<a name="tutorials"></a>
 
 Language and framework specific tutorials are spread throughout the AWS Elastic Beanstalk Developer Guide\. New and updated tutorials are added to this list as they are published\. The most recent updates are shown first\.
 
 These tutorials are targeted at intermediate users and may not contain instructions for basic steps such as signing up for AWS\. If this is your first time using AWS or Elastic Beanstalk, check out the [Getting Started walkthrough](GettingStarted.md) to get your first Elastic Beanstalk environment up and running\.
-+ **Ruby on Rails** \- [Deploying a Rails Application to Elastic Beanstalk](ruby-rails-tutorial.md)
-+ **Ruby and Sinatra** \- [Deploying a Sinatra Application to Elastic Beanstalk](ruby-sinatra-tutorial.md)
-+ **PHP and MySQL HA Configuration** \- [Deploying a High\-Availability PHP Application with an External Amazon RDS Database to Elastic Beanstalk](php-ha-tutorial.md)
-+ **PHP and Laravel** \- [Deploying a Laravel Application to Elastic Beanstalk](php-laravel-tutorial.md)
-+ **PHP and CakePHP** \- [Deploying a CakePHP Application to Elastic Beanstalk](php-cakephp-tutorial.md)
-+ **PHP and Drupal HA Configuration** \- [Deploying a High\-Availability Drupal Website with an External Amazon RDS Database to Elastic Beanstalk](php-hadrupal-tutorial.md)
-+ **PHP and WordPress HA Configuration** \- [Deploying a High\-Availability WordPress Website with an External Amazon RDS Database to Elastic Beanstalk](php-hawordpress-tutorial.md)
-+ **Node\.js with DynamoDB HA Configuration** \- [Deploying a Node\.js Application with DynamoDB to Elastic Beanstalk](nodejs-dynamodb-tutorial.md)
-+ **ASP\.NET Core** \- [Deploying an ASP\.NET Core Application with Elastic Beanstalk](dotnet-core-tutorial.md)
-+ **Python and Flask** \- [Deploying a Flask Application to Elastic Beanstalk](create-deploy-python-flask.md)
-+ **Python and Django** \- [Deploying a Django Application to Elastic Beanstalk](create-deploy-python-django.md)
-+ **Node\.js and Express** \- [Deploying an Express Application to Elastic Beanstalk](create_deploy_nodejs_express.md)
-+ **Docker, PHP and nginx** \- [Multicontainer Docker Environments with the Elastic Beanstalk console](create_deploy_docker_ecstutorial.md)
-+ **\.NET Framework \(IIS and ASP\.NET\)** \- [Tutorial: How to Deploy a \.NET Sample Application Using Elastic Beanstalk](create_deploy_NET.quickstart.md)
++ **Ruby on Rails** \- [Deploying a rails application to Elastic Beanstalk](ruby-rails-tutorial.md)
++ **Ruby and Sinatra** \- [Deploying a sinatra application to Elastic Beanstalk](ruby-sinatra-tutorial.md)
++ **PHP and MySQL HA Configuration** \- [Deploying a high\-availability PHP application with an external Amazon RDS database to Elastic Beanstalk](php-ha-tutorial.md)
++ **PHP and Laravel** \- [Deploying a Laravel application to Elastic Beanstalk](php-laravel-tutorial.md)
++ **PHP and CakePHP** \- [Deploying a CakePHP application to Elastic Beanstalk](php-cakephp-tutorial.md)
++ **PHP and Drupal HA Configuration** \- [Deploying a high\-availability Drupal website with an external Amazon RDS database to Elastic Beanstalk](php-hadrupal-tutorial.md)
++ **PHP and WordPress HA Configuration** \- [Deploying a high\-availability WordPress website with an external Amazon RDS database to Elastic Beanstalk](php-hawordpress-tutorial.md)
++ **Node\.js with DynamoDB HA Configuration** \- [Deploying a Node\.js application with DynamoDB to Elastic Beanstalk](nodejs-dynamodb-tutorial.md)
++ **ASP\.NET Core** \- [Deploying an ASP\.NET core application with Elastic Beanstalk](dotnet-core-tutorial.md)
++ **Python and Flask** \- [Deploying a flask application to Elastic Beanstalk](create-deploy-python-flask.md)
++ **Python and Django** \- [Deploying a Django application to Elastic Beanstalk](create-deploy-python-django.md)
++ **Node\.js and Express** \- [Deploying an Express application to Elastic Beanstalk](create_deploy_nodejs_express.md)
++ **Docker, PHP and nginx** \- [Multicontainer Docker environments with the Elastic Beanstalk console](create_deploy_docker_ecstutorial.md)
++ **\.NET Framework \(IIS and ASP\.NET\)** \- [Tutorial: How to deploy a \.NET sample application using Elastic Beanstalk](create_deploy_NET.quickstart.md)
 
 You can download the sample applications used by Elastic Beanstalk when you create an environment without providing a source bundle with the following links:
 + **Single Container Docker** – [docker\-singlecontainer\-v1\.zip](samples/docker-singlecontainer-v1.zip)

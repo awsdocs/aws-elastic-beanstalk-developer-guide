@@ -1,10 +1,10 @@
-# Rebuilding Elastic Beanstalk Environments<a name="environment-management-rebuild"></a>
+# Rebuilding Elastic Beanstalk environments<a name="environment-management-rebuild"></a>
 
 Your AWS Elastic Beanstalk environment can become unusable if you don't use Elastic Beanstalk functionality to modify or terminate the environment's underlying AWS resources\. If this happens, you can **rebuild** the environment to attempt to restore it to a working state\. Rebuilding an environment terminates all of its resources and replaces them with new resources with the same configuration\.
 
 You can also rebuild terminated environments within six weeks \(42 days\) of their termination\. When you rebuild, Elastic Beanstalk attempts to create a new environment with the same name, ID, and configuration\.
 
-## Rebuilding a Running Environment<a name="environment-management-rebuild-running"></a>
+## Rebuilding a running environment<a name="environment-management-rebuild-running"></a>
 
 You can rebuild an environment through the Elastic Beanstalk console or by using the `RebuildEnvironment` API\.
 
@@ -26,13 +26,13 @@ To rebuild a running environment with the Elastic Beanstalk API, use the [https:
 $ aws elasticbeanstalk rebuild-environment --environment-id e-vdnftxubwq
 ```
 
-## Rebuilding a Terminated Environment<a name="environment-management-rebuild-terminated"></a>
+## Rebuilding a terminated environment<a name="environment-management-rebuild-terminated"></a>
 
 You can rebuild and restore a terminated environment by using the Elastic Beanstalk console, the EB CLI, or the `RebuildEnvironment` API\.
 
 **Note**  
 Unless you are using your own custom domain name with your terminated environment, the environment uses a subdomain of elasticbeanstalk\.com\. These subdomains are shared within an Elastic Beanstalk region\. Therefore, they can be used by any environment created by any customer in the same region\. While your environment was terminated, another environment could use its subdomain\. In this case, the rebuild would fail\.  
-You can avoid this issue by using a custom domain\. See [Your Elastic Beanstalk Environment's Domain Name](customdomains.md) for details\.
+You can avoid this issue by using a custom domain\. See [Your Elastic Beanstalk environment's Domain name](customdomains.md) for details\.
 
 Recently terminated environments appear in the application overview for up to an hour\. During this time, you can view events for the environment in its [dashboard](environments-console.md), and use the **Restore environment** [action](environments-console.md#environments-dashboard-actions) to rebuild it\.
 

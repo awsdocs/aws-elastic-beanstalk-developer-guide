@@ -1,10 +1,10 @@
-# Launching and Connecting to an External Amazon RDS Instance in EC2 Classic<a name="rds-external-ec2classic"></a>
+# Launching and connecting to an external Amazon RDS instance in EC2 classic<a name="rds-external-ec2classic"></a>
 
 If you use EC2 Classic \(no VPC\) with AWS Elastic Beanstalk, the procedure changes slightly due to differences in how security groups work\. In EC2 Classic, DB instances can't use EC2 security groups, so they get a DB security group that works only with Amazon RDS\.
 
 You can add rules to a DB security group that allow ingress from EC2 security groups, but you cannot attach a DB security group to your environment's Auto Scaling group\. To avoid creating a dependency between the DB security group and your environment, you must create a third security group in Amazon EC2, add a rule in the DB security group to grant ingress to the new security group, and then assign it to the Auto Scaling group in your Elastic Beanstalk environment\.
 
-**To launch an RDS instance in EC2 Classic \(no VPC\)**
+**To launch an RDS instance in EC2 classic \(no VPC\)**
 
 1. Open the [RDS management console](https://console.aws.amazon.com/rds/home)\.
 
@@ -103,13 +103,13 @@ Next, pass the connection information to your environment by using environment p
 1. Choose **Apply**
 
 If you haven't programmed your application to read environment properties and construct a connection string yet, see the following language\-specific topics for instructions:
-+ Java SE – [Connecting to a Database \(Java SE Platforms\)](java-rds.md#java-rds-javase)
-+ Java with Tomcat – [Connecting to a Database \(Tomcat Platforms\)](java-rds.md#java-rds-tomcat)
-+ Node\.js – [Connecting to a Database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
-+ \.NET – [Connecting to a Database](create_deploy_NET.rds.md#dotnet-rds-connect)
-+ PHP – [Connecting to a Database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
-+ Python – [Connecting to a Database](create-deploy-python-rds.md#python-rds-connect)
-+ Ruby – [Connecting to a Database](create_deploy_Ruby.rds.md#ruby-rds-connect)
++ Java SE – [Connecting to a database \(Java SE platforms\)](java-rds.md#java-rds-javase)
++ Java with Tomcat – [Connecting to a database \(Tomcat platforms\)](java-rds.md#java-rds-tomcat)
++ Node\.js – [Connecting to a database](create-deploy-nodejs.rds.md#nodejs-rds-connect)
++ \.NET – [Connecting to a database](create_deploy_NET.rds.md#dotnet-rds-connect)
++ PHP – [Connecting to a database with a PDO or MySQLi](create_deploy_PHP.rds.md#php-rds-connect)
++ Python – [Connecting to a database](create-deploy-python-rds.md#python-rds-connect)
++ Ruby – [Connecting to a database](create_deploy_Ruby.rds.md#ruby-rds-connect)
 
 Finally, depending on when your application reads environment variables, you might need to restart the application server on the instances in your environment\.
 

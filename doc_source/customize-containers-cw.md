@@ -1,24 +1,24 @@
-# Example: Using Custom Amazon CloudWatch Metrics<a name="customize-containers-cw"></a>
+# Example: Using custom Amazon CloudWatch metrics<a name="customize-containers-cw"></a>
 
 Amazon CloudWatch is a web service that enables you to monitor, manage, and publish various metrics, as well as configure alarm actions based on data from metrics\. You can define custom metrics for your own use, and Elastic Beanstalk will push those metrics to Amazon CloudWatch\. Once Amazon CloudWatch contains your custom metrics, you can view those in the Amazon CloudWatch console\.
 
 The Amazon CloudWatch Monitoring Scripts for Linux are available to demonstrate how to produce and consume Amazon CloudWatch custom metrics\. The scripts comprise a fully functional example that reports memory, swap, and disk space utilization metrics for an Amazon Elastic Compute Cloud \(Amazon EC2\) Linux instance\. For more information about the Amazon CloudWatch Monitoring Scripts, go to [Amazon CloudWatch Monitoring Scripts for Linux](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/mon-scripts.html) in the *Amazon CloudWatch Developer Guide*\.
 
 **Note**  
-Elastic Beanstalk [Enhanced Health Reporting](health-enhanced.md) has native support for publishing a wide range of instance and environment metrics to CloudWatch\. See [Publishing Amazon CloudWatch Custom Metrics for an Environment](health-enhanced-cloudwatch.md) for details\.
+Elastic Beanstalk [Enhanced Health Reporting](health-enhanced.md) has native support for publishing a wide range of instance and environment metrics to CloudWatch\. See [Publishing Amazon CloudWatch custom metrics for an environment](health-enhanced-cloudwatch.md) for details\.
 
 **Topics**
-+ [\.ebextensions Configuration File](#customize-containers-cw-update-roles)
++ [\.Ebextensions configuration file](#customize-containers-cw-update-roles)
 + [Permissions](#customize-containers-cw-policy)
-+ [Viewing Metrics in the CloudWatch Console](#customize-containers-cw-console)
++ [Viewing metrics in the CloudWatch console](#customize-containers-cw-console)
 
-## \.ebextensions Configuration File<a name="customize-containers-cw-update-roles"></a>
+## \.Ebextensions configuration file<a name="customize-containers-cw-update-roles"></a>
 
 This example uses commands and option settings in an \.ebextensions configuration file to download, install, and run monitoring scripts provided by Amazon CloudWatch\.
 
 To use this sample, save it to a file named `cloudwatch.config` in a directory named `.ebextensions` at the top level of your project directory, then deploy your application using the Elastic Beanstalk console \(include the \.ebextensions directory in your [source bundle](applications-sourcebundle.md)\) or the [EB CLI](eb-cli3.md)\.
 
-For more information about configuration files, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.
+For more information about configuration files, see [Advanced environment customization with configuration files \(`.ebextensions`\)](ebextensions.md)\.
 
 **\.ebextensions/cloudwatch\.config**
 
@@ -97,7 +97,7 @@ Copy and paste the following text into the policy document:
 
    For more information about managing policies, see [Working with Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html) in the *IAM User Guide*\.
 
-## Viewing Metrics in the CloudWatch Console<a name="customize-containers-cw-console"></a>
+## Viewing metrics in the CloudWatch console<a name="customize-containers-cw-console"></a>
 
 After deploying the CloudWatch configuration file to your environment, check the [Amazon CloudWatch console](https://console.aws.amazon.com/cloudwatch/home) to view your metrics\. Custom metrics will have the prefix **Linux System**\.
 

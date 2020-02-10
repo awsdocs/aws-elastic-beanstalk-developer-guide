@@ -1,4 +1,4 @@
-# Packer Instance Cleanup<a name="custom-platforms-packercleanup"></a>
+# Packer instance cleanup<a name="custom-platforms-packercleanup"></a>
 
 In certain circumstances, such as killing the Packer builder process before it is finished, instances launched by Packer are not cleaned up\. These instances are not part of the Elastic Beanstalk environment and can be viewed and terminated only by using the Amazon EC2 service\.
 

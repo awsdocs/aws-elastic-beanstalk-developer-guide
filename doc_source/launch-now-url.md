@@ -6,7 +6,7 @@ A Launch Now URL gives Elastic Beanstalk the minimum information required to cre
 
 A Launch Now URL uses standard URL syntax\. For more information, see [RFC 3986 \- Uniform Resource Identifier \(URI\): Generic Syntax](http://tools.ietf.org/html/rfc3986)\.
 
-## URL Parameters<a name="launch-now-url.params"></a>
+## URL parameters<a name="launch-now-url.params"></a>
 
 The URL must contain the following parameters, which are case\-sensitive:
 + **region** – Specify an AWS Region\. For a list of regions supported by Elastic Beanstalk, see [AWS Elastic Beanstalk Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html) in the *AWS General Reference*\.
@@ -19,7 +19,7 @@ The URL must contain the following parameters, which are case\-sensitive:
 
     `Python`
 
-  For a description of all available platforms and their versions, see [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
+  For a description of all available platforms and their versions, see [Elastic Beanstalk supported platforms](concepts.platforms.md)\.
 
   You can use the [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/) \(AWS CLI\) to get a list of available platform versions with their respective ARNs\. The `list-platform-versions` command lists detailed information about all available platform versions\. The `--filters` argument allows you to scope down the list\. For example, you can list all platform versions of a specific language\.
 
@@ -51,9 +51,9 @@ A Launch Now URL can optionally contain the following parameters\. If you don't 
 + **sourceBundleUrl** – Specify the location of your web application source bundle in URL format\. For example, if you uploaded your source bundle to an Amazon S3 bucket, you might specify the value of the **sourceBundleUrl** parameter as `https://mybucket.s3.amazonaws.com/myobject`\.
 **Note**  
 You can specify the value of the **sourceBundleUrl** parameter as an HTTP URL, but the user's web browser will convert characters as needed by applying HTML URL encoding\.
-+ **environmentType** – Specify whether the environment is load balancing and automatically scaling or just a single instance\. For more information, see [Environment Types](using-features-managing-env-types.md)\. You can specify either `LoadBalancing` or `SingleInstance` as the parameter value\.
-+ **tierName** – Specify whether the environment supports a web application that processes web requests or a web application that runs background jobs\. For more information, see [Elastic Beanstalk Worker Environments](using-features-managing-env-tiers.md)\. You can specify either `WebServer` or `Worker`,
-+ **instanceType** – Specify a server with the characteristics \(including memory size and CPU power\) that are most appropriate to your application\. To see the instance types that are available in your Elastic Beanstalk region, see [InstanceType](command-options-general.md#option-instance-type) in [Configuration Options](command-options.md)\. To see the detailed specifications for each Amazon EC2 instance type, see [Instance Types](https://aws.amazon.com/ec2/instance-types/#instance-details)\.
++ **environmentType** – Specify whether the environment is load balancing and automatically scaling or just a single instance\. For more information, see [Environment types](using-features-managing-env-types.md)\. You can specify either `LoadBalancing` or `SingleInstance` as the parameter value\.
++ **tierName** – Specify whether the environment supports a web application that processes web requests or a web application that runs background jobs\. For more information, see [Elastic Beanstalk worker environments](using-features-managing-env-tiers.md)\. You can specify either `WebServer` or `Worker`,
++ **instanceType** – Specify a server with the characteristics \(including memory size and CPU power\) that are most appropriate to your application\. To see the instance types that are available in your Elastic Beanstalk region, see [InstanceType](command-options-general.md#option-instance-type) in [Configuration options](command-options.md)\. To see the detailed specifications for each Amazon EC2 instance type, see [Instance Types](https://aws.amazon.com/ec2/instance-types/#instance-details)\.
 + **withVpc** – Specify whether to create the environment in an Amazon VPC\. You can specify either `true` or `false`\. For more information about using Elastic Beanstalk with Amazon VPC, see [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md)\.
 + **withRds** – Specify whether to create an Amazon RDS database instance with this environment\. For more information, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\. You can specify either `true` or `false`\.
 + **rdsDBEngine** – Specify the database engine that you want to use for your Amazon EC2 instances in this environment\. You can specify `mysql`, `oracle-sel`, `sqlserver-ex`, `sqlserver-web`, or `sqlserver-se`\. The default value is `mysql`\.

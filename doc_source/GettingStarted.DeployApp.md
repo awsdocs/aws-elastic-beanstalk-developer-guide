@@ -1,4 +1,4 @@
-# Step 3: Deploy a New Version of Your Application<a name="GettingStarted.DeployApp"></a>
+# Step 3: Deploy a new version of your application<a name="GettingStarted.DeployApp"></a>
 
 Periodically, you might need to deploy a new version of your application\. You can deploy a new version at any time, as long as no other update operations are in progress on your environment\.
 

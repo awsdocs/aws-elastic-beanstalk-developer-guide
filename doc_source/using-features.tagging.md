@@ -1,6 +1,6 @@
-# Tagging Resources in Your Elastic Beanstalk Environments<a name="using-features.tagging"></a>
+# Tagging resources in your Elastic Beanstalk environments<a name="using-features.tagging"></a>
 
-You can apply tags to your AWS Elastic Beanstalk environments\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
+You can apply tags to your AWS Elastic Beanstalk environments\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging Elastic Beanstalk application resources](applications-tagging-resources.md)\.
 
 You can also use tags to manage permissions at the specific resource level within an environment\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
@@ -13,7 +13,7 @@ You can't edit these default tags\.
 
 You can specify tags when you create the Elastic Beanstalk environment\. In an existing environment, you can add or remove tags, and update the values of existing tags\. In addition to the default tags, you can add up to 47 additional tags to each environment\.
 
-## Adding Tags during Environment Creation<a name="using-features.tagging.create"></a>
+## Adding tags during environment creation<a name="using-features.tagging.create"></a>
 
 When you use the Elastic Beanstalk console to create an environment, you can specify tag keys and values on the **Tags** page of the [Create New Environment wizard](environments-create-wizard.md), as shown\.
 
@@ -35,7 +35,7 @@ $ aws elasticbeanstalk create-environment \
 
 [Saved configurations](environment-configuration-methods-before.md#configuration-options-before-savedconfig) include user\-defined tags\. When you apply a saved configuration that contains tags during environment creation, those tags are applied to the new environment, as long as you don't specify any new tags\. If you add tags to an environment using one of the preceding methods, any tags defined in the saved configuration are discarded\.
 
-## Managing Tags of an Existing Environment<a name="using-features.tagging.manage"></a>
+## Managing tags of an existing environment<a name="using-features.tagging.manage"></a>
 
 You can add, update, and delete tags in an existing Elastic Beanstalk environment\. Elastic Beanstalk applies the changes to your environment's resources\.
 

@@ -1,4 +1,4 @@
-# Terminating HTTPS on Amazon EC2 Instances Running \.NET<a name="SSLNET.SingleInstance"></a>
+# Terminating HTTPS on Amazon EC2 instances running \.NET<a name="SSLNET.SingleInstance"></a>
 
 The following [configuration file](ebextensions.md) creates and runs a Windows PowerShell script that performs the following tasks:
 + Checks for an existing HTTPS certificate binding to port 443

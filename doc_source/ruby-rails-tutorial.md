@@ -1,23 +1,23 @@
-# Deploying a Rails Application to Elastic Beanstalk<a name="ruby-rails-tutorial"></a>
+# Deploying a rails application to Elastic Beanstalk<a name="ruby-rails-tutorial"></a>
 
 Rails is an open source, model\-view\-controller \(MVC\) framework for Ruby\. This tutorial walks you through the process of generating a Rails application and deploying it to an AWS Elastic Beanstalk environment\.
 
 **Topics**
 + [Prerequisites](#ruby-rails-tutorial-prereqs)
-+ [Launch an Elastic Beanstalk Environment](#ruby-rails-tutorial-launch)
-+ [Install Rails and Generate a Website](#ruby-rails-tutorial-generate)
-+ [Configure Rails Settings](#ruby-rails-tutorial-configure)
-+ [Deploy Your Application](#ruby-rails-tutorial-deploy)
++ [Launch an Elastic Beanstalk environment](#ruby-rails-tutorial-launch)
++ [Install rails and generate a website](#ruby-rails-tutorial-generate)
++ [Configure rails settings](#ruby-rails-tutorial-configure)
++ [Deploy your application](#ruby-rails-tutorial-deploy)
 + [Cleanup](#ruby-rails-tutorial-cleanup)
-+ [Next Steps](#ruby-rails-tutorial-nextsteps)
++ [Next steps](#ruby-rails-tutorial-nextsteps)
 
 ## Prerequisites<a name="ruby-rails-tutorial-prereqs"></a>
 
-### Basic Elastic Beanstalk Knowledge<a name="ruby-rails-tutorial-prereqs-basic"></a>
+### Basic Elastic Beanstalk knowledge<a name="ruby-rails-tutorial-prereqs-basic"></a>
 
-This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
+This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
 
-### Command Line<a name="ruby-rails-tutorial-prereqs-cmdline"></a>
+### Command line<a name="ruby-rails-tutorial-prereqs-cmdline"></a>
 
 To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings preceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
 
@@ -28,16 +28,16 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-### Rails Dependencies<a name="ruby-rails-tutorial-prereqs-railsreqs"></a>
+### Rails dependencies<a name="ruby-rails-tutorial-prereqs-railsreqs"></a>
 
 The Rails framework has the following dependencies\. Be sure you have all of them installed\.
-+ **Ruby 2\.2\.2 or newer** – For installation instructions, see [Setting Up your Ruby Development Environment](ruby-development-environment.md)\.
++ **Ruby 2\.2\.2 or newer** – For installation instructions, see [Setting up your Ruby development environment](ruby-development-environment.md)\.
 
   In this tutorial we use Ruby 2\.5\.1 and the corresponding Elastic Beanstalk platform version\.
 + **Node\.js** – For installation instructions, see [Installing Node\.js via package manager](https://nodejs.org/en/download/package-manager/)\.
 + **Yarn** – For installation instructions, see [Installation](https://yarnpkg.com/lang/en/docs/install/) on the *Yarn* website\.
 
-## Launch an Elastic Beanstalk Environment<a name="ruby-rails-tutorial-launch"></a>
+## Launch an Elastic Beanstalk environment<a name="ruby-rails-tutorial-launch"></a>
 
 Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. Choose the **Ruby** platform and accept the default settings and sample code\.
 
@@ -71,7 +71,7 @@ All of these resources are managed by Elastic Beanstalk\. When you terminate you
 **Note**  
 The Amazon S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)\.
 
-## Install Rails and Generate a Website<a name="ruby-rails-tutorial-generate"></a>
+## Install rails and generate a website<a name="ruby-rails-tutorial-generate"></a>
 
 Install Rails and its dependencies with the `gem` command\.
 
@@ -118,7 +118,7 @@ Use Ctrl+C to stop
 
 Open `http://localhost:3000` in a web browser to see the default project in action\.
 
-![\[The default Rails site development page.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/ruby-rails-default.png)
+![\[The default rails site development page.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/ruby-rails-default.png)
 
 This page is only visible in development mode\. Add some content to the front page of the application to support production deployment to Elastic Beanstalk\. Use `rails generate` to create a controller, route, and view for your welcome page\. 
 
@@ -164,7 +164,7 @@ Rails.application.routes.draw do
 
 This tells Rails to route requests to the root of the website to the welcome page controller's welcome method, which renders the content in the welcome view \(`welcome.html.erb`\)\.
 
-## Configure Rails Settings<a name="ruby-rails-tutorial-configure"></a>
+## Configure rails settings<a name="ruby-rails-tutorial-configure"></a>
 
 Use the Elastic Beanstalk console to configure Rails with environment properties\. Set the `SECRET_KEY_BASE` environment property to a string of up to 256 alphanumeric characters\.
 
@@ -186,7 +186,7 @@ Rails uses this property to create keys\. Therefore you should keep it a secret 
 
 Now you're ready to deploy the site to your environment\.
 
-## Deploy Your Application<a name="ruby-rails-tutorial-deploy"></a>
+## Deploy your application<a name="ruby-rails-tutorial-deploy"></a>
 
 Create a [source bundle](applications-sourcebundle.md) containing the files created by Rails\. The following command creates a source bundle named `rails-default.zip`\.
 
@@ -226,7 +226,7 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 
-## Next Steps<a name="ruby-rails-tutorial-nextsteps"></a>
+## Next steps<a name="ruby-rails-tutorial-nextsteps"></a>
 
 For more information about Rails, visit [rubyonrails\.org](https://rubyonrails.org/)\.
 

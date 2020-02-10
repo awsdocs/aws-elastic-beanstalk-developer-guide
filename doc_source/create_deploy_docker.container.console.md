@@ -1,4 +1,4 @@
-# Configuring Docker Environments<a name="create_deploy_docker.container.console"></a>
+# Configuring Docker environments<a name="create_deploy_docker.container.console"></a>
 
 You can use the Elastic Beanstalk console to configure the software running on your environment's EC2 instances\.
 
@@ -19,12 +19,12 @@ The Log Options section has two settings:
 The **Environment Properties** section lets you specify environment variables that you can read from your application code\.
 
 **Topics**
-+ [Docker Images](#docker-images)
-+ [Configuring Additional Storage Volumes](#docker-volumes)
-+ [Reclaiming Docker Storage Space](#reclaim-docker-storage)
-+ [Configuring Managed Updates for Docker Environments](#docker-managed-updates)
++ [Docker images](#docker-images)
++ [Configuring additional storage volumes](#docker-volumes)
++ [Reclaiming Docker storage space](#reclaim-docker-storage)
++ [Configuring managed updates for Docker environments](#docker-managed-updates)
 
-## Docker Images<a name="docker-images"></a>
+## Docker images<a name="docker-images"></a>
 
 The single container and multicontainer Docker platforms for Elastic Beanstalk support the use of Docker images stored in a public or private online image repository\.
 
@@ -33,9 +33,9 @@ Specify images by name in `Dockerrun.aws.json`\. Note these conventions:
 + Images in other repositories on Docker Hub are qualified with an organization name \(for example, `amazon/amazon-ecs-agent`\)\.
 + Images in other online repositories are qualified further by a domain name \(for example, `quay.io/assemblyline/ubuntu` or `account-id.dkr.ecr.us-east-2.amazonaws.com/ubuntu:trusty`\)\. 
 
-For single container environments only, you can also build your own image during environment creation with a Dockerfile\. See [Building Custom Images with a Dockerfile](single-container-docker-configuration.md#single-container-docker-configuration.dockerfile) for details\.
+For single container environments only, you can also build your own image during environment creation with a Dockerfile\. See [Building custom images with a Dockerfile](single-container-docker-configuration.md#single-container-docker-configuration.dockerfile) for details\.
 
-### Using Images from an Amazon ECR Repository<a name="docker-images-ecr"></a>
+### Using images from an Amazon ECR repository<a name="docker-images-ecr"></a>
 
 You can store your custom Docker images in AWS with [Amazon Elastic Container Registry](https://aws.amazon.com/ecr) \(Amazon ECR\)\. When you store your Docker images in Amazon ECR, Elastic Beanstalk automatically authenticates to the Amazon ECR registry with your environment's [instance profile](concepts-roles-instance.md), so you don't need to [generate an authentication file](#docker-images-private) and upload it to Amazon Simple Storage Service \(Amazon S3\)\.
 
@@ -95,7 +95,7 @@ For the [multicontainer platform](create_deploy_docker_v2config.md), use the `im
       "image": "account-id.dkr.ecr.us-east-2.amazonaws.com/repository-name:latest",
 ```
 
-### Using Images From a Private Repository<a name="docker-images-private"></a>
+### Using images from a private repository<a name="docker-images-private"></a>
 
 To use a Docker image in a private repository hosted by an online registry, you must provide an authentication file that contains information required to authenticate with the registry\.
 
@@ -112,8 +112,8 @@ $ docker login registry-server-url
 ```
 
 **Important**  
-Beginning with Docker version 1\.7, the docker login command changed the name of the authentication file, and the format of the file\. Elastic Beanstalk requires the older `~/.dockercfg` format configuration file\.  
-With Docker version 1\.7 and later, the docker login command creates the authentication file in `~/.docker/config.json` in the following format:  
+Beginning with Docker version 1\.7, the docker login command changed the name of the authentication file, and the format of the file\. Elastic Beanstalk requires the older `~/.dockercfg` format configuration file on all Docker platform versions based on the Amazon Linux AMI\.  
+With Docker version 1\.7 and later, the docker login command creates the authentication file in `~/.docker/config.json` in the following format\.  
 
 ```
 {
@@ -124,7 +124,7 @@ With Docker version 1\.7 and later, the docker login command creates the authent
    }
 }
 ```
-With Docker version 1\.6\.2 and earlier, the docker login command creates the authentication file in `~/.dockercfg` in the following format:  
+With Docker version 1\.6\.2 and earlier, the docker login command creates the authentication file in `~/.dockercfg` in the following format\.  
 
 ```
 {
@@ -137,15 +137,15 @@ With Docker version 1\.6\.2 and earlier, the docker login command creates the au
 ```
 To convert a `config.json` file, remove the outer `auths` key, add an `email` key, and flatten the JSON document to match the old format\.
 
-Upload a copy named `.dockercfg` of the authentication file to a secure Amazon S3 bucket\. The Amazon S3 bucket must be hosted in the same region as the environment that is using it\. Elastic Beanstalk cannot download files from an Amazon S3 bucket hosted in other regions\. Grant permissions for the `s3:GetObject` operation to the IAM role in the instance profile\. For details, see [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md)\.
+Upload a copy named `.dockercfg` of the authentication file to a secure Amazon S3 bucket\. The Amazon S3 bucket must be hosted in the same AWS Region as the environment that is using it\. Elastic Beanstalk cannot download files from an Amazon S3 bucket hosted in other Regions\. Grant permissions for the `s3:GetObject` operation to the IAM role in the instance profile\. For details, see [Managing Elastic Beanstalk instance profiles](iam-instanceprofile.md)\.
 
 Include the Amazon S3 bucket information in the `Authentication` \(v1\) or `authentication` \(v2\) parameter in your `Dockerrun.aws.json` file\.
 
-For more information about the `Dockerrun.aws.json` format for single container environments, see [Single Container Docker Configuration](single-container-docker-configuration.md)\. For multicontainer environments, see [Multicontainer Docker Configuration](create_deploy_docker_v2config.md)\.
+For more information about the `Dockerrun.aws.json` format for single container environments, see [Single Container Docker configuration](single-container-docker-configuration.md)\. For multicontainer environments, see [Multicontainer Docker configuration](create_deploy_docker_v2config.md)\.
 
 For more information about the authentication file, see [ Store images on Docker Hub ](https://docs.docker.com/docker-hub/repos/) and [ docker login ](https://docs.docker.com/engine/reference/commandline/login/) on the Docker website\.
 
-## Configuring Additional Storage Volumes<a name="docker-volumes"></a>
+## Configuring additional storage volumes<a name="docker-volumes"></a>
 
 For improved performance, Elastic Beanstalk configures two Amazon EBS storage volumes for your Docker environment's EC2 instances\. In addition to the root volume provisioned for all Elastic Beanstalk environments, a second 12GB volume named `xvdcz` is provisioned for image storage on Docker environments\.
 
@@ -171,9 +171,10 @@ option_settings:
     BlockDeviceMappings: /dev/xvdcz=:12:true:gp2,/dev/sdh=:24
 ```
 
-Note that when you change settings in this namespace, Elastic Beanstalk replaces all instances in your environment with instances running the new configuration\. See [Configuration Changes](environments-updating.md) for details\.
+**Note**  
+When you change settings in this namespace, Elastic Beanstalk replaces all instances in your environment with instances running the new configuration\. See [Configuration changes](environments-updating.md) for details\.
 
-## Reclaiming Docker Storage Space<a name="reclaim-docker-storage"></a>
+## Reclaiming Docker storage space<a name="reclaim-docker-storage"></a>
 
 Docker does not clean up \(delete\) the space used when a file is created and then deleted from within a running container; the space is only returned to the pool once the container is deleted\. This becomes an issue if a container process creates and deletes many files, such as regularly dumping database backups, filling up the application storage space\.
 
@@ -183,7 +184,7 @@ One solution is to increase the size of the application storage space, as descri
 docker ps -q | xargs docker inspect --format='{{ .State.Pid }}' | xargs -IZ sudo fstrim /proc/Z/root/
 ```
 
-## Configuring Managed Updates for Docker Environments<a name="docker-managed-updates"></a>
+## Configuring managed updates for Docker environments<a name="docker-managed-updates"></a>
 
 With [managed platform updates](environment-platform-update-managed.md), you can configure your environment to automatically update to the latest version of a platform on a schedule\.
 

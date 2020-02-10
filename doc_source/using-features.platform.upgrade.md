@@ -1,10 +1,10 @@
-# Updating Your Elastic Beanstalk Environment's Platform Version<a name="using-features.platform.upgrade"></a>
+# Updating your Elastic Beanstalk environment's platform version<a name="using-features.platform.upgrade"></a>
 
-Elastic Beanstalk regularly releases new platform versions to update all Linux\-based and Windows Server\-based [platforms](concepts.platforms.md)\. New platform versions provide updates to existing software components and support for new features and configuration options\. To learn about platforms and platform versions, see [Elastic Beanstalk Platforms Glossary](platforms-glossary.md)\.
+Elastic Beanstalk regularly releases new platform versions to update all Linux\-based and Windows Server\-based [platforms](concepts.platforms.md)\. New platform versions provide updates to existing software components and support for new features and configuration options\. To learn about platforms and platform versions, see [Elastic Beanstalk platforms glossary](platforms-glossary.md)\.
 
 You can use the Elastic Beanstalk console or the EB CLI to update your environment's platform version\. Depending on the platform version you'd like to update to, Elastic Beanstalk recommends one of two methods for performing platform updates\.
-+ [Method 1 – Update your Environment's Platform Version](#using-features.platform.upgrade.config)\. We recommend this method when you're updating to the latest platform version, without a change in runtime, web server, or application server versions, and without a change in the major platform version\. This is the most common and routine platform update\.
-+ [Method 2 – Perform a Blue/Green Deployment](#using-features.platform.upgrade.bluegreen)\. We recommend this method when you're updating to a different runtime, web server, application server, or operating system versions, or to a different major platform version\. This is a good approach when you want to take advantage of new runtime capabilities or the latest Elastic Beanstalk functionality\.
++ [Method 1 – Update your environment's platform version](#using-features.platform.upgrade.config)\. We recommend this method when you're updating to the latest platform version, without a change in runtime, web server, or application server versions, and without a change in the major platform version\. This is the most common and routine platform update\.
++ [Method 2 – Perform a Blue/Green deployment](#using-features.platform.upgrade.bluegreen)\. We recommend this method when you're updating to a different runtime, web server, application server, or operating system versions, or to a different major platform version\. This is a good approach when you want to take advantage of new runtime capabilities or the latest Elastic Beanstalk functionality\.
 
   [Migrating from a legacy platform version](using-features.migration.md) requires a blue/green deployment, because these platform versions are incompatible with currently supported versions\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.platform.upgrade.html)
@@ -49,7 +49,7 @@ Consider the following cases:
 
 Consider the following cases:
 + If you're migrating your application to a different Windows operating system version, for example from *Windows Server 2008 R2* to *Windows Server 2016*, use [Method 2](#using-features.platform.upgrade.bluegreen)\.
-+ If you're migrating your application across major Windows Server platform versions, see [Migrating from Earlier Major Versions of the Windows Server Platform](dotnet-v2migration.md#dotnet-v2migration.migration), and use [Method 2](#using-features.platform.upgrade.bluegreen)\.
++ If you're migrating your application across major Windows Server platform versions, see [Migrating from earlier major versions of the Windows server platform](dotnet-v2migration.md#dotnet-v2migration.migration), and use [Method 2](#using-features.platform.upgrade.bluegreen)\.
 + If your application is currently running on a Windows Server platform V2\.x\.x and you're updating to a latest platform version, use [Method 1](#using-features.platform.upgrade.config)\.
 
 **Note**  
@@ -80,7 +80,7 @@ Consider the following cases:
 + If you're migrating your application across major Ruby platform versions \(v1\.x\.x and v2\.x\.x\), use [Method 2](#using-features.platform.upgrade.bluegreen)\.
 + If you're updating to a latest platform version with no change in runtime version, application server version, or major version, use [Method 1](#using-features.platform.upgrade.config)\.
 
-## Method 1 – Update your Environment's Platform Version<a name="using-features.platform.upgrade.config"></a>
+## Method 1 – Update your environment's platform version<a name="using-features.platform.upgrade.config"></a>
 
 Use this method to update to the latest version of your environment's platform\. If you've previously created an environment using an older platform version, or upgraded your environment from an older version, you can also use this method to revert to a previous platform version\.
 
@@ -89,16 +89,16 @@ Use this method to update to the latest version of your environment's platform\.
 1. Navigate to the [management page](environments-console.md) for your environment\.
 
 1. In the **Overview** section, under **Platform**, choose **Change**\.  
-![\[Elastic Beanstalk Newer Platform Available\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-dashboard-changetonewplatform.png)
+![\[Elastic Beanstalk newer platform available\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-dashboard-changetonewplatform.png)
 
 1. Choose a **Platform Version**\. The newest platform version is selected automatically, but you can update to any version that you've used in the past\.  
-![\[Elastic Beanstalk Update Platform Version Confirmation\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-updateplatform-rollingon.png)
+![\[Elastic Beanstalk update platform version confirmation\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-updateplatform-rollingon.png)
 
 1. Choose **Save**\.
 
-To further simplify platform updates, Elastic Beanstalk can manage them for you\. You can configure your environment to apply minor and patch version updates automatically during a configurable weekly maintenance window\. Elastic Beanstalk applies managed updates with no downtime or reduction in capacity, and cancels the update immediately if instances running your application on the new version fail health checks\. For details, see [Managed Platform Updates](environment-platform-update-managed.md)\.
+To further simplify platform updates, Elastic Beanstalk can manage them for you\. You can configure your environment to apply minor and patch version updates automatically during a configurable weekly maintenance window\. Elastic Beanstalk applies managed updates with no downtime or reduction in capacity, and cancels the update immediately if instances running your application on the new version fail health checks\. For details, see [Managed platform updates](environment-platform-update-managed.md)\.
 
-## Method 2 – Perform a Blue/Green Deployment<a name="using-features.platform.upgrade.bluegreen"></a>
+## Method 2 – Perform a Blue/Green deployment<a name="using-features.platform.upgrade.bluegreen"></a>
 
 Use this method to update to a different runtime, web server, or application server versions, or to a different major platform version\. This is typically necessary when you want to take advantage of new runtime capabilities or the latest Elastic Beanstalk functionality\.
 
@@ -113,10 +113,10 @@ Before performing the migration, update your local development machine to the ne
 1. Use the new environment to migrate your application\. In particular:
    + Find and fix any application compatibility issues that you couldn't discover during the development phase\.
    + Ensure that any customizations that your application makes using [configuration files](ebextensions.md) work correctly in the new environment\. These might include option settings, additional installed packages, custom security policies, and script or configuration files installed on environment instances\.
-   + If your application uses a custom Amazon Machine Image \(AMI\), create a new custom AMI based on the AMI of the new platform version\. To learn more, see [Using a Custom Amazon Machine Image \(AMI\)](using-features.customenv.md)\. Specifically, this is required if your application uses the Windows Server platform with a custom AMI, and you're migrating to a Windows Server V2 platform version\. In this case, see also [Migrating from Earlier Major Versions of the Windows Server Platform](dotnet-v2migration.md#dotnet-v2migration.migration)\.
+   + If your application uses a custom Amazon Machine Image \(AMI\), create a new custom AMI based on the AMI of the new platform version\. To learn more, see [Using a custom Amazon machine image \(AMI\)](using-features.customenv.md)\. Specifically, this is required if your application uses the Windows Server platform with a custom AMI, and you're migrating to a Windows Server V2 platform version\. In this case, see also [Migrating from earlier major versions of the Windows server platform](dotnet-v2migration.md#dotnet-v2migration.migration)\.
 
    Iterate on testing and deploying your fixes until you're satisfied with the application on the new environment\.
 
-1. Turn the new environment into your production environment by swapping its CNAME with the existing production environment's CNAME\. For details, see [Blue/Green Deployments with Elastic Beanstalk](using-features.CNAMESwap.md)\.
+1. Turn the new environment into your production environment by swapping its CNAME with the existing production environment's CNAME\. For details, see [Blue/Green deployments with Elastic Beanstalk](using-features.CNAMESwap.md)\.
 
-1. When you're satisfied with the state of your new environment in production, terminate the old environment\. For details, see [Terminate an Elastic Beanstalk Environment](using-features.terminating.md)\.
+1. When you're satisfied with the state of your new environment in production, terminate the old environment\. For details, see [Terminate an Elastic Beanstalk environment](using-features.terminating.md)\.

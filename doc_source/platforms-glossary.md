@@ -1,4 +1,4 @@
-# Elastic Beanstalk Platforms Glossary<a name="platforms-glossary"></a>
+# Elastic Beanstalk platforms glossary<a name="platforms-glossary"></a>
 
 Following are key terms related to AWS Elastic Beanstalk platforms and their lifecycle\.
 
@@ -26,8 +26,8 @@ A platform version that has operating system \(OS\), runtime, application server
 
 **Retired Platform Version**  
 A platform version that contains an operating system \(OS\), runtime, application server, or web server version that has reached its End of Life \(EOL\), as designated by its supplier \(owner or community\)\. Retired platform versions aren't available for use in Elastic Beanstalk environments for either new or existing customers\.  
-For details about platform version retirement, see [Elastic Beanstalk Platform Support Policy](platforms-support-policy.md)\.
+For details about platform version retirement, see [Elastic Beanstalk platform Support policy](platforms-support-policy.md)\.
 
 **Managed Updates**  
 An Elastic Beanstalk feature that automatically applies patch and minor updates to the operating system \(OS\), runtime, web server, application server, and Elastic Beanstalk components for an Elastic Beanstalk supported platform version\. You can configure managed updates to apply only patch updates, or minor and patch updates\. You can also disable managed updates completely\.  
-For more information, see [Managed Platform Updates](environment-platform-update-managed.md)\.
+For more information, see [Managed platform updates](environment-platform-update-managed.md)\.

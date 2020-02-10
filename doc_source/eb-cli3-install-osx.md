@@ -2,7 +2,7 @@
 
 If you use the `Homebrew` package manager, you can install the EB CLI by using the `brew` command\. You can also install Python and `pip`, and then use `pip` to install the EB CLI\.
 
-## Install the EB CLI with Homebrew<a name="eb-cli3-install-osx-homebrew"></a>
+## Install the EB CLI with homebrew<a name="eb-cli3-install-osx-homebrew"></a>
 
 The latest version of the EB CLI is typically available from `Homebrew` a couple of days after it appears in `pip`\.
 

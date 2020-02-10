@@ -1,4 +1,4 @@
-# Managing and Configuring Elastic Beanstalk Applications<a name="applications"></a>
+# Managing and configuring Elastic Beanstalk applications<a name="applications"></a>
 
 The first step in using AWS Elastic Beanstalk is to create an application, which represents your web application in AWS\. In Elastic Beanstalk an application serves as a container for the environments that run your web app, and versions of your web app's source code, saved configurations, logs, and other artifacts that you create while using Elastic Beanstalk\.
 
@@ -13,7 +13,7 @@ The first step in using AWS Elastic Beanstalk is to create an application, which
 
 1. Choose **Create**\.
 
-After creating the application, the console prompts you to create an environment for it\. For detailed information about all of the options available, see [Creating an Elastic Beanstalk Environment](using-features.environments.md)\.
+After creating the application, the console prompts you to create an environment for it\. For detailed information about all of the options available, see [Creating an Elastic Beanstalk environment](using-features.environments.md)\.
 
 If you no longer need an application, you can delete it\.
 
@@ -29,8 +29,8 @@ Deleting an application terminates all associated environments and deletes all a
 1. Choose **Delete Application**\.
 
 **Topics**
-+ [Elastic Beanstalk Application Management Console](applications-console.md)
-+ [Managing Application Versions](applications-versions.md)
-+ [Configuring Application Version Lifecycle Settings](applications-lifecycle.md)
-+ [Create an Application Source Bundle](applications-sourcebundle.md)
-+ [Tagging Elastic Beanstalk Application Resources](applications-tagging-resources.md)
++ [Elastic Beanstalk application management console](applications-console.md)
++ [Managing application versions](applications-versions.md)
++ [Configuring application version lifecycle settings](applications-lifecycle.md)
++ [Create an application source bundle](applications-sourcebundle.md)
++ [Tagging Elastic Beanstalk application resources](applications-tagging-resources.md)

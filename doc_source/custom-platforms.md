@@ -1,8 +1,8 @@
-# Elastic Beanstalk Custom Platforms<a name="custom-platforms"></a>
+# Elastic Beanstalk custom platforms<a name="custom-platforms"></a>
 
 AWS Elastic Beanstalk supports custom platforms\. A custom platform is a more advanced customization than a [custom image](using-features.customenv.md) in several ways\. A custom platform lets you develop an entire new platform from scratch, customizing the operating system, additional software, and scripts that Elastic Beanstalk runs on platform instances\. This flexibility enables you to build a platform for an application that uses a language or other infrastructure software, for which Elastic Beanstalk doesn't provide a managed platform\. Compare that to custom images, where you modify an Amazon Machine Image \(AMI\) for use with an existing Elastic Beanstalk platform, and Elastic Beanstalk still provides the platform scripts and controls the platform's software stack\. In addition, with custom platforms you use an automated, scripted way to create and maintain your customization, whereas with custom images you make the changes manually over a running instance\.
 
-To create a custom platform, you build an AMI from one of the supported operating systems—Ubuntu, RHEL, or Amazon Linux \(see the `flavor` entry in [Platform\.yaml File Format](platform-yaml-format.md) for the exact version numbers\)—and add further customizations\. You create your own Elastic Beanstalk platform using [Packer](https://www.packer.io/), which is an open\-source tool for creating machine images for many platforms, including AMIs for use with Amazon Elastic Compute Cloud \(Amazon EC2\)\. An Elastic Beanstalk platform comprises an AMI configured to run a set of software that supports an application, and metadata that can include custom configuration options and default configuration option settings\.
+To create a custom platform, you build an AMI from one of the supported operating systems—Ubuntu, RHEL, or Amazon Linux \(see the `flavor` entry in [Platform\.yaml file format](platform-yaml-format.md) for the exact version numbers\)—and add further customizations\. You create your own Elastic Beanstalk platform using [Packer](https://www.packer.io/), which is an open\-source tool for creating machine images for many platforms, including AMIs for use with Amazon Elastic Compute Cloud \(Amazon EC2\)\. An Elastic Beanstalk platform comprises an AMI configured to run a set of software that supports an application, and metadata that can include custom configuration options and default configuration option settings\.
 
 Elastic Beanstalk manages Packer as a separate built\-in platform, and you don't need to worry about Packer configuration and versions\.
 
@@ -12,7 +12,7 @@ When you create a custom platform, you launch a single instance environment with
 
 **Note**  
 Custom platforms are AWS Region specific\. If you use Elastic Beanstalk in multiple Regions, you must create your platforms separately in each Region\.  
-In certain circumstances, instances launched by Packer are not cleaned up and have to be manually terminated\. To learn how to manually clean up these instances, see [Packer Instance Cleanup](custom-platforms-packercleanup.md)\.
+In certain circumstances, instances launched by Packer are not cleaned up and have to be manually terminated\. To learn how to manually clean up these instances, see [Packer instance cleanup](custom-platforms-packercleanup.md)\.
 
 Users in your account can use your custom platforms by specifying a [platform ARN](AWSHowTo.iam.policies.arn.md) during environment creation\. These ARNs are returned by the eb platform create command that you used to create the custom platform\.
 
@@ -30,13 +30,13 @@ To deploy version 2\.1 your EB CLI command line would look like this:
 eb create -p MyCustomPlatformARN --version 2.1
 ```
 
-You can apply tags to a custom platform version when you create it, and edit tags of existing custom platform versions\. For details, see [Tagging Custom Platform Versions](custom-platforms-tagging.md)\.
+You can apply tags to a custom platform version when you create it, and edit tags of existing custom platform versions\. For details, see [Tagging custom platform versions](custom-platforms-tagging.md)\.
 
-## Creating a Custom Platform<a name="custom-platform-creating"></a>
+## Creating a custom platform<a name="custom-platform-creating"></a>
 
-To create a custom platform, the root of your application must include a platform definition file, `platform.yaml`, which defines the type of builder used to create the custom platform\. The format of this file is described in [Platform\.yaml File Format](platform-yaml-format.md)\. You can create your custom platform from scratch, or use one of the [sample custom platforms](#custom-platforms-sample) as a starting point\.
+To create a custom platform, the root of your application must include a platform definition file, `platform.yaml`, which defines the type of builder used to create the custom platform\. The format of this file is described in [Platform\.yaml file format](platform-yaml-format.md)\. You can create your custom platform from scratch, or use one of the [sample custom platforms](#custom-platforms-sample) as a starting point\.
 
-## Using a Sample Custom Platform<a name="custom-platforms-sample"></a>
+## Using a sample custom platform<a name="custom-platforms-sample"></a>
 
 One alternative to creating your own custom platform is to use one of the platform definition archive samples to bootstrap your custom platform\. The only items you have to configure in the samples before you can use them are a source AMI and a Region\.
 
@@ -138,7 +138,7 @@ The scripts and other files that you include in your platform definition archive
 + `01-install-nginx.sh` – Installs nginx\.
 + `02-setup-platform.sh` – Installs `wget`, `tree`, and `git`\. Copies hooks and [logging configurations](using-features.logging.md) to the instance, and creates the following directories:
   + `/etc/SampleNodePlatform` – Where the container configuration file is uploaded during deployment\.
-  + `/opt/elasticbeanstalk/deploy/appsource/` – Where the `00-unzip.sh` script uploads application source code during deployment \(see the [Platform Scripts](custom-platforms-scripts.md) section for information about this script\)\.
+  + `/opt/elasticbeanstalk/deploy/appsource/` – Where the `00-unzip.sh` script uploads application source code during deployment \(see the [Platform scripts](custom-platforms-scripts.md) section for information about this script\)\.
   + `/var/app/staging/` – Where application source code is processed during deployment\.
   + `/var/app/current/` – Where application source code runs after processing\.
   + `/var/log/nginx/healthd/` – Where the [enhanced health agent](health-enhanced.md#health-enhanced-agent) writes logs\.
@@ -216,7 +216,7 @@ Packer will fail to create a custom platform if you use the Elastic Beanstalk de
 
 When the operation completes, you have a platform that you can use to launch an Elastic Beanstalk environment\.
 
-You can use the custom platform when creating an environment from the console\. See [The Create New Environment Wizard](environments-create-wizard.md)\.
+You can use the custom platform when creating an environment from the console\. See [The create new environment wizard](environments-create-wizard.md)\.
 
 **To launch an environment on your custom platform**
 

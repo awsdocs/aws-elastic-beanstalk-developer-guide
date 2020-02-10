@@ -1,4 +1,4 @@
-# Using the Elastic Beanstalk Java SE Platform<a name="java-se-platform"></a>
+# Using the Elastic Beanstalk Java SE platform<a name="java-se-platform"></a>
 
 The AWS Elastic Beanstalk Java SE platform is a set of [platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.javase) for Java web applications that can run on their own from a compiled JAR file\. You can compile your application locally or upload the source code with a build script to compile it on\-instance\. Each platform version corresponds to a major version of Java, including *Java 8* and *Java 7*\.
 
@@ -21,9 +21,9 @@ Step 1: `commands`, `files` and `packages` defined in [configuration files](ebex
 Step 2: `Buildfile` command
 Step 3: `container_commands` in configuration files
 Step 4: `Procfile` commands \(all commands are run simultaneously\)
-For more information on using `commands`, `files`, `packages` and `container_commands` in configuration files, see [Customizing Software on Linux Servers](customize-containers-ec2.md)\.
+For more information on using `commands`, `files`, `packages` and `container_commands` in configuration files, see [Customizing software on Linux servers](customize-containers-ec2.md)\.
 
-## Configuring Your Java SE Environment<a name="java-se-options"></a>
+## Configuring your Java SE environment<a name="java-se-options"></a>
 
 The Elastic Beanstalk Java SE platform provides a few platform\-specific options in addition to the standard options that all platforms have\. These options let you configure the nginx proxy that runs in front of your application to serve static files\.
 
@@ -39,19 +39,19 @@ You can use the Elastic Beanstalk console to enable log rotation to Amazon S3 an
 
 1. In the **Software** configuration category, choose **Modify**\.
 
-### Log Options<a name="java-se-options-logs"></a>
+### Log options<a name="java-se-options-logs"></a>
 
 The Log Options section has two settings:
 + **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
-### Static Files<a name="java-se-options-staticfiles"></a>
+### Static files<a name="java-se-options-staticfiles"></a>
 
 To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
 
-For details about configuring static files using the Elastic Beanstalk console, see [Serving Static Files](environment-cfg-staticfiles.md)\.
+For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
 
-### Environment Properties<a name="java-se-options-properties"></a>
+### Environment properties<a name="java-se-options-properties"></a>
 
 The **Environment Properties** section lets you specify environment configuration settings on the Amazon EC2 instances that are running your application\. Environment properties are passed in as key\-value pairs to the application\.
 
@@ -61,9 +61,9 @@ Inside the Java SE environment running in Elastic Beanstalk, environment variabl
 String endpoint = System.getenv("API_ENDPOINT");
 ```
 
-See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
+See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.
 
-## Java SE Configuration Namespaces<a name="java-se-namespaces"></a>
+## Java SE configuration namespaces<a name="java-se-namespaces"></a>
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
@@ -80,15 +80,15 @@ option_settings:
 
 The folders that you map using this namespace must be actual folders in the root of your source bundle\. You cannot map a path to a folder in a JAR file\.
 
-Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration Options](command-options.md) for more information\.
+Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.
 
-## Amazon Linux 2 Considerations<a name="java-se-al2"></a>
+## Amazon Linux 2 considerations<a name="java-se-al2"></a>
 
 
 |  | 
 | --- |
 | AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
 
-Elastic Beanstalk provides Amazon Linux 2 Java SE platform versions for *Amazon Corretto 8* and *Amazon Corretto 11*\. The Corretto platform versions are different than previous Java SE platform versions based on Amazon Linux AMI in a few ways, both generic \(apply to all Amazon Linux 2 platforms\) and platform specific \(apply to Corretto Amazon Linux 2 platform versions\)\. For details see [Migrating Your Elastic Beanstalk Linux Application to Amazon Linux 2](using-features.migration-al.md)\.
+Elastic Beanstalk provides Amazon Linux 2 Java SE platform versions for *Amazon Corretto 8* and *Amazon Corretto 11*\. The Corretto platform versions are different than previous Java SE platform versions based on Amazon Linux AMI in a few ways, both generic \(apply to all Amazon Linux 2 platforms\) and platform specific \(apply to Amazon Linux 2 Corretto platform versions\)\. For details, see [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
 
 We recommend that you provide a source bundle \(ZIP file\) containing your application and a `Procfile`\. This way you precisely control which processes Elastic Beanstalk runs for your application and which arguments these processes receive\.

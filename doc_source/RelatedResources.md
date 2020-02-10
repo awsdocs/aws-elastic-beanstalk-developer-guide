@@ -1,4 +1,4 @@
-# Elastic Beanstalk Resources<a name="RelatedResources"></a>
+# Elastic Beanstalk resources<a name="RelatedResources"></a>
 
 The following related resources can help you as you work with this service\.
 +  **[Elastic Beanstalk API Reference](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/)** A comprehensive description of all SOAP and Query APIs\. Additionally, it contains a list of all SOAP data types\. 
@@ -14,12 +14,12 @@ The following related resources can help you as you work with this service\.
 + ** [Contact Us](https://aws.amazon.com/contact-us/)** – A central contact point for inquiries concerning AWS billing, account, events, abuse, and other issues\. 
 + ** [AWS Site Terms](https://aws.amazon.com/terms/)** – Detailed information about our copyright and trademark; your account, license, and site access; and other topics\.
 
-## Sample Applications<a name="RelatedResources-sampleapps"></a>
+## Sample applications<a name="RelatedResources-sampleapps"></a>
 
-The following are download links to the sample applications that are deployed as part of [Getting Started Using Elastic Beanstalk](GettingStarted.md)\.
+The following are download links to the sample applications that are deployed as part of [Getting started using Elastic Beanstalk](GettingStarted.md)\.
 
 **Note**  
-Some samples use features that may have been released since the release of the platform you are using\. If the sample fails to run, try updating your platform to a current version, as described in [Elastic Beanstalk Supported Platforms](concepts.platforms.md)\.
+Some samples use features that may have been released since the release of the platform you are using\. If the sample fails to run, try updating your platform to a current version, as described in [Elastic Beanstalk supported platforms](concepts.platforms.md)\.
 + **Single Container Docker** – [docker\-singlecontainer\-v1\.zip](samples/docker-singlecontainer-v1.zip)
 + **Multicontainer Docker** – [docker\-multicontainer\-v2\.zip](samples/docker-multicontainer-v2.zip)
 + **Preconfigured Docker \(Glassfish\)** – [docker\-glassfish\-v1\.zip](samples/docker-glassfish-v1.zip)

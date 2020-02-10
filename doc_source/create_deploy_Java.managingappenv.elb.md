@@ -1,4 +1,4 @@
-# Configuring Elastic Load Balancing Using AWS Toolkit for Eclipse<a name="create_deploy_Java.managingappenv.elb"></a>
+# Configuring Elastic Load Balancing using AWS Toolkit for Eclipse<a name="create_deploy_Java.managingappenv.elb"></a>
 
 Elastic Load Balancing is an Amazon web service that improves the availability and scalability of your application\. With Elastic Load Balancing, you can distribute application loads between two or more Amazon EC2 instances\. Elastic Load Balancing improves availability through redundancy, and it supports traffic growth for your application\. 
 
@@ -51,7 +51,7 @@ Elastic Load Balancing supports the HTTPS/TLS protocol to enable traffic encrypt
 
 To turn off the HTTPS port, select **OFF** for **HTTPS Listener Port**\.
 
-## Health Checks<a name="create_deploy_Java.managingappenv.elb.healthchecks"></a>
+## Health checks<a name="create_deploy_Java.managingappenv.elb.healthchecks"></a>
 
 You can control the settings for the health check using the **EC2 Instance Health Check** section of the **Load Balancing** panel\.
 

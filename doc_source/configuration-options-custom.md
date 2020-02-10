@@ -1,4 +1,4 @@
-# Custom Options<a name="configuration-options-custom"></a>
+# Custom options<a name="configuration-options-custom"></a>
 
 Use the `aws:elasticbeanstalk:customoption` namespace to define options and values that can be read in `Resources` blocks in other configuration files\. Use custom options to collect user specified settings in a single configuration file\.
 
@@ -37,4 +37,4 @@ Resources:
           Protocol: email
 ```
 
-You can find more example snippets using `Fn::GetOptionSetting` at [Adding and Customizing Elastic Beanstalk Environment Resources](environment-resources.md)\.
+You can find more example snippets using `Fn::GetOptionSetting` at [Adding and customizing Elastic Beanstalk environment resources](environment-resources.md)\.

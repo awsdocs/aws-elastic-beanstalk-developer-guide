@@ -1,18 +1,18 @@
-# Using the Elastic Beanstalk Environment Management Console<a name="environments-console"></a>
+# Using the Elastic Beanstalk environment management console<a name="environments-console"></a>
 
  The Elastic Beanstalk console provides a management page for each of your AWS Elastic Beanstalk environments\. From this page, you can manage your environment's configuration and perform common actions including restarting the web servers running in your environment, cloning the environment, or rebuilding it from scratch\.
 
 ![\[Elastic Beanstalk environment management console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-dashboard.png)
 
 **Topics**
-+ [Environment Dashboard](#environments-dashboard)
-+ [Environment Management Actions](#environments-dashboard-actions)
++ [Environment dashboard](#environments-dashboard)
++ [Environment management actions](#environments-dashboard-actions)
 + [Configuration](#environments-console-configuration)
 + [Logs](#environments-console-logs)
 + [Health](#environments-console-health)
 + [Monitoring](#environments-console-monitoring)
 + [Alarms](#environments-console-alarms)
-+ [Managed Updates](#environments-console-managedupdates)
++ [Managed updates](#environments-console-managedupdates)
 + [Events](#environments-console-events)
 + [Tags](#environments-console-tags)
 
@@ -20,7 +20,7 @@ To access the environment management console, open the Elastic Beanstalk console
 
 At the top of the environment console, the name of the application is shown, followed by the name of the environment and the public DNS name of the running application\.
 
-## Environment Dashboard<a name="environments-dashboard"></a>
+## Environment dashboard<a name="environments-dashboard"></a>
 
 The main view of the environment management console is the dashboard\. To view it, choose **Dashboard** on the navigation pane\.
 
@@ -30,11 +30,11 @@ Choose **Refresh** to update the information shown\. The overview contains the f
 
 ### Health<a name="environments-dashboard-health"></a>
 
-The overall health of the environment\. With [Enhanced Health Reporting and Monitoring](health-enhanced.md) enabled, the environment status is shown with a **Causes** button you can choose to view more information about the current status\.
+The overall health of the environment\. With [Enhanced health reporting and monitoring](health-enhanced.md) enabled, the environment status is shown with a **Causes** button you can choose to view more information about the current status\.
 
-For [Basic Health Reporting](using-features.healthstatus.md) environments, a link to the [Monitoring Console](environment-health-console.md) is shown\.
+For [Basic health reporting](using-features.healthstatus.md) environments, a link to the [Monitoring Console](environment-health-console.md) is shown\.
 
-### Running Version<a name="environments-dashboard-version"></a>
+### Running version<a name="environments-dashboard-version"></a>
 
 The name of the application version running on your environment\. Choose **Upload and Deploy** to upload a [source bundle](applications-sourcebundle.md) and deploy it to your environment\. This option creates a new application version\.
 
@@ -44,61 +44,61 @@ Shows the architecture, operating system \(OS\) version, and platform running on
 
 Updating the platform version using this option replaces instances running in your environment with new instances\.
 
-![\[Update Platform Version dialog\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-change-version.png)
+![\[Update platform version dialog\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-change-version.png)
 
 **Note**  
 When you first use Elastic Beanstalk, only the latest version of each platform is available for use\. **Change** first becomes available when a new version of the OS or platform is released\. After upgrading, you have the option to change back to the previous version\.
 
-### Recent Events<a name="environments-dashboard-events"></a>
+### Recent events<a name="environments-dashboard-events"></a>
 
 The **Recent Events** section of the environment management dashboard shows the most recent events emitted by your environment\. This list is updated in real time when your environment is being updated\.
 
 Choose **Show All** to open the **Events** page\.
 
-## Environment Management Actions<a name="environments-dashboard-actions"></a>
+## Environment management actions<a name="environments-dashboard-actions"></a>
 
 The environment management console contains an **Actions** menu that you can use to perform common operations on your environment\. This menu is shown on the right side of the environment header under the **Create New Environment** option\.
 
 **Note**  
 Some actions are only available under certain conditions, and will be disabled unless these conditions are met\.
 
-### Load Configuration<a name="environments-dashboard-actions-load"></a>
+### Load configuration<a name="environments-dashboard-actions-load"></a>
 
 Load a previously saved configuration\. Configurations are saved to your application and can be loaded by any associated environment\. If you've made changes to your environment's configuration, you can load a saved configuration to undo those changes\. You can also load a configuration that you saved from a different environment running the same application to propagate configuration changes between them\. 
 
-### Save Configuration<a name="environments-dashboard-actions-save"></a>
+### Save configuration<a name="environments-dashboard-actions-save"></a>
 
 Save the current configuration of your environment to your application\. Before you make changes to your environment's configuration, save the current configuration so that you can roll back later, if needed\. You can also apply a saved configuration when you launch a new environment\. 
 
-### Swap Environment URLs<a name="environments-dashboard-actions-swap"></a>
+### Swap environment URLs<a name="environments-dashboard-actions-swap"></a>
 
-Swap the CNAME of the current environment with a new environment\. After a CNAME swap, all traffic to the application using the environment URL goes to the new environment\. When you are ready to deploy a new version of your application, you can launch a separate environment under the new version\. When the new environment is ready to start taking requests, perform a CNAME swap to start routing traffic to the new environment with no interruption of service\. For more information, see [Blue/Green Deployments with Elastic Beanstalk](using-features.CNAMESwap.md)\. 
+Swap the CNAME of the current environment with a new environment\. After a CNAME swap, all traffic to the application using the environment URL goes to the new environment\. When you are ready to deploy a new version of your application, you can launch a separate environment under the new version\. When the new environment is ready to start taking requests, perform a CNAME swap to start routing traffic to the new environment with no interruption of service\. For more information, see [Blue/Green deployments with Elastic Beanstalk](using-features.CNAMESwap.md)\. 
 
-### Clone Environment<a name="environments-dashboard-actions-clone"></a>
+### Clone environment<a name="environments-dashboard-actions-clone"></a>
 
 Launch a new environment with the same configuration as your currently running environment\. 
 
-### Clone with Latest Platform<a name="environments-dashboard-actions-cloneupgrade"></a>
+### Clone with latest platform<a name="environments-dashboard-actions-cloneupgrade"></a>
 
 Clone your current environment with the latest version of the in\-use application platform\. This option is available only when a newer version of the current environment's platform is available for use\. 
 
-### Abort Current Operation<a name="environments-dashboard-actions-abort"></a>
+### Abort current operation<a name="environments-dashboard-actions-abort"></a>
 
 Stop an in\-progress environment update\. Aborting an operation can cause some of the instances in your environment to be in a different state than others, depending on how far the operation progressed\. This option is available only when your environment is being updated\. 
 
-### Restart App Servers<a name="environments-dashboard-actions-restart"></a>
+### Restart app servers<a name="environments-dashboard-actions-restart"></a>
 
 Restart the web server running on your environment's instances\. This option does not terminate or restart any AWS resources\. If your environment is acting strangely in response to some bad requests, restarting the application server can restore functionality temporarily while you troubleshoot the root cause\. 
 
-### Rebuild Environment<a name="environments-dashboard-actions-rebuild"></a>
+### Rebuild environment<a name="environments-dashboard-actions-rebuild"></a>
 
 Terminate all resources in the running environment and build a new environment with the same settings\. This operation takes several minutes, equivalent to deploying a new environment from scratch\. Any Amazon RDS instances running in your environment's data tier are deleted during a rebuild\. If you need the data, create a snapshot\. You can create a snapshot manually [in the RDS console](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html) or configure your data tier's Deletion Policy to create a snapshot automatically before deleting the instance \(this is the default setting when you create a data tier\)\. 
 
-### Terminate Environment<a name="environments-dashboard-actions-terminate"></a>
+### Terminate environment<a name="environments-dashboard-actions-terminate"></a>
 
 Terminate all resources in the running environment, and remove the environment from the application\. If you have an RDS instance running in a data tier and need to retain the data, be sure to take a snapshot before terminating your environment\. You can create a snapshot manually [in the RDS console](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html) or configure your data tier's Deletion Policy to create a snapshot automatically before deleting the instance \(this is the default setting when you create a data tier\)\. 
 
-### Restore Environment<a name="environments-dashboard-actions-restore"></a>
+### Restore environment<a name="environments-dashboard-actions-restore"></a>
 
 If the environment has been terminated in the last hour, you can restore it from this page\. After an hour, you can [restore it from the application overview page](environment-management-rebuild.md#environment-management-rebuild-terminated)\.
 
@@ -108,7 +108,7 @@ The **Configuration overview** page shows the current configuration of your envi
 
 ![\[The configuration overview page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-configuration.png)
 
-For more information, see [Configuring Elastic Beanstalk Environments](customize-containers.md)\.
+For more information, see [Configuring Elastic Beanstalk environments](customize-containers.md)\.
 
 ## Logs<a name="environments-console-logs"></a>
 
@@ -118,7 +118,7 @@ You can also configure your environment's instances to upload logs to Amazon S3 
 
 ![\[The logs page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-logs.png)
 
-For more information, see [Viewing Logs from Amazon EC2 Instances in Your Elastic Beanstalk Environment](using-features.logging.md)\.
+For more information, see [Viewing logs from Amazon EC2 instances in your Elastic Beanstalk environment](using-features.logging.md)\.
 
 ## Health<a name="environments-console-health"></a>
 
@@ -128,7 +128,7 @@ When enhanced health monitoring is enabled, this page shows information about th
 
 ![\[The enhanced health overview page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-instances.png)
 
-For more information, see [Enhanced Health Reporting and Monitoring](health-enhanced.md)\.
+For more information, see [Enhanced health reporting and monitoring](health-enhanced.md)\.
 
 ## Monitoring<a name="environments-console-monitoring"></a>
 
@@ -136,7 +136,7 @@ The **Monitoring** page shows an overview of health information for your environ
 
 ![\[The monitoring page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-monitoring.png)
 
-For more information, see [Monitoring Environment Health in the AWS Management Console](environment-health-console.md)\.
+For more information, see [Monitoring environment health in the AWS management console](environment-health-console.md)\.
 
 ## Alarms<a name="environments-console-alarms"></a>
 
@@ -144,15 +144,15 @@ The **Existing Alarms** page shows information about any alarms that you have co
 
 ![\[The existing alarms page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-alarms.png)
 
-For more information, see [Manage Alarms](using-features.alarms.md)\.
+For more information, see [Manage alarms](using-features.alarms.md)\.
 
-## Managed Updates<a name="environments-console-managedupdates"></a>
+## Managed updates<a name="environments-console-managedupdates"></a>
 
 The **Managed Updates** page shows information about upcoming and completed managed platform updates and instance replacement\. These features let you configure your environment to update to the latest platform version automatically during a weekly maintenance window that you choose\.
 
 In between platform releases, you can choose to have your environment replace all of its Amazon EC2 instances during the maintenance window\. This can help alleviate issues that occur when your application runs for extended periods of time\.
 
-For more information, see [Managed Platform Updates](environment-platform-update-managed.md)\.
+For more information, see [Managed platform updates](environment-platform-update-managed.md)\.
 
 ## Events<a name="environments-console-events"></a>
 
@@ -160,7 +160,7 @@ The **Events** page shows the event stream for your environment\. Elastic Beanst
 
 ![\[The events page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-events.png)
 
-For more information, see [Viewing an Elastic Beanstalk Environment's Event Stream](using-features.events.md)\.
+For more information, see [Viewing an Elastic Beanstalk environment's event stream](using-features.events.md)\.
 
 ## Tags<a name="environments-console-tags"></a>
 
@@ -168,4 +168,4 @@ The **Tags** page shows the tags that you applied to the environment when you cr
 
 ![\[The tags page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-management-tags.png)
 
-For more information, see [Tagging Resources in Your Elastic Beanstalk Environments](using-features.tagging.md)\.
+For more information, see [Tagging resources in your Elastic Beanstalk environments](using-features.tagging.md)\.

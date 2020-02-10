@@ -1,4 +1,4 @@
-# Using the Elastic Beanstalk \.NET Platform<a name="create_deploy_NET.container.console"></a>
+# Using the Elastic Beanstalk \.NET platform<a name="create_deploy_NET.container.console"></a>
 
 AWS Elastic Beanstalk supports a number of platforms for different versions of the \.NET programming framework and Windows Server\. See [\.NET on Windows Server with IIS](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) in the *AWS Elastic Beanstalk Platforms* document for a full list\.
 
@@ -8,9 +8,9 @@ Platform\-specific configuration options are available in the AWS Management Con
 
 To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
 
-Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
+Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration options](command-options.md)\.
 
-## Configuring your \.NET Environment in the Elastic Beanstalk Console<a name="dotnet-console"></a>
+## Configuring your \.NET environment in the Elastic Beanstalk console<a name="dotnet-console"></a>
 
 You can use the Elastic Beanstalk console to enable log rotation to Amazon S3, configure variables that your application can read from the environment, and change \.NET framework settings\.
 
@@ -24,17 +24,17 @@ You can use the Elastic Beanstalk console to enable log rotation to Amazon S3, c
 
 1. In the **Software** configuration category, choose **Modify**\.
 
-### Container Options<a name="dotnet-console-framework"></a>
+### Container options<a name="dotnet-console-framework"></a>
 + **Target \.NET runtime** – Set to `2.0` to run CLR v2\.
 + **Enable 32\-bit applications** – Set to `True` to run 32\-bit applications\.
 
-### Log Options<a name="dotnet-console-logs"></a>
+### Log options<a name="dotnet-console-logs"></a>
 
 The Log Options section has two settings:
 + **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
-### Environment Properties<a name="dotnet-console-properties"></a>
+### Environment properties<a name="dotnet-console-properties"></a>
 
 The **Environment Properties** section lets you specify environment configuration settings on the Amazon EC2 instances that are running your application\. These settings are passed in as key\-value pairs to the application\. Use `System.GetEnvironmentVariable` to read them\. Identical keys can exist in both `web.config` and as environment properties\. Use the `System.Configuration` namespace to read values from `web.config`\.
 
@@ -46,9 +46,9 @@ string endpoint = appConfig["API_ENDPOINT"];
 **Note**  
 Elastic Beanstalk doesn't support passing environment variables to \.NET Core applications and multiple\-application IIS deployments that use a [deployment manifest](dotnet-manifest.md)\.
 
-See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
+See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.
 
-## The aws:elasticbeanstalk:container:dotnet:apppool Namespace<a name="dotnet-namespaces"></a>
+## The aws:elasticbeanstalk:container:dotnet:apppool namespace<a name="dotnet-namespaces"></a>
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
@@ -65,4 +65,4 @@ option_settings:
     Enable 32-bit Applications: True
 ```
 
-Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration Options](command-options.md) for more information\.
+Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.

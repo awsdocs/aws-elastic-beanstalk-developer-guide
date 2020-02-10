@@ -1,4 +1,4 @@
-# Viewing an Elastic Beanstalk Environment's Event Stream<a name="using-features.events"></a>
+# Viewing an Elastic Beanstalk environment's event stream<a name="using-features.events"></a>
 
 You can use the AWS Management Console to access events and notifications associated with your application\.
 

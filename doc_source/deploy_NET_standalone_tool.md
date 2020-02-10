@@ -1,4 +1,4 @@
-# Deploying Elastic Beanstalk Applications in \.NET Using the Deployment Tool<a name="deploy_NET_standalone_tool"></a>
+# Deploying Elastic Beanstalk applications in \.NET using the deployment tool<a name="deploy_NET_standalone_tool"></a>
 
 The AWS Toolkit for Visual Studio includes a deployment tool, a command line tool that provides the same functionality as the deployment wizard in the AWS Toolkit\. You can use the deployment tool in your build pipeline or in other scripts to automate deployments to Elastic Beanstalk\.
 

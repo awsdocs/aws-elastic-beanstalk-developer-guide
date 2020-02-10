@@ -1,4 +1,4 @@
-# Configuring the Reverse Proxy<a name="java-se-nginx"></a>
+# Configuring the reverse proxy<a name="java-se-nginx"></a>
 
 Elastic Beanstalk uses nginx as the reverse proxy to map your application to your Elastic Load Balancing load balancer on port 80\. Elastic Beanstalk provides a default nginx configuration that you can either extend or override completely with your own configuration\.
 
@@ -23,7 +23,7 @@ To override Elastic Beanstalk's default nginx configuration completely, include 
 `-- web.jar
 ```
 
-If you override Elastic Beanstalk's nginx configuration, add the following line to your `nginx.conf` to pull in Elastic Beanstalk's configurations for [Enhanced Health Reporting and Monitoring](health-enhanced.md), automatic application mappings, and static files\.
+If you override Elastic Beanstalk's nginx configuration, add the following line to your `nginx.conf` to pull in Elastic Beanstalk's configurations for [Enhanced health reporting and monitoring](health-enhanced.md), automatic application mappings, and static files\.
 
 ```
  include conf.d/elasticbeanstalk/*.conf;
@@ -96,4 +96,4 @@ http {
 | --- |
 | AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
 
-All Amazon Linux 2 platforms support a uniform proxy configuration feature\. For the new Amazon Corretto platform versions running Amazon Linux 2, expand the *Reverse Proxy Configuration* section in [Extending Elastic Beanstalk Linux Platforms](platforms-linux-extend.md)\.
+All Amazon Linux 2 platforms support a uniform proxy configuration feature\. For the new Amazon Corretto platform versions running Amazon Linux 2, expand the *Reverse Proxy Configuration* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.

@@ -1,4 +1,4 @@
-# Installing Packages with a Gemfile<a name="ruby-platform-gemfile"></a>
+# Installing packages with a Gemfile<a name="ruby-platform-gemfile"></a>
 
 Use a `Gemfile` file in the root of your project source to use RubyGems to install packages that your application requires\.
 

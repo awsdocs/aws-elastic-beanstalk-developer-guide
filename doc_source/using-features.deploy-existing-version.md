@@ -1,4 +1,4 @@
-# Deploying Applications to Elastic Beanstalk Environments<a name="using-features.deploy-existing-version"></a>
+# Deploying applications to Elastic Beanstalk environments<a name="using-features.deploy-existing-version"></a>
 
 You can use the AWS Elastic Beanstalk console to upload an updated [source bundle](applications-sourcebundle.md) and deploy it to your Elastic Beanstalk environment, or redeploy a previously uploaded version\.
 
@@ -14,7 +14,7 @@ During managed platform updates with instance replacement enabled, immutable upd
 
 **Supported Deployment Policies**  
 
-| Deployment Policy | Load Balanced Environments | Single\-Instance Environments | Legacy Windows Server Environments† | 
+| Deployment policy | Load balanced environments | Single\-instance environments | Legacy Windows server environments† | 
 | --- | --- | --- | --- | 
 |  All at Once  |  ✓  |  ✓  |  ✓  | 
 |  Rolling  |  ✓  |  ☓  |  ✓  | 
@@ -44,7 +44,7 @@ The following table compares deployment methods\.
 
 **Deployment Methods**  
 
-| **Method** | **Impact of Failed Deployment** | **Deploy Time** | **Zero Downtime** | **No DNS Change** | **Rollback Process** | **Code Deployed To** | 
+| **Method** | **Impact of failed deployment** | **Deploy time** | **Zero downtime** | **No DNS change** | **Rollback process** | **Code deployed to** | 
 | --- | --- | --- | --- | --- | --- | --- | 
 | All at once | Downtime | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png) | ☓ | ✓ | Manual Redeploy | Existing instances | 
 | Rolling | Single batch out of service; any successful batches before failure running new application version | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)† | ✓ | ✓ | Manual Redeploy | Existing instances | 
@@ -56,7 +56,7 @@ The following table compares deployment methods\.
 
 If you deploy often, consider using the [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) to manage your environments\. The EB CLI creates a repository alongside your source code and can create a source bundle, upload it to Elastic Beanstalk, and deploy it with a single command\.
 
-## Deploying a New Application Version<a name="deployments-newversion"></a>
+## Deploying a new application version<a name="deployments-newversion"></a>
 
 You can perform deployments from your environment's dashboard\.
 
@@ -72,7 +72,7 @@ You can perform deployments from your environment's dashboard\.
 
 1. Choose **Deploy**\.
 
-## Redeploying a Previous Version<a name="deployments-existingversion"></a>
+## Redeploying a previous version<a name="deployments-existingversion"></a>
 
 You can also deploy a previously uploaded version of your application to any of its environments from the application versions page\. 
 

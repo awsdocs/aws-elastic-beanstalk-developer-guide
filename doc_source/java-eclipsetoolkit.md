@@ -7,7 +7,7 @@ The AWS Toolkit for Eclipse only supports projects that use the Java with Tomcat
 
 For more information about prerequisites and installing the AWS Toolkit for Eclipse, go to [https://aws\.amazon\.com/eclipse](https://aws.amazon.com/eclipse)\. You can also check out the [Using AWS Elastic Beanstalk with the AWS Toolkit for Eclipse](http://d1un85p0f2qstc.cloudfront.net/eclipse/elasticbeanstalk/index.html) video\. This topic also provides useful information covering tools, how\-to topics, and additional resources for Java developers\.
 
-## Importing Existing Environments into Eclipse<a name="create_deploy_Java.howto.importenv"></a>
+## Importing existing environments into Eclipse<a name="create_deploy_Java.howto.importenv"></a>
 
 You can import existing environments that you created in the AWS Management Console into Eclipse\. 
 

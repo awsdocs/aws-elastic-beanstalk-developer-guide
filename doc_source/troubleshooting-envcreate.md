@@ -1,4 +1,4 @@
-# Environment Creation and Instance Launches<a name="troubleshooting-envcreate"></a>
+# Environment creation and instance launches<a name="troubleshooting-envcreate"></a>
 
 **Event:** *Failed to Launch Environment*
 
@@ -14,4 +14,4 @@ This message indicates that your environment's Amazon EC2 instances did not comm
 
 **Event:** *A Service Role is required in this region\. Please add a Service Role option to the environment\.*
 
-Elastic Beanstalk uses a service role to monitor the resources in your environment and support [managed platform updates](environment-platform-update-managed.md)\. See [Managing Elastic Beanstalk Service Roles](iam-servicerole.md) for more information\.
+Elastic Beanstalk uses a service role to monitor the resources in your environment and support [managed platform updates](environment-platform-update-managed.md)\. See [Managing Elastic Beanstalk service roles](iam-servicerole.md) for more information\.

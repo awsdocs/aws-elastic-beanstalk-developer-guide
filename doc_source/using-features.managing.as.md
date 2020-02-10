@@ -1,4 +1,4 @@
-# Auto Scaling group for Your Elastic Beanstalk Environment<a name="using-features.managing.as"></a>
+# Auto Scaling group for your Elastic Beanstalk environment<a name="using-features.managing.as"></a>
 
 Your AWS Elastic Beanstalk environment includes an *Auto Scaling group* that manages the [Amazon EC2 instances](using-features.managing.ec2.md) in your environment\. In a single\-instance environment, the Auto Scaling group ensures that there is always one instance running\. In a load balanced environment, you configure the group with a range of instances to run, and Auto Scaling adds or removes instances as needed, based on load\.
 
@@ -10,20 +10,20 @@ To optimize your environment's use of Amazon EC2 instances through predictable p
 
 As an option, Elastic Beanstalk can combine On\-Demand and [Spot](#environments-cfg-autoscaling-spot) Instances for your environment\.
 
-Auto Scaling monitors the health of each Amazon EC2 instance that it launches\. If any instance terminates unexpectedly, Auto Scaling detects the termination and launches a replacement instance\. To configure the group to use the load balancer's health check mechanism, see [Auto Scaling Health Check Setting](environmentconfig-autoscaling-healthchecktype.md)\.
+Auto Scaling monitors the health of each Amazon EC2 instance that it launches\. If any instance terminates unexpectedly, Auto Scaling detects the termination and launches a replacement instance\. To configure the group to use the load balancer's health check mechanism, see [Auto Scaling health check setting](environmentconfig-autoscaling-healthchecktype.md)\.
 
 You can configure Auto Scaling for your environment using the [Elastic Beanstalk console](#environments-cfg-autoscaling-console), the [EB CLI](#environments-cfg-autoscaling-ebcli), or [configuration options](#environments-cfg-autoscaling-namespace)\.
 
 **Topics**
-+ [Spot Instance Support](#environments-cfg-autoscaling-spot)
-+ [Auto Scaling group Configuration Using the Elastic Beanstalk Console](#environments-cfg-autoscaling-console)
-+ [Auto Scaling group Configuration Using the EB CLI](#environments-cfg-autoscaling-ebcli)
++ [Spot instance Support](#environments-cfg-autoscaling-spot)
++ [Auto Scaling group configuration using the Elastic Beanstalk console](#environments-cfg-autoscaling-console)
++ [Auto Scaling group configuration using the EB CLI](#environments-cfg-autoscaling-ebcli)
 + [Configuration options](#environments-cfg-autoscaling-namespace)
-+ [Auto Scaling Triggers](environments-cfg-autoscaling-triggers.md)
-+ [Scheduled Auto Scaling Actions](environments-cfg-autoscaling-scheduledactions.md)
-+ [Auto Scaling Health Check Setting](environmentconfig-autoscaling-healthchecktype.md)
++ [Auto Scaling triggers](environments-cfg-autoscaling-triggers.md)
++ [Scheduled Auto Scaling actions](environments-cfg-autoscaling-scheduledactions.md)
++ [Auto Scaling health check setting](environmentconfig-autoscaling-healthchecktype.md)
 
-## Spot Instance Support<a name="environments-cfg-autoscaling-spot"></a>
+## Spot instance Support<a name="environments-cfg-autoscaling-spot"></a>
 
 To take advantage of Amazon EC2 [Spot Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html), you can enable a Spot option for your environment\. Your environment's Auto Scaling group then combines Amazon EC2 purchase options and maintains a mix of On\-Demand and Spot Instances\.
 
@@ -78,7 +78,7 @@ In this example, the environment starts with four instances, all of which are On
 |  `SpotFleetOnDemandAboveBasePercentage`  |  `aws:ec2:instances`  |  `50`  | 
 In this example, the environment starts with three instances, all of which are On\-Demand\. The environment can scale out up to 24 instances\. The first additional instance above the initial three is On\-Demand, to complete the four base On\-Demand instances\. As it scales out further, the portion of On\-Demand in the part of the fleet above the four base On\-Demand instances is kept at 50%, up to a maximum of 24 instances overall, of which 14 are On\-Demand \(four base, and 50% of the 20 above base\) and ten are Spot\.
 
-## Auto Scaling group Configuration Using the Elastic Beanstalk Console<a name="environments-cfg-autoscaling-console"></a>
+## Auto Scaling group configuration using the Elastic Beanstalk console<a name="environments-cfg-autoscaling-console"></a>
 
 You can configure how Auto Scaling works by editing **Capacity** on the environment's **Configuration** page in the [Elastic Beanstalk console](environments-console.md)\.
 
@@ -102,7 +102,7 @@ If you use rolling updates, be sure that the maximum instance count is higher th
    + **Fleet composition** – Select **Combined purchase options and instance types** to enable Spot Instance requests\.
 
      For this example, select **On\-Demand Instances**\.
-   + **Instance type** – The type of Amazon EC2 instance launched to run your application\. For details, see [Instance Type](using-features.managing.ec2.md#using-features.managing.ec2.instancetypes)\.
+   + **Instance type** – The type of Amazon EC2 instance launched to run your application\. For details, see [Instance type](using-features.managing.ec2.md#using-features.managing.ec2.instancetypes)\.
    + **AMI ID** – The machine image that Elastic Beanstalk uses to launch Amazon EC2 instances in your environment\. For details, see [AMI ID](using-features.managing.ec2.md#using-features.managing.ec2.customami)\.
    + **Availability Zones** – Choose the number of Availability Zones to spread your environment's instances across\. By default, the Auto Scaling group launches instances evenly across all usable zones\. To concentrate your instances in fewer zones, choose the number of zones to use\. For production environments, use at least two zones to ensure that your application is available in case one Availability Zone goes out\.
    + **Placement** \(optional\) – Choose the Availability Zones to use\. Use this setting if your instances need to connect to resources in specific zones, or if you have purchased [reserved instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html), which are zone\-specific\. If you al Cooldown: '720' Custom Availability Zones: 'us\-west\-2a,us\-west\-2b' MaxSize: '4' so set the number of zones, you must choose at least that many custom zones\.
@@ -113,7 +113,7 @@ If you use rolling updates, be sure that the maximum instance count is higher th
 
 1. Choose **Apply**\.
 
-## Auto Scaling group Configuration Using the EB CLI<a name="environments-cfg-autoscaling-ebcli"></a>
+## Auto Scaling group configuration using the EB CLI<a name="environments-cfg-autoscaling-ebcli"></a>
 
 When you create an environment using the [eb create](eb3-create.md) command, you can specify a few options related to your environment's Auto Scaling group\. These options help you control the environment's capacity\.
 
@@ -136,7 +136,7 @@ $ eb create --enable-spot -﻿-﻿instance-types "t2.micro,t3.micro,t3.small"
 
 Elastic Beanstalk provides [configuration options](command-options.md) for Auto Scaling settings in two namespaces: [`aws:autoscaling:asg`](command-options-general.md#command-options-general-autoscalingasg) and `aws:ec2:instances`\.
 
-### The aws:autoscaling:asg Namespace<a name="environments-cfg-autoscaling-namespace.asg"></a>
+### The aws:autoscaling:asg namespace<a name="environments-cfg-autoscaling-namespace.asg"></a>
 
 The [`aws:autoscaling:asg`](command-options-general.md#command-options-general-autoscalingasg) namespace provides options for overall scale and availability\.
 
@@ -152,7 +152,7 @@ option_settings:
     MinSize: '2'
 ```
 
-### The aws:ec2:instances Namespace<a name="environments-cfg-autoscaling-namespace.instances"></a>
+### The aws:ec2:instances namespace<a name="environments-cfg-autoscaling-namespace.instances"></a>
 
 The [`aws:ec2:instances`](command-options-general.md#command-options-general-ec2instances) namespace provides options related to your environment's instances, including Spot Instance management\. It complements [`aws:autoscaling:launchconfiguration`](command-options-general.md#command-options-general-autoscalinglaunchconfiguration) and [`aws:autoscaling:asg`](command-options-general.md#command-options-general-autoscalingasg)\.
 

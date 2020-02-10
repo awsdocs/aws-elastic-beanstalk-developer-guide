@@ -1,4 +1,4 @@
-# Building JARs On\-Server with a Buildfile<a name="java-se-buildfile"></a>
+# Building JARs on\-server with a Buildfile<a name="java-se-buildfile"></a>
 
 You can build your application's class files and JAR\(s\) on the EC2 instances in your environment by invoking a build command from a `Buildfile` file in your source bundle\.
 
@@ -25,4 +25,4 @@ The Java SE platform includes the following build tools, which you can invoke fr
 | --- |
 | AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
 
-All Amazon Linux 2 platforms support a uniform Buildfile feature\. For the new Corretto platform versions running Amazon Linux 2, expand the *Buildfile* section in [Extending Elastic Beanstalk Linux Platforms](platforms-linux-extend.md)\.
+All Amazon Linux 2 platforms support a uniform Buildfile feature\. For the new Corretto platform versions running Amazon Linux 2, expand the *Buildfile* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.

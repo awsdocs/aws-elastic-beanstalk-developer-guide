@@ -1,4 +1,4 @@
-# Configuring Auto Scaling Using AWS Toolkit for Eclipse<a name="create_deploy_Java.managingappenv.as"></a>
+# Configuring Auto Scaling using AWS Toolkit for Eclipse<a name="create_deploy_Java.managingappenv.as"></a>
 
 Amazon EC2 Auto Scaling is an Amazon web service designed to automatically launch or terminate Amazon EC2 instances based on user\-defined triggers\. Users can set up *Auto Scaling groups* and associate *triggers* with these groups to automatically scale computing resources based on metrics such as bandwidth usage or CPU utilization\. Amazon EC2 Auto Scaling works with Amazon CloudWatch to retrieve metrics for the server instances running your application\.
 
@@ -12,7 +12,7 @@ Elastic Beanstalk provisions Amazon EC2 Auto Scaling for your application\. Unde
 
 The following sections discuss how to configure Auto Scaling parameters for your application\. 
 
-## Launch Configuration<a name="create_deploy_Java.managingappenv.as.launchconfig"></a>
+## Launch configuration<a name="create_deploy_Java.managingappenv.as.launchconfig"></a>
 
 You can edit the launch configuration to control how your Elastic Beanstalk application provisions Amazon EC2 Auto Scaling resources\. 
 

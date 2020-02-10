@@ -1,4 +1,4 @@
-# Configuring Elastic Load Balancing Using the AWS Toolkit for Visual Studio<a name="create_deploy_NET.managing.elb"></a>
+# Configuring Elastic Load Balancing using the AWS toolkit for Visual Studio<a name="create_deploy_NET.managing.elb"></a>
 
 Elastic Load Balancing is an Amazon web service that helps you improve the availability and scalability of your application\. This service makes it easy for you to distribute application loads between two or more Amazon EC2 instances\. Elastic Load Balancing enables availability through redundancy and supports traffic growth for your application\. 
 
@@ -6,7 +6,7 @@ Elastic Load Balancing is an Amazon web service that helps you improve the avail
 
  Elastic Beanstalk automatically provisions Elastic Load Balancing when you deploy an application\. You can edit the Elastic Beanstalk environment's Amazon EC2 instance configuration with the **Load Balancer** tab inside your application environment tab in AWS Toolkit for Visual Studio\.
 
-![\[Elastic Beanstalk Elastic Load Balancing Configuration Panel\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-loadbalancer.png)
+![\[Elastic Beanstalk Elastic Load Balancing configuration panel\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-loadbalancer.png)
 
  The following sections describe the Elastic Load Balancing parameters you can configure for your application\.
 
@@ -19,7 +19,7 @@ The load balancer provisioned to handle requests for your Elastic Beanstalk appl
 **Important**  
 Make sure that the port you specified is not locked down; otherwise, users will not be able to connect to your Elastic Beanstalk application\.
 
-### Controlling the HTTP Port<a name="create_deploy_NET.managing.elb.ports.http"></a>
+### Controlling the HTTP port<a name="create_deploy_NET.managing.elb.ports.http"></a>
 
 To turn off the HTTP port, select **OFF** for **HTTP Listener Port**\. To turn on the HTTP port, you select an HTTP port \(for example, **80**\) from the list\.
 
@@ -37,7 +37,7 @@ aws elbv2 create-listener --load-balancer-arn LOAD_BALANCER_ARN --protocol HTTP 
 ```
 If you want Elastic Beanstalk to monitor your environment, do not remove the listener on port 80\.
 
-### Controlling the HTTPS Port<a name="create_deploy_NET.managing.elb.ports.https"></a>
+### Controlling the HTTPS port<a name="create_deploy_NET.managing.elb.ports.https"></a>
 
 Elastic Load Balancing supports the HTTPS/TLS protocol to enable traffic encryption for client connections to the load balancer\. Connections from the load balancer to the EC2 instances use plaintext encryption\. By default, the HTTPS port is turned off\.
 
@@ -52,7 +52,7 @@ Elastic Load Balancing supports the HTTPS/TLS protocol to enable traffic encrypt
 
 To turn off the HTTPS port, select **OFF** for **HTTPS Listener Port**\.
 
-## Health Checks<a name="create_deploy_NET.managing.elb.healthchecks"></a>
+## Health checks<a name="create_deploy_NET.managing.elb.healthchecks"></a>
 
 The health check definition includes a URL to be queried for instance health\. By default, Elastic Beanstalk uses TCP:80 for nonlegacy containers and HTTP:80 for legacy containers\. You can override the default URL to match an existing resource in your application \(e\.g\., `/myapp/default.aspx`\) by entering it in the **Application Health Check URL** box\. If you override the default URL, then Elastic Beanstalk uses HTTP to query the resource\. To check if you are using a legacy container type, see [Why are some platform versions marked legacy?](using-features.migration.md#using-features.migration.why)
 

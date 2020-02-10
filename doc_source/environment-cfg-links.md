@@ -1,4 +1,4 @@
-# Creating Links Between Elastic Beanstalk Environments<a name="environment-cfg-links"></a>
+# Creating links between Elastic Beanstalk environments<a name="environment-cfg-links"></a>
 
 As your application grows in size and complexity, you may want to split it into components that have different development and operational lifecycles\. By running smaller services that interact with each other over a well defined interface, teams can work independently and deployments can be lower risk\. AWS Elastic Beanstalk lets you link your environments to share information between components that depend on one another\.
 
@@ -19,7 +19,7 @@ EnvironmentLinks:
   "WORKERQUEUE": "worker"
 ```
 
-When you create an environment with an application version that includes the above environment manifest, Elastic Beanstalk looks for an environment named `worker` that belongs to the same application\. If that environment exists, Elastic Beanstalk creates an environment property named `WORKERQUEUE`\. The value of `WORKERQUEUE` is the Amazon SQS queue URL\. The frontend application can read this property in the same manner as an environment variable\. See [Environment Manifest \(`env.yaml`\)](environment-cfg-manifest.md) for details\.
+When you create an environment with an application version that includes the above environment manifest, Elastic Beanstalk looks for an environment named `worker` that belongs to the same application\. If that environment exists, Elastic Beanstalk creates an environment property named `WORKERQUEUE`\. The value of `WORKERQUEUE` is the Amazon SQS queue URL\. The frontend application can read this property in the same manner as an environment variable\. See [Environment manifest \(`env.yaml`\)](environment-cfg-manifest.md) for details\.
 
 To use environment links, add an environment manifest to your application source and upload it with the EB CLI, AWS CLI or an SDK\. If you use the AWS CLI or an SDK, set the `process` flag when you call `CreateApplicationVersion`: 
 

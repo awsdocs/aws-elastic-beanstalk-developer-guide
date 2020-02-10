@@ -1,4 +1,4 @@
-# Adding an Amazon RDS DB Instance to Your Ruby Application Environment<a name="create_deploy_Ruby.rds"></a>
+# Adding an Amazon RDS DB instance to your Ruby application environment<a name="create_deploy_Ruby.rds"></a>
 
 You can use an Amazon Relational Database Service \(Amazon RDS\) DB instance to store data gathered and modified by your application\. The database can be attached to your environment and managed by Elastic Beanstalk, or created and managed externally\.
 
@@ -11,11 +11,11 @@ For learning purposes or test environments, you can use Elastic Beanstalk to add
 For production environments, you can create a DB instance outside of your Elastic Beanstalk environment to decouple your environment resources from your database resources\. This way, when you terminate your environment, the DB instance isn’t deleted\. An external DB instance also lets you connect to the same database from multiple environments and perform [blue\-green deployments](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.CNAMESwap.html)\. For instructions, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\.
 
 **Topics**
-+ [Adding a DB Instance to Your Environment](#ruby-rds-create)
-+ [Downloading an Adapter](#ruby-rds-drivers)
-+ [Connecting to a Database](#ruby-rds-connect)
++ [Adding a DB instance to your environment](#ruby-rds-create)
++ [Downloading an adapter](#ruby-rds-drivers)
++ [Connecting to a database](#ruby-rds-connect)
 
-## Adding a DB Instance to Your Environment<a name="ruby-rds-create"></a>
+## Adding a DB instance to your environment<a name="ruby-rds-create"></a>
 
 **To add a DB instance to your environment**
 
@@ -46,9 +46,9 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
   Amazon RDS console label – **Username**
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
-For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
+For more information about configuring an internal DB instance, see [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md)\.
 
-## Downloading an Adapter<a name="ruby-rds-drivers"></a>
+## Downloading an adapter<a name="ruby-rds-drivers"></a>
 
 Add the database adapter to your project's [gem file](ruby-platform-gemfile.md)\.
 
@@ -67,11 +67,11 @@ gem 'mysql2'
 + **Oracle** – `activerecord-oracle_enhanced-adapter`
 + **SQL Server** – ` sql_server`
 
-## Connecting to a Database<a name="ruby-rds-connect"></a>
+## Connecting to a database<a name="ruby-rds-connect"></a>
 
 Elastic Beanstalk provides connection information for attached DB instances in environment properties\. Use `ENV['VARIABLE']` to read the properties and configure a database connection\.
 
-**Example config/database\.yml – Ruby on Rails Database Configuration \(MySQL\)**  
+**Example config/database\.yml – Ruby on rails database configuration \(MySQL\)**  
 
 ```
 production:

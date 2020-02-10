@@ -1,4 +1,4 @@
-# Extending Elastic Beanstalk Linux Platforms<a name="platforms-linux-extend"></a>
+# Extending Elastic Beanstalk Linux platforms<a name="platforms-linux-extend"></a>
 
 The [AWS Elastic Beanstalk Linux platforms](platforms-linux.md) provide a lot of functionality out of the box to support developing and running your application\. When necessary, you can extend the platforms in several ways to configure options, install software, add files and start\-up commands, provide build and runtime instructions, and add initialization scripts that run in various provisioning stages of your environment's Amazon Elastic Compute Cloud \(Amazon EC2\) instances\.
 
@@ -9,11 +9,11 @@ The [AWS Elastic Beanstalk Linux platforms](platforms-linux.md) provide a lot of
 | --- |
 | AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
 
-If you're using an Elastic Beanstalk Amazon Linux 2 platform, be sure to also read the information in [Migrating Your Elastic Beanstalk Linux Application to Amazon Linux 2](using-features.migration-al.md)\.
+If you're using an Elastic Beanstalk Amazon Linux 2 platform, be sure to also read the information in [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
 
-## Configuration Files<a name="platforms-linux-extend.config-files"></a>
+## Configuration files<a name="platforms-linux-extend.config-files"></a>
 
-You can add [configuration files](ebextensions.md) to the `.ebextensions` directory of your application's source code to configure various aspects of your Elastic Beanstalk environment\. Among other things, configuration files let you customize software and other files on your environment's instances and run initialization commands on the instances\. For more information, see [Customizing Software on Linux Servers](customize-containers-ec2.md)\.
+You can add [configuration files](ebextensions.md) to the `.ebextensions` directory of your application's source code to configure various aspects of your Elastic Beanstalk environment\. Among other things, configuration files let you customize software and other files on your environment's instances and run initialization commands on the instances\. For more information, see [Customizing software on Linux servers](customize-containers-ec2.md)\.
 
 You can also set [configuration options](command-options.md) using configuration files\. Many of the options control platform behavior, and some of these options are [platform specific](command-options-specific.md)\.
 
@@ -26,7 +26,7 @@ You can also set [configuration options](command-options.md) using configuration
 
 On Amazon Linux 2 platforms, we recommend using platform hooks to run custom code on your environment instances\. Platform hooks are described in the following section\. You can still use commands and container commands in `.ebextensions` configuration files, but they aren't as easy to work with\. For example, writing command scripts inside a YAML file can be challenging from a syntax standpoint\. You still need to use `.ebextensions` configuration files for any script that needs a reference to a AWS CloudFormation resource\.
 
-## Platform Hooks \(Amazon Linux 2\)<a name="platforms-linux-extend.hooks"></a>
+## Platform hooks \(Amazon Linux 2\)<a name="platforms-linux-extend.hooks"></a>
 
 ﻿
 
@@ -124,13 +124,13 @@ option_settings:
     value:  <first_port_number>
 ```
 
-For more information about setting environment variables for your application, see [Option Settings](ebextensions-optionsettings.md)\.
+For more information about setting environment variables for your application, see [Option settings](ebextensions-optionsettings.md)\.
 
 Your application should listen on the port that is configured for it in the proxy\. If you change the default port using the `PORT` environment property, your code can access it by reading the value of the `PORT` environment variable\. For example, call `os.Getenv("PORT")` in Go, or `System.getenv("PORT")` in Java\. If you configure your proxy to send traffic to multiple application processes, you can configure several environment properties, and use their values in both proxy confuguration and your application code\. Another option is to pass the port value to the process as a command argument in the `Procfile`\.
 
 Elastic Beanstalk captures standard output and error streams from `Procfile` processes in log files\. Elastic Beanstalk names the log files after the process and stores them in `/var/log`\. For example, the `web` process in the preceding example generates logs named `web-1.log` and `web-1.error.log` for `stdout` and `stderr`, respectively\.
 
-## Reverse Proxy Configuration<a name="platforms-linux-extend.build-proc"></a>
+## Reverse proxy configuration<a name="platforms-linux-extend.build-proc"></a>
 
 Some platforms allow you to configure the nginx reverse proxy on your environment instances\. For details, see the following platform topics\.
 + [Go](go-nginx.md)
@@ -166,13 +166,13 @@ To override the Elastic Beanstalk default nginx configuration completely, includ
 `-- other source files
 ```
 
-If you override the Elastic Beanstalk nginx configuration, add the following line to your `nginx.conf` to pull in the Elastic Beanstalk configurations for [Enhanced Health Reporting and Monitoring](health-enhanced.md), automatic application mappings, and static files\.
+If you override the Elastic Beanstalk nginx configuration, add the following line to your `nginx.conf` to pull in the Elastic Beanstalk configurations for [Enhanced health reporting and monitoring](health-enhanced.md), automatic application mappings, and static files\.
 
 ```
  include conf.d/elasticbeanstalk/*.conf;
 ```
 
-## Application Example With Extensions \(Amazon Linux 2\)<a name="platforms-linux-extend.example"></a>
+## Application example with extensions \(Amazon Linux 2\)<a name="platforms-linux-extend.example"></a>
 
 
 |  | 
@@ -206,7 +206,7 @@ The following example demonstrates an application source bundle with several ext
             `-- 99_some_service_start.sh
 ```
 
-## Instance Deployment Workflow \(Amazon Linux 2\)<a name="platforms-linux-extend.workflow"></a>
+## Instance deployment workflow \(Amazon Linux 2\)<a name="platforms-linux-extend.workflow"></a>
 
 
 |  | 

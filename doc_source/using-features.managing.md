@@ -1,4 +1,4 @@
-# Managing Environments<a name="using-features.managing"></a>
+# Managing environments<a name="using-features.managing"></a>
 
 AWS Elastic Beanstalk makes it easy to create new environments for your application\. You can create and manage separate environments for development, testing, and production use, and you can [deploy any version](using-features.deploy-existing-version.md) of your application to any environment\. Environments can be long\-running or temporary\. When you terminate an environment, you can save its configuration to recreate it later\.
 
@@ -14,13 +14,13 @@ When you launch an environment, you choose a platform version\. We update platfo
 As your application grows in complexity, you can split it into multiple components, each running in a separate environment\. For long\-running workloads, you can launch [worker environments](using-features-managing-env-tiers.md) that process jobs from an Amazon Simple Queue Service \(Amazon SQS\) queue\.
 
 **Topics**
-+ [Using the Elastic Beanstalk Environment Management Console](environments-console.md)
-+ [Creating an Elastic Beanstalk Environment](using-features.environments.md)
-+ [Deploying Applications to Elastic Beanstalk Environments](using-features.deploy-existing-version.md)
-+ [Configuration Changes](environments-updating.md)
-+ [Updating Your Elastic Beanstalk Environment's Platform Version](using-features.platform.upgrade.md)
-+ [Canceling Environment Configuration Updates and Application Deployments](using-features.rollingupdates.cancel.md)
-+ [Rebuilding Elastic Beanstalk Environments](environment-management-rebuild.md)
-+ [Environment Types](using-features-managing-env-types.md)
-+ [Elastic Beanstalk Worker Environments](using-features-managing-env-tiers.md)
-+ [Creating Links Between Elastic Beanstalk Environments](environment-cfg-links.md)
++ [Using the Elastic Beanstalk environment management console](environments-console.md)
++ [Creating an Elastic Beanstalk environment](using-features.environments.md)
++ [Deploying applications to Elastic Beanstalk environments](using-features.deploy-existing-version.md)
++ [Configuration changes](environments-updating.md)
++ [Updating your Elastic Beanstalk environment's platform version](using-features.platform.upgrade.md)
++ [Canceling environment configuration updates and application deployments](using-features.rollingupdates.cancel.md)
++ [Rebuilding Elastic Beanstalk environments](environment-management-rebuild.md)
++ [Environment types](using-features-managing-env-types.md)
++ [Elastic Beanstalk worker environments](using-features-managing-env-tiers.md)
++ [Creating links between Elastic Beanstalk environments](environment-cfg-links.md)

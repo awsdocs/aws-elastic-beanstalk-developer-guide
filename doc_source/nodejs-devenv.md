@@ -1,8 +1,8 @@
-# Setting Up your Node\.js Development Environment<a name="nodejs-devenv"></a>
+# Setting up your Node\.js development environment<a name="nodejs-devenv"></a>
 
 Set up a Node\.js development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with Elastic Beanstalk](chapter-devenv.md)\.
+For common setup steps and tools that apply to all languages, see [Configuring your development machine for use with Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
 + [Installing Node\.js](#nodejs-devenv-nodejs)

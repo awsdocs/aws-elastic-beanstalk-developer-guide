@@ -1,26 +1,26 @@
-# Single Container Docker Environments<a name="single-container-docker"></a>
+# Single Container Docker environments<a name="single-container-docker"></a>
 
 AWS Elastic Beanstalk can launch single container Docker environments by building an image described in a `Dockerfile` or pulling a remote Docker image\. If you're deploying a remote Docker image, you don't need to include a `Dockerfile`\. Instead, use a `Dockerrun.aws.json` file, which specifies an image to use and additional configuration options\.
 
 **Topics**
 + [Prerequisites](#single-container-docker.prereqs)
-+ [Containerize an Elastic Beanstalk Application](#single-container-docker.setup)
-+ [Test a Container Locally](#single-container-docker.test-local)
-+ [Deploy a Container with a Dockerfile](#single-container-docker.deploy-local)
-+ [Test a Remote Docker Image](#single-container-docker.test-remote)
-+ [Deploy a Remote Docker Image to Elastic Beanstalk](#single-container-docker.deploy-remote)
-+ [Clean Up](#single-container-docker.cleanup)
-+ [Single Container Docker Configuration](single-container-docker-configuration.md)
++ [Containerize an Elastic Beanstalk application](#single-container-docker.setup)
++ [Test a container locally](#single-container-docker.test-local)
++ [Deploy a container with a Dockerfile](#single-container-docker.deploy-local)
++ [Test a remote Docker image](#single-container-docker.test-remote)
++ [Deploy a remote Docker image to Elastic Beanstalk](#single-container-docker.deploy-remote)
++ [Clean up](#single-container-docker.cleanup)
++ [Single Container Docker configuration](single-container-docker-configuration.md)
 
 ## Prerequisites<a name="single-container-docker.prereqs"></a>
 
-This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations, [Using the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md), and Docker\. To follow this tutorial, you need a working local installation of Docker\. For more information about installing Docker, see the [Docker installation guide](https://docs.docker.com/install/)\.
+This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations, [Using the Elastic Beanstalk command line interface \(EB CLI\)](eb-cli3.md), and Docker\. To follow this tutorial, you need a working local installation of Docker\. For more information about installing Docker, see the [Docker installation guide](https://docs.docker.com/install/)\.
 
-If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\. This tutorial uses the EB CLI, but you can also create environments and upload applications by using the Elastic Beanstalk console\. To learn more about configuring single container Docker environments, see [Single Container Docker Configuration](single-container-docker-configuration.md)\.
+If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\. This tutorial uses the EB CLI, but you can also create environments and upload applications by using the Elastic Beanstalk console\. To learn more about configuring single container Docker environments, see [Single Container Docker configuration](single-container-docker-configuration.md)\.
 
-## Containerize an Elastic Beanstalk Application<a name="single-container-docker.setup"></a>
+## Containerize an Elastic Beanstalk application<a name="single-container-docker.setup"></a>
 
-For this example, we create a Docker image of the sample Flask application from [Deploying a Flask Application to Elastic Beanstalk](create-deploy-python-flask.md)\. The application consists of one main file, `application.py`\. We also need a `Dockerfile`\. Put both files at the root of a directory\.
+For this example, we create a Docker image of the sample Flask application from [Deploying a flask application to Elastic Beanstalk](create-deploy-python-flask.md)\. The application consists of one main file, `application.py`\. We also need a `Dockerfile`\. Put both files at the root of a directory\.
 
 ```
 ~/eb-docker-flask/
@@ -78,7 +78,7 @@ EXPOSE 5000
 CMD ["python", "application.py"]
 ```
 
-## Test a Container Locally<a name="single-container-docker.test-local"></a>
+## Test a container locally<a name="single-container-docker.test-local"></a>
 
 Use the Elastic Beanstalk CLI \(EB CLI\) to configure your local repository for deployment to Elastic Beanstalk\. Set your application's `Dockerfile` at the root of the directory\.
 
@@ -98,7 +98,7 @@ Use the Elastic Beanstalk CLI \(EB CLI\) to configure your local repository for 
 ~/eb-docker-flask$ eb local open
 ```
 
-## Deploy a Container with a Dockerfile<a name="single-container-docker.deploy-local"></a>
+## Deploy a container with a Dockerfile<a name="single-container-docker.deploy-local"></a>
 
 After testing your application locally, deploy it to an Elastic Beanstalk environment\. Elastic Beanstalk uses the instructions in your `Dockerfile` to build and run the image\.
 
@@ -114,7 +114,7 @@ Once your environment has launched, use eb open to view it in a web browser\.
 ~/eb-docker-flask$ eb open
 ```
 
-## Test a Remote Docker Image<a name="single-container-docker.test-remote"></a>
+## Test a remote Docker image<a name="single-container-docker.test-remote"></a>
 
 Next, we build a Docker image of the Flask application from the previous section and push it to Docker Hub\.
 
@@ -131,7 +131,7 @@ Once we've built and pushed our image, we can deploy it to Elastic Beanstalk wit
 **Note**  
 Before pushing your image, you might need to run docker login\.
 
-Now you can deploy your application using only a `Dockerrun.aws.json` file\. To learn more about `Dockerrun.aws.json` files, see [Single Container Docker Configuration](single-container-docker-configuration.md)\.
+Now you can deploy your application using only a `Dockerrun.aws.json` file\. To learn more about `Dockerrun.aws.json` files, see [Single Container Docker configuration](single-container-docker-configuration.md)\.
 
 Make a new directory and create a `Dockerrun.aws.json` file\.
 
@@ -170,7 +170,7 @@ Use the EB CLI to configure your local repository for deployment to Elastic Bean
 ~/remote-docker$ eb local open
 ```
 
-## Deploy a Remote Docker Image to Elastic Beanstalk<a name="single-container-docker.deploy-remote"></a>
+## Deploy a remote Docker image to Elastic Beanstalk<a name="single-container-docker.deploy-remote"></a>
 
 After testing your container locally, deploy it to an Elastic Beanstalk environment\. Elastic Beanstalk uses the `Dockerrun.aws.json` file to pull and run your image\.
 
@@ -186,7 +186,7 @@ Once your environment is launched, use eb open to view it in a web browser\.
 ~/remote-docker$ eb open
 ```
 
-## Clean Up<a name="single-container-docker.cleanup"></a>
+## Clean up<a name="single-container-docker.cleanup"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 

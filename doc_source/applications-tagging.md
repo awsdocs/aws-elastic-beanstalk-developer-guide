@@ -1,14 +1,14 @@
-# Tagging Applications<a name="applications-tagging"></a>
+# Tagging applications<a name="applications-tagging"></a>
 
-You can apply tags to your AWS Elastic Beanstalk applications\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
+You can apply tags to your AWS Elastic Beanstalk applications\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging Elastic Beanstalk application resources](applications-tagging-resources.md)\.
 
 You can specify tags when you create an application\. In an existing application, you can add or remove tags, and update the values of existing tags\. You can add up to 50 tags to each application\.
 
-## Adding Tags during Application Creation<a name="applications-tagging.create"></a>
+## Adding tags during application creation<a name="applications-tagging.create"></a>
 
 When you use the Elastic Beanstalk console to [create an application](applications.md), you can specify tag keys and values in the **Create New Application** dialog box\.
 
-![\[Create New Application dialog box shows tags for a new application in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-create-dialog.png)
+![\[Create new application dialog box shows tags for a new application in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-create-dialog.png)
 
 If you use the EB CLI to create an application, use the `--tags` option with [eb init](eb3-init.md) to add tags\.
 
@@ -24,7 +24,7 @@ $ aws elasticbeanstalk create-application \
       --application-name my-app --version-label v1
 ```
 
-## Managing Tags of an Existing Application<a name="applications-tagging.manage"></a>
+## Managing tags of an existing application<a name="applications-tagging.manage"></a>
 
 You can add, update, and delete tags in an existing Elastic Beanstalk application\.
 

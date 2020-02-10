@@ -1,4 +1,4 @@
-# Using the Elastic Beanstalk Ruby Platform<a name="create_deploy_Ruby.container"></a>
+# Using the Elastic Beanstalk Ruby platform<a name="create_deploy_Ruby.container"></a>
 
 The AWS Elastic Beanstalk Ruby platform is a set of [environment configurations](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.ruby) for Ruby web applications that can run behind an nginx proxy server under a Puma or Passenger application server\. Each configuration corresponds to a version of Ruby\.
 
@@ -10,9 +10,9 @@ To save settings in your source code, you can include [configuration files](ebex
 
 If you use RubyGems, you can [include a `Gemfile` file](ruby-platform-gemfile.md) in your source bundle to install packages during deployment\.
 
-Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration Options](command-options.md)\.
+Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration options](command-options.md)\.
 
-## Configuring Your Ruby Environment<a name="create-deploy_Ruby.container.CON"></a>
+## Configuring your Ruby environment<a name="create-deploy_Ruby.container.CON"></a>
 
 You can use the Elastic Beanstalk console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
 
@@ -26,13 +26,13 @@ You can use the Elastic Beanstalk console to enable log rotation to Amazon S3 an
 
 1. In the **Software** configuration category, choose **Modify**\.
 
-### Log Options<a name="create_deploy_Ruby.container.console.logoptions"></a>
+### Log options<a name="create_deploy_Ruby.container.console.logoptions"></a>
 
 The Log Options section has two settings:
 + **Instance profile**– Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
-### Environment Properties<a name="create_deploy_Ruby.env.console.ruby.envprops"></a>
+### Environment properties<a name="create_deploy_Ruby.env.console.ruby.envprops"></a>
 
 The **Environment Properties** section lets you specify environment configuration settings on the Amazon EC2 instances that are running your application\. Environment properties are passed in as key\-value pairs to the application\.
 
@@ -48,9 +48,9 @@ Inside the Ruby environment running in Elastic Beanstalk, environment variables 
 endpoint = ENV['API_ENDPOINT']
 ```
 
-See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
+See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.
 
-## Ruby Configuration Namespaces<a name="ruby-namespaces"></a>
+## Ruby configuration namespaces<a name="ruby-namespaces"></a>
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
@@ -68,4 +68,4 @@ option_settings:
     LOGGING: debug
 ```
 
-Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration Options](command-options.md) for more information\.
+Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.

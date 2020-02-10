@@ -1,4 +1,4 @@
-# AWS Elastic Beanstalk Security<a name="security"></a>
+# AWS Elastic Beanstalk security<a name="security"></a>
 
 Cloud security at AWS is the highest priority\. As an AWS customer, you benefit from a data center and network architecture that is built to meet the requirements of the most security\-sensitive organizations\.
 
@@ -11,11 +11,11 @@ Security is a shared responsibility between AWS and you\. The [Shared Responsibi
 Use the following security topics to learn more about the security tasks Elastic Beanstalk is responsible for, and the security configurations you should consider when using Elastic Beanstalk to meet your security and compliance objectives\. 
 
 **Topics**
-+ [Data Protection in Elastic Beanstalk](security-data-protection.md)
-+ [Identity and Access Management for Elastic Beanstalk](security-iam.md)
-+ [Logging and Monitoring in Elastic Beanstalk](incident-response.md)
-+ [Compliance Validation for Elastic Beanstalk](compliance-validation.md)
++ [Data protection in Elastic Beanstalk](security-data-protection.md)
++ [Identity and access management for Elastic Beanstalk](security-iam.md)
++ [Logging and monitoring in Elastic Beanstalk](incident-response.md)
++ [Compliance validation for Elastic Beanstalk](compliance-validation.md)
 + [Resilience in Elastic Beanstalk](disaster-recovery-resiliency.md)
-+ [Infrastructure Security in Elastic Beanstalk](infrastructure-security.md)
-+ [Configuration and Vulnerability Analysis in Elastic Beanstalk](vulnerability-analysis-and-management.md)
-+ [Security Best Practices for Elastic Beanstalk](security-best-practices.md)
++ [Infrastructure security in Elastic Beanstalk](infrastructure-security.md)
++ [Configuration and vulnerability analysis in Elastic Beanstalk](vulnerability-analysis-and-management.md)
++ [Security best practices for Elastic Beanstalk](security-best-practices.md)

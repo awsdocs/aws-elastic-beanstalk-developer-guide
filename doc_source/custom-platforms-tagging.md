@@ -1,10 +1,10 @@
-# Tagging Custom Platform Versions<a name="custom-platforms-tagging"></a>
+# Tagging custom platform versions<a name="custom-platforms-tagging"></a>
 
-You can apply tags to your AWS Elastic Beanstalk custom platform versions\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
+You can apply tags to your AWS Elastic Beanstalk custom platform versions\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging Elastic Beanstalk application resources](applications-tagging-resources.md)\.
 
 You can specify tags when you create a custom platform version\. In an existing custom platform version, you can add or remove tags, and update the values of existing tags\. You can add up to 50 tags to each custom platform version\.
 
-## Adding Tags during Custom Platform Version Creation<a name="custom-platforms-tagging.create"></a>
+## Adding tags during custom platform version creation<a name="custom-platforms-tagging.create"></a>
 
 If you use the EB CLI to create your custom platform version, use the `--tags` option with [eb platform create](eb3-platform.md#eb3-platform-create) to add tags\.
 
@@ -20,7 +20,7 @@ $ aws elasticbeanstalk create-platform-version \
       --platform-name my-platform --platform-version 1.0.0 --platform-definition-bundle S3Bucket=my-bucket,S3Key=sample.zip
 ```
 
-## Managing Tags of an Existing Custom Platform Version<a name="custom-platforms-tagging.manage"></a>
+## Managing tags of an existing custom platform version<a name="custom-platforms-tagging.manage"></a>
 
 You can add, update, and delete tags in an existing Elastic Beanstalk custom platform version\.
 

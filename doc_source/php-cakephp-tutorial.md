@@ -1,19 +1,19 @@
-# Deploying a CakePHP Application to Elastic Beanstalk<a name="php-cakephp-tutorial"></a>
+# Deploying a CakePHP application to Elastic Beanstalk<a name="php-cakephp-tutorial"></a>
 
 CakePHP is an open source, MVC framework for PHP\. This tutorial walks you through the process of generating a CakePHP project, deploying it to an Elastic Beanstalk environment, and configuring it to connect to an Amazon RDS database instance\.
 
 **Topics**
 + [Prerequisites](#php-cakephp-tutorial-prereqs)
-+ [Launch an Elastic Beanstalk Environment](#php-cakephp-tutorial-launch)
-+ [Install CakePHP and Generate a Website](#php-cakephp-tutorial-generate)
-+ [Deploy Your Application](#php-cakephp-tutorial-deploy)
-+ [Add a Database to Your Environment](#php-cakephp-tutorial-database)
++ [Launch an Elastic Beanstalk environment](#php-cakephp-tutorial-launch)
++ [Install CakePHP and generate a website](#php-cakephp-tutorial-generate)
++ [Deploy your application](#php-cakephp-tutorial-deploy)
++ [Add a database to your environment](#php-cakephp-tutorial-database)
 + [Cleanup](#php-cakephp-tutorial-cleanup)
-+ [Next Steps](#php-cakephp-tutorial-nextsteps)
++ [Next steps](#php-cakephp-tutorial-nextsteps)
 
 ## Prerequisites<a name="php-cakephp-tutorial-prereqs"></a>
 
-This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
+This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
 
 To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings preceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
 
@@ -24,9 +24,9 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-CakePHP requires PHP 5\.5\.9 or newer, and the `mbstring` and `intl` extensions for PHP\. In this tutorial we use PHP 7\.0 and the corresponding Elastic Beanstalk platform version\. Install PHP and Composer by following the instructions at [Setting Up your PHP Development Environment](php-development-environment.md)\.
+CakePHP requires PHP 5\.5\.9 or newer, and the `mbstring` and `intl` extensions for PHP\. In this tutorial we use PHP 7\.0 and the corresponding Elastic Beanstalk platform version\. Install PHP and Composer by following the instructions at [Setting up your PHP development environment](php-development-environment.md)\.
 
-## Launch an Elastic Beanstalk Environment<a name="php-cakephp-tutorial-launch"></a>
+## Launch an Elastic Beanstalk environment<a name="php-cakephp-tutorial-launch"></a>
 
 Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\.
 
@@ -60,7 +60,7 @@ All of these resources are managed by Elastic Beanstalk\. When you terminate you
 **Note**  
 The Amazon S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)\.
 
-## Install CakePHP and Generate a Website<a name="php-cakephp-tutorial-generate"></a>
+## Install CakePHP and generate a website<a name="php-cakephp-tutorial-generate"></a>
 
 Composer can install CakePHP and create a working project with one command:
 
@@ -82,7 +82,7 @@ Composer installs CakePHP and around 20 dependencies, and generates a default pr
 
 If you run into any issues installing CakePHP, visit the installation topic in the official documentation: [http://book\.cakephp\.org/3\.0/en/installation\.html](http://book.cakephp.org/3.0/en/installation.html)
 
-## Deploy Your Application<a name="php-cakephp-tutorial-deploy"></a>
+## Deploy your application<a name="php-cakephp-tutorial-deploy"></a>
 
 Create a [source bundle](applications-sourcebundle.md) containing the files created by Composer\. The following command creates a source bundle named `cake-default.zip`\. It excludes files in the `vendor` folder, which take up a lot of space and are not necessary for deploying your application to Elastic Beanstalk\.
 
@@ -115,7 +115,7 @@ When the process completes, click the URL to open your CakePHP application in th
 
 So far, so good\. Next you'll add a database to your environment and configure CakePHP to connect to it\.
 
-## Add a Database to Your Environment<a name="php-cakephp-tutorial-database"></a>
+## Add a database to your environment<a name="php-cakephp-tutorial-database"></a>
 
 Launch an Amazon RDS database instance in your Elastic Beanstalk environment\. You can use MySQL, SQLServer, or PostgreSQL databases with CakePHP on Elastic Beanstalk\. For this example, we'll use PostgreSQL\.
 
@@ -139,7 +139,7 @@ Creating a database instance takes about 10 minutes\. In the meantime, you can u
 
 CakePHP's database configuration is in a file named `app.php` in the `config` folder in your project code\. Open this file and add some code that reads the environment variables from `$_SERVER` and assigns them to local variables\. Insert the highlighted lines in the below example after the first line \(`<?php`\):
 
-**Example \~/eb\-cake/config/app\.php**  
+**Example \~/Eb\-cake/config/app\.php**  
 
 ```
 <?php
@@ -155,7 +155,7 @@ return [
 
 The database connection is configured further down in `app.php`\. Find the following section and modify the default datasources configuration with the name of the driver that matches your database engine \(`Mysql`, `Sqlserver`, or `Postgres`\), and set the `host`, `username`, `password` and `database` variables to read the corresponding values from Elastic Beanstalk:
 
-**Example \~/eb\-cake/config/app\.php**  
+**Example \~/Eb\-cake/config/app\.php**  
 
 ```
 ...
@@ -245,12 +245,12 @@ In addition, you can terminate database resources that you created outside of yo
 
 1. Choose whether to create a snapshot, and then choose **Delete**\.
 
-## Next Steps<a name="php-cakephp-tutorial-nextsteps"></a>
+## Next steps<a name="php-cakephp-tutorial-nextsteps"></a>
 
 For more information about CakePHP, read the book at [book\.cakephp\.org](http://book.cakephp.org/3.0/en/index.html)\.
 
 As you continue to develop your application, you'll probably want a way to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
 
-Running an Amazon RDS DB instance in your Elastic Beanstalk environment is great for development and testing, but it ties the lifecycle of your database to your environment\. See [Adding an Amazon RDS DB Instance to Your PHP Application Environment](create_deploy_PHP.rds.md) for instructions on connecting to a database running outside of your environment\.
+Running an Amazon RDS DB instance in your Elastic Beanstalk environment is great for development and testing, but it ties the lifecycle of your database to your environment\. See [Adding an Amazon RDS DB instance to your PHP application environment](create_deploy_PHP.rds.md) for instructions on connecting to a database running outside of your environment\.
 
 Finally, if you plan on using your application in a production environment, you will want to [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.

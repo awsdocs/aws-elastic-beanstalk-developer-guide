@@ -1,10 +1,10 @@
-# Deploying a Sinatra Application to Elastic Beanstalk<a name="ruby-sinatra-tutorial"></a>
+# Deploying a sinatra application to Elastic Beanstalk<a name="ruby-sinatra-tutorial"></a>
 
 This walkthrough shows how to deploy a simple [Sinatra](http://www.sinatrarb.com/) web application to AWS Elastic Beanstalk\.
 
 ## Prerequisites<a name="ruby-sinatra-tutorial-prereqs"></a>
 
-This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
+This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
 
 To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings preceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
 
@@ -15,9 +15,9 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Sinatra requires Ruby 1\.9 or newer\. In this tutorial we use Ruby 2\.5\.1 and the corresponding Elastic Beanstalk platform version\. Install Ruby by following the instructions at [Setting Up your Ruby Development Environment](ruby-development-environment.md)\.
+Sinatra requires Ruby 1\.9 or newer\. In this tutorial we use Ruby 2\.5\.1 and the corresponding Elastic Beanstalk platform version\. Install Ruby by following the instructions at [Setting up your Ruby development environment](ruby-development-environment.md)\.
 
-## Launch an Elastic Beanstalk Environment<a name="ruby-sinatra-tutorial-launch"></a>
+## Launch an Elastic Beanstalk environment<a name="ruby-sinatra-tutorial-launch"></a>
 
 Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. Choose the **Ruby** platform and accept the default settings and sample code\.
 
@@ -51,9 +51,9 @@ All of these resources are managed by Elastic Beanstalk\. When you terminate you
 **Note**  
 The Amazon S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)\.
 
-## Write a Basic Sinatra Website<a name="ruby-sinatra-tutorial-generate"></a>
+## Write a basic sinatra website<a name="ruby-sinatra-tutorial-generate"></a>
 
-**To create and deploy a Sinatra application**
+**To create and deploy a sinatra application**
 
 1. Create a configuration file named **config\.ru** with the following contents\.  
 **Example config\.ru**  
@@ -81,7 +81,7 @@ The Amazon S3 bucket that Elastic Beanstalk creates is shared between environmen
    gem 'sinatra'
    ```
 
-## Deploy Your Application<a name="ruby-sinatra-tutorial-deploy"></a>
+## Deploy your application<a name="ruby-sinatra-tutorial-deploy"></a>
 
 Create a [source bundle](applications-sourcebundle.md) containing the your source files\. The following command creates a source bundle named `sinatra-default.zip`\.
 
@@ -121,7 +121,7 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 
-## Next Steps<a name="ruby-sinatra-tutorial-nextsteps"></a>
+## Next steps<a name="ruby-sinatra-tutorial-nextsteps"></a>
 
 For more information about Sinatra, visit [sinatrarb\.com](http://sinatrarb.com/)\.
 

@@ -1,4 +1,4 @@
-# Custom Resource Examples<a name="customize-environment-resources-examples"></a>
+# Custom resource examples<a name="customize-environment-resources-examples"></a>
 
 The following is a list of example configuration files that you can use to customize your Elastic Beanstalk environments:
 + [DynamoDB, CloudWatch, and SNS](https://elasticbeanstalk.s3.amazonaws.com/extensions/DynamoDB-with-CloudWatch-Alarms.config)

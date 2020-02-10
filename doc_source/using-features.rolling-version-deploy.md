@@ -1,4 +1,4 @@
-# Deployment Policies and Settings<a name="using-features.rolling-version-deploy"></a>
+# Deployment policies and settings<a name="using-features.rolling-version-deploy"></a>
 
 AWS Elastic Beanstalk provides several options for how [deployments](using-features.deploy-existing-version.md) are processed, including deployment policies \(**All at once**, **Rolling**, **Rolling with additional batch**, and **Immutable**\) and options that let you configure batch size and health check behavior during deployments\. By default, your environment uses all\-at\-once deployments\. If you created the environment with the EB CLI and it's an automatically scaling environment \(you didn't specify the `--single` option\), it uses rolling deployments\.
 
@@ -12,7 +12,7 @@ If your application doesn't pass all health checks, but still operates correctly
 
 When you specify a batch size for rolling updates, Elastic Beanstalk also uses that value for rolling application restarts\. Use rolling restarts when you need to restart the proxy and application servers running on your environment's instances without downtime\.
 
-## Configuring Application Deployments<a name="environments-cfg-rollingdeployments-console"></a>
+## Configuring application deployments<a name="environments-cfg-rollingdeployments-console"></a>
 
 In the [environment management console](environments-console.md), enable and configure batched application version deployments by editing **Updates and Deployments** on the environment's **Configuration** page\.
 
@@ -47,9 +47,9 @@ The **Deployment preferences** section contains options related to health checks
 + **Healthy threshold** – Lowers the threshold at which an instance is considered healthy during rolling deployments, rolling updates, and immutable updates\.
 + **Command timeout** – The number of seconds to wait for an instance to become healthy before canceling the deployment or, if **Ignore health check** is set, to continue to the next batch\.
 
-![\[Elastic Beanstalk Application deployments configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-healthchecks.png)
+![\[Elastic Beanstalk application deployments configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-healthchecks.png)
 
-## How Rolling Deployments Work<a name="environments-cfg-rollingdeployments-method"></a>
+## How rolling deployments work<a name="environments-cfg-rollingdeployments-method"></a>
 
 When processing a batch, Elastic Beanstalk detaches all instances in the batch from the load balancer, deploys the new application version, and then reattaches the instances\. If you enable [connection draining](environments-cfg-clb.md#using-features.managing.elb.draining), Elastic Beanstalk drains existing connections from the Amazon EC2 instances in each batch before beginning the deployment\.
 
@@ -61,7 +61,7 @@ If a batch of instances does not become healthy within the [command timeout](#en
 
 If a deployment fails after one or more batches completed successfully, the completed batches run the new version of your application while any pending batches continue to run the old version\. You can identify the version running on the instances in your environment on the [health page](health-enhanced-console.md#health-enhanced-console-healthpage) in the console\. This page displays the deployment ID of the most recent deployment that executed on each instance in your environment\. If you terminate instances from the failed deployment, Elastic Beanstalk replaces them with instances running the application version from the most recent successful deployment\.
 
-## The aws:elasticbeanstalk:command Namespace<a name="environments-cfg-rollingdeployments-namespace"></a>
+## The aws:elasticbeanstalk:command namespace<a name="environments-cfg-rollingdeployments-namespace"></a>
 
 You can also use the [configuration options](command-options.md) in the [`aws:elasticbeanstalk:command`](command-options-general.md#command-options-general-elasticbeanstalkcommand) namespace to configure rolling deployments\.
 
@@ -108,4 +108,4 @@ option_settings:
     Timeout: "900"
 ```
 
-The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended values](command-options.md#configuration-options-recommendedvalues) for details\.

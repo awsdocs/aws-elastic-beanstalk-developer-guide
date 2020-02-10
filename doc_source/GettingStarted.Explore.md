@@ -1,4 +1,4 @@
-# Step 2: Explore Your Environment<a name="GettingStarted.Explore"></a>
+# Step 2: Explore your environment<a name="GettingStarted.Explore"></a>
 
 To see an overview of your Elastic Beanstalk application's environment, use the environment dashboard in the Elastic Beanstalk console\.
 
@@ -11,7 +11,7 @@ To see an overview of your Elastic Beanstalk application's environment, use the 
 
 The environment dashboard shows top level information about your environment\. This includes its URL, its current health status, the name of the currently deployed application version, its five most recent events, and the platform version that the application is running on\.
 
-To learn more about environment tiers, platforms, application versions, and other Elastic Beanstalk concepts, see [Elastic Beanstalk Concepts](concepts.md)\.
+To learn more about environment tiers, platforms, application versions, and other Elastic Beanstalk concepts, see [Elastic Beanstalk concepts](concepts.md)\.
 
 ![\[Environment dashboard.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-dashboard.png)
 

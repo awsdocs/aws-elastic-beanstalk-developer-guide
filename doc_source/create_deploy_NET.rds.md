@@ -1,4 +1,4 @@
-# Adding an Amazon RDS DB Instance to Your \.NET Application Environment<a name="create_deploy_NET.rds"></a>
+# Adding an Amazon RDS DB instance to your \.NET application environment<a name="create_deploy_NET.rds"></a>
 
 You can use an Amazon Relational Database Service \(Amazon RDS\) DB instance to store data gathered and modified by your application\. The database can be attached to your environment and managed by Elastic Beanstalk, or created and managed externally\.
 
@@ -11,11 +11,11 @@ For learning purposes or test environments, you can use Elastic Beanstalk to add
 For production environments, you can create a DB instance outside of your Elastic Beanstalk environment to decouple your environment resources from your database resources\. This way, when you terminate your environment, the DB instance isn’t deleted\. An external DB instance also lets you connect to the same database from multiple environments and perform [blue\-green deployments](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.CNAMESwap.html)\. For instructions, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\.
 
 **Topics**
-+ [Adding a DB Instance to Your Environment](#dotnet-rds-create)
-+ [Downloading a Driver](#dotnet-rds-drivers)
-+ [Connecting to a Database](#dotnet-rds-connect)
++ [Adding a DB instance to your environment](#dotnet-rds-create)
++ [Downloading a driver](#dotnet-rds-drivers)
++ [Connecting to a database](#dotnet-rds-connect)
 
-## Adding a DB Instance to Your Environment<a name="dotnet-rds-create"></a>
+## Adding a DB instance to your environment<a name="dotnet-rds-create"></a>
 
 **To add a DB instance to your environment**
 
@@ -46,9 +46,9 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
   Amazon RDS console label – **Username**
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
-For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
+For more information about configuring an internal DB instance, see [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md)\.
 
-## Downloading a Driver<a name="dotnet-rds-drivers"></a>
+## Downloading a driver<a name="dotnet-rds-drivers"></a>
 
 Download and install the `EntityFramework` package and a database driver for your development environment with `NuGet`\.
 
@@ -57,11 +57,11 @@ Download and install the `EntityFramework` package and a database driver for you
 + **MySQL** – `Pomelo.EntityFrameworkCore.MySql`
 + **PostgreSQL** – `Npgsql.EntityFrameworkCore.PostgreSQL`
 
-## Connecting to a Database<a name="dotnet-rds-connect"></a>
+## Connecting to a database<a name="dotnet-rds-connect"></a>
 
 Elastic Beanstalk provides connection information for attached DB instances in environment properties\. Use `ConfigurationManager.AppSettings` to read the properties and configure a database connection\.
 
-**Example Helpers\.cs \- Connection String Method**  
+**Example Helpers\.cs \- connection string method**  
 
 ```
 using System;

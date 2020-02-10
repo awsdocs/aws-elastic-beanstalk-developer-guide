@@ -1,4 +1,4 @@
-# Storing Private Keys Securely in Amazon S3<a name="https-storingprivatekeys"></a>
+# Storing private keys securely in Amazon S3<a name="https-storingprivatekeys"></a>
 
 The private key that you use to sign your public certificate is private and should not be committed to source code\. You can avoid storing private keys in configuration files by uploading them to Amazon S3, and configuring Elastic Beanstalk to download the file from Amazon S3 during application deployment\.
 

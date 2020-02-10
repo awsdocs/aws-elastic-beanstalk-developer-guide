@@ -1,4 +1,4 @@
-# Configuring Auto Scaling Using the AWS Toolkit for Visual Studio<a name="create_deploy_NET.managing.as"></a>
+# Configuring Auto Scaling using the AWS toolkit for Visual Studio<a name="create_deploy_NET.managing.as"></a>
 
 Amazon EC2 Auto Scaling is an Amazon web service designed to automatically launch or terminate Amazon EC2 instances based on user\-defined triggers\. Users can set up *Auto Scaling groups* and associate *triggers* with these groups to automatically scale computing resources based on metrics such as bandwidth usage or CPU utilization\. Amazon EC2 Auto Scaling works with Amazon CloudWatch to retrieve metrics for the server instances running your application\.
 
@@ -8,17 +8,17 @@ Amazon EC2 Auto Scaling lets you take a group of Amazon EC2 instances and set va
 
 Elastic Beanstalk provisions Amazon EC2 Auto Scaling for your application\. You can edit the Elastic Beanstalk environment's Amazon EC2 instance configuration with the **Auto Scaling** tab inside your application environment tab in the AWS Toolkit for Visual Studio\.
 
-![\[Elastic Beanstalk Auto Scaling Configuration Panel\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-autoscaling.png)
+![\[Elastic Beanstalk Auto Scaling configuration panel\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-autoscaling.png)
 
 The following section discusses how to configure Auto Scaling parameters for your application\. 
 
-## Launch the Configuration<a name="create_deploy_NET.managing.as.launchconfig"></a>
+## Launch the configuration<a name="create_deploy_NET.managing.as.launchconfig"></a>
 
 You can edit the launch configuration to control how your Elastic Beanstalk application provisions Amazon EC2 Auto Scaling resources\.
 
 The **Minimum Instance Count** and **Maximum Instance Count** boxes let you specify the minimum and maximum size of the Auto Scaling group that your Elastic Beanstalk application uses\.
 
-![\[Elastic Beanstalk Auto Scaling Launch Config Configuration Window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-autoscaling-launchconfig.png)
+![\[Elastic Beanstalk Auto Scaling launch config configuration window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-autoscaling-launchconfig.png)
 
 **Note**  
 To maintain a fixed number of Amazon EC2 instances, set **Minimum Instance Count** and **Maximum Instance Count** to the same value\.
@@ -34,7 +34,7 @@ A *trigger* is an Amazon EC2 Auto Scaling mechanism that you set to tell the sys
 
 You can define a scaling trigger for your Elastic Beanstalk application using AWS Toolkit for Visual Studio\.
 
-![\[Elastic Beanstalk Auto Scaling Trigger\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-autoscaling-triggers.png)
+![\[Elastic Beanstalk Auto Scaling trigger\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-autoscaling-triggers.png)
 
 Amazon EC2 Auto Scaling triggers work by watching a specific Amazon CloudWatch metric for an instance\. Triggers include CPU utilization, network traffic, and disk activity\. Use the **Trigger Measurement** setting to select a metric for your trigger\.
 

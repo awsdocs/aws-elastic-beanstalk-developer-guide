@@ -1,4 +1,4 @@
-# Compliance Validation for Elastic Beanstalk<a name="compliance-validation"></a>
+# Compliance validation for Elastic Beanstalk<a name="compliance-validation"></a>
 
 The security and compliance of AWS Elastic Beanstalk is assessed by third\-party auditors as part of multiple AWS compliance programs\. These include SOC, PCI, FedRAMP, HIPAA, and others\. AWS provides a frequently updated list of AWS services in scope of specific compliance programs at [AWS Services in Scope by Compliance Program](https://aws.amazon.com/compliance/services-in-scope/)\. 
 
@@ -13,4 +13,4 @@ Your compliance responsibility when using Elastic Beanstalk is determined by the
 + [AWS Config](https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config.html) – A service that assesses how well your resource configurations comply with internal practices, industry guidelines, and regulations\.
 + [AWS Security Hub](https://docs.aws.amazon.com/securityhub/latest/userguide/what-is-securityhub.html) – A comprehensive view of your security state within AWS that helps you check your compliance with security industry standards and best practices\.
 
-For other Elastic Beanstalk security topics, see [AWS Elastic Beanstalk Security](security.md)\.
+For other Elastic Beanstalk security topics, see [AWS Elastic Beanstalk security](security.md)\.

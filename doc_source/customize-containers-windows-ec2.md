@@ -1,6 +1,6 @@
-# Customizing Software on Windows Servers<a name="customize-containers-windows-ec2"></a>
+# Customizing software on Windows servers<a name="customize-containers-windows-ec2"></a>
 
-You may want to customize and configure the software that your application depends on\. These files could be either dependencies required by the application—for example, additional packages or services that need to be run\. For general information on customizing and configuring your Elastic Beanstalk environments, see [Configuring Elastic Beanstalk Environments](customize-containers.md)\.
+You may want to customize and configure the software that your application depends on\. These files could be either dependencies required by the application—for example, additional packages or services that need to be run\. For general information on customizing and configuring your Elastic Beanstalk environments, see [Configuring Elastic Beanstalk environments](customize-containers.md)\.
 
 **Note**  
 YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
@@ -13,12 +13,12 @@ Configuration files support the following keys that affect the Windows server on
 + [Files](#windows-files)
 + [Commands](#windows-commands)
 + [Services](#windows-services)
-+ [Container Commands](#windows-container-commands)
++ [Container commands](#windows-container-commands)
 
 Keys are processed in the order that they are listed here\.
 
 **Note**  
-Older \(non\-versioned\) \.NET platform versions do not process configuration files in the correct order\. Learn more at [Migrating Across Major Versions of the Elastic Beanstalk Windows Server Platform](dotnet-v2migration.md)\.
+Older \(non\-versioned\) \.NET platform versions do not process configuration files in the correct order\. Learn more at [Migrating across major versions of the Elastic Beanstalk Windows server platform](dotnet-v2migration.md)\.
 
 Watch your environment's [events](using-features.events.md) while developing and testing configuration files\. Elastic Beanstalk ignores a configuration file that contains validation errors, like an invalid key, and doesn't process any of the other keys in the same file\. When this happens, Elastic Beanstalk adds a warning event to the event log\.
 
@@ -72,7 +72,7 @@ sources:
   target directory: location of archive file
 ```
 
-### Supported Formats<a name="windows-sources-support"></a>
+### Supported formats<a name="windows-sources-support"></a>
 
 In Windows environments, Elastic Beanstalk supports the \.zip format\. \(Linux environments support additional formats\. For details, see [Sources](customize-containers-ec2.md#linux-sources) on the *Customizing Software on Linux Servers* page\.\)
 
@@ -262,7 +262,7 @@ services:
       ensureRunning: true
 ```
 
-## Container Commands<a name="windows-container-commands"></a>
+## Container commands<a name="windows-container-commands"></a>
 
 Use the `container_commands` key to execute commands that affect your application source code\. Container commands run after the application and web server have been set up and the application version archive has been extracted, but before the application version is deployed\. Non\-container commands and other customization operations are performed prior to the application source code being extracted\.
 

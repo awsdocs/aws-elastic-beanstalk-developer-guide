@@ -1,4 +1,4 @@
-# Setting Configuration Options during Environment Creation<a name="environment-configuration-methods-during"></a>
+# Setting configuration options during environment creation<a name="environment-configuration-methods-during"></a>
 
 When you create an AWS Elastic Beanstalk environment by using the Elastic Beanstalk console, EB CLI, AWS CLI, an SDK, or the Elastic Beanstalk API, you can provide values for configuration options to customize your environment and the AWS resources that are launched within it\.
 
@@ -16,11 +16,11 @@ This topic includes procedures for all of the methods to set configuration optio
 When you create an Elastic Beanstalk environment in the Elastic Beanstalk console, you can provide configuration options using configuration files, saved configurations, and forms in the **Create New Environment** wizard\.
 
 **Topics**
-+ [Using Configuration Files \(`.ebextensions`\)](#configuration-options-during-console-ebextensions)
-+ [Using a Saved Configuration](#configuration-options-during-console-savedconfig)
-+ [Using the New Environment Wizard](#configuration-options-during-console-wizard)
++ [Using configuration files \(`.ebextensions`\)](#configuration-options-during-console-ebextensions)
++ [Using a saved configuration](#configuration-options-during-console-savedconfig)
++ [Using the new environment wizard](#configuration-options-during-console-wizard)
 
-### Using Configuration Files \(`.ebextensions`\)<a name="configuration-options-during-console-ebextensions"></a>
+### Using configuration files \(`.ebextensions`\)<a name="configuration-options-during-console-ebextensions"></a>
 
 Include `.config` files in your [application source bundle](applications-sourcebundle.md) in a folder named `.ebextensions`\.
 
@@ -37,7 +37,7 @@ Upload the source bundle to Elastic Beanstalk normally, during [environment crea
 
 The Elastic Beanstalk console applies [recommended values](command-options.md#configuration-options-recommendedvalues) for some configuration options and has form fields for others\. Options configured by the Elastic Beanstalk console are applied directly to the environment and override settings in configuration files\.
 
-### Using a Saved Configuration<a name="configuration-options-during-console-savedconfig"></a>
+### Using a saved configuration<a name="configuration-options-during-console-savedconfig"></a>
 
 When you create a new environment using the Elastic Beanstalk console, one of the first steps is to choose a configuration\. The configuration can be a [**predefined configuration**](concepts.platforms.md), typically the latest version of a platform such as **PHP** or **Tomcat**, or it can be a **saved configuration**\.
 
@@ -53,9 +53,9 @@ When you create a new environment using the Elastic Beanstalk console, one of th
 
 1. Proceed through the wizard to create your environment\.
 
-Saved configurations are application\-specific\. See [Saved Configurations](environment-configuration-methods-before.md#configuration-options-before-savedconfig) for details on creating saved configurations\.
+Saved configurations are application\-specific\. See [Saved configurations](environment-configuration-methods-before.md#configuration-options-before-savedconfig) for details on creating saved configurations\.
 
-### Using the New Environment Wizard<a name="configuration-options-during-console-wizard"></a>
+### Using the new environment wizard<a name="configuration-options-during-console-wizard"></a>
 
 Most of the standard configuration options are presented on the **Configure more options** page of the [Create New Environment wizard](environments-create-wizard.md)\. If you create an Amazon RDS database or configure a VPC for your environment, additional configuration options are available for those resources\.
 
@@ -75,16 +75,16 @@ Most of the standard configuration options are presented on the **Configure more
 
 Any options that you set in the new environment wizard are set directly on the environment and override any option settings in saved configurations or configuration files \(`.ebextensions`\) that you apply\. You can remove settings after the environment is created using the [EB CLI](environment-configuration-methods-after.md#configuration-options-after-ebcli) or [AWS CLI](environment-configuration-methods-after.md#configuration-options-after-awscli) to allow the settings in saved configurations or configuration files to surface\.
 
-For details about the new environment wizard, see [The Create New Environment Wizard](environments-create-wizard.md)\.
+For details about the new environment wizard, see [The create new environment wizard](environments-create-wizard.md)\.
 
 ## Using the EB CLI<a name="configuration-options-during-ebcli"></a>
 
 **Topics**
-+ [Using Configuration Files \(`.ebextensions`\)](#configuration-options-during-ebcli-ebextensions)
-+ [Using Saved Configurations](#configuration-options-during-ebcli-savedconfig)
-+ [Using Command Line Options](#configuration-options-during-ebcli-params)
++ [Using configuration files \(`.ebextensions`\)](#configuration-options-during-ebcli-ebextensions)
++ [Using saved configurations](#configuration-options-during-ebcli-savedconfig)
++ [Using command line options](#configuration-options-during-ebcli-params)
 
-### Using Configuration Files \(`.ebextensions`\)<a name="configuration-options-during-ebcli-ebextensions"></a>
+### Using configuration files \(`.ebextensions`\)<a name="configuration-options-during-ebcli-ebextensions"></a>
 
 Include `.config` files in your project folder under `.ebextensions` to deploy them with your application code\.
 
@@ -105,7 +105,7 @@ Create your environment and deploy your source code to it with eb create\.
 ~/workspace/my-app$ eb create my-env
 ```
 
-### Using Saved Configurations<a name="configuration-options-during-ebcli-savedconfig"></a>
+### Using saved configurations<a name="configuration-options-during-ebcli-savedconfig"></a>
 
 To apply a saved configuration when you create an environment with [eb create](eb3-create.md), use the `--cfg` option\.
 
@@ -127,9 +127,9 @@ You can store the saved configuration in your project folder or in your Elastic 
 `-- styles.css
 ```
 
-If the EB CLI does not find the configuration locally, it looks in the Elastic Beanstalk storage location in Amazon S3\. For details on creating, editing, and uploading saved configurations, see [Saved Configurations](environment-configuration-methods-before.md#configuration-options-before-savedconfig)\.
+If the EB CLI does not find the configuration locally, it looks in the Elastic Beanstalk storage location in Amazon S3\. For details on creating, editing, and uploading saved configurations, see [Saved configurations](environment-configuration-methods-before.md#configuration-options-before-savedconfig)\.
 
-### Using Command Line Options<a name="configuration-options-during-ebcli-params"></a>
+### Using command line options<a name="configuration-options-during-ebcli-params"></a>
 
 The EB CLI eb create command has several [options](eb3-create.md#eb3-createoptions) that you can use to set configuration options during environment creation\. You can use these options to add an RDS database to your environment, configure a VPC, or override [recommended values](command-options.md#configuration-options-recommendedvalues)\.
 
@@ -154,11 +154,11 @@ See [eb create](eb3-create.md) for a full list of available options and usage ex
 When you use the `create-environment` command to create an Elastic Beanstalk environment with the AWS CLI, the AWS CLI does not apply any [recommended values](command-options.md#configuration-options-recommendedvalues)\. All configuration options are defined in configuration files in the source bundle that you specify\. 
 
 **Topics**
-+ [Using Configuration Files \(`.ebextensions`\)](#configuration-options-during-awscli-ebextensions)
-+ [Using a Saved Configuration](#configuration-options-during-awscli-savedconfig)
-+ [Using Command Line Options](#configuration-options-during-awscli-params)
++ [Using configuration files \(`.ebextensions`\)](#configuration-options-during-awscli-ebextensions)
++ [Using a saved configuration](#configuration-options-during-awscli-savedconfig)
++ [Using command line options](#configuration-options-during-awscli-params)
 
-### Using Configuration Files \(`.ebextensions`\)<a name="configuration-options-during-awscli-ebextensions"></a>
+### Using configuration files \(`.ebextensions`\)<a name="configuration-options-during-awscli-ebextensions"></a>
 
 To apply configuration files to an environment that you create with the AWS CLI, include them in the application source bundle that you upload to Amazon S3\.
 
@@ -200,7 +200,7 @@ To apply configuration files to an environment that you create with the AWS CLI,
    $ aws elasticbeanstalk create-environment --application-name my-app --environment-name my-env --version-label v1 --solution-stack-name "64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8"
    ```
 
-### Using a Saved Configuration<a name="configuration-options-during-awscli-savedconfig"></a>
+### Using a saved configuration<a name="configuration-options-during-awscli-savedconfig"></a>
 
 To apply a saved configuration to an environment during creation, use the `--template-name` parameter\.
 
@@ -210,7 +210,7 @@ $ aws elasticbeanstalk create-environment --application-name my-app --environmen
 
 When you specify a saved configuration, do not also specify a solution stack name\. Saved configurations already specify a solution stack and Elastic Beanstalk will return an error if you try to use both options\. 
 
-### Using Command Line Options<a name="configuration-options-during-awscli-params"></a>
+### Using command line options<a name="configuration-options-during-awscli-params"></a>
 
 Use the `--option-settings` parameter to specify configuration options in JSON format\.
 

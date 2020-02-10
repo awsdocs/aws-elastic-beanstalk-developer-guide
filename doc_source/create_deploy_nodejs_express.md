@@ -1,15 +1,15 @@
-# Deploying an Express Application to Elastic Beanstalk<a name="create_deploy_nodejs_express"></a>
+# Deploying an Express application to Elastic Beanstalk<a name="create_deploy_nodejs_express"></a>
 
 This section walks you through deploying a sample application to Elastic Beanstalk using Elastic Beanstalk Command Line Interface \(EB CLI\) and Git, and then updating the application to use the [Express](http://expressjs.com/) framework\. 
 
 ## Prerequisites<a name="create_deploy_nodejs_express.prerequisites"></a>
 
-This tutorial requires the Node\.js language, its package manager called npm, and the Express web application framework\. For details on installing these components and setting up your local development environment, see [Setting Up your Node\.js Development Environment](nodejs-devenv.md)\.
+This tutorial requires the Node\.js language, its package manager called npm, and the Express web application framework\. For details on installing these components and setting up your local development environment, see [Setting up your Node\.js development environment](nodejs-devenv.md)\.
 
 **Note**  
-For this tutorial, you don't need to install the AWS SDK for Node\.js, which is also mentioned in [Setting Up your Node\.js Development Environment](nodejs-devenv.md)\.
+For this tutorial, you don't need to install the AWS SDK for Node\.js, which is also mentioned in [Setting up your Node\.js development environment](nodejs-devenv.md)\.
 
-The tutorial also requires the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
+The tutorial also requires the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
 
 ## Initialize Git<a name="create_deploy_nodejs_express.git"></a>
 
@@ -39,7 +39,7 @@ Now let's set up a Git repository in this folder\.
    .elasticbeanstalk/
    ```
 
-## Create an Elastic Beanstalk Environment<a name="create_deploy_nodejs_express.eb_init-rds"></a>
+## Create an Elastic Beanstalk environment<a name="create_deploy_nodejs_express.eb_init-rds"></a>
 
 Configure an EB CLI repository for your application and create an Elastic Beanstalk environment running the Node\.js platform\.
 
@@ -77,7 +77,7 @@ Configure an EB CLI repository for your application and create an Elastic Beanst
    ~/node-express$ eb open
    ```
 
-## Update the Application<a name="create_deploy_nodejs_express.update"></a>
+## Update the application<a name="create_deploy_nodejs_express.update"></a>
 
 After you have created an environment with a sample application, you can update it with your own application\. In this step, we update the sample application to use the Express framework\.
 
@@ -95,7 +95,7 @@ After you have created an environment with a sample application, you can update 
        NodeCommand: "npm start"
    ```
 
-   For more information, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.
+   For more information, see [Advanced environment customization with configuration files \(`.ebextensions`\)](ebextensions.md)\.
 
 1. Stage the files:
 
@@ -201,7 +201,7 @@ Next, let's update the Express application to serve static files and add a new p
 
    You should see a web page titled **My Hiking Log**\.
 
-## Clean Up<a name="create_deploy_nodejs_express.delete"></a>
+## Clean up<a name="create_deploy_nodejs_express.delete"></a>
 
 If you are done working with Elastic Beanstalk, you can terminate your environment\.
 

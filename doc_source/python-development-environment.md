@@ -1,4 +1,4 @@
-# Setting Up Your Python Development Environment<a name="python-development-environment"></a>
+# Setting up your Python development environment<a name="python-development-environment"></a>
 
 Set up a Python development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
@@ -11,14 +11,14 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with Elastic Beanstalk](chapter-devenv.md)\.
+For common setup steps and tools that apply to all languages, see [Configuring your development machine for use with Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
-+ [Installing Python and Pip](#python-common-prereq)
-+ [Using a Virtual Environment](#python-common-setup-venv)
++ [Installing Python and pip](#python-common-prereq)
++ [Using a virtual environment](#python-common-setup-venv)
 + [Configuring a Python project for Elastic Beanstalk](#python-common-configuring)
 
-## Installing Python and Pip<a name="python-common-prereq"></a>
+## Installing Python and pip<a name="python-common-prereq"></a>
 
 For all Python applications that you'll deploy with Elastic Beanstalk, these prerequisites are common:
 
@@ -32,9 +32,9 @@ For all Python applications that you'll deploy with Elastic Beanstalk, these pre
 
 1. A working `ssh` installation\. This is used to connect with your running instances when you need to examine or debug a deployment\.
 
-For instructions on installing Python, pip, and the EB CLI, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md)\.
+For instructions on installing Python, pip, and the EB CLI, see [Install the EB CLI](eb-cli3-install.md)\.
 
-## Using a Virtual Environment<a name="python-common-setup-venv"></a>
+## Using a virtual environment<a name="python-common-setup-venv"></a>
 
 Once you have the prerequisites installed, set up a virtual environment with `virtualenv` to install your application's dependencies\. By using a virtual environment, you can discern exactly which packages are needed by your application so that the required packages are installed on the EC2 instances that are running your application\.
 
@@ -86,6 +86,6 @@ You can use the Elastic Beanstalk CLI to prepare your Python applications for de
 
    This allows Elastic Beanstalk to replicate your application's Python environment using the same packages and same versions that you used to develop and test your application\.
 
-1. Configure the EB CLI repository with the eb init command\. Follow the prompts to choose a region, platform and other options\. For detailed instructions, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
+1. Configure the EB CLI repository with the eb init command\. Follow the prompts to choose a region, platform and other options\. For detailed instructions, see [Managing Elastic Beanstalk environments with the EB CLI](eb-cli3-getting-started.md)\.
 
-By default, Elastic Beanstalk looks for a file called `application.py` to start your application\. If this doesn't exist in the Python project that you've created, some adjustment of your application's environment is necessary\. You will also need to set environment variables so that your application's modules can be loaded\. See [Using the Elastic Beanstalk Python Platform](create-deploy-python-container.md) for more information\.
+By default, Elastic Beanstalk looks for a file called `application.py` to start your application\. If this doesn't exist in the Python project that you've created, some adjustment of your application's environment is necessary\. You will also need to set environment variables so that your application's modules can be loaded\. See [Using the Elastic Beanstalk Python platform](create-deploy-python-container.md) for more information\.

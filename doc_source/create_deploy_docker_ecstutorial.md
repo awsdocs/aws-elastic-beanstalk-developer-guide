@@ -1,17 +1,17 @@
-# Multicontainer Docker Environments with the Elastic Beanstalk console<a name="create_deploy_docker_ecstutorial"></a>
+# Multicontainer Docker environments with the Elastic Beanstalk console<a name="create_deploy_docker_ecstutorial"></a>
 
 You can launch a cluster of multicontainer instances in a single\-instance or autoscaling Elastic Beanstalk environment using the Elastic Beanstalk console\. This tutorial details container configuration and source code preparation for an environment that uses two containers\. 
 
 The containers, a PHP application and an nginx proxy, run side by side on each of the Amazon Elastic Compute Cloud \(Amazon EC2\) instances in an Elastic Beanstalk environment\. After creating the environment and verifying that the applications are running, you'll connect to a container instance to see how it all fits together\.
 
 **Topics**
-+ [Define Docker Containers](#create_deploy_docker_ecstutorial_config)
-+ [Add Content](#create_deploy_docker_ecstutorial_code)
++ [Define Docker containers](#create_deploy_docker_ecstutorial_config)
++ [Add content](#create_deploy_docker_ecstutorial_code)
 + [Deploy to Elastic Beanstalk](#create_deploy_docker_ecstutorial_deploy)
-+ [Connect to a Container Instance](#create_deploy_docker_ecstutorial_connect)
-+ [Inspect the Amazon ECS Container Agent](#create_deploy_docker_ecstutorial_connect_inspect)
++ [Connect to a container instance](#create_deploy_docker_ecstutorial_connect)
++ [Inspect the Amazon ECS container agent](#create_deploy_docker_ecstutorial_connect_inspect)
 
-## Define Docker Containers<a name="create_deploy_docker_ecstutorial_config"></a>
+## Define Docker containers<a name="create_deploy_docker_ecstutorial_config"></a>
 
 The first step in creating a new Docker environment is to create a directory for your application data\. This folder can be located anywhere on your local machine and have any name you choose\. In addition to a container configuration file, this folder will contain the content that you will upload to Elastic Beanstalk and deploy to your environment\. 
 
@@ -92,9 +92,9 @@ This example configuration defines two containers, a PHP web site with an nginx 
 
 The volumes defined in the configuration correspond to the content that you will create next and upload as part of your application source bundle\. The containers access content on the host by mounting volumes in the `mountPoints` section of the container definitions\. 
 
-For more information on the format of `Dockerrun.aws.json` and its parameters, see [Container Definition Format](create_deploy_docker_v2config.md#create_deploy_docker_v2config_dockerrun_format)\. 
+For more information on the format of `Dockerrun.aws.json` and its parameters, see [Container definition format](create_deploy_docker_v2config.md#create_deploy_docker_v2config_dockerrun_format)\. 
 
-## Add Content<a name="create_deploy_docker_ecstutorial_code"></a>
+## Add content<a name="create_deploy_docker_ecstutorial_code"></a>
 
 Next you will add some content for your PHP site to display to visitors, and a configuration file for the nginx proxy\. 
 
@@ -156,7 +156,7 @@ Your application folder now contains the following files:
 This is all you need to create the Elastic Beanstalk environment\. Create a `.zip` archive of the above files and folders \(not including the top\-level project folder\)\. To create the archive in Windows explorer, select the contents of the project folder, right\-click, select **Send To**, and then click **Compressed \(zipped\) Folder** 
 
 **Note**  
-For information on the required file structure and instructions for creating archives in other environments, see [Create an Application Source Bundle](applications-sourcebundle.md) 
+For information on the required file structure and instructions for creating archives in other environments, see [Create an application source bundle](applications-sourcebundle.md) 
 
 Next, upload the source bundle to Elastic Beanstalk and create your environment\. When you are prompted to select a platform, choose **Multi\-container Docker**\.
 
@@ -178,7 +178,7 @@ Next, upload the source bundle to Elastic Beanstalk and create your environment\
 
 The Elastic Beanstalk console redirects you to the management dashboard for your new environment\. This screen shows the health status of the environment and events output by the Elastic Beanstalk service\. When the status is Green, click the URL next to the environment name to see your new website\. 
 
-## Connect to a Container Instance<a name="create_deploy_docker_ecstutorial_connect"></a>
+## Connect to a container instance<a name="create_deploy_docker_ecstutorial_connect"></a>
 
 Next you will connect to an Amazon EC2 instance in your Elastic Beanstalk environment to see some of the moving parts in action\. 
 
@@ -214,7 +214,7 @@ b894601a1364        php:5-fpm                        "php-fpm"              Abou
 
 This shows the two running containers that you deployed, as well as the Amazon ECS container agent that coordinated the deployment\. 
 
-## Inspect the Amazon ECS Container Agent<a name="create_deploy_docker_ecstutorial_connect_inspect"></a>
+## Inspect the Amazon ECS container agent<a name="create_deploy_docker_ecstutorial_connect_inspect"></a>
 
 Amazon EC2 instances in a Multicontainer Docker environment on Elastic Beanstalk run an agent process in a Docker container\. This agent connects to the Amazon ECS service in order to coordinate container deployments\. These deployments run as tasks in Amazon ECS, which are configured in task definition files\. Elastic Beanstalk creates these task definition files based on the `Dockerrun.aws.json` that you upload in a source bundle\. 
 

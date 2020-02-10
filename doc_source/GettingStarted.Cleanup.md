@@ -1,4 +1,4 @@
-# Step 5: Clean Up<a name="GettingStarted.Cleanup"></a>
+# Step 5: Clean up<a name="GettingStarted.Cleanup"></a>
 
 Congratulations\! You have successfully deployed a sample application to the AWS Cloud, uploaded a new version, and modified its configuration to add a second Auto Scaling instance\. To ensure that you're not charged for any services you aren't using, delete all application versions and terminate the environment\. This also deletes the AWS resources that the environment created for you\.
 

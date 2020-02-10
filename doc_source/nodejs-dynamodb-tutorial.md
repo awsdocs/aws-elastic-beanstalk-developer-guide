@@ -1,4 +1,4 @@
-# Deploying a Node\.js Application with DynamoDB to Elastic Beanstalk<a name="nodejs-dynamodb-tutorial"></a>
+# Deploying a Node\.js application with DynamoDB to Elastic Beanstalk<a name="nodejs-dynamodb-tutorial"></a>
 
 This tutorial and [sample application](https://github.com/awslabs/eb-node-express-sample) walks you through the process of deploying a Node\.js application that uses the AWS SDK for JavaScript in Node\.js to interact with Amazon DynamoDB\. You'll create a DynamoDB table that is external to the AWS Elastic Beanstalk environment, and configure the application to use this external table instead of creating one in the environment\. In a production environment, you keep the table independent of the Elastic Beanstalk environment to protect against accidental data loss and enable you to perform [blue/green deployments](using-features.CNAMESwap.md)\.
 
@@ -6,14 +6,14 @@ The tutorial's sample application uses a DynamoDB table to store user\-provided 
 
 **Topics**
 + [Prerequisites](#nodejs-dynamodb-tutorial-prereqs)
-+ [Launch an Elastic Beanstalk Environment](#nodejs-dynamodb-tutorial-launch)
-+ [Add Permissions to Your Environment's Instances](#nodejs-dynamodb-tutorial-role)
-+ [Deploy the Sample Application](#nodejs-dynamodb-tutorial-deploy)
-+ [Create a DynamoDB Table](#nodejs-dynamodb-tutorial-database)
-+ [Update the Application's Configuration Files](#nodejs-dynamodb-tutorial-update)
-+ [Configure Your Environment for High Availability](#nodejs-dynamodb-tutorial-configure)
++ [Launch an Elastic Beanstalk environment](#nodejs-dynamodb-tutorial-launch)
++ [Add permissions to your environment's instances](#nodejs-dynamodb-tutorial-role)
++ [Deploy the sample application](#nodejs-dynamodb-tutorial-deploy)
++ [Create a DynamoDB table](#nodejs-dynamodb-tutorial-database)
++ [Update the application's configuration files](#nodejs-dynamodb-tutorial-update)
++ [Configure your environment for high availability](#nodejs-dynamodb-tutorial-configure)
 + [Cleanup](#nodejs-dynamodb-tutorial-cleanup)
-+ [Next Steps](#nodejs-dynamodb-tutorial-nextsteps)
++ [Next steps](#nodejs-dynamodb-tutorial-nextsteps)
 
 ## Prerequisites<a name="nodejs-dynamodb-tutorial-prereqs"></a>
 + Before you start, download the sample application source bundle from GitHub: [eb\-node\-express\-sample\-v1\.1\.zip](https://github.com/awslabs/eb-node-express-sample/releases/download/v1.1/eb-node-express-sample-v1.1.zip)\.
@@ -56,7 +56,7 @@ You can run all commands in this tutorial on a Linux virtual machine, an OS X ma
      ...
      ```
 
-## Launch an Elastic Beanstalk Environment<a name="nodejs-dynamodb-tutorial-launch"></a>
+## Launch an Elastic Beanstalk environment<a name="nodejs-dynamodb-tutorial-launch"></a>
 
 You use the Elastic Beanstalk console to launch an Elastic Beanstalk environment\. You'll choose the **Node\.js** platform and accept the default settings and sample code\. After you configure the environment's permissions, you deploy the sample application that you downloaded from GitHub\.
 
@@ -90,7 +90,7 @@ Elastic Beanstalk manages all of these resources\. When you terminate your envir
 **Note**  
 The S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)\.
 
-## Add Permissions to Your Environment's Instances<a name="nodejs-dynamodb-tutorial-role"></a>
+## Add permissions to your environment's instances<a name="nodejs-dynamodb-tutorial-role"></a>
 
 Your application runs on one or more EC2 instances behind a load balancer, serving HTTP requests from the Internet\. When it receives a request that requires it to use AWS services, the application uses the permissions of the instance it runs on to access those services\.
 
@@ -110,9 +110,9 @@ The sample application uses instance permissions to write data to a DynamoDB tab
 
 1. Choose **Attach policy**\.
 
-See [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md) for more on managing instance profiles\.
+See [Managing Elastic Beanstalk instance profiles](iam-instanceprofile.md) for more on managing instance profiles\.
 
-## Deploy the Sample Application<a name="nodejs-dynamodb-tutorial-deploy"></a>
+## Deploy the sample application<a name="nodejs-dynamodb-tutorial-deploy"></a>
 
 Now your environment is ready for you to deploy the sample application to it and then run it\.
 
@@ -161,7 +161,7 @@ The application \(`[app\.js](https://github.com/awslabs/eb-node-express-sample/b
 
 The sample application includes [configuration files](ebextensions.md) that create the DynamoDB table, Amazon SNS topic, and Amazon SQS queue used by the application\. This lets you create a new environment and test the functionality immediately, but has the drawback of tying the DynamoDB table to the environment\. For a production environment, you should create the DynamoDB table outside of your environment to avoid losing it when you terminate the environment or update its configuration\.
 
-## Create a DynamoDB Table<a name="nodejs-dynamodb-tutorial-database"></a>
+## Create a DynamoDB table<a name="nodejs-dynamodb-tutorial-database"></a>
 
 To use an external DynamoDB table with an application running in Elastic Beanstalk, first create a table in DynamoDB\. When you create a table outside of Elastic Beanstalk, it is completely independent of Elastic Beanstalk and your Elastic Beanstalk environments, and will not be terminated by Elastic Beanstalk\.
 
@@ -182,7 +182,7 @@ Create a table with the following settings:
 
 1. Choose **Create**\.
 
-## Update the Application's Configuration Files<a name="nodejs-dynamodb-tutorial-update"></a>
+## Update the application's configuration files<a name="nodejs-dynamodb-tutorial-update"></a>
 
 Update the [configuration files](ebextensions.md) in the application source to use the **nodejs\-tutorial** table instead of creating a new one\.
 
@@ -312,7 +312,7 @@ Open your site in a browser and verify that the form works as you expect\. Creat
 
 You can also see that Elastic Beanstalk deleted the table that it created previously\.
 
-## Configure Your Environment for High Availability<a name="nodejs-dynamodb-tutorial-configure"></a>
+## Configure your environment for high availability<a name="nodejs-dynamodb-tutorial-configure"></a>
 
 Finally, configure your environment's Auto Scaling group with a higher minimum instance count\. Run at least two instances at all times to prevent the web servers in your environment from being a single point of failure, and to allow you to deploy changes without taking your site out of service\.
 
@@ -358,11 +358,11 @@ You can also delete the external DynamoDB tables that you created\.
 
 1. Choose **Delete**\.
 
-## Next Steps<a name="nodejs-dynamodb-tutorial-nextsteps"></a>
+## Next steps<a name="nodejs-dynamodb-tutorial-nextsteps"></a>
 
 As you continue to develop your application, you'll probably want to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
 
-The sample application uses configuration files to configure software settings and create AWS resources as part of your environment\. See [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md) for more information about configuration files and their use\.
+The sample application uses configuration files to configure software settings and create AWS resources as part of your environment\. See [Advanced environment customization with configuration files \(`.ebextensions`\)](ebextensions.md) for more information about configuration files and their use\.
 
 The sample application for this tutorial uses the Express web framework for Node\.js\. For more information about Express, see the official documentation at [expressjs\.com](https://expressjs.com)\.
 

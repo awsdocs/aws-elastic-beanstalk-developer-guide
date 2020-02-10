@@ -1,8 +1,8 @@
-# Elastic Beanstalk API Command Line Interface \(Retired\)<a name="using-api-cli"></a>
+# Elastic Beanstalk API command line interface \(retired\)<a name="using-api-cli"></a>
 
 This tool, the Elastic Beanstalk API command line interface \(API CLI\), has been replaced by the AWS CLI, which provides API equivalent commands for all AWS services\. See the AWS Command Line Interface User Guide to get started with the AWS CLI\. Also try the [EB CLI](eb-cli3.md) for a simplified, higher\-level command line experience\.
 
-## Converting Elastic Beanstalk API CLI Scripts<a name="apicli-vs-awscli"></a>
+## Converting Elastic Beanstalk API CLI scripts<a name="apicli-vs-awscli"></a>
 
 Convert your old EB API CLI scripts to use the AWS CLI or Tools for Windows PowerShell to get access to the latest Elastic Beanstalk APIs\. The following table lists the Elastic Beanstalk API\-based CLI commands and their equivalent commands in the AWS CLI and Tools for Windows PowerShell\.
 

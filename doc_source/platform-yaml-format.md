@@ -1,4 +1,4 @@
-# Platform\.yaml File Format<a name="platform-yaml-format"></a>
+# Platform\.yaml file format<a name="platform-yaml-format"></a>
 
 The `platform.yaml` file has the following format\.
 

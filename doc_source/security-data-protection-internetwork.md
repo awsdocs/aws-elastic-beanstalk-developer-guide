@@ -1,4 +1,4 @@
-# Internetwork Traffic Privacy<a name="security-data-protection-internetwork"></a>
+# Internetwork traffic privacy<a name="security-data-protection-internetwork"></a>
 
 You can use Amazon Virtual Private Cloud \(Amazon VPC\) to create boundaries between resources in your Elastic Beanstalk application and control traffic between them, your on\-premises network, and the internet\. For details, see [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md)\.
 
@@ -6,4 +6,4 @@ For more information about Amazon VPC security, see [Security](https://docs.aws.
 
 For more information about data protection, see the [AWS Shared Responsibility Model and GDPR](http://aws.amazon.com/blogs/security/the-aws-shared-responsibility-model-and-gdpr/) blog post on the *AWS Security Blog*\.
 
-For other Elastic Beanstalk security topics, see [AWS Elastic Beanstalk Security](security.md)\.
+For other Elastic Beanstalk security topics, see [AWS Elastic Beanstalk security](security.md)\.

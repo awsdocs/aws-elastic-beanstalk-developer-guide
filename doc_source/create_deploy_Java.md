@@ -1,4 +1,4 @@
-# Creating and Deploying Java Applications on Elastic Beanstalk<a name="create_deploy_Java"></a>
+# Creating and deploying Java applications on Elastic Beanstalk<a name="create_deploy_Java"></a>
 
 AWS Elastic Beanstalk supports several [platform versions](concepts.platforms.md) for Java applications, including multiple versions of Java with the Tomcat application server and Java\-only platform versions for applications that do not use Tomcat\.
 
@@ -15,10 +15,10 @@ If the command line is more your style, install the [Elastic Beanstalk Command L
 The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
 **Topics**
-+ [Getting Started with Java on Elastic Beanstalk](java-getstarted.md)
-+ [Setting Up your Java Development Environment](java-development-environment.md)
-+ [Using the Elastic Beanstalk Tomcat Platform](java-tomcat-platform.md)
-+ [Using the Elastic Beanstalk Java SE Platform](java-se-platform.md)
-+ [Adding an Amazon RDS DB Instance to Your Java Application Environment](java-rds.md)
++ [Getting started with Java on Elastic Beanstalk](java-getstarted.md)
++ [Setting up your Java development environment](java-development-environment.md)
++ [Using the Elastic Beanstalk Tomcat platform](java-tomcat-platform.md)
++ [Using the Elastic Beanstalk Java SE platform](java-se-platform.md)
++ [Adding an Amazon RDS DB instance to your Java application environment](java-rds.md)
 + [Using the AWS Toolkit for Eclipse](java-eclipsetoolkit.md)
 + [Resources](create_deploy_Java.resources.md)

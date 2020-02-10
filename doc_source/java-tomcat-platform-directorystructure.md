@@ -1,4 +1,4 @@
-# Structuring Your Project Folder<a name="java-tomcat-platform-directorystructure"></a>
+# Structuring your project folder<a name="java-tomcat-platform-directorystructure"></a>
 
 To work when deployed to a Tomcat server, compiled Java Platform Enterprise Edition \(*Java EE*\) web application archives \(WAR files\) must be structured according to certain [guidelines](https://docs.oracle.com/javaee/7/tutorial/packaging003.htm)\. Your project directory doesn't have to meet the same standards, but it's a good idea to structure it in the same way to simplify compiling and packaging\. Structuring your project folder like the WAR file contents also helps you understand how files are related and how they behave on a web server\.
 
@@ -64,7 +64,7 @@ The following example is identical to the preceding project directory, except th
     `-- records.jsp
 ```
 
-## Building a WAR File with a Shell Script<a name="java-tomcat-platform-directorystructure-building"></a>
+## Building a WAR file with a shell script<a name="java-tomcat-platform-directorystructure-building"></a>
 
 `build.sh` is a very simple shell script that compiles Java classes, constructs a WAR file, and copies it to the Tomcat `webapps` directory for local testing\.
 

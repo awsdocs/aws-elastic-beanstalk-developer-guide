@@ -54,7 +54,7 @@ eb platform use \[*platform*\] \[*options*\]
 |  `use [platform] [options]`  | Select a different platform from which new versions are built\. [Learn more](#eb3-platform-use)\. | 
 |  [Common options](eb3-cmd-options.md)  |  | 
 
-### Common Options<a name="eb3-platform-common"></a>
+### Common options<a name="eb3-platform-common"></a>
 
 All eb platform commands include the following common options\.
 
@@ -71,7 +71,7 @@ All eb platform commands include the following common options\.
 |  `-r REGION` OR `--region REGION`  |  Use the region *REGION*\.  | 
 |  `--no-verify-ssl`  |  Do not verify AWS SSL certificates\.  | 
 
-### eb platform create<a name="eb3-platform-create"></a>
+### Eb platform create<a name="eb3-platform-create"></a>
 
 Builds a new version of the platform and returns the ARN for the new version\. If there is no builder environment running in the current region, this command launches one\. The *version* and increment options \(`-M`, `-m`, and `-p`\) are mutually exclusive\. 
 
@@ -88,13 +88,13 @@ Builds a new version of the platform and returns the ARN for the new version\. I
 |  `-p` OR `--patch-increment`  | Increments the patch version number \(the N in n\.n\.N\)\. | 
 |  `-i INSTANCE_TYPE` OR \-\-instance\-type *INSTANCE\_TYPE*  | Use *INSTANCE\_TYPE* as the instance type, such as **t1\.micro**\. | 
 |  `-ip INSTANCE_PROFILE` OR `--instance-profile INSTANCE_PROFILE`  | Use *INSTANCE\_PROFILE* as the instance profile when creating AMIs for a custom platform\. If the `-ip` option isn't specified, creates the instance profile `aws-elasticbeanstalk-custom-platforme-ec2-role` and uses it for the custom platform\. | 
-|  `-﻿-﻿tags key1=value1[,key2=value2 ...]`  |  Tag your custom platform version\. Tags are specified as a comma\-separated list of `key=value` pairs\. For more details, see [Tagging Custom Platform Versions](custom-platforms-tagging.md)\.  | 
+|  `-﻿-﻿tags key1=value1[,key2=value2 ...]`  |  Tag your custom platform version\. Tags are specified as a comma\-separated list of `key=value` pairs\. For more details, see [Tagging custom platform versions](custom-platforms-tagging.md)\.  | 
 |  `--timeout` *minutes*  |  Set number of minutes before the command times out\.  | 
 |  `--vpc.id VPC_ID`  | The ID of the VPC in which Packer builds\. | 
 |  `--vpc.subnets VPC_SUBNETS`  | The VPC subnets in which Packer builds\. | 
 |  `--vpc.publicip`  | Associates public IPs to EC2 instances launched\. | 
 
-### eb platform delete<a name="eb3-platform-delete"></a>
+### Eb platform delete<a name="eb3-platform-delete"></a>
 
 Delete a platform version\. The version isn't deleted if an environment is using that version\.
 
@@ -110,7 +110,7 @@ Delete a platform version\. The version isn't deleted if an environment is using
 |  `--all-platforms`  |  If `--cleanup` is specified, remove all platform versions in the `Failed` state for all platforms\.  | 
 |  `--force`  |  Do not require confirmation when deleting a version\.  | 
 
-### eb platform events<a name="eb3-platform-events"></a>
+### Eb platform events<a name="eb3-platform-events"></a>
 
 Display the events from a platform version\. If *version* is specified, display the events from that version, otherwise display the events from the current version\.
 
@@ -124,7 +124,7 @@ Display the events from a platform version\. If *version* is specified, display 
 |  *version* | The version for which events are displayed\. This value is required\. | 
 |  `-f` OR `--follow`  | Continue to display events as they occur\. | 
 
-### eb platform init<a name="eb3-platform-init"></a>
+### Eb platform init<a name="eb3-platform-init"></a>
 
 Initialize a platform repository\.
 
@@ -143,7 +143,7 @@ You can run this command in a directory that has been previously initialized, al
 
 To re\-initialize with different options, use the `-i` option\.
 
-### eb platform list<a name="eb3-platform-list"></a>
+### Eb platform list<a name="eb3-platform-list"></a>
 
 List the versions of the platform associated with a workspace \(directory\) or a region\.
 
@@ -162,7 +162,7 @@ The command returns different results depending on the type of workspace you run
 |  `-a` OR `--all-platforms`  |  Valid only in an initialized workspace \(a directory initialized by `eb platform init` or `eb init`\)\. Lists the platform versions of all custom platforms associated with your account\. | 
 |  `-s STATUS` OR `--status STATUS`  |  List only the platforms matching *STATUS*: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-platform.html)  | 
 
-### eb platform logs<a name="eb3-platform-logs"></a>
+### Eb platform logs<a name="eb3-platform-logs"></a>
 
 Display logs from the builder environment for a platform version\.
 
@@ -176,7 +176,7 @@ Display logs from the builder environment for a platform version\.
 |  `version`  |  The version of the platform for which logs are displayed\. If omitted, display logs from the current version\.  | 
 |  `--stream`  | Stream deployment logs that were set up with CloudWatch\. | 
 
-### eb platform status<a name="eb3-platform-status"></a>
+### Eb platform status<a name="eb3-platform-status"></a>
 
 Display the status of the a platform version\.
 
@@ -189,7 +189,7 @@ Display the status of the a platform version\.
 | --- | --- | 
 |  `version`  | The version of the platform for which the status is retrieved\. If omitted, display the status of the current version\. | 
 
-### eb platform use<a name="eb3-platform-use"></a>
+### Eb platform use<a name="eb3-platform-use"></a>
 
 Select a different platform from which new versions are built\.
 

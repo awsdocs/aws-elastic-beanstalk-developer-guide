@@ -1,4 +1,4 @@
-# Notifications and Troubleshooting<a name="environments-health-enhanced-notifications"></a>
+# Notifications and troubleshooting<a name="environments-health-enhanced-notifications"></a>
 
 This page lists example cause messages for common issues and links to more information\. Cause messages appear in the [environment dashboard](environment-health-console.md) and are recorded in [events](using-features.events.md) when health issues persist across several checks\.
 
@@ -20,7 +20,7 @@ To solve this issue, start another deployment\. You can [redeploy a previous ver
 
 You can also identify and terminate the instances that are running the wrong application version\. Elastic Beanstalk will launch instances with the correct version to replace any instances that you terminate\. Use the [EB CLI health command](health-enhanced-ebcli.md) to identify instances that are running the wrong application version\.
 
-## Application Server<a name="environments-health-enhanced-notifications-webapp"></a>
+## Application server<a name="environments-health-enhanced-notifications-webapp"></a>
 
 *15% of requests are erroring with HTTP 4xx*
 
@@ -44,7 +44,7 @@ On an instance, the health agent is reporting an extremely high percentage of CP
 
 Scale your environment to take load off of instances\.
 
-## Worker Instance<a name="environments-health-enhanced-notifications-worker"></a>
+## Worker instance<a name="environments-health-enhanced-notifications-worker"></a>
 
 *20 messages waiting in the queue \(25 seconds ago\)*
 
@@ -52,9 +52,9 @@ Requests are being added to your worker environment's queue faster than they can
 
 *5 messages in Dead Letter Queue \(15 seconds ago\)*
 
-Worker requests are failing repeatedly and being added to the [Dead\-Letter Queues](using-features-managing-env-tiers.md#worker-deadletter)\. Check the requests in the dead\-letter queue to see why they are failing\. 
+Worker requests are failing repeatedly and being added to the [Dead\-letter queues](using-features-managing-env-tiers.md#worker-deadletter)\. Check the requests in the dead\-letter queue to see why they are failing\. 
 
-## Other Resources<a name="environments-health-enhanced-notifications-other"></a>
+## Other resources<a name="environments-health-enhanced-notifications-other"></a>
 
 *4 active instances is below Auto Scaling group minimum size 5*
 

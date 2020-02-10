@@ -1,10 +1,10 @@
-# Tagging Application Versions<a name="applications-versions-tagging"></a>
+# Tagging application versions<a name="applications-versions-tagging"></a>
 
-You can apply tags to your AWS Elastic Beanstalk application versions\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging Elastic Beanstalk Application Resources](applications-tagging-resources.md)\.
+You can apply tags to your AWS Elastic Beanstalk application versions\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging Elastic Beanstalk application resources](applications-tagging-resources.md)\.
 
 You can specify tags when you create an application version\. In an existing application version, you can add or remove tags, and update the values of existing tags\. You can add up to 50 tags to each application version\.
 
-## Adding Tags during Application Version Creation<a name="applications-versions-tagging.create"></a>
+## Adding tags during application version creation<a name="applications-versions-tagging.create"></a>
 
 When you use the Elastic Beanstalk console to [create an environment](environments-create-wizard.md), and you choose to upload a version of your application code, you can specify tag keys and values to associate with the new application version\.
 
@@ -20,7 +20,7 @@ $ aws elasticbeanstalk create-application-version \
 
 When you use the EB CLI to create or update an environment, an application version is created from the code that you deploy\. There isn't a direct way to tag an application version during its creation through the EB CLI\. See the following section to learn about adding tags to an existing application version\.
 
-## Managing Tags of an Existing Application Version<a name="applications-versions-tagging.manage"></a>
+## Managing tags of an existing application version<a name="applications-versions-tagging.manage"></a>
 
 You can add, update, and delete tags in an existing Elastic Beanstalk application version\.
 

@@ -1,4 +1,4 @@
-# Configuring AWS X\-Ray Debugging<a name="environment-configuration-debugging"></a>
+# Configuring AWS X\-Ray debugging<a name="environment-configuration-debugging"></a>
 
 You can use the AWS Elastic Beanstalk console or a configuration file to run the AWS X\-Ray daemon on the instances in your environment\. X\-Ray is an AWS service that gathers data about the requests that your application serves, and uses it to construct a service map that you can use to identify issues with your application and opportunities for optimization\.
 
@@ -29,10 +29,10 @@ Debugging with X\-Ray requires the use of the X\-Ray SDK\. See the [Getting Star
 If you use a platform version that doesn't include the daemon, you can still run it with a script in a configuration file\. For more information, see [ Downloading and Running the X\-Ray Daemon Manually \(Advanced\)](https://docs.aws.amazon.com/xray/latest/devguide/xray-daemon-beanstalk.html#xray-daemon-beanstalk-manual) in the *AWS X\-Ray Developer Guide*\.
 
 **Topics**
-+ [Configuring Debugging](#environment-configuration-debugging-console)
-+ [The aws:elasticbeanstalk:xray Namespace](#environment-configuration-debugging-namespace)
++ [Configuring debugging](#environment-configuration-debugging-console)
++ [The aws:elasticbeanstalk:xray namespace](#environment-configuration-debugging-namespace)
 
-## Configuring Debugging<a name="environment-configuration-debugging-console"></a>
+## Configuring debugging<a name="environment-configuration-debugging-console"></a>
 
 You can enable the X\-Ray daemon on a running environment in the Elastic Beanstalk console\.
 
@@ -50,9 +50,9 @@ You can enable the X\-Ray daemon on a running environment in the Elastic Beansta
 
 1. Choose **Apply**\.
 
-You can also enable this option during environment creation\. For more information, see [The Create New Environment Wizard](environments-create-wizard.md)\.
+You can also enable this option during environment creation\. For more information, see [The create new environment wizard](environments-create-wizard.md)\.
 
-## The aws:elasticbeanstalk:xray Namespace<a name="environment-configuration-debugging-namespace"></a>
+## The aws:elasticbeanstalk:xray namespace<a name="environment-configuration-debugging-namespace"></a>
 
 You can use the `XRayEnabled` option in the `aws:elasticbeanstalk:xray` namespace to enable debugging\.
 

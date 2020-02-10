@@ -1,19 +1,19 @@
-# Deploying a Symfony Application to Elastic Beanstalk<a name="php-symfony-tutorial"></a>
+# Deploying a Symfony application to Elastic Beanstalk<a name="php-symfony-tutorial"></a>
 
 [Symfony](http://symfony.com/) is an open source framework for developing dynamic PHP web applications\. This tutorial walks you through the process of generating a Symfony application and deploying it to an AWS Elastic Beanstalk environment\.
 
 **Topics**
 + [Prerequisites](#php-symfony-tutorial-prereqs)
-+ [Launch an Elastic Beanstalk Environment](#php-symfony-tutorial-launch)
-+ [Install Symfony and Generate a Website](#php-symfony-tutorial-generate)
-+ [Deploy Your Application](#php-symfony-tutorial-deploy)
-+ [Configure Composer Settings](#php-symfony-tutorial-configure)
++ [Launch an Elastic Beanstalk environment](#php-symfony-tutorial-launch)
++ [Install Symfony and generate a website](#php-symfony-tutorial-generate)
++ [Deploy your application](#php-symfony-tutorial-deploy)
++ [Configure Composer settings](#php-symfony-tutorial-configure)
 + [Cleanup](#php-symfony-tutorial-cleanup)
-+ [Next Steps](#php-symfony-tutorial-nextsteps)
++ [Next steps](#php-symfony-tutorial-nextsteps)
 
 ## Prerequisites<a name="php-symfony-tutorial-prereqs"></a>
 
-This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting Started Using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
+This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
 
 To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings preceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
 
@@ -24,9 +24,9 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Symfony 4\.3 requires PHP 7\.1 or later and the `intl` extension for PHP\. In this tutorial we use PHP 7\.2 and the corresponding Elastic Beanstalk platform version\. Install PHP and Composer by following the instructions at [Setting Up your PHP Development Environment](php-development-environment.md)\.
+Symfony 4\.3 requires PHP 7\.1 or later and the `intl` extension for PHP\. In this tutorial we use PHP 7\.2 and the corresponding Elastic Beanstalk platform version\. Install PHP and Composer by following the instructions at [Setting up your PHP development environment](php-development-environment.md)\.
 
-## Launch an Elastic Beanstalk Environment<a name="php-symfony-tutorial-launch"></a>
+## Launch an Elastic Beanstalk environment<a name="php-symfony-tutorial-launch"></a>
 
 Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. Choose the **PHP** platform and accept the default settings and sample code\.
 
@@ -60,7 +60,7 @@ All of these resources are managed by Elastic Beanstalk\. When you terminate you
 **Note**  
 The Amazon S3 bucket that Elastic Beanstalk creates is shared between environments and is not deleted during environment termination\. For more information, see [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)\.
 
-## Install Symfony and Generate a Website<a name="php-symfony-tutorial-generate"></a>
+## Install Symfony and generate a website<a name="php-symfony-tutorial-generate"></a>
 
 Composer can install Symfony and create a working project with one command:
 
@@ -87,7 +87,7 @@ Composer installs Symfony and its dependencies, and generates a default project\
 
 If you run into any issues installing Symfony, go to the installation topic in the official documentation: [symfony\.com/doc/current/setup\.html](https://symfony.com/doc/current/setup.html)
 
-## Deploy Your Application<a name="php-symfony-tutorial-deploy"></a>
+## Deploy your application<a name="php-symfony-tutorial-deploy"></a>
 
 Go to the project directory\.
 
@@ -120,7 +120,7 @@ Upload the source bundle to Elastic Beanstalk to deploy Symfony to your environm
 **Note**  
 To optimize the source bundle further, initialize a Git repository and use the [`git archive` command](applications-sourcebundle.md#using-features.deployment.source.git) to create the source bundle\. The default Symfony project includes a `.gitignore` file that tells Git to exclude the `vendor` folder and other files that are not required for deployment\.
 
-## Configure Composer Settings<a name="php-symfony-tutorial-configure"></a>
+## Configure Composer settings<a name="php-symfony-tutorial-configure"></a>
 
 When the deployment completes, click the URL to open your Symfony application in the browser:
 
@@ -164,7 +164,7 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 With Elastic Beanstalk, you can easily create a new environment for your application at any time\.
 
-## Next Steps<a name="php-symfony-tutorial-nextsteps"></a>
+## Next steps<a name="php-symfony-tutorial-nextsteps"></a>
 
 For more information about Symfony, see [What is Symfony?](https://symfony.com/what-is-symfony) at symfony\.com\.
 
@@ -180,8 +180,8 @@ option_settings:
     document_root: /public
 ```
 
-For more information, see [Advanced Environment Customization with Configuration Files \(`.ebextensions`\)](ebextensions.md)\.
+For more information, see [Advanced environment customization with configuration files \(`.ebextensions`\)](ebextensions.md)\.
 
-Symfony uses its own configuration files to configure database connections\. For instructions on connecting to a database with Symfony, see [Connecting to a Database with Symfony](create_deploy_PHP.rds.md#php-rds-symfony)\.
+Symfony uses its own configuration files to configure database connections\. For instructions on connecting to a database with Symfony, see [Connecting to a database with Symfony](create_deploy_PHP.rds.md#php-rds-symfony)\.
 
 Finally, if you plan on using your application in a production environment, you will want to [configure a custom domain name](customdomains.md) for your environment and [enable HTTPS](configuring-https.md) for secure connections\.

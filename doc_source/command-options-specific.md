@@ -1,17 +1,17 @@
-# Platform Specific Options<a name="command-options-specific"></a>
+# Platform specific options<a name="command-options-specific"></a>
 
 **Topics**
-+ [Docker Platform Options](#command-options-docker)
-+ [Go Platform Options](#command-options-golang)
-+ [Java SE Platform Options](#command-options-plain-java)
-+ [Java with Tomcat Platform Options](#command-options-java)
-+ [\.NET Platform Options](#command-options-net)
-+ [Node\.js Platform Options](#command-options-nodejs)
-+ [PHP Platform Options](#command-options-php)
-+ [Python Platform Options](#command-options-python)
-+ [Ruby Platform Options](#command-options-ruby)
++ [Docker platform options](#command-options-docker)
++ [Go platform options](#command-options-golang)
++ [Java SE platform options](#command-options-plain-java)
++ [Java with Tomcat platform options](#command-options-java)
++ [\.NET platform options](#command-options-net)
++ [Node\.js platform options](#command-options-nodejs)
++ [PHP platform options](#command-options-php)
++ [Python platform options](#command-options-python)
++ [Ruby platform options](#command-options-ruby)
 
-## Docker Platform Options<a name="command-options-docker"></a>
+## Docker platform options<a name="command-options-docker"></a>
 
 The following Docker\-specific configuration options apply to the Single Container and Preconfigured Docker platforms\.
 
@@ -21,11 +21,11 @@ These configuration options do not apply to the Multicontainer Docker platform\.
 
 **Namespace: `aws:elasticbeanstalk:environment:proxy`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  ProxyServer  |  Specifies the web server to use as a proxy\.  |  `nginx`  |  `nginx` `none`  | 
+|  ProxyServer  |  Specifies the web server to use as a proxy\.  |  `nginx`  |  `nginx` `none`   | 
 
-## Go Platform Options<a name="command-options-golang"></a>
+## Go platform options<a name="command-options-golang"></a>
 
 You can use the following namespace to configure the proxy server to serve static files\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. This reduces the number of requests that your application has to process\.
 
@@ -43,11 +43,11 @@ Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrate
 
 **Namespace: `aws:elasticbeanstalk:xray`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  `XRayEnabled`  |  Set to `true` to run the AWS X\-Ray daemon on the instances in your environment\.  |  `false`  |  `true` `false`  | 
 
-## Java SE Platform Options<a name="command-options-plain-java"></a>
+## Java SE platform options<a name="command-options-plain-java"></a>
 
 You can use the following namespace to configure the proxy server to serve static files\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. This reduces the number of requests that your application has to process\.
 
@@ -65,25 +65,25 @@ Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrate
 
 **Namespace: `aws:elasticbeanstalk:xray`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  `XRayEnabled`  |  Set to `true` to run the AWS X\-Ray daemon on the instances in your environment\.  |  `false`  |  `true` `false`  | 
 
-## Java with Tomcat Platform Options<a name="command-options-java"></a>
+## Java with Tomcat platform options<a name="command-options-java"></a>
 
 
 **Namespace: `aws:elasticbeanstalk:application:environment`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  JDBC\_CONNECTION\_STRING  |  The connection string to an external database\.  |  n/a  |  n/a  | 
 
-See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
+See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.
 
 
 **Namespace: `aws:elasticbeanstalk:container:tomcat:jvmoptions`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  JVM Options  |  Pass command\-line options to the JVM at startup\.  |  n/a  |  n/a  | 
 |  Xmx  |  Maximum JVM heap sizes\.  |  `256m`  |  n/a  | 
@@ -94,10 +94,10 @@ See [Environment Properties and Other Software Settings](environments-cfg-softwa
 
 **Namespace: `aws:elasticbeanstalk:environment:proxy`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  GzipCompression  |  Set to `false` to disable response compression\.  |  `true`  |  `true` `false`  | 
-|  ProxyServer  |  Set the proxy to use on your environment's instances\. If you don't set this option, or if you set it to `apache`, Elastic Beanstalk uses [Apache 2\.4](https://httpd.apache.org/docs/2.4/)\. Set to `apache/2.2` if your application isn't ready to migrate away from [Apache 2\.2](https://httpd.apache.org/docs/2.2/) due to incompatible proxy configuration settings\. Set to `nginx` to use [nginx](https://www.nginx.com/)\. For more information, see [Configuring Your Tomcat Environment's Proxy Server](java-tomcat-proxy.md)\.  |  `apache`  |  `apache` `apache/2.2` `nginx`  | 
+|  ProxyServer  |  Set the proxy to use on your environment's instances\. If you don't set this option, or if you set it to `apache`, Elastic Beanstalk uses [Apache 2\.4](https://httpd.apache.org/docs/2.4/)\. Set to `apache/2.2` if your application isn't ready to migrate away from [Apache 2\.2](https://httpd.apache.org/docs/2.2/) due to incompatible proxy configuration settings\. Set to `nginx` to use [nginx](https://www.nginx.com/)\. For more information, see [Configuring your Tomcat environment's proxy server](java-tomcat-proxy.md)\.  |  `apache`  |  `apache` `apache/2.2` `nginx`  | 
 
 You can use the following namespace to configure the proxy server to serve static files\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. This reduces the number of requests that your application has to process\.
 
@@ -115,16 +115,16 @@ Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrate
 
 **Namespace: `aws:elasticbeanstalk:xray`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  `XRayEnabled`  |  Set to `true` to run the AWS X\-Ray daemon on the instances in your environment\.  |  `false`  |  `true` `false`  | 
 
-## \.NET Platform Options<a name="command-options-net"></a>
+## \.NET platform options<a name="command-options-net"></a>
 
 
 **Namespace: `aws:elasticbeanstalk:container:dotnet:apppool`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  Target Runtime  |  Choose the version of \.NET Framework for your application\.  |  `4.0`  |  `2.0` `4.0`  | 
 |  Enable 32\-bit Applications  |  Set to `True` to run 32\-bit applications\.  |  `False`  |  `True` `False`  | 
@@ -134,16 +134,16 @@ Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrate
 
 **Namespace: `aws:elasticbeanstalk:xray`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  `XRayEnabled`  |  Set to `true` to run the AWS X\-Ray daemon on the instances in your environment\.  |  `false`  |  `true` `false`  | 
 
-## Node\.js Platform Options<a name="command-options-nodejs"></a>
+## Node\.js platform options<a name="command-options-nodejs"></a>
 
 
 **Namespace: `aws:elasticbeanstalk:container:nodejs`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  NodeCommand  |  Command used to start the Node\.js application\. If an empty string is specified, `app.js` is used, then `server.js`, then `npm start` in that order\.  |  ""  |  n/a  | 
 |  NodeVersion  |  Version of Node\.js\. For example, `4.4.6` Supported Node\.js versions vary between Node\.js platform versions\. See [Node\.js](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.nodejs) in the *AWS Elastic Beanstalk Platforms* document for a list of the currently supported versions\.  When support for the version of Node\.js that you are using is removed from the platform configuration, you must change or remove the version setting prior to doing a [platform upgrade](using-features.platform.upgrade.md)\. This may occur when a security vulnerability is identified for one or more versions of Node\.js When this occurs, attempting to upgrade to a new version of the platform that does not support the configured [NodeVersion](#command-options-nodejs) fails\. To avoid needing to create a new environment, change the *NodeVersion* configuration option to a version that is supported by both the old configuration version and the new one, or [remove the option setting](environment-configuration-methods-after.md), and then perform the platform upgrade\.   | varies | varies | 
@@ -169,16 +169,16 @@ Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrate
 
 **Namespace: `aws:elasticbeanstalk:xray`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  `XRayEnabled`  |  Set to `true` to run the AWS X\-Ray daemon on the instances in your environment\.  |  `false`  |  `true` `false`  | 
 
-## PHP Platform Options<a name="command-options-php"></a>
+## PHP platform options<a name="command-options-php"></a>
 
 
 **Namespace: `aws:elasticbeanstalk:container:php:phpini`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  document\_root  |  Specify the child directory of your project that is treated as the public\-facing web root\.  |  `/`  |  A blank string is treated as `/`, or specify a string starting with `/`  | 
 |  memory\_limit  |  Amount of memory allocated to the PHP environment\.  |  `256M`  |  n/a  | 
@@ -189,27 +189,28 @@ Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrate
 |  composer\_options  |  Sets custom options to use when installing dependencies using Composer through composer\.phar install\. For more information including available options, go to [http://getcomposer\.org/doc/03\-cli\.md\#install](http://getcomposer.org/doc/03-cli.md#install)\.  |  n/a  |  n/a  | 
 
 **Note**  
-For more information about the PHP platform, see [Using the Elastic Beanstalk PHP Platform](create_deploy_PHP.container.md)\.
+For more information about the PHP platform, see [Using the Elastic Beanstalk PHP platform](create_deploy_PHP.container.md)\.
 
-## Python Platform Options<a name="command-options-python"></a>
+## Python platform options<a name="command-options-python"></a>
 
 
 **Namespace: `aws:elasticbeanstalk:application:environment`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  DJANGO\_SETTINGS\_MODULE  |  Specifies which settings file to use\.  |  n/a  |  n/a  | 
 
-See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
+See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.
 
 
 **Namespace: `aws:elasticbeanstalk:container:python`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  WSGIPath  |  The file that contains the WSGI application\. This file must have an `application` callable\.  |  `application.py`  |  n/a  | 
+|  WSGIPath  |  The file that contains the WSGI application\. This file must have an `application` callable\.  |  `application.py` [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-specific.html) On Amazon Linux 2 Python platform versions: `application:app`  |  n/a  | 
 |  NumProcesses  |  The number of daemon processes that should be started for the process group when running WSGI applications\.  |  `1`  |  n/a  | 
 |  NumThreads  |  The number of threads to be created to handle requests in each daemon process within the process group when running WSGI applications\.  |  `15`  |  n/a  | 
+| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
 
 You can use the following namespace to configure the proxy server to serve static files\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. This reduces the number of requests that your application has to process\.
 
@@ -229,20 +230,20 @@ Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrate
 
 **Namespace: `aws:elasticbeanstalk:xray`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  `XRayEnabled`  |  Set to `true` to run the AWS X\-Ray daemon on the instances in your environment\.  |  `false`  |  `true` `false`  | 
 
-## Ruby Platform Options<a name="command-options-ruby"></a>
+## Ruby platform options<a name="command-options-ruby"></a>
 
 
 **Namespace: `aws:elasticbeanstalk:application:environment`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid Values**  | 
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
 |  RAILS\_SKIP\_MIGRATIONS  |  Specifies whether to run ``rake db:migrate`` on behalf of the users' applications; or whether it should be skipped\. This is only applicable to Rails 3 applications\.  |  `false`  |  `true` `false`  | 
 |  RAILS\_SKIP\_ASSET\_COMPILATION  |  Specifies whether the container should run ``rake assets:precompile` `on behalf of the users' applications; or whether it should be skipped\. This is also only applicable to Rails 3 applications\.  |  `false`  |  `true` `false`  | 
 |  BUNDLE\_WITHOUT  |  A colon \(`:`\) separated list of groups to ignore when installing dependencies from a Gemfile\.  |  `test:development`  |  n/a  | 
 |  RACK\_ENV  |  Specifies what environment stage an application can be run in\. Examples of common environments include development, production, test\.  |  `production`  |  n/a  | 
 
-See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
+See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.

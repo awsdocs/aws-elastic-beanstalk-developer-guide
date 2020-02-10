@@ -1,8 +1,8 @@
-# Configuring the Proxy Server<a name="nodejs-platform-proxy"></a>
+# Configuring the proxy server<a name="nodejs-platform-proxy"></a>
 
 The Node\.js platform uses a reverse proxy to relay requests from port 80 on the instance to your application listening on port 8081\. Elastic Beanstalk provides a default proxy configuration that you can either extend or override completely with your own configuration\.
 
-To extend the default configuration, add `.conf` files to `/etc/nginx/conf.d` with a configuration file\. See [Terminating HTTPS on EC2 Instances Running Node\.js](https-singleinstance-nodejs.md) for an example\.
+To extend the default configuration, add `.conf` files to `/etc/nginx/conf.d` with a configuration file\. See [Terminating HTTPS on EC2 instances running Node\.js](https-singleinstance-nodejs.md) for an example\.
 
 The Node\.js platform sets the PORT environment variable to the port to which the proxy server passes traffic\. Read this variable in your code to configure your application's port\.
 

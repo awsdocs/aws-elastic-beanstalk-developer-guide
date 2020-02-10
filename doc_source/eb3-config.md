@@ -32,7 +32,7 @@ The following describes the syntax for using the eb config command to work with 
 |  Name  |  Description  | 
 | --- | --- | 
 |  `--cfg config-name`  |  The name to use for a saved configuration \(which you can later specify to create or update an environment from a saved configuration\)\. This option works with eb config save only\.  | 
-|  `-﻿-﻿tags key1=value1[,key2=value2 ...]`  |  Tags to add to your saved configuration\. Tags are specified as a comma\-separated list of `key=value` pairs\. For more details, see [Tagging Saved Configurations](environment-configuration-savedconfig-tagging.md)\. This option works with eb config save only\.  | 
+|  `-﻿-﻿tags key1=value1[,key2=value2 ...]`  |  Tags to add to your saved configuration\. Tags are specified as a comma\-separated list of `key=value` pairs\. For more details, see [Tagging saved configurations](environment-configuration-savedconfig-tagging.md)\. This option works with eb config save only\.  | 
 |  `--timeout timeout`  |  The number of minutes before the command times out\.  | 
 |  [Common options](eb3-cmd-options.md)  |  | 
 

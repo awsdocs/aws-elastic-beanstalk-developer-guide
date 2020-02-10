@@ -1,8 +1,8 @@
 # Using Elastic Beanstalk with Amazon CloudWatch Logs<a name="AWSHowTo.cloudwatchlogs"></a>
 
-With CloudWatch Logs, you can monitor and archive your Elastic Beanstalk application, system, and custom log files from Amazon EC2 instances of your environments\. You can also configure alarms that make it easier for you to react to specific log stream events that your metric filters extract\. The CloudWatch Logs agent installed on each Amazon EC2 instance in your environment publishes metric data points to the CloudWatch service for each log group you configure\. Each log group applies its own filter patterns to determine what log stream events to send to CloudWatch as data points\. Log streams that belong to the same log group share the same retention, monitoring, and access control settings\. You can configure Elastic Beanstalk to automatically stream logs to the CloudWatch service, as described in [Streaming Instance Logs to CloudWatch Logs](#AWSHowTo.cloudwatchlogs.streaming)\. For more information about CloudWatch Logs, including terminology and concepts, see the [Amazon CloudWatch Logs User Guide](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatchLogs.html)\.
+With CloudWatch Logs, you can monitor and archive your Elastic Beanstalk application, system, and custom log files from Amazon EC2 instances of your environments\. You can also configure alarms that make it easier for you to react to specific log stream events that your metric filters extract\. The CloudWatch Logs agent installed on each Amazon EC2 instance in your environment publishes metric data points to the CloudWatch service for each log group you configure\. Each log group applies its own filter patterns to determine what log stream events to send to CloudWatch as data points\. Log streams that belong to the same log group share the same retention, monitoring, and access control settings\. You can configure Elastic Beanstalk to automatically stream logs to the CloudWatch service, as described in [Streaming instance logs to CloudWatch Logs](#AWSHowTo.cloudwatchlogs.streaming)\. For more information about CloudWatch Logs, including terminology and concepts, see the [Amazon CloudWatch Logs User Guide](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatchLogs.html)\.
 
-In addition to instance logs, if you enable [enhanced health](health-enhanced.md) for your environment, you can configure the environment to stream health information to CloudWatch Logs\. See [Streaming Elastic Beanstalk Environment Health Information to Amazon CloudWatch Logs](AWSHowTo.cloudwatchlogs.envhealth.md)\.
+In addition to instance logs, if you enable [enhanced health](health-enhanced.md) for your environment, you can configure the environment to stream health information to CloudWatch Logs\. See [Streaming Elastic Beanstalk environment health information to Amazon CloudWatch Logs](AWSHowTo.cloudwatchlogs.envhealth.md)\.
 
 The following figure shows the **Monitoring** page and graphs for an environment that is configured with CloudWatch Logs integration\. The example metrics in this environment are named **CWLHttp4xx** and **CWLHttp5xx**\. One of the graphs shows that the **CWLHttp4xx** metric has triggered an alarm based on conditions specified in the configuration files\.
 
@@ -13,13 +13,13 @@ The following figure shows the **Alarms** page and graphs for the example alarms
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-alarms-cwl.png)
 
 **Topics**
-+ [Prerequisites to Instance Log Streaming to CloudWatch Logs](#AWSHowTo.cloudwatchlogs.prereqs)
-+ [How Elastic Beanstalk Sets Up CloudWatch Logs](#AWSHowTo.cloudwatchlogs.loggroups)
-+ [Streaming Instance Logs to CloudWatch Logs](#AWSHowTo.cloudwatchlogs.streaming)
-+ [Troubleshooting CloudWatch Logs Integration](#AWSHowTo.cloudwatchlogs.troubleshoot)
-+ [Streaming Elastic Beanstalk Environment Health Information to Amazon CloudWatch Logs](AWSHowTo.cloudwatchlogs.envhealth.md)
++ [Prerequisites to instance log streaming to CloudWatch Logs](#AWSHowTo.cloudwatchlogs.prereqs)
++ [How Elastic Beanstalk sets up CloudWatch Logs](#AWSHowTo.cloudwatchlogs.loggroups)
++ [Streaming instance logs to CloudWatch Logs](#AWSHowTo.cloudwatchlogs.streaming)
++ [Troubleshooting CloudWatch Logs integration](#AWSHowTo.cloudwatchlogs.troubleshoot)
++ [Streaming Elastic Beanstalk environment health information to Amazon CloudWatch Logs](AWSHowTo.cloudwatchlogs.envhealth.md)
 
-## Prerequisites to Instance Log Streaming to CloudWatch Logs<a name="AWSHowTo.cloudwatchlogs.prereqs"></a>
+## Prerequisites to instance log streaming to CloudWatch Logs<a name="AWSHowTo.cloudwatchlogs.prereqs"></a>
 
 To enable streaming of logs from your environment's Amazon EC2 instances to CloudWatch Logs, you must meet the following conditions\.
 + *Platform* – Because this feature is only available in platform versions released on or after [this release](https://aws.amazon.com/releasenotes/6677534638371416), if you are using an earlier platform version, update your environment to a current one\.
@@ -43,7 +43,7 @@ To enable streaming of logs from your environment's Amazon EC2 instances to Clou
   }
   ```
 
-## How Elastic Beanstalk Sets Up CloudWatch Logs<a name="AWSHowTo.cloudwatchlogs.loggroups"></a>
+## How Elastic Beanstalk sets up CloudWatch Logs<a name="AWSHowTo.cloudwatchlogs.loggroups"></a>
 
 Elastic Beanstalk installs a CloudWatch log agent with the default configuration settings on each instance it creates\. Learn more in the [CloudWatch Logs Agent Reference](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html)\.
 
@@ -82,7 +82,7 @@ For Windows platforms, see the following table for the log group corresponding t
 |  `C:\Program Files\Amazon\ElasticBeanstalk\logs\Hooks.log`  |  `/aws/elasticbeanstalk/<environment-name>/EBHooks-Log`  | 
 |  `C:\inetpub\logs\LogFiles` \(the entire directory\)  |  `/aws/elasticbeanstalk/<environment-name>/IIS-Log`  | 
 
-## Streaming Instance Logs to CloudWatch Logs<a name="AWSHowTo.cloudwatchlogs.streaming"></a>
+## Streaming instance logs to CloudWatch Logs<a name="AWSHowTo.cloudwatchlogs.streaming"></a>
 
 You can enable instance log streaming to CloudWatch Logs using the Elastic Beanstalk console, the EB CLI, or configuration options\.
 
@@ -111,7 +111,7 @@ Before you enable it, set up IAM permissions to use with the CloudWatch Logs age
 }
 ```
 
-### Instance Log Streaming Using the Elastic Beanstalk Console<a name="AWSHowTo.cloudwatchlogs.streaming.console"></a>
+### Instance log streaming using the Elastic Beanstalk console<a name="AWSHowTo.cloudwatchlogs.streaming.console"></a>
 
 **To stream instance logs to CloudWatch Logs**
 
@@ -132,7 +132,7 @@ Before you enable it, set up IAM permissions to use with the CloudWatch Logs age
 
 After you enable log streaming, you can return to the **Software** configuration category or page and find the **Log Groups** link\. Click this link to see your logs in the CloudWatch console\.
 
-### Instance Log Streaming Using the EB CLI<a name="AWSHowTo.cloudwatchlogs.streaming.ebcli"></a>
+### Instance log streaming using the EB CLI<a name="AWSHowTo.cloudwatchlogs.streaming.ebcli"></a>
 
 To enable instance log streaming to CloudWatch Logs using the EB CLI, use the [eb logs](eb3-logs.md) command\.
 
@@ -146,9 +146,9 @@ You can also use eb logs to retrieve logs from CloudWatch Logs\. You can retriev
 $ eb logs --all
 ```
 
-In particular, the `--log-group` option enables you to retrieve instance logs of a specific log group, corresponding to a specific on\-instance log file\. To do that, you need to know the name of the log group that corresponds to the log file you want to retrieve\. You can find this information in [How Elastic Beanstalk Sets Up CloudWatch Logs](#AWSHowTo.cloudwatchlogs.loggroups)\.
+In particular, the `--log-group` option enables you to retrieve instance logs of a specific log group, corresponding to a specific on\-instance log file\. To do that, you need to know the name of the log group that corresponds to the log file you want to retrieve\. You can find this information in [How Elastic Beanstalk sets up CloudWatch Logs](#AWSHowTo.cloudwatchlogs.loggroups)\.
 
-### Instance Log Streaming Using Configuration Files<a name="AWSHowTo.cloudwatchlogs.files"></a>
+### Instance log streaming using configuration files<a name="AWSHowTo.cloudwatchlogs.files"></a>
 
 When you create or update an environment, you can use a configuration file to set up and configure instance log streaming to CloudWatch Logs\. The following example configuration file enables default instance log streaming\. Elastic Beanstalk streams the default set of log files for your environment's platform\. To use the example, copy the text into a file with the `.config` extension in the `.ebextensions` directory at the top level of your application source bundle\.
 
@@ -159,7 +159,7 @@ option_settings:
     value: true
 ```
 
-### Custom Log File Streaming<a name="AWSHowTo.cloudwatchlogs.streaming.custom"></a>
+### Custom log file streaming<a name="AWSHowTo.cloudwatchlogs.streaming.custom"></a>
 
 The Elastic Beanstalk integration with CloudWatch Logs doesn't directly support the streaming of custom log files that your application generates\. To stream custom logs, use a configuration file to directly install the CloudWatch Logs agent and to configure the files to be pushed\. For an example configuration file, see [https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/instance-configuration/logs-streamtocloudwatch-linux.config](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/instance-configuration/logs-streamtocloudwatch-linux.config)\.
 
@@ -168,7 +168,7 @@ The example doesn't work on the Windows platform\.
 
 For more information about configuring CloudWatch Logs, see the [CloudWatch Logs Agent Reference](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html) in the *Amazon CloudWatch Logs User Guide*\.
 
-## Troubleshooting CloudWatch Logs Integration<a name="AWSHowTo.cloudwatchlogs.troubleshoot"></a>
+## Troubleshooting CloudWatch Logs integration<a name="AWSHowTo.cloudwatchlogs.troubleshoot"></a>
 
 If you can't find some of the environment's instance logs you expect in CloudWatch Logs, you can investigate the following common issues:
 + Your IAM role lacks the required IAM permissions\.

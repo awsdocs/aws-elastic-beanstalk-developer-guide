@@ -1,4 +1,4 @@
-# Managing Multiple AWS Accounts<a name="create_deploy_Java.accounts"></a>
+# Managing multiple AWS accounts<a name="create_deploy_Java.accounts"></a>
 
 You might want to set up different AWS accounts to perform different tasks, such as testing, staging, and production\. You can use the AWS Toolkit for Eclipse to add, edit, and delete accounts easily\.
 

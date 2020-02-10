@@ -1,4 +1,4 @@
-# Deploying an Express Application with Clustering to Elastic Beanstalk<a name="nodejs-express-clustering"></a>
+# Deploying an Express application with clustering to Elastic Beanstalk<a name="nodejs-express-clustering"></a>
 
 This tutorial walks you through deploying a sample application to Elastic Beanstalk using the Elastic Beanstalk Command Line Interface \(EB CLI\), and then updating the application to use the [Express](http://expressjs.com/) framework, [Amazon ElastiCache](https://aws.amazon.com/elasticache/), and clustering\. Clustering enhances your web application's high availability, performance, and security\. To learn more about Amazon ElastiCache, go to [What Is Amazon ElastiCache for Memcached?](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/Introduction.html) in the *Amazon ElastiCache for Memcached User Guide*\.
 
@@ -7,14 +7,14 @@ This example creates AWS resources, which you might be charged for\. For more in
 
 ## Prerequisites<a name="nodejs-express-clustering.prereq"></a>
 
-This tutorial requires the Node\.js language, its package manager called npm, and the Express web application framework\. For details on installing these components and setting up your local development environment, see [Setting Up your Node\.js Development Environment](nodejs-devenv.md)\.
+This tutorial requires the Node\.js language, its package manager called npm, and the Express web application framework\. For details on installing these components and setting up your local development environment, see [Setting up your Node\.js development environment](nodejs-devenv.md)\.
 
 **Note**  
-For this tutorial, you don't need to install the AWS SDK for Node\.js, which is also mentioned in [Setting Up your Node\.js Development Environment](nodejs-devenv.md)\.
+For this tutorial, you don't need to install the AWS SDK for Node\.js, which is also mentioned in [Setting up your Node\.js development environment](nodejs-devenv.md)\.
 
-The tutorial also requires the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI Using Setup Scripts](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
+The tutorial also requires the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
 
-## Create an Elastic Beanstalk Environment<a name="nodejs-express-clustering.create"></a>
+## Create an Elastic Beanstalk environment<a name="nodejs-express-clustering.create"></a>
 
 Configure an EB CLI repository for your application and create an Elastic Beanstalk environment running the Node\.js platform\.
 
@@ -52,7 +52,7 @@ Configure an EB CLI repository for your application and create an Elastic Beanst
    ~/node-express$ eb open
    ```
 
-## Update the Application<a name="nodejs-express-clustering.update"></a>
+## Update the application<a name="nodejs-express-clustering.update"></a>
 
 Update the sample application in the Elastic Beanstalk environment to use the Express framework\.
 
@@ -116,7 +116,7 @@ The prerequisite development environment setup results in an Express project str
 
 1. Your environment will be updated after a few minutes\. Once the environment is green and ready, refresh the URL to verify it worked\. You should see a web page that says "Welcome to Express"\.
 
-You can access the logs for your EC2 instances running your application\. For instructions on accessing your logs, see [Viewing Logs from Amazon EC2 Instances in Your Elastic Beanstalk Environment](using-features.logging.md)\.
+You can access the logs for your EC2 instances running your application\. For instructions on accessing your logs, see [Viewing logs from Amazon EC2 instances in your Elastic Beanstalk environment](using-features.logging.md)\.
 
 Next, let's update the Express application to use Amazon ElastiCache\.
 
@@ -124,7 +124,7 @@ Next, let's update the Express application to use Amazon ElastiCache\.
 
 1. On your local computer, create an `.ebextensions` directory in the top\-level directory of your source bundle\. In this example, we use `node-express/.ebextensions`\.
 
-1. Create a configuration file `node-express/.ebextensions/elasticache-iam-with-script.config` with the following snippet\. For more information about the configuration file, see [Node\.js Configuration Namespaces](create_deploy_nodejs.container.md#nodejs-namespaces)\. This creates an IAM user with the permissions required to discover the elasticache nodes and writes to a file anytime the cache changes\. You can also copy the file from [nodejs\-example\-express\-elasticache\.zip](samples/nodejs-example-express-elasticache.zip)\. For more information on the ElastiCache properties, see [Example: ElastiCache](customize-environment-resources-elasticache.md)\.
+1. Create a configuration file `node-express/.ebextensions/elasticache-iam-with-script.config` with the following snippet\. For more information about the configuration file, see [Node\.js configuration namespaces](create_deploy_nodejs.container.md#nodejs-namespaces)\. This creates an IAM user with the permissions required to discover the elasticache nodes and writes to a file anytime the cache changes\. You can also copy the file from [nodejs\-example\-express\-elasticache\.zip](samples/nodejs-example-express-elasticache.zip)\. For more information on the ElastiCache properties, see [Example: ElastiCache](customize-environment-resources-elasticache.md)\.
 **Note**  
 YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
@@ -386,7 +386,7 @@ Make sure you are looking at the same region that you deployed your application 
 
       If you copy and paste your application URL into another web browser and refresh the page, you should see your CurrItem count go up after 5 minutes\.
 
-   1. Take a snapshot of your logs\. For more information about retrieving logs, see [Viewing Logs from Amazon EC2 Instances in Your Elastic Beanstalk Environment](using-features.logging.md)\.
+   1. Take a snapshot of your logs\. For more information about retrieving logs, see [Viewing logs from Amazon EC2 instances in your Elastic Beanstalk environment](using-features.logging.md)\.
 
    1. Check the file `/var/log/nodejs/nodejs.log` in the log bundle\. You should see something similar to the following:
 
@@ -395,7 +395,7 @@ Make sure you are looking at the same region that you deployed your application 
       [ 'aws-my-1oys9co8zt1uo.1iwtrn.0001.use1.cache.amazonaws.com:11211' ]
       ```
 
-## Clean Up<a name="nodejs-express-clustering.delete"></a>
+## Clean up<a name="nodejs-express-clustering.delete"></a>
 
 If you no longer want to run your application, you can clean up by terminating your environment and deleting your application\.
 

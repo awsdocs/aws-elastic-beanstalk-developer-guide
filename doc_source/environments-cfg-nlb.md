@@ -2,7 +2,7 @@
 
 When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports several load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. 
 
-This topic describes the configuration of a [Network Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load Balancer for Your Elastic Beanstalk Environment](using-features.managing.elb.md)\.
+This topic describes the configuration of a [Network Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load balancer for your Elastic Beanstalk environment](using-features.managing.elb.md)\.
 
 **Note**  
 You can choose the type of load balancer that your environment uses only during environment creation\. You can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.
@@ -12,11 +12,11 @@ You can choose the type of load balancer that your environment uses only during 
 With a Network Load Balancer, the default listener accepts TCP requests on port 80 and distributes them to the instances in your environment\. You can configure health check behavior, configure the listener port, or add a listener on another port\.
 
 **Note**  
-Unlike a Classic Load Balancer or an Application Load Balancer, a Network Load Balancer can't have application layer \(layer 7\) HTTP or HTTPS listeners\. It only supports transport layer \(layer 4\) TCP listeners\. HTTP and HTTPS traffic can be routed to your environment over TCP\. To establish secure HTTPS connections between web clients and your environment, install a [self\-signed certificate](configuring-https-ssl.md) on the environment's instances, and configure the instances to listen on the appropriate port \(typically 443\) and terminate HTTPS connections\. The configuration varies per platform\. See [Configuring Your Application to Terminate HTTPS Connections at the Instance](https-singleinstance.md) for instructions\. Then configure your Network Load Balancer to add a listener that maps to a process listening on the appropriate port\.
+Unlike a Classic Load Balancer or an Application Load Balancer, a Network Load Balancer can't have application layer \(layer 7\) HTTP or HTTPS listeners\. It only supports transport layer \(layer 4\) TCP listeners\. HTTP and HTTPS traffic can be routed to your environment over TCP\. To establish secure HTTPS connections between web clients and your environment, install a [self\-signed certificate](configuring-https-ssl.md) on the environment's instances, and configure the instances to listen on the appropriate port \(typically 443\) and terminate HTTPS connections\. The configuration varies per platform\. See [Configuring your application to terminate HTTPS connections at the instance](https-singleinstance.md) for instructions\. Then configure your Network Load Balancer to add a listener that maps to a process listening on the appropriate port\.
 
 A Network Load Balancer supports active health checks\. These checks are based on messages to the root \(`/`\) path\. In addition, a Network Load Balancer supports passive health checks\. It automatically detects faulty backend instances and routes traffic only to healthy instances\.
 
-## Configuring a Network Load Balancer Using the Elastic Beanstalk Console<a name="environments-cfg-nlb-console"></a>
+## Configuring a Network Load Balancer using the Elastic Beanstalk console<a name="environments-cfg-nlb-console"></a>
 
 You can use the Elastic Beanstalk console to configure a Network Load Balancer's listeners and processes during environment creation, or later when your environment is running\.
 
@@ -51,7 +51,7 @@ You can use the Elastic Beanstalk console to configure a Network Load Balancer's
 
 1. In the **Load balancer** configuration category, choose **Modify**\.
 **Note**  
-If the **Load balancer** configuration category doesn't have a **Modify** button, your environment doesn't have a load balancer\. To learn how to set one up, see [Changing Environment Type](using-features-managing-env-types.md#using-features.managing.changetype)\.
+If the **Load balancer** configuration category doesn't have a **Modify** button, your environment doesn't have a load balancer\. To learn how to set one up, see [Changing environment type](using-features-managing-env-types.md#using-features.managing.changetype)\.
 
 1. Make the Network Load Balancer configuration changes that your environment requires\.
 
@@ -60,7 +60,7 @@ If the **Load balancer** configuration category doesn't have a **Modify** button
 **Topics**
 + [Listeners](#environments-cfg-nlb-console-listeners)
 + [Processes](#environments-cfg-nlb-console-processes)
-+ [Example: Network Load Balancer for an Environment with End\-to\-End Encryption](#environments-cfg-nlb-console-example)
++ [Example: Network Load Balancer for an environment with end\-to\-end encryption](#environments-cfg-nlb-console-example)
 
 ### Listeners<a name="environments-cfg-nlb-console-listeners"></a>
 
@@ -94,7 +94,7 @@ You can edit the settings of an existing process, or add a new process\. To star
 
 **Topics**
 + [Definition](#environments-cfg-nlb-console-process-definition)
-+ [Health Check](#environments-cfg-nlb-console-process-healthchecks)
++ [Health check](#environments-cfg-nlb-console-process-healthchecks)
 
 #### Definition<a name="environments-cfg-nlb-console-process-definition"></a>
 
@@ -102,7 +102,7 @@ Use these settings to define the process: its **Name** and the **Process port** 
 
 ![\[Network Load Balancer process dialog box settings for name, listener port, and process port\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-nlb-process-definition.png)
 
-#### Health Check<a name="environments-cfg-nlb-console-process-healthchecks"></a>
+#### Health check<a name="environments-cfg-nlb-console-process-healthchecks"></a>
 
 Use the following settings to configure process health checks:
 + **Interval** – The amount of time, in seconds, between health checks of an individual instance\.
@@ -112,11 +112,11 @@ Use the following settings to configure process health checks:
 ![\[Network Load Balancer process dialog box settings for health check\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-nlb-process-healthcheck.png)
 
 **Note**  
-The Elastic Load Balancing health check doesn't affect the health check behavior of an environment's Auto Scaling group\. Instances that fail an Elastic Load Balancing health check will not automatically be replaced by Amazon EC2 Auto Scaling unless you manually configure Amazon EC2 Auto Scaling to do so\. See [Auto Scaling Health Check Setting](environmentconfig-autoscaling-healthchecktype.md) for details\. 
+The Elastic Load Balancing health check doesn't affect the health check behavior of an environment's Auto Scaling group\. Instances that fail an Elastic Load Balancing health check will not automatically be replaced by Amazon EC2 Auto Scaling unless you manually configure Amazon EC2 Auto Scaling to do so\. See [Auto Scaling health check setting](environmentconfig-autoscaling-healthchecktype.md) for details\. 
 
-For more information about health checks and how they influence your environment's overall health, see [Basic Health Reporting](using-features.healthstatus.md)\.
+For more information about health checks and how they influence your environment's overall health, see [Basic health reporting](using-features.healthstatus.md)\.
 
-### Example: Network Load Balancer for an Environment with End\-to\-End Encryption<a name="environments-cfg-nlb-console-example"></a>
+### Example: Network Load Balancer for an environment with end\-to\-end encryption<a name="environments-cfg-nlb-console-example"></a>
 
 In this example, your application requires end\-to\-end traffic encryption\. To configure your environment's Network Load Balancer to meet these requirements, you configure the default process to listen to port 443, add a listener to port 443 that routes traffic to the default process, and disable the default listener\.
 
@@ -134,7 +134,7 @@ In this example, your application requires end\-to\-end traffic encryption\. To 
 1. *Disable the default port 80 listener\.* For the default listener, turn off the **Enabled** option\.  
 ![\[Network Load Balancer configuration example - disabling default listener\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-nlb-example-listeners-disabled.png)
 
-## Configuring a Network Load Balancer Using the EB CLI<a name="environments-cfg-nlb-ebcli"></a>
+## Configuring a Network Load Balancer using the EB CLI<a name="environments-cfg-nlb-ebcli"></a>
 
 The EB CLI prompts you to choose a load balancer type when you run [eb create](eb3-create.md)\.
 
@@ -158,7 +158,7 @@ You can also specify a load balancer type with the `--elb-type` option\.
 $ eb create test-env --elb-type network
 ```
 
-## Network Load Balancer Namespaces<a name="environments-cfg-nlb-namespaces"></a>
+## Network Load Balancer namespaces<a name="environments-cfg-nlb-namespaces"></a>
 
 You can find settings related to Network Load Balancers in the following namespaces:
 + `[aws:elasticbeanstalk:environment](command-options-general.md#command-options-general-elasticbeanstalkenvironment)` – Choose the load balancer type for the environment\. The value for a Network Load Balancer is `network`\.

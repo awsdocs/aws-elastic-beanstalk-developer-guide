@@ -1,4 +1,4 @@
-# Setting Up your Ruby Development Environment<a name="ruby-development-environment"></a>
+# Setting up your Ruby development environment<a name="ruby-development-environment"></a>
 
 Set up a Ruby development environment to test your application locally prior to deploying it to AWS Elastic Beanstalk\. This topic outlines development environment setup steps and links to installation pages for useful tools\.
 
@@ -11,12 +11,12 @@ this is output
 
 On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-For common setup steps and tools that apply to all languages, see [Configuring Your Development Machine for Use with Elastic Beanstalk](chapter-devenv.md)
+For common setup steps and tools that apply to all languages, see [Configuring your development machine for use with Elastic Beanstalk](chapter-devenv.md)
 
 **Topics**
 + [Installing Ruby](#ruby-development-environment-ruby)
 + [Installing the AWS SDK for Ruby](#ruby-development-environment-sdk)
-+ [Installing an IDE or Text Editor](#ruby-development-environment-ide)
++ [Installing an IDE or text editor](#ruby-development-environment-ide)
 
 ## Installing Ruby<a name="ruby-development-environment-ruby"></a>
 
@@ -96,7 +96,7 @@ $ gem install aws-sdk
 
 Visit the [AWS SDK for Ruby homepage](https://aws.amazon.com/sdk-for-ruby/) for more information and installation instructions\.
 
-## Installing an IDE or Text Editor<a name="ruby-development-environment-ide"></a>
+## Installing an IDE or text editor<a name="ruby-development-environment-ide"></a>
 
 Integrated development environments \(IDEs\) provide a wide range of features that facilitate application development\. If you haven't used an IDE for Ruby development, try Aptana and RubyMine and see which works best for you\.
 +  [Install Aptana](https://github.com/aptana/studio3) 

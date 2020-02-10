@@ -1,4 +1,4 @@
-# Elastic Beanstalk Instance Profile<a name="concepts-roles-instance"></a>
+# Elastic Beanstalk instance profile<a name="concepts-roles-instance"></a>
 
 An instance profile is an IAM role that is applied to instances launched in your Elastic Beanstalk environment\. When creating an Elastic Beanstalk environment, you specify the instance profile that is used when your instances:
 + Retrieve [application versions](concepts.md#concepts-version) from Amazon Simple Storage Service \(Amazon S3\)
@@ -58,4 +58,4 @@ Elastic Beanstalk also provides managed policies named `AWSElasticBeanstalkWorke
 
 If your web application requires access to any other AWS services, add statements or managed policies to the instance profile that allow access to those services\.
 
-For more information about instance profiles, see [Managing Elastic Beanstalk Instance Profiles](iam-instanceprofile.md)\.
+For more information about instance profiles, see [Managing Elastic Beanstalk instance profiles](iam-instanceprofile.md)\.

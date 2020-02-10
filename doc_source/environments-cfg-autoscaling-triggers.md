@@ -1,8 +1,8 @@
-# Auto Scaling Triggers<a name="environments-cfg-autoscaling-triggers"></a>
+# Auto Scaling triggers<a name="environments-cfg-autoscaling-triggers"></a>
 
 The Auto Scaling group in your Elastic Beanstalk environment uses two Amazon CloudWatch alarms to trigger scaling operations\. The default triggers scale when the average outbound network traffic from each instance is higher than 6 MB or lower than 2 MB over a period of five minutes\. To use Amazon EC2 Auto Scaling effectively, configure triggers that are appropriate for your application, instance type, and service requirements\. You can scale based on several statistics including latency, disk I/O, CPU utilization, and request count\.
 
-## Configuring Auto Scaling Triggers<a name="environments-cfg-autoscaling-triggers-console"></a>
+## Configuring Auto Scaling triggers<a name="environments-cfg-autoscaling-triggers-console"></a>
 
 You can configure the triggers that adjust the number of instances in your environment's Auto Scaling group in the Elastic Beanstalk console\.
 
@@ -30,7 +30,7 @@ You can configure the triggers that adjust the number of instances in your envir
 
 1. Choose **Apply**\.
 
-## The aws:autoscaling:trigger Namespace<a name="environments-cfg-autoscaling-triggers-namespace"></a>
+## The aws:autoscaling:trigger namespace<a name="environments-cfg-autoscaling-triggers-namespace"></a>
 
 Elastic Beanstalk provides [configuration options](command-options.md) for Auto Scaling settings in the [`aws:autoscaling:trigger`](command-options-general.md#command-options-general-autoscalingtrigger) namespace\. Settings in this namespace are organized by the resource that they apply to\.
 

@@ -1,4 +1,4 @@
-# Environment Configuration Using the Elastic Beanstalk Console<a name="environments-cfg-console"></a>
+# Environment configuration using the Elastic Beanstalk console<a name="environments-cfg-console"></a>
 
 You can use the Elastic Beanstalk console to view and modify many [configuration options](command-options.md) of your environment and its resources\. You can customize how the environment behaves during deployments, enable additional features, and modify the instance type and other settings that you chose during environment creation\.
 
@@ -10,7 +10,7 @@ You can use the Elastic Beanstalk console to view and modify many [configuration
 
 1. Choose **Configuration**\.
 
-## Configuration Overview Page<a name="environments-cfg-console.overview"></a>
+## Configuration overview page<a name="environments-cfg-console.overview"></a>
 
 The **Configuration overview** page shows a set of configuration categories\. Each configuration category summarizes the current state of a group of related options\.
 
@@ -30,14 +30,14 @@ Choose **Modify** in a configuration category to get to a related configuration 
 + **Cancel** – Go back to the environment's dashboard without applying your configuration changes\. When you choose **Cancel**, the console loses any pending changes you made on any configuration category\.
 
   You can also cancel your configuration changes by choosing another console page, like **Dashboard** or **Logs**\. In this case, if there are any pending configuration changes, the console prompts you to confirm that you agree to losing them\.
-+ **Review changes** – Get a summary of all the pending changes you made in any of the configuration categories\. For details, see [Review Changes Page](#environments-cfg-console.review)\.
++ **Review changes** – Get a summary of all the pending changes you made in any of the configuration categories\. For details, see [Review changes page](#environments-cfg-console.review)\.
 + **Apply configuration** – Apply the changes you made in any of the configuration categories to your environment\. In some cases you're prompted to confirm a consequence of one of your configuration decisions\.
 
-## Review Changes Page<a name="environments-cfg-console.review"></a>
+## Review changes page<a name="environments-cfg-console.review"></a>
 
 The **Review Changes** page displays a table showing all the pending option changes you made in any of the configuration categories and haven't applied to your environment yet\. If you removed any options \(for example, a custom environment property\), a second table shows the removed options\.
 
-Both tables list each option as a combination of the **Namespace** and **Option Name** with which Elastic Beanstalk identifies it\. For details, see [Configuration Options](command-options.md)\.
+Both tables list each option as a combination of the **Namespace** and **Option Name** with which Elastic Beanstalk identifies it\. For details, see [Configuration options](command-options.md)\.
 
 For example, you might make these configuration changes:
 + In the **Capacity** category: Change **Instances \(Min\)** from 1 to 2, and **Instances \(Max\)** from 2 to 4\. This change corresponds to two changes in the `aws:autoscaling:asg` namespace on the **Changed Options** list\.

@@ -1,4 +1,4 @@
-# Adding an Amazon RDS DB Instance to your Node\.js Application Environment<a name="create-deploy-nodejs.rds"></a>
+# Adding an Amazon RDS DB instance to your Node\.js application environment<a name="create-deploy-nodejs.rds"></a>
 
 You can use an Amazon Relational Database Service \(Amazon RDS\) DB instance to store data gathered and modified by your application\. The database can be attached to your environment and managed by Elastic Beanstalk, or created and managed externally\.
 
@@ -11,11 +11,11 @@ For learning purposes or test environments, you can use Elastic Beanstalk to add
 For production environments, you can create a DB instance outside of your Elastic Beanstalk environment to decouple your environment resources from your database resources\. This way, when you terminate your environment, the DB instance isn’t deleted\. An external DB instance also lets you connect to the same database from multiple environments and perform [blue\-green deployments](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.CNAMESwap.html)\. For instructions, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\.
 
 **Topics**
-+ [Adding a DB Instance to Your Environment](#nodejs-rds-create)
-+ [Downloading a Driver](#nodejs-rds-drivers)
-+ [Connecting to a Database](#nodejs-rds-connect)
++ [Adding a DB instance to your environment](#nodejs-rds-create)
++ [Downloading a driver](#nodejs-rds-drivers)
++ [Connecting to a database](#nodejs-rds-connect)
 
-## Adding a DB Instance to Your Environment<a name="nodejs-rds-create"></a>
+## Adding a DB instance to your environment<a name="nodejs-rds-create"></a>
 
 **To add a DB instance to your environment**
 
@@ -46,9 +46,9 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
   Amazon RDS console label – **Username**
 + **RDS\_PASSWORD** – The password that you configured for your database\.
 
-For more information about configuring an internal DB instance, see [Adding a Database to Your Elastic Beanstalk Environment](using-features.managing.db.md)\.
+For more information about configuring an internal DB instance, see [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md)\.
 
-## Downloading a Driver<a name="nodejs-rds-drivers"></a>
+## Downloading a driver<a name="nodejs-rds-drivers"></a>
 
 Add the database driver to your project's [`package.json` file](nodejs-platform-packagejson.md) under `dependencies`\.
 
@@ -83,11 +83,11 @@ Add the database driver to your project's [`package.json` file](nodejs-platform-
   + **Node\.js 4\.x** – Use the `oracledb` version 2\.2\.0\.
   + **Node\.js 5\.x, 7\.x** – Use the latest version of `oracle`\. The `oracledb` package doesn't support these Node\.js versions\.
 
-## Connecting to a Database<a name="nodejs-rds-connect"></a>
+## Connecting to a database<a name="nodejs-rds-connect"></a>
 
 Elastic Beanstalk provides connection information for attached DB instances in environment properties\. Use `os.environ['VARIABLE']` to read the properties and configure a database connection\.
 
-**Example app\.js – MySQL Database Connection**  
+**Example app\.js – MySQL database connection**  
 
 ```
 var mysql = require('mysql');

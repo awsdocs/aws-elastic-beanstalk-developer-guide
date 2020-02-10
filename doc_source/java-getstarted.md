@@ -1,8 +1,8 @@
-# Getting Started with Java on Elastic Beanstalk<a name="java-getstarted"></a>
+# Getting started with Java on Elastic Beanstalk<a name="java-getstarted"></a>
 
 To get started with Java applications on AWS Elastic Beanstalk, all you need is an application [source bundle](applications-sourcebundle.md) to upload as your first application version and to deploy to an environment\. When you create an environment, Elastic Beanstalk allocates all of the AWS resources needed to run a scalable web application\.
 
-## Launching an Environment with a Sample Java Application<a name="java-getstarted-samples"></a>
+## Launching an environment with a sample Java application<a name="java-getstarted-samples"></a>
 
 Elastic Beanstalk provides single page sample applications for each platform as well as more complex examples that show the use of additional AWS resources such as Amazon RDS and language or platform\-specific features and APIs\.
 
@@ -11,7 +11,7 @@ The single page samples are the same code that you get when you create an enviro
 
 **Samples**  
 
-|  Name  |  Supported Versions  |  Environment Type  |  Source  |  Description  | 
+|  Name  |  Supported versions  |  Environment type  |  Source  |  Description  | 
 | --- | --- | --- | --- | --- | 
 |  Tomcat Default  |  Tomcat 8 with Java 8  |  Web Server Worker  |   [java\-tomcat\-v3\.zip](samples/java-tomcat-v3.zip)   |  Tomcat web application with a single page \(`index.jsp`\) configured to be displayed at the website root\. For [worker environments](using-features-managing-env-tiers.md), this sample includes a `cron.yaml` file that configures a scheduled task that calls `scheduled.jsp` once per minute\. When `scheduled.jsp` is called, it writes to a log file at `/tmp/sample-app.log`\. Finally, a configuration file is included in `.ebextensions` that copies the logs from `/tmp/` to the locations read by Elastic Beanstalk when you request environment logs\. If you [enable X\-Ray integration](environment-configuration-debugging.md) on an environment running this sample, the application shows additional content regarding X\-Ray and provides an option to generate debug information that you can view in the X\-Ray console\.  | 
 |  Tomcat 7  |  Tomcat 7 with Java 7 Tomcat 7 with Java 6  |  Web Server Worker  |   [java7\-tomcat7\.zip](samples/java7-tomcat7.zip)   |  A version of the Tomcat Default application that targets Java 7 or earlier with Tomcat 7\.  | 
@@ -53,11 +53,11 @@ Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most o
    + Internal Amazon RDS database
    + Load balancer
 
-   For details on all available settings, see [The Create New Environment Wizard](environments-create-wizard.md)\.
+   For details on all available settings, see [The create new environment wizard](environments-create-wizard.md)\.
 
 1. Choose **Create environment**\.
 
-## Next Steps<a name="java-getstarted-next"></a>
+## Next steps<a name="java-getstarted-next"></a>
 
 After you have an environment running an application, you can [deploy a new version](using-features.deploy-existing-version.md) of the application or a completely different application at any time\. Deploying a new application version is very quick because it doesn't require provisioning or restarting EC2 instances\.
 

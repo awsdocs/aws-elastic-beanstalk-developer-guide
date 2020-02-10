@@ -1,16 +1,16 @@
-# Creating an Elastic Beanstalk Environment<a name="using-features.environments"></a>
+# Creating an Elastic Beanstalk environment<a name="using-features.environments"></a>
 
 You can deploy multiple AWS Elastic Beanstalk environments when you need to run multiple versions of an application\. For example, you might have development, integration, and production environments\.
 
 **Note**  
-For instructions on creating and managing environments with the EB CLI, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
+For instructions on creating and managing environments with the EB CLI, see [Managing Elastic Beanstalk environments with the EB CLI](eb-cli3-getting-started.md)\.
 
 The **Create New Environment** wizard in the Elastic Beanstalk console guides you through the creation of an environment step by step, with a bevy of options for configuring the resources that Elastic Beanstalk deploys on your behalf\. If you are just getting started, you can use the default values for many of these options without issue\.
 
 **Note**  
-Creating an environment requires the permissions in the Elastic Beanstalk full access managed policy\. See [Elastic Beanstalk User Policy](concepts-roles-user.md) for details\.
+Creating an environment requires the permissions in the Elastic Beanstalk full access managed policy\. See [Elastic Beanstalk user policy](concepts-roles-user.md) for details\.
 
-Follow this procedure to launch a new environment running the default application\. These steps are simplified to get your environment up and running quickly\. See [The Create New Environment Wizard](environments-create-wizard.md) for more detailed instructions with descriptions of all of the available options\.
+Follow this procedure to launch a new environment running the default application\. These steps are simplified to get your environment up and running quickly\. See [The create new environment wizard](environments-create-wizard.md) for more detailed instructions with descriptions of all of the available options\.
 
 **To launch an environment with a sample application \(console\)**
 
@@ -43,17 +43,17 @@ Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most o
    + Internal Amazon RDS database
    + Load balancer
 
-   For details on all available settings, see [The Create New Environment Wizard](environments-create-wizard.md)\.
+   For details on all available settings, see [The create new environment wizard](environments-create-wizard.md)\.
 
 1. Choose **Create environment**\.
 
 While Elastic Beanstalk creates your environment, you are redirected to the [Elastic Beanstalk console](environments-console.md)\. When the environment health turns green, choose on the URL next to the environment name to view the running application\. This URL is generally accessible from the Internet unless you configure your environment to use a [custom VPC with an internal load balancer](environments-create-wizard.md#environments-create-wizard-network)\.
 
 **Topics**
-+ [The Create New Environment Wizard](environments-create-wizard.md)
-+ [Clone an Elastic Beanstalk Environment](using-features.managing.clone.md)
-+ [Terminate an Elastic Beanstalk Environment](using-features.terminating.md)
-+ [Creating Elastic Beanstalk Environments with the AWS CLI](environments-create-awscli.md)
-+ [Creating Elastic Beanstalk Environments with the API](environments-create-api.md)
++ [The create new environment wizard](environments-create-wizard.md)
++ [Clone an Elastic Beanstalk environment](using-features.managing.clone.md)
++ [Terminate an Elastic Beanstalk environment](using-features.terminating.md)
++ [Creating Elastic Beanstalk environments with the AWS CLI](environments-create-awscli.md)
++ [Creating Elastic Beanstalk environments with the API](environments-create-api.md)
 + [Constructing a Launch Now URL](launch-now-url.md)
-+ [Creating and Updating Groups of Elastic Beanstalk Environments](environment-mgmt-compose.md)
++ [Creating and updating groups of Elastic Beanstalk environments](environment-mgmt-compose.md)

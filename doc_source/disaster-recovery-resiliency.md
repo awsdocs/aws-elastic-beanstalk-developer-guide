@@ -10,4 +10,4 @@ For more information about AWS Regions and Availability Zones, see [AWS Global I
 
 AWS Elastic Beanstalk manages and automates the use of the AWS global infrastructure on your behalf\. When using Elastic Beanstalk, you benefit from the availability and fault tolerance mechanisms that AWS offers\.
 
-For other Elastic Beanstalk security topics, see [AWS Elastic Beanstalk Security](security.md)\.
+For other Elastic Beanstalk security topics, see [AWS Elastic Beanstalk security](security.md)\.

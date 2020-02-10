@@ -1,4 +1,4 @@
-# Immutable Environment Updates<a name="environmentmgmt-updates-immutable"></a>
+# Immutable environment updates<a name="environmentmgmt-updates-immutable"></a>
 
 Immutable environment updates are an alternative to [rolling updates](using-features.rollingupdates.md)\. Immutable environment updates ensure that configuration changes that require replacing instances are applied efficiently and safely\. If an immutable environment update fails, the rollback process requires only terminating an Auto Scaling group\. A failed rolling update, on the other hand, requires performing an additional rolling update to roll back the changes\.
 
@@ -25,7 +25,7 @@ You can't perform an immutable update in concert with resource configuration cha
 
 If your resource configuration changes aren't dependent on your source code change or on instance configuration, perform them in two updates\. If they are dependent, perform a [blue/green deployment](using-features.CNAMESwap.md) instead\.
 
-## Configuring Immutable Updates<a name="updates-immutable-configure"></a>
+## Configuring immutable updates<a name="updates-immutable-configure"></a>
 
 You can enable and configure immutable updates in the Elastic Beanstalk console\.
 
@@ -68,4 +68,4 @@ option_settings:
     DeploymentPolicy: Immutable
 ```
 
-The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended values](command-options.md#configuration-options-recommendedvalues) for details\.

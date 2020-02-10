@@ -1,4 +1,4 @@
-# Creating Elastic Beanstalk Environments with the AWS CLI<a name="environments-create-awscli"></a>
+# Creating Elastic Beanstalk environments with the AWS CLI<a name="environments-create-awscli"></a>
 
 1. Check if the CNAME for the environment is available\.
 

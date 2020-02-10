@@ -2,7 +2,7 @@
 
 When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports several load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. 
 
-This topic describes the configuration of an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load Balancer for Your Elastic Beanstalk Environment](using-features.managing.elb.md)\.
+This topic describes the configuration of an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load balancer for your Elastic Beanstalk environment](using-features.managing.elb.md)\.
 
 **Note**  
 You can choose the type of load balancer that your environment uses only during environment creation\. You can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.
@@ -32,7 +32,7 @@ To use an Application Load Balancer, your environment must be in a default or cu
 **Note**  
 The Application Load Balancer health check doesn't use the Elastic Beanstalk health check path\. Instead, it uses the specific path configured for each process separately\.
 
-## Configuring an Application Load Balancer Using the Elastic Beanstalk Console<a name="environments-cfg-alb-console"></a>
+## Configuring an Application Load Balancer using the Elastic Beanstalk console<a name="environments-cfg-alb-console"></a>
 
 You can use the Elastic Beanstalk console to configure an Application Load Balancer's listeners, processes, and rules, during environment creation or later when your environment is running\.
 
@@ -69,7 +69,7 @@ You can use the Elastic Beanstalk console to configure an Application Load Balan
 
 1. In the **Load balancer** configuration category, choose **Modify**\.
 **Note**  
-If the **Load balancer** configuration category doesn't have a **Modify** button, your environment doesn't have a load balancer\. To learn how to set one up, see [Changing Environment Type](using-features-managing-env-types.md#using-features.managing.changetype)\.
+If the **Load balancer** configuration category doesn't have a **Modify** button, your environment doesn't have a load balancer\. To learn how to set one up, see [Changing environment type](using-features-managing-env-types.md#using-features.managing.changetype)\.
 
 1. Make the Application Load Balancer configuration changes that your environment requires\.
 
@@ -79,8 +79,8 @@ If the **Load balancer** configuration category doesn't have a **Modify** button
 + [Listeners](#environments-cfg-alb-console-listeners)
 + [Processes](#environments-cfg-alb-console-processes)
 + [Rules](#environments-cfg-alb-console-rules)
-+ [Access Log Capture](#environments-cfg-alb-console-logs)
-+ [Example: Application Load Balancer with a Secure Listener and Two Processes](#environments-cfg-alb-console-example)
++ [Access log capture](#environments-cfg-alb-console-logs)
++ [Example: Application Load Balancer with a secure listener and two processes](#environments-cfg-alb-console-example)
 
 ### Listeners<a name="environments-cfg-alb-console-listeners"></a>
 
@@ -106,7 +106,7 @@ Before you can configure an HTTPS listener, ensure that you have a valid SSL cer
 + If AWS Certificate Manager \(ACM\) is [available in your AWS Region](https://docs.aws.amazon.com/general/latest/gr/acm.html), create or import a certificate using ACM\. For more information about requesting an ACM certificate, see [Request a Certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide*\. For more information about importing third\-party certificates into ACM, see [Importing Certificates](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\.
 + If ACM isn't [available in your AWS Region](https://docs.aws.amazon.com/general/latest/gr/acm.html), upload your existing certificate and key to IAM\. For more information about creating and uploading certificates to IAM, see [Working with Server Certificates](https://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingServerCerts.html) in the *IAM User Guide*\.
 
-For more detail on configuring HTTPS and working with certificates in Elastic Beanstalk, see [Configuring HTTPS for Your Elastic Beanstalk Environment](configuring-https.md)\.
+For more detail on configuring HTTPS and working with certificates in Elastic Beanstalk, see [Configuring HTTPS for your Elastic Beanstalk environment](configuring-https.md)\.
 
 ### Processes<a name="environments-cfg-alb-console-processes"></a>
 
@@ -118,7 +118,7 @@ You can edit the settings of an existing process, or add a new process\. To star
 
 **Topics**
 + [Definition](#environments-cfg-alb-console-process-definition)
-+ [Health Check](#environments-cfg-alb-console-process-healthchecks)
++ [Health check](#environments-cfg-alb-console-process-healthchecks)
 + [Sessions](#environments-cfg-alb-console-process-sessions)
 
 #### Definition<a name="environments-cfg-alb-console-process-definition"></a>
@@ -127,7 +127,7 @@ Use these settings to define the process: its **Name**, and the **Port** and **P
 
 ![\[Application Load Balancer process settings for name, port, and protocol\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-process-definition.png)
 
-#### Health Check<a name="environments-cfg-alb-console-process-healthchecks"></a>
+#### Health check<a name="environments-cfg-alb-console-process-healthchecks"></a>
 
 Use the following settings to configure process health checks:
 + **HTTP code** – The HTTP status code designating a healthy process\.
@@ -140,9 +140,9 @@ Use the following settings to configure process health checks:
 ![\[Application Load Balancer process settings for a health check\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-process-healthcheck.png)
 
 **Note**  
-The Elastic Load Balancing health check doesn't affect the health check behavior of an environment's Auto Scaling group\. Instances that fail an Elastic Load Balancing health check are not automatically replaced by Amazon EC2 Auto Scaling unless you manually configure Amazon EC2 Auto Scaling to do so\. See [Auto Scaling Health Check Setting](environmentconfig-autoscaling-healthchecktype.md) for details\. 
+The Elastic Load Balancing health check doesn't affect the health check behavior of an environment's Auto Scaling group\. Instances that fail an Elastic Load Balancing health check are not automatically replaced by Amazon EC2 Auto Scaling unless you manually configure Amazon EC2 Auto Scaling to do so\. See [Auto Scaling health check setting](environmentconfig-autoscaling-healthchecktype.md) for details\. 
 
-For more information about health checks and how they influence your environment's overall health, see [Basic Health Reporting](using-features.healthstatus.md)\.
+For more information about health checks and how they influence your environment's overall health, see [Basic health reporting](using-features.healthstatus.md)\.
 
 #### Sessions<a name="environments-cfg-alb-console-process-sessions"></a>
 
@@ -169,13 +169,13 @@ When editing any existing rule, you can't change its **Name** and **Listener por
 
 ![\[Application Load Balancer configuration - rule list\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-rule-dialog.png)
 
-### Access Log Capture<a name="environments-cfg-alb-console-logs"></a>
+### Access log capture<a name="environments-cfg-alb-console-logs"></a>
 
 Use these settings to configure Elastic Load Balancing to capture logs with detailed information about requests sent to your Application Load Balancer\. Access log capture is disabled by default\. When **Store logs** is enabled, Elastic Load Balancing stores the logs in the **S3 bucket** that you configure\. The **Prefix** setting specifies a top\-level folder in the bucket for the logs\. Elastic Load Balancing places the logs in a folder named `AWSLogs` under your prefix\. If you don't specify a prefix, Elastic Load Balancing places its folder at the root level of the bucket\.
 
 ![\[Application Load Balancer configuration - access logs\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-logs.png)
 
-### Example: Application Load Balancer with a Secure Listener and Two Processes<a name="environments-cfg-alb-console-example"></a>
+### Example: Application Load Balancer with a secure listener and two processes<a name="environments-cfg-alb-console-example"></a>
 
 In this example, your application requires end\-to\-end traffic encryption and a separate process for handling administrative requests\. 
 
@@ -201,7 +201,7 @@ To configure your environment's Application Load Balancer to meet these requirem
 1. *Add a rule for admin traffic\.* For **Name**, type `admin`\. For **Listener port**, type `443`\. For **Path pattern**, type `/admin/*`\. For **Process**, choose `admin`\.  
 ![\[Application Load Balancer configuration example - adding admin rule\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-rule-https-admin.png)
 
-## Configuring an Application Load Balancer Using the EB CLI<a name="environments-cfg-alb-ebcli"></a>
+## Configuring an Application Load Balancer using the EB CLI<a name="environments-cfg-alb-ebcli"></a>
 
 The EB CLI prompts you to choose a load balancer type when you run [eb create](eb3-create.md)\.
 
@@ -225,7 +225,7 @@ You can also specify a load balancer type with the `--elb-type` option\.
 $ eb create test-env --elb-type application
 ```
 
-## Application Load Balancer Namespaces<a name="environments-cfg-alb-namespaces"></a>
+## Application Load Balancer namespaces<a name="environments-cfg-alb-namespaces"></a>
 
 You can find settings related to Application Load Balancers in the following namespaces:
 + `[aws:elasticbeanstalk:environment](command-options-general.md#command-options-general-elasticbeanstalkenvironment)` – Choose the load balancer type for the environment\. The value for an Application Load Balancer is `application`\.

@@ -1,11 +1,11 @@
-# Enhanced Health Log Format<a name="health-enhanced-serverlogs"></a>
+# Enhanced health log format<a name="health-enhanced-serverlogs"></a>
 
 AWS Elastic Beanstalk platforms use a custom web server log format to efficiently relay information about HTTP requests to the enhanced health reporting system\. The system analyzes the logs, identifies issues, and sets the instance and environment health accordingly\. If you disable the web server proxy on your environment and serve requests directly from the web container, you can still make full use of enhanced health reporting by configuring your server to output logs in the location and format that the [Elastic Beanstalk health agent](health-enhanced.md#health-enhanced-agent) uses\.
 
 **Note**  
-The information on this page is relevant only to Linux\-based platforms\. On the Windows Server platform, Elastic Beanstalk receives information about HTTP requests directly from the IIS web server\. For details, see [Web Server Metrics Capture in IIS on Windows Server](health-enhanced-metrics-server-iis.md)\.
+The information on this page is relevant only to Linux\-based platforms\. On the Windows Server platform, Elastic Beanstalk receives information about HTTP requests directly from the IIS web server\. For details, see [Web server metrics capture in IIS on Windows server](health-enhanced-metrics-server-iis.md)\.
 
-## Web Server Log Configuration<a name="health-enhanced-serverlogs.configure"></a>
+## Web server log configuration<a name="health-enhanced-serverlogs.configure"></a>
 
 Elastic Beanstalk platforms are configured to output two logs with information about HTTP requests\. The first is in verbose format and provides detailed information about the request, including the requester's user agent information and a human\-readable timestamp\.
 
@@ -109,7 +109,7 @@ LogFormat "%{%s}t\"%U\"%s\"%D\"%D\"%{X-Forwarded-For}i" healthd
 CustomLog "|/usr/sbin/rotatelogs /var/log/httpd/healthd/application.log.%Y-%m-%d-%H 3600" healthd
 ```
 
-## Generating Logs for Enhanced Health Reporting<a name="health-enhanced-serverlogs.generate"></a>
+## Generating logs for enhanced health reporting<a name="health-enhanced-serverlogs.generate"></a>
 
 To provide logs to the health agent, you must do the following:
 + Output logs in the correct format, as shown in the previous section

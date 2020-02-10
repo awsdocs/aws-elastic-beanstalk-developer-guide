@@ -1,4 +1,4 @@
-# Using a Custom Amazon Machine Image \(AMI\)<a name="using-features.customenv"></a>
+# Using a custom Amazon machine image \(AMI\)<a name="using-features.customenv"></a>
 
 When you create an AWS Elastic Beanstalk environment, you can specify an Amazon Machine Image \(AMI\) to use instead of the standard Elastic Beanstalk AMI included in your platform version\. A custom AMI can improve provisioning times when instances are launched in your environment if you need to install a lot of software that isn't included in the standard AMIs\.
 
@@ -6,7 +6,7 @@ Using [configuration files](ebextensions.md) is great for configuring and custom
 
 A custom AMI also allows you to make changes to low\-level components, such as the Linux kernel, that are difficult to implement or take a long time to apply in configuration files\. To create a custom AMI, launch an Elastic Beanstalk platform AMI in Amazon EC2, customize the software and configuration to your needs, and then stop the instance and save an AMI from it\.
 
-## Creating a Custom AMI<a name="using-features.customenv.create"></a>
+## Creating a custom AMI<a name="using-features.customenv.create"></a>
 
 **To identify the base Elastic Beanstalk AMI**
 
@@ -103,6 +103,6 @@ These settings configure the lock\-on\-launch feature\. This causes the AMI to u
 
 When you create a new environment with the custom AMI, you should use the same platform version that you used as a base to create the AMI\. If you later apply a [platform update](using-features.platform.upgrade.md) to an environment using a custom AMI, Elastic Beanstalk attempts to apply the library and configuration updates during the bootstrapping process\.
 
-## Cleaning Up a Custom AMI<a name="using-features.customenv.cleanup"></a>
+## Cleaning up a custom AMI<a name="using-features.customenv.cleanup"></a>
 
 When you are done with a custom AMI and don't need it to launch Elastic Beanstalk environments anymore, consider cleaning it up to minimize storage cost\. Cleaning up a custom AMI involves deregistering it from Amazon EC2 and deleting other associated resources\. For details, see [Deregistering Your Linux AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/deregister-ami.html) or [Deregistering Your Windows AMI](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/deregister-ami.html)\.

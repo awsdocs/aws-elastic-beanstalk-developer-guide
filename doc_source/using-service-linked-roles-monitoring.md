@@ -8,7 +8,7 @@ You can delete a service\-linked role only after first deleting their related re
 
 For information about other services that support service\-linked roles, see [AWS Services That Work with IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html) and look for the services that have **Yes **in the **Service\-Linked Role** column\. Choose a **Yes** with a link to view the service\-linked role documentation for that service\.
 
-## Service\-Linked Role Permissions for Elastic Beanstalk<a name="service-linked-role-permissions-monitoring"></a>
+## Service\-linked role permissions for Elastic Beanstalk<a name="service-linked-role-permissions-monitoring"></a>
 
 Elastic Beanstalk uses the service\-linked role named **AWSServiceRoleForElasticBeanstalk** – Allows Elastic Beanstalk to monitor the health of running environments and publish health event notifications\.
 
@@ -115,7 +115,7 @@ Add the following statement to the permissions policy for the IAM entity that ne
 
 Alternatively, you can use an AWS managed policy to [provide full access](AWSHowTo.iam.managed-policies.md) to Elastic Beanstalk\.
 
-## Creating a Service\-Linked Role for Elastic Beanstalk<a name="create-service-linked-role-monitoring"></a>
+## Creating a service\-linked role for Elastic Beanstalk<a name="create-service-linked-role-monitoring"></a>
 
 You don't need to manually create a service\-linked role\. When you create an Elastic Beanstalk environment using the Elastic Beanstalk API and don't specify a service role, Elastic Beanstalk creates the service\-linked role for you\. 
 
@@ -130,15 +130,15 @@ You \(or another user\) can use the IAM console to create a service\-linked role
 
 If you delete this service\-linked role, and then need to create it again, you can use the same process to recreate the role in your account\. When you create an Elastic Beanstalk environment using the Elastic Beanstalk API and don't specify a service role, Elastic Beanstalk creates the service\-linked role for you again\. 
 
-## Editing a Service\-Linked Role for Elastic Beanstalk<a name="edit-service-linked-role-monitoring"></a>
+## Editing a service\-linked role for Elastic Beanstalk<a name="edit-service-linked-role-monitoring"></a>
 
 Elastic Beanstalk does not allow you to edit the AWSServiceRoleForElasticBeanstalk service\-linked role\. After you create a service\-linked role, you cannot change the name of the role because various entities might reference the role\. However, you can edit the description of the role using IAM\. For more information, see [Editing a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
 
-## Deleting a Service\-Linked Role for Elastic Beanstalk<a name="delete-service-linked-role-monitoring"></a>
+## Deleting a service\-linked role for Elastic Beanstalk<a name="delete-service-linked-role-monitoring"></a>
 
 If you no longer need to use a feature or service that requires a service\-linked role, we recommend that you delete that role\. That way you don’t have an unused entity that is not actively monitored or maintained\. However, you must clean up your service\-linked role before you can manually delete it\.
 
-### Cleaning Up a Service\-Linked Role<a name="service-linked-role-review-before-delete-monitoring"></a>
+### Cleaning up a service\-linked role<a name="service-linked-role-review-before-delete-monitoring"></a>
 
 Before you can use IAM to delete a service\-linked role, you must first terminate any Elastic Beanstalk environments that uses the role\.
 
@@ -159,10 +159,10 @@ See [eb terminate](eb3-terminate.md) for details about terminating an Elastic Be
 
 See [TerminateEnvironment](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_TerminateEnvironment.html) for details about terminating an Elastic Beanstalk environment using the API\.
 
-### Manually Delete the Service\-Linked Role<a name="slr-manual-delete-monitoring"></a>
+### Manually delete the service\-linked role<a name="slr-manual-delete-monitoring"></a>
 
 Use the IAM console, the IAM CLI, or the IAM API to delete the AWSServiceRoleForElasticBeanstalk service\-linked role\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
 
-## Supported Regions for Elastic Beanstalk Service\-Linked Roles<a name="slr-regions-monitoring"></a>
+## Supported Regions for Elastic Beanstalk service\-linked roles<a name="slr-regions-monitoring"></a>
 
 Elastic Beanstalk supports using service\-linked roles in all of the regions where the service is available\. For more information, see [AWS Elastic Beanstalk Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/elasticbeanstalk.html)\.

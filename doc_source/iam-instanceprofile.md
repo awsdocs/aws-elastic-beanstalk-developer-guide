@@ -1,4 +1,4 @@
-# Managing Elastic Beanstalk Instance Profiles<a name="iam-instanceprofile"></a>
+# Managing Elastic Beanstalk instance profiles<a name="iam-instanceprofile"></a>
 
 An instance profile is a container for an AWS Identity and Access Management \(IAM\) role that you can use to pass role information to an Amazon EC2 instance when the instance starts\. When you launch an environment using the Elastic Beanstalk console or the EB CLI, Elastic Beanstalk creates a default instance profile, called `aws-elasticbeanstalk-ec2-role`, and assigns managed policies with default permissions to it\. 
 
@@ -173,13 +173,13 @@ To allow the EC2 instances in your environment to assume the `aws-elasticbeansta
 To customize permissions, you can add policies to the role attached to the default instance profile or create your own instance profile with a restricted set of permissions\.
 
 **Topics**
-+ [Verifying the Permissions Assigned to the Default Instance Profile](#iam-instanceprofile-verify)
-+ [Updating an Out\-of\-Date Default Instance Profile](#iam-instanceprofile-update)
-+ [Adding Permissions to the Default Instance Profile](#iam-instanceprofile-addperms)
-+ [Creating an Instance Profile](#iam-instanceprofile-create)
-+ [Instance Profiles with Amazon Linux 2 Platforms](#iam-instanceprofile-al2)
++ [Verifying the permissions assigned to the default instance profile](#iam-instanceprofile-verify)
++ [Updating an out\-of\-date default instance profile](#iam-instanceprofile-update)
++ [Adding permissions to the default instance profile](#iam-instanceprofile-addperms)
++ [Creating an instance profile](#iam-instanceprofile-create)
++ [Instance profiles with Amazon Linux 2 platforms](#iam-instanceprofile-al2)
 
-## Verifying the Permissions Assigned to the Default Instance Profile<a name="iam-instanceprofile-verify"></a>
+## Verifying the permissions assigned to the default instance profile<a name="iam-instanceprofile-verify"></a>
 
 The permissions assigned to your default instance profile can vary depending on when it was created, the last time you launched an environment, and which client you used\. You can verify the permissions on the default instance profile in the IAM console\.
 
@@ -193,7 +193,7 @@ The permissions assigned to your default instance profile can vary depending on 
 
 1. To see the permissions that a policy grants, choose the policy\.
 
-## Updating an Out\-of\-Date Default Instance Profile<a name="iam-instanceprofile-update"></a>
+## Updating an out\-of\-date default instance profile<a name="iam-instanceprofile-update"></a>
 
 If the default instance profile lacks the required permissions, you can update it by [creating a new environment](using-features.environments.md) in the Elastic Beanstalk environment management console\.
 
@@ -214,7 +214,7 @@ Alternatively, you can add the managed policies to the role attached to the defa
    + `AWSElasticBeanstalkWorkerTier`
    + `AWSElasticBeanstalkMulticontainerDocker`
 
-## Adding Permissions to the Default Instance Profile<a name="iam-instanceprofile-addperms"></a>
+## Adding permissions to the default instance profile<a name="iam-instanceprofile-addperms"></a>
 
 If your application accesses AWS APIs or resources to which permissions aren't granted in the default instance profile, add policies that grant permissions in the IAM console\.
 
@@ -230,7 +230,7 @@ If your application accesses AWS APIs or resources to which permissions aren't g
 
 1. Choose **Attach policy**\.
 
-## Creating an Instance Profile<a name="iam-instanceprofile-create"></a>
+## Creating an instance profile<a name="iam-instanceprofile-create"></a>
 
 An instance profile is a wrapper around a standard IAM role that allows an EC2 instance to assume the role\. You can create additional instance profiles to customize permissions for different applications or to create an instance profile that doesn't grant permissions for worker tier or multicontainer Docker environments, if you don't use those features\.
 
@@ -256,7 +256,7 @@ An instance profile is a wrapper around a standard IAM role that allows an EC2 i
 
 1. Choose **Create role**\.
 
-## Instance Profiles with Amazon Linux 2 Platforms<a name="iam-instanceprofile-al2"></a>
+## Instance profiles with Amazon Linux 2 platforms<a name="iam-instanceprofile-al2"></a>
 
 
 |  | 

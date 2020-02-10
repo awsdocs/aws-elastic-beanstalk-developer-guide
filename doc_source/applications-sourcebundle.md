@@ -1,22 +1,22 @@
-# Create an Application Source Bundle<a name="applications-sourcebundle"></a>
+# Create an application source bundle<a name="applications-sourcebundle"></a>
 
 When you use the AWS Elastic Beanstalk console to deploy a new application or an application version, you'll need to upload a source bundle\. Your source bundle must meet the following requirements: 
 + Consist of a single `ZIP` file or `WAR` file \(you can include multiple `WAR` files inside your `ZIP` file\)
 + Not exceed 512 MB
 + Not include a parent folder or top\-level directory \(subdirectories are fine\)
 
-If you want to deploy a worker application that processes periodic background tasks, your application source bundle must also include a `cron.yaml` file\. For more information, see [Periodic Tasks](using-features-managing-env-tiers.md#worker-periodictasks)\.
+If you want to deploy a worker application that processes periodic background tasks, your application source bundle must also include a `cron.yaml` file\. For more information, see [Periodic tasks](using-features-managing-env-tiers.md#worker-periodictasks)\.
 
-If you are deploying your application with the Elastic Beanstalk Command Line Interface \(EB CLI\), the AWS Toolkit for Eclipse, or the AWS Toolkit for Visual Studio, the ZIP or WAR file will automatically be structured correctly\. For more information, see [Using the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md), [Creating and Deploying Java Applications on Elastic Beanstalk](create_deploy_Java.md), and [The AWS Toolkit for Visual Studio](dotnet-toolkit.md)\.
+If you are deploying your application with the Elastic Beanstalk Command Line Interface \(EB CLI\), the AWS Toolkit for Eclipse, or the AWS Toolkit for Visual Studio, the ZIP or WAR file will automatically be structured correctly\. For more information, see [Using the Elastic Beanstalk command line interface \(EB CLI\)](eb-cli3.md), [Creating and deploying Java applications on Elastic Beanstalk](create_deploy_Java.md), and [The AWS Toolkit for Visual Studio](dotnet-toolkit.md)\.
 
 **Topics**
-+ [Creating a Source Bundle from the Command Line](#using-features.deployment.source.commandline)
-+ [Creating a Source Bundle with Git](#using-features.deployment.source.git)
-+ [Zipping Files in Mac OS X Finder or Windows Explorer](#using-features.deployment.source.gui)
-+ [Creating a Source Bundle for a \.NET Application](#using-features.deployment.source.dotnet)
-+ [Testing Your Source Bundle](#using-features.deployment.source.test)
++ [Creating a source bundle from the command line](#using-features.deployment.source.commandline)
++ [Creating a source bundle with Git](#using-features.deployment.source.git)
++ [Zipping files in Mac OS X Finder or Windows explorer](#using-features.deployment.source.gui)
++ [Creating a source bundle for a \.NET application](#using-features.deployment.source.dotnet)
++ [Testing your source bundle](#using-features.deployment.source.test)
 
-## Creating a Source Bundle from the Command Line<a name="using-features.deployment.source.commandline"></a>
+## Creating a source bundle from the command line<a name="using-features.deployment.source.commandline"></a>
 
 Create a source bundle using the `zip` command\. To include hidden files and folders, use a pattern like the following\.
 
@@ -41,7 +41,7 @@ For Tomcat web applications, use `jar` to create a web archive\.
 
 The above commands include hidden files that may increase your source bundle size unnecessarily\. For more control, use a more detailed file pattern, or [create your source bundle with Git](#using-features.deployment.source.git)\.
 
-## Creating a Source Bundle with Git<a name="using-features.deployment.source.git"></a>
+## Creating a source bundle with Git<a name="using-features.deployment.source.git"></a>
 
 If you're using Git to manage your application source code, use the `git archive` command to create your source bundle\.
 
@@ -51,12 +51,12 @@ $ git archive -v -o myapp.zip --format=zip HEAD
 
 `git archive` only includes files that are stored in git, and excludes ignored files and git files\. This helps keep your source bundle as small as possible\. For more information, go to the [git\-archive manual page](http://git-scm.com/docs/git-archive)\.
 
-## Zipping Files in Mac OS X Finder or Windows Explorer<a name="using-features.deployment.source.gui"></a>
+## Zipping files in Mac OS X Finder or Windows explorer<a name="using-features.deployment.source.gui"></a>
 
 When you create a `ZIP` file in Mac OS X Finder or Windows Explorer, make sure you zip the files and subfolders themselves, rather than zipping the parent folder\. 
 
 **Note**  
-The graphical user interface \(GUI\) on Mac OS X and Linux\-based operating systems does not display files and folders with names that begin with a period \(\.\)\. Use the command line instead of the GUI to compress your application if the `ZIP` file must include a hidden folder, such as `.ebextensions`\. For command line procedures to create a `ZIP` file on Mac OS X or a Linux\-based operating system, see [Creating a Source Bundle from the Command Line](#using-features.deployment.source.commandline)\.
+The graphical user interface \(GUI\) on Mac OS X and Linux\-based operating systems does not display files and folders with names that begin with a period \(\.\)\. Use the command line instead of the GUI to compress your application if the `ZIP` file must include a hidden folder, such as `.ebextensions`\. For command line procedures to create a `ZIP` file on Mac OS X or a Linux\-based operating system, see [Creating a source bundle from the command line](#using-features.deployment.source.commandline)\.
 
 **Example**  
 Suppose you have a Python project folder labeled `myapp`, which includes the following files and subfolders:   
@@ -85,17 +85,17 @@ This sample file structure is used throughout this topic to illustrate how to zi
 1. Right\-click the selected files, and then choose **Compress** *X* **items**, where *X* is the number of files and subfolders you've selected\.  
 ![\[Compressing files in Mac OS X Finder\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/finder-context.png)
 
-**To zip files in Windows Explorer**
+**To zip files in Windows explorer**
 
 1. Open your top\-level project folder and select all the files and subfolders within it\. Do not select the top\-level folder itself\.  
-![\[Files selected in Windows Explorer\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/winex-files.png)
+![\[Files selected in Windows explorer\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/winex-files.png)
 
 1. Right\-click the selected files, choose **Send to**, and then choose **Compressed \(zipped\) folder**\.  
-![\[Compressing files in Windows Explorer\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/winex-context.png)
+![\[Compressing files in Windows explorer\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/winex-context.png)
 
-## Creating a Source Bundle for a \.NET Application<a name="using-features.deployment.source.dotnet"></a>
+## Creating a source bundle for a \.NET application<a name="using-features.deployment.source.dotnet"></a>
 
-If you use Visual Studio, you can use the deployment tool included in the AWS Toolkit for Visual Studio to deploy your \.NET application to Elastic Beanstalk\. For more information, see [Deploying Elastic Beanstalk Applications in \.NET Using the Deployment Tool](deploy_NET_standalone_tool.md)\.
+If you use Visual Studio, you can use the deployment tool included in the AWS Toolkit for Visual Studio to deploy your \.NET application to Elastic Beanstalk\. For more information, see [Deploying Elastic Beanstalk applications in \.NET using the deployment tool](deploy_NET_standalone_tool.md)\.
 
 If you need to manually create a source bundle for your \.NET application, you cannot simply create a `ZIP` file that contains the project directory\. You must create a web deployment package for your project that is suitable for deployment to Elastic Beanstalk\. There are several methods you can use to create a deployment package:
 + Create the deployment package using the **Publish Web** wizard in Visual Studio\. For more information, go to [How to: Create a Web Deployment Package in Visual Studio](http://msdn.microsoft.com/en-us/library/dd465323.aspx)\.
@@ -125,7 +125,7 @@ If you are deploying multiple applications or an ASP\.NET Core application, put 
 `-- VS2015AspNetWebApiApp.zip
 ```
 
-## Testing Your Source Bundle<a name="using-features.deployment.source.test"></a>
+## Testing your source bundle<a name="using-features.deployment.source.test"></a>
 
 You may want to test your source bundle locally before you upload it to Elastic Beanstalk\. Because Elastic Beanstalk essentially uses the command line to extract the files, it's best to do your tests from the command line rather than with a GUI tool\. 
 

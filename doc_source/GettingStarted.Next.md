@@ -1,12 +1,12 @@
-# Next Steps<a name="GettingStarted.Next"></a>
+# Next steps<a name="GettingStarted.Next"></a>
 
-Now that you know how to create an Elastic Beanstalk application and environment, we recommend that you read [Elastic Beanstalk Concepts](concepts.md)\. This topic provides information about the Elastic Beanstalk components and architecture, and describes important design considerations for your Elastic Beanstalk application\. 
+Now that you know how to create an Elastic Beanstalk application and environment, we recommend that you read [Elastic Beanstalk concepts](concepts.md)\. This topic provides information about the Elastic Beanstalk components and architecture, and describes important design considerations for your Elastic Beanstalk application\. 
 
 In addition to the Elastic Beanstalk console, you can use the following tools to create and manage Elastic Beanstalk environments\.
 
 ## EB CLI<a name="GettingStarted.UsingAEB.cli"></a>
 
-The EB CLI is a command line tool for creating and managing environments\. See [Using the Elastic Beanstalk Command Line Interface \(EB CLI\)](eb-cli3.md) for details\.
+The EB CLI is a command line tool for creating and managing environments\. See [Using the Elastic Beanstalk command line interface \(EB CLI\)](eb-cli3.md) for details\.
 
 ## AWS SDK for Java<a name="GettingStarted.UsingAEB.JavaSDK"></a>
 
@@ -22,7 +22,7 @@ The AWS Toolkit for Eclipse is an open source plug\-in for the Eclipse Java IDE\
 
 To ensure that you have all the WTP dependencies, we recommend that you start with the Java EE distribution of Eclipse\. You can download it from [http://eclipse\.org/downloads/](http://eclipse.org/downloads/)\. 
 
-For more information about using the Elastic Beanstalk plug\-in for Eclipse, see [AWS Toolkit for Eclipse](https://aws.amazon.com/eclipse/)\. To get started creating your Elastic Beanstalk application using Eclipse, see [Creating and Deploying Java Applications on Elastic Beanstalk](create_deploy_Java.md)\.
+For more information about using the Elastic Beanstalk plug\-in for Eclipse, see [AWS Toolkit for Eclipse](https://aws.amazon.com/eclipse/)\. To get started creating your Elastic Beanstalk application using Eclipse, see [Creating and deploying Java applications on Elastic Beanstalk](create_deploy_Java.md)\.
 
 ## AWS SDK for \.NET<a name="GettingStarted.UsingAEB.NETSDK"></a>
 
@@ -34,7 +34,7 @@ For more information, see [AWS SDK for \.NET](https://aws.amazon.com/sdk-for-net
 
 With the AWS Toolkit for Visual Studio plug\-in, you can deploy an existing \.NET application to Elastic Beanstalk\. You can also create projects using the AWS templates that are preconfigured with the AWS SDK for \.NET\. 
 
-For prerequisite and installation information, see the [AWS Toolkit for Visual Studio](https://aws.amazon.com/visualstudio/)\. To get started creating your Elastic Beanstalk application using Visual Studio, see [Creating and Deploying \.NET Applications on Elastic Beanstalk](create_deploy_NET.md)\.
+For prerequisite and installation information, see the [AWS Toolkit for Visual Studio](https://aws.amazon.com/visualstudio/)\. To get started creating your Elastic Beanstalk application using Visual Studio, see [Creating and deploying \.NET applications on Elastic Beanstalk](create_deploy_NET.md)\.
 
 ## AWS SDK for JavaScript in Node\.js<a name="GettingStarted.UsingAEB.NodejsSDK"></a>
 

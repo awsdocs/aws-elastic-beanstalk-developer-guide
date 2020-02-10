@@ -1,4 +1,4 @@
-# Using the Elastic Beanstalk Go Platform<a name="go-environment"></a>
+# Using the Elastic Beanstalk Go platform<a name="go-environment"></a>
 
 You can use AWS Elastic Beanstalk to run, build, and configure Go\-based applications\. For simple Go applications, there are two ways to deploy your application:
 + Provide a source bundle with a source file at the root called `application.go` that contains the main package for your application\. Elastic Beanstalk builds the binary using the following command:
@@ -22,9 +22,9 @@ Step 1: `commands`, `files` and `packages` defined in [configuration files](ebex
 Step 2: `Buildfile` command
 Step 3: `container_commands` in configuration files
 Step 4: `Procfile` commands \(all commands are run simultaneously\)
-For more information on using `commands`, `files`, `packages` and `container_commands` in configuration files, see [Customizing Software on Linux Servers](customize-containers-ec2.md)\.
+For more information on using `commands`, `files`, `packages` and `container_commands` in configuration files, see [Customizing software on Linux servers](customize-containers-ec2.md)\.
 
-## Configuring Your Go Environment<a name="go-options"></a>
+## Configuring your Go environment<a name="go-options"></a>
 
 The Elastic Beanstalk Go platform provides a few platform\-specific options in addition to the standard options that all platforms have\. These options let you configure the nginx proxy that runs in front of your application to serve static files\.
 
@@ -40,19 +40,19 @@ You can use the Elastic Beanstalk console to enable log rotation to Amazon S3 an
 
 1. In the **Software** configuration category, choose **Modify**\.
 
-### Log Options<a name="go-options-logs"></a>
+### Log options<a name="go-options-logs"></a>
 
 The Log Options section has two settings:
 + **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
 
-### Static Files<a name="go-options-staticfiles"></a>
+### Static files<a name="go-options-staticfiles"></a>
 
 To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
 
-For details about configuring static files using the Elastic Beanstalk console, see [Serving Static Files](environment-cfg-staticfiles.md)\.
+For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
 
-### Environment Properties<a name="go-options-properties"></a>
+### Environment properties<a name="go-options-properties"></a>
 
 The **Environment Properties** section lets you specify environment configuration settings on the Amazon EC2 instances that are running your application\. Environment properties are passed in as key\-value pairs to the application\.
 
@@ -62,9 +62,9 @@ Inside the Go environment running in Elastic Beanstalk, environment variables ar
 endpoint := os.Getenv("API_ENDPOINT")
 ```
 
-See [Environment Properties and Other Software Settings](environments-cfg-softwaresettings.md) for more information\.
+See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.
 
-## Go Configuration Namespaces<a name="go-namespaces"></a>
+## Go configuration namespaces<a name="go-namespaces"></a>
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
@@ -81,4 +81,4 @@ option_settings:
     /images: staticimages
 ```
 
-Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration Options](command-options.md) for more information\.
+Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.

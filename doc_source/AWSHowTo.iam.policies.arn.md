@@ -1,4 +1,4 @@
-# Amazon Resource Name Format for Elastic Beanstalk<a name="AWSHowTo.iam.policies.arn"></a>
+# Amazon resource name format for Elastic Beanstalk<a name="AWSHowTo.iam.policies.arn"></a>
 
 You specify a resource for an IAM policy using that resource's Amazon Resource Name \(ARN\)\. For Elastic Beanstalk, the ARN has the following format\.
 
@@ -21,7 +21,7 @@ Elastic Beanstalk has several types of resources you can specify in a policy\. T
 
 ****  
 
-| Resource Type | Format for ARN | 
+| Resource type | Format for ARN | 
 | --- | --- | 
 |  `application`  |  `arn:aws:elasticbeanstalk:region:account-id:application/application-name` Example: **arn:aws:elasticbeanstalk:us\-east\-2:123456789012:application/My App**   | 
 |  `applicationversion`  |  `arn:aws:elasticbeanstalk:region:account-id:applicationversion/application-name/version-label` Example: **arn:aws:elasticbeanstalk:us\-east\-2:123456789012:applicationversion/My App/My Version**   | 

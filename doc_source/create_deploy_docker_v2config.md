@@ -1,4 +1,4 @@
-# Multicontainer Docker Configuration<a name="create_deploy_docker_v2config"></a>
+# Multicontainer Docker configuration<a name="create_deploy_docker_v2config"></a>
 
 A `Dockerrun.aws.json` file is an Elastic Beanstalk–specific JSON file that describes how to deploy a set of Docker containers as an Elastic Beanstalk application\. You can use a `Dockerrun.aws.json` file for a multicontainer Docker environment\. 
 
@@ -8,8 +8,8 @@ A `Dockerrun.aws.json` file can be used on its own or zipped up with additional 
 
 **Topics**
 + [Dockerrun\.aws\.json v2](#create_deploy_docker_v2config_dockerrun)
-+ [Using Images from a Private Repository](#docker-multicontainer-dockerrun-privaterepo)
-+ [Container Definition Format](#create_deploy_docker_v2config_dockerrun_format)
++ [Using images from a private repository](#docker-multicontainer-dockerrun-privaterepo)
++ [Container definition format](#create_deploy_docker_v2config_dockerrun_format)
 
 ## Dockerrun\.aws\.json v2<a name="create_deploy_docker_v2config_dockerrun"></a>
 
@@ -23,7 +23,7 @@ An array of container definitions, detailed below\.
 
 **volumes**  
 Creates volumes from folders in the Amazon EC2 container instance, or from your source bundle \(deployed to `/var/app/current`\)\. Mount these volumes to paths within your Docker containers using `mountPoints` in the [container definition](#create_deploy_docker_v2config_dockerrun_format)\.   
- Elastic Beanstalk configures additional volumes for logs, one for each container\. These should be mounted by your Docker containers in order to write logs to the host instance\. See [Container Definition Format](#create_deploy_docker_v2config_dockerrun_format) for details\. 
+ Elastic Beanstalk configures additional volumes for logs, one for each container\. These should be mounted by your Docker containers in order to write logs to the host instance\. See [Container definition format](#create_deploy_docker_v2config_dockerrun_format) for details\. 
  Volumes are specified in the following format:   
 
 ```
@@ -46,7 +46,7 @@ Creates volumes from folders in the Amazon EC2 container instance, or from your 
     "key": "mydockercfg"
   },
 ```
-See [Using Images from a Private Repository](#docker-multicontainer-dockerrun-privaterepo) for details\. 
+See [Using images from a private repository](#docker-multicontainer-dockerrun-privaterepo) for details\. 
 
 The following snippet is an example that illustrates the syntax of the `Dockerrun.aws.json` file for an instance with two containers\.
 
@@ -122,13 +122,13 @@ The following snippet is an example that illustrates the syntax of the `Dockerru
 }
 ```
 
-## Using Images from a Private Repository<a name="docker-multicontainer-dockerrun-privaterepo"></a>
+## Using images from a private repository<a name="docker-multicontainer-dockerrun-privaterepo"></a>
 
 Add the information about the Amazon S3 bucket that contains the authentication file in the `authentication` parameter of the `Dockerrun.aws.json` file\. Make sure that the `authentication` parameter contains a valid Amazon S3 bucket and key\. The Amazon S3 bucket must be hosted in the same region as the environment that is using it\. Elastic Beanstalk will not download files from Amazon S3 buckets hosted in other regions\. 
 
-For information about generating and uploading the authentication file, see [Using Images From a Private Repository](create_deploy_docker.container.console.md#docker-images-private)\.
+For information about generating and uploading the authentication file, see [Using images from a private repository](create_deploy_docker.container.console.md#docker-images-private)\.
 
-## Container Definition Format<a name="create_deploy_docker_v2config_dockerrun_format"></a>
+## Container definition format<a name="create_deploy_docker_v2config_dockerrun_format"></a>
 
 The container definition and volumes sections of `Dockerrun.aws.json` use the same formatting as the corresponding sections of an Amazon ECS task definition file\.
 

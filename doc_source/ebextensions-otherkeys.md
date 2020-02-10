@@ -1,4 +1,4 @@
-# Other AWS CloudFormation Template Keys<a name="ebextensions-otherkeys"></a>
+# Other AWS CloudFormation template keys<a name="ebextensions-otherkeys"></a>
 
 We've already introduced configuration file keys from AWS CloudFormation such as `Resources`, `files`, and `packages`\. Elastic Beanstalk adds the contents of configurations files to the AWS CloudFormation template that supports your environment, so you can use other AWS CloudFormation sections to perform advanced tasks in your configuration files\.
 
@@ -15,7 +15,7 @@ One reason you might want to use parameters is to make your configuration files 
 
 The following example shows the use of parameters to gather user\-configurable values at the top of a configuration file\.
 
-**Example [loadbalancer\-accesslogs\-existingbucket\.config](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/resource-configuration/loadbalancer-accesslogs-existingbucket.config) – Parameters**  
+**Example [Loadbalancer\-accesslogs\-existingbucket\.config](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/resource-configuration/loadbalancer-accesslogs-existingbucket.config) – Parameters**  
 
 ```
 Parameters:
@@ -64,7 +64,7 @@ option_settings:
 
 You can use a mapping to store key\-value pairs organized by namespace\. A mapping can help you organize values that you use throughout your configs, or change a parameter value depending on another value\. For example, the following configuration sets the value of an account ID parameter based on the current region\.
 
-**Example [loadbalancer\-accesslogs\-newbucket\.config](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/resource-configuration/loadbalancer-accesslogs-newbucket.config) – mappings**  
+**Example [Loadbalancer\-accesslogs\-newbucket\.config](https://github.com/awsdocs/elastic-beanstalk-samples/tree/master/configuration-files/aws-provided/resource-configuration/loadbalancer-accesslogs-newbucket.config) – Mappings**  
 
 ```
 Mappings: 

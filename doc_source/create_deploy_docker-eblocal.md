@@ -1,20 +1,20 @@
-# Running a Docker Environment Locally with the EB CLI<a name="create_deploy_docker-eblocal"></a>
+# Running a Docker environment locally with the EB CLI<a name="create_deploy_docker-eblocal"></a>
 
 You can use the Elastic Beanstalk Command Line Interface \(EB CLI\) to run the Docker containers configured in your AWS Elastic Beanstalk application locally\. The EB CLI uses the Docker configuration file \(Dockerfile or Dockerrun\.aws\.json\) and source code in your project directory to run your application locally in Docker\.
 
 The EB CLI supports running single container, multicontainer, and preconfigured container applications locally\.
 
 **Topics**
-+ [Prerequisites for Running Docker Applications Locally](#create_deploy_docker-eblocal-prereqs)
-+ [Preparing a Docker Application for Use with the EB CLI](#create_deploy_docker-eblocal-prepare)
-+ [Running a Docker Application Locally](#create_deploy_docker-eblocal-localrun)
-+ [Cleaning Up After Running a Docker Application Locally](#create_deploy_docker-eblocal-cleanup)
++ [Prerequisites for running Docker applications locally](#create_deploy_docker-eblocal-prereqs)
++ [Preparing a Docker application for use with the EB CLI](#create_deploy_docker-eblocal-prepare)
++ [Running a Docker application locally](#create_deploy_docker-eblocal-localrun)
++ [Cleaning up after running a Docker application locally](#create_deploy_docker-eblocal-cleanup)
 
-## Prerequisites for Running Docker Applications Locally<a name="create_deploy_docker-eblocal-prereqs"></a>
+## Prerequisites for running Docker applications locally<a name="create_deploy_docker-eblocal-prereqs"></a>
 + Linux OS or Mac OS X
 + [EB CLI version 3\.3 or greater](eb-cli3-install.md)
 
-  Run eb init in your project directory to initialize an EB CLI repository\. If you haven't used the EB CLI before, see [Managing Elastic Beanstalk Environments with the EB CLI](eb-cli3-getting-started.md)\.
+  Run eb init in your project directory to initialize an EB CLI repository\. If you haven't used the EB CLI before, see [Managing Elastic Beanstalk environments with the EB CLI](eb-cli3-getting-started.md)\.
 + [Docker version 1\.6 or greater](https://docs.docker.com/engine/installation/)
 
   Add yourself to the `docker` group, log out, and then log back in to ensure that you can run Docker commands without `sudo`:
@@ -31,7 +31,7 @@ The EB CLI supports running single container, multicontainer, and preconfigured 
   ```
 + A Docker application
 
-  If you don't have a Docker application in a project folder on your local machine, see [Deploying Elastic Beanstalk Applications from Docker Containers](create_deploy_docker.md) for an introduction to using Docker with AWS Elastic Beanstalk\.
+  If you don't have a Docker application in a project folder on your local machine, see [Deploying Elastic Beanstalk applications from Docker containers](create_deploy_docker.md) for an introduction to using Docker with AWS Elastic Beanstalk\.
 + Docker profile \(optional\)
 
   If your application uses Docker images that are in a private repository, run `docker login` and follow the prompts to create an authentication profile\.
@@ -43,11 +43,11 @@ Docker containers run locally without emulating AWS resources that are provision
 
 You can configure your local containers to connect to a database by passing the necessary connection string or other variables with the `envvars` option, but you must ensure that any resources in AWS are accessible from your local machine by [opening the appropriate ports](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/authorizing-access-to-an-instance.html) in their assigned security groups or attaching a [default gateway](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html) or [elastic IP address](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)\.
 
-## Preparing a Docker Application for Use with the EB CLI<a name="create_deploy_docker-eblocal-prepare"></a>
+## Preparing a Docker application for use with the EB CLI<a name="create_deploy_docker-eblocal-prepare"></a>
 
 Prepare your Docker configuration file and source data as though you were deploying them to Elastic Beanstalk\. This topic uses the PHP and nginx proxy example from the [Multicontainer Docker tutorial](create_deploy_docker_ecstutorial.md) earlier in this guide as an example, but you can use the same commands with any single container, multicontainer, or preconfigured Docker application\.
 
-## Running a Docker Application Locally<a name="create_deploy_docker-eblocal-localrun"></a>
+## Running a Docker application locally<a name="create_deploy_docker-eblocal-localrun"></a>
 
 Run your Docker application locally with the eb local run command from within the project directory:
 
@@ -130,7 +130,7 @@ Elastic Beanstalk will write logs locally to /home/user/project/.elasticbeanstal
 Logs were most recently created 3 minutes ago and written to /home/user/project/.elasticbeanstalk/logs/local/150420_234011665784.
 ```
 
-## Cleaning Up After Running a Docker Application Locally<a name="create_deploy_docker-eblocal-cleanup"></a>
+## Cleaning up after running a Docker application locally<a name="create_deploy_docker-eblocal-cleanup"></a>
 
 When you are done testing your application locally, you can stop the applications and remove the images downloaded by Docker when you use eb local run\. Removing the images is optional\. You may want to keep them for future use\.
 

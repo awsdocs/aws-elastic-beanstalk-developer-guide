@@ -1,4 +1,4 @@
-# Installing Packages with a Package\.json File<a name="nodejs-platform-packagejson"></a>
+# Installing packages with a Package\.json file<a name="nodejs-platform-packagejson"></a>
 
 Use a `package.json` file in the root of your project source to use npm to install packages that your application requires\.
 

@@ -1,4 +1,4 @@
-# Terminating HTTPS on EC2 Instances Running Ruby<a name="https-singleinstance-ruby"></a>
+# Terminating HTTPS on EC2 instances running Ruby<a name="https-singleinstance-ruby"></a>
 
 For Ruby container types, the way you enable HTTPS depends on the type of application server used\.
 
@@ -97,7 +97,7 @@ container_commands:
 ```
 
 **Note**  
-Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)\.
+Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing private keys securely in Amazon S3](https-storingprivatekeys.md)\.
 
 In a single instance environment, you must also modify the instance's security group to allow traffic on port 443\. The following configuration file retrieves the security group's ID using an AWS CloudFormation [function](ebextensions-functions.md) and adds a rule to it\.
 
@@ -143,7 +143,7 @@ If you have intermediate certificates, include them in `server.crt` after your s
      ```  
 `/etc/pki/tls/certs/server.key`  
 Creates the private key file on the instance\. Replace *private key contents* with the contents of the private key used to create the certificate request or self\-signed certificate\.   
-**Example \.ebextensions Snippet for Configuring HTTPS for Ruby with Passenger**  
+**Example \.Ebextensions snippet for configuring HTTPS for Ruby with Passenger**  
 
    ```
    files:
@@ -160,7 +160,7 @@ Creates the private key file on the instance\. Replace *private key contents* wi
          -----END RSA PRIVATE KEY-----
    ```
 **Note**  
-Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing Private Keys Securely in Amazon S3](https-storingprivatekeys.md)\.
+Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing private keys securely in Amazon S3](https-storingprivatekeys.md)\.
 
 1. Create a text file and add the following JSON to the file\. Save it in your source bundle's root directory with the name `passenger-standalone.json`\. This JSON file configures Passenger to use HTTPS\.
 **Important**  

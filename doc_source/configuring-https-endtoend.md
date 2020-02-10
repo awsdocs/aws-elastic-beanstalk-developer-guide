@@ -1,4 +1,4 @@
-# Configuring End\-to\-End Encryption in a Load Balanced Elastic Beanstalk Environment<a name="configuring-https-endtoend"></a>
+# Configuring end\-to\-end encryption in a load balanced Elastic Beanstalk environment<a name="configuring-https-endtoend"></a>
 
 Terminating secure connections at the load balancer and using HTTP on the backend might be sufficient for your application\. Network traffic between AWS resources can't be listened to by instances that are not part of the connection, even if they are running under the same account\.
 
@@ -6,7 +6,7 @@ However, if you are developing an application that needs to comply with strict e
 
 First, [add a secure listener to your load balancer](configuring-https-elb.md), if you haven't already\.
 
-You must also configure the instances in your environment to listen on the secure port and terminate HTTPS connections\. The configuration varies per platform\. See [Configuring Your Application to Terminate HTTPS Connections at the Instance](https-singleinstance.md) for instructions\. You can use a [self\-signed certificate](configuring-https-ssl.md) for the EC2 instances without issue\.
+You must also configure the instances in your environment to listen on the secure port and terminate HTTPS connections\. The configuration varies per platform\. See [Configuring your application to terminate HTTPS connections at the instance](https-singleinstance.md) for instructions\. You can use a [self\-signed certificate](configuring-https-ssl.md) for the EC2 instances without issue\.
 
 Next, configure the listener to forward traffic using HTTPS on the secure port used by your application\. Use one of the following configuration files, based on the type of load balancer that your environment uses\.
 
@@ -56,7 +56,7 @@ The `DefaultProcess` option is named this way because of Application Load Balanc
 In this example, we named the process `https` because it listens to secure \(HTTPS\) traffic\. The listener sends traffic to the process on the designated port using the TCP protocol, because a Network Load Balancer works only with TCP\. This is okay, because network traffic for HTTP and HTTPS is implemented on top of TCP\.
 
 **Note**  
-The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended Values](command-options.md#configuration-options-recommendedvalues) for details\.
+The EB CLI and Elastic Beanstalk console apply recommended values for the preceding options\. You must remove these settings if you want to use configuration files to configure the same\. See [Recommended values](command-options.md#configuration-options-recommendedvalues) for details\.
 
 In the next task, you need to modify the load balancer's security group to allow traffic\. Depending on the [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) in which you launch your environment—the default VPC or a custom VPC—the load balancer's security group will vary\. In a default VPC, Elastic Load Balancing provides a default security group that all load balancers can use\. In an Amazon VPC that you create, Elastic Beanstalk creates a security group for the load balancer to use\.
 
