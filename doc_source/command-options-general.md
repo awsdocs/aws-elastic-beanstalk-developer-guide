@@ -532,10 +532,7 @@ This namespace isn't applicable to environments with a network load balancer\.
 
 ## aws:elbv2:loadbalancer<a name="command-options-general-elbv2"></a>
 
-Configure an application load balancer\.
-
-**Note**  
-This namespace isn't applicable to environments with a network load balancer\.
+Configure an application load balancer or a network load balancer\.
 
 
 **Namespace: `aws:elbv2:loadbalancer`**  
@@ -546,8 +543,8 @@ This namespace isn't applicable to environments with a network load balancer\.
 |  AccessLogsS3Enabled  |  Enable access log storage\.  |  `false`  |  `true` `false`  | 
 |  AccessLogsS3Prefix  |  Prefix to prepend to access log names\. By default, the load balancer uploads logs to a directory named AWSLogs in the bucket you specify\. Specify a prefix to place the AWSLogs directory inside another directory\.  |  None  |   | 
 |  IdleTimeout  |  Time to wait for a request to complete before closing connections to client and instance\.  |  None  |  `1` to `3600`  | 
-|  ManagedSecurityGroup  |  Assign an existing security group to your environment’s load balancer, instead of creating a new one\. To use this setting, update the `SecurityGroups` setting in this namespace to include your security group’s ID, and remove the automatically created security group’s ID, if one exists\. To allow traffic from the load balancer to your environment’s EC2 instances, Elastic Beanstalk adds a rule to the instances’ security group that allows inbound traffic from the managed security group\.  |  The security group that Elastic Beanstalks creates for your load balancer\.  |  A security group ID\.  | 
-|  SecurityGroups  |  List of security groups to attach to the load balancer\.  |  The security group that Elastic Beanstalks creates for your load balancer\.  | Comma separated list of security group IDs\. | 
+|  ManagedSecurityGroup  |  Assign an existing security group to your environment’s load balancer, instead of creating a new one\. To use this setting, update the `SecurityGroups` setting in this namespace to include your security group’s ID, and remove the automatically created security group’s ID, if one exists\. To allow traffic from the load balancer to your environment’s EC2 instances, Elastic Beanstalk adds a rule to the instances’ security group that allows inbound traffic from the managed security group\. This option is only applicable to environments with an application load balancer\.  |  The security group that Elastic Beanstalks creates for your load balancer\.  |  A security group ID\.  | 
+|  SecurityGroups  |  List of security groups to attach to the load balancer\. This option is only applicable to environments with an application load balancer\.  |  The security group that Elastic Beanstalks creates for your load balancer\.  | Comma separated list of security group IDs\. | 
 
 ## aws:rds:dbinstance<a name="command-options-general-rdsdbinstance"></a>
 
