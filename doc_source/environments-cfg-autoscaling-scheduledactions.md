@@ -1,6 +1,6 @@
 # Scheduled Auto Scaling actions<a name="environments-cfg-autoscaling-scheduledactions"></a>
 
-To optimize your environment's use of Amazon EC2 instances through predictable periods of peak traffic, configure your Auto Scaling group to change its instance count on a schedule\. You can configure your environment with a recurring action to scale up each day in the morning, and scale down at night when traffic is low\. For example, if you have a marketing event that will drive traffic to your site for a limited period of time, you can schedule a one\-time event to scale up when it starts, and another to scale down when it ends\.
+To optimize your environment's use of Amazon EC2 instances through predictable periods of peak traffic, configure your Amazon EC2 Auto Scaling group to change its instance count on a schedule\. You can configure your environment with a recurring action to scale up each day in the morning, and scale down at night when traffic is low\. For example, if you have a marketing event that will drive traffic to your site for a limited period of time, you can schedule a one\-time event to scale up when it starts, and another to scale down when it ends\.
 
 You can define up to 120 active scheduled actions per environment\. Elastic Beanstalk also retains up to 150 expired scheduled actions, which you can reuse by updating their settings\.
 
@@ -26,11 +26,13 @@ You can create scheduled actions for your environment's Auto Scaling group in th
    + **Instances** – Choose the minimum and maximum instance count to apply to the Auto Scaling group\.
    + **Desired capacity** \(optional\) – Set the initial desired capacity for the Auto Scaling group\. After the scheduled action is applied, triggers adjust the desired capacity based on their settings\.
    + **Occurrence** – Choose **Recurring** to repeat the scaling action on a schedule\.
-   + **Start time** – For one\-time actions, choose the date and time to run the action\. For recurrent actions, a start time is optional\. Specify it to choose when to activate the action\. If not specified, the action is activated immediately, and recurs according to the **Recurrence** expression\.
-   + **Recurrence** – Use a [Cron](http://en.wikipedia.org/wiki/Cron#CRON_expression) expression to specify the frequency with which you want the scheduled action to occur\. For example, `30 6 * * 2` runs the action every Tuesday at 6:30 AM UTC\.
-   + **End time** \(optional\) – For recurrent actions, choose when to deactivate the action\. If you don't specify an **EndTime**, the action recurs according to the **Recurrence** expression\.
+   + **Start time** – For one\-time actions, choose the date and time to run the action\.
 
-     When a scheduled action ends, Amazon EC2 Auto Scaling doesn't automatically go back to its previous settings\. Configure a second scheduled action to return Amazon EC2 Auto Scaling to the original settings as needed\.
+     For recurrent actions, a start time is optional\. Specify it to choose the earliest time the action is performed\. After this time, the action recurs according to the **Recurrence** expression\.
+   + **Recurrence** – Use a [Cron](http://en.wikipedia.org/wiki/Cron#CRON_expression) expression to specify the frequency with which you want the scheduled action to occur\. For example, `30 6 * * 2` runs the action every Tuesday at 6:30 AM UTC\.
+   + **End time** \(optional\) – Optional for recurrent actions\. If specified, the action recurs according to the **Recurrence** expression, and is not performed again after this time\.
+
+     When a scheduled action ends, Auto Scaling doesn't automatically go back to its previous settings\. Configure a second scheduled action to return Auto Scaling to the original settings as needed\.
 
 1. Choose **Add**\. 
 
