@@ -85,7 +85,7 @@ Add the database driver to your project's [`package.json` file](nodejs-platform-
 
 ## Connecting to a database<a name="nodejs-rds-connect"></a>
 
-Elastic Beanstalk provides connection information for attached DB instances in environment properties\. Use `os.environ['VARIABLE']` to read the properties and configure a database connection\.
+Elastic Beanstalk provides connection information for attached DB instances in environment properties\. Use `process.env.VARIABLE` to read the properties and configure a database connection\.
 
 **Example app\.js – MySQL database connection**  
 
