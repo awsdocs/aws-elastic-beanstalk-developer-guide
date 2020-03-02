@@ -15,11 +15,11 @@ Rails is an open source, model\-view\-controller \(MVC\) framework for Ruby\. Th
 
 ### Basic Elastic Beanstalk knowledge<a name="ruby-rails-tutorial-prereqs-basic"></a>
 
-This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
+This tutorial assumes you have knowledge of the basic Elastic Beanstalk operations and the Elastic Beanstalk console\. If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\.
 
 ### Command line<a name="ruby-rails-tutorial-prereqs-cmdline"></a>
 
-To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings preceded by a prompt symbol \($\) and the name of the current directory, when appropriate:
+To follow the procedures in this guide, you will need a command line terminal or shell to run commands\. Commands are shown in listings preceded by a prompt symbol \($\) and the name of the current directory, when appropriate\.
 
 ```
 ~/eb-project$ this is a command
@@ -45,13 +45,13 @@ Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. C
 
 1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
-1. For **Platform**, choose the platform that matches the language used by your application\.
+1. Choose the **Platform** that matches the language used by your application\.
 
 1. For **Application code**, choose **Sample application**\.
 
 1. Choose **Review and launch**\.
 
-1. Review the available options\. When you're satisfied with them, choose **Create app**\.
+1. Review the available options\. Choose the available option you want to use, and when you're ready, choose **Create app**\.
 
 Environment creation takes about 5 minutes and creates the following resources:
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.

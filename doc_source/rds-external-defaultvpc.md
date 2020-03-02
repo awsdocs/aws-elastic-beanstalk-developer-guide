@@ -12,24 +12,22 @@ The following procedures describe the process for a [default VPC](https://docs.a
 
 1. Choose **Create database**\.
 
-1. Choose a database engine\. Choose **Next**\.
+1. Choose **Standard Create**\.
+**Important**  
+Do not choose **Easy Create**\. It does not allow you to configure the necessery settings to launch this RDS DB\.
 
-1. Choose a use case, if prompted\.
+1. Under **Additional configuration**, for **Initial database name**, type **ebdb**\. 
 
-1. Under **Specify DB details**, review the default settings and adjust as necessary\. Pay attention to the following options:
+1. Review the default settings carefully and adjust as necessary\. Pay attention to the following options:
    + **DB instance class** – Choose an instance size that has an appropriate amount of memory and CPU power for your workload\.
-   + **Multi\-AZ deployment** – For high availability, set to **Create replica in different zone**\.
+   + **Multi\-AZ deployment** – For high availability, set this to **Create an Aurora Replica/Reader node in a different AZ**\.
    + **Master username** and **Master password** – The database username and password\. Make a note of these settings because you'll use them later\.
 
-1. Choose **Next**\.
-
-1. Under **Database options**, for **Database name**, type **ebdb**\. Make a note of the **Database port** value for use later\.
-
-1. Verify the default settings for the remaining options, and choose **Create database**\.
+1. Verify the default settings for the remaining options, and then choose **Create database**\.
 
 Next, modify the security group attached to your DB instance to allow inbound traffic on the appropriate port\. This is the same security group that you will attach to your Elastic Beanstalk environment later, so the rule that you add will grant ingress permission to other resources in the same security group\.
 
-**To modify the ingress rules on your RDS instance's security group**
+**To modify the inbound rules on your RDS instance's security group**
 
 1. Open the [ Amazon RDS console](https://console.aws.amazon.com/rds/home)\.
 
@@ -37,7 +35,7 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 
 1. Choose the name of your DB instance to view its details\.
 
-1. In the **Connectivity** section, note the **Subnets**, **Security groups**, and **Endpoint** shown on this page so you can use this information later\.
+1. In the **Connectivity** section, make a note of the **Subnets**, **Security groups**, and **Endpoint** shown on this page so you can use this information later\.
 
 1. Under **Security**, you can see the security group associated with the DB instance\. Open the link to view the security group in the Amazon EC2 console\.  
 ![\[Connectivity section of a DB instance page in the Amazon RDS console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup.png)
@@ -88,20 +86,8 @@ Next, pass the connection information to your environment by using environment p
 
 1. In the **Software** configuration category, choose **Modify**\.
 
-1. In the **Environment properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following\.
-   + **RDS\_HOSTNAME** – The hostname of the DB instance\.
-
-     Amazon RDS console label – **Endpoint** \(this is the hostname\)
-   + **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies among DB engines\.
-
-     Amazon RDS console label – **Port**
-   + **RDS\_DB\_NAME** – The database name, ebdb\.
-
-     Amazon RDS console label – **DB Name**
-   + **RDS\_USERNAME** – The user name that you configured for your database\.
-
-     Amazon RDS console label – **Username**
-   + **RDS\_PASSWORD** – The password that you configured for your database\.  
+1. In the **Environment properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following names and values\. You can find all values, except for your password, in the [RDS console](https://console.aws.amazon.com/rds/home)\.    
+[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/rds-external-defaultvpc.html)  
 ![\[Environment properties section with RDS properties added\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
 
 1. Choose **Apply**\.

@@ -9,7 +9,7 @@ Elastic Beanstalk also supports [custom platforms](custom-platforms.md) that can
 **Topics**
 + [Elastic Beanstalk platforms glossary](platforms-glossary.md)
 + [Shared responsibility model for Elastic Beanstalk platform maintenance](platforms-shared-responsibility.md)
-+ [Elastic Beanstalk platform Support policy](platforms-support-policy.md)
++ [Elastic Beanstalk platform support policy](platforms-support-policy.md)
 + [Elastic Beanstalk supported platforms](concepts.platforms.md)
 + [Elastic Beanstalk Linux platforms](platforms-linux.md)
 + [Elastic Beanstalk custom platforms](custom-platforms.md)

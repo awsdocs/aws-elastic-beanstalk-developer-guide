@@ -64,13 +64,13 @@ You use the Elastic Beanstalk console to launch an Elastic Beanstalk environment
 
 1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
-1. For **Platform**, choose the platform that matches the language used by your application\.
+1. Choose the **Platform** that matches the language used by your application\.
 
 1. For **Application code**, choose **Sample application**\.
 
 1. Choose **Review and launch**\.
 
-1. Review the available options\. When you're satisfied with them, choose **Create app**\.
+1. Review the available options\. Choose the available option you want to use, and when you're ready, choose **Create app**\.
 
 Elastic Beanstalk takes about five minutes to create the environment with the following resources:
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.

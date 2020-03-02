@@ -135,7 +135,13 @@ With Docker version 1\.6\.2 and earlier, the docker login command creates the au
   }
 }
 ```
-To convert a `config.json` file, remove the outer `auths` key, add an `email` key, and flatten the JSON document to match the old format\.
+To convert a `config.json` file, remove the outer `auths` key, add an `email` key, and flatten the JSON document to match the old format\.  
+
+
+|  | 
+| --- |
+| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
+On Amazon Linux 2 Docker platform versions, Elastic Beanstalk uses the newer authentication file name and format\. If you're using an Amazon Linux 2 Docker platform version, you can use the authentication file that the docker login command creates without any conversion\.
 
 Upload a copy named `.dockercfg` of the authentication file to a secure Amazon S3 bucket\. The Amazon S3 bucket must be hosted in the same AWS Region as the environment that is using it\. Elastic Beanstalk cannot download files from an Amazon S3 bucket hosted in other Regions\. Grant permissions for the `s3:GetObject` operation to the IAM role in the instance profile\. For details, see [Managing Elastic Beanstalk instance profiles](iam-instanceprofile.md)\.
 
@@ -173,6 +179,13 @@ option_settings:
 
 **Note**  
 When you change settings in this namespace, Elastic Beanstalk replaces all instances in your environment with instances running the new configuration\. See [Configuration changes](environments-updating.md) for details\.
+
+
+|  | 
+| --- |
+| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
+
+On Amazon Linux 2 Docker platform versions, Elastic Beanstalk no longer configures the additional Amazon EBS volume named `xvdcz` for Docker image and container data storage\. The instructions in this section pertaining to this volume don't apply to these newer platform versions\.
 
 ## Reclaiming Docker storage space<a name="reclaim-docker-storage"></a>
 

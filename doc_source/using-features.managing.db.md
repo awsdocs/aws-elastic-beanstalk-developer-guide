@@ -47,19 +47,15 @@ Elastic Beanstalk creates a master user for the database using the user name and
 ![\[Elastic Beanstalk Auto Scaling configuration window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-rds-create.png)
 
 Adding a DB instance takes about 10 minutes\. When the environment update is complete, the DB instance's hostname and other connection information are available to your application through the following environment properties:
-+ **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
-  Amazon RDS console label – **Endpoint** \(this is the hostname\)
-+ **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies among DB engines\.
 
-  Amazon RDS console label – **Port**
-+ **RDS\_DB\_NAME** – The database name, ebdb\.
-
-  Amazon RDS console label – **DB Name**
-+ **RDS\_USERNAME** – The user name that you configured for your database\.
-
-  Amazon RDS console label – **Username**
-+ **RDS\_PASSWORD** – The password that you configured for your database\.
+| Property name | Description | Property value | 
+| --- | --- | --- | 
+|  `RDS_HOSTNAME`  |  The hostname of the DB instance\.  |  On the **Connectivity & security** tab on the Amazon RDS console: **Endpoint**\.  | 
+|  `RDS_PORT`  |  The port on which the DB instance accepts connections\. The default value varies among DB engines\.  |  On the **Connectivity & security** tab on the Amazon RDS console: **Port**\.  | 
+|  `RDS_DB_NAME`  |  The database name, **ebdb**\.  |  On the **Configuration** tab on the Amazon RDS console: **DB Name**\.  | 
+|  `RDS_USERNAME`  |  The username that you configured for your database\.  |  On the **Configuration** tab on the Amazon RDS console: **Master username**\.  | 
+|  `RDS_PASSWORD`  |  The password that you configured for your database\.  |  Not available for reference in the Amazon RDS console\.  | 
 
 ## Connecting to the database<a name="environments-cfg-rds-connect"></a>
 

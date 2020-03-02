@@ -1,4 +1,4 @@
-# AWS Elastic Beanstalk Developer guide
+# AWS Elastic Beanstalk Developer Guide
 
 -----
 *****Copyright &copy; 2020 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
@@ -33,7 +33,7 @@ Amazon's trademarks and trade dress may not be used in
 + [Elastic Beanstalk platforms](concepts-all-platforms.md)
    + [Elastic Beanstalk platforms glossary](platforms-glossary.md)
    + [Shared responsibility model for Elastic Beanstalk platform maintenance](platforms-shared-responsibility.md)
-   + [Elastic Beanstalk platform Support policy](platforms-support-policy.md)
+   + [Elastic Beanstalk platform support policy](platforms-support-policy.md)
    + [Elastic Beanstalk supported platforms](concepts.platforms.md)
    + [Elastic Beanstalk Linux platforms](platforms-linux.md)
       + [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)

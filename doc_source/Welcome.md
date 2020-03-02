@@ -32,4 +32,4 @@ To learn more about an Elastic Beanstalk application and its components, see the
 + [Elastic Beanstalk concepts](concepts.md)
 + [Elastic Beanstalk platforms glossary](platforms-glossary.md)
 + [Shared responsibility model for Elastic Beanstalk platform maintenance](platforms-shared-responsibility.md)
-+ [Elastic Beanstalk platform Support policy](platforms-support-policy.md)
++ [Elastic Beanstalk platform support policy](platforms-support-policy.md)

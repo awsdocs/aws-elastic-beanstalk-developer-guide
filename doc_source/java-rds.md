@@ -19,19 +19,15 @@ If you are using Amazon RDS for the first time, add a DB instance to a test envi
 1. Choose **Apply**\.
 
 Adding a DB instance takes about 10 minutes\. When the environment update is complete, the DB instance's hostname and other connection information are available to your application through the following environment properties:
-+ **RDS\_HOSTNAME** – The hostname of the DB instance\.
 
-  Amazon RDS console label – **Endpoint** \(this is the hostname\)
-+ **RDS\_PORT** – The port on which the DB instance accepts connections\. The default value varies among DB engines\.
 
-  Amazon RDS console label – **Port**
-+ **RDS\_DB\_NAME** – The database name, ebdb\.
-
-  Amazon RDS console label – **DB Name**
-+ **RDS\_USERNAME** – The user name that you configured for your database\.
-
-  Amazon RDS console label – **Username**
-+ **RDS\_PASSWORD** – The password that you configured for your database\.
+| Property name | Description | Property value | 
+| --- | --- | --- | 
+|  `RDS_HOSTNAME`  |  The hostname of the DB instance\.  |  On the **Connectivity & security** tab on the Amazon RDS console: **Endpoint**\.  | 
+|  `RDS_PORT`  |  The port on which the DB instance accepts connections\. The default value varies among DB engines\.  |  On the **Connectivity & security** tab on the Amazon RDS console: **Port**\.  | 
+|  `RDS_DB_NAME`  |  The database name, **ebdb**\.  |  On the **Configuration** tab on the Amazon RDS console: **DB Name**\.  | 
+|  `RDS_USERNAME`  |  The username that you configured for your database\.  |  On the **Configuration** tab on the Amazon RDS console: **Master username**\.  | 
+|  `RDS_PASSWORD`  |  The password that you configured for your database\.  |  Not available for reference in the Amazon RDS console\.  | 
 
 For more information about configuring an internal DB instance, see [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md)\. For instructions on configuring an external database for use with Elastic Beanstalk, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\.
 

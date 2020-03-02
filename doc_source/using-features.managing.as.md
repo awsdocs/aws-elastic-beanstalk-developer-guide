@@ -156,6 +156,8 @@ option_settings:
 
 The [`aws:ec2:instances`](command-options-general.md#command-options-general-ec2instances) namespace provides options related to your environment's instances, including Spot Instance management\. It complements [`aws:autoscaling:launchconfiguration`](command-options-general.md#command-options-general-autoscalinglaunchconfiguration) and [`aws:autoscaling:asg`](command-options-general.md#command-options-general-autoscalingasg)\.
 
+When you update your environment configuration and remove one or more instance types from the `InstanceTypes` option, Elastic Beanstalk terminates any Amazon EC2 instances running on any of the removed instance types\. Your environment's Auto Scaling group then launches new instances, as necessary to complete the desired capacity, using your current specified instance types\.
+
 The following [configuration file](ebextensions.md) example configures the Auto Scaling group to enable Spot Instance requests for your environment, with three possible instance types to use, at least one On\-Demand Instance as baseline capacity, and a sustained 33% of On\-Demand Instances for any additional capacity\.
 
 ```

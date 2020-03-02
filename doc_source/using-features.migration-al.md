@@ -30,6 +30,16 @@ The following table discusses considerations you should be aware of when plannin
 
 This section discusses migration considerations specific to particular Elastic Beanstalk Linux platforms\.
 
+### Docker<a name="using-features.migration-al.specific.docker"></a>
+
+The following table lists migration information for the Amazon Linux 2 platform versions in the [Docker platform](create_deploy_docker.md)\.
+
+
+|  **Area**  |  **Changes and information**  | 
+| --- | --- | 
+|  Storage  |  Elastic Beanstalk configures Docker to use [storage drivers](https://docs.docker.com/storage/storagedriver/) to store Docker images and container data\. On Amazon Linux AMI, Elastic Beanstalk used the [Device Mapper storage driver](https://docs.docker.com/storage/storagedriver/device-mapper-driver/)\. To improve performance, Elastic Beanstalk provisioned an extra Amazon EBS volume\. On Amazon Linux 2 Docker platform versions, Elastic Beanstalk uses the [OverlayFS storage driver](https://docs.docker.com/storage/storagedriver/overlayfs-driver/), and achieves even better performance while not requiring a separate volume anymore\. With Amazon Linux AMI, if you used the `BlockDeviceMappings` option of the `aws:autoscaling:launchconfiguration` namespace to add custom storage volumes to a Docker environment, we advised you to also add the `/dev/xvdcz` Amazon EBS volume that Elastic Beanstalk provisions\. Elastic Beanstalk doesn't provision this volume anymore, so you should remove it from your configuration files\. For details, see [Configuring additional storage volumes](create_deploy_docker.container.console.md#docker-volumes)\.  | 
+|  Private Repository Authentication  |  When you provide a Docker\-generated authentication file to connect to a private repository, you no longer need to convert it to the older format that Amazon Linux AMI Docker platform versions required\. Amazon Linux 2 Docker platform versions support the new format\. For details, see [Using images from a private repository](create_deploy_docker.container.console.md#docker-images-private)\.  | 
+
 ### Amazon Corretto<a name="using-features.migration-al.specific.corretto"></a>
 
 The following table lists migration information for the Corretto platform versions in the [Java SE platform](java-se-platform.md)\.
