@@ -170,6 +170,33 @@ C:\Users\username> dotnet new web -o dotnet-core-tutorial
        }
    }
    ```
+**Note**  
+For ASP.NET Core 3.0 and 3.1, `ConfigureWebHostDefaults` calls `UseKestrel` and `UseIISIntegration`. Your Program.cs should look like this.
+ ```
+   using System;
+   using Microsoft.AspNetCore.Hosting;
+   using System.IO;
+   
+   namespace aspnetcoreapp
+   {
+       public class Program
+       {
+           public static void Main(string[] args)
+           {
+              CreateHostBuilder(args).Build().Run();
+           }
+           
+           public static IHostBuilder CreateHostBuilder(string[] args) =>
+           Host.CreateDefaultBuilder(args)
+               .ConfigureWebHostDefaults(webBuilder =>
+               {
+                   webBuilder
+                   .UseContentRoot(Directory.GetCurrentDirectory())
+                   .UseStartup<Startup>();
+               });
+       }
+   }
+   ```
 
 1. Add `Startup.cs` to run an ASP\.NET website\.  
 **Example c:\\users\\username\\dotnet\-core\-tutorial\\Startup\.cs**  
@@ -209,6 +236,8 @@ C:\Users\username> dotnet new web -o dotnet-core-tutorial
      </system.webServer>
    </configuration>
    ```
+**Note**  
+For ASP.NET Core 3.0 and 3.1, use `modules=AspNetCoreModuleV2`
 
 1. Add `dotnet-core-tutorial.csproj`, which includes IIS middleware and includes the `web.config` file from the output of `dotnet publish`\.
 **Note**  
