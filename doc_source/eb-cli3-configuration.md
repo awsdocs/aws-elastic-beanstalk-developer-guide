@@ -18,19 +18,7 @@ The following example shows the configuration steps when running eb init for the
    5) eu-central-1 : Europe (Frankfurt)
    6) ap-south-1 : Asia Pacific (Mumbai)
    7) ap-southeast-1 : Asia Pacific (Singapore)
-   8) ap-southeast-2 : Asia Pacific (Sydney)
-   9) ap-northeast-1 : Asia Pacific (Tokyo)
-   10) ap-northeast-2 : Asia Pacific (Seoul)
-   11) sa-east-1 : South America (São Paulo)
-   12) cn-north-1 : China (Beijing)
-   13) cn-northwest-1 : China (Ningxia)
-   14) us-east-2 : US East (Ohio)
-   15) ca-central-1 : Canada (Central)
-   16) eu-west-2 : Europe (London)
-   17) eu-west-3 : Europe (Paris)
-   18) eu-north-1 : Europe (Stockholm)
-   19) ap-east-1 : Asia Pacific (Hong Kong)
-   20) me-south-1 : Middle East (Bahrain)
+   ...
    (default is 3): 3
    ```
 
@@ -97,7 +85,7 @@ Your EB CLI installation is now configured and ready to use\. See [Managing Elas
 **Topics**
 + [Ignoring files using \.ebignore](#eb-cli3-ebignore)
 + [Using named profiles](#eb-cli3-profile)
-+ [Deploying an Artifact instead of the project folder](#eb-cli3-artifact)
++ [Deploying an artifact instead of the project folder](#eb-cli3-artifact)
 + [Configuration settings and precedence](#eb-cli3-credentials)
 + [Instance metadata](#eb-cli3-metadata)
 
@@ -134,7 +122,7 @@ $ export AWS_EB_PROFILE=user2
 > set AWS_EB_PROFILE=user2
 ```
 
-## Deploying an Artifact instead of the project folder<a name="eb-cli3-artifact"></a>
+## Deploying an artifact instead of the project folder<a name="eb-cli3-artifact"></a>
 
 You can tell the EB CLI to deploy a ZIP file or WAR file that you generate as part of a separate build process by adding the following lines to `.elasticbeanstalk/config.yml` in your project folder\.
 

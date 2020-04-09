@@ -28,17 +28,19 @@ Update configuration files in your source directory, create a new source bundle,
 
 **To deploy a source bundle**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Upload and Deploy**\.
+1. On the environment overview page, choose **Upload and deploy**\.
 
 1. Use the on\-screen dialog box to upload the source bundle\.
 
 1. Choose **Deploy**\.
 
-1. When the deployment completes, choose the site URL to open your website in a new tab\.
+1. When the deployment completes, you can choose the site URL to open your website in a new tab\.
 
 Changes made to configuration files will not override option settings in saved configurations or settings applied directly to the environment at the API level\. See [Precedence](command-options.md#configuration-options-precedence) for details\.
 
@@ -48,13 +50,15 @@ Apply a saved configuration to a running environment to apply option settings th
 
 **To apply a saved configuration to a running environment \(Elastic Beanstalk console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Choose the name of your application\.
+1. In the navigation pane, choose **Applications**, and then choose your application's name on the list\.
+**Note**  
+If you have many applications, use the search bar to filter the application list\.
 
-1. Choose **Saved Configurations**\.
+1. In the navigation pane, find your application's name and choose **Saved configurations**\.
 
-1. Select the saved configuration, and then choose **Load**\.
+1. Select the saved configuration you want to apply, and then choose **Load**\.
 
 1. Select an environment, and then choose **Load**\.
 
@@ -68,17 +72,19 @@ The Elastic Beanstalk console presents many configuration options on the **Confi
 
 **To change configuration options on a running environment \(Elastic Beanstalk console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
 1. Find the configuration page you want to edit:
-   + If you see the option you're interested in, or you know which configuration category it's in, choose **Modify** in the configuration category for it\.
+   + If you see the option you're interested in, or you know which configuration category it's in, choose **Edit** in the configuration category for it\.
    + To look for an option, turn on **Table View**, and then enter search terms into the search box\. As you type, the list gets shorter and shows only options that match your search terms\.
 
-     When you see the option you're looking for, choose **Modify** in the configuration category that contains it\.  
+     When you see the option you're looking for, choose **Edit** in the configuration category that contains it\.  
 ![\[Table view of the configuration overview page of the Elastic Beanstalk console, showing an option search\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-console.overview.table.search1.png)
 
 1. Change settings, and then choose **Save**\.

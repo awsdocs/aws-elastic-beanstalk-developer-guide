@@ -8,7 +8,7 @@ Legacy platforms do not support the following features:
 + Configuration files, as described in the [Advanced environment customization with configuration files \(`.ebextensions`\)](ebextensions.md) topic
 + ELB health checks, as described in the [Basic health reporting](using-features.healthstatus.md) topic
 + Instance Profiles, as described in the [Managing Elastic Beanstalk instance profiles](iam-instanceprofile.md) topic
-+ VPCs, as described in the [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md) topic
++ VPCs, as described in the [Using Elastic Beanstalk with Amazon VPC](vpc.md) topic
 + Data Tiers, as described in the [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md) topic
 + Worker Tiers, as described in the [Worker environments](concepts-worker.md) topic
 + Single Instance Environments, as described in the [Environment types](using-features-managing-env-types.md) topic
@@ -21,14 +21,15 @@ Some older platform versions do not support the latest Elastic Beanstalk feature
 
 **To check if you are using a legacy platform version**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. From the **All applications** page, choose the environment that you want to verify\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-app-page-env.png)
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. In the **Overview** section of the environment dashboard, view the **Platform** name\.
+1. On the environment overview page, view the **Platform** name\.
 
-   Your application is using a legacy platform version if you see **\(legacy\)** next to the platform name\.
+   Your application is using a legacy platform version if you see **\(legacy\)** next to the platform's name\.
 
 **To migrate your application**
 

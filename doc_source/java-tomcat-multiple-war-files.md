@@ -22,13 +22,11 @@ The source bundle can include only an optional `.ebextensions` folder and WAR fi
 
 1. Open the Elastic Beanstalk console with this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
-1. For **Platform**, choose the platform that matches the language used by your application\.
+1. For **Platform**, select the platform and platform branch that match the language used by your application\.
 
-1. For **App code**, choose **Upload**\.
+1. For **Application code**, choose **Upload your code**\.
 
-1. Choose **Local file**, choose **Browse**, and then open the source bundle\.
-
-1. Choose **Upload**\.
+1. Choose **Local file**, choose **Choose file**, and then open the source bundle\.
 
 1. Choose **Review and launch**\.
 

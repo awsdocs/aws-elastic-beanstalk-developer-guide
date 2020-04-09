@@ -11,15 +11,17 @@ Single\-instance environments don't have a load balancer and don't support HTTPS
 
 **To assign a certificate to your environment's load balancer**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
-
-1. Choose **Configuration**\.
-
-1. In the **Load balancer** configuration category, choose **Modify**\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
 **Note**  
-If the **Load balancer** configuration category doesn't have a **Modify** button, your environment doesn't have a [load balancer](using-features-managing-env-types.md#using-features.managing.changetype)\.
+If you have many environments, use the search bar to filter the environment list\.
+
+1. In the navigation pane, choose **Configuration**\.
+
+1. In the **Load balancer** configuration category, choose **Edit**\.
+**Note**  
+If the **Load balancer** configuration category doesn't have an **Edit** button, your environment doesn't have a [load balancer](using-features-managing-env-types.md#using-features.managing.changetype)\.
 
 1. On the **Modify load balancer** page, the procedure varies depending on the type of load balancer associated with your environment\.
    + **Classic Load Balancer**

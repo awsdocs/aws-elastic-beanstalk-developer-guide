@@ -6,13 +6,15 @@ If you are using Amazon RDS for the first time, add a DB instance to a test envi
 
 **To add a DB instance to your environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Database** configuration category, choose **Modify**\.
+1. In the **Database** configuration category, choose **Edit**\.
 
 1. Choose a DB engine, and enter a user name and password\.
 
@@ -248,13 +250,15 @@ As an example, the preceding is acceptable\. But in actual applications, keep yo
 
  First, open the security group to your RDS DB instance to allow traffic from your computer\. 
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Database** configuration category, choose **Modify**\.
+1. In the **Database** configuration category, choose **Edit**\.
 
 1. Next to **Endpoint**, choose the Amazon RDS console link\.
 

@@ -1,25 +1,27 @@
 # Enhanced health monitoring with the environment management console<a name="health-enhanced-console"></a>
 
-When you have enabled enhanced health reporting in AWS Elastic Beanstalk, you can monitor environment health in the [environment management console](environments-console.md)\.
+When you enable enhanced health reporting in AWS Elastic Beanstalk, you can monitor environment health in the [environment management console](environments-console.md)\.
 
 **Topics**
-+ [Environment dashboard](#health-enhanced-console-overview)
++ [Environment overview](#health-enhanced-console-overview)
 + [Environment health page](#health-enhanced-console-healthpage)
 + [Monitoring page](#health-enhanced-console-monitoringpage)
 
-## Environment dashboard<a name="health-enhanced-console-overview"></a>
+## Environment overview<a name="health-enhanced-console-overview"></a>
 
-The [environment dashboard](environments-console.md#environments-dashboard) displays the [health status](health-enhanced-status.md) of the environment and lists events that provide information about recent changes in health status\.
+The [environment overview](environments-console.md#environments-dashboard) displays the [health status](health-enhanced-status.md) of the environment and lists events that provide information about recent changes in health status\.
 
-**To view the environment dashboard**
+**To view the environment overview**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-For detailed information about the current environment's health, open the **Health** page by choosing **Causes**\. 
+For detailed information about the current environment's health, open the **Health** page by choosing **Causes**\. Alternatively, in the navigation pane, choose **Health**\.
 
-![\[A health warning on the Elastic Beanstalk environment dashboard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-dashboard.png)
+![\[A health warning on the environment overview page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-dashboard.png)
 
 ## Environment health page<a name="health-enhanced-console-healthpage"></a>
 
@@ -36,35 +38,35 @@ The following image shows the **Health** page for a Windows environment\. Notice
 
 ![\[Environment health page for a Windows environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-instances-win.png)
 
-To display only instances that have a particular status, choose**Filter By**, and then choose a [status](health-enhanced-status.md)\.
+At the top of the page you can see the total number of environment instances, as well as the number of instances per status\. To display only instances that have a particular status, choose**Filter By**, and then select a [status](health-enhanced-status.md)\.
+
+![\[Environment health page showing the filter by menu for choosing an instance status to display\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-instances-status.png)
 
 To reboot or terminate an unhealthy instance, choose **Instance Actions**, and then choose **Reboot** or **Terminate**\.
 
 ![\[Environment health page showing the instance actions menu for rebooting or terminating unhealthy instances\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-instances-actions.png)
 
-To hide detailed information about the environment and instances' health, choose **Hide Details**\. To show or hide the details for a single instance, use the arrow at the beginning of the row\.
+Elastic Beanstalk updates the **Health** page every 10 seconds\. It reports information about environment and instance health\.
 
-![\[Showing or hiding a single instance on the environment health page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-causes.png)
+For each Amazon EC2 instance in the environment, the page displays the instance's ID and [status](health-enhanced-status.md), the amount of time since the instance was launched, the ID of the most recent deployment executed on the instance, the responses and latency of requests that the instance served, and load and CPU utilization information\. The **Overall** row displays average response and latency information for the entire environment\.
 
-Elastic Beanstalk updates the **Health** page every 10 seconds\. It reports information about environment health for five categories\.
+The page displays many details in a very wide table\. To hide some of the columns, choose ![\[the cog icon\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cog.png) \(**Preferences**\)\. Select or clear column names, and then choose **Confirm**\.
 
-The first category, **Server**, displays information about each of the EC2 instances in the environment\. This includes the instance's ID and [status](health-enhanced-status.md), the amount of time since the instance was launched, and the ID of the most recent deployment executed on the instance\.
+![\[Selecting columns to display on the environment health page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-preferences.png)
 
-For more information about an instance, including its Availability Zone and instance type, pause on its **Instance ID**\.
+Choose the **Instance ID** of any instance to view more information about the instance, including its Availability Zone and instance type\.
 
-![\[Server metrics on the environment health page with instance information tooltip\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-instance.png)
+![\[Server metrics on the environment health page with instance information\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-instance.png)
 
-For information about the last [deployment](using-features.deploy-existing-version.md) to the instance, pause on the **Deployment ID**\.
+Choose the **Deployment ID** of any instance to view information about the last [deployment](using-features.deploy-existing-version.md) to the instance\.
 
-![\[Server metrics on the environment health page with deployment information tooltip\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-deployment.png)
+![\[Server metrics on the environment health page with deployment information\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-console-deployment.png)
 
 Deployment information includes the following:
 + **Deployment ID**—The unique identifier for the [deployment](using-features.deploy-existing-version.md)\. Deployment IDs starts at 1 and increase by one each time you deploy a new application version or change configuration settings that affect the software or operating system running on the instances in your environment\.
 + **Version**—The version label of the application source code used in the deployment\.
 + **Status**—The status of the deployment, which can be `In Progress`, `Deployed`, or `Failed`\.
 + **Time**— For in\-progress deployments, the time that the deployment started\. For completed deployments, the time that the deployment ended\.
-
-The other categories provide detailed information about the results and latency of requests served by each instance, and load and CPU utilization information for each instance\. For details on these metrics, see [Instance metrics](health-enhanced-metrics.md)\.
 
 If you [enable X\-Ray integration](environment-configuration-debugging.md) on your environment and instrument your application with the AWS X\-Ray SDK, the **Health** page adds links to the AWS X\-Ray console in the overview row\.
 

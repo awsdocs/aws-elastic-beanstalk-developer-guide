@@ -4,13 +4,13 @@ Enhanced health reporting is a feature that you can enable on your environment t
 
 In addition to changes in how health color works, enhanced health adds a *status* descriptor that provides an indicator of the severity of issues observed when an environment is yellow or red\. When more information is available about the current status, you can choose the **Causes** button to view detailed health information on the [health page](health-enhanced-console.md)\.
 
-![\[The Elastic Beanstalk environment dashboard showing an enhanced health status\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-dashboard-cause.png)
+![\[The Elastic Beanstalk environment overview page of the Elastic Beanstalk console showing an enhanced health status\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-dashboard-cause.png)
 
 To provide detailed health information about the Amazon EC2 instances running in your environment, Elastic Beanstalk includes a [health agent](#health-enhanced-agent) in the Amazon Machine Image \(AMI\) for each platform version that supports enhanced health\. The health agent monitors web server logs and system metrics and relays them to the Elastic Beanstalk service\. Elastic Beanstalk analyzes these metrics and data from Elastic Load Balancing and Amazon EC2 Auto Scaling to provide an overall picture of an environment's health\.
 
 In addition to collecting and presenting information about your environment's resources, Elastic Beanstalk monitors the resources in your environment for several error conditions and provides notifications to help you avoid failures and resolve configuration issues\. [Factors that influence your environment's health](#health-enhanced-factors) include the results of each request served by your application, metrics from your instances' operating system, and the status of the most recent deployment\.
 
-You can view health status in real time by using the [environment dashboard](health-enhanced-console.md) in the Elastic Beanstalk console or the [eb health](health-enhanced-ebcli.md) command in the [Elastic Beanstalk command line interface](eb-cli3.md) \(EB CLI\)\. To record and track environment and instance health over time, you can configure your environment to publish the information gathered by Elastic Beanstalk for enhanced health reporting to Amazon CloudWatch as custom metrics\. CloudWatch [charges](https://aws.amazon.com/cloudwatch/pricing/) for custom metrics apply to all metrics other than `EnvironmentHealth`, which is free of charge\.
+You can view health status in real time by using the [environment overview](health-enhanced-console.md) page of the Elastic Beanstalk console or the [eb health](health-enhanced-ebcli.md) command in the [Elastic Beanstalk command line interface](eb-cli3.md) \(EB CLI\)\. To record and track environment and instance health over time, you can configure your environment to publish the information gathered by Elastic Beanstalk for enhanced health reporting to Amazon CloudWatch as custom metrics\. CloudWatch [charges](https://aws.amazon.com/cloudwatch/pricing/) for custom metrics apply to all metrics other than `EnvironmentHealth`, which is free of charge\.
 
 Enhanced health reporting requires a version 2 or newer [ platform version](concepts.platforms.md)\. To monitor resources and publish metrics, your environment must have both an [instance profile and service](#health-enhanced) role\. The Multicontainer Docker platform doesn't include a web server by default, but can be used with enhanced health reporting if you configure your web server to [provide logs in the proper format](health-enhanced-serverlogs.md)\.
 
@@ -20,11 +20,6 @@ When you enable enhanced health reporting on a Windows Server environment, don't
 In addition, don't disable or stop the [Elastic Beanstalk health agent](#health-enhanced-agent) Windows service on any of your environment's instances\. To collect and report enhanced health information on an instance, this service should be enabled and running\.
 
 Enhanced health requires the environment to have an instance profile\. The instance profile should have roles that provide permissions for your environment instances to collect and report enhanced health information\. The first time you create an environment with a v2 platform version in the Elastic Beanstalk console, Elastic Beanstalk prompts you to create the required roles and enables enhanced health reporting by default\. Continue reading for details on how enhanced health reporting works, or see [Enabling Elastic Beanstalk enhanced health reporting](health-enhanced-enable.md) to get started using it right away\.
-
-
-|  | 
-| --- |
-| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
 
 Amazon Linux 2 platforms require instance profiles, so they can support enhanced health unconditionally\. When you create an environment using an Amazon Linux 2 platform, Elastic Beanstalk always enables enhanced health\. This is true regardless of how you create the environment—using the Elastic Beanstalk console, the EB CLI, the AWS CLI, or the API\.
 
@@ -53,7 +48,7 @@ The health agent reports similar metrics to those [published to CloudWatch](usin
 
 For basic health, these metrics are published every five minutes and can be monitored with graphs in the environment management console\. With enhanced health, the Elastic Beanstalk health agent reports metrics to Elastic Beanstalk every 10 seconds\. Elastic Beanstalk uses the metrics provided by the health agent to determine the health status of each instance in the environment and, combined with other [factors](#health-enhanced-factors), to determine the overall health of the environment\. 
 
-The overall health of the environment can be viewed in real time in the environment dashboard, and is published to CloudWatch by Elastic Beanstalk every 60 seconds\. You can view detailed metrics reported by the health agent in real time with the [eb health](health-enhanced-ebcli.md) command in the [EB CLI](eb-cli3.md)\.
+The overall health of the environment can be viewed in real time in the environment overview page of the Elastic Beanstalk console, and is published to CloudWatch by Elastic Beanstalk every 60 seconds\. You can view detailed metrics reported by the health agent in real time with the [eb health](health-enhanced-ebcli.md) command in the [EB CLI](eb-cli3.md)\.
 
 For an additional charge, you can choose to publish individual instance and environment\-level metrics to CloudWatch every 60 seconds\. Metrics published to CloudWatch can then be used to create [monitoring graphs](environment-health-console.md#environment-health-console-customize) in the [environment management console](environments-console.md)\. 
 
@@ -136,13 +131,13 @@ If you use the API, an SDK, or the AWS CLI to create environments, you must crea
 
 The enhanced health system generates events when an environment transitions between states\. The following example shows events output by an environment transitioning between **Info**, **OK**, and **Severe** states\.
 
-![\[The Elastic Beanstalk environment dashboard showing enhanced health recent events\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-events.png)
+![\[The Elastic Beanstalk environment overview page of the Elastic Beanstalk console showing enhanced health recent events\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-events.png)
 
 When transitioning to a worse state, the enhanced health event includes a message indicating the transition cause\.
 
 Not all changes in status at an instance level cause Elastic Beanstalk to emit an event\. To prevent false alarms, Elastic Beanstalk generates a health\-related event only if an issue persists across multiple checks\.
 
-Real\-time environment\-level health information, including status, color, and cause, is available in the [environment dashboard](environments-console.md#environments-dashboard) and the [EB CLI](eb-cli3.md)\. By attaching the EB CLI to your environment and running the [eb health](health-enhanced-ebcli.md) command, you can also view real\-time statuses from each of the instances in your environment\.
+Real\-time environment\-level health information, including status, color, and cause, is available in the [environment overview](environments-console.md#environments-dashboard) page of the Elastic Beanstalk console and the [EB CLI](eb-cli3.md)\. By attaching the EB CLI to your environment and running the [eb health](health-enhanced-ebcli.md) command, you can also view real\-time statuses from each of the instances in your environment\.
 
 ## Enhanced health reporting behavior during updates, deployments, and scaling<a name="health-enhanced-effects"></a>
 

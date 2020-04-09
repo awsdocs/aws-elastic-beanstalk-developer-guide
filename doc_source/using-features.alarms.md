@@ -9,27 +9,33 @@ For more information about monitoring specific metrics, see [Basic health report
 
 **To check the state of your alarms**
 
-1. From the Elastic Beanstalk console applications page, click the environment name that you want to manage alarms for\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. From the navigation menu, click **Alarms** to see a list of alarms\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-nav-alarms.png)
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-   If any alarms is in the alarm state, they are flagged with ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/warning.png) \(warning\)\.
+1. In the navigation pane, choose **Alarms**\.  
+![\[Environment alarms page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-alarms.png)
 
-1. To filter alarms, click the drop\-down filter and select the filter that you want\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-alarm-filter.png)
+   The page displays a list of existing alarms\. If any alarms are in the alarm state, they are flagged with ![\[warning icon\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/warning.png) \(warning\)\.
 
-1. To edit or delete an alarm, click ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cog.png) \(edit\) or ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/x.png) \(delete\)\.
+1. To filter alarms, choose the drop\-down menu, and then select a filter\.
+
+1. To edit or delete an alarm, choose ![\[cog icon\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cog.png) \(edit\) or ![\[X icon\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/x.png) \(delete\), respectively\.
 
 **To create an alarm**
 
-1. From the Elastic Beanstalk console applications page, click the environment name that you want to add alarms to\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. From the navigation menu, click **Monitoring**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-nav-monitoring.png)
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. For the metric that you want to create an alarm for, click ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/bell.png)\. You are directed to the **Alarms** page\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-alarm-create.png)
+1. In the navigation pane, choose **Monitoring**\.
+
+1. Locate the metric for which you want to create an alarm, and then choose ![\[bell icon\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/bell.png) \(alarm\)\. The **Add alarm** page is displayed\.  
+![\[Add alarm dialog of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-alarm-create.png)
 
 1. Enter details about the alarm:
    + **Name**: A name for this alarm\.
@@ -43,4 +49,4 @@ For more information about monitoring specific metrics, see [Basic health report
      + **Alarm**: The metric exceeded the defined threshold\.
      + **Insufficient data**: The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state\. 
 
-1. Click **Add**\. The environment status changes to gray while the environment updates\. You can view the alarm that you created by going to the **Alarms** page\.
+1. Choose **Add**\. The environment status changes to gray while the environment updates\. You can view the alarm that you created by choosing **Alarms** in the navigation pane\.

@@ -4,7 +4,7 @@ In certain circumstances, such as killing the Packer builder process before it i
 
 **To manually clean up these instances**
 
-1. Open the [https://console\.aws\.amazon\.com/ec2/](https://console.aws.amazon.com/ec2/)\.
+1. Open the [Amazon EC2 console](https://console.aws.amazon.com/ec2/)\.
 
 1. Make sure you are in the same AWS Region in which you created the instance with Packer\.
 

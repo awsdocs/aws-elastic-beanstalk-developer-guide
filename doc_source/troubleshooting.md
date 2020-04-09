@@ -1,6 +1,6 @@
 # Troubleshooting<a name="troubleshooting"></a>
 
-This chapter provides a table of the most common Elastic Beanstalk issues and how to resolve or work around them\. Error messages can appear as events on the environment Dashboard in the console, in logs, or on the health page\.
+This chapter provides a table of the most common Elastic Beanstalk issues and how to resolve or work around them\. Error messages can appear as events on the environment management page in the console, in logs, or on the health page\.
 
 If the health of your environment changes to red, try the following:
 + Review recent environment [events](using-features.events.md)\. Messages from Elastic Beanstalk about deployment, load, and configuration issues often appear here\.

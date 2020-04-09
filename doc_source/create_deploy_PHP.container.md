@@ -20,13 +20,15 @@ You can use the Elastic Beanstalk console to enable log rotation to Amazon S3, c
 
 **To configure your PHP environment in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Software** configuration category, choose **Modify**\.
+1. In the **Software** configuration category, choose **Edit**\.
 
 ### PHP settings<a name="php-console-settings"></a>
 + **Document root** – The folder that contains your site's default page\. If your welcome page is not at the root of your source bundle, specify the folder that contains it relative to the root path\. For example, `/public` if the welcome page is in a folder named `public`\.
@@ -46,7 +48,7 @@ The Log Options section has two settings:
 
 The **Environment Properties** section lets you specify environment configuration settings on the Amazon EC2 instances that are running your application\. These settings are passed in as key\-value pairs to the application\. 
 
-Inside the PHP environment running in Elastic Beanstalk, these values are written to /etc/php\.d/environment\.ini and are accessible using `$_SERVER` or the `get_cfg_var` function\.
+Your application code can access environment properties by using `$_SERVER` or the `get_cfg_var` function\.
 
 ```
 $endpoint = $_SERVER['API_ENDPOINT'];
@@ -77,3 +79,12 @@ option_settings:
 ```
 
 Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.
+
+## Amazon Linux 2 considerations<a name="php-al2"></a>
+
+
+|  | 
+| --- |
+| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
+
+Elastic Beanstalk provides Amazon Linux 2 PHP platform branches\. The platform versions in these branches are different than previous PHP platform versions based on Amazon Linux AMI in a few ways, both generic \(apply to all Amazon Linux 2 platforms\) and platform specific \(apply to Amazon Linux 2 PHP platform versions\)\. For details, see [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.

@@ -11,14 +11,13 @@ Elastic Beanstalk might fail to terminate your environment\. One common reason f
 
 **To terminate an environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. From the region list, select the region that includes the environment that you want to terminate\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
-
-1. Choose **Actions**, and then select **Terminate Environment**\.  
-![\[Actions menu on the dashboard page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-dashboard-action.png)
+1. Choose **Environment actions**, and then choose **Terminate environment**\.
 
 1. Use the on\-screen dialog box to confirm environment termination\.
 **Note**  
@@ -26,7 +25,7 @@ When you terminate your environment, the CNAME associated with the terminated en
 
    It takes a few minutes for Elastic Beanstalk to terminate the AWS resources running in the environment\. 
 
-## CLI<a name="using-features.terminating.CLI"></a>
+## AWS CLI<a name="using-features.terminating.CLI"></a>
 
 **To terminate an environment**
 + Run the following command\.

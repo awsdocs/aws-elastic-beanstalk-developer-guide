@@ -19,6 +19,6 @@ If you're not already an AWS customer, you need to create an AWS account\. Signi
 
 **To sign up for an AWS account**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
 1. Follow the instructions shown\.

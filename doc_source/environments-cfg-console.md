@@ -4,11 +4,13 @@ You can use the Elastic Beanstalk console to view and modify many [configuration
 
 **To view a summary of your environment's configuration**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
 ## Configuration overview page<a name="environments-cfg-console.overview"></a>
 
@@ -22,11 +24,11 @@ You can search for an option by its name or value by entering search terms into 
 
 ![\[Table view of the configuration overview page of the Elastic Beanstalk console, showing an option search\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-console.overview.table.search1.png)![\[Table view of the configuration overview page of the Elastic Beanstalk console, showing an option search\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-console.overview.table.search2.png)![\[Table view of the configuration overview page of the Elastic Beanstalk console, showing an option search\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-console.overview.table.search3.png)
 
-Turn on **Grid View** to see each category in a separate frame \(configuration card\)\.
+Turn off **Table View** to see each category in a separate frame \(configuration card\)\.
 
 ![\[Grid view of the configuration overview page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-console.overview.png)
 
-Choose **Modify** in a configuration category to get to a related configuration page, where you can see full option values and make changes\. When you're done viewing and modifying options, you can choose one of the following actions:
+Choose **Edit** in a configuration category to get to a related configuration page, where you can see full option values and make changes\. When you're done viewing and modifying options, you can choose one of the following actions:
 + **Cancel** – Go back to the environment's dashboard without applying your configuration changes\. When you choose **Cancel**, the console loses any pending changes you made on any configuration category\.
 
   You can also cancel your configuration changes by choosing another console page, like **Dashboard** or **Logs**\. In this case, if there are any pending configuration changes, the console prompts you to confirm that you agree to losing them\.

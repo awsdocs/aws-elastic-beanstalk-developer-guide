@@ -38,9 +38,11 @@ You can use the Elastic Beanstalk console to configure an Application Load Balan
 
 **To configure an Application Load Balancer in the Elastic Beanstalk console during environment creation**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Use the [Create New Environment wizard](environments-create-wizard.md) to start creating your environment\.
+1. In the navigation pane, choose **Environments**\.
+
+1. Choose [Create a new environment](environments-create-wizard.md) to start creating your environment\.
 
 1. On the wizard's main page, before choosing **Create environment**, choose **Configure more options**\.
 
@@ -48,7 +50,7 @@ You can use the Elastic Beanstalk console to configure an Application Load Balan
 
    Alternatively, in the **Capacity** configuration category, configure a **Load balanced** environment type\. For details, see [Capacity](environments-create-wizard.md#environments-create-wizard-capacity)\.
 
-1. In the **Load balancer** configuration category, choose **Modify**\.
+1. In the **Load balancer** configuration category, choose **Edit**\.
 
 1. Select the **Application Load Balancer** option, if it isn't already selected\.  
 ![\[Elastic Load Balancing configuration page - choosing load balancer type\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-type-chooser.png)
@@ -61,15 +63,17 @@ You can use the Elastic Beanstalk console to configure an Application Load Balan
 
 **To configure a running environment's Application Load Balancer in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
-
-1. Choose **Configuration**\.
-
-1. In the **Load balancer** configuration category, choose **Modify**\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
 **Note**  
-If the **Load balancer** configuration category doesn't have a **Modify** button, your environment doesn't have a load balancer\. To learn how to set one up, see [Changing environment type](using-features-managing-env-types.md#using-features.managing.changetype)\.
+If you have many environments, use the search bar to filter the environment list\.
+
+1. In the navigation pane, choose **Configuration**\.
+
+1. In the **Load balancer** configuration category, choose **Edit**\.
+**Note**  
+If the **Load balancer** configuration category doesn't have an **Edit** button, your environment doesn't have a load balancer\. To learn how to set one up, see [Changing environment type](using-features-managing-env-types.md#using-features.managing.changetype)\.
 
 1. Make the Application Load Balancer configuration changes that your environment requires\.
 
@@ -101,6 +105,8 @@ Use this list to specify listeners for your load balancer\. Each listener routes
 1. In the **Application Load Balancer listener** dialog box, configure settings you want, and then choose **Add**\.
 
 Use the **Application Load Balancer listener** dialog box settings to choose the port and protocol on which the listener listens to traffic\. If you choose the HTTPS protocol, configure SSL settings\.
+
+![\[Application Load Balancer listener dialog box\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-listener-dialog.png)
 
 Before you can configure an HTTPS listener, ensure that you have a valid SSL certificate\. Do one of the following:
 + If AWS Certificate Manager \(ACM\) is [available in your AWS Region](https://docs.aws.amazon.com/general/latest/gr/acm.html), create or import a certificate using ACM\. For more information about requesting an ACM certificate, see [Request a Certificate](https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-request.html) in the *AWS Certificate Manager User Guide*\. For more information about importing third\-party certificates into ACM, see [Importing Certificates](https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html) in the *AWS Certificate Manager User Guide*\.

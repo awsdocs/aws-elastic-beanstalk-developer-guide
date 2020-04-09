@@ -11,15 +11,20 @@ Create a saved configuration from the current state of your environment in the E
 
 **To save an environment's configuration**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Actions**, and then choose **Save Configuration**\.
+1. Choose **Environment actions**, and then choose **Save configuration**\.
 
 1. Use the on\-screen form to name the saved configuration\. Optionally, provide a brief description, and add tag keys and values\.
 
 1. Choose **Save**\.
+
+1. Choose **Save**\.  
+![\[Save Configuration page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-saveconfiguration-dialog.png)
 
 The saved configuration includes any settings that you have applied to the environment with the console or any other client that uses the Elastic Beanstalk API\. You can then apply the saved configuration to your environment at a later date to restore it to its previous state, or apply it to a new environment during [environment creation](environments-create-wizard.md)\.
 
@@ -31,13 +36,15 @@ eb config get NAME
 
 **To apply a saved configuration during environment creation \(Elastic Beanstalk console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Choose an application\.
+1. In the navigation pane, choose **Applications**, and then choose your application's name on the list\.
+**Note**  
+If you have many applications, use the search bar to filter the application list\.
 
-1. Choose **Saved Configurations**\.
+1. In the navigation pane, find your application's name and choose **Saved configurations**\.
 
-1. Choose a saved configuration, and then choose **Launch environment**\.
+1. Select the saved configuration you want to apply, and then choose **Launch environment**\.
 
 1. Proceed through the wizard to create your environment\.
 

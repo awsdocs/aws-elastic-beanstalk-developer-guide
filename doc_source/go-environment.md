@@ -12,6 +12,8 @@ You can use AWS Elastic Beanstalk to run, build, and configure Go\-based applica
 
   Elastic Beanstalk launches this application on port 5000\.
 
+In both cases, with Go 1\.11 or later, you can also provide module requirements in a file called `go.mod`\. For more information, see [Migrating to Go Modules](https://blog.golang.org/migrating-to-go-modules) in the Go blog\.
+
 For more complex Go applications, there are two ways to deploy your application:
 + Provide a source bundle that includes your application source files, along with a [Buildfile](go-buildfile.md) and a [Procfile](go-procfile.md)\. The Buildfile includes a command to build the application, and the Procfile includes instructions to run the application\.
 + Provide a source bundle that includes your application binary files, along with a Procfile\. The Procfile includes instructions to run the application\.
@@ -32,13 +34,15 @@ You can use the Elastic Beanstalk console to enable log rotation to Amazon S3 an
 
 **To configure your Go environment in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Software** configuration category, choose **Modify**\.
+1. In the **Software** configuration category, choose **Edit**\.
 
 ### Log options<a name="go-options-logs"></a>
 
@@ -82,3 +86,12 @@ option_settings:
 ```
 
 Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.
+
+## Amazon Linux 2 considerations<a name="go-al2"></a>
+
+
+|  | 
+| --- |
+| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
+
+Elastic Beanstalk provides an Amazon Linux 2 Go platform branch\. The platform versions in this branch are different than previous Go platform versions based on Amazon Linux AMI in a few ways, both generic \(apply to all Amazon Linux 2 platforms\) and platform specific \(apply to Amazon Linux 2 Go platform versions\)\. For details, see [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.

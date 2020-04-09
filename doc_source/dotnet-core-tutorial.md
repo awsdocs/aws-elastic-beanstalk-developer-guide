@@ -12,7 +12,7 @@ The deployable source bundle is available here: [dotnet\-core\-tutorial\-bundle\
 
 **Topics**
 + [Prerequisites](#dotnet-core-tutorial-prereqs)
-+ [Generate a \.NET Core project](#dotnet-core-tutorial-generate)
++ [Generate a \.NET core project](#dotnet-core-tutorial-generate)
 + [Launch an Elastic Beanstalk environment](#dotnet-core-tutorial-launch)
 + [Update the source code](#dotnet-core-tutorial-update)
 + [Deploy your application](#dotnet-core-tutorial-deploy)
@@ -26,7 +26,7 @@ This tutorial uses the \.NET Core SDK to generate a basic \.NET Core application
 **Requirements**
 + \.NET Core \(x64\) 1\.0\.1, 2\.0\.0, or later 
 
-**To install the \.NET Core SDK**
+**To install the \.NET core SDK**
 
 1. Download the installer from [microsoft\.com/net/core](https://www.microsoft.com/net/core#windows)\. Choose **Windows**\. Choose **Download \.NET SDK**\.
 
@@ -63,11 +63,11 @@ This tutorial uses a command line ZIP utility to create a source bundle that you
    ...
    ```
 
-## Generate a \.NET Core project<a name="dotnet-core-tutorial-generate"></a>
+## Generate a \.NET core project<a name="dotnet-core-tutorial-generate"></a>
 
 Use the `dotnet` command line tool to generate a new C\# \.NET Core project and run it locally\. The default \.NET Core application is a command line utility that prints `Hello World!` and then exits\. 
 
-**To generate a new \.NET Core project**
+**To generate a new \.NET core project**
 
 1. Open a new command prompt window and navigate to your user folder\.
 
@@ -117,7 +117,7 @@ Use the Elastic Beanstalk console to launch an Elastic Beanstalk environment\. F
 
 1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
-1. Choose the **Platform** that matches the language used by your application\.
+1. For **Platform**, select the platform and platform branch that match the language used by your application\.
 
 1. For **Application code**, choose **Sample application**\.
 
@@ -136,7 +136,7 @@ Modify the default application into a web application that uses ASP\.NET and IIS
 The source code examples to follow are available here: [dotnet\-core\-tutorial\-source\.zip](samples/dotnet-core-tutorial-source.zip)
 
 **Note**  
-The following procedure shows how to convert the project code into a web application\. To simplify the process, you can generate the project as a web application right from the start\. In the previous section [Generate a \.NET Core project](#dotnet-core-tutorial-generate), modify the `dotnet new` step's command with the following command\.  
+The following procedure shows how to convert the project code into a web application\. To simplify the process, you can generate the project as a web application right from the start\. In the previous section [Generate a \.NET core project](#dotnet-core-tutorial-generate), modify the `dotnet new` step's command with the following command\.  
 
 ```
 C:\Users\username> dotnet new web -o dotnet-core-tutorial
@@ -351,17 +351,19 @@ You can download the source bundle here: [dotnet\-core\-tutorial\-bundle\.zip](s
 
 **To deploy a source bundle**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Upload and Deploy**\.
+1. On the environment overview page, choose **Upload and deploy**\.
 
 1. Use the on\-screen dialog box to upload the source bundle\.
 
 1. Choose **Deploy**\.
 
-1. When the deployment completes, choose the site URL to open your website in a new tab\.
+1. When the deployment completes, you can choose the site URL to open your website in a new tab\.
 
 The application simply writes `Hello from ASP.NET Core!` to the response and returns\.
 
@@ -391,11 +393,13 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 **To terminate your Elastic Beanstalk environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Actions**, and then choose **Terminate Environment**\.
+1. Choose **Environment actions**, and then choose **Terminate environment**\.
 
 1. Use the on\-screen dialog box to confirm environment termination\.
 

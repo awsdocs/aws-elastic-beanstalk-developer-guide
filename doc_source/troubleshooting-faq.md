@@ -10,7 +10,7 @@ You can pick specific Availability Zones using the APIs, CLI, Eclipse plugin, or
 
 **Question:** *How do I change my environment's instance type?*
 
-On the environment configuration page, choose **Modify** in the **Instances** configuration category\. Select a new instance type and choose **Apply** to update your environment\. Elastic Beanstalk will terminate all running instances and replace them with new ones\.
+On the environment configuration page, choose **Edit** in the **Instances** configuration category\. Select a new instance type and choose **Apply** to update your environment\. Elastic Beanstalk will terminate all running instances and replace them with new ones\.
 
 **Question:** *Can I prevent Amazon EBS volumes from being deleted when instances are terminated?*
 

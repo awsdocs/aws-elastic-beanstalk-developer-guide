@@ -10,15 +10,17 @@ You can create scheduled actions for your environment's Auto Scaling group in th
 
 **To configure scheduled actions in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Capacity** configuration category, choose **Modify**\.
+1. In the **Capacity** configuration category, choose **Edit**\.
 
-1. In the **Time\-based Scaling** section, choose **Add scheduled action**\.  
+1. In the **Time\-based scaling** section, choose **Add scheduled action**\.  
 ![\[Elastic Beanstalk Auto Scaling scheduled actions configuration window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-autoscaling-scheduledactions.png)
 
 1. Fill in the following scheduled action settings:

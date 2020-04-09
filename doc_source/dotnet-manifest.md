@@ -13,12 +13,12 @@ For full customization, you can [write your own deployment scripts](#dotnet-mani
 Deployment manifests and related features require a Windows Server platform [version 1\.2\.0 or newer](dotnet-v2migration.md)\.
 
 **Topics**
-+ [\.NET Core apps](#dotnet-manifest-dotnetcore)
++ [\.NET core apps](#dotnet-manifest-dotnetcore)
 + [Run multiple applications](#dotnet-manifest-multiapp)
 + [Configure application pools](#dotnet-manifest-apppool)
 + [Define custom deployments](#dotnet-manifest-custom)
 
-## \.NET Core apps<a name="dotnet-manifest-dotnetcore"></a>
+## \.NET core apps<a name="dotnet-manifest-dotnetcore"></a>
 
 You can use a deployment manifest to run \.NET Core applications on Elastic Beanstalk\. \.NET Core is a cross\-platform version of \.NET that comes with a command line tool \(`dotnet`\) that you can use to generate an application, run it locally, and prepare it for publishing\.
 
@@ -29,7 +29,7 @@ To run a \.NET Core application on Elastic Beanstalk, run `dotnet publish` and p
 
 The following deployment manifest runs a \.NET Core application from a site archive named `dotnet-core-app.zip` at the root path\.
 
-**Example aws\-windows\-deployment\-manifest\.json \- \.NET Core**  
+**Example aws\-windows\-deployment\-manifest\.json \- \.NET core**  
 
 ```
 {

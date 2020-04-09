@@ -21,43 +21,17 @@ You can modify your Elastic Beanstalk environment's Amazon EC2 instance configur
 
 **To configure Amazon EC2 instances in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Capacity** configuration category, choose **Modify**\. Make changes to settings in this category, and then choose **Continue**\. For setting descriptions, see the section [Capacity category settings](#using-features.managing.ec2.console.capacity) on this page\.  
-![\[Elastic Beanstalk Auto Scaling configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-capacity.png)
+1. In the **Instances** configuration category, choose **Edit**\. Make changes to settings in this category, and then choose **Apply**\. For setting descriptions, see the section [Instances category settings](#using-features.managing.ec2.console.instances) on this page\.
 
-1. In the **Instances** configuration category, choose **Modify**\. Make changes to settings in this category, and then choose **Apply**\. For setting descriptions, see the section [Instances category settings](#using-features.managing.ec2.console.instances) on this page\.  
-![\[Elastic Beanstalk instances configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-instances.png)
-
-### Capacity category settings<a name="using-features.managing.ec2.console.capacity"></a>
-
-The following settings related to Amazon EC2 instances are available in the **Capacity** configuration category\.
-
-**Topics**
-+ [Instance type](#using-features.managing.ec2.instancetypes)
-+ [AMI ID](#using-features.managing.ec2.customami)
-
-![\[Amazon EC2 instance settings on Elastic Beanstalk capacity configuration window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-ec2-capacity-page.png)
-
-#### Instance type<a name="using-features.managing.ec2.instancetypes"></a>
-
-The **Instance type** setting determines the type of Amazon EC2 instance launched to run your application\. Choose an instance that is powerful enough to run your application under load, but not so powerful that it's idle most of the time\. For development purposes, the t2 family of instances provides a moderate amount of power with the ability to burst for short periods of time\.
-
-For large\-scale, high\-availability applications, use a pool of instances to ensure that capacity is not greatly affected if any single instance goes down\. Start with an instance type that allows you to run five instances under moderate load during normal hours\. If any instance fails, the rest of the instances can absorb the rest of the traffic\. The capacity buffer also allows time for the environment to scale up as traffic begins to rise during peak hours\.
-
-For more information about Amazon EC2 instance families and types, see [Instance Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon Elastic Compute Cloud User Guide*\. 
-
-When you enable Spot Instance requests for your environment, this configuration page shows a list of **Instance types** instead of a single setting\. You can select one or more instance types for your Spot Instances\. For details, see [Spot instance Support](using-features.managing.as.md#environments-cfg-autoscaling-spot)\.
-
-#### AMI ID<a name="using-features.managing.ec2.customami"></a>
-
-The Amazon Machine Image \(AMI\) is the Amazon Linux or Windows Server machine image that Elastic Beanstalk uses to launch Amazon EC2 instances in your environment\. Elastic Beanstalk provides machine images that contain the tools and resources required to run your application\.
-
-Elastic Beanstalk selects a default AMI for your environment based on the region, platform, and instance type that you choose\. If you have created a [custom AMI](using-features.customenv.md), replace the default AMI ID with yours\.
+1. In the **Capacity** configuration category, choose **Edit**\. Make changes to settings in this category, and then choose **Continue**\. For setting descriptions, see the section [Capacity category settings](#using-features.managing.ec2.console.capacity) on this page\.
 
 ### Instances category settings<a name="using-features.managing.ec2.console.instances"></a>
 
@@ -95,6 +69,32 @@ To allow traffic between environment A's instances and environment B's instances
 A safer approach would be to create a separate security group, attach it to environment A, and specify it in a rule of environment B's security group\.
 
 For more information on Amazon Amazon EC2 security groups, see [Amazon EC2 Security Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) in the *Amazon Elastic Compute Cloud User Guide*\.
+
+### Capacity category settings<a name="using-features.managing.ec2.console.capacity"></a>
+
+The following settings related to Amazon EC2 instances are available in the **Capacity** configuration category\.
+
+**Topics**
++ [Instance type](#using-features.managing.ec2.instancetypes)
++ [AMI ID](#using-features.managing.ec2.customami)
+
+![\[Amazon EC2 instance settings on Elastic Beanstalk capacity configuration window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-ec2-capacity-page.png)
+
+#### Instance type<a name="using-features.managing.ec2.instancetypes"></a>
+
+The **Instance type** setting determines the type of Amazon EC2 instance launched to run your application\. Choose an instance that is powerful enough to run your application under load, but not so powerful that it's idle most of the time\. For development purposes, the t2 family of instances provides a moderate amount of power with the ability to burst for short periods of time\.
+
+For large\-scale, high\-availability applications, use a pool of instances to ensure that capacity is not greatly affected if any single instance goes down\. Start with an instance type that allows you to run five instances under moderate load during normal hours\. If any instance fails, the rest of the instances can absorb the rest of the traffic\. The capacity buffer also allows time for the environment to scale up as traffic begins to rise during peak hours\.
+
+For more information about Amazon EC2 instance families and types, see [Instance Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon Elastic Compute Cloud User Guide*\. 
+
+When you enable Spot Instance requests for your environment, this configuration page shows a list of **Instance types** instead of a single setting\. You can select one or more instance types for your Spot Instances\. For details, see [Spot instance support](using-features.managing.as.md#environments-cfg-autoscaling-spot)\.
+
+#### AMI ID<a name="using-features.managing.ec2.customami"></a>
+
+The Amazon Machine Image \(AMI\) is the Amazon Linux or Windows Server machine image that Elastic Beanstalk uses to launch Amazon EC2 instances in your environment\. Elastic Beanstalk provides machine images that contain the tools and resources required to run your application\.
+
+Elastic Beanstalk selects a default AMI for your environment based on the region, platform, and instance type that you choose\. If you have created a [custom AMI](using-features.customenv.md), replace the default AMI ID with yours\.
 
 ## The aws:autoscaling:launchconfiguration namespace<a name="using-features.managing.ec2.namespace"></a>
 

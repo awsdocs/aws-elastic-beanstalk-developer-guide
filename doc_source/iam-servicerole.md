@@ -8,7 +8,7 @@ When you launch an environment in the Elastic Beanstalk console, the console cre
 
 Elastic Beanstalk provides a managed policy for [enhanced health monitoring](health-enhanced.md), and one with additional permissions required for [managed platform updates](environment-platform-update-managed.md)\. The console assigns both of these policies to the default service role\. The managed service role policies follow\.
 
-**Managed Service Role Policies**
+**Managed service role policies**
 + **AWSElasticBeanstalkEnhancedHealth** – Grants permissions for Elastic Beanstalk to monitor instance and environment health\.
 
   ```

@@ -15,7 +15,7 @@ Auto Scaling monitors the health of each Amazon EC2 instance that it launches\. 
 You can configure Auto Scaling for your environment using the [Elastic Beanstalk console](#environments-cfg-autoscaling-console), the [EB CLI](#environments-cfg-autoscaling-ebcli), or [configuration options](#environments-cfg-autoscaling-namespace)\.
 
 **Topics**
-+ [Spot instance Support](#environments-cfg-autoscaling-spot)
++ [Spot instance support](#environments-cfg-autoscaling-spot)
 + [Auto Scaling group configuration using the Elastic Beanstalk console](#environments-cfg-autoscaling-console)
 + [Auto Scaling group configuration using the EB CLI](#environments-cfg-autoscaling-ebcli)
 + [Configuration options](#environments-cfg-autoscaling-namespace)
@@ -23,7 +23,7 @@ You can configure Auto Scaling for your environment using the [Elastic Beanstalk
 + [Scheduled Auto Scaling actions](environments-cfg-autoscaling-scheduledactions.md)
 + [Auto Scaling health check setting](environmentconfig-autoscaling-healthchecktype.md)
 
-## Spot instance Support<a name="environments-cfg-autoscaling-spot"></a>
+## Spot instance support<a name="environments-cfg-autoscaling-spot"></a>
 
 To take advantage of Amazon EC2 [Spot Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html), you can enable a Spot option for your environment\. Your environment's Auto Scaling group then combines Amazon EC2 purchase options and maintains a mix of On\-Demand and Spot Instances\.
 
@@ -84,14 +84,15 @@ You can configure how Auto Scaling works by editing **Capacity** on the environm
 
 **To configure the Auto Scaling group in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Capacity** configuration category, choose **Modify**\.  
-![\[Elastic Beanstalk Auto Scaling configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-capacity.png)
+1. In the **Capacity** configuration category, choose **Edit**\.
 
 1. In the **Auto Scaling group** section, configure the following settings\.
    + **Environment type** – Select **Load balanced**\.

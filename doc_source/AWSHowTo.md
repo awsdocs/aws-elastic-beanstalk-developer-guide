@@ -15,7 +15,7 @@ To implement your application's environments, Elastic Beanstalk manages resource
 + [Using Elastic Beanstalk with AWS Identity and Access Management](AWSHowTo.iam.md)
 + [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)
 + [Using Elastic Beanstalk with Amazon S3](AWSHowTo.S3.md)
-+ [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md)
++ [Using Elastic Beanstalk with Amazon VPC](vpc.md)
 
 ## Architectural overview<a name="AWSHowTo.architecture"></a>
 

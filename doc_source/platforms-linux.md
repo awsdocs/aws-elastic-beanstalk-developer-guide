@@ -17,11 +17,6 @@ The Elastic Beanstalk Linux platforms provide a lot of functionality out of the 
 
 ## Linux platform versions<a name="platforms-linux.versions"></a>
 
-
-|  | 
-| --- |
-| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
-
 AWS provides two versions of Amazon Linux: [Amazon Linux 2](https://aws.amazon.com/amazon-linux-2/) and [Amazon Linux AMI](https://aws.amazon.com/amazon-linux-ami/)\. Some key improvements in Amazon Linux 2 compared to Amazon Linux AMI are:
 + Amazon Linux 2 offers long\-term support\.
 + Amazon Linux 2 is available as virtual machine images for on\-premises development and testing\.
@@ -29,6 +24,7 @@ AWS provides two versions of Amazon Linux: [Amazon Linux 2](https://aws.amazon.c
 
 Elastic Beanstalk maintains platform versions with both Amazon Linux versions\. For details about supported platform versions, see [Elastic Beanstalk supported platforms](concepts.platforms.md)\.
 
+**Note**  
 Amazon Linux 2 platform versions are incompatible with previous Amazon Linux AMI platform versions\. If you're migrating your Elastic Beanstalk application to Amazon Linux 2, read [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
 
 ## List of Elastic Beanstalk Linux platforms<a name="platforms-linux.list"></a>

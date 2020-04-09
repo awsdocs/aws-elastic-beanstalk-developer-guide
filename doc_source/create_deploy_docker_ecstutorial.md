@@ -158,19 +158,17 @@ This is all you need to create the Elastic Beanstalk environment\. Create a `.zi
 **Note**  
 For information on the required file structure and instructions for creating archives in other environments, see [Create an application source bundle](applications-sourcebundle.md) 
 
-Next, upload the source bundle to Elastic Beanstalk and create your environment\. When you are prompted to select a platform, choose **Multi\-container Docker**\.
+Next, upload the source bundle to Elastic Beanstalk and create your environment\. For **Platform**, select **Docker**\. For **Platform branch**, select **Multi\-container Docker running on 64bit Amazon Linux**\.
 
 **To launch an environment \(console\)**
 
 1. Open the Elastic Beanstalk console with this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
-1. For **Platform**, choose the platform that matches the language used by your application\.
+1. For **Platform**, select the platform and platform branch that match the language used by your application\.
 
-1. For **App code**, choose **Upload**\.
+1. For **Application code**, choose **Upload your code**\.
 
-1. Choose **Local file**, choose **Browse**, and then open the source bundle\.
-
-1. Choose **Upload**\.
+1. Choose **Local file**, choose **Choose file**, and then open the source bundle\.
 
 1. Choose **Review and launch**\.
 

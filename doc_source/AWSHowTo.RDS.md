@@ -1,6 +1,6 @@
 # Using Elastic Beanstalk with Amazon RDS<a name="AWSHowTo.RDS"></a>
 
-AWS Elastic Beanstalk provides support for [running Amazon Relational Database Service \(Amazon RDS\) instances in your Elastic Beanstalk environment](using-features.managing.db.md)\. This works great for development and testing environments\. However, it isn't ideal for a production environment because it ties the lifecycle of the database instance to the lifecycle of your application's environment\.
+AWS Elastic Beanstalk provides support for running [Amazon Relational Database Service \(Amazon RDS\)](https://aws.amazon.com/rds/) instances in your Elastic Beanstalk environment\. To learn about that, see [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md)\. This works great for development and testing environments\. However, it isn't ideal for a production environment because it ties the lifecycle of the database instance to the lifecycle of your application's environment\.
 
 **Note**  
 If you haven't used a DB instance with your application before, try adding one to a test environment with the Elastic Beanstalk console first\. This lets you verify that your application is able to read environment properties, construct a connection string, and connect to a DB instance before you add [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) and security group configuration to the mix\. See [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md) for details\.

@@ -19,13 +19,15 @@ For production environments, you can create a DB instance outside of your Elasti
 
 **To add a DB instance to your environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Database** configuration category, choose **Modify**\.
+1. In the **Database** configuration category, choose **Edit**\.
 
 1. Choose a DB engine, and enter a user name and password\.
 
@@ -48,7 +50,7 @@ For more information about configuring an internal DB instance, see [Adding a da
 
 Download and install the `EntityFramework` package and a database driver for your development environment with `NuGet`\.
 
-**Common Entity Framework Database Providers for \.NET**
+**Common entity framework database providers for \.NET**
 + **SQL Server** – `Microsoft.EntityFrameworkCore.SqlServer`
 + **MySQL** – `Pomelo.EntityFrameworkCore.MySql`
 + **PostgreSQL** – `Npgsql.EntityFrameworkCore.PostgreSQL`

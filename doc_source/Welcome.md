@@ -22,7 +22,7 @@ After you create and deploy your application, information about the applicationâ
 
 There is no additional charge for Elastic Beanstalk\. You pay only for the underlying AWS resources that your application consumes\. For details about pricing, see the [Elastic Beanstalk service detail page](https://aws.amazon.com/elasticbeanstalk)\.
 
-## Where to Go next<a name="Welcome.WhereToGo"></a>
+## Where to go next<a name="Welcome.WhereToGo"></a>
 
 This guide contains conceptual information about the Elastic Beanstalk web service, as well as information about how to use the service to deploy web applications\. Separate sections describe how to use the Elastic Beanstalk console, command line interface \(CLI\) tools, and API to deploy and manage your Elastic Beanstalk environments\. This guide also documents how Elastic Beanstalk is integrated with other services provided by Amazon Web Services\.
 

@@ -36,7 +36,7 @@ The following steps demonstrate the commands you must enter for Unix\-based syst
 1. Create a virtual environment named `eb-virt`\.
 
 ------
-#### [ Unix\-based Systems ]
+#### [ Unix\-based systems ]
 
    ```
    ~$ virtualenv ~/eb-virt
@@ -54,7 +54,7 @@ The following steps demonstrate the commands you must enter for Unix\-based syst
 1. Activate the virtual environment\.
 
 ------
-#### [ Unix\-based Systems ]
+#### [ Unix\-based systems ]
 
    ```
    ~$ source ~/eb-virt/bin/activate
@@ -107,7 +107,7 @@ This tutorial uses SQLite, which is a database engine included in Python\. The d
 1. Activate your virtual environment\.
 
 ------
-#### [ Unix\-based Systems ]
+#### [ Unix\-based systems ]
 
    ```
    ~$ source ~/eb-virt/bin/activate
@@ -180,7 +180,7 @@ By default, Elastic Beanstalk looks for a file named `application.py` to start y
 1. Activate your virtual environment\.
 
 ------
-#### [ Unix\-based Systems ]
+#### [ Unix\-based systems ]
 
    ```
    ~/ebdjango$ source ~/eb-virt/bin/activate

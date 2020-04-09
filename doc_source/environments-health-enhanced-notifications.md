@@ -1,6 +1,6 @@
 # Notifications and troubleshooting<a name="environments-health-enhanced-notifications"></a>
 
-This page lists example cause messages for common issues and links to more information\. Cause messages appear in the [environment dashboard](environment-health-console.md) and are recorded in [events](using-features.events.md) when health issues persist across several checks\.
+This page lists example cause messages for common issues and links to more information\. Cause messages appear in the [environment overview](environment-health-console.md) page of the Elastic Beanstalk console and are recorded in [events](using-features.events.md) when health issues persist across several checks\.
 
 ## Deployments<a name="environments-health-enhanced-notifications-deployments"></a>
 

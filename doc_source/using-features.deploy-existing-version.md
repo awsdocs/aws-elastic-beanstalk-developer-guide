@@ -12,7 +12,7 @@ To ensure that your application source is always deployed to new instances, inst
 During managed platform updates with instance replacement enabled, immutable updates, and deployments with immutable updates enabled all instances are replaced\. This causes all accumulated [Amazon EC2 Burst Balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\.
 
 
-**Supported Deployment Policies**  
+**Supported deployment policies**  
 
 | Deployment policy | Load balanced environments | Single\-instance environments | Legacy Windows server environments† | 
 | --- | --- | --- | --- | 
@@ -25,13 +25,15 @@ During managed platform updates with instance replacement enabled, immutable upd
 
 **To configure deployments**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Rolling updates and deployments** configuration category, choose **Modify**\.
+1. In the **Rolling updates and deployments** configuration category, choose **Edit**\.
 
 1. In the **Application Deployments** section, choose a [Deployment policy](using-features.rolling-version-deploy.md) and batch settings\.
 
@@ -42,7 +44,7 @@ For deployments that depend on resource configuration changes or a new version t
 The following table compares deployment methods\.
 
 
-**Deployment Methods**  
+**Deployment methods**  
 
 | **Method** | **Impact of failed deployment** | **Deploy time** | **Zero downtime** | **No DNS change** | **Rollback process** | **Code deployed to** | 
 | --- | --- | --- | --- | --- | --- | --- | 
@@ -62,11 +64,13 @@ You can perform deployments from your environment's dashboard\.
 
 **To deploy a new application version to an Elastic Beanstalk environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Upload and Deploy**\.
+1. Choose **Upload and deploy**\.
 
 1. Use the on\-screen form to upload the application source bundle\.
 
@@ -78,10 +82,16 @@ You can also deploy a previously uploaded version of your application to any of 
 
 **To deploy an existing application version to an existing environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Choose **Actions** next to the application name, and then choose **View application versions**\.
+1. In the navigation pane, choose **Applications**, and then choose your application's name on the list\.
+**Note**  
+If you have many applications, use the search bar to filter the application list\.
 
-1. Use the on\-screen form to select the application version to deploy\.
+1. In the navigation pane, find your application's name and choose **Application versions**\.
 
-1. Choose an environment, and then choose **Deploy**\.
+1. Select the application version you want to deploy\.
+
+1. Choose **Actions**, and then choose **Deploy**\.
+
+1. Select an environment, and then choose **Deploy**\.

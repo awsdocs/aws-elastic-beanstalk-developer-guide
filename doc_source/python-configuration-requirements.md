@@ -29,16 +29,16 @@ On Amazon Linux AMI Python platform versions, Elastic Beanstalk doesn't natively
 ```
 To learn more, see [Generating a requirements\.txt](https://pipenv.readthedocs.io/en/latest/advanced/#generating-a-requirements-txt) in the Pipenv documentation\.
 
-## Use Pipenv and `Pipfile` \(Amazon Linux 2\)<a name="python-configuration-requirements.pipenv"></a>
+## Use Pipenv and `Pipfile`<a name="python-configuration-requirements.pipenv"></a>
 
+Pipenv is a modern Python packaging tool\. It combines package installation with the creation and management of a dependency file and a virtualenv for your application\. Pipenv maintains two files: `Pipfile` contains various types of dependencies and requirements, and `Pipfile.lock` is a version snapshot that enables deterministic builds\. For more information, see [Pipenv: Python Dev Workflow for Humans](https://pipenv.readthedocs.io/en/latest/)\.
 
-|  | 
-| --- |
-| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
+Amazon Linux 2 Python platform versions support Pipenv\-based requirements files\. Create them on your development environment and include them with the source bundle that you deploy to Elastic Beanstalk\.
 
-Pipenv is a more modern Python packaging tool\. It combines package installation with the creation and management of a dependency file and a virtualenv for your application\. Pipenv maintains two files: `Pipfile` contains various types of dependencies and requirements, and `Pipfile.lock` is a version snapshot that enables deterministic builds\. For more information, see [Pipenv: Python Dev Workflow for Humans](https://pipenv.readthedocs.io/en/latest/)\.
+**Note**  
+Amazon Linux AMI Python platform versions \(preceding Amazon Linux 2\) don't support Pipenv and `Pipfile`\.
 
-Amazon Linux 2 Python platform versions support Pipenv\-based requirements files\. Create them on your development environment and include them with the source bundle that you deploy to Elastic Beanstalk\. The following example uses Pipenv to install Django and the Django REST framework\.
+The following example uses Pipenv to install Django and the Django REST framework\.
 
 ```
 ~/my-app$ pipenv install django

@@ -16,13 +16,15 @@ You can use the Elastic Beanstalk console to enable log rotation to Amazon S3, c
 
 **To configure your \.NET environment in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Software** configuration category, choose **Modify**\.
+1. In the **Software** configuration category, choose **Edit**\.
 
 ### Container options<a name="dotnet-console-framework"></a>
 + **Target \.NET runtime** – Set to `2.0` to run CLR v2\.

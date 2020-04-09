@@ -43,13 +43,15 @@ When you create a new environment using the Elastic Beanstalk console, one of th
 
 **To apply a saved configuration during environment creation \(Elastic Beanstalk console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Choose an application\.
+1. In the navigation pane, choose **Applications**, and then choose your application's name on the list\.
+**Note**  
+If you have many applications, use the search bar to filter the application list\.
 
-1. Choose **Saved Configurations**\.
+1. In the navigation pane, find your application's name and choose **Saved configurations**\.
 
-1. Choose a saved configuration, and then choose **Launch environment**\.
+1. Select the saved configuration you want to apply, and then choose **Launch environment**\.
 
 1. Proceed through the wizard to create your environment\.
 
@@ -61,15 +63,17 @@ Most of the standard configuration options are presented on the **Configure more
 
 **To set configuration options during environment creation \(Elastic Beanstalk console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+
+1. In the navigation pane, choose **Applications**\.
 
 1. Choose or [create](applications.md) an application\.
 
-1. In the **Actions** drop\-down menu, choose **Create environment**\.
+1. Choose **Actions**, and then choose **Create environment**\.
 
 1. Proceed through the wizard, and choose **Configure more options**\.
 
-1. Choose any of the **configuration presets**, and then choose **Modify** in one or more of the configuration categories to change a group of related configuration options\.
+1. Choose any of the **configuration presets**, and then choose **Edit** in one or more of the configuration categories to change a group of related configuration options\.
 
 1. When you are done making option selections, choose **Create environment**\.
 

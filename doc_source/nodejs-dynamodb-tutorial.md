@@ -64,7 +64,7 @@ You use the Elastic Beanstalk console to launch an Elastic Beanstalk environment
 
 1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
-1. Choose the **Platform** that matches the language used by your application\.
+1. For **Platform**, select the platform and platform branch that match the language used by your application\.
 
 1. For **Application code**, choose **Sample application**\.
 
@@ -121,17 +121,19 @@ Download the source bundle from GitHub if you haven't already: [eb\-node\-expres
 
 **To deploy a source bundle**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Upload and Deploy**\.
+1. On the environment overview page, choose **Upload and deploy**\.
 
 1. Use the on\-screen dialog box to upload the source bundle\.
 
 1. Choose **Deploy**\.
 
-1. When the deployment completes, choose the site URL to open your website in a new tab\.
+1. When the deployment completes, you can choose the site URL to open your website in a new tab\.
 
 The site collects user contact information and uses a DynamoDB table to store the data\. To add an entry, choose **Sign up today**, enter a name and email address, and then choose **Sign Up\!**\. The web app writes the form contents to the table and triggers an Amazon SNS email notification\.
 
@@ -284,17 +286,19 @@ Deploy the nodejs\-tutorial\.zip source bundle to your environment\.
 
 **To deploy a source bundle**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Upload and Deploy**\.
+1. On the environment overview page, choose **Upload and deploy**\.
 
 1. Use the on\-screen dialog box to upload the source bundle\.
 
 1. Choose **Deploy**\.
 
-1. When the deployment completes, choose the site URL to open your website in a new tab\.
+1. When the deployment completes, you can choose the site URL to open your website in a new tab\.
 
 When you deploy, Elastic Beanstalk updates the configuration of the Amazon SNS topic and deletes the DynamoDB table that it created when you deployed the first version of the application\. 
 
@@ -318,13 +322,15 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 **To configure your environment's Auto Scaling group for high availability**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Capacity** configuration category, choose **Modify**\.
+1. In the **Capacity** configuration category, choose **Edit**\.
 
 1. In the **Auto Scaling group** section, set **Min instances** to **2**\.
 
@@ -336,11 +342,13 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 **To terminate your Elastic Beanstalk environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Actions**, and then choose **Terminate Environment**\.
+1. Choose **Environment actions**, and then choose **Terminate environment**\.
 
 1. Use the on\-screen dialog box to confirm environment termination\.
 

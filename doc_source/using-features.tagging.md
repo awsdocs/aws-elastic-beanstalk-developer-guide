@@ -15,9 +15,9 @@ You can specify tags when you create the Elastic Beanstalk environment\. In an e
 
 ## Adding tags during environment creation<a name="using-features.tagging.create"></a>
 
-When you use the Elastic Beanstalk console to create an environment, you can specify tag keys and values on the **Tags** page of the [Create New Environment wizard](environments-create-wizard.md), as shown\.
+When you use the Elastic Beanstalk console to create an environment, you can specify tag keys and values on the **Modify tags** configuration page of the [Create New Environment wizard](environments-create-wizard.md)\.
 
-![\[Tags page where you specify tag keys and values\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-create-tags.png)
+![\[Modify tags configuration page during environment creation in the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-create-tags.png)
 
 If you use the EB CLI to create an environment, use the `--tags` option with [eb create](eb3-create.md) to add tags\.
 
@@ -43,17 +43,21 @@ However, you can't edit the default tags that Elastic Beanstalk applies to your 
 
 **To manage an environment's tags in the Elastic Beanstalk console**
 
-1. Navigate to the [environment management console](environments-console.md) for your environment\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. In the side navigation pane, choose **Tags**\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
+
+1. In the navigation pane, choose **Tags**\.
 
    The tag management page shows the list of tags that currently exist in the environment\.  
 ![\[Tag management page shows tags for the environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-manage-tags.png)
 
 1. Add, update, or delete tags:
-   + To add a tag, enter it into the empty boxes at the bottom of the list\.
+   + To add a tag, enter it into the empty boxes at the bottom of the list\. To add another tag, choose **Add tag** and Elastic Beanstalk adds another pair of empty boxes\.
    + To update a tag's key or value, edit the respective box in the tag's row\.
-   + To delete a tag, choose ![\[Remove tag\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/x.png) next to the tag's value box\.
+   + To delete a tag, choose **Remove** next to the tag's value box\.
 
 1. Choose **Apply**\.
 

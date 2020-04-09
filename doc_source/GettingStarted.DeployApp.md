@@ -21,19 +21,21 @@ The application version that you started this tutorial with is called **Sample A
    + **Ruby \(Passenger Standalone\)** – [ruby\-passenger\-v3\.zip](samples/ruby-passenger-v3.zip)
    + **Ruby \(Puma\)** – [ruby\-puma\-v3\.zip](samples/ruby-puma-v3.zip)
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. From the Elastic Beanstalk applications page, choose **getting\-started\-app**, and then choose **GettingStartedApp\-env**\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. In the **Overview** section, choose **Upload and Deploy**\.
+1. On the environment overview page, choose **Upload and deploy**\.
 
-1. Choose **Choose File**, and then upload the sample application source bundle that you downloaded\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-app-version-upload.png)
+1. Choose **Choose file**, and then upload the sample application source bundle that you downloaded\.  
+![\[Upload and deploy dialog.\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-app-version-upload.png)
 
    The console automatically fills in the **Version label** with a new unique label\. If you type in your own version label, ensure that it's unique\.
 
 1. Choose **Deploy**\.
 
- While Elastic Beanstalk deploys your file to your Amazon EC2 instances, you can view the deployment status on the environment's dashboard\. While the application version is updated, the **Environment Health** status is gray\. When the deployment is complete, Elastic Beanstalk performs an application health check\. When the application responds to the health check, it's considered healthy and the status returns to green\. The environment dashboard shows the new **Running Version**—the name you provided as the **Version label**\.
+ While Elastic Beanstalk deploys your file to your Amazon EC2 instances, you can view the deployment status on the environment's overview\. While the application version is updated, the **Environment Health** status is gray\. When the deployment is complete, Elastic Beanstalk performs an application health check\. When the application responds to the health check, it's considered healthy and the status returns to green\. The environment overview shows the new **Running Version**—the name you provided as the **Version label**\.
 
-Elastic Beanstalk also uploads your new application version and adds it to the table of application versions\. To view the table, choose **getting\-started\-app**, and then choose **Application Versions**\.
+Elastic Beanstalk also uploads your new application version and adds it to the table of application versions\. To view the table, choose **Application versions** under **getting\-started\-app** on the navigation pane\.

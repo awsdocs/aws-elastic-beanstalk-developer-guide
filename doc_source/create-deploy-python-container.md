@@ -1,6 +1,12 @@
 # Using the Elastic Beanstalk Python platform<a name="create-deploy-python-container"></a>
 
-The AWS Elastic Beanstalk Python platform is a set of [environment configurations](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.python) for Python web applications that can run behind an Apache proxy server with WSGI\. Each configuration corresponds to a version of Python, such as Python 3\.4\.
+The AWS Elastic Beanstalk Python platform is a set of [platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.python) for Python web applications that can run behind a proxy server with WSGI\. Each platform branch corresponds to a version of Python, such as Python 3\.4\.
+
+Starting with Amazon Linux 2 platform branches, Elastic Beanstalk provides [Gunicorn](https://gunicorn.org/) as the default WSGI server\.
+
+You can add a `Procfile` to your source bundle to specify and configure the WSGI server for your application\. For details, see [Configuring the WSGI server with a Procfile](python-configuration-procfile.md)\.
+
+You can use the `Pipfile` and `Pipfile.lock` files created by Pipenv to specify Python package dependencies and other requirements\. For details about specifying dependencies, see [Specifying dependencies using a requirements file](python-configuration-requirements.md)\.
 
 Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application, enable log rotation to Amazon S3, and map folders in your application source that contain static files to paths served by the proxy server\.
 
@@ -8,9 +14,11 @@ Platform\-specific configuration options are available in the AWS Management Con
 
 To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
 
+Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration options](command-options.md)\.
+
 For Python packages available from `pip`, you can include a requirements file in the root of your application source code\. Elastic Beanstalk installs any dependency packages specified in a requirements file during deployment\. For details, see [Specifying dependencies using a requirements file](python-configuration-requirements.md)\.
 
-Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration options](command-options.md)\.
+For details about the various ways you can extend an Elastic Beanstalk Linux\-based platform, see [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
 
 ## Configuring your Python environment<a name="create-deploy-python-container-console"></a>
 
@@ -18,13 +26,15 @@ You can use the Elastic Beanstalk console to enable log rotation to Amazon S3, c
 
 **To configure your Python environment in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Software** configuration category, choose **Modify**\.
+1. In the **Software** configuration category, choose **Edit**\.
 
 ### Python settings<a name="python-console-settings"></a>
 + **WSGI Path** – The name of or path to your main application file\. For example, `application.py`, or `django/wsgi.py`\.
@@ -79,18 +89,13 @@ option_settings:
     /html: statichtml
     /images: staticimages
   aws:elasticbeanstalk:container:python:
-    WSGIPath: ebdjango/wsgi.py
+    WSGIPath: ebdjango.wsgi:application
     NumProcesses: 3
     NumThreads: 20
 ```
 
 **Note**  
-
-
-|  | 
-| --- |
-| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
-If you're using an Amazon Linux 2 Python platform version, replace the value for `WSGIPath` with `ebdjango.wsgi:application`\. This value works with the Gunicorn WSGI server\.
+If you're using an Amazon Linux AMI Python platform version \(preceding Amazon Linux 2\), replace the value for `WSGIPath` with `ebdjango/wsgi.py`\. The value in the example works with the Gunicorn WSGI server, which isn't supported on Amazon Linux AMI platform versions\.
 
 Configuration files also support several keys to further [modify the software on your environment's instances](customize-containers-ec2.md)\. This example uses the [packages](customize-containers-ec2.md#linux-packages) key to install Memcached with `yum` and [container commands](customize-containers-ec2.md#linux-container-commands) to run commands that configure the server during deployment:
 
@@ -115,36 +120,3 @@ container_commands:
 ```
 
 Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.
-
-## Amazon Linux 2 considerations<a name="create-deploy-python-container-al2"></a>
-
-
-|  | 
-| --- |
-| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
-
-Elastic Beanstalk provides Amazon Linux 2 Python platform versions\. These platform versions are different than previous Python platform versions based on Amazon Linux AMI in a few ways, both generic \(apply to all Amazon Linux 2 platforms\) and platform specific \(apply to Amazon Linux 2 Python platform versions\)\. For details, see [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
-
-Amazon Linux 2 Python platform versions have some new functionality\.
-+ Elastic Beanstalk supports [Gunicorn](https://gunicorn.org/) as an additional WSGI server option\. Gunicorn is also the default\.
-+ You can add a `Procfile` to your source bundle to specify and configure the WSGI server for your application\. The following example uses a `Procfile` to specify uWSGI as the server and configure it\.  
-**Example Procfile**  
-
-  ```
-  web: uwsgi --http :8000 --wsgi-file application.py --master --processes 4 --threads 2
-  ```
-
-  The following example uses a `Procfile` to configure Gunicorn, the default WSGI server\.  
-**Example Procfile**  
-
-  ```
-  web: gunicorn --bind :8000 --workers 3 --threads 2 project.wsgi:application
-  ```
-**Notes**  
-If you configure any WSGI server other than Gunicorn, be sure to also specify it as a dependency of your application, so that it is installed on your environment instances\. For details about dependency specification, see [Specifying dependencies using a requirements file](python-configuration-requirements.md)\.
-The default port for the WSGI server is 8000\. If you specify a different port number in your `Procfile` command, set the `PORT` [environment property](environments-cfg-softwaresettings.md) to this port number too\.
-
-  When you use a `Procfile`, it overrides `aws:elasticbeanstalk:container:python` namespace options that you set using configuration files\.
-
-  For details about `Procfile` usage, expand the *Buildfile and Procfile* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
-+ You can use the `Pipfile` and `Pipfile.lock` files created by Pipenv to specify Python package dependencies and other requirements\. For details, see [Use Pipenv and `Pipfile` \(Amazon Linux 2\)](python-configuration-requirements.md#python-configuration-requirements.pipenv)\.

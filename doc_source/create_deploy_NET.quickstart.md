@@ -13,7 +13,7 @@ First, use the Create New Application wizard in the Elastic Beanstalk console to
 
 1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
-1. Choose the **Platform** that matches the language used by your application\.
+1. For **Platform**, select the platform and platform branch that match the language used by your application\.
 
 1. For **Application code**, choose **Sample application**\.
 
@@ -25,13 +25,15 @@ When the environment is up and running, add an Amazon RDS database instance that
 
 **To add a DB instance to your environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Database** configuration category, choose **Modify**\.
+1. In the **Database** configuration category, choose **Edit**\.
 
 1. Choose a DB engine, and enter a user name and password\.
 
@@ -43,7 +45,7 @@ Use the AWS Toolkit for Visual Studio to publish your application to Elastic Bea
 
 **To publish your application to Elastic Beanstalk**
 
-1. Ensure that your environment launched successfully by checking the **Health** status in the Elastic Beanstalk console\. It should be **Green**\.
+1. Ensure that your environment launched successfully by checking the **Health** status in the Elastic Beanstalk console\. It should be **Ok** \(green\)\.
 
 1. In Visual Studio, open **BeanstalkDotNetSample\.sln**\.
 **Note**  
@@ -71,7 +73,7 @@ If you haven't done so already, you can get the sample [here](samples/dotnet-asp
    When the application has successfully been deployed, the **Output** box displays **completed successfully**\.  
 ![\[Elastic Beanstalk .NET tutorial output completed successfully\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-visual-studio-output-completed-successfully.png)
 
-1. Return to the Elastic Beanstalk console and choose the name of the application, which appears next to the environment name\.
+1. Return to the Elastic Beanstalk console\. In the navigation pane, choose **Go to environment**\.
 
    Your ASP\.NET application opens in a new tab\.  
 ![\[Elastic Beanstalk .NET tutorial see your ASP.NET application running in the web browser\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-my-asp-net-application.png)
@@ -84,11 +86,13 @@ If you are done working with Elastic Beanstalk for now, you can terminate your \
 
 **To terminate your Elastic Beanstalk environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Actions** and then choose **Terminate Environment**\.
+1. Choose **Environment actions** and then choose **Terminate environment**\.
 
 Elastic Beanstalk cleans up all AWS resources associated with your environment, including EC2 instances, DB instance, load balancer, security groups, CloudWatch alarms, etc\.
 

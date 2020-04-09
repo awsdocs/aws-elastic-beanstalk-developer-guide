@@ -11,11 +11,20 @@ Elastic Beanstalk Windows Server platforms do not support bundle logs\.
 
 To upload rotated logs to Amazon S3, the instances in your environment must have an [instance profile](concepts-roles-instance.md) with permission to write to your Elastic Beanstalk Amazon S3 bucket\. These permissions are included in the default instance profile that Elastic Beanstalk prompts you to create when you launch an environment in the Elastic Beanstalk console for the first time\.
 
-To retrieve logs in the environment management console, navigate to **Logs**, choose **Request Logs**, and then choose the type of logs to retrieve\. To get tail logs, choose **Last 100 Lines**\. To get bundle logs, choose **Full Logs**\.
+**To retrieve instance logs**
 
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
+
+1. In the navigation pane, choose **Logs**\.
+
+1. Choose **Request Logs**, and then choose the type of logs to retrieve\. To get tail logs, choose **Last 100 Lines**\. To get bundle logs, choose **Full Logs**\.  
 ![\[Environment logs page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-logs.png)
 
-When Elastic Beanstalk finishes retrieving your logs, choose **Download**\.
+1. When Elastic Beanstalk finishes retrieving your logs, choose **Download**\.
 
 Elastic Beanstalk stores tail and bundle logs in an Amazon S3 bucket, and generates a presigned Amazon S3 URL that you can use to access your logs\. Elastic Beanstalk deletes the files from Amazon S3 after a duration of 15 minutes\.
 

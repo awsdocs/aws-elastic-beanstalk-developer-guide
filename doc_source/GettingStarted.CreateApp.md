@@ -10,7 +10,9 @@ To create your example application, you'll use the **Create a web app** console 
 
 1. Open the Elastic Beanstalk console using this link: [https://console.aws.amazon.com/elasticbeanstalk/home#/gettingStarted?applicationName=getting-started-app](https://console.aws.amazon.com/elasticbeanstalk/home#/gettingStarted?applicationName=getting-started-app)
 
-1. for **Platform**, choose a platform, and then choose **Create application**\.
+1. Optionally add [application tags](applications-tagging.md)\.
+
+1. For **Platform**, choose a platform, and then choose **Create application**\.
 
 To run the example application on AWS resources, Elastic Beanstalk takes the following actions\. They take about five minutes to complete\.
 

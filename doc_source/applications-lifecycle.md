@@ -16,21 +16,25 @@ You can set the lifecycle settings through the Elastic Beanstalk CLI and APIs\. 
 
 ## Setting the application lifecycle settings in the console<a name="applications-lifecycle-console"></a>
 
-You can specify the lifecycle settings in the console\.
+You can specify the lifecycle settings in the Elastic Beanstalk console\.
 
-**To specify your application lifecycle settings\.**
+**To specify your application lifecycle settings**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Choose an application\.
+1. In the navigation pane, choose **Applications**, and then choose your application's name on the list\.
+**Note**  
+If you have many applications, use the search bar to filter the application list\.
 
-1. In the navigation pane, select **Application versions**\.
+1. In the navigation pane, find your application's name and choose **Application versions**\.
 
-1. Select **Settings**\.
+1. Choose **Settings**\.
 
 1. Use the on\-screen form to configure application lifecycle settings\.
 
-1. Choose **Save** to save your application lifecycle settings\.
+1. Choose **Save**\.
+
+![\[Application lifecycle settings\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/app-version-lifecycle.png)
 
 On the settings page, you can do the following\.
 + Configure lifecycle settings based on the total count of application versions or the age of application versions\.

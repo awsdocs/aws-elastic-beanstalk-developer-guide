@@ -1,40 +1,37 @@
 # Creating an Elastic Beanstalk environment<a name="using-features.environments"></a>
 
-You can deploy multiple AWS Elastic Beanstalk environments when you need to run multiple versions of an application\. For example, you might have development, integration, and production environments\.
+An AWS Elastic Beanstalk *environment* is a collection of AWS resources running an application version\. You can deploy multiple environments when you need to run multiple versions of an application\. For example, you might have development, integration, and production environments\.
 
-**Note**  
+The following procedure launches a new environment running the default application\. These steps are simplified to get your environment up and running quickly, using default option values\. For detailed instructions with descriptions of the many options you can use to configure the resources that Elastic Beanstalk deploys on your behalf, see [The create new environment wizard](environments-create-wizard.md)\.
+
+**Notes**  
 For instructions on creating and managing environments with the EB CLI, see [Managing Elastic Beanstalk environments with the EB CLI](eb-cli3-getting-started.md)\.
-
-The **Create New Environment** wizard in the Elastic Beanstalk console guides you through the creation of an environment step by step, with a bevy of options for configuring the resources that Elastic Beanstalk deploys on your behalf\. If you are just getting started, you can use the default values for many of these options without issue\.
-
-**Note**  
 Creating an environment requires the permissions in the Elastic Beanstalk full access managed policy\. See [Elastic Beanstalk user policy](concepts-roles-user.md) for details\.
-
-Follow this procedure to launch a new environment running the default application\. These steps are simplified to get your environment up and running quickly\. See [The create new environment wizard](environments-create-wizard.md) for more detailed instructions with descriptions of all of the available options\.
 
 **To launch an environment with a sample application \(console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Choose an existing application or [create one](applications.md)\.
+1. In the navigation pane, choose **Applications**, and then choose an existing application's name on the list or [create one](applications.md)\.
 
-1. From the **Actions** menu in the upper\-right corner, choose **Create environment**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/application-actions-createnewenvironment.png)
+1. On the application overview page, choose **Create a new environment**\.  
+![\[The application overview page with a list of application environments on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-mgmt-environments.png)
 
 1. Choose the **Web server environment** or **Worker environment** [environment tier](concepts.md#concepts-tier)\. You can't change an environment's tier after creation\.
 **Note**  
-The [\.NET on Windows Server platform](create_deploy_NET.md) doesn't support the worker environment tier\.
+The [\.NET on Windows Server platform](create_deploy_NET.md) doesn't support the worker environment tier\.  
+![\[The Select environment tier dialog on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-choosetier.png)
 
-1. Choose a **Platform** that matches the language used by your application\.
+1. For **Platform**, select the platform and platform branch that match the language used by your application\.
 **Note**  
-Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most of the platforms that are listed\. By default, the console selects the latest version of the language, web container, or framework [supported by Elastic Beanstalk](concepts.platforms.md)\. If your application requires an earlier version, choose **Configure more options**, as described in step 7\.
+Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most of the platforms that are listed\. By default, the console selects the recommended version for the platform and platform branch you choose\. If your application requires different version, you can select it here, or by choosing **Configure more options**, as described in step 7\. For information about supported platform versions, see [Elastic Beanstalk supported platforms](concepts.platforms.md)\.
 
-1. For **App code**, choose **Sample application**\.
+1. For **Application code**, choose **Sample application**\.
 
 1. To further customize your environment, choose **Configure more options**\. You can set the following options only during environment creation:
    + Environment name
    + Domain name
-   + Platform version \(configuration\)
+   + Platform version
    + VPC
    + Tier
 
@@ -47,7 +44,7 @@ Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most o
 
 1. Choose **Create environment**\.
 
-While Elastic Beanstalk creates your environment, you are redirected to the [Elastic Beanstalk console](environments-console.md)\. When the environment health turns green, choose on the URL next to the environment name to view the running application\. This URL is generally accessible from the Internet unless you configure your environment to use a [custom VPC with an internal load balancer](environments-create-wizard.md#environments-create-wizard-network)\.
+While Elastic Beanstalk creates your environment, you are redirected to the [Elastic Beanstalk console](environments-console.md)\. When the environment health turns green, choose the URL next to the environment name to view the running application\. This URL is generally accessible from the internet unless you configure your environment to use a [custom VPC with an internal load balancer](environments-create-wizard.md#environments-create-wizard-network)\.
 
 **Topics**
 + [The create new environment wizard](environments-create-wizard.md)

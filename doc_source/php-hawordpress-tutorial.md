@@ -148,14 +148,14 @@ To prepare to deploy WordPress using AWS Elastic Beanstalk, you must copy the Wo
 Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. After you launch the environment, you can configure it to connect to the database, then deploy the WordPress code to the environment\.
 
 In the following steps, you'll use the Elastic Beanstalk console to:
-+ Create an Elastic Beanstalk application using the preconfigured **PHP** platform\.
++ Create an Elastic Beanstalk application using the managed **PHP** platform\.
 + Accept the default settings and sample code\.
 
 **To launch an environment \(console\)**
 
 1. Open the Elastic Beanstalk console using this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
-1. Choose the **Platform** that matches the language used by your application\.
+1. For **Platform**, select the platform and platform branch that match the language used by your application\.
 
 1. For **Application code**, choose **Sample application**\.
 
@@ -165,7 +165,7 @@ In the following steps, you'll use the Elastic Beanstalk console to:
 
 Environment creation takes about five minutes and creates the following resources\. 
 
-### Elastic Beanstalk created resources<a name="collapsible-section-EB-resources"></a>
+### Elastic Beanstalk created resources<a name="php-hawordpress-tutorial-launch.EB-resources"></a>
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
   Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
@@ -193,13 +193,15 @@ Add the security group of your DB instance to your running environment\. This pr
 + Do one of the following:
   + To add a security group using the Elastic Beanstalk console
 
-    1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+    1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-    1. Navigate to the [management page](environments-console.md) for your environment\.
+    1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-    1. Choose **Configuration**\.
+    1. In the navigation pane, choose **Configuration**\.
 
-    1. In the **Instances** configuration category, choose **Modify**\.
+    1. In the **Instances** configuration category, choose **Edit**\.
 
     1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
@@ -214,17 +216,19 @@ The WordPress application uses a default set of properties that match the ones t
 
 **To configure environment properties for an Amazon RDS DB instance**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Software** configuration category, choose **Modify**\.
+1. In the **Software** configuration category, choose **Edit**\.
 
 1. In the **Environment properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following names and values\. You can find all values, except for your password, in the [RDS console](https://console.aws.amazon.com/rds/home)\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/php-hawordpress-tutorial.html)  
-![\[Environment properties section with RDS properties added\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
+![\[Environment properties configuration section with RDS properties added\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
 
 1. Choose **Apply**\.
 
@@ -282,25 +286,29 @@ Upload the source bundle to Elastic Beanstalk to deploy WordPress to your enviro
 
 **To deploy a source bundle**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Upload and Deploy**\.
+1. On the environment overview page, choose **Upload and deploy**\.
 
 1. Use the on\-screen dialog box to upload the source bundle\.
 
 1. Choose **Deploy**\.
 
-1. When the deployment completes, choose the site URL to open your website in a new tab\.
+1. When the deployment completes, you can choose the site URL to open your website in a new tab\.
 
 ## Install WordPress<a name="php-hawordpress-tutorial-install"></a>
 
 **To complete your WordPress installation**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
 1. Choose the environment URL to open your site in a browser\. You are redirected to a WordPress installation wizard because you haven't configured the site yet\.
 
@@ -316,13 +324,15 @@ The hash salt can be any value that meets the [environment property requirements
 
 **To update environment properties**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
 1. On the navigation pane, choose **Configuration**\.
 
-1. Under **Software**, choose **Modify**\.
+1. Under **Software**, choose **Edit**\.
 
 1. For `Environment properties`, modify the following properties:
    + `AUTH_KEY` – The value chosen for `AUTH_KEY`\.
@@ -363,17 +373,19 @@ Upload the source bundle to Elastic Beanstalk to deploy WordPress to your enviro
 
 **To deploy a source bundle**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Upload and Deploy**\.
+1. On the environment overview page, choose **Upload and deploy**\.
 
 1. Use the on\-screen dialog box to upload the source bundle\.
 
 1. Choose **Deploy**\.
 
-1. When the deployment completes, choose the site URL to open your website in a new tab\.
+1. When the deployment completes, you can choose the site URL to open your website in a new tab\.
 
 ## Configure your Auto Scaling group<a name="php-hawordpress-tutorial-autoscaling"></a>
 
@@ -381,13 +393,15 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 **To configure your environment's Auto Scaling group for high availability**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Capacity** configuration category, choose **Modify**\.
+1. In the **Capacity** configuration category, choose **Edit**\.
 
 1. In the **Auto Scaling group** section, set **Min instances** to **2**\.
 
@@ -418,11 +432,13 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 **To terminate your Elastic Beanstalk environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Actions**, and then choose **Terminate Environment**\.
+1. Choose **Environment actions**, and then choose **Terminate environment**\.
 
 1. Use the on\-screen dialog box to confirm environment termination\.
 

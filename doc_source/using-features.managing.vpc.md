@@ -4,7 +4,7 @@
 
 You can launch your environment in a custom VPC to customize networking and security settings\. Elastic Beanstalk lets you choose which subnets to use for your resources, and how to configure IP addresses for the instances and load balancer in your environment\. An environment is locked to a VPC when you create it, but you can change subnet and IP address settings on a running environment\.
 
-For instructions on creating a VPC for use with Elastic Beanstalk, see [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md)\.
+For instructions on creating a VPC for use with Elastic Beanstalk, see [Using Elastic Beanstalk with Amazon VPC](vpc.md)\.
 
 ## Configuring VPC settings in the Elastic Beanstalk console<a name="environments-cfg-vpc-console"></a>
 
@@ -12,13 +12,15 @@ If you chose a custom VPC when you created your environment, you can modify its 
 
 **To configure your environment's VPC settings**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Network** configuration category, choose **Modify**\.
+1. In the **Network** configuration category, choose **Edit**\.
 
 The following settings are available\.
 
@@ -28,12 +30,13 @@ The following settings are available\.
 + [Load balancer subnets](#environments-cfg-vpc-console-lbsubnets)
 + [Instance public IP address](#environments-cfg-vpc-console-ec2ip)
 + [Instance subnets](#environments-cfg-vpc-console-ec2subnets)
-+ [Instance security groups](#environments-cfg-vpc-console-ec2sg)
 + [Database subnets](#environments-cfg-vpc-console-dbsubnets)
 
 ### VPC<a name="environments-cfg-vpc-console-vpc"></a>
 
 Choose a VPC for your environment\. You can only change this setting during environment creation\.
+
+![\[VPC section in the Modify network configuration page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-vpc-console-vpc.png)
 
 ### Load balancer visibility<a name="environments-cfg-vpc-console-lbvisibility"></a>
 
@@ -43,6 +46,8 @@ For a load balanced environment, choose the load balancer scheme\. By default, t
 
 For a load balanced environment, choose the subnets that your load balancer uses to serve traffic\. For a public application, choose public subnets\. Use subnets in multiple availability zones for high availability\. For an internal application, choose private subnets and disable load balancer visibility\.
 
+![\[Load balancer settings section in the Modify network configuration page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-vpc-console-lb.png)
+
 ### Instance public IP address<a name="environments-cfg-vpc-console-ec2ip"></a>
 
 If you choose public subnets for your application instances, enable public IP addresses to make them routable from the Internet\.
@@ -51,9 +56,7 @@ If you choose public subnets for your application instances, enable public IP ad
 
 Choose subnets for your application instances\. Choose at least one subnet for each availability zone that your load balancer uses\. If you choose private subnets for your instances, your VPC must have a NAT gateway in a public subnet that the instances can use to access the Internet\.
 
-### Instance security groups<a name="environments-cfg-vpc-console-ec2sg"></a>
-
-Add security groups to your application instances\. When you create an environment, Elastic Beanstalk creates a security group for your instances and assigns it automatically\. You can add additional security groups to give your instances access to other AWS resources such as an external Amazon RDS database\.
+![\[Instance settings section in the Modify network configuration page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-vpc-console-ec2.png)
 
 ### Database subnets<a name="environments-cfg-vpc-console-dbsubnets"></a>
 

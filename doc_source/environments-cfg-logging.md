@@ -14,18 +14,21 @@ To view instance logs, you can enable instance log rotation and log streaming in
 
 **To configure instance log rotation and log streaming in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Software** configuration category, choose **Modify**\.
+1. In the **Software** configuration category, choose **Edit**\.
 
-1. Under **S3 log storage**, choose **Rotate logs** to enable uploading rotated logs to Amazon S3\.
+1. In the **S3 log storage** section, select **Rotate logs** to enable uploading rotated logs to Amazon S3\.  
+![\[Amazon S3 log storage settings on the Modify software configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/log-streaming-s3.png)
 
-1. Under **Instance log streaming to CloudWatch Logs**, configure the following settings:
-   + **Log streaming** – Choose to enable log streaming\.
+1. in the **Instance log streaming to CloudWatch Logs** section, configure the following settings:
+   + **Log streaming** – Select to enable log streaming\.
    + **Retention** – Specify the number of days to retain logs in CloudWatch Logs\.
    + **Lifecycle** – Set to **Delete logs upon termination** to delete logs from CloudWatch Logs immediately if the environment is terminated, instead of waiting for them to expire\.
 
@@ -33,7 +36,7 @@ To view instance logs, you can enable instance log rotation and log streaming in
 
 After you enable log streaming, you can return to the **Software** configuration category or page and find the **Log Groups** link\. Click this link to see your instance logs in the CloudWatch console\.
 
-![\[CloudWatch logs settings for instance log streaming\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/log-streaming-screen.png)
+![\[CloudWatch Logs settings on the Modify software configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/log-streaming-screen.png)
 
 ## Configuring environment health log viewing<a name="environments-cfg-logging-health-console"></a>
 
@@ -41,13 +44,15 @@ To view environment health logs, you can enable environment health log streaming
 
 **To configure environment health log streaming in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Monitoring** configuration category, choose **Modify**\.
+1. In the **Monitoring** configuration category, choose **Edit**\.
 
 1. Under **Health event streaming to CloudWatch Logs**, configure the following settings:
    + **Log streaming** – Choose to enable log streaming\.

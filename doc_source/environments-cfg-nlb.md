@@ -22,7 +22,11 @@ You can use the Elastic Beanstalk console to configure a Network Load Balancer's
 
 **To configure a Network Load Balancer in the Elastic Beanstalk console during environment creation**
 
-1. Use the [Create New Environment wizard](environments-create-wizard.md) to start creating your environment\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+
+1. In the navigation pane, choose **Environments**\.
+
+1. Choose [Create a new environment](environments-create-wizard.md) to start creating your environment\.
 
 1. On the wizard's main page, before choosing **Create environment**, choose **Configure more options**\.
 
@@ -30,7 +34,7 @@ You can use the Elastic Beanstalk console to configure a Network Load Balancer's
 
    Alternatively, in the **Capacity** configuration category, configure a **Load balanced** environment type\. For details, see [Capacity](environments-create-wizard.md#environments-create-wizard-capacity)\.
 
-1. In the **Load balancer** configuration category, choose **Modify**\.
+1. In the **Load balancer** configuration category, choose **Edit**\.
 
 1. Select the **Network Load Balancer** option, if it isn't already selected\.  
 ![\[Elastic Load Balancing configuration page - choosing load balancer type\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-nlb-type-chooser.png)
@@ -43,15 +47,17 @@ You can use the Elastic Beanstalk console to configure a Network Load Balancer's
 
 **To configure a running environment's Network Load Balancer in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
-
-1. Choose **Configuration**\.
-
-1. In the **Load balancer** configuration category, choose **Modify**\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
 **Note**  
-If the **Load balancer** configuration category doesn't have a **Modify** button, your environment doesn't have a load balancer\. To learn how to set one up, see [Changing environment type](using-features-managing-env-types.md#using-features.managing.changetype)\.
+If you have many environments, use the search bar to filter the environment list\.
+
+1. In the navigation pane, choose **Configuration**\.
+
+1. In the **Load balancer** configuration category, choose **Edit**\.
+**Note**  
+If the **Load balancer** configuration category doesn't have an **Edit** button, your environment doesn't have a load balancer\. To learn how to set one up, see [Changing environment type](using-features-managing-env-types.md#using-features.managing.changetype)\.
 
 1. Make the Network Load Balancer configuration changes that your environment requires\.
 

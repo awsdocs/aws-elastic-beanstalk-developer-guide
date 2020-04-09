@@ -56,4 +56,4 @@ Elastic Beanstalk needs to be able to connect to the instances in your environme
   + If using a NAT instance, configure the security groups for the NAT instance and Amazon EC2 instances to enable Internet communication\.
 + For a load\-balancing, autoscaling environment in an Amazon VPC that has one public subnet, no additional configuration is required because the Amazon EC2 instances are configured with a public IP address that enables the instances to communicate with the Internet\.
 
-For more information about using Elastic Beanstalk with Amazon VPC, see [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md)\.
+For more information about using Elastic Beanstalk with Amazon VPC, see [Using Elastic Beanstalk with Amazon VPC](vpc.md)\.

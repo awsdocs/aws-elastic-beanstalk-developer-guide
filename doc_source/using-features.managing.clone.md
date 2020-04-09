@@ -9,21 +9,21 @@ Elastic Beanstalk doesn't include any unmanaged changes to resources in the clon
 
 **To clone an environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. From the region list, select the region that includes the environment that you want to work with\.
-
-1. Navigate to the [management page](environments-console.md) for your environment\.
-
-1. On the environment dashboard, choose **Actions**, and then do one of the following: 
-   + Choose **Clone Environment** to clone the environment without any changes to the solution stack version\.
-   + Choose **Clone with Latest Platform** to clone the environment, but with a newer version of the original environment's solution stack\.
-
-1. On the **Clone Environment** page, review the information in the **Original Environment** section to verify that you chose the environment from which you want to create a clone\.
-
-1. In the **New Environment** section, you can optionally change the **Environment name**, **Environment URL**, **Description**, **Platform**, and **Service role** values that Elastic Beanstalk automatically set based on the original environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
 **Note**  
-For **Platform**, only solution stacks with the same language and web server configuration are shown\. If a newer version of the solution stack used with the original environment is available, you are prompted to update, but you cannot choose a different stack, even if it is for a different version of the same language\. For more information, see [Elastic Beanstalk supported platforms](concepts.platforms.md)\.  
+If you have many environments, use the search bar to filter the environment list\.
+
+1. On the environment overview page, choose **Environment actions**, and then do one of the following: 
+   + Choose **Clone environment** to clone the environment without any changes to the solution stack version\.
+   + Choose **Clone with latest platform** to clone the environment, but with a newer version of the original environment's solution stack\.
+
+1. On the **Clone environment** page, review the information in the **Original Environment** section to verify that you chose the environment from which you want to create a clone\.
+
+1. In the **New Environment** section, you can optionally change the **Environment name**, **Environment URL**, **Description**, **Platform version**, and **Service role** values that Elastic Beanstalk automatically set based on the original environment\.
+**Note**  
+If the platform version used in the original environment isn't the one recommended for use in the platform branch, you are warned that a different platform version is recommended\. Choose **Platform version**, and you can see the recommended platform version on the list—for example, **3\.3\.2 \(Recommended\)**\.  
 ![\[Elastic Beanstalk clone environment configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-clone-env-latest.png)
 
 1. When you are ready, choose **Clone**\.

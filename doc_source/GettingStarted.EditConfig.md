@@ -10,22 +10,21 @@ In this example of a configuration change, you edit your environment's capacity 
 
 **To change your environment's capacity**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Capacity** configuration category, choose **Modify**\.  
-![\[Capacity configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-capacity.png)
+1. In the **Capacity** configuration category, choose **Edit**\.
 
 1. In the **Auto Scaling group** section, change **Environment type** to **Load balanced**\.
 
 1. In the **Instances** row, change **Max** to **4**, and then change **Min** to **2**\.
 
-1. On the **Modify capacity** page, choose **Save**\.
-
-1. On the **Configuration overview** page, choose **Apply**\.
+1. Choose **Apply**\.
 
 1. A warning tells you that this update replaces all of your current instances\. Choose **Confirm**\.
 
@@ -41,7 +40,7 @@ When the environment update is complete and the environment is ready, verify you
 
 1. In the navigation pane, choose **Health**\.
 
-1. Look at the **Enhanced Health Overview** page\.
+1. Look at the **Enhanced health overview** page\.
 
-   You can see that the **Total** number of instances is **2**\. You can also see that two Amazon EC2 instances are listed under the **Overall** line\. Your environment capacity has increased to two instances\.  
+   You can see that two Amazon EC2 instances are listed following the **Overall** line\. Your environment capacity has increased to two instances\.  
 ![\[Enhanced health overview page on the Elastic Beanstalk console showing two Amazon EC2 instances\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/gettingstarted-health.png)

@@ -1,11 +1,12 @@
 # Customizing software on Linux servers<a name="customize-containers-ec2"></a>
 
-You may want to customize and configure the software that your application depends on\. These files could be either dependencies required by the application—for example, additional packages from the yum repository—or they could be configuration files such as a replacement for `httpd.conf` to override specific settings that are defaulted by Elastic Beanstalk\. 
-
-**Note**  
-YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
+You may want to customize and configure the software that your application depends on\. You can add commands to be executed during instance provisioning; define Linux users and groups; and download or directly create files on your environment instances\. These files might be either dependencies required by the application—for example, additional packages from the yum repository—or they might be configuration files such as a replacement for a proxy configuration file to override specific settings that are defaulted by Elastic Beanstalk\. 
 
 This section describes the type of information you can include in a configuration file to customize the software on your EC2 instances running Linux\. For general information about customizing and configuring your Elastic Beanstalk environments, see [Configuring Elastic Beanstalk environments](customize-containers.md)\. For information about customizing software on your EC2 instances running Windows, see [Customizing software on Windows servers](customize-containers-windows-ec2.md)\.
+
+**Notes**  
+On Amazon Linux 2 platforms, instead of providing files and commands in \.ebextensions configuration files, we highly recommend that you use *Buildfile*\. *Procfile*, and *platform hooks* whenever possible to configure and run custom code on your environment instances during instance provisioning\. For details about these mechanisms, see [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
+YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
 
 Configuration files support the following keys that affect the Linux server your application runs on\.
 
@@ -18,7 +19,7 @@ Configuration files support the following keys that affect the Linux server your
 + [Commands](#linux-commands)
 + [Services](#linux-services)
 + [Container commands](#linux-container-commands)
-+ [Example: Using custom Amazon CloudWatch metrics](customize-containers-cw.md)
++ [Example: Using custom amazon CloudWatch metrics](customize-containers-cw.md)
 
 Keys are processed in the order that they are listed here\.
 

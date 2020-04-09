@@ -3,11 +3,10 @@
 Elastic Beanstalk regularly releases new platform versions to update all Linux\-based and Windows Server\-based [platforms](concepts.platforms.md)\. New platform versions provide updates to existing software components and support for new features and configuration options\. To learn about platforms and platform versions, see [Elastic Beanstalk platforms glossary](platforms-glossary.md)\.
 
 You can use the Elastic Beanstalk console or the EB CLI to update your environment's platform version\. Depending on the platform version you'd like to update to, Elastic Beanstalk recommends one of two methods for performing platform updates\.
-+ [Method 1 – Update your environment's platform version](#using-features.platform.upgrade.config)\. We recommend this method when you're updating to the latest platform version, without a change in runtime, web server, or application server versions, and without a change in the major platform version\. This is the most common and routine platform update\.
-+ [Method 2 – Perform a Blue/Green deployment](#using-features.platform.upgrade.bluegreen)\. We recommend this method when you're updating to a different runtime, web server, application server, or operating system versions, or to a different major platform version\. This is a good approach when you want to take advantage of new runtime capabilities or the latest Elastic Beanstalk functionality\.
++ [Method 1 – Update your environment's platform version](#using-features.platform.upgrade.config)\. We recommend this method when you're updating to the latest platform version within a platform branch—with the same runtime, web server, application server, and operating system, and without a change in the major platform version\. This is the most common and routine platform update\.
++ [Method 2 – Perform a Blue/Green deployment](#using-features.platform.upgrade.bluegreen)\. We recommend this method when you're updating to a platform version in a different platform branch—with a different runtime, web server, application server, or operating system, or to a different major platform version\. This is a good approach when you want to take advantage of new runtime capabilities or the latest Elastic Beanstalk functionality, or when you want to move off of a deprecated or retired platform branch\.
 
-  [Migrating from a legacy platform version](using-features.migration.md) requires a blue/green deployment, because these platform versions are incompatible with currently supported versions\.    
-[\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.platform.upgrade.html)
+  [Migrating from a legacy platform version](using-features.migration.md) requires a blue/green deployment, because these platform versions are incompatible with currently supported versions\.
 
   [Migrating a Linux application to Amazon Linux 2](using-features.migration-al.md) requires a blue/green deployment, because Amazon Linux 2 platform versions are incompatible with previous Amazon Linux AMI platform versions\.
 
@@ -45,7 +44,7 @@ Consider the following cases:
 + If you're migrating your application across major Java with Tomcat platform versions \(v1\.x\.x, v2\.x\.x, and v3\.x\.x\), use [Method 2](#using-features.platform.upgrade.bluegreen)\.
 + If you're updating to a latest platform version with no change in runtime version, application server version, or major version, use [Method 1](#using-features.platform.upgrade.config)\.
 
-## \.NET on Windows Server with IIS<a name="using-features.platform.upgrade.dotnet"></a>
+## \.NET on Windows server with IIS<a name="using-features.platform.upgrade.dotnet"></a>
 
 Consider the following cases:
 + If you're migrating your application to a different Windows operating system version, for example from *Windows Server 2008 R2* to *Windows Server 2016*, use [Method 2](#using-features.platform.upgrade.bluegreen)\.
@@ -82,17 +81,21 @@ Consider the following cases:
 
 ## Method 1 – Update your environment's platform version<a name="using-features.platform.upgrade.config"></a>
 
-Use this method to update to the latest version of your environment's platform\. If you've previously created an environment using an older platform version, or upgraded your environment from an older version, you can also use this method to revert to a previous platform version\.
+Use this method to update to the latest version of your environment's platform branch\. If you've previously created an environment using an older platform version, or upgraded your environment from an older version, you can also use this method to revert to a previous platform version, provided that it's in the same platform branch\.
 
 **To update your environment's platform version**
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. In the **Overview** section, under **Platform**, choose **Change**\.  
-![\[Elastic Beanstalk newer platform available\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-dashboard-changetonewplatform.png)
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose a **Platform Version**\. The newest platform version is selected automatically, but you can update to any version that you've used in the past\.  
-![\[Elastic Beanstalk update platform version confirmation\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-updateplatform-rollingon.png)
+1. On the environment overview page, under **Platform**, choose **Change**\.  
+![\[Elastic Beanstalk newer platform available\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-platform-change.png)
+
+1. On the **Update platform version** dialog, select a platform version\. The newest \(recommended\) platform version in the branch is selected automatically\. You can update to any version that you've used in the past\.  
+![\[Elastic Beanstalk update platform version confirmation\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-update-platform-version.png)
 
 1. Choose **Save**\.
 
@@ -100,7 +103,7 @@ To further simplify platform updates, Elastic Beanstalk can manage them for you\
 
 ## Method 2 – Perform a Blue/Green deployment<a name="using-features.platform.upgrade.bluegreen"></a>
 
-Use this method to update to a different runtime, web server, or application server versions, or to a different major platform version\. This is typically necessary when you want to take advantage of new runtime capabilities or the latest Elastic Beanstalk functionality\.
+Use this method to update to a different platform branch—with a different runtime, web server, application server, or operating system, or to a different major platform version\. This is typically necessary when you want to take advantage of new runtime capabilities or the latest Elastic Beanstalk functionality\. It's also required when you're migrating off of a deprecated or retired platform branch\.
 
 When you migrate across major platform versions or to platform versions with major component updates, there's a greater likelihood that your application, or some aspects of it, might not function as expected on the new platform version, and might require changes\.
 

@@ -12,7 +12,7 @@ Configuration changes that modify the [launch configuration](command-options-gen
 During managed platform updates with instance replacement enabled, immutable updates, and deployments with immutable updates enabled all instances are replaced\. This causes all accumulated [Amazon EC2 Burst Balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\.
 
 
-**Supported Update Types**  
+**Supported update types**  
 
 | Rolling update setting | Load balanced environments | Single\-instance environments | Legacy Windows server environments† | 
 | --- | --- | --- | --- | 

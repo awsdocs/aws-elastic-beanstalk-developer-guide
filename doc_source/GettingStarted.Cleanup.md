@@ -6,30 +6,32 @@ Congratulations\! You have successfully deployed a sample application to the AWS
 
 1. Delete all application versions\.
 
-   1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+   1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-   1. On the Elastic Beanstalk applications page, choose **getting\-started\-app**\.
+   1. In the navigation pane, choose **Applications**, and then choose **getting\-started\-app**\.
 
-   1. In the navigation pane, choose **Application versions**\.
+   1. In the navigation pane, find your application's name and choose **Application versions**\.
 
-   1. On the **Application Versions** page, select all application versions that you want to delete, and then choose **Delete**\.
+   1. On the **Application versions** page, select all application versions that you want to delete\.
 
-   1. Confirm that you want to delete those versions by choosing **Delete**\.
+   1. Choose **Actions**, and then choose **Delete**\.
 
-   1. Choose **Done**\.
+   1. Turn on **Delete versions from Amazon S3**\.
+
+   1. Choose **Delete**, and then choose **Done**\.
 
 1. Terminate the environment\.
 
-   1. Open the environment dashboard by choosing **getting\-started\-app**, and then choosing **GettingStartedApp\-env**\.
+   1. In the navigation pane, choose **getting\-started\-app**, and then choose **GettingStartedApp\-env** in the environment list\.
 
-   1. Choose **Actions**, and then choose **Terminate Environment**\.
+   1. Choose **Environment actions**, and then choose **Terminate Environment**\.
 
    1. Confirm that you want to terminate **GettingStartedApp\-env** by typing the environment name, and then choose **Terminate**\.
 
 1. Delete the getting\-started\-app application\.
 
-   1. Open the main Elastic Beanstalk dashboard by choosing **Elastic Beanstalk** in the upper left of the environment dashboard\.
+   1. In the navigation pane, choose the **getting\-started\-app**\.
 
-   1. On the Elastic Beanstalk applications page, choose **Actions** for the **getting\-started\-app** application, and then choose **Delete application**\.
+   1. Choose **Actions**, and then choose **Delete application**\.
 
    1. Confirm that you want to delete **getting\-started\-app** by typing the application name, and then choose **Delete**\.

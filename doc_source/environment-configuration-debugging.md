@@ -38,15 +38,17 @@ You can enable the X\-Ray daemon on a running environment in the Elastic Beansta
 
 **To enable debugging in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Software** configuration category, choose **Modify**\.
+1. In the **Software** configuration category, choose **Edit**\.
 
-1. For **X\-Ray Daemon**, choose **Enabled**\.
+1. In the **AWS X\-Ray** section, select **X\-Ray daemon**\.
 
 1. Choose **Apply**\.
 

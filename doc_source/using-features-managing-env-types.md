@@ -21,20 +21,21 @@ You can change your environment type to a single\-instance or load\-balancing, a
 
 **To change an environment's type**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Capacity** category, choose **Modify**\.  
-![\[The capacity configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-scaling.png)
+1. In the **Capacity** category, choose **Edit**\.
 
 1. From the **Environment Type** list, select the type of environment that you want\.  
-![\[The Auto Scaling group section of the modify capacity page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-capacity.png)
-
-1. If your environment is in a VPC, select subnets to place Elastic Load Balancing and Amazon EC2 instances in\. Each Availability Zone that your application runs in must have both\. See [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md) for details\.
+![\[The Auto Scaling group section of the modify capacity page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/using-features-managing-env-types.png)
 
 1. Choose **Save**\.
 
    It can take several minutes for the environment to update while Elastic Beanstalk provisions AWS resources\.
+
+If your environment is in a VPC, select subnets to place Elastic Load Balancing and Amazon EC2 instances in\. Each Availability Zone that your application runs in must have both\. See [Using Elastic Beanstalk with Amazon VPC](vpc.md) for details\.

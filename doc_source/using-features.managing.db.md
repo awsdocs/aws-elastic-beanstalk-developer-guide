@@ -1,6 +1,6 @@
 # Adding a database to your Elastic Beanstalk environment<a name="using-features.managing.db"></a>
 
-Elastic Beanstalk provides integration with Amazon Relational Database Service \(Amazon RDS\) to help you add a database instance to your Elastic Beanstalk environment\. You can use Elastic Beanstalk to add a MySQL, PostgreSQL, Oracle, or SQL Server database to your environment during or after environment creation\. When you add a database instance to your environment, Elastic Beanstalk provides connection information to your application by setting environment properties for the database hostname, port, user name, password, and database name\.
+Elastic Beanstalk provides integration with [Amazon Relational Database Service \(Amazon RDS\)](https://aws.amazon.com/rds/) to help you add a database instance to your Elastic Beanstalk environment\. You can use Elastic Beanstalk to add a MySQL, PostgreSQL, Oracle, or SQL Server database to your environment during or after environment creation\. When you add a database instance to your environment, Elastic Beanstalk provides connection information to your application by setting environment properties for the database hostname, port, user name, password, and database name\.
 
 A database instance that is part of your environment is tied to the lifecycle of your environment\. You can't remove it from your environment once added\. If you terminate the environment, the database instance is terminated as well\. You can configure Elastic Beanstalk to save a snapshot of the database when you terminate your environment, and restore a database from a snapshot when you add a DB instance to an environment\. You might incur charges for storing database snapshots\. For more information, see the *Backup Storage* section of [Amazon RDS Pricing](https://aws.amazon.com/rds/pricing/)\.
 
@@ -18,13 +18,15 @@ You can add a DB instance to your environment by using the Elastic Beanstalk con
 
 **To add a DB instance to your environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Database** configuration category, choose **Modify**\.
+1. In the **Database** configuration category, choose **Edit**\.
 
 1. Choose a DB engine, and enter a user name and password\.
 
@@ -74,13 +76,15 @@ You can view and modify configuration settings for your DB instance in the **Dat
 
 **To configure your environment's DB instance in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Database** configuration category, choose **Modify**\.
+1. In the **Database** configuration category, choose **Edit**\.
 
 You can modify the **Instance class**, ****Storage**, Password**, **Retention**, and **Availability** settings after database creation\. If you change the instance class, Elastic Beanstalk re\-provisions the DB instance\.
 

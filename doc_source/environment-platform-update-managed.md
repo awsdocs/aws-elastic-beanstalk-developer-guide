@@ -5,7 +5,7 @@ AWS Elastic Beanstalk regularly releases [platform updates](using-features.platf
 **Note**  
 This feature isn't available on [Windows Server platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) earlier than version 2 \(v2\)\.
 
-You can configure your environment to automatically apply [patch version updates](#environment-platform-update-managed-versioning), or both patch and minor version updates\. Managed platform updates don't support major version updates, which can introduce changes that are backward incompatible\.
+You can configure your environment to automatically apply [patch version updates](#environment-platform-update-managed-versioning), or both patch and minor version updates\. Managed platform updates don't support updates across platform branches \(updates to different major versions of platform components such as operating system, runtime, or Elastic Beanstalk components\), because these can introduce changes that are backward incompatible\.
 
 You can also configure Elastic Beanstalk to replace all instances in your environment during the maintenance window, even if a platform update isn't available\. Replacing all instances in your environment is helpful if your application encounters bugs or memory issues when running for a long period\.
 
@@ -15,20 +15,22 @@ For an existing environment, use the Elastic Beanstalk console anytime to config
 
 **To configure managed platform updates**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Managed Updates** category, choose **Modify**\.  
-![\[Managed updates configuration category on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-managedupdates.png)
+1. In the **Managed updates** category, choose **Edit**\.
 
 1. Disable or enable **Managed updates**\.
 
 1. If managed updates are enabled, select a maintenance window, and then select an **Update level**\.
 
-1. \(Optional\) Select **Instance replacement** to enable weekly instance replacement\.
+1. \(Optional\) Select **Instance replacement** to enable weekly instance replacement\.  
+![\[Modify managed updates configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-platform-update-managed.png)
 
 1. Choose **Apply**\.
 
@@ -79,15 +81,17 @@ During managed platform updates with instance replacement enabled, immutable upd
 
 ## Managing managed updates<a name="environment-platform-update-managed-managing"></a>
 
-The Elastic Beanstalk console shows detailed information about managed updates on the **Managed Updates** page\.
+The Elastic Beanstalk console shows detailed information about managed updates on the **Managed updates overview** page\.
 
 **To view information about managed updates \(console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Managed Updates**\.
+1. Choose **Managed updates**\.
 
 The **Managed Updates Overview** section provides information about scheduled and pending managed updates\. The **History** section lists successful updates and failed attempts\.
 
@@ -95,17 +99,17 @@ You can choose to apply a scheduled update immediately, instead of waiting until
 
 **To apply a managed platform update immediately \(console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Managed Updates**\.
+1. Choose **Managed updates**\.
 
-1. Choose **Apply now**\.  
-![\[The managed updates page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-managedupdateoverview.png)
+1. Choose **Apply now**\.
 
-1. Choose **Apply**\.  
-![\[The apply managed update page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-management-applymanagedaction.png)
+1. Verify the update details, and then choose **Apply**\.
 
 When you apply a managed platform update outside of the maintenance window, Elastic Beanstalk performs an immutable update\. If you update the environment's platform from the [Dashboard](environments-console.md#environments-dashboard), or by using a different client, Elastic Beanstalk uses the update type that you selected for [configuration changes](environments-updating.md)\.
 

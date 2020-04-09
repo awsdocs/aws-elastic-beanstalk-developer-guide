@@ -9,7 +9,6 @@ AWS Elastic Beanstalk can launch single container Docker environments by buildin
 + [Deploy a container with a Dockerfile](#single-container-docker.deploy-local)
 + [Test a remote Docker image](#single-container-docker.test-remote)
 + [Deploy a remote Docker image to Elastic Beanstalk](#single-container-docker.deploy-remote)
-+ [Amazon Linux 2 considerations](#single-container-docker.al2)
 + [Clean up](#single-container-docker.cleanup)
 + [Single Container Docker configuration](single-container-docker-configuration.md)
 
@@ -187,26 +186,19 @@ Once your environment is launched, use eb open to view it in a web browser\.
 ~/remote-docker$ eb open
 ```
 
-## Amazon Linux 2 considerations<a name="single-container-docker.al2"></a>
-
-
-|  | 
-| --- |
-| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
-
-Elastic Beanstalk provides Amazon Linux 2 Single Container Docker platform versions\. These Amazon Linux 2 Docker platform versions are different than previous Docker platform versions based on Amazon Linux AMI in a few ways, both generic \(apply to all Amazon Linux 2 platforms\) and platform specific \(apply to Amazon Linux 2 Docker platform versions\)\. For details, see [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
-
 ## Clean up<a name="single-container-docker.cleanup"></a>
 
 When you finish working with Elastic Beanstalk, you can terminate your environment\. Elastic Beanstalk terminates all AWS resources associated with your environment, such as [Amazon EC2 instances](using-features.managing.ec2.md), [database instances](using-features.managing.db.md), [load balancers](using-features.managing.elb.md), security groups, and [alarms](using-features.alarms.md#using-features.alarms.title)\. 
 
 **To terminate your Elastic Beanstalk environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Actions**, and then choose **Terminate Environment**\.
+1. Choose **Environment actions**, and then choose **Terminate environment**\.
 
 1. Use the on\-screen dialog box to confirm environment termination\.
 

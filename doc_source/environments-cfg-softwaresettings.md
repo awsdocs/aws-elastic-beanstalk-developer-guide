@@ -1,18 +1,42 @@
 # Environment properties and other software settings<a name="environments-cfg-softwaresettings"></a>
 
-You can use **environment properties** to pass secrets, endpoints, debug settings, and other information to your application\. Environment properties help you run your application in multiple environments for different purposes, such as development, testing, staging, and production\.
+The **Modify software** configuration page lets you configure the software on the Amazon Elastic Compute Cloud \(Amazon EC2\) instances that run your application\. You can configure environment properties, AWS X\-Ray debugging, instance log storing and streaming, and platform\-specific settings\.
 
-**Environment Variables**  
-In most cases, environment properties are passed to your application as *environment variables*, but the behavior is platform dependent\. For example, [the Java SE platform](java-se-platform.md) sets environment variables that you retrieve with `System.getenv`, while [the Tomcat platform](java-tomcat-platform.md) sets Java system properties that you retrieve with `System.getProperty`\.
+![\[Modify software configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-softwaresettings.png)
 
-In addition to the standard set of options available for all environments, most Elastic Beanstalk platforms let you specify language\-specific or framework\-specific settings\. These can take the following forms\.
+**Topics**
++ [Configure platform\-specific settings](#environments-cfg-softwaresettings-specific)
++ [Configuring environment properties](#environments-cfg-softwaresettings-console)
++ [Software setting namespaces](#environments-cfg-softwaresettings-configfiles)
++ [Accessing environment properties](#environments-cfg-softwaresettings-accessing)
++ [Configuring AWS X\-Ray debugging](environment-configuration-debugging.md)
++ [Viewing your Elastic Beanstalk environment logs](environments-cfg-logging.md)
 
-**Platform\-Specific Settings**
+## Configure platform\-specific settings<a name="environments-cfg-softwaresettings-specific"></a>
+
+In addition to the standard set of options available for all environments, most Elastic Beanstalk platforms let you specify language\-specific or framework\-specific settings\. These appear in the **Platform options** section of the **Modify software** page, and can take the following forms\.
 + **Preset environment properties** – The Ruby platform uses environment properties for framework settings, such as `RACK_ENV` and `BUNDLE_WITHOUT`\.
 + **Placeholder environment properties** – The Tomcat platform defines an environment property named `JDBC_CONNECTION_STRING` that is not set to any value\. This type of setting was more common on older platform versions\.
 + **Configuration options** – Most platforms define [configuration options](command-options.md) in platform\-specific or shared namespaces, such as `aws:elasticbeanstalk:xray` or `aws:elasticbeanstalk:container:python`\.
 
+**To configure platform\-specific settings in the Elastic Beanstalk console**
+
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
+
+1. In the navigation pane, choose **Configuration**\.
+
+1. In the **Software** configuration category, choose **Edit**\.
+
+1. Under **Platform options**, make necessary option setting changes\.
+
+1. Choose **Apply**\.
+
 For information about platform\-specific options, and about getting environment property values in your code, see the platform topic for your language or framework:
++ Docker – [Configuring Docker environments](create_deploy_docker.container.console.md)
 + Go – [Using the Elastic Beanstalk Go platform](go-environment.md)
 + Java SE – [Using the Elastic Beanstalk Java SE platform](java-se-platform.md)
 + Tomcat – [Using the Elastic Beanstalk Tomcat platform](java-tomcat-platform.md)
@@ -22,34 +46,33 @@ For information about platform\-specific options, and about getting environment 
 + Python – [Using the Elastic Beanstalk Python platform](create-deploy-python-container.md)
 + Ruby – [Using the Elastic Beanstalk Ruby platform](create_deploy_Ruby.container.md)
 
-Also, when you [add a database to your environment](using-features.managing.db.md), Elastic Beanstalk sets environment properties, such as `RDS_HOSTNAME`, that you can read in your application code to construct a connection object or string\.
-
-**Topics**
-+ [Configuring environment properties](#environments-cfg-softwaresettings-console)
-+ [Software setting namespaces](#environments-cfg-softwaresettings-configfiles)
-+ [Accessing environment properties](#environments-cfg-softwaresettings-accessing)
-+ [Configuring AWS X\-Ray debugging](environment-configuration-debugging.md)
-+ [Viewing your Elastic Beanstalk environment logs](environments-cfg-logging.md)
-
 ## Configuring environment properties<a name="environments-cfg-softwaresettings-console"></a>
 
-Environment properties appear in the Elastic Beanstalk console under **Software Configuration**\.
+You can use **environment properties** to pass secrets, endpoints, debug settings, and other information to your application\. Environment properties help you run your application in multiple environments for different purposes, such as development, testing, staging, and production\.
+
+In addition, when you [add a database to your environment](using-features.managing.db.md), Elastic Beanstalk sets environment properties, such as `RDS_HOSTNAME`, that you can read in your application code to construct a connection object or string\.
+
+**Environment variables**  
+In most cases, environment properties are passed to your application as *environment variables*, but the behavior is platform dependent\. For example, [the Java SE platform](java-se-platform.md) sets environment variables that you retrieve with `System.getenv`, while [the Tomcat platform](java-tomcat-platform.md) sets Java system properties that you retrieve with `System.getProperty`\. In general, properties are *not* visible if you connect to an instance and run `env`\.
 
 **To configure environment properties in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Software** configuration category, choose **Modify**\.
+1. In the **Software** configuration category, choose **Edit**\.
 
-1. Under **Environment properties**, enter key\-value pairs\.
+1. Under **Environment properties**, enter key\-value pairs\.  
+![\[Environment properties section in the Modify software configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-software-environment.png)
 
 1. Choose **Apply**\.
 
-**Environment Property Limits**
+**Environment property limits**
 + **Keys** can contain any alphanumeric characters and the following symbols: `_ . : / + \ - @`
 
   The symbols listed are valid for environment property keys, but might not be valid for environment variable names on your environment's platform\. For compatibility with all platforms, limit environment properties to the following pattern: `[A-Z_][A-Z0-9_]*`

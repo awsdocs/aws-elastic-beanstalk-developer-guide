@@ -213,19 +213,7 @@ If you already have a CodeCommit repository and want to use it with Elastic Bean
    5) eu-central-1 : Europe (Frankfurt)
    6) ap-south-1 : Asia Pacific (Mumbai)
    7) ap-southeast-1 : Asia Pacific (Singapore)
-   8) ap-southeast-2 : Asia Pacific (Sydney)
-   9) ap-northeast-1 : Asia Pacific (Tokyo)
-   10) ap-northeast-2 : Asia Pacific (Seoul)
-   11) sa-east-1 : South America (São Paulo)
-   12) cn-north-1 : China (Beijing)
-   13) cn-northwest-1 : China (Ningxia)
-   14) us-east-2 : US East (Ohio)
-   15) ca-central-1 : Canada (Central)
-   16) eu-west-2 : Europe (London)
-   17) eu-west-3 : Europe (Paris)
-   18) eu-north-1 : Europe (Stockholm)
-   19) ap-east-1 : Asia Pacific (Hong Kong)
-   20) me-south-1 : Middle East (Bahrain)
+   ...
    (default is 3): 1
    ...
    Note: Elastic Beanstalk now supports AWS CodeCommit; a fully-managed source control service. To learn more, see Docs: https://aws.amazon.com/codecommit/

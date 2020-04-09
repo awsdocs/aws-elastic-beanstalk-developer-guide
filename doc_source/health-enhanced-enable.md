@@ -13,13 +13,15 @@ Enhanced health reporting requires an [instance profile](concepts-roles-instance
 
 **To enable enhanced health reporting in a running environment using the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Monitoring** configuration category, choose **Modify**\.
+1. In the **Monitoring** configuration category, choose **Edit**\.
 
 1. Under **Health reporting**, for **System**, choose **Enhanced**\.  
 ![\[Choosing the enhanced health reporting system\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-dashboard-option.png)
@@ -32,13 +34,13 @@ The Elastic Beanstalk console defaults to enhanced health reporting when you cre
 
 **To disable enhanced health reporting when creating an environment using the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
 1. [Create an application](applications.md) or select an existing one\.
 
 1. [Create an environment](using-features.environments.md)\. On the **Create a new environment** page, before choosing **Create environment**, choose **Configure more options**\.
 
-1. In the **Monitoring** configuration category, choose **Modify**\.
+1. In the **Monitoring** configuration category, choose **Edit**\.
 
 1. Under **Health reporting**, for **System**, choose **Basic**\.  
 ![\[Choosing the basic health reporting system\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/basic-health-dashboard-option.png)

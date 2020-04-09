@@ -2,7 +2,7 @@
 
 To use an external database with an application running in Elastic Beanstalk, first launch a DB instance with Amazon RDS\. Any instance that you launch with Amazon RDS is completely independent of Elastic Beanstalk and your Elastic Beanstalk environments, and is not dependent on Elastic Beanstalk for configuration\. This means that you can use any DB engine and instance type supported by Amazon RDS, even those not used by Elastic Beanstalk\.
 
-The following procedures describe the process for a [default VPC](https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html)\. The process is the same if you are using a custom VPC\. The only additional requirements are that your environment and DB instance are in the same subnet, or in subnets that are allowed to communicate with each other\. See [Using Elastic Beanstalk with Amazon Virtual Private Cloud](vpc.md) for details on configuring a custom VPC for use with Elastic Beanstalk\.
+The following procedures describe the process for a [default VPC](https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html)\. The process is the same if you are using a custom VPC\. The only additional requirements are that your environment and DB instance are in the same subnet, or in subnets that are allowed to communicate with each other\. See [Using Elastic Beanstalk with Amazon VPC](vpc.md) for details on configuring a custom VPC for use with Elastic Beanstalk\.
 
 **To launch an RDS DB instance in a default VPC**
 
@@ -59,13 +59,15 @@ Next, add the DB instance's security group to your running environment\. This pr
 + Do one of the following:
   + To add a security group using the Elastic Beanstalk console
 
-    1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+    1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-    1. Navigate to the [management page](environments-console.md) for your environment\.
+    1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-    1. Choose **Configuration**\.
+    1. In the navigation pane, choose **Configuration**\.
 
-    1. In the **Instances** configuration category, choose **Modify**\.
+    1. In the **Instances** configuration category, choose **Edit**\.
 
     1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
@@ -78,17 +80,19 @@ Next, pass the connection information to your environment by using environment p
 
 **To configure environment properties for an Amazon RDS DB instance**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Software** configuration category, choose **Modify**\.
+1. In the **Software** configuration category, choose **Edit**\.
 
 1. In the **Environment properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS DB instance, use the following names and values\. You can find all values, except for your password, in the [RDS console](https://console.aws.amazon.com/rds/home)\.    
 [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/rds-external-defaultvpc.html)  
-![\[Environment properties section with RDS properties added\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
+![\[Environment properties configuration section with RDS properties added\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
 
 1. Choose **Apply**\.
 
@@ -105,8 +109,10 @@ Finally, depending on when your application reads environment variables, you mig
 
 **To restart your environment's app servers**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Actions**, and then choose **Restart App Server\(s\)**\.
+1. Choose **Environment actions**, and then choose **Restart app server\(s\)**\.

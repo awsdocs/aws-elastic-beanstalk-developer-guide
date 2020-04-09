@@ -83,11 +83,13 @@ Create a saved configuration to save settings that you have applied to an existi
 
 **To create a saved configuration \(Elastic Beanstalk console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Actions** and then choose **Save Configuration**\.
+1. Choose **Environment actions**, and then choose **Save configuration**\.
 
 1. Use the on\-screen dialog box to complete the action\.
 

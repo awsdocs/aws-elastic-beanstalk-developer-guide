@@ -4,12 +4,16 @@ You can use the AWS Management Console to access events and notifications associ
 
 **To view events**
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. From the navigation menu, click **Events**\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-events.png)
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-   The Events page shows you a list of all events that have been recorded for the environment and application version\. You can filter on the type of events by using the **Severity** drop\-down list\. You can also filter when the events occurred by using the time slider\. 
+1. In the navigation pane, choose **Events**\.  
+![\[Environment events page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-events.png)
+
+   The Events page shows a list of all events that have been recorded for the environment\. You can page through the list choosing **<** \(previous\), **>** \(next\), or page numbers\. You can filter the type of events shown by using the **Severity** drop\-down list\.
 
 The [EB CLI](eb-cli3.md) and [AWS CLI](https://aws.amazon.com/cli/) both provide commands for retrieving events\. If you are managing your environment using the EB CLI, use [eb events](eb3-events.md) to print a list of events\. This command also has a `--follow` option that continues to show new events until you press **Ctrl\+C** to stop output\.
 

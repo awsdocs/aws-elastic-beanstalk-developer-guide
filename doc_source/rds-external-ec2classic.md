@@ -65,13 +65,15 @@ Next, add the bridge security group to your running environment\. This procedure
 + Do one of the following:
   + To add a security group using the Elastic Beanstalk console
 
-    1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+    1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-    1. Navigate to the [management page](environments-console.md) for your environment\.
+    1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-    1. Choose **Configuration**\.
+    1. In the navigation pane, choose **Configuration**\.
 
-    1. In the **Instances** configuration category, choose **Modify**\.
+    1. In the **Instances** configuration category, choose **Edit**\.
 
     1. Under **EC2 security groups**, choose the security group to attach to the instances, in addition to the instance security group that Elastic Beanstalk creates\.
 
@@ -84,13 +86,15 @@ Next, pass the connection information to your environment by using environment p
 
 **To configure environment properties**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Configuration**\.
+1. In the navigation pane, choose **Configuration**\.
 
-1. In the **Software** configuration category, choose **Modify**\.
+1. In the **Software** configuration category, choose **Edit**\.
 
 1. In the **Environment Properties** section, define the variables that your application reads to construct a connection string\. For compatibility with environments that have an integrated RDS instance, use the following:
    + **RDS\_DB\_NAME** – The **DB Name** shown in the Amazon RDS console\.
@@ -98,7 +102,7 @@ Next, pass the connection information to your environment by using environment p
    + **RDS\_PASSWORD** – The **Master Password** that you enter when you add the database to your environment\.
    + **RDS\_HOSTNAME** – The **Endpoint** of the DB instance shown in the Amazon RDS console\. 
    + **RDS\_PORT** – The **Port** shown in the Amazon RDS console\.  
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
+![\[Environment properties configuration section with RDS properties added\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environment-cfg-envprops-rds.png)
 
 1. Choose **Apply**
 
@@ -115,8 +119,10 @@ Finally, depending on when your application reads environment variables, you mig
 
 **To restart your environment's app servers**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. Navigate to the [management page](environments-console.md) for your environment\.
+1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+**Note**  
+If you have many environments, use the search bar to filter the environment list\.
 
-1. Choose **Actions**, and then choose **Restart App Server\(s\)**\.
+1. Choose **Environment actions**, and then choose **Restart app server\(s\)**\.

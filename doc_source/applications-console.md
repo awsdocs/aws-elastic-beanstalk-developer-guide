@@ -4,24 +4,25 @@ You can use the AWS Elastic Beanstalk console to manage applications, applicatio
 
 **To access the application management console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk)\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
-1. The console displays a list of all environments running in the current AWS Region, sorted by application\. Choose an application to view the management console for that application\.  
-![\[The all applications page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-choose-application.png)
+1. In the navigation pane, choose **Applications**, and then choose your application's name on the list\.
 **Note**  
-If you have many applications, use the search bar in the upper\-right corner to filter the list of applications\.
+If you have many applications, use the search bar to filter the application list\.
 
-   The **Environments** page shows an overview of all environments associated with the application\.  
-![\[The environments tab of the application page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-mgmt-environments.png)
+   The application overview page shows a list with an overview of all environments associated with the application\.  
+![\[The application overview page with a list of application environments on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-mgmt-environments.png)
 
-1. Choose an environment by name to go to the [environment management console](environments-console.md) for that environment to configure, monitor, or manage it\.
+1. You have a few ways to continue:
 
-   Choose **Application Versions** to view a list of application versions for your application\.  
-![\[The application versions tab of the application page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-mgmt-versions.png)
+   1. Choose the **Actions** drop\-down menu, and then choose one of the application management actions\. To launch an environment in this application, you can directly choose **Create a new environment**\. For details, see [Creating an Elastic Beanstalk environment](using-features.environments.md)\.
 
-   Here you can upload new versions, deploy an existing version to any of the application's environments, or delete old versions\. See [Managing application versions](applications-versions.md) for more information about the options on this page\.
+   1. Choose an environment name to go to the [environment management console](environments-console.md) for that environment, where you can configure, monitor, or manage the environment\.
 
-1. Choose **Saved Configurations** to view a list of configurations saved from running environments\. A saved configuration is a collection of settings that you can use to restore an environment's settings to a previous state, or to create an environment with the same settings\.  
-![\[The saved configurations tab of the application page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-mgmt-savedconfigs.png)
+   1. Choose **Application versions** following the application name in the navigation pane to view and manage the application versions for your application\.
 
-   See [Using Elastic Beanstalk saved configurations](environment-configuration-savedconfig.md) for more information\.
+      An application version is an uploaded version of your application code\. You can upload new versions, deploy an existing version to any of the application's environments, or delete old versions\. For more information, see [Managing application versions](applications-versions.md)\.
+
+   1. Choose **Saved configurations** following the application name in the navigation pane to view and manage configurations saved from running environments\.
+
+      A saved configuration is a collection of settings that you can use to restore an environment's settings to a previous state, or to create an environment with the same settings\. For more information see [Using Elastic Beanstalk saved configurations](environment-configuration-savedconfig.md)\.
