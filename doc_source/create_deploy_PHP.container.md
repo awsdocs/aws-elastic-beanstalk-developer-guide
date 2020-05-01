@@ -1,10 +1,13 @@
 # Using the Elastic Beanstalk PHP platform<a name="create_deploy_PHP.container"></a>
 
+**Important**  
+Amazon Linux 2 platform versions are fundamentally different than Amazon Linux AMI platform versions \(preceding Amazon Linux 2\)\. These different platform generations are incompatible in several ways\. If you are migrating to an Amazon Linux 2 platform version, be sure to read the information in [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
+
 AWS Elastic Beanstalk supports a number of platforms for different versions of the PHP programming language\. These platforms support PHP web applications that can run alone or under Composer\. Learn more at [PHP](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.PHP) in the *AWS Elastic Beanstalk Platforms* document\.
 
 Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application, enable log rotation to Amazon S3, and set common PHP initialization settings\.
 
-Platform\-specific configuration options are available in the AWS Management Console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
+Configuration options are available in the Elastic Beanstalk console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
 
 To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
 
@@ -12,7 +15,9 @@ If you use Composer, you can [include a `composer.json` file](php-configuration-
 
 For advanced PHP configuration and PHP settings that are not provided as configuration options, you can [use configuration files to provide an `INI` file](php-configuration-phpini.md) that can extend and override the default settings applied by Elastic Beanstalk, or install additional extensions\.
 
-Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration options](command-options.md)\.
+Settings applied in the Elastic Beanstalk console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration options](command-options.md)\.
+
+For details about the various ways you can extend an Elastic Beanstalk Linux\-based platform, see [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
 
 ## Configuring your PHP environment<a name="php-console"></a>
 
@@ -42,7 +47,7 @@ If you have many environments, use the search bar to filter the environment list
 
 The Log Options section has two settings:
 + **Instance profile**– Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
-+ **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
++ **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to the Amazon S3 bucket associated with your application\.
 
 ### Environment properties<a name="php-console-properties"></a>
 
@@ -79,12 +84,3 @@ option_settings:
 ```
 
 Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.
-
-## Amazon Linux 2 considerations<a name="php-al2"></a>
-
-
-|  | 
-| --- |
-| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
-
-Elastic Beanstalk provides Amazon Linux 2 PHP platform branches\. The platform versions in these branches are different than previous PHP platform versions based on Amazon Linux AMI in a few ways, both generic \(apply to all Amazon Linux 2 platforms\) and platform specific \(apply to Amazon Linux 2 PHP platform versions\)\. For details, see [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.

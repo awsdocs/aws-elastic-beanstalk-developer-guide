@@ -1,17 +1,19 @@
 # Configuring enhanced health rules for an environment<a name="health-enhanced-rules"></a>
 
-Elastic Beanstalk enhanced health reporting relies on a set of rules to determine the health of your environment\. Some of these rules might not be appropriate for your particular application\. A common case is when frequent HTTP client \(4xx\) errors are expected, for example, as a result of using client\-side test tools\. 
+AWS Elastic Beanstalk enhanced health reporting relies on a set of rules to determine the health of your environment\. Some of these rules might not be appropriate for your particular application\. The following are some common examples:
++ You use client\-side test tools\. In this case, frequent HTTP client \(4xx\) errors are expected\.
++ You use [AWS WAF](https://docs.aws.amazon.com/waf/latest/developerguide/) in conjunction with your environment's Application Load Balancer to block unwanted incoming traffic\. In this case, Application Load Balancer returns HTTP 403 for each rejected incoming message\.
 
-By default, Elastic Beanstalk includes all application HTTP 4xx errors when determining the environment's health, so it changes your environment health status from **OK** to **Warning**, **Degraded**, or **Severe**, depending on the error rate\. To handle this case correctly, Elastic Beanstalk allows you to configure this rule and ignore application HTTP 4xx errors on the environment's instances\. This topic describes ways you can make this configuration change\.
+By default, Elastic Beanstalk includes all application HTTP 4xx errors when determining the environment's health\. It changes your environment health status from **OK** to **Warning**, **Degraded**, or **Severe**, depending on the error rate\. To correctly handle cases such as the examples we mentioned, Elastic Beanstalk enables you to configure some enhanced health rules\. You can choose to ignore application HTTP 4xx errors on the environment's instances, or to ignore HTTP 4xx errors returned by the environment's load balancer\. This topic describes how to make these configuration changes\.
 
 **Note**  
-Currently, this is the only available enhanced heath rule customization\. You can't configure enhanced health to ignore HTTP errors returned by an environment's load balancer, or other HTTP errors in addition to 4xx\.
+Currently, these are the only available enhanced heath rule customizations\. You can't configure enhanced health to ignore other HTTP errors in addition to 4xx\.
 
 ## Configuring enhanced health rules using the Elastic Beanstalk console<a name="health-enhanced-rules.console"></a>
 
 You can use the Elastic Beanstalk console to configure enhanced health rules in your environment\.
 
-**To ignore application HTTP 4xx status codes using the Elastic Beanstalk console**
+**To configure HTTP 4xx status code checking using the Elastic Beanstalk console**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
 
@@ -23,7 +25,7 @@ If you have many environments, use the search bar to filter the environment list
 
 1. In the **Monitoring** configuration category, choose **Edit**\.
 
-1. Under **Health monitoring rule customization**, enable the **Ignore HTTP 4xx** option\.  
+1. Under **Health monitoring rule customization**, enable or disable the desired **Ignore** options\.  
 ![\[Health monitoring rule customization section on the monitoring configuration page of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/enhanced-health-rule-customization.png)
 
 1. Choose **Apply**\.
@@ -32,7 +34,7 @@ If you have many environments, use the search bar to filter the environment list
 
 You can use the EB CLI to configure enhanced health rules by saving your environment's configuration locally, adding an entry that configures enhanced health rules, and then uploading the configuration to Elastic Beanstalk\. You can apply the saved configuration to an environment during or after creation\.
 
-**To ignore application HTTP 4xx status codes using the EB CLI and saved configurations**
+**To configure HTTP 4xx status code checking using the EB CLI and saved configurations**
 
 1. Initialize your project folder with [eb init](eb-cli3-configuration.md)\.
 
@@ -47,7 +49,7 @@ You can use the EB CLI to configure enhanced health rules by saving your environ
 
 1. Open the saved configuration file in a text editor\.
 
-1. Under `OptionSettings` > `aws:elasticbeanstalk:healthreporting:system:`, add a `ConfigDocument` key to list each enhanced health rule to configure\. The following `ConfigDocument` disables the checking of application HTTP 4xx status codes \(the only rule currently available for customization\)\.
+1. Under `OptionSettings` > `aws:elasticbeanstalk:healthreporting:system:`, add a `ConfigDocument` key to list each enhanced health rule to configure\. The following `ConfigDocument` disables the checking of application HTTP 4xx status codes, while keeping the checking of load balancer HTTP 4xx code enabled\.
 
    ```
    OptionSettings:
@@ -59,13 +61,16 @@ You can use the EB CLI to configure enhanced health rules by saving your environ
              Application:
                ApplicationRequests4xx:
                  Enabled: false
+             ELB:
+               ELBRequests4xx:
+                 Enabled: true
          Version: 1
        SystemType: enhanced
    ...
    ```
 **Note**  
 You can combine `Rules` and `CloudWatchMetrics` in the same `ConfigDocument` option setting\. `CloudWatchMetrics` are described in [Publishing Amazon CloudWatch custom metrics for an environment](health-enhanced-cloudwatch.md)\.  
-If you previously enabled `CloudWatchMetrics`, then the configuration file that you retrieve using the eb config save command already has a `ConfigDocument` key with a `CloudWatchMetrics` section\. *Do not delete it*—add a `Rules` section into the same `ConfigDocument` option value\.
+If you previously enabled `CloudWatchMetrics`, the configuration file that you retrieve using the eb config save command already has a `ConfigDocument` key with a `CloudWatchMetrics` section\. *Do not delete it*—add a `Rules` section into the same `ConfigDocument` option value\.
 
 1. Save the configuration file and close the text editor\. In this example, the updated configuration file is saved with a name \(`02-cloudwatch-enabled.cfg.yml`\) that's different from the downloaded configuration file\. This creates a separate saved configuration when the file is uploaded\. You can use the same name as the downloaded file to overwrite the existing configuration without creating a new one\.
 
@@ -87,7 +92,9 @@ If you previously enabled `CloudWatchMetrics`, then the configuration file that 
 
 ## Configuring enhanced health rules using a config document<a name="health-enhanced-rules.configdocument"></a>
 
-The configuration \(config\) document for enhanced health rules is a JSON document that lists the rules to configure\. The following example shows a config document that disables the checking of application HTTP 4xx status codes \(the only rule currently available for customization\)\.
+The configuration \(config\) document for enhanced health rules is a JSON document that lists the rules to configure\. 
+
+The following example shows a config document that disables the checking of application HTTP 4xx status codes and enables the checking of load balancer HTTP 4xx status codes\.
 
 ```
 {
@@ -96,6 +103,11 @@ The configuration \(config\) document for enhanced health rules is a JSON docume
       "Application": {
         "ApplicationRequests4xx": {
           "Enabled": false
+        }
+      },
+      "ELB": {
+        "ELBRequests4xx": {
+          "Enabled": true
         }
       }
     }
@@ -111,7 +123,7 @@ $ aws elasticbeanstalk validate-configuration-settings --application-name my-app
     {
         "Namespace": "aws:elasticbeanstalk:healthreporting:system",
         "OptionName": "ConfigDocument",
-        "Value": "{\"Rules\": { \"Environment\": { \"Application\": { \"ApplicationRequests4xx\": { \"Enabled\": false } } } }, \"Version\": 1 }"
+        "Value": "{\"Rules\": { \"Environment\": { \"Application\": { \"ApplicationRequests4xx\": { \"Enabled\": false } }, \"ELB\": { \"ELBRequests4xx\": {\"Enabled\": true } } } }, \"Version\": 1 }"
     }
 ]'
 ```
@@ -128,6 +140,11 @@ For an `.ebextensions` configuration file in YAML, you can provide the JSON docu
       "Application": {
         "ApplicationRequests4xx": {
           "Enabled": false
+        }
+      },
+      "ELB": {
+        "ELBRequests4xx": {
+          "Enabled": true
         }
       }
     }

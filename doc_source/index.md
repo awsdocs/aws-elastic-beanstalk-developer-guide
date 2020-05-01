@@ -147,6 +147,7 @@ Amazon's trademarks and trade dress may not be used in
       + [Setting up your Ruby development environment](ruby-development-environment.md)
       + [Using the Elastic Beanstalk Ruby platform](create_deploy_Ruby.container.md)
          + [Installing packages with a Gemfile](ruby-platform-gemfile.md)
+         + [Configuring the application process with a Procfile](ruby-platform-procfile.md)
       + [Deploying a rails application to Elastic Beanstalk](ruby-rails-tutorial.md)
       + [Deploying a sinatra application to Elastic Beanstalk](ruby-sinatra-tutorial.md)
       + [Adding an Amazon RDS DB instance to your Ruby application environment](create_deploy_Ruby.rds.md)

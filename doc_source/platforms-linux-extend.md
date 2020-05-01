@@ -54,20 +54,7 @@ cache: bin/mycache
 foo: bin/fooapp
 ```
 
-Elastic Beanstalk configures the proxy server on your environment's instances to forward web traffic to the main web application on the root URL of the environment; for example, `http://my-env.elasticbeanstalk.com`\.
-
-By default, Elastic Beanstalk configures the proxy to forward requests to your main web application on port 5000\. You can configure this port number by setting the `PORT` environment property using the [aws:elasticbeanstalk:application:environment](command-options-general.md#command-options-general-elasticbeanstalkapplicationenvironment) namespace in a configuration file, as shown in the following example\.
-
-```
-option_settings:
-  - namespace:  aws:elasticbeanstalk:application:environment
-    option_name:  PORT
-    value:  <first_port_number>
-```
-
-For more information about setting environment variables for your application, see [Option settings](ebextensions-optionsettings.md)\.
-
-Your application should listen on the port that is configured for it in the proxy\. If you change the default port using the `PORT` environment property, your code can access it by reading the value of the `PORT` environment variable\. For example, call `os.Getenv("PORT")` in Go, or `System.getenv("PORT")` in Java\. If you configure your proxy to send traffic to multiple application processes, you can configure several environment properties, and use their values in both proxy configuration and your application code\. Another option is to pass the port value to the process as a command argument in the `Procfile`\.
+Elastic Beanstalk configures the proxy server to forward requests to your main web application on port 5000, and you can configure this port number\. A common use for a `Procfile` is to pass this port number to your application as a command argument\. For details about proxy configuration, expand the *Reverse proxy configuration* section on this page\.
 
 Elastic Beanstalk captures standard output and error streams from `Procfile` processes in log files\. Elastic Beanstalk names the log files after the process and stores them in `/var/log`\. For example, the `web` process in the preceding example generates logs named `web-1.log` and `web-1.error.log` for `stdout` and `stderr`, respectively\.
 
@@ -138,6 +125,21 @@ If you override the Elastic Beanstalk nginx configuration, add the following lin
 ```
  include conf.d/elasticbeanstalk/*.conf;
 ```
+
+Elastic Beanstalk configures the proxy server on your environment's instances to forward web traffic to the main web application on the root URL of the environment; for example, `http://my-env.elasticbeanstalk.com`\.
+
+By default, Elastic Beanstalk configures the proxy to forward requests to your main web application on port 5000\. You can configure this port number by setting the `PORT` environment property using the [aws:elasticbeanstalk:application:environment](command-options-general.md#command-options-general-elasticbeanstalkapplicationenvironment) namespace in a configuration file, as shown in the following example\.
+
+```
+option_settings:
+  - namespace:  aws:elasticbeanstalk:application:environment
+    option_name:  PORT
+    value:  <main_port_number>
+```
+
+For more information about setting environment variables for your application, see [Option settings](ebextensions-optionsettings.md)\.
+
+Your application should listen on the port that is configured for it in the proxy\. If you change the default port using the `PORT` environment property, your code can access it by reading the value of the `PORT` environment variable\. For example, call `os.Getenv("PORT")` in Go, or `System.getenv("PORT")` in Java\. If you configure your proxy to send traffic to multiple application processes, you can configure several environment properties, and use their values in both proxy configuration and your application code\. Another option is to pass the port value to the process as a command argument in the `Procfile`\. For details on that, expand the *Buildfile and Procfile* section on this page\.
 
 If you're migrating your Elastic Beanstalk application to an Amazon Linux 2 platform, be sure to also read the information in [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
 

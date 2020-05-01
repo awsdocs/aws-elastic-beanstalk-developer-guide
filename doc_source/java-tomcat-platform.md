@@ -2,7 +2,7 @@
 
 The AWS Elastic Beanstalk Tomcat platform is a set of [environment configurations](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.java) for Java web applications that can run in a Tomcat web container\. Each configuration corresponds to a major version of Tomcat, like *Java 8 with Tomcat 8*\.
 
-Platform\-specific configuration options are available in the AWS Management Console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
+Configuration options are available in the Elastic Beanstalk console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
 
 To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
 
@@ -12,7 +12,7 @@ You must package Java applications in a web application archive \(WAR\) file wit
 
 To run multiple applications on the same web server, you can [bundle multiple WAR files](java-tomcat-multiple-war-files.md) into a single source bundle\. Each application in a multiple WAR source bundle runs at the root path \(`ROOT.war` runs at `myapp.elasticbeanstalk.com/`\) or at a path directly beneath it \(`app2.war` runs at `myapp.elasticbeanstalk.com/app2/`\), as determined by the name of the WAR\. In a single WAR source bundle, the application always runs at the root path\.
 
-Settings applied in the AWS Management Console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration options](command-options.md)\.
+Settings applied in the Elastic Beanstalk console override the same settings in configuration files, if they exist\. This lets you have default settings in configuration files, and override them with environment\-specific settings in the console\. For more information about precedence, and other methods of changing settings, see [Configuration options](command-options.md)\.
 
 ## Configuring your Tomcat environment<a name="java-tomcat-options"></a>
 
@@ -45,7 +45,7 @@ The *permanent generation* is a section of the JVM heap that stores class defini
 
 The **Log Options** section has two settings:
 + **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
-+ **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
++ **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to the Amazon S3 bucket associated with your application\.
 
 ### Static files<a name="java-tomcat-options-staticfiles"></a>
 

@@ -2,7 +2,12 @@
 
 Elastic Beanstalk installs the shell script `get-config` that you can use to get environment variables and other information in hooks that run on\-instance in environments launched with your custom platform\.
 
-This tool is available at `/opt/elasticbeanstalk/bin/get-config`\. You can use it in the following ways:
+This tool is available at `/opt/elasticbeanstalk/bin/get-config`\.
+
+**Note**  
+The `get-config` tool is only available on platform versions based on Amazon Linux AMI \(preceding Amazon Linux 2\)\.
+
+You can use `get-config` in the following ways:
 + `get-config optionsettings` – Returns a JSON object listing the configuration options set on the environment, organized by namespace\.
 
   ```

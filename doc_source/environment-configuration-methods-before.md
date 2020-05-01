@@ -68,7 +68,7 @@ YAML relies on consistent indentation\. Match the indentation level when replaci
 
 Include the `.ebextensions` directory in your [Application Source Bundle](applications-sourcebundle.md) and deploy it to a new or existing Elastic Beanstalk environment\.
 
-Configuration files support several sections in addition to `option_settings` for customizing the software and files that run on the servers in your environment\. For more information, see [Customizing software on Linux servers](customize-containers-ec2.md) and [Customizing software on Windows servers](customize-containers-windows-ec2.md)\.
+Configuration files support several sections in addition to `option_settings` for customizing the software and files that run on the servers in your environment\. For more information, see [\.Ebextensions](ebextensions.md)\.
 
 ## Saved configurations<a name="configuration-options-before-savedconfig"></a>
 

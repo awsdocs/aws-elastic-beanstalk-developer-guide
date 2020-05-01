@@ -24,6 +24,8 @@ When you create an Elastic Beanstalk environment in the Elastic Beanstalk consol
 
 Include `.config` files in your [application source bundle](applications-sourcebundle.md) in a folder named `.ebextensions`\.
 
+For details about configuration files, see [\.Ebextensions](ebextensions.md)\.
+
 ```
 ~/workspace/my-app-v1.zip
 |-- .ebextensions
@@ -91,6 +93,8 @@ For details about the new environment wizard, see [The create new environment wi
 ### Using configuration files \(`.ebextensions`\)<a name="configuration-options-during-ebcli-ebextensions"></a>
 
 Include `.config` files in your project folder under `.ebextensions` to deploy them with your application code\.
+
+For details about configuration files, see [\.Ebextensions](ebextensions.md)\.
 
 ```
 ~/workspace/my-app/
@@ -165,6 +169,8 @@ When you use the `create-environment` command to create an Elastic Beanstalk env
 ### Using configuration files \(`.ebextensions`\)<a name="configuration-options-during-awscli-ebextensions"></a>
 
 To apply configuration files to an environment that you create with the AWS CLI, include them in the application source bundle that you upload to Amazon S3\.
+
+For details about configuration files, see [\.Ebextensions](ebextensions.md)\.
 
 ```
 ~/workspace/my-app-v1.zip

@@ -26,6 +26,8 @@ You can update configuration option settings in the Elastic Beanstalk console by
 
 Update configuration files in your source directory, create a new source bundle, and deploy the new version to your Elastic Beanstalk environment to apply the changes\.
 
+For details about configuration files, see [\.Ebextensions](ebextensions.md)\.
+
 **To deploy a source bundle**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
@@ -110,6 +112,8 @@ You can update configuration option settings with the EB CLI by deploying source
 ### Using configuration files \(`.ebextensions`\)<a name="configuration-options-after-ebcli-ebextensions"></a>
 
 Include `.config` files in your project folder under `.ebextensions` to deploy them with your application code\.
+
+For details about configuration files, see [\.Ebextensions](ebextensions.md)\.
 
 ```
 ~/workspace/my-app/
@@ -256,6 +260,8 @@ You can update configuration option settings with the AWS CLI by deploying a sou
 ### Using configuration files \(`.ebextensions`\)<a name="configuration-options-after-awscli-ebextensions"></a>
 
 To apply configuration files to a running environment with the AWS CLI, include them in the application source bundle that you upload to Amazon S3\.
+
+For details about configuration files, see [\.Ebextensions](ebextensions.md)\.
 
 ```
 ~/workspace/my-app-v1.zip

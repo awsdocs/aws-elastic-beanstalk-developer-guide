@@ -4,7 +4,7 @@ If you have more than one JAR file in the root of your application source bundle
 
 We recommend that you always provide a `Procfile` in the source bundle alongside your application\. This way you precisely control which processes Elastic Beanstalk runs for your application and which arguments these processes receive\.
 
-For details about the placement and syntax of a `Procfile`, expand the *Buildfile and Procfile* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
+For details about writing and using a `Procfile`, expand the *Buildfile and Procfile* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
 
 **Example Procfile**  
 
@@ -17,8 +17,6 @@ web_foo: java -jar other.jar
 The command that runs the main JAR in your application must be called `web`, and it must be the first command listed in your `Procfile`\. The nginx server forwards all HTTP requests that it receives from your environment's load balancer to this application\.
 
 Elastic Beanstalk assumes that all entries in the Procfile should run at all times and automatically restarts any application defined in the Procfile that terminates\. To run commands that will terminate and should not be restarted, use a [`Buildfile`](java-se-buildfile.md)\.
-
-Standard output and error streams from processes started with a `Procfile` are captured in log files named after the process and stored in `/var/log`\. For example, the `web` process in the preceding example generates logs named `web-1.log` and `web-1.error.log` for `stdout` and `stderr`, respectively\.
 
 ## Using a Procfile on Amazon Linux AMI \(preceding Amazon Linux 2\)<a name="java-se-procfile.alami"></a>
 

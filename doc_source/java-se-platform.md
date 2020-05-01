@@ -1,15 +1,21 @@
 # Using the Elastic Beanstalk Java SE platform<a name="java-se-platform"></a>
 
+**Important**  
+Amazon Linux 2 platform versions are fundamentally different than Amazon Linux AMI platform versions \(preceding Amazon Linux 2\)\. These different platform generations are incompatible in several ways\. If you are migrating to an Amazon Linux 2 platform version, be sure to read the information in [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
+
 The AWS Elastic Beanstalk Java SE platform is a set of [platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.javase) for Java web applications that can run on their own from a compiled JAR file\. You can compile your application locally or upload the source code with a build script to compile it on\-instance\. Java SE platform versions are grouped into platform branches, each of which corresponds to a major version of Java, for example *Java 8* and *Java 7*\.
 
 **Note**  
 Elastic Beanstalk doesn't parse your application's JAR file\. Keep files that Elastic Beanstalk needs outside of the JAR file\. For example, include the `cron.yaml` file of a [worker environment](using-features-managing-env-tiers.md) at the root of your application's source bundle, next to the JAR file\.
 
-Platform\-specific configuration options are available in the AWS Management Console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
+Configuration options are available in the Elastic Beanstalk console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
 
 To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
 
 The Elastic Beanstalk Java SE platform includes an [nginx](https://www.nginx.com/) server that acts as a reverse proxy, serving cached static content and passing requests to your application\. The platform provides configuration options to configure the proxy server to serve static assets from a folder in your source code to reduce the load on your application\. For advanced scenarios, you can [include your own \.conf files](java-se-nginx.md) in your source bundle to extend Elastic Beanstalk's proxy configuration or overwrite it completely\. 
+
+**Note**  
+Configuring the proxy to serve static files is supported only on Amazon Linux AMI platform versions \(preceding Amazon Linux 2\)\.
 
 If you only provide a single JAR file for your application source \(on its own, not within a source bundle\), Elastic Beanstalk renames your JAR file to `application.jar`, and then runs it using `java -jar application.jar`\. To configure the processes that run on the server instances in your environment, include an optional [Procfile](java-se-procfile.md) in your source bundle\. A `Procfile` is required if you have more than one JAR in your source bundle root, or if you want to customize the java command to set JVM options\.
 
@@ -21,9 +27,9 @@ For details about the various ways you can extend an Elastic Beanstalk Linux\-ba
 
 ## Configuring your Java SE environment<a name="java-se-options"></a>
 
-The Elastic Beanstalk Java SE platform provides a few platform\-specific options in addition to the standard options that all platforms have\. These options let you configure the nginx proxy that runs in front of your application to serve static files\.
+The Java SE platform settings let you fine\-tune the behavior of your Amazon EC2 instances\. You can edit the Elastic Beanstalk environment's Amazon EC2 instance configuration using the Elastic Beanstalk console\.
 
-You can use the Elastic Beanstalk console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
+Use the Elastic Beanstalk console to enable log rotation to Amazon S3 and configure variables that your application can read from the environment\.
 
 **To configure your Java SE environment in the Elastic Beanstalk console**
 
@@ -41,13 +47,7 @@ If you have many environments, use the search bar to filter the environment list
 
 The Log Options section has two settings:
 + **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
-+ **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to your Amazon S3 bucket associated with your application\.
-
-### Static files<a name="java-se-options-staticfiles"></a>
-
-To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
-
-For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
++ **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to the Amazon S3 bucket associated with your application\.
 
 ### Environment properties<a name="java-se-options-properties"></a>
 
@@ -61,7 +61,21 @@ String endpoint = System.getenv("API_ENDPOINT");
 
 See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.
 
-## Java SE configuration namespaces<a name="java-se-namespaces"></a>
+### Configuring an Amazon Linux AMI \(preceding Amazon Linux 2\) Go environment<a name="java-se-options.alami"></a>
+
+The following console software configuration categories are supported only on an Elastic Beanstalk Go environment that uses an Amazon Linux AMI platform version \(preceding Amazon Linux 2\)\.
+
+#### Static files<a name="java-se-options-staticfiles"></a>
+
+To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
+
+For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
+
+## The Amazon Linux AMI \(preceding Amazon Linux 2\) Java SE platform<a name="java-se.alami"></a>
+
+If your Elastic Beanstalk Java SE environment uses an Amazon Linux AMI platform version \(preceding Amazon Linux 2\), read the additional information in this section\.
+
+### Java SE configuration namespaces<a name="java-se-namespaces"></a>
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 

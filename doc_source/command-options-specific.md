@@ -23,7 +23,7 @@ These configuration options do not apply to the Multicontainer Docker platform\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  ProxyServer  |  Specifies the web server to use as a proxy\.  |  `nginx`  |  `nginx` `none`   | 
+|  ProxyServer  |  Specifies the web server to use as a proxy\.  |  `nginx`  |  `nginx` `none` \(on Amazon Linux AMI \(preceding Amazon Linux 2\) platform versions\)  | 
 
 ## Go platform options<a name="command-options-golang"></a>
 
@@ -140,6 +140,9 @@ Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrate
 
 ## Node\.js platform options<a name="command-options-nodejs"></a>
 
+**Note**  
+The `aws:elasticbeanstalk:container:nodejs` and `aws:elasticbeanstalk:container:nodejs:staticfiles` namespace aren't supported on Amazon Linux 2 Node\.js platform versions\.
+
 
 **Namespace: `aws:elasticbeanstalk:container:nodejs`**  
 
@@ -207,10 +210,9 @@ See [Environment properties and other software settings](environments-cfg-softwa
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  WSGIPath  |  The file that contains the WSGI application\. This file must have an `application` callable\.  |  `application.py` [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-specific.html) On Amazon Linux 2 Python platform versions: `application:app`  |  n/a  | 
+|  WSGIPath  |  The file that contains the WSGI application\. This file must have an `application` callable\.  |  On Amazon Linux 2 Python platform versions: `application:app` On Amazon Linux AMI Python platform versions: `application.py`  |  n/a  | 
 |  NumProcesses  |  The number of daemon processes that should be started for the process group when running WSGI applications\.  |  `1`  |  n/a  | 
 |  NumThreads  |  The number of threads to be created to handle requests in each daemon process within the process group when running WSGI applications\.  |  `15`  |  n/a  | 
-| AWS Elastic Beanstalk support for Amazon Linux 2 is in beta release and is subject to change\. | 
 
 You can use the following namespace to configure the proxy server to serve static files\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. This reduces the number of requests that your application has to process\.
 
