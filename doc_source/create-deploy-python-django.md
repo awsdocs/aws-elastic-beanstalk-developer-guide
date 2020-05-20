@@ -215,7 +215,7 @@ By default, Elastic Beanstalk looks for a file named `application.py` to start y
    ```
    option_settings:
      aws:elasticbeanstalk:container:python:
-       WSGIPath: ebdjango/wsgi.py
+       WSGIPath: ebdjango.wsgi
    ```
 
    This setting, `WSGIPath`, specifies the location of the WSGI script that Elastic Beanstalk uses to start your application\.
