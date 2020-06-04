@@ -37,60 +37,60 @@ The following example removes the default configuration and adds a custom config
 
 ```
 files:
-        /etc/nginx/conf.d/proxy.conf:
-          mode: "000644"
-          owner: root
-          group: root
-          content: |
-            upstream nodejs {
-              server 127.0.0.1:5000;
-              keepalive 256;
-            }
-      
-            server {
-              listen 8080;
-      
-              if ($time_iso8601 ~ "^(\d{4})-(\d{2})-(\d{2})T(\d{2})") {
-                  set $year $1;
-                  set $month $2;
-                  set $day $3;
-                  set $hour $4;
-              }
-              access_log /var/log/nginx/healthd/application.log.$year-$month-$day-$hour healthd;
-              access_log  /var/log/nginx/access.log  main;
-      
-              location / {
-                  proxy_pass  http://nodejs;
-                  proxy_set_header   Connection "";
-                  proxy_http_version 1.1;
-                  proxy_set_header        Host            $host;
-                  proxy_set_header        X-Real-IP       $remote_addr;
-                  proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-              }
-      
-              gzip on;
-              gzip_comp_level 4;
-              gzip_types text/html text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
-      
-              location /static {
-                  alias /var/app/current/static;
-              }
-      
-            }
-      
-        /opt/elasticbeanstalk/hooks/configdeploy/post/99_kill_default_nginx.sh:
-          mode: "000755"
-          owner: root
-          group: root
-          content: |
-            #!/bin/bash -xe
-            rm -f /etc/nginx/conf.d/00_elastic_beanstalk_proxy.conf
-            service nginx stop 
-            service nginx start
-      
-      container_commands:
-        removeconfig:
-          command: "rm -f /tmp/deployment/config/#etc#nginx#conf.d#00_elastic_beanstalk_proxy.conf /etc/nginx/conf.d/00_elastic_beanstalk_proxy.conf"
+  /etc/nginx/conf.d/proxy.conf:
+    mode: "000644"
+    owner: root
+    group: root
+    content: |
+      upstream nodejs {
+        server 127.0.0.1:5000;
+        keepalive 256;
+      }
+
+      server {
+        listen 8080;
+
+        if ($time_iso8601 ~ "^(\d{4})-(\d{2})-(\d{2})T(\d{2})") {
+            set $year $1;
+            set $month $2;
+            set $day $3;
+            set $hour $4;
+        }
+        access_log /var/log/nginx/healthd/application.log.$year-$month-$day-$hour healthd;
+        access_log  /var/log/nginx/access.log  main;
+
+        location / {
+            proxy_pass  http://nodejs;
+            proxy_set_header   Connection "";
+            proxy_http_version 1.1;
+            proxy_set_header        Host            $host;
+            proxy_set_header        X-Real-IP       $remote_addr;
+            proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+        }
+
+        gzip on;
+        gzip_comp_level 4;
+        gzip_types text/html text/plain text/css application/json application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+
+        location /static {
+            alias /var/app/current/static;
+        }
+
+      }
+
+  /opt/elasticbeanstalk/hooks/configdeploy/post/99_kill_default_nginx.sh:
+    mode: "000755"
+    owner: root
+    group: root
+    content: |
+      #!/bin/bash -xe
+      rm -f /etc/nginx/conf.d/00_elastic_beanstalk_proxy.conf
+      service nginx stop
+      service nginx start
+
+container_commands:
+  removeconfig:
+    command: "rm -f /tmp/deployment/config/#etc#nginx#conf.d#00_elastic_beanstalk_proxy.conf /etc/nginx/conf.d/00_elastic_beanstalk_proxy.conf"
 ```
 The example configuration, `/etc/nginx/conf.d/proxy.conf`, uses the default configuration at `/etc/nginx/conf.d/00_elastic_beanstalk_proxy.conf` as a base to include the default server block with compression and log settings, and a static file mapping\.  
 The `removeconfig` command removes the container's default configuration to make sure that the proxy server uses the custom configuration\. Elastic Beanstalk recreates the default configuration during every configuration deployment\. To account for that, the example adds a post\-configuration\-deployment hook, `/opt/elasticbeanstalk/hooks/configdeploy/post/99_kill_default_nginx.sh`, which removes the default configuration and restarts the proxy server\.
