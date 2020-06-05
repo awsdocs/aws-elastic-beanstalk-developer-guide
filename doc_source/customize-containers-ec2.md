@@ -176,6 +176,8 @@ You can use the `files` key to create files on the EC2 instance\. The content ca
 
 You can use the `files` key to download private files from Amazon S3 by providing an instance profile for authorization\.
 
+If the specified file name already exists, the existing file will be retained with the extension `.bak` appended to its name.
+
 ### Syntax<a name="linux-files-syntax"></a>
 
 ```
