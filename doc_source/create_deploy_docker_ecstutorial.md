@@ -164,7 +164,7 @@ Next, upload the source bundle to Elastic Beanstalk and create your environment\
 
 1. Open the Elastic Beanstalk console with this preconfigured link: [console\.aws\.amazon\.com/elasticbeanstalk/home\#/newApplication?applicationName=tutorials&environmentType=LoadBalanced](https://console.aws.amazon.com/elasticbeanstalk/home#/newApplication?applicationName=tutorials&environmentType=LoadBalanced)
 
-1. For **Platform**, select the platform and platform branch that match the language used by your application\.
+1. For **Platform**, select **Docker**\. For **Platform branch**, select **Multi\-container Docker running on 64bit Amazon Linux**\.
 
 1. For **Application code**, choose **Upload your code**\.
 
