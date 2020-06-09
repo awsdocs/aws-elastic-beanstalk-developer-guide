@@ -15,9 +15,9 @@ For an existing environment, use the Elastic Beanstalk console anytime to config
 
 **To configure managed platform updates**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -77,7 +77,10 @@ In an immutable update, Elastic Beanstalk deploys as many instances as are curre
 Managed platform updates always perform immutable updates, even when you apply them outside of the maintenance window\. If you change the platform version from the **Dashboard**, Elastic Beanstalk applies the update policy that you've chosen for configuration updates\.
 
 **Warning**  
-During managed platform updates with instance replacement enabled, immutable updates, and deployments with immutable updates enabled all instances are replaced\. This causes all accumulated [Amazon EC2 Burst Balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\.
+Some policies replace all instances during the deployment or update\. This causes all accumulated [Amazon EC2 burst balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\. It happens in the following cases:  
+Managed platform updates with instance replacement enabled
+Immutable updates
+Deployments with immutable updates or traffic splitting enabled
 
 ## Managing managed updates<a name="environment-platform-update-managed-managing"></a>
 
@@ -85,9 +88,9 @@ The Elastic Beanstalk console shows detailed information about managed updates o
 
 **To view information about managed updates \(console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -99,9 +102,9 @@ You can choose to apply a scheduled update immediately, instead of waiting until
 
 **To apply a managed platform update immediately \(console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 

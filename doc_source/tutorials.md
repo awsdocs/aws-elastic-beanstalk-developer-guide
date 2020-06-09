@@ -19,7 +19,7 @@ These tutorials are targeted at intermediate users and may not contain instructi
 + **\.NET Framework \(IIS and ASP\.NET\)** \- [Tutorial: How to deploy a \.NET sample application using Elastic Beanstalk](create_deploy_NET.quickstart.md)
 
 You can download the sample applications used by Elastic Beanstalk when you create an environment without providing a source bundle with the following links:
-+ **Single Container Docker** – [docker\-singlecontainer\-v1\.zip](samples/docker-singlecontainer-v1.zip)
++ **Docker** – [docker\-singlecontainer\-v1\.zip](samples/docker-singlecontainer-v1.zip)
 + **Multicontainer Docker** – [docker\-multicontainer\-v2\.zip](samples/docker-multicontainer-v2.zip)
 + **Preconfigured Docker \(Glassfish\)** – [docker\-glassfish\-v1\.zip](samples/docker-glassfish-v1.zip)
 + **Go** – [go\-v1\.zip](samples/go-v1.zip)

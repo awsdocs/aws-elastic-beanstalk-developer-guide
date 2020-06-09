@@ -19,9 +19,9 @@ You can use the Elastic Beanstalk console to configure the software running on y
 
 **To configure your Docker environment in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -47,14 +47,14 @@ In a Docker environment, Elastic Beanstalk passes environment properties to Dock
 
 ## Docker images<a name="docker-images"></a>
 
-The single container and multicontainer Docker platforms for Elastic Beanstalk support the use of Docker images stored in a public or private online image repository\.
+The Docker and Multicontainer Docker platforms for Elastic Beanstalk support the use of Docker images stored in a public or private online image repository\.
 
 Specify images by name in `Dockerrun.aws.json`\. Note these conventions:
 + Images in official repositories on Docker Hub use a single name \(for example, `ubuntu` or `mongo`\)\.
 + Images in other repositories on Docker Hub are qualified with an organization name \(for example, `amazon/amazon-ecs-agent`\)\.
 + Images in other online repositories are qualified further by a domain name \(for example, `quay.io/assemblyline/ubuntu` or `account-id.dkr.ecr.us-east-2.amazonaws.com/ubuntu:trusty`\)\. 
 
-For single container environments only, you can also build your own image during environment creation with a Dockerfile\. See [Building custom images with a Dockerfile](single-container-docker-configuration.md#single-container-docker-configuration.dockerfile) for details\.
+For environments using the Docker platform only, you can also build your own image during environment creation with a Dockerfile\. See [Building custom images with a Dockerfile](single-container-docker-configuration.md#single-container-docker-configuration.dockerfile) for details\. The Multicontainer Docker platform doesn't support this functionality\.
 
 ### Using images from an Amazon ECR repository<a name="docker-images-ecr"></a>
 
@@ -98,7 +98,7 @@ You do, however, need to provide your instances with permission to access the im
 
 Replace the Amazon Resource Name \(ARN\) in the above policy with the ARN of your repository\.
 
-In your `Dockerrun.aws.json` file, refer to the image by URL\. For the [single container platform](single-container-docker-configuration.md), the URL goes in the `Image` definition:
+In your `Dockerrun.aws.json` file, refer to the image by URL\. For the [Docker platform](single-container-docker-configuration.md), the URL goes in the `Image` definition:
 
 ```
   "Image": {
@@ -107,7 +107,7 @@ In your `Dockerrun.aws.json` file, refer to the image by URL\. For the [single c
     },
 ```
 
-For the [multicontainer platform](create_deploy_docker_v2config.md), use the `image` key in a container definition object:
+For the [Multicontainer Docker platform](create_deploy_docker_v2config.md), use the `image` key in a container definition object:
 
 ```
 "containerDefinitions": [
@@ -139,7 +139,7 @@ Upload a copy named `.dockercfg` of the authentication file to a secure Amazon S
 
 Include the Amazon S3 bucket information in the `Authentication` \(v1\) or `authentication` \(v2\) parameter in your `Dockerrun.aws.json` file\.
 
-For more information about the `Dockerrun.aws.json` format for single container environments, see [Single Container Docker configuration](single-container-docker-configuration.md)\. For multicontainer environments, see [Multicontainer Docker configuration](create_deploy_docker_v2config.md)\.
+For more information about the `Dockerrun.aws.json` format for Docker environments, see [Docker configuration](single-container-docker-configuration.md)\. For multicontainer environments, see [Multicontainer Docker configuration](create_deploy_docker_v2config.md)\.
 
 For more information about the authentication file, see [ Store images on Docker Hub ](https://docs.docker.com/docker-hub/repos/) and [ docker login ](https://docs.docker.com/engine/reference/commandline/login/) on the Docker website\.
 

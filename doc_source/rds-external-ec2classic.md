@@ -65,9 +65,9 @@ Next, add the bridge security group to your running environment\. This procedure
 + Do one of the following:
   + To add a security group using the Elastic Beanstalk console
 
-    1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+    1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-    1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+    1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -86,9 +86,9 @@ Next, pass the connection information to your environment by using environment p
 
 **To configure environment properties**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -119,9 +119,9 @@ Finally, depending on when your application reads environment variables, you mig
 
 **To restart your environment's app servers**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 

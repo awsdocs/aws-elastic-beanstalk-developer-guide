@@ -10,7 +10,7 @@ For details on configuring your application to connect to an external \(not mana
 
 **To perform a blue/green deployment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
 1. [Clone your current environment](using-features.managing.clone.md), or launch a new environment running the platform version you want\.
 

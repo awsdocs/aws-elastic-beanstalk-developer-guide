@@ -2,6 +2,9 @@
 
 AWS Elastic Beanstalk supports custom platforms\. A custom platform is a more advanced customization than a [custom image](using-features.customenv.md) in several ways\. A custom platform lets you develop an entire new platform from scratch, customizing the operating system, additional software, and scripts that Elastic Beanstalk runs on platform instances\. This flexibility enables you to build a platform for an application that uses a language or other infrastructure software, for which Elastic Beanstalk doesn't provide a managed platform\. Compare that to custom images, where you modify an Amazon Machine Image \(AMI\) for use with an existing Elastic Beanstalk platform, and Elastic Beanstalk still provides the platform scripts and controls the platform's software stack\. In addition, with custom platforms you use an automated, scripted way to create and maintain your customization, whereas with custom images you make the changes manually over a running instance\.
 
+**Note**  
+Elastic Beanstalk doesn't support custom platforms based on an Amazon Linux 2 AMI\.
+
 To create a custom platform, you build an AMI from one of the supported operating systems—Ubuntu, RHEL, or Amazon Linux \(see the `flavor` entry in [Platform\.yaml file format](platform-yaml-format.md) for the exact version numbers\)—and add further customizations\. You create your own Elastic Beanstalk platform using [Packer](https://www.packer.io/), which is an open\-source tool for creating machine images for many platforms, including AMIs for use with Amazon Elastic Compute Cloud \(Amazon EC2\)\. An Elastic Beanstalk platform comprises an AMI configured to run a set of software that supports an application, and metadata that can include custom configuration options and default configuration option settings\.
 
 Elastic Beanstalk manages Packer as a separate built\-in platform, and you don't need to worry about Packer configuration and versions\.

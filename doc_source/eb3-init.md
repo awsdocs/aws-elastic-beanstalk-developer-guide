@@ -5,7 +5,8 @@
 Sets default values for Elastic Beanstalk applications created with EB CLI by prompting you with a series of questions\.
 
 **Note**  
-The values you set with `init` apply only to the current directory and repository\.
+The values you set with eb init apply only to the current directory and repository on the current computer\.  
+The command doesn't create anything in your Elastic Beanstalk account\. To create an Elastic Beanstalk environment, run eb create after running eb init\.
 
 ## Syntax<a name="eb3-initsyntax"></a>
 

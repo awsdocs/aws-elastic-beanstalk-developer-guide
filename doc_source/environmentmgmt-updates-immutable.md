@@ -14,7 +14,10 @@ Immutable updates require [enhanced health reporting](health-enhanced.md) to eva
 You can also use immutable updates to deploy new versions of your application, as an alternative to rolling deployments\. When you [configure Elastic Beanstalk to use immutable updates for application deployments](using-features.rolling-version-deploy.md), it replaces all instances in your environment every time you deploy a new version of your application\. If an immutable application deployment fails, Elastic Beanstalk reverts the changes immediately by terminating the new Auto Scaling group\. This can prevent partial fleet deployments, which can occur when a rolling deployment fails after some batches have already completed\.
 
 **Warning**  
-During managed platform updates with instance replacement enabled, immutable updates, and deployments with immutable updates enabled all instances are replaced\. This causes all accumulated [Amazon EC2 Burst Balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\.
+Some policies replace all instances during the deployment or update\. This causes all accumulated [Amazon EC2 burst balances](https://docs.aws.amazon.com/AWSEC2/latest/DeveloperGuide/burstable-performance-instances.html) to be lost\. It happens in the following cases:  
+Managed platform updates with instance replacement enabled
+Immutable updates
+Deployments with immutable updates or traffic splitting enabled
 
 If an immutable update fails, the new instances upload [bundle logs](using-features.logging.md) to Amazon S3 before Elastic Beanstalk terminates them\. Elastic Beanstalk leaves logs from a failed immutable update in Amazon S3 for one hour before deleting them, instead of the standard 15 minutes for bundle and tail logs\.
 
@@ -31,9 +34,9 @@ You can enable and configure immutable updates in the Elastic Beanstalk console\
 
 **To enable immutable updates \(console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 

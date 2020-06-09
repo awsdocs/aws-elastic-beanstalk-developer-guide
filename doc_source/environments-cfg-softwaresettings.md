@@ -21,9 +21,9 @@ In addition to the standard set of options available for all environments, most 
 
 **To configure platform\-specific settings in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -57,9 +57,9 @@ In most cases, environment properties are passed to your application as *environ
 
 **To configure environment properties in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -126,11 +126,11 @@ option_settings:
 ```
 
 Most Elastic Beanstalk platforms define additional namespaces with options for configuring software that runs on the instance, such as the reverse proxy that relays requests to your application\. For more information about the namespaces available for your platform, see the following:
-+ Go – [Go configuration namespaces](go-environment.md#go-namespaces)
-+ Java SE – [Java SE configuration namespaces](java-se-platform.md#java-se-namespaces)
++ Go – [Go configuration namespace](go-environment.md#go-namespaces)
++ Java SE – [Java SE configuration namespace](java-se-platform.md#java-se-namespaces)
 + Tomcat – [Tomcat configuration namespaces](java-tomcat-platform.md#java-tomcat-namespaces)
 + \.NET – [The aws:elasticbeanstalk:container:dotnet:apppool namespace](create_deploy_NET.container.console.md#dotnet-namespaces)
-+ Node\.js – [Node\.js configuration namespaces](create_deploy_nodejs.container.md#nodejs-namespaces)
++ Node\.js – [Node\.js configuration namespace](create_deploy_nodejs.container.md#nodejs-namespaces)
 + PHP – [The aws:elasticbeanstalk:container:php:phpini namespace](create_deploy_PHP.container.md#php-namespaces)
 + Python – [Python configuration namespaces](create-deploy-python-container.md#python-namespaces)
 + Ruby – [Ruby configuration namespaces](create_deploy_Ruby.container.md#ruby-namespaces)

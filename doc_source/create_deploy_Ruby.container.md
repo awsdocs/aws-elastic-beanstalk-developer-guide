@@ -12,7 +12,7 @@ Your application might run under a different application server, for example Pas
 **Note**  
 If you are using an Amazon Linux AMI Ruby platform branch \(preceding Amazon Linux 2\), be aware that Elastic Beanstalk provides two flavors of these branches \- with Puma and with Passenger\. If your application needs the Passenger application server, you can use the appropriate Passenger platform branch, and you don't need to do any additional configuration\.
 
-Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the Amazon Elastic Compute Cloud \(Amazon EC2\) instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application and enable log rotation to Amazon S3\. The platform also predefines some common environment variables related to Rails and Rack for ease of discovery and use\.
+Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the Amazon Elastic Compute Cloud \(Amazon EC2\) instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application, enable log rotation to Amazon S3, and map folders in your application source that contain static files to paths served by the proxy server\. The platform also predefines some common environment variables related to Rails and Rack for ease of discovery and use\.
 
 Configuration options are available in the Elastic Beanstalk console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
 
@@ -28,9 +28,9 @@ You can use the Elastic Beanstalk console to enable log rotation to Amazon S3 an
 
 **To access the software configuration settings for your environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -43,6 +43,14 @@ If you have many environments, use the search bar to filter the environment list
 The **Log options** section has two settings:
 + **Instance profile**– Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to the Amazon S3 bucket associated with your application\.
+
+### Static files<a name="create_deploy_Ruby.container.console.staticfiles"></a>
+
+To improve performance, the **Static files** section lets you configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. For each directory, you set the virtual path to directory mapping\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\.
+
+For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
+
+By default, the proxy server in a Ruby environment serves any files in the `public` folder at the `/public` path, and any files in the `public/assets` subfolder at the `/assets` path\. For example, if your application source contains a file named `logo.png` in a folder named `public`, the proxy server serves it to users at `subdomain.elasticbeanstalk.com/public/logo.png`\. If `logo.png` is in a folder named `assets` inside the `public` folder, the proxy server serves it at `subdomain.elasticbeanstalk.com/assets/logo.png`\. You can configure additional mappings as explained in this section\.
 
 ### Environment properties<a name="create_deploy_Ruby.env.console.ruby.envprops"></a>
 
@@ -69,13 +77,19 @@ See [Environment properties and other software settings](environments-cfg-softwa
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
-The Ruby platform doesn't define any additional namespaces\. Instead, it defines environment properties for common Rails and Rack options\. The following configuration file sets each of the platform defined environment properties, and sets an additional environment property named `LOGGING`\.
+You can use the `aws:elasticbeanstalk:environment:proxy:staticfiles` namespace to configure the environment proxy to serve static files\. You define mappings of virtual paths to application directories\.
+
+The Ruby platform doesn't define any platform\-specific namespaces\. Instead, it defines environment properties for common Rails and Rack options\.
+
+The following configuration file specifies a static files option that maps a directory named `staticimages` to the path `/images`, sets each of the platform defined environment properties, and sets an additional environment property named `LOGGING`\.
 
 **Example \.ebextensions/ruby\-settings\.config**  
 
 ```
 option_settings:
-  aws:elasticbeanstalk:application:environment: 
+  aws:elasticbeanstalk:environment:proxy:staticfiles:
+    /images: staticimages
+  aws:elasticbeanstalk:application:environment:
     BUNDLE_WITHOUT: test
     BUNDLER_DEPLOYMENT_MODE: true
     RACK_ENV: development
@@ -85,6 +99,6 @@ option_settings:
 ```
 
 **Note**  
-The `BUNDLER_DEPLOYMENT_MODE` environment property isn't defined on Amazon Linux AMI Ruby platform branches \(preceding Amazon Linux 2\)\.
+The `BUNDLER_DEPLOYMENT_MODE` environment property and the `aws:elasticbeanstalk:environment:proxy:staticfiles` namespace aren't defined on Amazon Linux AMI Ruby platform branches \(preceding Amazon Linux 2\)\.
 
 Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.

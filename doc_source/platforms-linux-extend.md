@@ -4,7 +4,7 @@ The [AWS Elastic Beanstalk Linux platforms](platforms-linux.md) provide a lot of
 
 ## Buildfile and Procfile<a name="platforms-linux-extend.build-proc"></a>
 
-Some platforms allow you to customize how you build or prepare your application, and to specify the processes that run your application\. Platforms that support them have *Buildfile* and/or *Procfile* subtopics under their [respective platform topics](concepts-all-platforms.md) in this guide\.
+Some platforms allow you to customize how you build or prepare your application, and to specify the processes that run your application\. Each individual platform topic specifically mentions *Buildfile* and/or *Procfile* if the platform supports them\. Look for your specific platform under [Elastic Beanstalk platforms](concepts-all-platforms.md)\.
 
 For all supporting platforms, syntax and semantics are identical, and are as described on this page\. Individual platform topics mention specific usage of these files for building and running applications in their respective languages\.
 

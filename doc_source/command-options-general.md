@@ -16,6 +16,7 @@
 + [aws:elasticbeanstalk:environment](#command-options-general-elasticbeanstalkenvironment)
 + [aws:elasticbeanstalk:environment:process:default](#command-options-general-environmentprocess)
 + [aws:elasticbeanstalk:environment:process:process\_name](#command-options-general-environmentprocess-process)
++ [aws:elasticbeanstalk:environment:proxy:staticfiles](#command-options-general-environmentproxystaticfiles)
 + [aws:elasticbeanstalk:healthreporting:system](#command-options-general-elasticbeanstalkhealthreporting)
 + [aws:elasticbeanstalk:hostmanager](#command-options-general-elasticbeanstalkhostmanager)
 + [aws:elasticbeanstalk:managedactions](#command-options-general-elasticbeanstalkmanagedactions)
@@ -23,6 +24,8 @@
 + [aws:elasticbeanstalk:monitoring](#command-options-general-elasticbeanstalkmonitoring)
 + [aws:elasticbeanstalk:sns:topics](#command-options-general-elasticbeanstalksnstopics)
 + [aws:elasticbeanstalk:sqsd](#command-options-general-elasticbeanstalksqsd)
++ [aws:elasticbeanstalk:trafficsplitting](#command-options-general-elasticbeanstalktrafficsplitting)
++ [aws:elasticbeanstalk:xray](#command-options-general-elasticbeanstalkxray)
 + [aws:elb:healthcheck](#command-options-general-elbhealthcheck)
 + [aws:elb:loadbalancer](#command-options-general-elbloadbalancer)
 + [aws:elb:listener](#command-options-general-elblistener)
@@ -216,14 +219,14 @@ Configure environment health log streaming for your application\.
 
 ## aws:elasticbeanstalk:command<a name="command-options-general-elasticbeanstalkcommand"></a>
 
-Configure rolling deployments for your application code\.
+Configure the deployment policy for your application code\. For more information, see [Deployment policies and settings](using-features.rolling-version-deploy.md)\.
 
 
 **Namespace: `aws:elasticbeanstalk:command`**  
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  DeploymentPolicy  |  Choose a [deployment policy](using-features.rolling-version-deploy.md) for application version deployments\.  If you use the Elastic Beanstalk console to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console overrides this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  `AllAtOnce`  |  `AllAtOnce` `Rolling` `RollingWithAdditionalBatch` `Immutable`  | 
+|  DeploymentPolicy  |  Choose a [deployment policy](using-features.rolling-version-deploy.md) for application version deployments\.  If you use the Elastic Beanstalk console to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console overrides this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  `AllAtOnce`  |  `AllAtOnce` `Rolling` `RollingWithAdditionalBatch` `Immutable` `TrafficSplitting`  | 
 |  Timeout  |  Number of seconds to wait for an instance to complete executing commands\. Elastic Beanstalk internally adds 240 seconds \(four minutes\) to the `Timeout` value\. For example, the effective timeout by default is 840 seconds \(600 \+ 240\), or 14 minutes\.  |   `600`   |  `1` to `3600`  | 
 |  BatchSizeType  |  The type of number that is specified in **BatchSize**\.  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |   `Percentage`   |  `Percentage`  `Fixed`   | 
 |  BatchSize  |  Percentage or fixed number of Amazon EC2 instances in the Auto Scaling group on which to simultaneously perform deployments\. Valid values vary per **BatchSizeType** setting\.  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |   `100`   |  `1` to `100` \(`Percentage`\)\. `1` to [aws:autoscaling:asg::MaxSize](#command-options-general-autoscalingasg) \(`Fixed`\)  | 
@@ -286,6 +289,22 @@ Configure additional processes for your environment\.
 |  StickinessType  |  Set to `lb_cookie` to use cookies for sticky sessions\. This option is only applicable to environments with an application load balancer\.  |  `lb_cookie`  |  `lb_cookie`  | 
 |  UnhealthyThresholdCount  |  Consecutive unsuccessful requests before Elastic Load Balancing changes the instance health status\.  |  `5`  |  `2` to `10`  | 
 
+## aws:elasticbeanstalk:environment:proxy:staticfiles<a name="command-options-general-environmentproxystaticfiles"></a>
+
+You can use the following namespace to configure the proxy server to serve static files\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. This reduces the number of requests that your application has to process\.
+
+Map a path served by the proxy server to a folder in your source code that contains static assets\. Each option that you define in this namespace maps a different path\.
+
+**Note**  
+This namespace applies to platform branches based on Amazon Linux 2\. If your environment uses a platform version based on Amazon Linux AMI \(preceding Amazon Linux 2\), refer to [Platform specific options](command-options-specific.md) for platform\-specific static file namespaces\.
+
+
+**Namespace: `aws:elasticbeanstalk:environment:proxy:staticfiles`**  
+
+|  **Name**  |  **Value**  | 
+| --- | --- | 
+|  Path where the proxy server will serve the files\. Start the value with `/`\. Example: Specify `/images` to serve files at `subdomain.eleasticbeanstalk.com/images`\.  |  Name of the folder containing the files\. Example: Specify `staticimages` to serve files from a folder named `staticimages` at the top level of your source bundle\.  | 
+
 ## aws:elasticbeanstalk:healthreporting:system<a name="command-options-general-elasticbeanstalkhealthreporting"></a>
 
 Configure enhanced health reporting for your environment\.
@@ -306,7 +325,7 @@ Configure the EC2 instances in your environment to upload rotated logs to Amazon
 
 **Namespace: `aws:elasticbeanstalk:hostmanager`**  
 
-|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
+|  **Name**  |  **Description**  |  **Default**  | proxy:staticfiles **Valid values**  | 
 | --- | --- | --- | --- | 
 |  LogPublicationControl  |  Copy the log files for your application's Amazon EC2 instances to the Amazon S3 bucket associated with your application\.  |   `false`   |   `true`   `false`   | 
 
@@ -378,6 +397,31 @@ Configure the Amazon SQS queue for a worker environment\.
 |  ErrorVisibilityTimeout  |  The amount of time, in seconds, that elapses before Elastic Beanstalk returns a message to the Amazon SQS queue after a processing attempt fails with an explicit error\.  |  `2` seconds  |  `0` to `43200` seconds  | 
 |  RetentionPeriod  |  The amount of time, in seconds, a message is valid and will be actively processed  |   `345600`   |  `60` to `1209600`  | 
 |  MaxRetries  |  The maximum number of attempts that Elastic Beanstalk attempts to send the message to the web application that will process it before moving the message to the dead\-letter queue\.  |   `10`   |  `1` to `100`  | 
+
+## aws:elasticbeanstalk:trafficsplitting<a name="command-options-general-elasticbeanstalktrafficsplitting"></a>
+
+Configure traffic\-splitting deployments for your environment\.
+
+This namespace applies when you set the `DeploymentPolicy` option of the [aws:elasticbeanstalk:command](#command-options-general-elasticbeanstalkcommand) namespace to `TrafficSplitting`\. For more information about deployment policies, see [Deployment policies and settings](using-features.rolling-version-deploy.md)\.
+
+
+**Namespace: `aws:elasticbeanstalk:trafficsplitting`**  
+
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
+| --- | --- | --- | --- | 
+|  NewVersionPercent  |  The initial percentage of incoming client traffic that Elastic Beanstalk shifts to environment instances running the new application version you're deploying\.  |   `10`   |  `1` to `100`  | 
+|  EvaluationTime  |  The time period, in minutes, that Elastic Beanstalk waits after an initial healthy deployment before proceeding to shift all incoming client traffic to the new application version that you're deploying\.  |   `5`   |  `3` to `600`  | 
+
+## aws:elasticbeanstalk:xray<a name="command-options-general-elasticbeanstalkxray"></a>
+
+Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrated](environment-configuration-debugging.md) application\.
+
+
+**Namespace: `aws:elasticbeanstalk:xray`**  
+
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
+| --- | --- | --- | --- | 
+|  `XRayEnabled`  |  Set to `true` to run the X\-Ray daemon on the instances in your environment\.  |  `false`  |  `true` `false`  | 
 
 ## aws:elb:healthcheck<a name="command-options-general-elbhealthcheck"></a>
 

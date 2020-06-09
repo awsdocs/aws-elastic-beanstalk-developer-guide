@@ -28,9 +28,9 @@ You can add, update, and delete tags in an existing Elastic Beanstalk saved conf
 
 **To manage a saved configuration's tags using the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Applications**, and then choose your application's name on the list\.
+1. In the navigation pane, choose **Applications**, and then choose your application's name from the list\.
 **Note**  
 If you have many applications, use the search bar to filter the application list\.
 

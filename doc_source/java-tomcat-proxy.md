@@ -1,8 +1,16 @@
 # Configuring your Tomcat environment's proxy server<a name="java-tomcat-proxy"></a>
 
-The Tomcat platform uses a reverse proxy to relay requests from port 80 on the instance to your Tomcat web container listening on port 8080\. Elastic Beanstalk provides a default proxy configuration that you can extend or override completely with your own configuration\.
+The Tomcat platform uses [nginx](https://www.nginx.com/) as the reverse proxy to relay requests from port 80 on the instance to your Tomcat web container listening on port 8080\. Elastic Beanstalk provides a default proxy configuration that you can extend or override completely with your own configuration\.
 
-By default, the Tomcat platform uses [Apache 2\.4](https://httpd.apache.org/docs/2.4/) for the proxy\. You can choose to use [Apache 2\.2](https://httpd.apache.org/docs/2.2/) or [nginx](https://www.nginx.com/) by including a [configuration file](ebextensions.md) in your source code\. The following example configures Elastic Beanstalk to use nginx\.
+All Amazon Linux 2 platforms support a uniform proxy configuration feature\. For details about configuring the proxy server on Tomcat platform versions running Amazon Linux 2, expand the *Reverse Proxy Configuration* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
+
+## Configuring the proxy on the Amazon Linux AMI \(preceding Amazon Linux 2\) Tomcat platform<a name="java-tomcat-proxy.alami"></a>
+
+If your Elastic Beanstalk Tomcat environment uses an Amazon Linux AMI platform version \(preceding Amazon Linux 2\), read the additional information in this section\.
+
+### Choosing a proxy server for your Tomcat environment<a name="java-tomcat-proxy.alami"></a>
+
+Tomcat platform versions based on Amazon Linux AMI \(preceding Amazon Linux 2\) use [Apache 2\.4](https://httpd.apache.org/docs/2.4/) for the proxy by default\. You can choose to use [Apache 2\.2](https://httpd.apache.org/docs/2.2/) or [nginx](https://www.nginx.com/) by including a [configuration file](ebextensions.md) in your source code\. The following example configures Elastic Beanstalk to use nginx\.
 
 **Example \.ebextensions/nginx\-proxy\.config**  
 
@@ -12,12 +20,7 @@ option_settings:
     ProxyServer: nginx
 ```
 
-**Topics**
-+ [Migrating from Apache 2\.2 to Apache 2\.4](#java-tomcat-proxy-apache-migrate)
-+ [Extending and overriding the default Apache configuration](#java-tomcat-proxy-apache)
-+ [Extending the default nginx configuration](#java-tomcat-proxy-nginx)
-
-## Migrating from Apache 2\.2 to Apache 2\.4<a name="java-tomcat-proxy-apache-migrate"></a>
+### Migrating from Apache 2\.2 to Apache 2\.4<a name="java-tomcat-proxy-apache-migrate"></a>
 
 If your application was developed for [Apache 2\.2](https://httpd.apache.org/docs/2.2/), read this section to learn about migrating to [Apache 2\.4](https://httpd.apache.org/docs/2.4/)\.
 
@@ -37,9 +40,9 @@ For a quick fix, you can also select the proxy server in the Elastic Beanstalk c
 
 **To select the proxy in your Tomcat environment in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -53,7 +56,7 @@ If you have many environments, use the search bar to filter the environment list
 
 ![\[Choosing the proxy for a Tomcat environment in the Elastic Beanstalk console's software configuration category\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/java-tomcat-proxy-selection.png)
 
-## Extending and overriding the default Apache configuration<a name="java-tomcat-proxy-apache"></a>
+### Extending and overriding the default Apache configuration<a name="java-tomcat-proxy-apache"></a>
 
 You can extend the Elastic Beanstalk default Apache configuration with your additional configuration files\. Alternatively, you can override the Elastic Beanstalk default Apache configuration completely\.
 
@@ -112,7 +115,7 @@ To override the default listener on port 80, include a file named `00_applicatio
 
 For a working example, take a look at the Elastic Beanstalk default configuration file at `/etc/httpd/conf/httpd.conf` on an instance in your environment\. All files in the `.ebextensions/httpd` folder in your source bundle are copied to `/etc/httpd` during deployments\.
 
-## Extending the default nginx configuration<a name="java-tomcat-proxy-nginx"></a>
+### Extending the default nginx configuration<a name="java-tomcat-proxy-nginx"></a>
 
 To extend Elastic Beanstalk's default nginx configuration, add `.conf` configuration files to a folder named `.ebextensions/nginx/conf.d/` in your application source bundle\. The Elastic Beanstalk nginx configuration includes `.conf` files in this folder automatically\.
 

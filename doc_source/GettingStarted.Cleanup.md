@@ -6,7 +6,7 @@ Congratulations\! You have successfully deployed a sample application to the AWS
 
 1. Delete all application versions\.
 
-   1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+   1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
    1. In the navigation pane, choose **Applications**, and then choose **getting\-started\-app**\.
 

@@ -36,7 +36,7 @@ eb local run
 |  Name  |  Description  | 
 | --- | --- | 
 |  `--envvars key1=value1,key2=value2`  |  Sets environment variables that the EB CLI will pass to the local Docker containers\. In multicontainer environments, all variables are passed to all containers\.  | 
-|  `--port hostport`  |  Maps a port on the host to the exposed port on the container\. If you don't specify this option, the EB CLI uses the same port on both host and container\. This option works only with single container applications\.  | 
+|  `--port hostport`  |  Maps a port on the host to the exposed port on the container\. If you don't specify this option, the EB CLI uses the same port on both host and container\. This option works only with Docker platform applications\. It doesn't apply to the Multicontainer Docker platform\.  | 
 |  [Common options](eb3-cmd-options.md)  |  | 
 
 eb local status

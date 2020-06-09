@@ -1,4 +1,4 @@
-# Single Container Docker configuration<a name="single-container-docker-configuration"></a>
+# Docker configuration<a name="single-container-docker-configuration"></a>
 
 This section describes how to prepare your Docker image and container for deployment to Elastic Beanstalk\. Any web application that you deploy to Elastic Beanstalk in a single container Docker environment must include a `Dockerfile` or a `Dockerrun.aws.json` file\. You can deploy your web application from a Docker container to Elastic Beanstalk by doing one of the following:
 + Create a `Dockerfile` to have Elastic Beanstalk build and run a custom image\.
@@ -7,7 +7,7 @@ This section describes how to prepare your Docker image and container for deploy
 
   If you use only a `Dockerfile` or only a `Dockerrun.aws.json` file to deploy your application, you don't need to create a `.zip` file\.
 
-This topic is a syntax reference\. For detailed procedures on launching single container Docker environments, see [Single Container Docker environments](single-container-docker.md)\.
+This topic is a syntax reference\. For detailed procedures on launching Docker environments, see [Using the Docker platform](single-container-docker.md)\.
 
 **Topics**
 + [Dockerrun\.aws\.json v1](#single-container-docker-configuration.dockerrun)
@@ -144,7 +144,7 @@ The following example shows the use of an authentication file named `mydockercfg
 
 Create a `Dockerfile` when you don't already have an existing image hosted in a repository\. 
 
-The following snippet is an example of the `Dockerfile`\. When you follow the instructions in [Single Container Docker environments](single-container-docker.md), you can upload this `Dockerfile` as written\. Elastic Beanstalk runs the game 2048 when you use this `Dockerfile`\.
+The following snippet is an example of the `Dockerfile`\. When you follow the instructions in [Using the Docker platform](single-container-docker.md), you can upload this `Dockerfile` as written\. Elastic Beanstalk runs the game 2048 when you use this `Dockerfile`\.
 
 ```
 FROM ubuntu:12.04

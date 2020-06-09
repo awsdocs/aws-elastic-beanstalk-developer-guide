@@ -74,7 +74,7 @@ javac -d WEB-INF/classes com/myapp/model/Record.java
 javac -classpath WEB-INF/lib/*:WEB-INF/classes -d WEB-INF/classes com/myapp/model/Record.java
 javac -classpath WEB-INF/lib/*:WEB-INF/classes -d WEB-INF/classes com/myapp/web/ListRecords.java
 
-jar -cvf ROOT.war *.jsp images css js WEB-INF .ebextensions
+jar -cvf ROOT.war *.jsp images css js WEB-INF
 cp ROOT.war /Library/Tomcat/webapps
 mv ROOT.war ../
 ```

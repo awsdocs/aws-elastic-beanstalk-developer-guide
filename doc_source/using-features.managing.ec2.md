@@ -21,9 +21,9 @@ You can modify your Elastic Beanstalk environment's Amazon EC2 instance configur
 
 **To configure Amazon EC2 instances in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -68,7 +68,7 @@ You can specify additional security groups that you have created to allow traffi
 To allow traffic between environment A's instances and environment B's instances, you can add a rule to the security group that Elastic Beanstalk attached to environment B, and specify the security group that Elastic Beanstalk attached to environment A\. This allows ingress from, or egress to, environment A's instances\. However, doing so creates a dependency between the two security groups\. If you later try to terminate environment A, Elastic Beanstalk will not be able to delete the environment's security group, because environment B's security group is dependent on it\.  
 A safer approach would be to create a separate security group, attach it to environment A, and specify it in a rule of environment B's security group\.
 
-For more information on Amazon Amazon EC2 security groups, see [Amazon EC2 Security Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) in the *Amazon Elastic Compute Cloud User Guide*\.
+For more information on Amazon Amazon EC2 security groups, see [Amazon EC2 Security Groups](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 ### Capacity category settings<a name="using-features.managing.ec2.console.capacity"></a>
 
@@ -86,7 +86,7 @@ The **Instance type** setting determines the type of Amazon EC2 instance launche
 
 For large\-scale, high\-availability applications, use a pool of instances to ensure that capacity is not greatly affected if any single instance goes down\. Start with an instance type that allows you to run five instances under moderate load during normal hours\. If any instance fails, the rest of the instances can absorb the rest of the traffic\. The capacity buffer also allows time for the environment to scale up as traffic begins to rise during peak hours\.
 
-For more information about Amazon EC2 instance families and types, see [Instance Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon Elastic Compute Cloud User Guide*\. 
+For more information about Amazon EC2 instance families and types, see [Instance Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide for Linux Instances*\. 
 
 When you enable Spot Instance requests for your environment, this configuration page shows a list of **Instance types** instead of a single setting\. You can select one or more instance types for your Spot Instances\. For details, see [Spot instance support](using-features.managing.as.md#environments-cfg-autoscaling-spot)\.
 
@@ -113,7 +113,7 @@ option_settings:
     BlockDeviceMappings: "/dev/sdj=:100,/dev/sdh=snap-51eef269,/dev/sdb=ephemeral0"
 ```
 
-`BlockDeviceMappings` lets you configure additional block devices for your instances\. For more information, see [Block Device Mapping](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html) in the *Amazon Elastic Cloud Computer User Guide*\.
+`BlockDeviceMappings` lets you configure additional block devices for your instances\. For more information, see [Block Device Mapping](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
 **Note**  
 The `InstanceType` option is obsolete\. It's replaced by the newer and more powerful `InstanceTypes` option in the [`aws:ec2:instances`](command-options-general.md#command-options-general-ec2instances) namespace\. The new option allows you to specify a list of one or more instance types for your environment\. The first value on that list is equivalent to the value of the `InstanceType` option included in the `aws:autoscaling:launchconfiguration` namespace described here\. The recommended way to specify instance types is by using the new option\. If specified, the new option takes precedence over the old one\. For more information, see [The aws:ec2:instances namespace](using-features.managing.as.md#environments-cfg-autoscaling-namespace.instances)\.

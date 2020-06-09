@@ -22,7 +22,7 @@ The following table discusses considerations you should be aware of when plannin
 |  Instance profile  |  Amazon Linux 2 platforms require an instance profile to be configured\. Environment creation might temporarily succeed without one, but the environment might show errors soon after creation when actions requiring an instance profile start failing\. For details, see [Managing Elastic Beanstalk instance profiles](iam-instanceprofile.md)\.  | 
 |  Enhanced health  |  Amazon Linux 2 platform versions enable enhanced health by default\. This is a change if you don't use the Elastic Beanstalk console to create your environments\. The console enables enhanced health by default whenever possible, regardless of platform version\. For details, see [Enhanced health reporting and monitoring](health-enhanced.md)\.  | 
 |  Custom AMI  |  If your environment uses a [custom AMI](using-features.customenv.md), create a new AMI based on Amazon Linux 2 for your new environment using an Elastic Beanstalk Amazon Linux 2 platform\.  | 
-|  Limitations  |  Amazon Linux 2 platforms are missing some features compared to Amazon Linux AMI platforms \(preceding Amazon Linux 2\)\. [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.migration-al.html)  | 
+|  Custom platforms  |  The managed AMIs of Amazon Linux 2 platform versions don't support [custom platforms](custom-platforms.md)\.  | 
 
 ## Platform specific considerations<a name="using-features.migration-al.specific"></a>
 
@@ -60,6 +60,20 @@ The following table lists migration information for the Corretto platform branch
 |  Port passing  |  On Amazon Linux 2 platforms, Elastic Beanstalk doesn't pass a port value to your application process through the `PORT` environment variable\. You can simulate this behavior for your process by configuring a `PORT` environment property yourself\. However, if you have multiple processes, and you're counting on Elastic Beanstalk passing incremental port values to your processes \(5000, 5100, 5200 etc\.\), you should modify your implementation\. For details, expand the *Reverse proxy configuration* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.  | 
 |  Java 7  |  Elastic Beanstalk doesn't support an Amazon Linux 2 Java 7 platform branch\. If you have a Java 7 application, migrate it to Corretto 8 or Corretto 11\.  | 
 
+### Tomcat<a name="using-features.migration-al.specific.tomcat"></a>
+
+The following table lists migration information for the Amazon Linux 2 platform versions in the [Tomcat platform](go-environment.md)\.
+
+
+|  **Area**  |  **Changes and information**  | 
+| --- | --- | 
+|  **Option**  |  **Migration information**  | 
+| --- | --- | 
+|  Configuration options  |  On Amazon Linux 2 platform versions, Elastic Beanstalk doesn't support the configuration options in the `aws:elasticbeanstalk:environment:proxy` namespace\. Here's the migration information for each option\. [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.migration-al.html) The `XX:MaxPermSize` option in the `aws:elasticbeanstalk:container:tomcat:jvmoptions` namespace isn't supported on Amazon Linux 2 platform versions\. The JVM setting to modify the size of the permanent generation applies only to Java 7 and earlier, and is therefore not applicable to Amazon Linux 2 platform versions\.  | 
+|  Application path  |  On Amazon Linux 2 platforms, the path to the application's directory on Amazon EC2 instances of your environment is `/var/app/current`\. It was `/var/lib/tomcat8/webapps` on Amazon Linux AMI platforms\.  | 
+|  `GzipCompression`  |  Unsupported on Amazon Linux 2 platform versions\.  | 
+|  `ProxyServer`  |  Amazon Linux 2 Tomcat platform versions only support nginx\. The Apache proxy server isn't supported\. On Amazon Linux AMI platform versions the default proxy was Apache 2\.4\. If you were using the default proxy, and you added custom configuration, you now have to migrate your proxy configuration to nginx\. If, however, you were already using nginx through an option setting, your proxy configuration should still works on Amazon Linux 2\.  | 
+
 ### Node\.js<a name="using-features.migration-al.specific.nodejs"></a>
 
 The following table lists migration information for the Amazon Linux 2 platform versions in the [Node\.js platform](create_deploy_nodejs.container.md)\.
@@ -72,7 +86,7 @@ The following table lists migration information for the Amazon Linux 2 platform 
 |  Installed Node\.js versions  |  On Amazon Linux 2 platforms, Elastic Beanstalk maintains several Node\.js platform branches, and only installs the latest version of the Node\.js major version corresponding with the platform branch on each platform version\. For example, each platform version in the Node\.js 12 platform branch only has Node\.js 12\.x\.y installed by default\. On Amazon Linux AMI platform versions, we installed the multiple versions of multiple Node\.js versions on each platform version, and only maintained a single platform branch\. Choose the Node\.js platform branch that corresponds with the Node\.js major version that your application needs\.  | 
 |  Configuration options  |  On Amazon Linux 2 platforms, Elastic Beanstalk doesn't support the configuration options in the `aws:elasticbeanstalk:container:nodejs` namespace\. Some of the options have alternatives\. Here's the migration information for each option\. [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.migration-al.html)  | 
 |  `NodeCommand`  |  Use a `Procfile` or the `scripts` keyword in a `package.json` file to specify the start script\.  | 
-|  `NodeVersion`  |  Use the `engines` keyword in a `package.json` file to specify the Node\.js version\. Be aware that you can only specify a Node\.js version that correspondes with your platform branch\. For example, if you're using the Node\.js 12 platform branch, you can specify only a 12\.x\.y Node\.js version\. For details, see [Configuring Node\.js with a package\.json file](nodejs-platform-packagejson.md)\.  | 
+|  `NodeVersion`  |  Use the `engines` keyword in a `package.json` file to specify the Node\.js version\. Be aware that you can only specify a Node\.js version that correspondes with your platform branch\. For example, if you're using the Node\.js 12 platform branch, you can specify only a 12\.x\.y Node\.js version\. For details, see [Specifying Node\.js dependencies with a package\.json file](nodejs-platform-dependencies.md#nodejs-platform-packagejson)\.  | 
 |  `GzipCompression`  |  Unsupported on Amazon Linux 2 platform versions\.  | 
 |  `ProxyServer`  |  Amazon Linux 2 Node\.js platform versions only support nginx\. The Apache proxy server isn't supported\. In addition, these platform versions don't support standalone applications that don't run behind a proxy server\. This used to be possible through the `none` value of the `ProxyServer` option\. If your environment runs a standalone application, update your code to listen to the port that nginx forwards traffic to\. <pre>var port = process.env.PORT || 8080;<br /><br />app.listen(port, function() {<br />  console.log('Server running at http://127.0.0.1:%s', port);<br />});</pre>  | 
 

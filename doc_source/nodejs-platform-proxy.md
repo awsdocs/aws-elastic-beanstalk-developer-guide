@@ -24,10 +24,10 @@ The Node\.js platform sets the PORT environment variable to the port to which th
 
 ```
     var port = process.env.PORT || 3000;
-      
-          var server = app.listen(port, function () {
-              console.log('Server running at http://127.0.0.1:' + port + '/');
-          });
+
+    var server = app.listen(port, function () {
+        console.log('Server running at http://127.0.0.1:' + port + '/');
+    });
 ```
 
 The default nginx configuration forwards traffic to an upstream server named `nodejs` at `127.0.0.1:8081`\. It is possible to remove the default configuration and provide your own in a [configuration file](ebextensions.md)\.
@@ -85,7 +85,7 @@ files:
     content: |
       #!/bin/bash -xe
       rm -f /etc/nginx/conf.d/00_elastic_beanstalk_proxy.conf
-      service nginx stop
+      service nginx stop 
       service nginx start
 
 container_commands:

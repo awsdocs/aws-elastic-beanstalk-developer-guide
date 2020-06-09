@@ -2,7 +2,7 @@
 
 You can use the Elastic Beanstalk Command Line Interface \(EB CLI\) to run the Docker containers configured in your AWS Elastic Beanstalk application locally\. The EB CLI uses the Docker configuration file \(Dockerfile or Dockerrun\.aws\.json\) and source code in your project directory to run your application locally in Docker\.
 
-The EB CLI supports running single container, multicontainer, and preconfigured container applications locally\.
+The EB CLI supports locally running applications defined using the Docker, Multicontainer Docker, and Preconfigured Docker platforms\.
 
 **Topics**
 + [Prerequisites for running Docker applications locally](#create_deploy_docker-eblocal-prereqs)
@@ -45,7 +45,7 @@ You can configure your local containers to connect to a database by passing the 
 
 ## Preparing a Docker application for use with the EB CLI<a name="create_deploy_docker-eblocal-prepare"></a>
 
-Prepare your Docker configuration file and source data as though you were deploying them to Elastic Beanstalk\. This topic uses the PHP and nginx proxy example from the [Multicontainer Docker tutorial](create_deploy_docker_ecstutorial.md) earlier in this guide as an example, but you can use the same commands with any single container, multicontainer, or preconfigured Docker application\.
+Prepare your Docker configuration file and source data as though you were deploying them to Elastic Beanstalk\. This topic uses the PHP and nginx proxy example from the [Multicontainer Docker tutorial](create_deploy_docker_ecstutorial.md) earlier in this guide as an example, but you can use the same commands with any Docker, Multicontainer Docker, or Preconfigured Docker application\.
 
 ## Running a Docker application locally<a name="create_deploy_docker-eblocal-localrun"></a>
 
@@ -64,12 +64,12 @@ The EB CLI reads the Docker configuration and executes the Docker commands neces
 
 **Note**  
 The eb local run command takes two optional parameters, `port` and `envvars`\.  
-To override the default port for a single container application, use the `port` option:  
+To override the default port for a Docker application, use the `port` option:  
 
 ```
 $ eb local run --port 8080
 ```
-This command tells the EB CLI to use port 8080 on the host and map it to the exposed port on the container\. If you don't specify a port, the EB CLI uses the container's port for the host\. This option only works with single container applications  
+This command tells the EB CLI to use port 8080 on the host and map it to the exposed port on the container\. If you don't specify a port, the EB CLI uses the container's port for the host\. This option only works with applications using the Docker platform\.  
 To pass environment variables to the application containers, use the `envvars` option:  
 
 ```

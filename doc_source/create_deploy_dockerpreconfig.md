@@ -46,7 +46,7 @@ For this walk\-through we use a Glassfish example application\.
    FROM amazon/aws-eb-glassfish:5.0-al-onbuild-2.11.1
    ```
 
-   For more information about using a `Dockerfile`, see [Single Container Docker configuration](single-container-docker-configuration.md)\.
+   For more information about using a `Dockerfile`, see [Docker configuration](single-container-docker-configuration.md)\.
 
 1. Build the Docker image\.
 

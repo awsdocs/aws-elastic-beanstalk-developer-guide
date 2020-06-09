@@ -17,7 +17,7 @@ Download the sample application and deploy it to Elastic Beanstalk by following 
 
 **To launch an environment with a sample application \(console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Applications**, and then choose an existing application's name on the list or [create one](applications.md)\.
 

@@ -5,18 +5,15 @@ Amazon Linux 2 platform versions are fundamentally different than Amazon Linux A
 
 The AWS Elastic Beanstalk Node\.js platform is a set of [platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.nodejs) for Node\.js web applications that  run behind an nginx proxy server\. 
 
-Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application and enable log rotation to Amazon S3\.
+Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application, enable log rotation to Amazon S3, and map folders in your application source that contain static files to paths served by the proxy server\.
 
 Configuration options are available in the Elastic Beanstalk console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
 
 To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
 
-You can [include a `Package.json` file](nodejs-platform-packagejson.md) in your source bundle to install packages during deployment, to provide a start command, and to specify the Node\.js version you want your application to use\. You can include an [`npm-shrinkwrap.json` file](nodejs-platform-shrinkwrap.md) to lock down dependency versions\.
+You can [include a `Package.json` file](nodejs-platform-dependencies.md#nodejs-platform-packagejson) in your source bundle to install packages during deployment, to provide a start command, and to specify the Node\.js version you want your application to use\. You can include an [`npm-shrinkwrap.json` file](nodejs-platform-shrinkwrap.md) to lock down dependency versions\.
 
 The Node\.js platform includes a proxy server to serve static assets, forward traffic to your application, and compress responses\. You can [extend or override the default proxy configuration](nodejs-platform-proxy.md) for advanced scenarios\.
-
-**Note**  
-Configuring the proxy to serve static files is supported only on Amazon Linux AMI platform versions \(preceding Amazon Linux 2\)\.
 
 You can add a `Procfile` to your source bundle to specify the command that starts your application, as the following example shows\. This feature replaces the legacy `NodeCommand` option in the `aws:elasticbeanstalk:container:nodejs` namespace\.
 
@@ -42,9 +39,9 @@ Use the Elastic Beanstalk console to enable log rotation to Amazon S3 and config
 
 **To configure your Node\.js environment in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -54,9 +51,15 @@ If you have many environments, use the search bar to filter the environment list
 
 ### Log options<a name="nodejs-platform-console-logging"></a>
 
-The Log Options section has two settings:
+The **Log Options** section has two settings:
 + **Instance profile**– Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to the Amazon S3 bucket associated with your application\.
+
+### Static files<a name="nodejs-platform-console-staticfiles"></a>
+
+To improve performance, the **Static files** section lets you configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. For each directory, you set the virtual path to directory mapping\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\.
+
+For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
 
 ### Environment properties<a name="nodejs-platform-console-envprops"></a>
 
@@ -84,11 +87,13 @@ On the configuration page, specify the following:
 + **Gzip compression**– Specifies whether gzip compression is enabled\. By default, gzip compression is enabled\.
 + **Node command**–Lets you enter the command used to start the Node\.js application\. An empty string \(the default\) means Elastic Beanstalk will use `app.js`, then `server.js`, and then `npm start` in that order\.
 
-#### Static files<a name="nodejs-platform-console-staticfiles"></a>
+## Node\.js configuration namespace<a name="nodejs-namespaces"></a>
 
-To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
+You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
-For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
+The Node\.js platform doesn't define any platform\-specific namespaces\. You can configure the proxy to serve static files by using the `aws:elasticbeanstalk:environment:proxy:staticfiles` namespace\. For details and an example, see [Serving static files](environment-cfg-staticfiles.md)\.
+
+Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.
 
 ## The Amazon Linux AMI \(preceding Amazon Linux 2\) Node\.js platform<a name="nodejs.alami"></a>
 
@@ -120,9 +125,9 @@ When this happens, attempting to update to a new version of the platform that do
 
 **To configure your environment's Node\.js version in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -133,11 +138,9 @@ If you have many environments, use the search bar to filter the environment list
 
 1. Choose **Save**\.
 
-### Node\.js configuration namespaces<a name="nodejs-namespaces"></a>
+### Node\.js configuration namespaces<a name="nodejs.alami.namespaces"></a>
 
-You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
-
-The Node\.js Amazon Linux AMI platform defines options in the `aws:elasticbeanstalk:container:nodejs:staticfiles` and `aws:elasticbeanstalk:container:nodejs` namespaces\.
+The Node\.js Amazon Linux AMI platform defines additional options in the `aws:elasticbeanstalk:container:nodejs:staticfiles` and `aws:elasticbeanstalk:container:nodejs` namespaces\.
 
 The following configuration file tells Elastic Beanstalk to use `npm start` to run the application, sets the proxy type to Apache, enables compression, and configures the proxy to serve static files from two source directories: HTML files at the `html` path under the website's root from the `statichtml` source directory, and image files at the `images` path under the website's root from the `staticimages` source directory\.
 

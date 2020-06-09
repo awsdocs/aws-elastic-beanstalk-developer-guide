@@ -2,7 +2,7 @@
 
 This tutorial and [sample application](https://github.com/awslabs/eb-node-express-sample) walks you through the process of deploying a Node\.js application that uses the AWS SDK for JavaScript in Node\.js to interact with Amazon DynamoDB\. You'll create a DynamoDB table that is external to the AWS Elastic Beanstalk environment, and configure the application to use this external table instead of creating one in the environment\. In a production environment, you keep the table independent of the Elastic Beanstalk environment to protect against accidental data loss and enable you to perform [blue/green deployments](using-features.CNAMESwap.md)\.
 
-The tutorial's sample application uses a DynamoDB table to store user\-provided text data\. The sample application uses [configuration files](ebextensions.md) to create the table and an Amazon Simple Notification Service topic\. It also shows how to use a [package\.json file](nodejs-platform-packagejson.md) to install packages during deployment\.
+The tutorial's sample application uses a DynamoDB table to store user\-provided text data\. The sample application uses [configuration files](ebextensions.md) to create the table and an Amazon Simple Notification Service topic\. It also shows how to use a [package\.json file](nodejs-platform-dependencies.md#nodejs-platform-packagejson) to install packages during deployment\.
 
 **Topics**
 + [Prerequisites](#nodejs-dynamodb-tutorial-prereqs)
@@ -121,9 +121,9 @@ Download the source bundle from GitHub if you haven't already: [eb\-node\-expres
 
 **To deploy a source bundle**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -286,9 +286,9 @@ Deploy the nodejs\-tutorial\.zip source bundle to your environment\.
 
 **To deploy a source bundle**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -322,9 +322,9 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 **To configure your environment's Auto Scaling group for high availability**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -342,9 +342,9 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 **To terminate your Elastic Beanstalk environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 

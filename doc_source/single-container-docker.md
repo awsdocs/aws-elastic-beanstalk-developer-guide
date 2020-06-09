@@ -1,9 +1,9 @@
-# Single Container Docker environments<a name="single-container-docker"></a>
+# Using the Docker platform<a name="single-container-docker"></a>
 
 **Important**  
 Amazon Linux 2 platform versions are fundamentally different than Amazon Linux AMI platform versions \(preceding Amazon Linux 2\)\. These different platform generations are incompatible in several ways\. If you are migrating to an Amazon Linux 2 platform version, be sure to read the information in [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
 
-AWS Elastic Beanstalk can launch single container Docker environments by building an image described in a `Dockerfile` or pulling a remote Docker image\. If you're deploying a remote Docker image, you don't need to include a `Dockerfile`\. Instead, use a `Dockerrun.aws.json` file, which specifies an image to use and additional configuration options\.
+AWS Elastic Beanstalk can launch Docker environments by building an image described in a `Dockerfile` or pulling a remote Docker image\. If you're deploying a remote Docker image, you don't need to include a `Dockerfile`\. Instead, use a `Dockerrun.aws.json` file, which specifies an image to use and additional configuration options\.
 
 **Topics**
 + [Prerequisites](#single-container-docker.prereqs)
@@ -13,13 +13,13 @@ AWS Elastic Beanstalk can launch single container Docker environments by buildin
 + [Test a remote Docker image](#single-container-docker.test-remote)
 + [Deploy a remote Docker image to Elastic Beanstalk](#single-container-docker.deploy-remote)
 + [Clean up](#single-container-docker.cleanup)
-+ [Single Container Docker configuration](single-container-docker-configuration.md)
++ [Docker configuration](single-container-docker-configuration.md)
 
 ## Prerequisites<a name="single-container-docker.prereqs"></a>
 
 This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations, [Using the Elastic Beanstalk command line interface \(EB CLI\)](eb-cli3.md), and Docker\. To follow this tutorial, you need a working local installation of Docker\. For more information about installing Docker, see the [Docker installation guide](https://docs.docker.com/install/)\.
 
-If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\. This tutorial uses the EB CLI, but you can also create environments and upload applications by using the Elastic Beanstalk console\. To learn more about configuring single container Docker environments, see [Single Container Docker configuration](single-container-docker-configuration.md)\.
+If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\. This tutorial uses the EB CLI, but you can also create environments and upload applications by using the Elastic Beanstalk console\. To learn more about configuring Docker environments, see [Docker configuration](single-container-docker-configuration.md)\.
 
 ## Containerize an Elastic Beanstalk application<a name="single-container-docker.setup"></a>
 
@@ -134,7 +134,7 @@ Once we've built and pushed our image, we can deploy it to Elastic Beanstalk wit
 **Note**  
 Before pushing your image, you might need to run docker login\.
 
-Now you can deploy your application using only a `Dockerrun.aws.json` file\. To learn more about `Dockerrun.aws.json` files, see [Single Container Docker configuration](single-container-docker-configuration.md)\.
+Now you can deploy your application using only a `Dockerrun.aws.json` file\. To learn more about `Dockerrun.aws.json` files, see [Docker configuration](single-container-docker-configuration.md)\.
 
 Make a new directory and create a `Dockerrun.aws.json` file\.
 
@@ -195,9 +195,9 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 **To terminate your Elastic Beanstalk environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 

@@ -13,9 +13,6 @@ You can use the `Pipfile` and `Pipfile.lock` files created by Pipenv to specify 
 
 Elastic Beanstalk provides [configuration options](command-options.md) that you can use to customize the software that runs on the EC2 instances in your Elastic Beanstalk environment\. You can configure environment variables needed by your application, enable log rotation to Amazon S3, and map folders in your application source that contain static files to paths served by the proxy server\.
 
-**Note**  
-Configuring the proxy to serve static files is supported only on Amazon Linux AMI platform versions \(preceding Amazon Linux 2\)\.
-
 Configuration options are available in the Elastic Beanstalk console for [modifying the configuration of a running environment](environment-configuration-methods-after.md)\. To avoid losing your environment's configuration when you terminate it, you can use [saved configurations](environment-configuration-savedconfig.md) to save your settings and later apply them to another environment\.
 
 To save settings in your source code, you can include [configuration files](ebextensions.md)\. Settings in configuration files are applied every time you create an environment or deploy your application\. You can also use configuration files to install packages, run scripts, and perform other instance customization operations during deployments\.
@@ -34,9 +31,9 @@ Use the Elastic Beanstalk console to configure Python process settings, enable A
 
 **To configure your Python environment in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -58,6 +55,14 @@ The Log Options section has two settings:
 + **Instance profile**– Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to the Amazon S3 bucket associated with your application\.
 
+### Static files<a name="python-platform-staticfiles"></a>
+
+To improve performance, the **Static files** section lets you configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. For each directory, you set the virtual path to directory mapping\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\.
+
+For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
+
+By default, the proxy server in a Python environment serves any files in a folder named `static` at the `/static` path\. For example, if your application source contains a file named `logo.png` in a folder named `static`, the proxy server serves it to users at `subdomain.elasticbeanstalk.com/static/logo.png`\. You can configure additional mappings as explained in this section\.
+
 ### Environment properties<a name="create-deploy-python-custom-container-envprop"></a>
 
 You can use environment properties to provide information to your application and configure environment variables\. For example, you can create an environment property named `CONNECTION_STRING` that specifies a connection string that your application can use to connect to a database\.
@@ -75,29 +80,19 @@ Environment properties can also provide information to a framework\. For example
 
 See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.
 
-### Configuring an Amazon Linux AMI \(preceding Amazon Linux 2\) Go environment<a name="create-deploy-python-container-console.alami"></a>
-
-The following console software configuration categories are supported only on an Elastic Beanstalk Go environment that uses an Amazon Linux AMI platform version \(preceding Amazon Linux 2\)\.
-
-#### Static files<a name="python-platform-staticfiles"></a>
-
-To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
-
-For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
-
-By default, the proxy server in a Python environment serves any files in a folder named `static` at the `/static` path\. For example, if your application source contains a file named `logo.png` in a folder named `static`, the proxy server serves it to users at `subdomain.elasticbeanstalk.com/static/logo.png`\. You can configure additional mappings as explained in this section\.
-
 ## Python configuration namespaces<a name="python-namespaces"></a>
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
-The Python platform defines options in the `aws:elasticbeanstalk:container:python:staticfiles` and `aws:elasticbeanstalk:container:python` namespaces\. The following example configuration file specifies configuration option settings to create an environment property named `DJANGO_SETTINGS_MODULE`, a static files option that maps a directory named `staticimages` to the path `/images`, and additional settings in the `[aws:elasticbeanstalk:container:python](command-options-specific.md#command-options-python)` namespace\. This namespace contains options that let you specify the location of the WSGI script in your source code, and the number of threads and processes to run in WSGI\.
+The Python platform defines options in the `aws:elasticbeanstalk:environment:proxy:staticfiles` and `aws:elasticbeanstalk:container:python` namespaces\.
+
+The following example configuration file specifies configuration option settings to create an environment property named `DJANGO_SETTINGS_MODULE`, two static files options that map a directory named `statichtml` to the path `/html` and a directory named `staticimages` to the path `/images`, and additional settings in the `[aws:elasticbeanstalk:container:python](command-options-specific.md#command-options-python)` namespace\. This namespace contains options that let you specify the location of the WSGI script in your source code, and the number of threads and processes to run in WSGI\.
 
 ```
 option_settings:
   aws:elasticbeanstalk:application:environment:
     DJANGO_SETTINGS_MODULE: production.settings
-  aws:elasticbeanstalk:container:python:staticfiles:
+  aws:elasticbeanstalk:environment:proxy:staticfiles:
     /html: statichtml
     /images: staticimages
   aws:elasticbeanstalk:container:python:
@@ -108,7 +103,7 @@ option_settings:
 
 **Notes**  
 If you're using an Amazon Linux AMI Python platform version \(preceding Amazon Linux 2\), replace the value for `WSGIPath` with `ebdjango/wsgi.py`\. The value in the example works with the Gunicorn WSGI server, which isn't supported on Amazon Linux AMI platform versions\.
-Configuring static files using the `aws:elasticbeanstalk:container:python:staticfiles` namespace is only supported on Amazon Linux AMI Python platform versions\.
+In addition, these older platform versions use a different namespace for configuring static files—`aws:elasticbeanstalk:container:python:staticfiles`\. It has the same option names and semantics as the standard static file namespace\.
 
 Configuration files also support several keys to further [modify the software on your environment's instances](customize-containers-ec2.md)\. This example uses the [packages](customize-containers-ec2.md#linux-packages) key to install Memcached with `yum` and [container commands](customize-containers-ec2.md#linux-container-commands) to run commands that configure the server during deployment:
 

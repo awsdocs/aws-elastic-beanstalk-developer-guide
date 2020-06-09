@@ -9,6 +9,7 @@ To create an application source bundle that contains multiple WAR files, organiz
 ```
 MyApplication.zip
 ├── .ebextensions
+├── .platform
 ├── foo.war
 ├── bar.war
 └── ROOT.war
@@ -16,7 +17,7 @@ MyApplication.zip
 
 When you deploy a source bundle containing multiple WAR files to an AWS Elastic Beanstalk environment, each application is accessible from a different path off of the root domain name\. The preceding example includes three applications: `foo`, `bar`, and `ROOT`\. `ROOT.war` is a special file name that tells Elastic Beanstalk to run that application at the root domain, so that the three applications are available at `http://MyApplication.elasticbeanstalk.com/foo`, `http://MyApplication.elasticbeanstalk.com/bar`, and `http://MyApplication.elasticbeanstalk.com`\.
 
-The source bundle can include only an optional `.ebextensions` folder and WAR files\. The `.ebextensions` folder can contain [configuration files](ebextensions.md) that customize the resources deployed to your environment\.
+The source bundle can include WAR files, an optional `.ebextensions` folder, and an optional `.platform` folder\. For details about these optional configuration folders, see [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
 
 **To launch an environment \(console\)**
 

@@ -23,9 +23,6 @@ For more complex Go applications, there are two ways to deploy your application:
 
 The Go platform includes a proxy server to serve static assets and forward traffic to your application\. You can [extend or override the default proxy configuration](go-nginx.md) for advanced scenarios\.
 
-**Note**  
-Configuring the proxy to serve static files is supported only on Amazon Linux AMI platform versions \(preceding Amazon Linux 2\)\.
-
 For details about the various ways you can extend an Elastic Beanstalk Linux\-based platform, see [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
 
 ## Configuring your Go environment<a name="go-options"></a>
@@ -36,9 +33,9 @@ Use the Elastic Beanstalk console to enable log rotation to Amazon S3 and config
 
 **To configure your Go environment in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the regions drop\-down list, select your region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Environments**, and then choose your environment's name on the list\.
+1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
@@ -52,6 +49,12 @@ The Log Options section has two settings:
 + **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to the Amazon S3 bucket associated with your application\.
 
+### Static files<a name="go-options-staticfiles"></a>
+
+To improve performance, the **Static files** section lets you configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. For each directory, you set the virtual path to directory mapping\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\.
+
+For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
+
 ### Environment properties<a name="go-options-properties"></a>
 
 The **Environment Properties** section lets you specify environment configuration settings on the Amazon EC2 instances that are running your application\. Environment properties are passed in as key\-value pairs to the application\.
@@ -64,27 +67,25 @@ endpoint := os.Getenv("API_ENDPOINT")
 
 See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.
 
-### Configuring an Amazon Linux AMI \(preceding Amazon Linux 2\) Go environment<a name="go-options.alami"></a>
+## Go configuration namespace<a name="go-namespaces"></a>
 
-The following console software configuration categories are supported only on an Elastic Beanstalk Go environment that uses an Amazon Linux AMI platform version \(preceding Amazon Linux 2\)\.
+You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
-#### Static files<a name="go-options-staticfiles"></a>
+The Go platform doesn't define any platform\-specific namespaces\. You can configure the proxy to serve static files by using the `aws:elasticbeanstalk:environment:proxy:staticfiles` namespace\. For details and an example, see [Serving static files](environment-cfg-staticfiles.md)\.
 
-To improve performance, you can configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\. You can set the virtual path and directory mappings in the **Static Files** section of the **Modify software** configuration page\.
-
-For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
+Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.
 
 ## The Amazon Linux AMI \(preceding Amazon Linux 2\) Go platform<a name="go.alami"></a>
 
 If your Elastic Beanstalk Go environment uses an Amazon Linux AMI platform version \(preceding Amazon Linux 2\), read the additional information in this section\.
 
-### Go configuration namespaces<a name="go-namespaces"></a>
+### Go configuration namespaces<a name="go.alami.namespaces"></a>
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
-The Go platform supports one platform\-specific configuration namespace in addition to the [namespaces supported by all platforms](command-options-general.md)\. The `aws:elasticbeanstalk:container:golang:staticfiles` namespace lets you define options that map paths on your web application to folders in your application source bundle that contain static content\.
+The Amazon Linux AMI Go platform supports one platform\-specific configuration namespace in addition to the [namespaces supported by all platforms](command-options-general.md)\. The `aws:elasticbeanstalk:container:golang:staticfiles` namespace lets you define options that map paths on your web application to folders in your application source bundle that contain static content\.
 
-For example, this [configuration file](ebextensions.md) tells the proxy server to serve files in the `myimages` folder at the path `/images`:
+For example, this [configuration file](ebextensions.md) tells the proxy server to serve files in the `staticimages` folder at the path `/images`:
 
 **Example \.ebextensions/go\-settings\.config**  
 

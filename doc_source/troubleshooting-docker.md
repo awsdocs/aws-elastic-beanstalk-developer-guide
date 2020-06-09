@@ -2,7 +2,7 @@
 
 **Event:** *Failed to pull Docker image :latest: Invalid repository name \(\), only \[a\-z0\-9\-\_\.\] are allowed\. Tail the logs for more details\.*
 
-Check the syntax of the `dockerrun.aws.json` file using a JSON validator\. Also verify the dockerfile contents against the requirements described in [Single Container Docker configuration](single-container-docker-configuration.md)
+Check the syntax of the `dockerrun.aws.json` file using a JSON validator\. Also verify the dockerfile contents against the requirements described in [Docker configuration](single-container-docker-configuration.md)
 
 **Event:** *No EXPOSE directive found in Dockerfile, abort deployment*
 

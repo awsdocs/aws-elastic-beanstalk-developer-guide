@@ -2,8 +2,7 @@
 
 The following related resources can help you as you work with this service\.
 +  **[Elastic Beanstalk API Reference](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/)** A comprehensive description of all SOAP and Query APIs\. Additionally, it contains a list of all SOAP data types\. 
-+  **[Elastic Beanstalk Sample Code and Libraries](https://aws.amazon.com/code/AWS-Elastic-Beanstalk)** – A link to the command line tool as well as a sample Java web application\. See the links below for additional sample applications\.
-+  **[elastic\-beanstalk\-samples on GitHub](https://github.com/awslabs/elastic-beanstalk-samples)** – A GitHub repository with Elastic Beanstalk sample configuration files \(\.ebextensions\)\. The repository's `README.md` file has links to additional GitHub repositories with sample applications\.
++  **[elastic\-beanstalk\-samples on GitHub](https://github.com/awsdocs/elastic-beanstalk-samples/)** – A GitHub repository with Elastic Beanstalk sample configuration files \(\.ebextensions\)\. The repository's `README.md` file has links to additional GitHub repositories with sample applications\.
 +  **[Elastic Beanstalk Technical FAQ](https://aws.amazon.com/elasticbeanstalk/faqs/)** – The top questions developers have asked about this product\. 
 +  **[AWS Elastic Beanstalk Release Notes](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/)** – Details about new features, updates, and fixes in Elastic Beanstalk service, platform, console, and EB CLI releases\.
 + ** [Classes & Workshops](https://aws.amazon.com/training/course-descriptions/)** – Links to role\-based and specialty courses as well as self\-paced labs to help sharpen your AWS skills and gain practical experience\.
@@ -20,7 +19,7 @@ The following are download links to the sample applications that are deployed as
 
 **Note**  
 Some samples use features that may have been released since the release of the platform you are using\. If the sample fails to run, try updating your platform to a current version, as described in [Elastic Beanstalk supported platforms](concepts.platforms.md)\.
-+ **Single Container Docker** – [docker\-singlecontainer\-v1\.zip](samples/docker-singlecontainer-v1.zip)
++ **Docker** – [docker\-singlecontainer\-v1\.zip](samples/docker-singlecontainer-v1.zip)
 + **Multicontainer Docker** – [docker\-multicontainer\-v2\.zip](samples/docker-multicontainer-v2.zip)
 + **Preconfigured Docker \(Glassfish\)** – [docker\-glassfish\-v1\.zip](samples/docker-glassfish-v1.zip)
 + **Go** – [go\-v1\.zip](samples/go-v1.zip)
