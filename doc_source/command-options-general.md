@@ -59,11 +59,14 @@ Configure your environment's Amazon Elastic Compute Cloud \(Amazon EC2\) instanc
 
 Your environment's instances are created using either an Amazon EC2 launch template or an Auto Scaling group launch configuration resource\. These options work with both of these resource types\.
 
+For more information, see [Your Elastic Beanstalk environment's Amazon EC2 instances](using-features.managing.ec2.md)\.
+
 
 **Namespace: `aws:autoscaling:launchconfiguration`**  
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
+|  DisableIMDSv1  |  Set to `true` to disable Instance Metadata Service Version 1 \(IMDSv1\)\. By default, your environment's instances enable both IMDSv1 and IMDSv2\. For more information, see [Configuring the instance metadata service](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html)\.  |   `false`   |   `true`   `false`   | 
 |  EC2KeyName  |  A key pair enables you to securely log into your EC2 instance\.  If you use the Elastic Beanstalk console to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console overrides this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  None  |   | 
 |  IamInstanceProfile  |  An instance profile enables AWS Identity and Access Management \(IAM\) users and AWS services to access temporary security credentials to make AWS API calls\. Specify the instance profile's name or its ARN\. Examples: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html)  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  None  |  Instance profile name or ARN  | 
 |  ImageId  |  You can override the default Amazon Machine Image \(AMI\) by specifying your own custom AMI ID\. Example: `ami-1f316660`  |  None  |   | 
@@ -136,7 +139,9 @@ Configure rolling updates your environment's Auto Scaling group\.
 
 ## aws:ec2:instances<a name="command-options-general-ec2instances"></a>
 
-Configure your environment's instances, including Spot options\. This namespace complements [`aws:autoscaling:launchconfiguration`](#command-options-general-autoscalinglaunchconfiguration) and [`aws:autoscaling:asg`](#command-options-general-autoscalingasg)\. For more information, see [Auto Scaling group for your Elastic Beanstalk environment](using-features.managing.as.md)\.
+Configure your environment's instances, including Spot options\. This namespace complements [`aws:autoscaling:launchconfiguration`](#command-options-general-autoscalinglaunchconfiguration) and [`aws:autoscaling:asg`](#command-options-general-autoscalingasg)\.
+
+For more information, see [Auto Scaling group for your Elastic Beanstalk environment](using-features.managing.as.md)\.
 
 
 **Namespace: `aws:ec2:instances`**  
@@ -340,6 +345,7 @@ Configure managed platform updates for your environment\.
 | --- | --- | --- | --- | 
 |  ManagedActionsEnabled  |  Enable [managed platform updates](environment-platform-update-managed.md#environment-platform-update-managed-namespace)\. When you set this to `true`, you must also specify a `PreferredStartTime` and `[UpdateLevel](#command-options-general-elasticbeanstalkmanagedactionsplatformupdate)`\.  |   `true`   |   `true`   `false`   | 
 |  PreferredStartTime  |  Configure a maintenance window for managed actions in UTC\. For example, `"Tue:09:00"`\.  | None | Day and time in *day*:*hour*:*minute* format\. | 
+|  ServiceRoleForManagedUpdates  |  The name of an IAM role that Elastic Beanstalk uses to perform managed platform updates for your environment\. You can use either the same role that you specified for the `ServiceRole` option of the `aws:elasticbeanstalk:environment` namespace, or your account's [managed updates service\-linked role](using-service-linked-roles-managedupdates.md)\. In the latter case, if the account doesn't have a managed updates service\-linked role yet, Elastic Beanstalk creates it\.  | None |  Same as `ServiceRole` or `AWSServiceRoleForElasticBeanstalkManagedUpdates`  | 
 
 ## aws:elasticbeanstalk:managedactions:platformupdate<a name="command-options-general-elasticbeanstalkmanagedactionsplatformupdate"></a>
 

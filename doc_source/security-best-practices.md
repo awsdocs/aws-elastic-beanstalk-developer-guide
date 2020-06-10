@@ -20,6 +20,12 @@ Elastic Beanstalk regularly releases new platform versions to update all of its 
 
 The easiest way to keep your environment's platform up to date is to configure the environment to use [managed platform updates](environment-platform-update-managed.md)\.
 
+### Enforce IMDSv2 on environment instances<a name="security-best-practices.preventive.imdsv2"></a>
+
+Amazon Elastic Compute Cloud \(Amazon EC2\) instances in your Elastic Beanstalk environments use the instance metadata service \(IMDS\), an on\-instance component, to securely access instance metadata\. IMDS supports two methods for accessing data: IMDSv1 and IMDSv2\. IMDSv2 uses session\-oriented requests and mitigates several types of vulnerabilities that could be used to try to access the IMDS\. For details about the advantages of IMDSv2, see [enhancements to add defense in depth to the EC2 Instance Metadata Service](http://aws.amazon.com/blogs/security/defense-in-depth-open-firewalls-reverse-proxies-ssrf-vulnerabilities-ec2-instance-metadata-service/)\.
+
+IMDSv2 is more secure, so it's a good idea to enforce the use of IMDSv2 on your instances\. To enforce IMDSv2, ensure that all components of your application support IMDSv2, and then disable IMDSv1\. For more information, see [Configuring the instance metadata service on your environment's instances](environments-cfg-ec2-imds.md)\.
+
 ## Detective security best practices<a name="security-best-practices.detective"></a>
 
 Detective security controls identify security violations after they have occurred\. They can help you detect a potential security threat or incident\.

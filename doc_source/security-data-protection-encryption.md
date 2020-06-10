@@ -12,7 +12,7 @@ You can achieve data protection in transit in two ways: encrypt the connection u
 
 Client\-side encryption isn't a valid method for protecting your source code in application versions and source bundles that you upload\. Elastic Beanstalk needs access to these objects, so they can't be encrypted\. Therefore, be sure to secure the connection between your development or deployment environment and Elastic Beanstalk\.
 
-## Encryption at Rest<a name="security-data-protection-encryption.at-rest"></a>
+## Encryption at rest<a name="security-data-protection-encryption.at-rest"></a>
 
 To protect your application's data at rest, learn about data protection in the storage service that your application uses\. For example, see [Data Protection in Amazon RDS](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DataDurability.html) in the *Amazon RDS User Guide*, [Data Protection in Amazon S3](https://docs.aws.amazon.com/AmazonS3/latest/dev/DataDurability.html) in the *Amazon Simple Storage Service Developer Guide*, or [Encrypting Data and Metadata in EFS](https://docs.aws.amazon.com/efs/latest/ug/encryption.html) in the *Amazon Elastic File System User Guide*\.
 

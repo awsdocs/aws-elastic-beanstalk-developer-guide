@@ -34,8 +34,9 @@ Elastic Beanstalk provides several configuration options to support the Spot fea
 
 In production environments, Spot Instances are particularly useful as part of an Auto Scaling \(load balanced\) environment\. We don't recommend using Spot in a single instance environment\. If Spot Instances aren't available, you might lose the entire capacity \(a single instance\) of your environment\. You may still wish to use a Spot Instance in a single instance environment for development or testing\. When you do, be sure to set both `SpotFleetOnDemandBase` and `SpotFleetOnDemandAboveBasePercentage` to zero\. Any other settings result in an On\-Demand Instance\.
 
-**Note**  
+**Notes**  
 Some older AWS accounts might provide Elastic Beanstalk with default instance types that don't support Spot Instances \(for example, t1\.micro\)\. If you enable Spot Instance requests and you see the error None of the instance types you specified supports Spot, be sure to configure instance types that support Spot\. To choose Spot Instance types, use the [Spot Instance Advisor](https://aws.amazon.com/ec2/spot/instance-advisor/)\.
+Enabling Spot Instance requests requires using Amazon EC2 launch templates\. When you configure this feature during environment creation or updates, Elastic Beanstalk attempts to configure your environment to use Amazon EC2 launch templates \(if the environment isn't using them already\)\. In this case, if your user policy lacks the necessary permissions, environment creation or updates might fail\. Therefore, we recommend that you use our managed user policy or add the required permissions to your custom policies\. For details about the required permissions, see [Creating a custom user policy](AWSHowTo.iam.managed-policies.md#AWSHowTo.iam.policies)\.
 
 The following examples demonstrate different scenarios of setting the various scaling options\. All examples assume a load balanced environment with Spot Instance requests enabled\.
 

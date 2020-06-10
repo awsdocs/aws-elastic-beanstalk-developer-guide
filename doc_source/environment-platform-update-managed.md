@@ -46,12 +46,12 @@ Managed platform updates depend on [enhanced health reporting](health-enhanced.m
 
 ## Permissions required to perform managed platform updates<a name="environment-platform-update-managed-perms"></a>
 
-Elastic Beanstalk needs permission to initiate a platform update on your behalf\. When you use the default [service role](concepts-roles-service.md) for your environment, the console adds the required permissions when you enable managed platform updates\. If you aren't using the default service role, or you're managing your environments with a different client, add the [`AWSElasticBeanstalkService`](iam-servicerole.md#iam-servicerole-update) managed policy to your service role\.
+Elastic Beanstalk needs permission to initiate a platform update on your behalf\. To gain these permissions, Elastic Beanstalk assumes the *managed updates service role*\. When you use the default [service role](iam-servicerole.md) for your environment, the Elastic Beanstalk console uses it as the managed updates service role too\. The console assigns the [`AWSElasticBeanstalkService`](iam-servicerole.md#iam-servicerole-update) managed policy to your service role\. This policy has all permissions that Elastic Beanstalk needs to perform managed platform updates\.
 
-If you're using your account's [monitoring service\-linked role](using-service-linked-roles-monitoring.md) for your environment, you can't enable managed platform updates\. The service\-linked role doesn't have the required permissions\. Select a different role, and be sure it has the [`AWSElasticBeanstalkService`](iam-servicerole.md#iam-servicerole-update) managed policy\.
+For details about other ways to set the managed updates service role, see [Managing Elastic Beanstalk service roles](iam-servicerole.md)\.
 
 **Note**  
-If you use [configuration files](ebextensions.md) to extend your environment to include additional resources, you might need to add permissions to your environment's service role\. Typically you need to add permissions when you reference these resources by name in other sections or files\.
+If you use [configuration files](ebextensions.md) to extend your environment to include additional resources, you might need to add permissions to your environment's managed updates service role\. Typically you need to add permissions when you reference these resources by name in other sections or files\.
 
 If an update fails, you can find the reason for the failure on the [Managed Updates](#environment-platform-update-managed-managing) page\.
 

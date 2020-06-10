@@ -59,14 +59,14 @@ Elastic Beanstalk does not allow you to edit the AWSServiceRoleForElasticBeansta
 
 ## Deleting a service\-linked role for Elastic Beanstalk<a name="delete-service-linked-role-maintenance"></a>
 
-If you no longer need to use a feature or service that requires a service\-linked role, we recommend that you delete that role\. That way you don’t have an unused entity that is not actively monitored or maintained\. However, you must clean up your service\-linked role before you can manually delete it\.
+If you no longer need to use a feature or service that requires a service\-linked role, we recommend that you delete that role\. That way you don’t have an unused entity that is not actively monitored or maintained\. However, you must clean up the resources for your service\-linked role before you can manually delete it\.
 
 ### Cleaning up a service\-linked role<a name="service-linked-role-review-before-delete-maintenance"></a>
 
 Before you can use IAM to delete a service\-linked role, you must first terminate any Elastic Beanstalk environments that uses the role\.
 
 **Note**  
-If the Elastic Beanstalk service is using the role when you try to terminate the environments, then the termination might fail\. If that happens, wait for a few minutes and try the operation again\.
+If the Elastic Beanstalk service is using the service\-linked role when you try to terminate the environments, then the termination might fail\. If that happens, wait for a few minutes and try the operation again\.
 
 **To terminate an Elastic Beanstalk environment that uses the AWSServiceRoleForElasticBeanstalkMaintenance \(console\)**
 

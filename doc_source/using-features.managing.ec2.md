@@ -14,6 +14,7 @@ Elastic Beanstalk supports several Amazon EC2 [instance purchasing options](http
 **Topics**
 + [Configuring your environment's Amazon EC2 instances](#using-features.managing.ec2.console)
 + [The aws:autoscaling:launchconfiguration namespace](#using-features.managing.ec2.namespace)
++ [Configuring the instance metadata service on your environment's instances](environments-cfg-ec2-imds.md)
 
 ## Configuring your environment's Amazon EC2 instances<a name="using-features.managing.ec2.console"></a>
 
@@ -40,15 +41,16 @@ The following settings related to Amazon EC2 instances are available in the **In
 **Topics**
 + [Monitoring interval](#using-features.managing.ec2.monitoring-interval)
 + [Root volume \(boot device\)](#using-features.managing.ec2.rootvolume)
++ [Instance metadata service](#using-features.managing.ec2.imds)
 + [Security groups](#using-features.managing.ec2.securitygroups)
 
 ![\[Amazon EC2 instance settings on Elastic Beanstalk instances configuration window\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-env-config-ec2-instances-page.png)
 
 #### Monitoring interval<a name="using-features.managing.ec2.monitoring-interval"></a>
 
-By default, the instances in your environment publish [basic health metrics](using-features.healthstatus.md) to CloudWatch at five\-minute intervals at no additional cost\.
+By default, the instances in your environment publish [basic health metrics](using-features.healthstatus.md) to Amazon CloudWatch at five\-minute intervals at no additional cost\.
 
-For more detailed reporting, you can set the **Monitoring interval** to **1 minute** to increase the frequency with which the resources in your environment publish [basic health metrics](using-features.healthstatus.md#monitoring-basic-cloudwatch) to CloudWatch\. Amazon CloudWatch service charges apply for one\-minute interval metrics\. See [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) for more information\.
+For more detailed reporting, you can set the **Monitoring interval** to **1 minute** to increase the frequency with which the resources in your environment publish [basic health metrics](using-features.healthstatus.md#monitoring-basic-cloudwatch) to CloudWatch\. CloudWatch service charges apply for one\-minute interval metrics\. See [Amazon CloudWatch](https://aws.amazon.com/cloudwatch/) for more information\.
 
 #### Root volume \(boot device\)<a name="using-features.managing.ec2.rootvolume"></a>
 
@@ -56,7 +58,14 @@ Each instance in your environment is configured with a root volume\. The root vo
 
 You can modify **Root volume type** to use magnetic storage or provisioned IOPS SSD volume types and, if needed, increase the volume size\. For provisioned IOPS volumes, you must also select the number of IOPS to provision\. Select the volume type that meets your performance and price requirements\.
 
-For more information, see [Amazon EBS Volume Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) and [Amazon EBS Product Details](https://aws.amazon.com/ebs/details/)\.
+For more information, see [Amazon EBS Volume Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html) in the *Amazon EC2 User Guide for Linux Instances* and [Amazon EBS Product Details](https://aws.amazon.com/ebs/details/)\.
+
+#### Instance metadata service<a name="using-features.managing.ec2.imds"></a>
+
+The instance metadata service \(IMDS\) is an on\-instance component that code on the instance uses to securely access instance metadata\. Code can access instance metadata from a running instance using one of two methods: Instance Metadata Service Version 1 \(IMDSv1\) or Instance Metadata Service Version 2 \(IMDSv2\)\. IMDSv2 is more secure\. Disable IMDSv1 to enforce IMDSv2\. For details, see [Configuring the instance metadata service on your environment's instances](environments-cfg-ec2-imds.md)\.
+
+**Note**  
+The IMDS section on this configuration page appears only for platform versions that support IMDSv2\.
 
 #### Security groups<a name="using-features.managing.ec2.securitygroups"></a>
 
@@ -100,15 +109,16 @@ Elastic Beanstalk selects a default AMI for your environment based on the region
 
 You can use the [configuration options](command-options.md) in the `[aws:autoscaling:launchconfiguration](command-options-general.md#command-options-general-autoscalinglaunchconfiguration)` namespace to configure your environment's instances, including additional options that are not available in the console\.
 
-The following [configuration file](ebextensions.md) example configures the basic options shown in this topic, the options `EC2KeyName` and `IamInstanceProfile` discussed in [Security](using-features.managing.security.md), and an additional option, `BlockDeviceMappings`, which isn't available in the console\.
+The following [configuration file](ebextensions.md) example configures the basic options shown in this topic, the option `DisableIMDSv1` discussed in [IMDS](environments-cfg-ec2-imds.md), the options `EC2KeyName` and `IamInstanceProfile` discussed in [Security](using-features.managing.security.md), and an additional option, `BlockDeviceMappings`, which isn't available in the console\.
 
 ```
 option_settings:
   aws:autoscaling:launchconfiguration:
     InstanceType: m1.small
     SecurityGroups: my-securitygroup
-    EC2KeyName: my-keypair
     MonitoringInterval: "1 minute"
+    DisableIMDSv1: false
+    EC2KeyName: my-keypair
     IamInstanceProfile: "aws-elasticbeanstalk-ec2-role"
     BlockDeviceMappings: "/dev/sdj=:100,/dev/sdh=snap-51eef269,/dev/sdb=ephemeral0"
 ```

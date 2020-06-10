@@ -6,9 +6,6 @@ If your Elastic Beanstalk application is based on an Amazon Linux AMI platform b
 
 When you're ready to go to production, Elastic Beanstalk requires a blue/green deployment to perform the upgrade\. For details about platform update strategies, see [Updating your Elastic Beanstalk environment's platform version](using-features.platform.upgrade.md)\.
 
-**Important**  
-If you're using an Amazon Linux 2 platform version that is in beta for your evaluation, *do not go to production*\. Wait until we release a supported platform version\. Beta platform versions aren't final, and we may change some naming and implementation details before we fully support these platforms\.
-
 ## Considerations for all Linux platforms<a name="using-features.migration-al.generic"></a>
 
 The following table discusses considerations you should be aware of when planning an application migration to Amazon Linux 2\. These considerations apply to any of the Elastic Beanstalk Linux platforms, regardless of specific programming languages or application servers\.
