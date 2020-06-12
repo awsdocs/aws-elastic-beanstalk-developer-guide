@@ -103,7 +103,7 @@ The following table lists migration information for the Amazon Linux 2 platform 
 
 |  **Area**  |  **Changes and information**  | 
 | --- | --- | 
-|  WSGI server  |  On Amazon Linux 2 platforms, [Gunicorn](https://gunicorn.org/) is the default WSGI server\. If you're setting the `WSGIPath` option of the `[aws:elasticbeanstalk:container:python](command-options-specific.md#command-options-python)` namespace, replace the value with Gunicorn's syntax\. For details, see [Python configuration namespaces](create-deploy-python-container.md#python-namespaces)\. Alternatively, you can use a `Procfile` to specify and configure the WSGI server\. For details, see [Configuring the WSGI server with a Procfile](python-configuration-procfile.md)\.  | 
+|  WSGI server  |  On Amazon Linux 2 platforms, [Gunicorn](https://gunicorn.org/) is the default WSGI server\. Gunicorn by default listens to port 8000, which may differ from your previous setup. If you're setting the `WSGIPath` option of the `[aws:elasticbeanstalk:container:python](command-options-specific.md#command-options-python)` namespace, replace the value with Gunicorn's syntax\. For details, see [Python configuration namespaces](create-deploy-python-container.md#python-namespaces)\. Alternatively, you can use a `Procfile` to specify and configure the WSGI server\. For details, see [Configuring the WSGI server with a Procfile](python-configuration-procfile.md)\.  | 
 |  Application path  |  On Amazon Linux 2 platforms, the path to the application's directory on Amazon EC2 instances of your environment is `/var/app/current`\. It was `/opt/python/current/app` on Amazon Linux AMI platforms\.  | 
 
 ### Ruby<a name="using-features.migration-al.specific.ruby"></a>
