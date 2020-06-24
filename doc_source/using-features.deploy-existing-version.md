@@ -60,7 +60,7 @@ You can perform deployments from your environment's dashboard\.
 
 **To deploy a new application version to an Elastic Beanstalk environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
@@ -78,7 +78,7 @@ You can also deploy a previously uploaded version of your application to any of 
 
 **To deploy an existing application version to an existing environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Applications**, and then choose your application's name from the list\.
 **Note**  

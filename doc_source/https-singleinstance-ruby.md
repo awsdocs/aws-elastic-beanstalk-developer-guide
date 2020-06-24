@@ -17,7 +17,7 @@ Configures the nginx server\. This file is loaded when the nginx service starts\
 `/etc/pki/tls/certs/server.crt`  
 Creates the certificate file on the instance\. Replace *certificate file contents* with the contents of your certificate\.  
 YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
-If you have intermediate certificates, include them in `server.crt` after your site certificate:  
+If you have intermediate certificates, include them in `server.crt` after your site certificate\.  
 
   ```
         -----BEGIN CERTIFICATE-----
@@ -115,7 +115,7 @@ Resources:
       CidrIp: 0.0.0.0/0
 ```
 
-For a load balanced environment, you configure the load balancer to either [pass secure traffic through untouched](https-tcp-passthrough.md), or [decrypt and re\-encrypt](configuring-https-endtoend.md) for end\-to\-end encryption\.
+For a load\-balanced environment, you configure the load balancer to either [pass secure traffic through untouched](https-tcp-passthrough.md), or [decrypt and re\-encrypt](configuring-https-endtoend.md) for end\-to\-end encryption\.
 
 ## Configure HTTPS for Ruby with Passenger<a name="Passenger"></a>
 
@@ -128,7 +128,7 @@ For Ruby container types that use Passenger as the application server, you use b
 `/etc/pki/tls/certs/server.crt`  
 Creates the certificate file on the instance\. Replace *certificate file contents* with the contents of your certificate\.  
 YAML relies on consistent indentation\. Match the indentation level when replacing content in an example configuration file and ensure that your text editor uses spaces, not tab characters, to indent\.
-If you have intermediate certificates, include them in `server.crt` after your site certificate:  
+If you have intermediate certificates, include them in `server.crt` after your site certificate\.  
 
      ```
            -----BEGIN CERTIFICATE-----
@@ -192,4 +192,4 @@ Resources:
       CidrIp: 0.0.0.0/0
 ```
 
-For a load balanced environment, you configure the load balancer to either [pass secure traffic through untouched](https-tcp-passthrough.md), or [decrypt and re\-encrypt](configuring-https-endtoend.md) for end\-to\-end encryption\.
+For a load\-balanced environment, you configure the load balancer to either [pass secure traffic through untouched](https-tcp-passthrough.md), or [decrypt and re\-encrypt](configuring-https-endtoend.md) for end\-to\-end encryption\.

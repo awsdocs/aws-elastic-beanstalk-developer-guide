@@ -39,7 +39,7 @@ Use the Elastic Beanstalk console to enable log rotation to Amazon S3 and config
 
 **To configure your Node\.js environment in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
@@ -125,7 +125,7 @@ When this happens, attempting to update to a new version of the platform that do
 
 **To configure your environment's Node\.js version in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  

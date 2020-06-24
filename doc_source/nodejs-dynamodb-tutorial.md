@@ -121,7 +121,7 @@ Download the source bundle from GitHub if you haven't already: [eb\-node\-expres
 
 **To deploy a source bundle**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
@@ -286,7 +286,7 @@ Deploy the nodejs\-tutorial\.zip source bundle to your environment\.
 
 **To deploy a source bundle**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
@@ -322,7 +322,7 @@ Finally, configure your environment's Auto Scaling group with a higher minimum i
 
 **To configure your environment's Auto Scaling group for high availability**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
@@ -342,7 +342,7 @@ When you finish working with Elastic Beanstalk, you can terminate your environme
 
 **To terminate your Elastic Beanstalk environment**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  

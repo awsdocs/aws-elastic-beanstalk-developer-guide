@@ -33,6 +33,7 @@ The following list mentions the Linux platforms that Elastic Beanstalk supports 
 + [Docker](create_deploy_docker.md)
 + [Go](create_deploy_go.md)
 + [Java](create_deploy_Java.md)
++ [\.NET Core on Linux](create-deploy-dotnet-core-linux.md)
 + [Node\.js](create_deploy_nodejs.md)
 + [PHP](create_deploy_PHP_eb.md)
 + [Python](create-deploy-python-apps.md)

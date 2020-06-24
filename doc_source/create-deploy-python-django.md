@@ -219,6 +219,8 @@ By default, Elastic Beanstalk looks for a file named `application.py` to start y
    ```
 
    This setting, `WSGIPath`, specifies the location of the WSGI script that Elastic Beanstalk uses to start your application\.
+**Note**  
+If you're using an Amazon Linux AMI Python platform version \(preceding Amazon Linux 2\), replace the value for `WSGIPath` with `ebdjango/wsgi.py`\. The value in the example works with the Gunicorn WSGI server, which isn't supported on Amazon Linux AMI platform versions\.
 
 1. Deactivate your virtual environment with the `deactivate` command\.
 

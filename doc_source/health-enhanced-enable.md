@@ -13,7 +13,7 @@ Enhanced health reporting requires an [instance profile](concepts-roles-instance
 
 **To enable enhanced health reporting in a running environment using the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
@@ -34,7 +34,7 @@ The Elastic Beanstalk console defaults to enhanced health reporting when you cre
 
 **To disable enhanced health reporting when creating an environment using the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. [Create an application](applications.md) or select an existing one\.
 

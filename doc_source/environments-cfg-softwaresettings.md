@@ -21,7 +21,7 @@ In addition to the standard set of options available for all environments, most 
 
 **To configure platform\-specific settings in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
@@ -40,6 +40,7 @@ For information about platform\-specific options, and about getting environment 
 + Go – [Using the Elastic Beanstalk Go platform](go-environment.md)
 + Java SE – [Using the Elastic Beanstalk Java SE platform](java-se-platform.md)
 + Tomcat – [Using the Elastic Beanstalk Tomcat platform](java-tomcat-platform.md)
++ \.NET Core on Linux – [Using the \.NET Core on Linux platform](dotnet-linux-platform.md)
 + \.NET – [Using the Elastic Beanstalk \.NET platform](create_deploy_NET.container.console.md)
 + Node\.js – [Using the Elastic Beanstalk Node\.js platform](create_deploy_nodejs.container.md)
 + PHP – [Using the Elastic Beanstalk PHP platform](create_deploy_PHP.container.md)
@@ -57,7 +58,7 @@ In most cases, environment properties are passed to your application as *environ
 
 **To configure environment properties in the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  
@@ -129,6 +130,7 @@ Most Elastic Beanstalk platforms define additional namespaces with options for c
 + Go – [Go configuration namespace](go-environment.md#go-namespaces)
 + Java SE – [Java SE configuration namespace](java-se-platform.md#java-se-namespaces)
 + Tomcat – [Tomcat configuration namespaces](java-tomcat-platform.md#java-tomcat-namespaces)
++ \.NET Core on Linux – [\.NET Core on Linux configuration namespace](dotnet-linux-platform.md#dotnet-linux-namespace)
 + \.NET – [The aws:elasticbeanstalk:container:dotnet:apppool namespace](create_deploy_NET.container.console.md#dotnet-namespaces)
 + Node\.js – [Node\.js configuration namespace](create_deploy_nodejs.container.md#nodejs-namespaces)
 + PHP – [The aws:elasticbeanstalk:container:php:phpini namespace](create_deploy_PHP.container.md#php-namespaces)
@@ -154,6 +156,11 @@ In most cases, you access environment properties in your application code like a
 
   ```
   String endpoint = System.getProperty("API_ENDPOINT");
+  ```
++ [\.NET Core on Linux](dotnet-linux-platform.md#dotnet-linux-options-properties) – `Environment.GetEnvironmentVariable`
+
+  ```
+  string endpoint = Environment.GetEnvironmentVariable("API_ENDPOINT");
   ```
 + [\.NET](create_deploy_NET.container.console.md#dotnet-console-properties) – `appConfig`
 

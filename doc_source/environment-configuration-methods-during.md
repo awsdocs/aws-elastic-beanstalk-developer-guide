@@ -45,7 +45,7 @@ When you create a new environment using the Elastic Beanstalk console, one of th
 
 **To apply a saved configuration during environment creation \(Elastic Beanstalk console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Applications**, and then choose your application's name from the list\.
 **Note**  
@@ -65,7 +65,7 @@ Most of the standard configuration options are presented on the **Configure more
 
 **To set configuration options during environment creation \(Elastic Beanstalk console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Applications**\.
 

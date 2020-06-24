@@ -4,7 +4,7 @@ The first step in using AWS Elastic Beanstalk is to create an application, which
 
 **To create an application**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Applications**, and then choose **Create a new application**\.
 
@@ -25,7 +25,7 @@ Deleting an application terminates all associated environments and deletes all a
 
 **To delete an application**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Applications**, and then select your application on the list\.
 

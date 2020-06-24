@@ -26,6 +26,7 @@ Some samples use features that may have been released since the release of the p
 + **Java SE** – [java\-se\-jetty\-gradle\-v3\.zip](samples/java-se-jetty-gradle-v3.zip)
 + **Tomcat \(default\)** – [java\-tomcat\-v3\.zip](samples/java-tomcat-v3.zip)
 + **Tomcat 7** – [java7\-tomcat7\.zip](samples/java7-tomcat7.zip)
++ **\.NET Core on Linux** – [dotnet\-core\-linux\-v1\.zip](samples/dotnet-core-linux-v1.zip)
 + **\.NET** – [dotnet\-asp\-v1\.zip](samples/dotnet-asp-v1.zip)
 + **Node\.js** – [nodejs\-v1\.zip](samples/nodejs-v1.zip) 
 + **PHP** – [php\-v1\.zip](samples/php-v1.zip)

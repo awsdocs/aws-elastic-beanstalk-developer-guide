@@ -14,6 +14,7 @@ The application version that you started this tutorial with is called **Sample A
    + **Java SE** – [java\-se\-jetty\-gradle\-v3\.zip](samples/java-se-jetty-gradle-v3.zip)
    + **Tomcat \(default\)** – [java\-tomcat\-v3\.zip](samples/java-tomcat-v3.zip)
    + **Tomcat 7** – [java7\-tomcat7\.zip](samples/java7-tomcat7.zip)
+   + **\.NET Core on Linux** – [dotnet\-core\-linux\-v1\.zip](samples/dotnet-core-linux-v1.zip)
    + **\.NET** – [dotnet\-asp\-v1\.zip](samples/dotnet-asp-v1.zip)
    + **Node\.js** – [nodejs\-v1\.zip](samples/nodejs-v1.zip) 
    + **PHP** – [php\-v1\.zip](samples/php-v1.zip)
@@ -21,7 +22,7 @@ The application version that you started this tutorial with is called **Sample A
    + **Ruby \(Passenger Standalone\)** – [ruby\-passenger\-v3\.zip](samples/ruby-passenger-v3.zip)
    + **Ruby \(Puma\)** – [ruby\-puma\-v3\.zip](samples/ruby-puma-v3.zip)
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Environments**, and then choose the name of your environment from the list\.
 **Note**  

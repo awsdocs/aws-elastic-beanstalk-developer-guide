@@ -16,6 +16,7 @@ Elastic Beanstalk also supports [custom platforms](custom-platforms.md) that can
 + [Deploying Elastic Beanstalk applications from Docker containers](create_deploy_docker.md)
 + [Creating and deploying Go applications on Elastic Beanstalk](create_deploy_go.md)
 + [Creating and deploying Java applications on Elastic Beanstalk](create_deploy_Java.md)
++ [Working with \.NET Core on Linux](create-deploy-dotnet-core-linux.md)
 + [Creating and deploying \.NET applications on Elastic Beanstalk](create_deploy_NET.md)
 + [Deploying Node\.js applications to Elastic Beanstalk](create_deploy_nodejs.md)
 + [Creating and deploying PHP applications on Elastic Beanstalk](create_deploy_PHP_eb.md)

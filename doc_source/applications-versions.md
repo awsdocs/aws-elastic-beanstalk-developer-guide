@@ -8,7 +8,7 @@ You can apply tags to an application version when you create it, and edit tags o
 
 **To create a new application version**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Applications**, and then choose your application's name from the list\.
 **Note**  
@@ -33,7 +33,7 @@ Deleting an application version doesn't affect environments currently running th
 
 **To delete an application version**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Applications**, and then choose your application's name from the list\.
 **Note**  

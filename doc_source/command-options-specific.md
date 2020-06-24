@@ -13,6 +13,7 @@ In Amazon Linux 2 platform versions, Elastic Beanstalk implements these features
 + [Go platform options](#command-options-golang)
 + [Java SE platform options](#command-options-plain-java)
 + [Java with Tomcat platform options](#command-options-java)
++ [\.NET Core on Linux platform options](#command-options-dotnet-core-linux)
 + [\.NET platform options](#command-options-net)
 + [Node\.js platform options](#command-options-nodejs)
 + [PHP platform options](#command-options-php)
@@ -94,6 +95,15 @@ See [Environment properties and other software settings](environments-cfg-softwa
 | --- | --- | --- | --- | 
 |  GzipCompression  |  Set to `false` to disable response compression\.  |  `true`  |  `true` `false`  | 
 |  ProxyServer  |  Set the proxy to use on your environment's instances\. If you don't set this option, or if you set it to `apache`, Elastic Beanstalk uses [Apache 2\.4](https://httpd.apache.org/docs/2.4/)\. Set to `apache/2.2` if your application isn't ready to migrate away from [Apache 2\.2](https://httpd.apache.org/docs/2.2/) due to incompatible proxy configuration settings\. Set to `nginx` to use [nginx](https://www.nginx.com/)\. For more information, see [Configuring your Tomcat environment's proxy server](java-tomcat-proxy.md)\.  |  `apache`  |  `apache` `apache/2.2` `nginx`  | 
+
+## \.NET Core on Linux platform options<a name="command-options-dotnet-core-linux"></a>
+
+
+**Namespace: `aws:elasticbeanstalk:environment:proxy`**  
+
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
+| --- | --- | --- | --- | 
+|  ProxyServer  |  Specifies the web server to use as a proxy\.  |  `nginx`  |  `nginx` `none`  | 
 
 ## \.NET platform options<a name="command-options-net"></a>
 

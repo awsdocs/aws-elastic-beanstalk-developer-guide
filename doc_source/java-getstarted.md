@@ -24,9 +24,9 @@ Download any of the sample applications and deploy it to Elastic Beanstalk by fo
 
 **To launch an environment with a sample application \(console\)**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose **Applications**, and then choose an existing application's name on the list or [create one](applications.md)\.
+1. In the navigation pane, choose **Applications**, and then choose an existing application's name in the list or [create one](applications.md)\.
 
 1. On the application overview page, choose **Create a new environment**\.  
 ![\[The application overview page with a list of application environments on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-mgmt-environments.png)
@@ -34,11 +34,11 @@ Download any of the sample applications and deploy it to Elastic Beanstalk by fo
 1. Choose the **Web server environment** or **Worker environment** [environment tier](concepts.md#concepts-tier)\. You can't change an environment's tier after creation\.
 **Note**  
 The [\.NET on Windows Server platform](create_deploy_NET.md) doesn't support the worker environment tier\.  
-![\[The Select environment tier dialog on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-choosetier.png)
+![\[The Select environment tier page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-choosetier.png)
 
-1. For **Platform**, select the platform and platform branch that match the language used by your application\.
+1. For **Platform**, select the platform and platform branch that match the language your application uses\.
 **Note**  
-Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most of the platforms that are listed\. By default, the console selects the recommended version for the platform and platform branch you choose\. If your application requires different version, you can select it here, or by choosing **Configure more options**, as described in step 7\. For information about supported platform versions, see [Elastic Beanstalk supported platforms](concepts.platforms.md)\.
+Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most of the platforms that are listed\. By default, the console selects the recommended version for the platform and platform branch you choose\. If your application requires a different version, you can select it here, or choose **Configure more options**, as described in step 7\. For information about supported platform versions, see [Elastic Beanstalk supported platforms](concepts.platforms.md)\.
 
 1. For **Application code**, choose **Sample application**\.
 

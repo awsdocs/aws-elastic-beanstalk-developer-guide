@@ -3,7 +3,7 @@
 To specify the command that starts your Ruby application, include a file called `Procfile` at the root of your source bundle\.
 
 **Note**  
-Elastic Beanstalk doesn't support this feature on Amazon Linux AMI Ruby platform branches \(preceding Amazon Linux 2\)\. This includes all Platform Version variants containing "_with Puma_" and "_with Passenger_" variants, even those with modern versions of Ruby.
+Elastic Beanstalk doesn't support this feature on Amazon Linux AMI Ruby platform branches \(preceding Amazon Linux 2\)\. Platform branches with names containing *with Puma* or *with Passenger*, regardless of their Ruby versions, precede Amazon Linux 2 and don't support the `Procfile` feature\.
 
 For details about writing and using a `Procfile`, expand the *Buildfile and Procfile* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
 

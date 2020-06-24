@@ -26,7 +26,7 @@ You can add, update, and delete tags in an existing Elastic Beanstalk applicatio
 
 **To manage an application version's tags using the Elastic Beanstalk console**
 
-1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and then, in the **Regions** list, select your AWS Region\.
+1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose **Applications**, and then choose your application's name from the list\.
 **Note**  
