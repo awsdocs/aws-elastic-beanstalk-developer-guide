@@ -177,7 +177,7 @@ See [Environment properties and other software settings](environments-cfg-softwa
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  WSGIPath  |  The file that contains the WSGI application\. This file must have an `application` callable\.  |  On Amazon Linux 2 Python platform versions: `application:app` On Amazon Linux AMI Python platform versions: `application.py`  |  n/a  | 
+|  WSGIPath  |  The file that contains the WSGI application\. This file must have an `application` callable\.  |  On Amazon Linux 2 Python platform versions: `application` On Amazon Linux AMI Python platform versions: `application.py`  |  n/a  | 
 |  NumProcesses  |  The number of daemon processes that should be started for the process group when running WSGI applications\.  |  `1`  |  n/a  | 
 |  NumThreads  |  The number of threads to be created to handle requests in each daemon process within the process group when running WSGI applications\.  |  `15`  |  n/a  | 
 
