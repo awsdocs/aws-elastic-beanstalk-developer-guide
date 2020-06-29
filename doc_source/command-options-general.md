@@ -345,7 +345,7 @@ Configure managed platform updates for your environment\.
 | --- | --- | --- | --- | 
 |  ManagedActionsEnabled  |  Enable [managed platform updates](environment-platform-update-managed.md#environment-platform-update-managed-namespace)\. When you set this to `true`, you must also specify a `PreferredStartTime` and `[UpdateLevel](#command-options-general-elasticbeanstalkmanagedactionsplatformupdate)`\.  |   `true`   |   `true`   `false`   | 
 |  PreferredStartTime  |  Configure a maintenance window for managed actions in UTC\. For example, `"Tue:09:00"`\.  | None | Day and time in *day*:*hour*:*minute* format\. | 
-|  ServiceRoleForManagedUpdates  |  The name of an IAM role that Elastic Beanstalk uses to perform managed platform updates for your environment\. You can use either the same role that you specified for the `ServiceRole` option of the `aws:elasticbeanstalk:environment` namespace, or your account's [managed updates service\-linked role](using-service-linked-roles-managedupdates.md)\. In the latter case, if the account doesn't have a managed updates service\-linked role yet, Elastic Beanstalk creates it\.  | None |  Same as `ServiceRole` or `AWSServiceRoleForElasticBeanstalkManagedUpdates`  | 
+|  ServiceRoleForManagedUpdates  |  The name of an IAM role that Elastic Beanstalk uses to perform managed platform updates for your environment\. You can use either the same role that you specified for the `ServiceRole` option of the `aws:elasticbeanstalk:environment` namespace, or your account's [managed updates service\-linked role](using-service-linked-roles-managedupdates.md)\. In the latter case, if the account doesn't have a managed\-updates service\-linked role yet, Elastic Beanstalk creates it\.  | None |  Same as `ServiceRole` or `AWSServiceRoleForElasticBeanstalkManagedUpdates`  | 
 
 ## aws:elasticbeanstalk:managedactions:platformupdate<a name="command-options-general-elasticbeanstalkmanagedactionsplatformupdate"></a>
 
@@ -575,8 +575,8 @@ This namespace isn't applicable to environments with a network load balancer\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  HostHeaders  |  List of host names to match\. For example, `my.example.com`\.  |  None  |  Each name can be up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and up to three wildcard characters \(\* matches zero or more characters; ? matches exactly one character\)  | 
-|  PathPatterns  |  A path pattern to match\. For example, `/img/*`\. This option is only applicable to environments with an application load balancer\.  |  None  |  A pattern can be up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and can include up to three wildcard characters \(\* matches zero or more characters; ? matches exactly one character\)  | 
+|  HostHeaders  |  List of host names to match\. For example, `my.example.com`\.  |  None  |  Each name can have up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and can include up to three wildcard characters \(`*` matches zero or more characters; `?` matches exactly one character\)\. You can add multiple comma\-separated names\.  | 
+|  PathPatterns  |  Path patterns to match\. For example, `/img/*`\. This option is only applicable to environments with an application load balancer\.  |  None  |  Each pattern can have up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and can include up to three wildcard characters \(`*` matches zero or more characters; `?` matches exactly one character\)\. You can add multiple comma\-separated path patterns\.  | 
 |  Priority  |  Precedence of this rule when multiple rules match\. The lower number takes precedence\. No two rules can have the same priority\.  |  `1`  |  `1` to `1000`  | 
 |  Process  |  Name of the [process](#command-options-general-environmentprocess) to which to forward traffic when this rule matches the request\.  |  `default`  |  A process name\.  | 
 

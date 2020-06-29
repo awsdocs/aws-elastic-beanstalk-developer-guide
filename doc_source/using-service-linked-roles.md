@@ -5,9 +5,9 @@ AWS Elastic Beanstalk uses AWS Identity and Access Management \(IAM\)[ service\-
 Elastic Beanstalk defines a few types of service\-linked roles:
 + *Monitoring service\-linked role* – Allows Elastic Beanstalk to monitor the health of running environments and publish health event notifications\.
 + *Maintenance service\-linked role* – Allows Elastic Beanstalk to perform regular maintenance activities for your running environments\.
-+ *Managed updates service\-linked role* – Allows Elastic Beanstalk to perform scheduled platform updates of your running environments\.
++ *managed\-updates service\-linked role* – Allows Elastic Beanstalk to perform scheduled platform updates of your running environments\.
 
 **Topics**
-+ [The Monitoring Service\-Linked Role](using-service-linked-roles-monitoring.md)
-+ [The Maintenance Service\-Linked Role](using-service-linked-roles-maintenance.md)
-+ [The Managed Updates Service\-Linked Role](using-service-linked-roles-managedupdates.md)
++ [The monitoring service\-linked role](using-service-linked-roles-monitoring.md)
++ [The maintenance service\-linked role](using-service-linked-roles-maintenance.md)
++ [The managed\-updates service\-linked role](using-service-linked-roles-managedupdates.md)

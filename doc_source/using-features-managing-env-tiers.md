@@ -41,8 +41,9 @@ The daemon sets the following HTTP headers\.
 ****  
 
 |  **HTTP headers**  | 
-| --- | 
-| Name | Value | 
+| --- |
+| **Name** | **Value** | 
+| --- |--- |
 |  User\-Agent  |  `aws-sqsd` `aws-sqsd/1.1`1  | 
 |  X\-Aws\-Sqsd\-Msgid  |  SQS message ID, used to detect message storms \(an unusually high number of new messages\)\.  | 
 |  X\-Aws\-Sqsd\-Queue  |  Name of the SQS queue\.  | 
@@ -100,8 +101,9 @@ For periodic tasks, the worker daemon sets the following additional headers\.
 ****  
 
 |  **HTTP headers**  | 
-| --- | 
-| Name | Value | 
+| --- |
+| **Name** | **Value** | 
+| --- |--- |
 |  X\-Aws\-Sqsd\-Taskname  |  For periodic tasks, the name of the task to perform\.  | 
 |  X\-Aws\-Sqsd\-Scheduled\-At  |  Time at which the periodic task was scheduled  | 
 |  X\-Aws\-Sqsd\-Sender\-Id  |  AWS account number of the sender of the message  | 

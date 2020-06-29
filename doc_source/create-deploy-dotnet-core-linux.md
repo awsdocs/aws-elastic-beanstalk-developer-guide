@@ -8,3 +8,4 @@ The topics in this chapter assume some knowledge of Elastic Beanstalk environmen
 + [Getting started with \.NET Core on Linux](dotnet-linux-getting-started.md)
 + [Setting up your \.NET Core on Linux development environment](dotnet-linux-devenv.md)
 + [Using the \.NET Core on Linux platform](dotnet-linux-platform.md)
++ [Migrating from \.NET on Windows Server platforms to the \.NET Core on Linux platform](dotnet-linux-migration.md)

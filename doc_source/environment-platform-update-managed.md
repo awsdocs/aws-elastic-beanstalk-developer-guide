@@ -46,14 +46,14 @@ Managed platform updates depend on [enhanced health reporting](health-enhanced.m
 
 ## Permissions required to perform managed platform updates<a name="environment-platform-update-managed-perms"></a>
 
-Elastic Beanstalk needs permission to initiate a platform update on your behalf\. To gain these permissions, Elastic Beanstalk assumes the *managed updates service role*\. When you use the default [service role](iam-servicerole.md) for your environment, the Elastic Beanstalk console uses it as the managed updates service role too\. The console assigns the [`AWSElasticBeanstalkService`](iam-servicerole.md#iam-servicerole-update) managed policy to your service role\. This policy has all permissions that Elastic Beanstalk needs to perform managed platform updates\.
+Elastic Beanstalk needs permission to initiate a platform update on your behalf\. To gain these permissions, Elastic Beanstalk assumes the *managed\-updates service role*\. When you use the default [service role](iam-servicerole.md) for your environment, the Elastic Beanstalk console uses it as the managed\-updates service role too\. The console assigns the [`AWSElasticBeanstalkService`](iam-servicerole.md#iam-servicerole-update) managed policy to your service role\. This policy has all permissions that Elastic Beanstalk needs to perform managed platform updates\.
 
-For details about other ways to set the managed updates service role, see [Managing Elastic Beanstalk service roles](iam-servicerole.md)\.
+For details about other ways to set the managed\-updates service role, see [Managing Elastic Beanstalk service roles](iam-servicerole.md)\.
 
 **Note**  
-If you use [configuration files](ebextensions.md) to extend your environment to include additional resources, you might need to add permissions to your environment's managed updates service role\. Typically you need to add permissions when you reference these resources by name in other sections or files\.
+If you use [configuration files](ebextensions.md) to extend your environment to include additional resources, you might need to add permissions to your environment's managed\-updates service role\. Typically you need to add permissions when you reference these resources by name in other sections or files\.
 
-If an update fails, you can find the reason for the failure on the [Managed Updates](#environment-platform-update-managed-managing) page\.
+If an update fails, you can find the reason for the failure on the [Managed updates](#environment-platform-update-managed-managing) page\.
 
 ## Managed update maintenance window<a name="environment-platform-update-managed-window"></a>
 
@@ -96,7 +96,7 @@ If you have many environments, use the search bar to filter the environment list
 
 1. Choose **Managed updates**\.
 
-The **Managed Updates Overview** section provides information about scheduled and pending managed updates\. The **History** section lists successful updates and failed attempts\.
+The **Managed updates overview** section provides information about scheduled and pending managed updates\. The **History** section lists successful updates and failed attempts\.
 
 You can choose to apply a scheduled update immediately, instead of waiting until the maintenance window\. 
 

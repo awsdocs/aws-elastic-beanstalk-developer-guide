@@ -199,7 +199,7 @@ To allow Elastic Beanstalk to assume the `aws-elasticbeanstalk-service-role` rol
 }
 ```
 
-When you enable [managed platform updates](environment-platform-update-managed.md) for your environment, Elastic Beanstalk assumes a separate managed updates service role to perform managed updates\. By default, the Elastic Beanstalk console uses the same generated service role, `aws-elasticbeanstalk-service-role`, for the managed updates service role\. If you change your default service role, the console sets the managed updates service role to use the managed updates service\-linked role, `AWSServiceRoleForElasticBeanstalkManagedUpdates`\. For details about service\-linked roles, see [Using service\-linked roles](#iam-servicerole-slr)\.
+When you enable [managed platform updates](environment-platform-update-managed.md) for your environment, Elastic Beanstalk assumes a separate managed\-updates service role to perform managed updates\. By default, the Elastic Beanstalk console uses the same generated service role, `aws-elasticbeanstalk-service-role`, for the managed\-updates service role\. If you change your default service role, the console sets the managed\-updates service role to use the managed\-updates service\-linked role, `AWSServiceRoleForElasticBeanstalkManagedUpdates`\. For details about service\-linked roles, see [Using service\-linked roles](#iam-servicerole-slr)\.
 
 **Note**  
 Due to permission issues, the Elastic Beanstalk service doesn't always succeed in creating this service\-linked role for you\. Therefore, the console tries to explicitly create it\. To ensure your account has this service\-linked role, create an environment at least once using the console, and configure managed updates to be enabled before you create the environment\.
@@ -208,7 +208,7 @@ Due to permission issues, the Elastic Beanstalk service doesn't always succeed i
 
 When you launch an environment using the [eb create](eb3-create.md) command of the Elastic Beanstalk Command Line Interface \(EB CLI\) and don't specify a service role through the `--service-role` option, Elastic Beanstalk creates the default service role `aws-elasticbeanstalk-service-role`\. If the default service role already exists, Elastic Beanstalk uses it for the new environment\. This is similar to what the Elastic Beanstalk console does\.
 
-As opposed to the console, you can't specify a managed updates service role using an EB CLI command option\. If you enable managed updates for your environment, set the managed updates service role though configuration options\. The following example enables managed updates and uses the default service role as a managed updates service role\.
+As opposed to the console, you can't specify a managed\-updates service role using an EB CLI command option\. If you enable managed updates for your environment, set the managed\-updates service role though configuration options\. The following example enables managed updates and uses the default service role as a managed\-updates service role\.
 
 **Example \.ebextensions/managed\-platform\-update\.config**  
 
@@ -227,7 +227,7 @@ option_settings:
 
 When you use the `CreateEnvironment` action of the Elastic Beanstalk API to create an environment, specify a service role using the `ServiceRole` configuration option in the `[aws:elasticbeanstalk:environment](command-options-general.md#command-options-general-elasticbeanstalkenvironment)` namespace\. See [Using enhanced health reporting with the Elastic Beanstalk API](health-enhanced-api.md) for details on using enhanced health monitoring with the Elastic Beanstalk API\. 
 
-In addition, if you enable [managed platform updates](environment-platform-update-managed.md) for your environment, you can specify a managed updates service role using the `ServiceRoleForManagedUpdates` option of the `[aws:elasticbeanstalk:managedactions](command-options-general.md#command-options-general-elasticbeanstalkmanagedactions)` namespace\.
+In addition, if you enable [managed platform updates](environment-platform-update-managed.md) for your environment, you can specify a managed\-updates service role using the `ServiceRoleForManagedUpdates` option of the `[aws:elasticbeanstalk:managedactions](command-options-general.md#command-options-general-elasticbeanstalkmanagedactions)` namespace\.
 
 ## Using service\-linked roles<a name="iam-servicerole-slr"></a>
 
@@ -235,10 +235,10 @@ A service\-linked role is a unique type of service role that is predefined by El
 
 When you create an environment by using the Elastic Beanstalk API, and don't specify a service role, Elastic Beanstalk creates a [monitoring service\-linked role](using-service-linked-roles-monitoring.md) for your account, if it doesn't already exist, and uses it for the new environment\. You can also use IAM to create your account's monitoring service\-linked role in advance\. When your account has a monitoring service\-linked role, you can use it to create an environment by using the Elastic Beanstalk API, the Elastic Beanstalk console, or the EB CLI\.
 
-In addition, if you enable [managed platform updates](environment-platform-update-managed.md) for the environment and specify `AWSServiceRoleForElasticBeanstalkManagedUpdates` as the value for the `ServiceRoleForManagedUpdates` option of the `[aws:elasticbeanstalk:managedactions](command-options-general.md#command-options-general-elasticbeanstalkmanagedactions)` namespace, Elastic Beanstalk creates a [managed updates service\-linked role](using-service-linked-roles-managedupdates.md) for your account, if it doesn't already exist, and uses it to perform managed updates for the new environment\.
+In addition, if you enable [managed platform updates](environment-platform-update-managed.md) for the environment and specify `AWSServiceRoleForElasticBeanstalkManagedUpdates` as the value for the `ServiceRoleForManagedUpdates` option of the `[aws:elasticbeanstalk:managedactions](command-options-general.md#command-options-general-elasticbeanstalkmanagedactions)` namespace, Elastic Beanstalk creates a [managed\-updates service\-linked role](using-service-linked-roles-managedupdates.md) for your account, if it doesn't already exist, and uses it to perform managed updates for the new environment\.
 
 **Note**  
-When Elastic Beanstalk tries to create the monitoring and managed updates service\-linked roles for your account when you create an environment, you must have the `iam:CreateServiceLinkedRole` permission\. If you don't have this permission, environment creation fails, and you see a message explaining the issue\.  
+When Elastic Beanstalk tries to create the monitoring and managed\-updates service\-linked roles for your account when you create an environment, you must have the `iam:CreateServiceLinkedRole` permission\. If you don't have this permission, environment creation fails, and you see a message explaining the issue\.  
 As an alternative, another user with permission to create service\-linked roles can use IAM to create the service linked\-role in advance\. You can then create your environment even without having the `iam:CreateServiceLinkedRole` permission\.
 
 ## Verifying the default service role's permissions<a name="iam-servicerole-verify"></a>

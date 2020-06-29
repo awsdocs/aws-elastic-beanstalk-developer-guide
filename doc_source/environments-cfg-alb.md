@@ -16,9 +16,9 @@ When your environment uses an Application Load Balancer, Elastic Beanstalk confi
 **Note**  
 Unlike a Classic Load Balancer or a Network Load Balancer, an Application Load Balancer can't have transport layer \(layer 4\) TCP or SSL/TLS listeners\. It supports only HTTP and HTTPS listeners\. Additionally, it can't use backend authentication to authenticate HTTPS connections between the load balancer and backend instances\.
 
-In an Elastic Beanstalk environment, you can use an Application Load Balancer to direct traffic for certain paths to a different port on your web server instances\. With a Classic Load Balancer, all traffic to a listener is routed to a single port on the backend instances\. With an Application Load Balancer, you can configure multiple *rules* on the listener to route requests to certain paths to different backend ports\.
+In an Elastic Beanstalk environment, you can use an Application Load Balancer to direct traffic for certain paths to a different process on your web server instances\. With a Classic Load Balancer, all traffic to a listener is routed to a single process on the backend instances\. With an Application Load Balancer, you can configure multiple *rules* on the listener to route requests to certain paths to different backend process\. You configure each process with the port that the process listens on\.
 
-For example, you could run a login process separately from your main application\. While the main application on your environment's instances accepts the majority of requests and listens on port 80, your login process listens on port 5000 and accepts requests to the `/login` path\. All incoming requests from clients come in on port 80\. With an Application Load Balancer, you can configure a single listener for incoming traffic on port 80, with two rules that route traffic to two separate processes, depending on the path in the request\. One rule routes traffic to `/login` to the login process listening on port 5000\. The default rule routes all other traffic to the main application process listening on port 80\.
+For example, you could run a login process separately from your main application\. While the main application on your environment's instances accepts the majority of requests and listens on port 80, your login process listens on port 5000 and accepts requests to the `/login` path\. All incoming requests from clients come in on port 80\. With an Application Load Balancer, you can configure a single listener for incoming traffic on port 80, with two rules that route traffic to two separate processes, depending on the path in the request\. You add a custom rule that routes traffic to `/login` to the login process listening on port 5000\. The default rule routes all other traffic to the main application process listening on port 80\.
 
 An Application Load Balancer rule maps a request to a *target group*\. In Elastic Beanstalk, a target group is represented by a *process*\. You can configure a process with a protocol, port, and health check settings\. The process represents the process running on the instances in your environment\. The default process is a listener on port 80 of the reverse proxy \(nginx or Apache\) that runs in front of your application\.
 
@@ -88,7 +88,7 @@ If the **Load balancer** configuration category doesn't have an **Edit** button,
 
 ### Listeners<a name="environments-cfg-alb-console-listeners"></a>
 
-Use this list to specify listeners for your load balancer\. Each listener routes incoming client traffic on a specified port using a specified protocol to one or more processes on your instances\. Initially, the list shows the default listener, which routes incoming HTTP traffic on port 80 to a process named **default**, which listens to HTTP port 80\.
+Use this list to specify listeners for your load balancer\. Each listener routes incoming client traffic on a specified port using a specified protocol to one or more processes on your instances\. Initially, the list shows the default listener, which routes incoming HTTP traffic on port 80 to a process named **default**\.
 
 ![\[Application Load Balancer configuration - listener list\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-listeners.png)
 
@@ -104,7 +104,7 @@ Use this list to specify listeners for your load balancer\. Each listener routes
 
 1. In the **Application Load Balancer listener** dialog box, configure settings you want, and then choose **Add**\.
 
-Use the **Application Load Balancer listener** dialog box settings to choose the port and protocol on which the listener listens to traffic\. If you choose the HTTPS protocol, configure SSL settings\.
+Use the **Application Load Balancer listener** dialog box settings to choose the port and protocol on which the listener listens to traffic, and the process to route the traffic to\. If you choose the HTTPS protocol, configure SSL settings\.
 
 ![\[Application Load Balancer listener dialog box\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-listener-dialog.png)
 
@@ -158,9 +158,9 @@ Select or clear the **Stickiness policy enabled** box to enable or disable stick
 
 ### Rules<a name="environments-cfg-alb-console-rules"></a>
 
-Use this list to specify listener rules for your load balancer\. A rule maps requests that the listener receives on a specific path pattern to a target process\. Each listener can have multiple rules, routing requests on different paths to different processes on your instances\. 
+Use this list to specify custom listener rules for your load balancer\. A rule maps requests that the listener receives on a specific path pattern to a target process\. Each listener can have multiple rules, routing requests on different paths to different processes on your instances\. 
 
-Rules have numeric priorities that determine the precedence in which they are applied to incoming requests\. For each new listener you add, Elastic Beanstalk adds a default rule that routes all the listener's traffic to the default process\. The default rule's precedence is the lowest; it's applied if no other rule for the same listener matches the incoming request\. Initially, the list shows the default rule of the default HTTP port 80 listener\.
+Rules have numeric priorities that determine the precedence in which they are applied to incoming requests\. For each new listener you add, Elastic Beanstalk adds a default rule that routes all the listener's traffic to the default process\. The default rule's precedence is the lowest; it's applied if no other rule for the same listener matches the incoming request\. Initially, if you haven't added custom rules, the list is empty\. Default rules of all listeners aren't displayed\.
 
 ![\[Application Load Balancer configuration - rule list\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-rules.png)
 
@@ -168,7 +168,7 @@ You can edit the settings of an existing rule, or add a new rule\. To start edit
 + **Name** – The rule's name\.
 + **Listener port** – The port of the listener that the rule applies to\.
 + **Priority** – The rule's priority\. A lower priority number has higher precedence\. Priorities of a listener's rules must be unique\.
-+ **Path pattern** – A pattern defining the request paths that the rule applies to\.
++ **Path pattern** – A pattern defining the request paths that the rule applies to\. The pattern can include wildcard characters\. You can add several comma\-separated path patterns\.
 + **Process** – The process to which the load balancer routes requests that match the rule\.
 
 When editing any existing rule, you can't change its **Name** and **Listener port**\. When editing a default rule, **Process** is the only setting you can change\.
@@ -189,7 +189,9 @@ To configure your environment's Application Load Balancer to meet these requirem
 
 **To configure the load balancer for this example**
 
-1. *Add a secure listener\.* For **Port**, type `443`\. For **Protocol**, choose `HTTPS`\. For **SSL certificate**, choose the ARN of your SSL certificate\. For example, `arn:aws:iam::123456789012:server-certificate/abc/certs/build`, or `arn:aws:acm:us-east-2:123456789012:certificate/12345678-12ab-34cd-56ef-12345678`\.  
+1. *Add a secure listener\.* For **Port**, type **443**\. For **Protocol**, select **HTTPS**\. For **SSL certificate**, select the ARN of your SSL certificate\. For example, **arn:aws:iam::123456789012:server\-certificate/abc/certs/build**, or **arn:aws:acm:us\-east\-2:123456789012:certificate/12345678\-12ab\-34cd\-56ef\-12345678**\.
+
+   For **Default process**, keep **default** selected\.  
 ![\[Application Load Balancer configuration - adding a secure listener\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-listeners-https.png)
 
    You can now see your additional listener on the list\.  
@@ -198,13 +200,13 @@ To configure your environment's Application Load Balancer to meet these requirem
 1. *Disable the default port 80 HTTP listener\.* For the default listener, turn off the **Enabled** option\.  
 ![\[Application Load Balancer configuration example - disabling default listener\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-listeners-disabled.png)
 
-1. *Configure the default process to HTTPS\.* Select the default process, and then for **Actions**, choose **Edit**\. For **Port**, type `443`\. For **Protocol**, choose `HTTPS`\.  
+1. *Configure the default process to HTTPS\.* Select the default process, and then for **Actions**, choose **Edit**\. For **Port**, type **443**\. For **Protocol**, select **HTTPS**\.  
 ![\[Application Load Balancer configuration example - configuring default process to HTTPS\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-process-definition-https.png)
 
-1. *Add an admin process\.* For **Name**, type `admin`\. For **Port**, type `443`\. For **Protocol**, choose `HTTPS`\. Under **Health check**, for **Path** type `/admin`\.  
+1. *Add an admin process\.* For **Name**, type **admin**\. For **Port**, type **443**\. For **Protocol**, select **HTTPS**\. Under **Health check**, for **Path** type **/admin**\.  
 ![\[Application Load Balancer configuration example - adding admin process\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-process-definition-https-admin.png)
 
-1. *Add a rule for admin traffic\.* For **Name**, type `admin`\. For **Listener port**, type `443`\. For **Path pattern**, type `/admin/*`\. For **Process**, choose `admin`\.  
+1. *Add a rule for admin traffic\.* For **Name**, type **admin**\. For **Listener port**, type **443**\. For **Path pattern**, type **/admin/\***\. For **Process**, select **admin**\.  
 ![\[Application Load Balancer configuration example - adding admin rule\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-rule-https-admin.png)
 
 ## Configuring an Application Load Balancer using the EB CLI<a name="environments-cfg-alb-ebcli"></a>
