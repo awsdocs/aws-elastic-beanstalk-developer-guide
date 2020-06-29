@@ -20,10 +20,10 @@ Deployments with immutable updates or traffic splitting enabled
 
 | Rolling update setting | Load balanced environments | Single\-instance environments | Legacy Windows server environments† | 
 | --- | --- | --- | --- | 
-|  Disabled  |  ✓  |  ✓  |  ✓  | 
-|  Rolling Based on Health  |  ✓  |  ☓  |  ✓  | 
-|  Rolling Based on Time  |  ✓  |  ☓  |  ✓  | 
-|  Immutable  |  ✓  |  ✓  |  ☓  | 
+|  Disabled  |   ✓ Yes  |   ✓ Yes  |   ✓ Yes  | 
+|  Rolling Based on Health  |   ✓ Yes  |   ☓ No  |   ✓ Yes  | 
+|  Rolling Based on Time  |   ✓ Yes  |   ☓ No  |   ✓ Yes  | 
+|  Immutable  |   ✓ Yes  |   ✓ Yes  |   ☓ No  | 
 
 † For the purpose of this table, a *Legacy Windows Server Environment* is an environment based on a [Windows Server platform configuration](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) that use an IIS version earlier than IIS 8\.5\.
 

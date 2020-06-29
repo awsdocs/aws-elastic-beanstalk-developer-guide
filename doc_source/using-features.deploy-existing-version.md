@@ -11,11 +11,11 @@ Elastic Beanstalk provides several deployment policies and settings\. For detail
 
 | Deployment policy | Load\-balanced environments | Single\-instance environments | Legacy Windows Server environments† | 
 | --- | --- | --- | --- | 
-|  **All at once**  |  ✓  |  ✓  |  ✓  | 
-|  **Rolling**  |  ✓  |  ☓  |  ✓  | 
-|  **Rolling with an additional batch**  |  ✓  |  ☓  |  ☓  | 
-|  **Immutable**  |  ✓  |  ✓  |  ☓  | 
-|  **Traffic splitting**  |  ✓ \(Application Load Balancer\)  |  ☓  |  ☓  | 
+|  **All at once**  |   ✓ Yes  |   ✓ Yes  |   ✓ Yes  | 
+|  **Rolling**  |   ✓ Yes  |   ☓ No  |   ✓ Yes  | 
+|  **Rolling with an additional batch**  |   ✓ Yes  |   ☓ No  |   ☓ No  | 
+|  **Immutable**  |   ✓ Yes  |   ✓ Yes  |   ☓ No  | 
+|  **Traffic splitting**  |   ✓ Yes \(Application Load Balancer\)  |   ☓ No  |   ☓ No  | 
 
 † In this table, a *Legacy Windows Server environment* is an environment based on a [Windows Server platform configuration](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.net) that uses an IIS version earlier than IIS 8\.5\.
 
@@ -43,12 +43,12 @@ The following table compares deployment method properties\.
 
 | **Method** | **Impact of failed deployment** | **Deploy time** | **Zero downtime** | **No DNS change** | **Rollback process** | **Code deployed to** | 
 | --- | --- | --- | --- | --- | --- | --- | 
-| All at once | Downtime | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png) | ☓ | ✓ | Manual redeploy | Existing instances | 
-| Rolling | Single batch out of service; any successful batches before failure running new application version | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)† | ✓ | ✓ | Manual redeploy | Existing instances | 
-| Rolling with an additional batch | Minimal if first batch fails; otherwise, similar to Rolling | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)† | ✓ | ✓ | Manual redeploy | New and existing instances | 
-| Immutable | Minimal | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png) | ✓ | ✓ | Terminate new instances | New instances | 
-| Traffic splitting | Percentage of client traffic routed to new version temporarily impacted | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)†† | ✓ | ✓ | Reroute traffic and terminate new instances | New instances | 
-| Blue/green | Minimal | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png) | ✓ | ☓ | Swap URL | New instances | 
+| All at once | Downtime | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png) |  ☓ No |  ✓ Yes | Manual redeploy | Existing instances | 
+| Rolling | Single batch out of service; any successful batches before failure running new application version | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)† |  ✓ Yes |  ✓ Yes | Manual redeploy | Existing instances | 
+| Rolling with an additional batch | Minimal if first batch fails; otherwise, similar to Rolling | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)† |  ✓ Yes |  ✓ Yes | Manual redeploy | New and existing instances | 
+| Immutable | Minimal | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png) |  ✓ Yes |  ✓ Yes | Terminate new instances | New instances | 
+| Traffic splitting | Percentage of client traffic routed to new version temporarily impacted | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)†† |  ✓ Yes |  ✓ Yes | Reroute traffic and terminate new instances | New instances | 
+| Blue/green | Minimal | ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png)![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/clock.png) |  ✓ Yes |  ☓ No | Swap URL | New instances | 
 
 † *Varies depending on batch size\.*
 
