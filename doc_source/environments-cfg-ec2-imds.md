@@ -14,8 +14,6 @@ Code can access instance metadata from a running instance using one of two metho
 
 Older Elastic Beanstalk platform versions supported IMDSv1\. Newer Elastic Beanstalk platform versions \(all [Amazon Linux 2 platform versions](using-features.migration-al.md)\) support both IMDSv1 and IMDSv2\. You can configure your environment to support both methods \(the default\) or disable IMDSv1\.
 
-At this time, IMDSv2 isn't supported on the Windows Server platform\.
-
 **Note**  
 Disabling IMDSv1 requires using Amazon EC2 launch templates\. When you configure this feature during environment creation or updates, Elastic Beanstalk attempts to configure your environment to use Amazon EC2 launch templates \(if the environment isn't using them already\)\. In this case, if your user policy lacks the necessary permissions, environment creation or updates might fail\. Therefore, we recommend that you use our managed user policy or add the required permissions to your custom policies\. For details about the required permissions, see [Creating a custom user policy](AWSHowTo.iam.managed-policies.md#AWSHowTo.iam.policies)\.
 

@@ -168,8 +168,6 @@ In most cases, you access environment properties in your application code like a
   NameValueCollection appConfig = ConfigurationManager.AppSettings;
   string endpoint = appConfig["API_ENDPOINT"];
   ```
-**Note**  
-Elastic Beanstalk doesn't support passing environment variables to \.NET Core applications and multiple\-application IIS deployments that use a [deployment manifest](dotnet-manifest.md)\.
 + [Node\.js](create_deploy_nodejs.container.md#nodejs-platform-console-envprops) – `process.env`
 
   ```

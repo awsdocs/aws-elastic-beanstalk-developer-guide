@@ -64,7 +64,7 @@ For details about instance virtualization types, see [Linux AMI Virtualization T
 
 1. Select an instance type, and then choose **Next: Configure Instance Details**\.
 
-1. **\(Linux platforms\)** Expand the **Advanced Details** section and paste the following text in the **User Data** field\.
+1. **\(For Linux platforms\)** Expand the **Advanced Details** section and paste the following text in the **User Data** field\.
 
    ```
    #cloud-config
@@ -72,9 +72,10 @@ For details about instance virtualization types, see [Linux AMI Virtualization T
      repo_upgrade: none
    ```
 
-   The *repository version number* is the year and month version in the AMI name\. For example, AMIs based on the March 2015 release of Amazon Linux have a repository version number `2015.03`\. For an Elastic Beanstalk image, this matches the date shown in the solution stack name for your [platform version](concepts.platforms.md)\.
+   The *repository version number* is the year and month version in the AMI name\. For example, AMIs based on the March 2015 release of Amazon Linux have a repository version number `2015.03`\. For an Elastic Beanstalk image, this matches the date shown in the solution stack name for your [platform version](concepts.platforms.md) based on Amazon Linux AMI \(preceding Amazon Linux 2\)\.
 **Note**  
-These settings configure the lock\-on\-launch feature\. This causes the AMI to use a fixed, specific repository version when it launches, and disables the automatic installation of security updates\. Both are required to use a custom AMI with Elastic Beanstalk\.
+The `repo_releasever` setting configures the lock\-on\-launch feature for an Amazon Linux AMI\. This causes the AMI to use a fixed, specific repository version when it launches\. This feature isn't supported on Amazon Linux 2—don't specify it if your environment uses a current Amazon Linux 2 platform branch\. The setting is required if you're using a custom AMI with Elastic Beanstalk only on Amazon Linux AMI platform branches \(preceding Amazon Linux 2\)\.  
+The `repo_upgrade` setting disables the automatic installation of security updates\. It's required to use a custom AMI with Elastic Beanstalk\.
 
 1. Proceed through the wizard to [launch the EC2 instance](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-an-instance.html)\. When prompted, select a key pair that you have access to so that you can connect to the instance for the next steps\.
 
