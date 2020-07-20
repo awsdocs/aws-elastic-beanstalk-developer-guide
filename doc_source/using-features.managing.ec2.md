@@ -107,7 +107,7 @@ Elastic Beanstalk selects a default AMI for your environment based on the region
 
 ## The aws:autoscaling:launchconfiguration namespace<a name="using-features.managing.ec2.namespace"></a>
 
-You can use the [configuration options](command-options.md) in the `[aws:autoscaling:launchconfiguration](command-options-general.md#command-options-general-autoscalinglaunchconfiguration)` namespace to configure your environment's instances, including additional options that are not available in the console\.
+You can use the [configuration options](command-options.md) in the `aws:autoscaling:launchconfiguration` namespace to configure your environment's instances, including additional options that are not available in the console\.
 
 The following [configuration file](ebextensions.md) example configures the basic options shown in this topic, the option `DisableIMDSv1` discussed in [IMDS](environments-cfg-ec2-imds.md), the options `EC2KeyName` and `IamInstanceProfile` discussed in [Security](using-features.managing.security.md), and an additional option, `BlockDeviceMappings`, which isn't available in the console\.
 

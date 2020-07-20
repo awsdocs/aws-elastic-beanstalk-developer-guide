@@ -8,7 +8,7 @@ With health\-based rolling updates, Elastic Beanstalk waits until instances in a
 
 With [enhanced health reporting](health-enhanced.md), all of the instances in a batch must pass multiple consecutive health checks before Elastic Beanstalk will move on to the next batch\. In addition to ELB health checks, which check only your instances, enhanced health monitors application logs and the state of your environment's other resources\. In a web server environment with enhanced health, all instances must pass 12 health checks over the course of two minutes \(18 checks over three minutes for worker environments\)\. If any instance fails one health check, the count resets\.
 
-If a batch doesn't become healthy within the rolling update timeout \(default is 30 minutes\), the update is canceled\. Rolling update timeout is a [configuration option](command-options.md) that is available in the `[aws:autoscaling:updatepolicy:rollingupdate](#rollingupdate-namespace)` namespace\. If your application doesn't pass health checks with `Ok` status but is stable at a different level, you can set the `HealthCheckSuccessThreshold` option in the [`aws:elasticbeanstalk:healthreporting:system`](command-options-general.md#command-options-general-elasticbeanstalkhealthreporting) namespace to change the level at which Elastic Beanstalk considers an instance to be healthy\.
+If a batch doesn't become healthy within the rolling update timeout \(default is 30 minutes\), the update is canceled\. Rolling update timeout is a [configuration option](command-options.md) that is available in the `aws:autoscaling:updatepolicy:rollingupdate` namespace\. If your application doesn't pass health checks with `Ok` status but is stable at a different level, you can set the `HealthCheckSuccessThreshold` option in the [`aws:elasticbeanstalk:healthreporting:system`](command-options-general.md#command-options-general-elasticbeanstalkhealthreporting) namespace to change the level at which Elastic Beanstalk considers an instance to be healthy\.
 
 If the rolling update process fails, Elastic Beanstalk starts another rolling update to roll back to the previous configuration\. A rolling update can fail due to failed health checks or if launching new instances causes you to exceed the quotas on your account\. If you hit a quota on the number of Amazon EC2 instances, for example, the rolling update can fail when it attempts to provision a batch of new instances\. In this case, the rollback fails as well\.
 
@@ -60,7 +60,7 @@ The **Configuration updates** section of the **Rolling updates and deployments**
 
 ## The aws:autoscaling:updatepolicy:rollingupdate namespace<a name="rollingupdate-namespace"></a>
 
-You can also use the [configuration options](command-options.md) in the `[aws:autoscaling:updatepolicy:rollingupdate](command-options-general.md#command-options-general-autoscalingupdatepolicyrollingupdate)` namespace to configure rolling updates\. 
+You can also use the [configuration options](command-options.md) in the `aws:autoscaling:updatepolicy:rollingupdate` namespace to configure rolling updates\. 
 
 Use the `RollingUpdateEnabled` option to enable rolling updates, and `RollingUpdateType` to choose the update type\. The following values are supported for `RollingUpdateType`:
 + `Health` – Wait until instances in the current batch are healthy before placing instances in service and starting the next batch\.

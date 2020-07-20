@@ -189,7 +189,7 @@ Alternatively, you can use an AWS managed policy to [provide full access](AWSHow
 
 ## Creating a service\-linked role for Elastic Beanstalk<a name="create-service-linked-role-managedupdates"></a>
 
-You don't need to manually create a service\-linked role\. When you create an Elastic Beanstalk environment using the Elastic Beanstalk API, enable managed updates, and specify `AWSServiceRoleForElasticBeanstalkManagedUpdates` as the value for the `ServiceRoleForManagedUpdates` option of the `[aws:elasticbeanstalk:managedactions](command-options-general.md#command-options-general-elasticbeanstalkmanagedactions)` namespace, Elastic Beanstalk creates the service\-linked role for you\. 
+You don't need to manually create a service\-linked role\. When you create an Elastic Beanstalk environment using the Elastic Beanstalk API, enable managed updates, and specify `AWSServiceRoleForElasticBeanstalkManagedUpdates` as the value for the `ServiceRoleForManagedUpdates` option of the `aws:elasticbeanstalk:managedactions` namespace, Elastic Beanstalk creates the service\-linked role for you\. 
 
 When Elastic Beanstalk tries to create the AWSServiceRoleForElasticBeanstalkManagedUpdates service\-linked role for your account when you create an environment, you must have the `iam:CreateServiceLinkedRole` permission\. If you don't have this permission, environment creation fails, and you see a message explaining the issue\.
 
@@ -197,7 +197,7 @@ As an alternative, another user with permission to create service\-linked roles 
 
 You \(or another user\) can use the IAM console to create a service\-linked role with the **Elastic Beanstalk Managed Updates** use case\. In the IAM CLI or the IAM API, create a service\-linked role with the `managedupdates.elasticbeanstalk.amazonaws.com` service name\. For more information, see [Creating a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#create-service-linked-role) in the *IAM User Guide*\. If you delete this service\-linked role, you can use this same process to create the role again\.
 
-If you delete this service\-linked role, and then need to create it again, you can use the same process to recreate the role in your account\. When you create an Elastic Beanstalk environment using the Elastic Beanstalk API, enable managed updates, and specify `AWSServiceRoleForElasticBeanstalkManagedUpdates` as the value for the `ServiceRoleForManagedUpdates` option of the `[aws:elasticbeanstalk:managedactions](command-options-general.md#command-options-general-elasticbeanstalkmanagedactions)` namespace, Elastic Beanstalk creates the service\-linked role for you again\. 
+If you delete this service\-linked role, and then need to create it again, you can use the same process to recreate the role in your account\. When you create an Elastic Beanstalk environment using the Elastic Beanstalk API, enable managed updates, and specify `AWSServiceRoleForElasticBeanstalkManagedUpdates` as the value for the `ServiceRoleForManagedUpdates` option of the `aws:elasticbeanstalk:managedactions` namespace, Elastic Beanstalk creates the service\-linked role for you again\. 
 
 ## Editing a service\-linked role for Elastic Beanstalk<a name="edit-service-linked-role-managedupdates"></a>
 

@@ -14,6 +14,7 @@ AWS Elastic Beanstalk can launch Docker environments by building an image descri
 + [Deploy a remote Docker image to Elastic Beanstalk](#single-container-docker.deploy-remote)
 + [Clean up](#single-container-docker.cleanup)
 + [Docker configuration](single-container-docker-configuration.md)
++ [Deploying a GlassFish application to the Docker platform](docker-glassfish-tutorial.md)
 
 ## Prerequisites<a name="single-container-docker.prereqs"></a>
 
@@ -89,11 +90,14 @@ Use the Elastic Beanstalk CLI \(EB CLI\) to configure your local repository for 
 ~/eb-docker-flask$ eb init -p docker application-name
 ```
 
-\(Optional\) Use eb local run to build and run your container locally\. To learn more about the eb local command, see [eb local](eb3-local.md)\. The eb local command isn't supported on Windows\. Alternatively, you can build and run your container with the docker build and docker run commands\. For more information, see the [Docker documentation](https://docs.docker.com/)\.
+\(Optional\) Use the eb local run command to build and run your container locally\.
 
 ```
 ~/eb-docker-flask$ eb local run --port 5000
 ```
+
+**Note**  
+To learn more about the eb local command, see [eb local](eb3-local.md)\. The command isn't supported on Windows\. Alternatively, you can build and run your container with the docker build and docker run commands\. For more information, see the [Docker documentation](https://docs.docker.com/)\.
 
 \(Optional\) While your container is running, use the eb local open command to view your application in a web browser\. Alternatively, open [http://localhost:5000/](http://localhost:5000/) in a web browser\.
 
@@ -105,13 +109,13 @@ Use the Elastic Beanstalk CLI \(EB CLI\) to configure your local repository for 
 
 After testing your application locally, deploy it to an Elastic Beanstalk environment\. Elastic Beanstalk uses the instructions in your `Dockerfile` to build and run the image\.
 
-Use the EB CLI to create an environment and deploy your application\.
+Use the eb create command to create an environment and deploy your application\.
 
 ```
 ~/eb-docker-flask$ eb create environment-name
 ```
 
-Once your environment has launched, use eb open to view it in a web browser\.
+After your environment launches, use the eb open command to view it in a web browser\.
 
 ```
 ~/eb-docker-flask$ eb open

@@ -64,7 +64,7 @@ When you run an Amazon RDS database attached to your Elastic Beanstalk environme
 
 ## The aws:ec2:vpc namespace<a name="environments-cfg-vpc-namespace"></a>
 
-You can use the configuration options in the `[aws:ec2:vpc](command-options-general.md#command-options-general-ec2vpc)` namespace to configure your environment's network settings\.
+You can use the configuration options in the `aws:ec2:vpc` namespace to configure your environment's network settings\.
 
 The following [configuration file](ebextensions.md) uses options in this namespace to set the environment's VPC and subnets for a public\-private configuration\. In order to set the VPC ID in a configuration file, the file must be included in the application source bundle during environment creation\. See [Setting configuration options during environment creation](environment-configuration-methods-during.md) for other methods of configuring these settings during environment creation\.
 

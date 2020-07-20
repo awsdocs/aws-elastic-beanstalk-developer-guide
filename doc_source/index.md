@@ -47,6 +47,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Deploying Elastic Beanstalk applications from Docker containers](create_deploy_docker.md)
       + [Using the Docker platform](single-container-docker.md)
          + [Docker configuration](single-container-docker-configuration.md)
+         + [Deploying a GlassFish application to the Docker platform](docker-glassfish-tutorial.md)
       + [Multicontainer Docker environments](create_deploy_docker_ecs.md)
          + [Multicontainer Docker configuration](create_deploy_docker_v2config.md)
          + [Multicontainer Docker environments with the Elastic Beanstalk console](create_deploy_docker_ecstutorial.md)

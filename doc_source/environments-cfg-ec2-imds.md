@@ -47,7 +47,7 @@ If you have many environments, use the search bar to filter the environment list
 
 ## The aws:autoscaling:launchconfiguration namespace<a name="environments-cfg-ec2-imds.namespace"></a>
 
-You can use a [configuration option](command-options.md) in the `[aws:autoscaling:launchconfiguration](command-options-general.md#command-options-general-autoscalinglaunchconfiguration)` namespace to configure IMDS on your environment's instances\.
+You can use a [configuration option](command-options.md) in the `aws:autoscaling:launchconfiguration` namespace to configure IMDS on your environment's instances\.
 
 The following [configuration file](ebextensions.md) example disables IMDSv1 using the `DisableIMDSv1` option\.
 

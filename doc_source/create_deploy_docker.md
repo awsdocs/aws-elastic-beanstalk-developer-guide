@@ -29,6 +29,9 @@ For more details on the Multicontainer Docker platform and its use, see [Multico
 
 ### Preconfigured Docker containers<a name="docker-platform-preconfigured"></a>
 
-In addition to the two generic Docker platforms, there are several *preconfigured* Docker platform versions that you can use to run your application in a popular software stack such as *Java with Glassfish* or *Python with uWSGI*\. Use a preconfigured container if it matches the software used by your application\.
+In addition to the two generic Docker platforms, there are several *preconfigured* Docker platform branches that you can use to run your application in a popular software stack such as *Java with GlassFish* or *Python with uWSGI*\. Use a preconfigured container if it matches the software used by your application\.
+
+**Note**  
+All the Preconfigured Docker platform branches use the Amazon Linux AMI operating system \(preceding Amazon Linux 2\)\. To migrate your GlassFish application to Amazon Linux 2, use the generic Docker platform and deploy GlassFish and your application code to an Amazon Linux 2 Docker image\. For details, see [Deploying a GlassFish application to the Docker platform](docker-glassfish-tutorial.md)\.
 
 For more information, see [Preconfigured Docker containers](create_deploy_dockerpreconfig.md)\.

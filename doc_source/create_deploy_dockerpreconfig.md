@@ -1,9 +1,10 @@
 # Preconfigured Docker containers<a name="create_deploy_dockerpreconfig"></a>
 
-Elastic Beanstalk has a platform version running a Docker container that is preconfigured with the Java EE Glassfish application server software stack\. You can use the preconfigured Docker container to develop and test your application locally and then deploy the application in an Elastic Beanstalk environment that is identical to your local environment\.
+Elastic Beanstalk has a platform branch running a Docker container that is preconfigured with the Java EE GlassFish application server software stack\. You can use the preconfigured Docker container to develop and test your application locally and then deploy the application in an Elastic Beanstalk environment that is identical to your local environment\.
 
-**Note**  
-Elastic Beanstalk also supports platform versions with preconfigured Docker containers for Go and Python\. These platform versions are scheduled for retirement\.
+**Notes**  
+Elastic Beanstalk also supports platform branches with preconfigured Docker containers for Go and Python\. These platform branches are scheduled for retirement\.
+All the Preconfigured Docker platform branches use the Amazon Linux AMI operating system \(preceding Amazon Linux 2\)\. To migrate your GlassFish application to Amazon Linux 2, use the generic Docker platform and deploy GlassFish and your application code to an Amazon Linux 2 Docker image\. For details, see [Deploying a GlassFish application to the Docker platform](docker-glassfish-tutorial.md)\.
 
 The following section provides a detailed procedure for deploying an application to Elastic Beanstalk using a preconfigured Docker container\.
 
@@ -15,7 +16,7 @@ This section shows you how to develop an example application locally and then de
 
 ### Set up your local development environment<a name="create_deploy_dockerpreconfig.walkthrough.setup"></a>
 
-For this walk\-through we use a Glassfish example application\.
+For this walk\-through we use a GlassFish example application\.
 
 **To set up your environment**
 
@@ -36,9 +37,9 @@ For this walk\-through we use a Glassfish example application\.
 
 ### Develop and test locally<a name="create_deploy_dockerpreconfig.walkthrough.dev"></a>
 
-**To develop an example glassfish application**
+**To develop an example GlassFish application**
 
-1. Add a `Dockerfile` to your application’s root folder\. In the file, specify the AWS Elastic Beanstalk Docker base image to be used to run your local preconfigured Docker container\. You'll later deploy your application to an Elastic Beanstalk Preconfigured Docker Glassfish platform version\. Choose the Docker base image that this platform version uses\. To find out the current Docker image of the platform version, see the [Preconfigured Docker](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.dockerpreconfig) section of the *AWS Elastic Beanstalk Supported Platforms* page in the *AWS Elastic Beanstalk Platforms* guide\.  
+1. Add a `Dockerfile` to your application’s root folder\. In the file, specify the AWS Elastic Beanstalk Docker base image to be used to run your local preconfigured Docker container\. You'll later deploy your application to an Elastic Beanstalk Preconfigured Docker GlassFish platform version\. Choose the Docker base image that this platform version uses\. To find out the current Docker image of the platform version, see the [Preconfigured Docker](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.dockerpreconfig) section of the *AWS Elastic Beanstalk Supported Platforms* page in the *AWS Elastic Beanstalk Platforms* guide\.  
 **Example \~/Eb\-preconf\-example/Dockerfile**  
 
    ```
@@ -69,7 +70,7 @@ You must include the `-p` flag to map port 8080 on the container to the localhos
    ```
 
    The following web page appears\.  
-![\[The glassfish example application showing in a web browser\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dockerpreconfig-webpage.png)
+![\[The GlassFish example application showing in a web browser\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dockerpreconfig-webpage.png)
 
 ### Deploy to Elastic Beanstalk<a name="create_deploy_dockerpreconfig.walkthrough.deploy"></a>
 

@@ -36,7 +36,7 @@ If you aren't seeing the **Static files** section, you have to add at least one 
 
 You can use a [configuration file](ebextensions.md) to configure static file paths and directory locations using configuration options\. You can add a configuration file to your application's source bundle and deploy it during environment creation or a later deployment\.
 
-If your environment uses a platform branch based on Amazon Linux 2, use the `[aws:elasticbeanstalk:environment:proxy:staticfiles](command-options-general.md#command-options-general-environmentproxystaticfiles)` namespace\.
+If your environment uses a platform branch based on Amazon Linux 2, use the `aws:elasticbeanstalk:environment:proxy:staticfiles` namespace\.
 
 The following example configuration file tells the proxy server to serve files in the `statichtml` folder at the path `/html`, and files in the `staticimages` folder at the path `/images`\.
 

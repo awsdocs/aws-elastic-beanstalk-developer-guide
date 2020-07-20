@@ -125,7 +125,7 @@ When your maintenance window starts or when you choose **Apply now**, scheduled 
 
 ## Managed action option namespaces<a name="environment-platform-update-managed-namespace"></a>
 
-You can use [configuration options](command-options.md) in the `[aws:elasticbeanstalk:managedactions](command-options-general.md#command-options-general-elasticbeanstalkmanagedactions)` and `[aws:elasticbeanstalk:managedactions:platformupdate](command-options-general.md#command-options-general-elasticbeanstalkmanagedactionsplatformupdate)` namespaces to enable and configure managed platform updates\.
+You can use [configuration options](command-options.md) in the `aws:elasticbeanstalk:managedactions` and `aws:elasticbeanstalk:managedactions:platformupdate` namespaces to enable and configure managed platform updates\.
 
 The `ManagedActionsEnabled` option turns on managed platform updates\. Set this option to `true` to enable managed platform updates, and use the other options to configure update behavior\.
 

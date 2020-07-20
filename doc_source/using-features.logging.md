@@ -133,7 +133,7 @@ For example, the `eb-activity.conf` file on Linux adds two log files to the tail
 
 You can use environment configuration files \(`[\.ebextensions](ebextensions.md)`\) to add your own `.conf` files to these folders\. A `.conf` file lists log files specific to your application, which Elastic Beanstalk adds to the log file tasks\.
 
-Use the `[files](customize-containers-ec2.md#linux-files)` section to add configuration files to the tasks that you want to modify\. For example, the following configuration text adds a log configuration file to each instance in your environment\. This log configuration file, `cloud-init.conf`, adds `/var/log/cloud-init.log` to tail logs\.
+Use the `files` section to add configuration files to the tasks that you want to modify\. For example, the following configuration text adds a log configuration file to each instance in your environment\. This log configuration file, `cloud-init.conf`, adds `/var/log/cloud-init.log` to tail logs\.
 
 ```
 files:

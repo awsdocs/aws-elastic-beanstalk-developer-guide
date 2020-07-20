@@ -39,7 +39,7 @@ The following command updates the tag `mytag1` and deletes the tag `mytag2`\.
       --resource "arn:aws:elasticbeanstalk:us-east-2:my-account-id:platform/my-platform/1.0.0"
 ```
 
-For a complete list of options and more examples, see `[eb tags](eb3-tags.md)`\.
+For a complete list of options and more examples, see `eb tags`\.
 
 With the AWS CLI or other API\-based clients, use the [list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/list-tags-for-resource.html) command to list the tags of a custom platform version\.
 

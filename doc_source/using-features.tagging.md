@@ -75,7 +75,7 @@ The following command updates the tag `mytag1` and deletes the tag `mytag2`\.
 ~/workspace/my-app$ eb tags --update mytag1=newvalue --delete mytag2
 ```
 
-For a complete list of options and more examples, see `[eb tags](eb3-tags.md)`\.
+For a complete list of options and more examples, see `eb tags`\.
 
 With the AWS CLI or other API\-based clients, use the [list\-tags\-for\-resource](https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/list-tags-for-resource.html) command to list the tags of an environment\.
 
