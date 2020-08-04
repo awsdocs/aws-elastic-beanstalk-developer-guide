@@ -32,7 +32,7 @@ These configuration options do not apply to the Multicontainer Docker platform\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  ProxyServer  |  Specifies the web server to use as a proxy\.  |  `nginx`  |  `nginx` `none` \(on Amazon Linux AMI \(preceding Amazon Linux 2\) platform versions\)  | 
+|  ProxyServer  |  Specifies the web server to use as a proxy\.  |  `nginx`  |  `nginx` `none` – *Amazon Linux AMI only*  | 
 
 ## Go platform options<a name="command-options-golang"></a>
 
@@ -86,15 +86,13 @@ See [Environment properties and other software settings](environments-cfg-softwa
 |  Xms  |  Initial JVM heap sizes\.  |  `256m`  |  n/a  | 
 |  *optionName*  |  Specify arbitrary JVM options in addition to the those defined by the Tomcat platform\.  |  n/a  |  n/a  | 
 
-### Amazon Linux AMI \(pre\-Amazon Linux 2\) platform options<a name="command-options-java.alami"></a>
 
-#### Namespace: `aws:elasticbeanstalk:environment:proxy`<a name="command-options-java.alami.staticfiles"></a>
-
+**Namespace: `aws:elasticbeanstalk:environment:proxy`**  
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  GzipCompression  |  Set to `false` to disable response compression\.  |  `true`  |  `true` `false`  | 
-|  ProxyServer  |  Set the proxy to use on your environment's instances\. If you don't set this option, or if you set it to `apache`, Elastic Beanstalk uses [Apache 2\.4](https://httpd.apache.org/docs/2.4/)\. Set to `apache/2.2` if your application isn't ready to migrate away from [Apache 2\.2](https://httpd.apache.org/docs/2.2/) due to incompatible proxy configuration settings\. Set to `nginx` to use [nginx](https://www.nginx.com/)\. For more information, see [Configuring your Tomcat environment's proxy server](java-tomcat-proxy.md)\.  |  `apache`  |  `apache` `apache/2.2` `nginx`  | 
+|  GzipCompression  |  Set to `false` to disable response compression\. *Only valid on Amazon Linux AMI \(preceding Amazon Linux 2\) platform versions\.*  |  `true`  |  `true` `false`  | 
+|  ProxyServer  |  Set the proxy to use on your environment's instances\. If you set this option to `apache`, Elastic Beanstalk uses [Apache 2\.4](https://httpd.apache.org/docs/2.4/)\. Set to `apache/2.2` if your application isn't ready to migrate away from [Apache 2\.2](https://httpd.apache.org/docs/2.2/) due to incompatible proxy configuration settings\. *This value is only valid on Amazon Linux AMI \(preceding Amazon Linux 2\) platform versions\.* Set to `nginx` to use [nginx](https://www.nginx.com/)\. This is the default starting with Amazon Linux 2 platform versions\. For more information, see [Configuring your Tomcat environment's proxy server](java-tomcat-proxy.md)\.  |  `nginx` \(Amazon Linux 2\) `apache` \(Amazon Linux AMI\)  |  `apache` `apache/2.2` – *Amazon Linux AMI only* `nginx`  | 
 
 ## \.NET Core on Linux platform options<a name="command-options-dotnet-core-linux"></a>
 
@@ -117,6 +115,13 @@ See [Environment properties and other software settings](environments-cfg-softwa
 
 ## Node\.js platform options<a name="command-options-nodejs"></a>
 
+
+**Namespace: `aws:elasticbeanstalk:environment:proxy`**  
+
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
+| --- | --- | --- | --- | 
+|  ProxyServer  |  Set the proxy to use on your environment's instances\.  |  `nginx`  |  `apache` `nginx`  | 
+
 ### Amazon Linux AMI \(pre\-Amazon Linux 2\) platform options<a name="command-options-nodejs.alami"></a>
 
 #### Namespace: `aws:elasticbeanstalk:container:nodejs`<a name="command-options-nodejs.alami.nodejs"></a>
@@ -127,7 +132,7 @@ See [Environment properties and other software settings](environments-cfg-softwa
 |  NodeCommand  |  Command used to start the Node\.js application\. If an empty string is specified, `app.js` is used, then `server.js`, then `npm start` in that order\.  |  ""  |  n/a  | 
 |  NodeVersion  |  Version of Node\.js\. For example, `4.4.6` Supported Node\.js versions vary between Node\.js platform versions\. See [Node\.js](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.nodejs) in the *AWS Elastic Beanstalk Platforms* document for a list of the currently supported versions\.  When support for the version of Node\.js that you are using is removed from the platform, you must change or remove the version setting prior to doing a [platform update](using-features.platform.upgrade.md)\. This might occur when a security vulnerability is identified for one or more versions of Node\.js\. When this happens, attempting to update to a new version of the platform that doesn't support the configured [NodeVersion](#command-options-nodejs) fails\. To avoid needing to create a new environment, change the *NodeVersion* configuration option to a Node\.js version that is supported by both the old platform version and the new one, or [remove the option setting](environment-configuration-methods-after.md), and then perform the platform update\.   | varies | varies | 
 |  GzipCompression  |  Specifies if gzip compression is enabled\. If ProxyServer is set to `none`, then gzip compression is disabled\.   |  `false`  |  `true` `false`  | 
-|  ProxyServer  |  Specifies which web server should be used to proxy connections to Node\.js\. If ProxyServer is set to `none`, then static file mappings doesn't take affect and gzip compression is disabled\.  |  `nginx`  |  `apache` `nginx` `none`  | 
+|  ProxyServer  |  Specifies which web server should be used to proxy connections to Node\.js\. If ProxyServer is set to `none`, then static file mappings doesn't take effect and gzip compression is disabled\.  |  `nginx`  |  `apache` `nginx` `none`  | 
 
 #### Namespace: `aws:elasticbeanstalk:container:nodejs:staticfiles`<a name="command-options-nodejs.alami.staticfiles"></a>
 
@@ -158,6 +163,13 @@ Static file settings do not apply if `aws:elasticbeanstalk:container:nodejs::Pro
 |  max\_execution\_time  |  Sets the maximum time, in seconds, a script is allowed to run before it is terminated by the environment\.  |  `60`  |  `0` to `9223372036854775807` \(PHP\_INT\_MAX\)  | 
 |  composer\_options  |  Sets custom options to use when installing dependencies using Composer through composer\.phar install\. For more information including available options, go to [http://getcomposer\.org/doc/03\-cli\.md\#install](http://getcomposer.org/doc/03-cli.md#install)\.  |  n/a  |  n/a  | 
 
+
+**Namespace: `aws:elasticbeanstalk:environment:proxy`**  
+
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
+| --- | --- | --- | --- | 
+|  ProxyServer  |  Set the proxy to use on your environment's instances\.  |  `nginx`  |  `apache` `nginx`  | 
+
 **Note**  
 For more information about the PHP platform, see [Using the Elastic Beanstalk PHP platform](create_deploy_PHP.container.md)\.
 
@@ -180,6 +192,13 @@ See [Environment properties and other software settings](environments-cfg-softwa
 |  WSGIPath  |  The file that contains the WSGI application\. This file must have an `application` callable\.  |  On Amazon Linux 2 Python platform versions: `application` On Amazon Linux AMI Python platform versions: `application.py`  |  n/a  | 
 |  NumProcesses  |  The number of daemon processes that should be started for the process group when running WSGI applications\.  |  `1`  |  n/a  | 
 |  NumThreads  |  The number of threads to be created to handle requests in each daemon process within the process group when running WSGI applications\.  |  `15`  |  n/a  | 
+
+
+**Namespace: `aws:elasticbeanstalk:environment:proxy`**  
+
+|  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
+| --- | --- | --- | --- | 
+|  ProxyServer  |  Set the proxy to use on your environment's instances\.  |  `nginx`  |  `apache` `nginx`  | 
 
 ### Amazon Linux AMI \(pre\-Amazon Linux 2\) platform options<a name="command-options-python.alami"></a>
 

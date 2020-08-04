@@ -141,7 +141,7 @@ The scripts and other files that you include in your platform definition archive
 + `01-install-nginx.sh` – Installs nginx\.
 + `02-setup-platform.sh` – Installs `wget`, `tree`, and `git`\. Copies hooks and [logging configurations](using-features.logging.md) to the instance, and creates the following directories:
   + `/etc/SampleNodePlatform` – Where the container configuration file is uploaded during deployment\.
-  + `/opt/elasticbeanstalk/deploy/appsource/` – Where the `00-unzip.sh` script uploads application source code during deployment \(see the [Platform scripts](custom-platforms-scripts.md) section for information about this script\)\.
+  + `/opt/elasticbeanstalk/deploy/appsource/` – Where the `00-unzip.sh` script uploads application source code during deployment \(see the [Platform script tools](custom-platforms-scripts.md) section for information about this script\)\.
   + `/var/app/staging/` – Where application source code is processed during deployment\.
   + `/var/app/current/` – Where application source code runs after processing\.
   + `/var/log/nginx/healthd/` – Where the [enhanced health agent](health-enhanced.md#health-enhanced-agent) writes logs\.

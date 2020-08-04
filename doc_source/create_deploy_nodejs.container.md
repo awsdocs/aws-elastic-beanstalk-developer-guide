@@ -49,10 +49,15 @@ If you have many environments, use the search bar to filter the environment list
 
 1. In the **Software** configuration category, choose **Edit**\.
 
+### Container options<a name="nodejs-platform-console-settings"></a>
+
+You can specify these platform\-specific options:
++ **Proxy server** – The proxy server to use on your environment instances\. By default, nginx is used\.
+
 ### Log options<a name="nodejs-platform-console-logging"></a>
 
 The **Log Options** section has two settings:
-+ **Instance profile**– Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
++ **Instance profile** – Specifies the instance profile that has permission to access the Amazon S3 bucket associated with your application\.
 + **Enable log file rotation to Amazon S3** – Specifies whether log files for your application's Amazon EC2 instances should be copied to the Amazon S3 bucket associated with your application\.
 
 ### Static files<a name="nodejs-platform-console-staticfiles"></a>
@@ -82,16 +87,26 @@ The following console software configuration categories are supported only on an
 #### Container options<a name="nodejs-platform-console-settings"></a>
 
 On the configuration page, specify the following:
-+ **Proxy server**– Specifies which web server to use to proxy connections to Node\.js\. By default, nginx is used\. If you select **none**, static file mappings do not take effect, and gzip compression is disabled\.
-+ **Node\.js version**– Specifies the version of Node\.js\. For a list of supported Node\.js versions, see [Node\.js](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.nodejs) in the *AWS Elastic Beanstalk Platforms* guide\.
-+ **Gzip compression**– Specifies whether gzip compression is enabled\. By default, gzip compression is enabled\.
-+ **Node command**–Lets you enter the command used to start the Node\.js application\. An empty string \(the default\) means Elastic Beanstalk will use `app.js`, then `server.js`, and then `npm start` in that order\.
++ **Proxy server** – Specifies which web server to use to proxy connections to Node\.js\. By default, nginx is used\. If you select **none**, static file mappings do not take effect, and gzip compression is disabled\.
++ **Node\.js version** – Specifies the version of Node\.js\. For a list of supported Node\.js versions, see [Node\.js](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.nodejs) in the *AWS Elastic Beanstalk Platforms* guide\.
++ **Gzip compression** – Specifies whether gzip compression is enabled\. By default, gzip compression is enabled\.
++ **Node command** – Lets you enter the command used to start the Node\.js application\. An empty string \(the default\) means Elastic Beanstalk will use `app.js`, then `server.js`, and then `npm start` in that order\.
 
 ## Node\.js configuration namespace<a name="nodejs-namespaces"></a>
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
-The Node\.js platform doesn't define any platform\-specific namespaces\. You can configure the proxy to serve static files by using the `aws:elasticbeanstalk:environment:proxy:staticfiles` namespace\. For details and an example, see [Serving static files](environment-cfg-staticfiles.md)\.
+You can choose the proxy to use on your environment's instances by using the `aws:elasticbeanstalk:environment:proxy` namespace\. The following example configures your environment to use the Apache HTTPD proxy server\.
+
+**Example \.ebextensions/nodejs\-settings\.config**  
+
+```
+option_settings:
+  aws:elasticbeanstalk:environment:proxy:
+    ProxyServer: apache
+```
+
+You can configure the proxy to serve static files by using the `aws:elasticbeanstalk:environment:proxy:staticfiles` namespace\. For details and an example, see [Serving static files](environment-cfg-staticfiles.md)\.
 
 Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.
 

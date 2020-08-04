@@ -1,12 +1,12 @@
 # Configuring the proxy server<a name="nodejs-platform-proxy"></a>
 
-Elastic Beanstalk uses nginx as the reverse proxy to map your application to your Elastic Load Balancing load balancer on port 80\. Elastic Beanstalk provides a default nginx configuration that you can either extend or override completely with your own configuration\.
+Elastic Beanstalk uses nginx or Apache HTTPD as the reverse proxy to map your application to your Elastic Load Balancing load balancer on port 80\. The default is nginx\. Elastic Beanstalk provides a default proxy configuration that you can either extend or override completely with your own configuration\.
 
-By default, Elastic Beanstalk configures the nginx proxy to forward requests to your application on port 8080\. You can override the default port by setting the `PORT` [environment property](create_deploy_nodejs.container.md#nodejs-platform-console) to the port on which your main application listens\.
+By default, Elastic Beanstalk configures the proxy to forward requests to your application on port 8080\. You can override the default port by setting the `PORT` [environment property](create_deploy_nodejs.container.md#nodejs-platform-console) to the port on which your main application listens\.
 
 **Notes**  
 The port that your application listens on doesn't affect the port that the nginx server listens to receive requests from the load balancer\.
-On Amazon Linux AMI Node\.js platform versions \(preceding Amazon Linux 2\), Elastic Beanstalk configures the nginx proxy to forward requests to your application on port 8081\. For details about proxy configuration on these Node\.js platform versions, see [Configuring the proxy on Amazon Linux AMI \(preceding Amazon Linux 2\)](#nodejs-platform-proxy.alami) on this page\.
+On Amazon Linux AMI Node\.js platform versions \(preceding Amazon Linux 2\), Elastic Beanstalk configures the proxy to forward requests to your application on port 8081\. For details about proxy configuration on these Node\.js platform versions, see [Configuring the proxy on Amazon Linux AMI \(preceding Amazon Linux 2\)](#nodejs-platform-proxy.alami) on this page\.
 
 All Amazon Linux 2 platforms support a uniform proxy configuration feature\. For details about configuring the proxy server on the new Amazon Corretto platform versions running Amazon Linux 2, expand the *Reverse Proxy Configuration* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
 

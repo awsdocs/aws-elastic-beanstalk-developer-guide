@@ -42,6 +42,7 @@ If you have many environments, use the search bar to filter the environment list
 1. In the **Software** configuration category, choose **Edit**\.
 
 ### Python settings<a name="python-console-settings"></a>
++ **Proxy server** – The proxy server to use on your environment instances\. By default, nginx is used\.
 + **WSGI Path** – The name of or path to your main application file\. For example, `application.py`, or `django/wsgi.py`\.
 + **NumProcesses** – The number of processes to run on each application instance\.
 + **NumThreads** – The number of threads to run in each process\.
@@ -84,14 +85,16 @@ See [Environment properties and other software settings](environments-cfg-softwa
 
 You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
 
-The Python platform defines options in the `aws:elasticbeanstalk:environment:proxy:staticfiles` and `aws:elasticbeanstalk:container:python` namespaces\.
+The Python platform defines options in the `aws:elasticbeanstalk:environment:proxy`, `aws:elasticbeanstalk:environment:proxy:staticfiles`, and `aws:elasticbeanstalk:container:python` namespaces\.
 
-The following example configuration file specifies configuration option settings to create an environment property named `DJANGO_SETTINGS_MODULE`, two static files options that map a directory named `statichtml` to the path `/html` and a directory named `staticimages` to the path `/images`, and additional settings in the `[aws:elasticbeanstalk:container:python](command-options-specific.md#command-options-python)` namespace\. This namespace contains options that let you specify the location of the WSGI script in your source code, and the number of threads and processes to run in WSGI\.
+The following example configuration file specifies configuration option settings to create an environment property named `DJANGO_SETTINGS_MODULE`, choose the Apache proxy server, specify two static files options that map a directory named `statichtml` to the path `/html` and a directory named `staticimages` to the path `/images`, and specify additional settings in the `[aws:elasticbeanstalk:container:python](command-options-specific.md#command-options-python)` namespace\. This namespace contains options that let you specify the location of the WSGI script in your source code, and the number of threads and processes to run in WSGI\.
 
 ```
 option_settings:
   aws:elasticbeanstalk:application:environment:
     DJANGO_SETTINGS_MODULE: production.settings
+  aws:elasticbeanstalk:environment:proxy:
+    ProxyServer: apache
   aws:elasticbeanstalk:environment:proxy:staticfiles:
     /html: statichtml
     /images: staticimages

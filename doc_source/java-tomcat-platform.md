@@ -12,7 +12,7 @@ To save settings in your source code, you can include [configuration files](ebex
 The Elastic Beanstalk Tomcat platform includes a reverse proxy that forwards requests to your application\. You can use [configuration options](#java-tomcat-namespaces) to configure the proxy server to serve static assets from a folder in your source code to reduce the load on your application\. For advanced scenarios, you can [include your own `.conf` files](java-tomcat-proxy.md) in your source bundle to extend the Elastic Beanstalk proxy configuration or overwrite it completely\.
 
 **Note**  
-Elastic Beanstalk uses [nginx](https://www.nginx.com/) as the proxy server on the Tomcat platform\. If your Elastic Beanstalk Tomcat environment uses an Amazon Linux AMI platform branch \(preceding Amazon Linux 2\), you also have the option of using [Apache 2\.4](https://httpd.apache.org/docs/2.4/) or [Apache HTTP Server Version 2\.2](https://httpd.apache.org/docs/2.2/)\. Apache 2\.4 is the default on these older platform branches\.
+Elastic Beanstalk supports [nginx](https://www.nginx.com/) \(the default\) and [Apache HTTP Server](https://httpd.apache.org/) as the proxy servers on the Tomcat platform\. If your Elastic Beanstalk Tomcat environment uses an Amazon Linux AMI platform branch \(preceding Amazon Linux 2\), you also have the option of using [Apache HTTP Server Version 2\.2](https://httpd.apache.org/docs/2.2/)\. Apache \(latest\) is the default on these older platform branches\.
 
 You must package Java applications in a web application archive \(WAR\) file with a specific structure\. For information on the required structure and how it relates to the structure of your project directory, see [Structuring your project folder](java-tomcat-platform-directorystructure.md)\.
 
@@ -47,6 +47,11 @@ If you have many environments, use the search bar to filter the environment list
 1. In the navigation pane, choose **Configuration**\.
 
 1. In the **Software** configuration category, choose **Edit**\.
+
+### Container options<a name="java-tomcat-options-container"></a>
+
+You can specify these platform\-specific options:
++ **Proxy server** – The proxy server to use on your environment instances\. By default, nginx is used\.
 
 ### JVM container options<a name="java-tomcat-options-jvm"></a>
 
@@ -94,9 +99,8 @@ You can use a [configuration file](ebextensions.md) to set configuration options
 The Tomcat platform supports options in the following namespaces, in addition to the [options supported for all Elastic Beanstalk environments](command-options-general.md):
 + `aws:elasticbeanstalk:container:tomcat:jvmoptions` – Modify JVM settings\. Options in this namespace correspond to options in the management console, as follows:
   + `Xms` – **JVM command line options**
-  + `Xmx` – **JVM command line options**
   + `JVM Options` – **JVM command line options**
-+ `aws:elasticbeanstalk:environment:proxy:staticfiles` – Configure the proxy to serve static assets from a path in your source bundle\.
++ `aws:elasticbeanstalk:environment:proxy` – Choose the environment's proxy server\.
 
 The following example configuration file shows the use of the Tomcat\-specific configuration options\.
 
@@ -106,13 +110,11 @@ The following example configuration file shows the use of the Tomcat\-specific c
 option_settings:
   aws:elasticbeanstalk:container:tomcat:jvmoptions:
     Xms: 512m
-    Xmx: 512m
     JVM Options: '-Xmn128m'
   aws:elasticbeanstalk:application:environment:
     API_ENDPOINT: mywebapi.zkpexsjtmd.us-west-2.elasticbeanstalk.com
-  aws:elasticbeanstalk:environment:proxy:staticfiles:
-    /html: statichtml
-    /images: staticimages
+  aws:elasticbeanstalk:environment:proxy:
+    ProxyServer: apache
 ```
 
 Elastic Beanstalk provides many configuration options for customizing your environment\. In addition to configuration files, you can also set configuration options using the console, saved configurations, the EB CLI, or the AWS CLI\. See [Configuration options](command-options.md) for more information\.
@@ -126,7 +128,7 @@ If your Elastic Beanstalk Tomcat environment uses an Amazon Linux AMI platform v
 The Tomcat Amazon Linux AMI platform supports additional options in the following namespaces:
 + `aws:elasticbeanstalk:container:tomcat:jvmoptions` – In addition to the options mentioned earlier on this page for this namespace, older Amazon Linux AMI platform versions also support:
   + `XX:MaxPermSize` – **Maximum JVM permanent generation size**
-+ `aws:elasticbeanstalk:environment:proxy` – Choose the proxy server and configure response compression\.
++ `aws:elasticbeanstalk:environment:proxy` – In addition to choosing the proxy server, also configure response compression\.
 
 The following example configuration file shows the use of the proxy namespace configuration options\.
 
