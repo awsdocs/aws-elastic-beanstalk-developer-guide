@@ -135,6 +135,9 @@ Your application should listen on the port that is configured for it in the prox
 
 Elastic Beanstalk uses nginx as the default reverse proxy to map your application to your Elastic Load Balancing load balancer\. Elastic Beanstalk provides a default nginx configuration that you can extend or override completely with your own configuration\.
 
+**Note**  
+When you add or edit an nginx `.conf` configuration file, be sure to encode it as UTF\-8\.
+
 To extend the Elastic Beanstalk default nginx configuration, add `.conf` configuration files to a folder named `.platform/nginx/conf.d/` in your application source bundle\. The Elastic Beanstalk nginx configuration includes `.conf` files in this folder automatically\.
 
 ```

@@ -7,20 +7,9 @@ By default, Elastic Beanstalk configures the nginx proxy to forward requests to 
 **Note**  
 The port that your application listens on doesn't affect the port that the nginx server listens on receive requests from the load balancer\.
 
-To extend your environment's nginx configuration, include a configuration file in your source bundle at `.platform/nginx/conf.d/elasticbeanstalk`\.
+All Amazon Linux 2 platforms support a uniform proxy configuration feature\. For details about configuring the proxy server, expand the *Reverse Proxy Configuration* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
 
-```
-├── DotnetApp1   
-├── DotnetApp2
-├── .platform
-│   └── nginx
-│       └── conf.d
-│           └── elasticbeanstalk
-│               └── 01_custom.conf
-└── Procfile
-```
-
-The following configuration file extends your environment's nginx configuration\. The configuration directs requests to `/api` to a second web application that listens on port 5200 on the web server\. By default, Elastic Beanstalk forwards requests to a single application that listens on port 5000\.
+The following example configuration file extends your environment's nginx configuration\. The configuration directs requests to `/api` to a second web application that listens on port 5200 on the web server\. By default, Elastic Beanstalk forwards requests to a single application that listens on port 5000\.
 
 **Example `01_custom.conf`**  
 
@@ -37,5 +26,3 @@ location /api {
      proxy_set_header   X-Forwarded-Proto $scheme;
 }
 ```
-
-All Amazon Linux 2 platforms support a uniform proxy configuration feature\. For details about configuring the proxy server, expand the *Reverse Proxy Configuration* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
