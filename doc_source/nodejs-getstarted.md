@@ -11,7 +11,7 @@ Elastic Beanstalk provides single page sample applications for each platform as 
 
 |  Environment type  |  Source bundle  |  Description  | 
 | --- | --- | --- | 
-|  Web Server  |   [nodejs\-v1\.zip](samples/nodejs-v1.zip)   |  Single page application\. Use the procedure at [Create an Example Application](GettingStarted.CreateApp.md) to launch this example\.  | 
+|  Web Server  |   [nodejs\.zip](samples/nodejs.zip)   |  Single page application\. Use the procedure at [Create an Example Application](GettingStarted.CreateApp.md) to launch this example\.  | 
 |  Web Server with Amazon RDS  |  [nodejs\-express\-hiking\-v1\.zip](samples/nodejs-express-hiking-v1.zip)  |  Hiking log application that uses the Express framework and an RDS database\. [Tutorial](create_deploy_nodejs_express.md)  | 
 |  Web Server with Amazon ElastiCache  |  [nodejs\-example\-express\-elasticache\.zip](samples/nodejs-example-express-elasticache.zip)  |  Express web application that uses Amazon ElastiCache for clustering\. Clustering enhances your web application's high availability, performance, and security\. [Tutorial](nodejs-express-clustering.md)  | 
 |  Web Server with DynamoDB, Amazon SNS and Amazon SQS  |  [eb\-node\-express\-sample\-v1\.0\.zip](https://github.com/awslabs/eb-node-express-sample/releases/download/v1.0/eb-node-express-sample-v1.0.zip) [Clone the repo at GitHub\.com](https://github.com/awslabs/eb-node-express-sample)  |  Express web site that collects user contact information for a new company's marketing campaign\. Uses the AWS SDK for JavaScript in Node\.js to write entries to a DynamoDB table, and Elastic Beanstalk configuration files to create resources in DynamoDB, Amazon SNS and Amazon SQS\. [Tutorial](nodejs-dynamodb-tutorial.md)  | 

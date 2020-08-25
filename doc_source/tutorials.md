@@ -19,20 +19,18 @@ These tutorials are targeted at intermediate users and may not contain instructi
 + **\.NET Framework \(IIS and ASP\.NET\)** \- [Tutorial: How to deploy a \.NET sample application using Elastic Beanstalk](create_deploy_NET.quickstart.md)
 
 You can download the sample applications used by Elastic Beanstalk when you create an environment without providing a source bundle with the following links:
-+ **Docker** – [docker\-singlecontainer\-v1\.zip](samples/docker-singlecontainer-v1.zip)
++ **Docker** – [docker\.zip](samples/docker.zip)
 + **Multicontainer Docker** – [docker\-multicontainer\-v2\.zip](samples/docker-multicontainer-v2.zip)
 + **Preconfigured Docker \(Glassfish\)** – [docker\-glassfish\-v1\.zip](samples/docker-glassfish-v1.zip)
-+ **Go** – [go\-v1\.zip](samples/go-v1.zip)
-+ **Java SE** – [java\-se\-jetty\-gradle\-v3\.zip](samples/java-se-jetty-gradle-v3.zip)
-+ **Tomcat \(default\)** – [java\-tomcat\-v3\.zip](samples/java-tomcat-v3.zip)
-+ **Tomcat 7** – [java7\-tomcat7\.zip](samples/java7-tomcat7.zip)
-+ **\.NET Core on Linux** – [dotnet\-core\-linux\-v1\.zip](samples/dotnet-core-linux-v1.zip)
++ **Go** – [go\.zip](samples/go.zip)
++ **Corretto** – [corretto\.zip](samples/corretto.zip)
++ **Tomcat** – [tomcat\.zip](samples/tomcat.zip)
++ **\.NET Core on Linux** – [dotnet\-core\-linux\.zip](samples/dotnet-core-linux.zip)
 + **\.NET** – [dotnet\-asp\-v1\.zip](samples/dotnet-asp-v1.zip)
-+ **Node\.js** – [nodejs\-v1\.zip](samples/nodejs-v1.zip) 
-+ **PHP** – [php\-v1\.zip](samples/php-v1.zip)
-+ **Python** – [python\-v1\.zip](samples/python-v1.zip)
-+ **Ruby \(Passenger Standalone\)** – [ruby\-passenger\-v3\.zip](samples/ruby-passenger-v3.zip)
-+ **Ruby \(Puma\)** – [ruby\-puma\-v3\.zip](samples/ruby-puma-v3.zip)
++ **Node\.js** – [nodejs\.zip](samples/nodejs.zip) 
++ **PHP** – [php\.zip](samples/php.zip)
++ **Python** – [python\.zip](samples/python.zip)
++ **Ruby** – [ruby\.zip](samples/ruby.zip)
 
 More involved sample applications that show the use of additional web frameworks, libraries and tools are available as open source projects on GitHub:
 + **[Load Balanced WordPress](https://github.com/awslabs/eb-php-wordpress)** \([tutorial](php-hawordpress-tutorial.md)\) – Configuration files for installing WordPress securely and running it in a load balanced AWS Elastic Beanstalk environment\.

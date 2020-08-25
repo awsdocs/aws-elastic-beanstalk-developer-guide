@@ -4,7 +4,8 @@
 
 You can launch your environment in a custom VPC to customize networking and security settings\. Elastic Beanstalk lets you choose which subnets to use for your resources, and how to configure IP addresses for the instances and load balancer in your environment\. An environment is locked to a VPC when you create it, but you can change subnet and IP address settings on a running environment\.
 
-For instructions on creating a VPC for use with Elastic Beanstalk, see [Using Elastic Beanstalk with Amazon VPC](vpc.md)\.
+**Note**  
+If you created your AWS account before December 4, 2013, you might have environments using the Amazon EC2\-Classic network configuration in some AWS Regions instead of Amazon VPC\. For information on migrating your environments from an EC2\-Classic to a VPC network configuration, see [Migrating Elastic Beanstalk environments from EC2\-Classic to a VPC](vpc-ec2migration.md)\.
 
 ## Configuring VPC settings in the Elastic Beanstalk console<a name="environments-cfg-vpc-console"></a>
 

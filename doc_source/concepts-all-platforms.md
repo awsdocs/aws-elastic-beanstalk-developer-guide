@@ -4,15 +4,12 @@ AWS Elastic Beanstalk provides a variety of platforms on which you can build you
 
 Elastic Beanstalk provides platforms for different programming languages, application servers, and Docker containers\. Some platforms have multiple concurrently\-supported versions\.
 
-Elastic Beanstalk also supports [custom platforms](custom-platforms.md) that can be based on an AMI that you create and can include further customizations\.
-
 **Topics**
 + [Elastic Beanstalk platforms glossary](platforms-glossary.md)
 + [Shared responsibility model for Elastic Beanstalk platform maintenance](platforms-shared-responsibility.md)
 + [Elastic Beanstalk platform support policy](platforms-support-policy.md)
 + [Elastic Beanstalk supported platforms](concepts.platforms.md)
 + [Elastic Beanstalk Linux platforms](platforms-linux.md)
-+ [Elastic Beanstalk custom platforms](custom-platforms.md)
 + [Deploying Elastic Beanstalk applications from Docker containers](create_deploy_docker.md)
 + [Creating and deploying Go applications on Elastic Beanstalk](create_deploy_go.md)
 + [Creating and deploying Java applications on Elastic Beanstalk](create_deploy_Java.md)

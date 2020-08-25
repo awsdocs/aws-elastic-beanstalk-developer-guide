@@ -49,7 +49,7 @@ If you see a warning similar to the following in a log file, where `DATE-TIME` i
 ```
 W, [DATE-TIME #1922] WARN -- : log file "/var/log/nginx/healthd/application.log.DATE-TIME" does not exist
 ```
-You can start with the \.ebextension in the [Multicontainer Docker sample](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/samples/docker-multicontainer-v1.zip)\.
+You can start with the \.ebextension in the [Multicontainer Docker sample](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/samples/docker-multicontainer-v2.zip)\.
 
 **/etc/nginx/conf\.d/webapp\_healthd\.conf**  
 The following example shows the log configuration for nginx with the `healthd` log format highlighted\.

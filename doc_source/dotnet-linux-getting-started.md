@@ -11,7 +11,7 @@ Elastic Beanstalk provides single\-page sample applications for each platform\.
 
 |  Supported configurations  |  Environment type  |  Source bundle  |  Description  | 
 | --- | --- | --- | --- | 
-|  \.NET Core on Linux  |  Web server  |  [dotnet\-core\-linux\-v1\.zip](samples/dotnet-core-linux-v1.zip)  |  Single\-page application\.  | 
+|  \.NET Core on Linux  |  Web server  |  [dotnet\-core\-linux\.zip](samples/dotnet-core-linux.zip)  |  Single\-page application\.  | 
 |  \.NET Core on Linux  |  Web server  |  [dotnet\-core\-linux\-multiple\-apps\.zip](samples/dotnet-core-linux-multiple-apps.zip)  |  Two web applications that run on the same web server\.  | 
 
 Download the sample application and deploy it to Elastic Beanstalk by following these steps\.

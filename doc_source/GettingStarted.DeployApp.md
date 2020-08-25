@@ -7,20 +7,18 @@ The application version that you started this tutorial with is called **Sample A
 **To update your application version**
 
 1. Download the sample application that matches your environment's platform\. Use one of the following applications\.
-   + **Docker** – [docker\-singlecontainer\-v1\.zip](samples/docker-singlecontainer-v1.zip)
+   + **Docker** – [docker\.zip](samples/docker.zip)
    + **Multicontainer Docker** – [docker\-multicontainer\-v2\.zip](samples/docker-multicontainer-v2.zip)
    + **Preconfigured Docker \(Glassfish\)** – [docker\-glassfish\-v1\.zip](samples/docker-glassfish-v1.zip)
-   + **Go** – [go\-v1\.zip](samples/go-v1.zip)
-   + **Java SE** – [java\-se\-jetty\-gradle\-v3\.zip](samples/java-se-jetty-gradle-v3.zip)
-   + **Tomcat \(default\)** – [java\-tomcat\-v3\.zip](samples/java-tomcat-v3.zip)
-   + **Tomcat 7** – [java7\-tomcat7\.zip](samples/java7-tomcat7.zip)
-   + **\.NET Core on Linux** – [dotnet\-core\-linux\-v1\.zip](samples/dotnet-core-linux-v1.zip)
+   + **Go** – [go\.zip](samples/go.zip)
+   + **Corretto** – [corretto\.zip](samples/corretto.zip)
+   + **Tomcat** – [tomcat\.zip](samples/tomcat.zip)
+   + **\.NET Core on Linux** – [dotnet\-core\-linux\.zip](samples/dotnet-core-linux.zip)
    + **\.NET** – [dotnet\-asp\-v1\.zip](samples/dotnet-asp-v1.zip)
-   + **Node\.js** – [nodejs\-v1\.zip](samples/nodejs-v1.zip) 
-   + **PHP** – [php\-v1\.zip](samples/php-v1.zip)
-   + **Python** – [python\-v1\.zip](samples/python-v1.zip)
-   + **Ruby \(Passenger Standalone\)** – [ruby\-passenger\-v3\.zip](samples/ruby-passenger-v3.zip)
-   + **Ruby \(Puma\)** – [ruby\-puma\-v3\.zip](samples/ruby-puma-v3.zip)
+   + **Node\.js** – [nodejs\.zip](samples/nodejs.zip) 
+   + **PHP** – [php\.zip](samples/php.zip)
+   + **Python** – [python\.zip](samples/python.zip)
+   + **Ruby** – [ruby\.zip](samples/ruby.zip)
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 

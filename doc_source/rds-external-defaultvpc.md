@@ -48,7 +48,7 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 
 1. For **Type**, choose the DB engine that your application uses\.
 
-1. For **Source**, type **sg\-** to view a list of available security groups\. Choose the current security group to allow resources in the security group to receive traffic on the database port from other resources in the same group\.  
+1. For **Source**, type **sg\-** to view a list of available security groups\. Choose the security group associated with an Elastic Beanstalk environment's Auto Scaling group to allow Amazon EC2 instances in the environment to have access to the database\.  
 ![\[Edit the inbound rules for a security group in the Amazon EC2 console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/ec2-securitygroup-rds.png)
 
 1. Choose **Save**\.

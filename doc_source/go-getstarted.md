@@ -11,7 +11,7 @@ Elastic Beanstalk provides single\-page sample applications for each platform\. 
 
 |  Supported configurations  |  Environment type  |  Source bundle  |  Description  | 
 | --- | --- | --- | --- | 
-|  Go  |  Web server  |  [go\-v1\.zip](samples/go-v1.zip)  |  Single page application\.  | 
+|  Go  |  Web server  |  [go\.zip](samples/go.zip)  |  Single page application\.  | 
 
 Download the sample application and deploy it to Elastic Beanstalk by following these steps\.
 

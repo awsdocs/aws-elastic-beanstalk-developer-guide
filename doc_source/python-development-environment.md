@@ -22,7 +22,7 @@ For common setup steps and tools that apply to all languages, see [Configuring y
 
 For all Python applications that you'll deploy with Elastic Beanstalk, these prerequisites are common:
 
-1. Python 2\.7 or 3\.4\.
+1. A Python version matching the Elastic Beanstalk Python platform version your application will use\.
 
 1. The `pip` utility, matching your Python version\. This is used to install and list dependencies for your project, so that Elastic Beanstalk knows how to set up your application's environment\.
 
@@ -43,14 +43,14 @@ Once you have the prerequisites installed, set up a virtual environment with `vi
 1. Open a command\-line window and type:
 
    ```
-   virtualenv -p python2.7 /tmp/eb_python_app
+   $ virtualenv /tmp/eb_python_app
    ```
 
-   Replace *eb\_python\_app* with a name that makes sense for your application \(using your application's name or directory name is a good idea\)\. The `virtualenv` command creates a virtual environment for you and prints the results of its actions:
+   Replace *eb\_python\_app* with a name that makes sense for your application \(using your application's name is a good idea\)\. The `virtualenv` command creates a virtual environment for you in the specified directory and prints the results of its actions:
 
    ```
-   Running virtualenv with interpreter /usr/bin/python2.7
-   New python executable in /tmp/eb_python_app/bin/python2.7
+   Running virtualenv with interpreter /usr/bin/python
+   New python executable in /tmp/eb_python_app/bin/python3.7
    Also creating executable in /tmp/eb_python_app/bin/python
    Installing setuptools, pip...done.
    ```
@@ -58,10 +58,16 @@ Once you have the prerequisites installed, set up a virtual environment with `vi
 1. Once your virtual environment is ready, start it by running the `activate` script located in the environment's `bin` directory\. For example, to start the eb\_python\_app environment created in the previous step, you would type:
 
    ```
-   . /tmp/eb_python_app/bin/activate
+   $ source /tmp/eb_python_app/bin/activate
    ```
 
    The virtual environment prints its name \(for example: `(eb_python_app)`\) at the beginning of each command prompt, reminding you that you're in a virtual Python environment\.
+
+1. To stop using your virtual environment and go back to the system’s default Python interpreter with all its installed libraries, run the `deactivate` command\.
+
+   ```
+   (eb_python_app) $ deactivate
+   ```
 
 **Note**  
 Once created, you can restart the virtual environment at any time by running its `activate` script again\.
