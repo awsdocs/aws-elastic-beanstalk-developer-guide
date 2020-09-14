@@ -1,4 +1,4 @@
-# Deploying an ASP\.NET core application with Elastic Beanstalk<a name="dotnet-core-tutorial"></a>
+# Tutorial: Deploying an ASP\.NET core application with Elastic Beanstalk<a name="dotnet-core-tutorial"></a>
 
 In this tutorial, you will walk through the process of building a new ASP\.NET Core application and deploying it to AWS Elastic Beanstalk\.
 
@@ -372,7 +372,7 @@ The application simply writes `Hello from ASP.NET Core!` to the response and ret
 Launching an environment creates the following resources:
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
-  Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
+  Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or NGINX as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
 + **Instance security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
 + **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
 + **Load balancer security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.

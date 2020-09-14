@@ -65,7 +65,7 @@ After testing your application, you are ready to deploy it to Elastic Beanstalk\
 
       You can select either **Load balanced, auto scaled** or a **Single instance** environment\. For more information, see [Environment types](using-features-managing-env-types.md)\.
 **Note**  
-For single\-instance environments, load balancing, autoscaling, and the health check URL settings don't apply\.
+For single\-instance environments, load balancing, auto scaling, and the health check URL settings don't apply\.
 
    1. The environment URL automatically appears in the **Environment URL** once you move your cursor to that box\.
 
@@ -92,20 +92,20 @@ For single\-instance environments, load balancing, autoscaling, and the health c
    1.  Click **Next**\. 
 
 1. If you selected to launch your environment inside a VPC, the **VPC Options** page appears; otherwise, the **Additional Options** page appears\. Here you'll configure your VPC options\.  
-![\[VPC options for load balanced, autoscaled environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-publish-beanstalk3b_vpc.png)  
+![\[VPC options for load-balanced, scalable environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-publish-beanstalk3b_vpc.png)  
 ![\[VPC options for single-instance environment\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-vs-publish-beanstalk3b_vpc-single.png)
 
    1. Select the VPC ID of the VPC in which you would like to launch your environment\. 
 
-   1. For a load balanced, autoscaled environment, select **private** for **ELB Scheme** if you do not want your elastic load balancer to be available to the Internet\.
+   1. For a load\-balanced, scalable environment, select **private** for **ELB Scheme** if you do not want your elastic load balancer to be available to the Internet\.
 
       For a single\-instance environment, this option is not applicable because the environment doesn't have a load balancer\. For more information, see [Environment types](using-features-managing-env-types.md)\.
 
-   1. For a load balanced, autoscaled environment, select the subnets for the elastic load balancer and the EC2 instances\. If you created public and private subnets, make sure the elastic load balancer and the EC2 instances are associated with the correct subnet\. By default, Amazon VPC creates a default public subnet using 10\.0\.0\.0/24 and a private subnet using 10\.0\.1\.0/24\. You can view your existing subnets in the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
+   1. For a load\-balanced, scalable environment, select the subnets for the elastic load balancer and the EC2 instances\. If you created public and private subnets, make sure the elastic load balancer and the EC2 instances are associated with the correct subnet\. By default, Amazon VPC creates a default public subnet using 10\.0\.0\.0/24 and a private subnet using 10\.0\.1\.0/24\. You can view your existing subnets in the Amazon VPC console at [https://console\.aws\.amazon\.com/vpc/](https://console.aws.amazon.com/vpc/)\.
 
       For a single\-instance environment, your VPC only needs a public subnet for the instance\. Selecting a subnet for the load balancer is not applicable because the environment doesn't have a load balancer\. For more information, see [Environment types](using-features-managing-env-types.md)\.
 
-   1. For a load balanced, autoscaled environment, select the security group you created for your instances, if applicable\.
+   1. For a load\-balanced, scalable environment, select the security group you created for your instances, if applicable\.
 
       For a single\-instance environment, you don't need a NAT device\. Select the default security group\. Elastic Beanstalk assigns an Elastic IP address to the instance that lets the instance access the Internet\.
 

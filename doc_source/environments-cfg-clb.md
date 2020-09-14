@@ -1,8 +1,8 @@
 # Configuring a Classic Load Balancer<a name="environments-cfg-clb"></a>
 
-When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports several load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. 
+When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports several load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. Elastic Beanstalk can create a load balancer for you, or let you specify a shared load balancer that you've created\.
 
-This topic describes the configuration of a [Classic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load balancer for your Elastic Beanstalk environment](using-features.managing.elb.md)\.
+This topic describes the configuration of a [Classic Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/) that Elastic Beanstalk creates and dedicates to your environment\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load balancer for your Elastic Beanstalk environment](using-features.managing.elb.md)\.
 
 **Note**  
 You can choose the type of load balancer that your environment uses only during environment creation\. Later, you can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.

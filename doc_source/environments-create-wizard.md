@@ -107,7 +107,7 @@ Use the **Modify instances** configuration page to configure the Amazon EC2 inst
 
 Use the **Modify capacity** configuration page to configure the compute capacity of your environment and **Auto Scaling group** settings to optimize the number and type of instances you're using\. You can also change your environment capacity based on triggers or on a schedule\.
 
-A load balanced environment can run multiple instances for high availability and prevent downtime during configuration updates and deployments\. In a load balanced environment, the domain name maps to the load balancer\. In a single\-instance environment, it maps to an elastic IP address on the instance\.
+A load\-balanced environment can run multiple instances for high availability and prevent downtime during configuration updates and deployments\. In a load\-balanced environment, the domain name maps to the load balancer\. In a single\-instance environment, it maps to an elastic IP address on the instance\.
 
 **Warning**  
 A single\-instance environment isn't production ready\. If the instance becomes unstable during deployment, or Elastic Beanstalk terminates and restarts the instance during a configuration update, your application can be unavailable for a period of time\. Use single\-instance environments for development, testing, or staging\. Use load\-balanced environments for production\.
@@ -118,7 +118,7 @@ For more information about environment capacity settings, see [Auto Scaling grou
 
 #### Load balancer<a name="environments-create-wizard-loadbalancer"></a>
 
-Use the **Modify load balancer** configuration page to select a load balancer type and to configure settings for it\. In a load balanced environment, your environment's load balancer is the entry point for all traffic headed for your application\. Elastic Beanstalk supports several types of load balancer\. By default, the Elastic Beanstalk console creates an Application Load Balancer and configures it to serve HTTP traffic on port 80\.
+Use the **Modify load balancer** configuration page to select a load balancer type and to configure settings for it\. In a load\-balanced environment, your environment's load balancer is the entry point for all traffic headed for your application\. Elastic Beanstalk supports several types of load balancer\. By default, the Elastic Beanstalk console creates an Application Load Balancer and configures it to serve HTTP traffic on port 80\.
 
 **Note**  
 You can only select your environment's load balancer type during environment creation\.

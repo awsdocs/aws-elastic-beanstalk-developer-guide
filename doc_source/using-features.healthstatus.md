@@ -2,7 +2,7 @@
 
 AWS Elastic Beanstalk uses information from multiple sources to determine if your environment is available and processing requests from the Internet\. An environment's health is represented by one of four colors, and is displayed on the [environment overview](environments-console.md) page of the Elastic Beanstalk console\. It's also available from the [DescribeEnvironments](https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html) API and by calling eb status with the [EB CLI](eb-cli3.md)\.
 
-Prior to version 2 Linux platform versions, the only health reporting system was basic health\. The basic health reporting system provides information about the health of instances in an Elastic Beanstalk environment based on health checks performed by Elastic Load Balancing for load balanced environments or Amazon Elastic Compute Cloud for single instance environments\.
+Prior to version 2 Linux platform versions, the only health reporting system was basic health\. The basic health reporting system provides information about the health of instances in an Elastic Beanstalk environment based on health checks performed by Elastic Load Balancing for load\-balanced environments, or Amazon Elastic Compute Cloud for single\-instance environments\.
 
 In addition to checking the health of your EC2 instances, Elastic Beanstalk also monitors the other resources in your environment and reports missing or incorrectly configured resources that can cause your environment to become unavailable to users\.
 
@@ -33,7 +33,7 @@ These descriptions only apply to environments using basic health reporting\. See
 
 ## Elastic Load Balancing health checks<a name="using-features.healthstatus.understanding"></a>
 
-In a load balanced environment, Elastic Load Balancing sends a request to each instance in an environment every 10 seconds to confirm that instances are healthy\. By default, the load balancer is configured to open a TCP connection on port 80\. If the instance acknowledges the connection, it is considered healthy\.
+In a load\-balanced environment, Elastic Load Balancing sends a request to each instance in an environment every 10 seconds to confirm that instances are healthy\. By default, the load balancer is configured to open a TCP connection on port 80\. If the instance acknowledges the connection, it is considered healthy\.
 
 You can choose to override this setting by specifying an existing resource in your application\. If you specify a path, such as `/health`, the health check URL is set to `HTTP:80/health`\. The health check URL should be set to a path that is always served by your application\. If it is set to a static page that is served or cached by the web server in front of your application, health checks will not reveal issues with the application server or web container\. For instructions on modifying your health check URL, see [Health check](environments-cfg-clb.md#using-features.managing.elb.healthchecks)\.
 

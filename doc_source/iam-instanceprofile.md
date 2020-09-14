@@ -26,9 +26,12 @@ Elastic Beanstalk provides three managed policies: one for the web server tier, 
       },
       {
         "Sid": "XRayAccess",
-        "Action": [
+        "Action":[
           "xray:PutTraceSegments",
-          "xray:PutTelemetryRecords"
+          "xray:PutTelemetryRecords",
+          "xray:GetSamplingRules",
+          "xray:GetSamplingTargets",
+          "xray:GetSamplingStatisticSummaries"
         ],
         "Effect": "Allow",
         "Resource": "*"
@@ -44,6 +47,17 @@ Elastic Beanstalk provides three managed policies: one for the web server tier, 
         "Effect": "Allow",
         "Resource": [
           "arn:aws:logs:*:*:log-group:/aws/elasticbeanstalk*"
+        ]
+      },
+      {
+        "Sid": "ElasticBeanstalkHealthAccess",
+        "Action": [
+          "elasticbeanstalk:PutInstanceStatistics"
+        ],
+        "Effect": "Allow",
+        "Resource": [
+          "arn:aws:elasticbeanstalk:*:*:application/*",
+          "arn:aws:elasticbeanstalk:*:*:environment/*"
         ]
       }
     ]
@@ -67,7 +81,10 @@ Elastic Beanstalk provides three managed policies: one for the web server tier, 
         "Sid": "XRayAccess",
         "Action":[
           "xray:PutTraceSegments",
-          "xray:PutTelemetryRecords"
+          "xray:PutTelemetryRecords",
+          "xray:GetSamplingRules",
+          "xray:GetSamplingTargets",
+          "xray:GetSamplingStatisticSummaries"
         ],
         "Effect": "Allow",
         "Resource": "*"
@@ -122,6 +139,17 @@ Elastic Beanstalk provides three managed policies: one for the web server tier, 
         "Effect": "Allow",
         "Resource": [
           "arn:aws:logs:*:*:log-group:/aws/elasticbeanstalk*"
+        ]
+      },
+      {
+        "Sid": "ElasticBeanstalkHealthAccess",
+        "Action": [
+          "elasticbeanstalk:PutInstanceStatistics"
+        ],
+        "Effect": "Allow",
+        "Resource": [
+          "arn:aws:elasticbeanstalk:*:*:application/*",
+          "arn:aws:elasticbeanstalk:*:*:environment/*"
         ]
       }
     ]

@@ -10,7 +10,7 @@ This tutorial walks you through the process of [launching an RDS DB instance](AW
 + [Configure and deploy your application](#php-hadrupal-tutorial-deploy)
 + [Install Drupal](#php-hadrupal-tutorial-install)
 + [Update Drupal configuration and remove access restrictions](#php-hadrupal-tutorial-updateenv)
-+ [Configure autoscaling](#php-hadrupal-tutorial-autoscaling)
++ [Configure your Auto Scaling group](#php-hadrupal-tutorial-autoscaling)
 + [Cleanup](#php-hadrupal-tutorial-cleanup)
 + [Next steps](#php-hadrupal-tutorial-nextsteps)
 
@@ -109,7 +109,7 @@ Use the Elastic Beanstalk console to create an Elastic Beanstalk environment\. C
 Environment creation takes about 5 minutes and creates the following resources:
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
-  Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or nginx as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
+  Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or NGINX as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
 + **Instance security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
 + **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
 + **Load balancer security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
@@ -409,7 +409,7 @@ If you have many environments, use the search bar to filter the environment list
 
 1. When the deployment completes, you can choose the site URL to open your website in a new tab\.
 
-## Configure autoscaling<a name="php-hadrupal-tutorial-autoscaling"></a>
+## Configure your Auto Scaling group<a name="php-hadrupal-tutorial-autoscaling"></a>
 
 Finally, configure your environment's Auto Scaling group with a higher minimum instance count\. Run at least two instances at all times to prevent the web servers in your environment from being a single point of failure, and to allow you to deploy changes without taking your site out of service\.
 

@@ -118,7 +118,7 @@ files:
 Valid values: `plain` \| `base64`
 
 `authentication`  
-\(Optional\) The name of a [AWS CloudFormation authentication method](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html) to use\. You can add authentication methods to the autoscaling group metadata with the Resources key\.
+\(Optional\) The name of a [AWS CloudFormation authentication method](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html) to use\. You can add authentication methods to the Auto Scaling group metadata with the Resources key\.
 
 ### Examples<a name="windows-files-snippet"></a>
 

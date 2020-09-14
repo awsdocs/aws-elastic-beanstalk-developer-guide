@@ -15,9 +15,9 @@ If your environment uses functionality that requires Amazon EC2 launch templates
 + `AWSEBSecurityGroup` \([AWS::EC2::SecurityGroup](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html)\) – The security group attached to your Auto Scaling group\.
 + `AWSEBRDSDatabase` \([AWS::RDS::DBInstance](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html)\) – The Amazon RDS DB instance attached to your environment \(if applicable\)\.
 
-In a load balanced environment, you can access additional resources related to the load balancer\. Classic load balancers have a resource for the load balancer and one for the security group attached to it\. Application and network load balancers have additional resources for the load balancer's default listener, listener rule, and target group\.
+In a load\-balanced environment, you can access additional resources related to the load balancer\. Classic load balancers have a resource for the load balancer and one for the security group attached to it\. Application and network load balancers have additional resources for the load balancer's default listener, listener rule, and target group\.
 
-**Load balanced environments**
+**Load\-balanced environments**
 + `AWSEBLoadBalancer` \([AWS::ElasticLoadBalancing::LoadBalancer](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html)\) – Your environment's classic load balancer\.
 + `AWSEBV2LoadBalancer` \([AWS::ElasticLoadBalancingV2::LoadBalancer](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html)\) – Your environment's application or network load balancer\.
 + `AWSEBLoadBalancerSecurityGroup` \([AWS::EC2::SecurityGroup](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html)\) – In a custom [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) only, the name of the security group that Elastic Beanstalk creates for the load balancer\. In a default VPC or EC2 classic, Elastic Load Balancing assigns a default security group to the load balancer\.

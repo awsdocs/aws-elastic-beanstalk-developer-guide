@@ -7,8 +7,8 @@ To configure redirection, you first configure your environment to handle HTTPS t
 ## Configure your environment to handle HTTPS traffic<a name="configuring-https-httpredirect.https"></a>
 
 Depending on your environment's load balancing configuration, do one of the following:
-+ **Load balanced environment** – [Configure your load balancer to terminate HTTPS](configuring-https-elb.md)\.
-+ **Single instance environment** – [Configure your application to terminate HTTPS connections at the instance](https-singleinstance.md)\. This configuration depends on your environment's platform\.
++ **Load\-balanced environment** – [Configure your load balancer to terminate HTTPS](configuring-https-elb.md)\.
++ **Single\-instance environment** – [Configure your application to terminate HTTPS connections at the instance](https-singleinstance.md)\. This configuration depends on your environment's platform\.
 
 ## Redirect HTTP traffic to HTTPS<a name="configuring-https-httpredirect.redirect"></a>
 

@@ -1,6 +1,6 @@
 # Multicontainer Docker environments with the Elastic Beanstalk console<a name="create_deploy_docker_ecstutorial"></a>
 
-You can launch a cluster of multicontainer instances in a single\-instance or autoscaling Elastic Beanstalk environment using the Elastic Beanstalk console\. This tutorial details container configuration and source code preparation for an environment that uses two containers\. 
+You can launch a cluster of multicontainer instances in a single\-instance or scalable Elastic Beanstalk environment using the Elastic Beanstalk console\. This tutorial details container configuration and source code preparation for an environment that uses two containers\. 
 
 The containers, a PHP application and an nginx proxy, run side by side on each of the Amazon Elastic Compute Cloud \(Amazon EC2\) instances in an Elastic Beanstalk environment\. After creating the environment and verifying that the applications are running, you'll connect to a container instance to see how it all fits together\.
 

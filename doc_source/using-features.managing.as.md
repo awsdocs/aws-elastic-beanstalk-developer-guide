@@ -1,6 +1,6 @@
 # Auto Scaling group for your Elastic Beanstalk environment<a name="using-features.managing.as"></a>
 
-Your AWS Elastic Beanstalk environment includes an *Auto Scaling group* that manages the [Amazon EC2 instances](using-features.managing.ec2.md) in your environment\. In a single\-instance environment, the Auto Scaling group ensures that there is always one instance running\. In a load balanced environment, you configure the group with a range of instances to run, and Auto Scaling adds or removes instances as needed, based on load\.
+Your AWS Elastic Beanstalk environment includes an *Auto Scaling group* that manages the [Amazon EC2 instances](using-features.managing.ec2.md) in your environment\. In a single\-instance environment, the Auto Scaling group ensures that there is always one instance running\. In a load\-balanced environment, you configure the group with a range of instances to run, and Auto Scaling adds or removes instances as needed, based on load\.
 
 The Auto Scaling group also applies the launch configuration for the instances in your environment\. You can [modify the launch configuration](using-features.managing.ec2.md) to change the instance type, key pair, Amazon Elastic Block Store \(Amazon EBS\) storage, and other settings that can only be configured when you launch an instance\.
 
@@ -32,13 +32,13 @@ Demand for Spot Instances can vary significantly from moment to moment, and the 
 
 Elastic Beanstalk provides several configuration options to support the Spot feature\. They're discussed in the following sections about configuring your Auto Scaling Group\. Two of these options deserve special attention: `SpotFleetOnDemandBase` and `SpotFleetOnDemandAboveBasePercentage` \(both in the `aws:ec2:instances` namespace\)\. Consider how they relate to the `MinSize` option \(in the `aws:autoscaling:asg` namespace\)\. Only `MinSize` determines your environments's initial capacity—the number of instances you want running at a minimum\. `SpotFleetOnDemandBase` doesn't affect initial capacity; when Spot is enabled, this option only determines how many On\-Demand Instances are provisioned before any Spot Instances are considered\. When `SpotFleetOnDemandBase` is less than `MinSize`, you still get exactly `MinSize` instances as initial capacity; at least `SpotFleetOnDemandBase` of them must be On\-Demand Instances\. When `SpotFleetOnDemandBase` is greater than `MinSize`, then as your environment scales out, you're guaranteed to get at least an additional `SpotFleetOnDemandBase - MinSize` Instances that are On\-Demand before satisfying the `SpotFleetOnDemandBase` requirement\.
 
-In production environments, Spot Instances are particularly useful as part of an Auto Scaling \(load balanced\) environment\. We don't recommend using Spot in a single instance environment\. If Spot Instances aren't available, you might lose the entire capacity \(a single instance\) of your environment\. You may still wish to use a Spot Instance in a single instance environment for development or testing\. When you do, be sure to set both `SpotFleetOnDemandBase` and `SpotFleetOnDemandAboveBasePercentage` to zero\. Any other settings result in an On\-Demand Instance\.
+In production environments, Spot Instances are particularly useful as part of a scalable, load\-balanced environment\. We don't recommend using Spot in a single\-instance environment\. If Spot Instances aren't available, you might lose the entire capacity \(a single instance\) of your environment\. You may still wish to use a Spot Instance in a single instance environment for development or testing\. When you do, be sure to set both `SpotFleetOnDemandBase` and `SpotFleetOnDemandAboveBasePercentage` to zero\. Any other settings result in an On\-Demand Instance\.
 
 **Notes**  
 Some older AWS accounts might provide Elastic Beanstalk with default instance types that don't support Spot Instances \(for example, t1\.micro\)\. If you enable Spot Instance requests and you see the error None of the instance types you specified supports Spot, be sure to configure instance types that support Spot\. To choose Spot Instance types, use the [Spot Instance Advisor](https://aws.amazon.com/ec2/spot/instance-advisor/)\.
 Enabling Spot Instance requests requires using Amazon EC2 launch templates\. When you configure this feature during environment creation or updates, Elastic Beanstalk attempts to configure your environment to use Amazon EC2 launch templates \(if the environment isn't using them already\)\. In this case, if your user policy lacks the necessary permissions, environment creation or updates might fail\. Therefore, we recommend that you use our managed user policy or add the required permissions to your custom policies\. For details about the required permissions, see [Creating a custom user policy](AWSHowTo.iam.managed-policies.md#AWSHowTo.iam.policies)\.
 
-The following examples demonstrate different scenarios of setting the various scaling options\. All examples assume a load balanced environment with Spot Instance requests enabled\.
+The following examples demonstrate different scenarios of setting the various scaling options\. All examples assume a load\-balanced environment with Spot Instance requests enabled\.
 
 **Example 1: On\-Demand and Spot as part of initial capacity**  <a name="environments-cfg-autoscaling-spot-example1"></a>
 
@@ -120,7 +120,7 @@ If you use rolling updates, be sure that the maximum instance count is higher th
 When you create an environment using the [eb create](eb3-create.md) command, you can specify a few options related to your environment's Auto Scaling group\. These options help you control the environment's capacity\.
 
 `--single`  
-An option to create the environment with a single Amazon EC2 instance and without a load balancer\. Without this option, a load balanced environment is created\.
+An option to create the environment with a single Amazon EC2 instance and without a load balancer\. Without this option, a load\-balanced environment is created\.
 
 `--﻿instance-types`  
 A list of Amazon EC2 instance types you want your environment to use\.

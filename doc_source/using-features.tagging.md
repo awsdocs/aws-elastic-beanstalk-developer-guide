@@ -2,16 +2,16 @@
 
 You can apply tags to your AWS Elastic Beanstalk environments\. Tags are key\-value pairs associated with AWS resources\. For information about Elastic Beanstalk resource tagging, use cases, tag key and value constraints, and supported resource types, see [Tagging Elastic Beanstalk application resources](applications-tagging-resources.md)\.
 
-You can also use tags to manage permissions at the specific resource level within an environment\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in the *Amazon EC2 User Guide for Linux Instances*\.
+Elastic Beanstalk applies environment tags to the environment resource itself, as well as to other AWS resources that Elastic Beanstalk creates for the environment\. You can use tags to manage permissions at the specific resource level within an environment\. For more information, see [Tagging Your Amazon EC2 Resources](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in the *Amazon EC2 User Guide for Linux Instances*\.
 
-By default, Elastic Beanstalk applies three tags to your environment:
+By default, Elastic Beanstalk applies a few tags to your environment:
 + `elasticbeanstalk:environment-name` – The name of the environment\. 
 + `elasticbeanstalk:environment-id` – The environment ID\.
 + `Name` – Also the name of the environment\. `Name` is used in the Amazon EC2 dashboard to identify and sort resources\.
 
 You can't edit these default tags\.
 
-You can specify tags when you create the Elastic Beanstalk environment\. In an existing environment, you can add or remove tags, and update the values of existing tags\. In addition to the default tags, you can add up to 47 additional tags to each environment\.
+You can specify tags when you create the Elastic Beanstalk environment\. In an existing environment, you can add or remove tags, and update the values of existing tags\. An environment can have up to 50 tags including the default tags\.
 
 ## Adding tags during environment creation<a name="using-features.tagging.create"></a>
 

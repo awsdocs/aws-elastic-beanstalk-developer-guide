@@ -49,11 +49,11 @@ Elastic Beanstalk periodically updates its platforms with new software and patch
 
 Elastic Beanstalk needs to be able to connect to the instances in your environment to complete deployments\. When you deploy an Elastic Beanstalk application inside an Amazon VPC, the configuration required to enable connectivity depends on the type of Amazon VPC environment you create:
 + For single\-instance environments, no additional configuration is required because Elastic Beanstalk assigns each Amazon EC2 instance a public Elastic IP address that enables the instance to communicate directly with the Internet\.
-+ For load\-balancing, autoscaling environments in an Amazon VPC with both public and private subnets, you must do the following: 
++ For load\-balanced, scalable environments in an Amazon VPC with both public and private subnets, you must do the following: 
   + Create a load balancer in the public subnet to route inbound traffic from the Internet to the Amazon EC2 instances\.
   + Create a network address translation \(NAT\) device to route outbound traffic from the Amazon EC2 instances in private subnets to the Internet\.
   + Create inbound and outbound routing rules for the Amazon EC2 instances inside the private subnet\.
   + If using a NAT instance, configure the security groups for the NAT instance and Amazon EC2 instances to enable Internet communication\.
-+ For a load\-balancing, autoscaling environment in an Amazon VPC that has one public subnet, no additional configuration is required because the Amazon EC2 instances are configured with a public IP address that enables the instances to communicate with the Internet\.
++ For a load\-balanced, scalable environment in an Amazon VPC that has one public subnet, no additional configuration is required because the Amazon EC2 instances are configured with a public IP address that enables the instances to communicate with the Internet\.
 
 For more information about using Elastic Beanstalk with Amazon VPC, see [Using Elastic Beanstalk with Amazon VPC](vpc.md)\.

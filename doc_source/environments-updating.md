@@ -18,7 +18,7 @@ Deployments with immutable updates or traffic splitting enabled
 
 **Supported update types**  
 
-| Rolling update setting | Load balanced environments | Single\-instance environments | Legacy Windows server environments† | 
+| Rolling update setting | Load\-balanced environments | Single\-instance environments | Legacy Windows server environments† | 
 | --- | --- | --- | --- | 
 |  Disabled  |   ✓ Yes  |   ✓ Yes  |   ✓ Yes  | 
 |  Rolling Based on Health  |   ✓ Yes  |   ☓ No  |   ✓ Yes  | 

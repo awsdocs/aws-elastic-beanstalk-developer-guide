@@ -28,6 +28,7 @@ Amazon Linux 2 platforms require instance profiles, so they can support enhanced
 + [Factors in determining instance and environment health](#health-enhanced-factors)
 + [Health check rule customization](#health-enhanced.rules)
 + [Enhanced health roles](#health-enhanced-roles)
++ [Enhanced health authorization](#health-enhanced-authz)
 + [Enhanced health events](#health-enhanced-events)
 + [Enhanced health reporting behavior during updates, deployments, and scaling](#health-enhanced-effects)
 + [Enabling Elastic Beanstalk enhanced health reporting](health-enhanced-enable.md)
@@ -121,11 +122,37 @@ Elastic Beanstalk enhanced health reporting relies on a set of rules to determin
 
 ## Enhanced health roles<a name="health-enhanced-roles"></a>
 
-Enhanced health reporting requires two roles—a service role for Elastic Beanstalk and an instance profile for the environment\. The service role allows Elastic Beanstalk to interact with other AWS services on your behalf to gather information about the resources in your environment\. The instance profile allows the instances in your environment to write logs to Amazon S3\.
+Enhanced health reporting requires two roles—a service role for Elastic Beanstalk and an instance profile for the environment\. The service role allows Elastic Beanstalk to interact with other AWS services on your behalf to gather information about the resources in your environment\. The instance profile allows the instances in your environment to write logs to Amazon S3 and to communicate enhanced health information to the Elastic Beanstalk service\.
 
-When you create an Elastic Beanstalk environment in the Elastic Beanstalk console, the console prompts you to create an instance profile and service role with appropriate permissions\. The EB CLI also assists you in creating these roles when you call eb create to create an environment\.
+When you create an Elastic Beanstalk environment using the Elastic Beanstalk console or the EB CLI, Elastic Beanstalk creates a default service role and attaches required managed policies to a default instance profile for your environment\.
 
 If you use the API, an SDK, or the AWS CLI to create environments, you must create these roles in advance, and specify them during environment creation to use enhanced health\. For instructions on creating appropriate roles for your environments, see [Service roles, instance profiles, and user policies](concepts-roles.md)\.
+
+We recommend that you use *managed policies* for your instance profile and service role\. Managed policies are AWS Identity and Access Management \(IAM\) policies that Elastic Beanstalk maintains\. Using managed policies guarantees that your environment has all permissions it needs to function properly\.
+
+For the instance profile, you can use the `AWSElasticBeanstalkWebTier` or `AWSElasticBeanstalkWorkerTier` managed policy, for a [web server tier](concepts-webserver.md) or [worker tier](concepts-worker.md) environment, respectively\. For details about these two managed instance profile policies, see [Managing Elastic Beanstalk instance profiles](iam-instanceprofile.md)\.
+
+## Enhanced health authorization<a name="health-enhanced-authz"></a>
+
+The Elastic Beanstalk instance profile managed policies contain permission for the `elasticbeanstalk:PutInstanceStatistics` action\. This action isn't part of the Elastic Beanstalk API\. It is part of a different API that environment instances use internally to communicate enhanced health information to the Elastic Beanstalk service\. You don't call this API directly\.
+
+By default, authorization for the `elasticbeanstalk:PutInstanceStatistics` action isn't enabled\. Therefore, allowing it for your application and environment resources in your instance profile, as the managed policy does, isn't required\. To increase security of your environment and help prevent health data spoofing on your behalf, we recommend that you set the `EnhancedHealthAuthEnabled` option in the [aws:elasticbeanstalk:healthreporting:system](command-options-general.md#command-options-general-elasticbeanstalkhealthreporting) namespace to `true`\. You can configure this option by using an [option setting](ebextensions-optionsettings.md) in a [configuration file](ebextensions.md)\.
+
+If you enable authorization for `elasticbeanstalk:PutInstanceStatistics` using the `EnhancedHealthAuthEnabled` option, and you use managed policies for your instance profile, then there's nothing else you need to do—our managed policies cover the necessary authorization\. If you use a custom instance profile instead of a managed policy, your environment might show the **No Data** health status\. This happens because the instances aren't authorized for the action that communicates enhanced health data to the service\. To authorize the action, include the following statement in your instance profile\.
+
+```
+    {
+      "Sid": "ElasticBeanstalkHealthAccess",
+      "Action": [
+        "elasticbeanstalk:PutInstanceStatistics"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:elasticbeanstalk:*:*:application/*",
+        "arn:aws:elasticbeanstalk:*:*:environment/*"
+      ]
+    }
+```
 
 ## Enhanced health events<a name="health-enhanced-events"></a>
 

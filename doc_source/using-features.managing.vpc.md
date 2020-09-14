@@ -41,11 +41,11 @@ Choose a VPC for your environment\. You can only change this setting during envi
 
 ### Load balancer visibility<a name="environments-cfg-vpc-console-lbvisibility"></a>
 
-For a load balanced environment, choose the load balancer scheme\. By default, the load balancer is public, with a public IP address and domain name\. If your application only serves traffic from within your VPC or a connected VPN, deselect this option and choose private subnets for your load balancer to make the load balancer internal and disable access from the Internet\.
+For a load\-balanced environment, choose the load balancer scheme\. By default, the load balancer is public, with a public IP address and domain name\. If your application only serves traffic from within your VPC or a connected VPN, deselect this option and choose private subnets for your load balancer to make the load balancer internal and disable access from the Internet\.
 
 ### Load balancer subnets<a name="environments-cfg-vpc-console-lbsubnets"></a>
 
-For a load balanced environment, choose the subnets that your load balancer uses to serve traffic\. For a public application, choose public subnets\. Use subnets in multiple availability zones for high availability\. For an internal application, choose private subnets and disable load balancer visibility\.
+For a load\-balanced environment, choose the subnets that your load balancer uses to serve traffic\. For a public application, choose public subnets\. Use subnets in multiple availability zones for high availability\. For an internal application, choose private subnets and disable load balancer visibility\.
 
 ![\[Load balancer settings section in the Modify network configuration page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/environments-cfg-vpc-console-lb.png)
 

@@ -30,9 +30,12 @@ The `AWSElasticBeanstalkWebTier` managed policy contains statements that allow i
     },
     {
       "Sid": "XRayAccess",
-      "Action": [
+      "Action":[
         "xray:PutTraceSegments",
-        "xray:PutTelemetryRecords"
+        "xray:PutTelemetryRecords",
+        "xray:GetSamplingRules",
+        "xray:GetSamplingTargets",
+        "xray:GetSamplingStatisticSummaries"
       ],
       "Effect": "Allow",
       "Resource": "*"
@@ -48,6 +51,17 @@ The `AWSElasticBeanstalkWebTier` managed policy contains statements that allow i
       "Effect": "Allow",
       "Resource": [
         "arn:aws:logs:*:*:log-group:/aws/elasticbeanstalk*"
+      ]
+    },
+    {
+      "Sid": "ElasticBeanstalkHealthAccess",
+      "Action": [
+        "elasticbeanstalk:PutInstanceStatistics"
+      ],
+      "Effect": "Allow",
+      "Resource": [
+        "arn:aws:elasticbeanstalk:*:*:application/*",
+        "arn:aws:elasticbeanstalk:*:*:environment/*"
       ]
     }
   ]

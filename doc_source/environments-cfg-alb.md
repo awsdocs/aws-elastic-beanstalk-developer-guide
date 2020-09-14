@@ -1,11 +1,11 @@
 # Configuring an Application Load Balancer<a name="environments-cfg-alb"></a>
 
-When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports several load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. 
+When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports several load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. Elastic Beanstalk can create a load balancer for you, or let you specify a shared load balancer that you've created\.
 
-This topic describes the configuration of an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load balancer for your Elastic Beanstalk environment](using-features.managing.elb.md)\.
+This topic describes the configuration of an [Application Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/) that Elastic Beanstalk creates and dedicates to your environment\. See also [Configuring a shared Application Load Balancer](environments-cfg-alb-shared.md)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load balancer for your Elastic Beanstalk environment](using-features.managing.elb.md)\.
 
 **Note**  
-You can choose the type of load balancer that your environment uses only during environment creation\. You can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.
+You can choose the type of load balancer that your environment uses only during environment creation\. You can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\. You also can't switch from a dedicated to a shared load balancer or vice versa\.
 
 ## Introduction<a name="environments-cfg-alb-intro"></a>
 
@@ -52,7 +52,7 @@ You can use the Elastic Beanstalk console to configure an Application Load Balan
 
 1. In the **Load balancer** configuration category, choose **Edit**\.
 
-1. Select the **Application Load Balancer** option, if it isn't already selected\.  
+1. Select the **Application Load Balancer** and **Dedicated** options, if they aren't already selected\.  
 ![\[Elastic Load Balancing configuration page - choosing load balancer type\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-type-chooser.png)
 
 1. Make any Application Load Balancer configuration changes that your environment requires\.
@@ -84,7 +84,6 @@ If the **Load balancer** configuration category doesn't have an **Edit** button,
 + [Processes](#environments-cfg-alb-console-processes)
 + [Rules](#environments-cfg-alb-console-rules)
 + [Access log capture](#environments-cfg-alb-console-logs)
-+ [Example: Application Load Balancer with a secure listener and two processes](#environments-cfg-alb-console-example)
 
 ### Listeners<a name="environments-cfg-alb-console-listeners"></a>
 
@@ -102,7 +101,7 @@ Use this list to specify listeners for your load balancer\. Each listener routes
 
 1. Choose **Add listener**\.
 
-1. In the **Application Load Balancer listener** dialog box, configure settings you want, and then choose **Add**\.
+1. In the **Application Load Balancer listener** dialog box, configure the settings you want, and then choose **Add**\.
 
 Use the **Application Load Balancer listener** dialog box settings to choose the port and protocol on which the listener listens to traffic, and the process to route the traffic to\. If you choose the HTTPS protocol, configure SSL settings\.
 
@@ -168,10 +167,10 @@ You can edit the settings of an existing rule, or add a new rule\. To start edit
 + **Name** – The rule's name\.
 + **Listener port** – The port of the listener that the rule applies to\.
 + **Priority** – The rule's priority\. A lower priority number has higher precedence\. Priorities of a listener's rules must be unique\.
-+ **Path pattern** – A pattern defining the request paths that the rule applies to\. The pattern can include wildcard characters\. You can add several comma\-separated path patterns\.
++ **Match conditions** – A list of request URL conditions that the rule applies to\. There are two types of conditions: **HostHeader** \(the URL's domain part\), and **PathPattern** \(the URL's path part\)\. You can add up to five conditions\. Each condition value is up to 128 characters long, and can include wildcard characters\.
 + **Process** – The process to which the load balancer routes requests that match the rule\.
 
-When editing any existing rule, you can't change its **Name** and **Listener port**\. When editing a default rule, **Process** is the only setting you can change\.
+When editing any existing rule, you can't change its **Name** and **Listener port**\.
 
 ![\[Application Load Balancer configuration - rule list\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-rule-dialog.png)
 
@@ -183,11 +182,11 @@ For details about access logs, see [Access logs for your Application Load Balanc
 
 ![\[Application Load Balancer configuration - access logs\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-logs.png)
 
-### Example: Application Load Balancer with a secure listener and two processes<a name="environments-cfg-alb-console-example"></a>
+## Example: Application Load Balancer with a secure listener and two processes<a name="environments-cfg-alb-console-example"></a>
 
 In this example, your application requires end\-to\-end traffic encryption and a separate process for handling administrative requests\. 
 
-To configure your environment's Application Load Balancer to meet these requirements, you remove the default listener, add an HTTPS listener, indicate that the default process listens to port 443 on HTTPS, and add a process and a rule for admin traffic on a different path\.
+To configure your environment's Application Load Balancer to meet these requirements, you remove the default listener, add an HTTPS listener, indicate that the default process listens to port 443 on HTTPS, and add a process and a listener rule for admin traffic on a different path\.
 
 **To configure the load balancer for this example**
 
@@ -208,7 +207,7 @@ To configure your environment's Application Load Balancer to meet these requirem
 1. *Add an admin process\.* For **Name**, type **admin**\. For **Port**, type **443**\. For **Protocol**, select **HTTPS**\. Under **Health check**, for **Path** type **/admin**\.  
 ![\[Application Load Balancer configuration example - adding admin process\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-process-definition-https-admin.png)
 
-1. *Add a rule for admin traffic\.* For **Name**, type **admin**\. For **Listener port**, type **443**\. For **Path pattern**, type **/admin/\***\. For **Process**, select **admin**\.  
+1. *Add a rule for admin traffic\.* For **Name**, type **admin**\. For **Listener port**, type **443**\. For **Match conditions**, add a **PathPattern** with the value **/admin/\***\. For **Process**, select **admin**\.  
 ![\[Application Load Balancer configuration example - adding admin rule\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-config-alb-rule-https-admin.png)
 
 ## Configuring an Application Load Balancer using the EB CLI<a name="environments-cfg-alb-ebcli"></a>
@@ -226,7 +225,7 @@ Select a load balancer type
 1) classic
 2) application
 3) network
-(default is 1): 2
+(default is 2):
 ```
 
 You can also specify a load balancer type with the `--elb-type` option\.
@@ -239,22 +238,12 @@ $ eb create test-env --elb-type application
 
 You can find settings related to Application Load Balancers in the following namespaces:
 + `aws:elasticbeanstalk:environment` – Choose the load balancer type for the environment\. The value for an Application Load Balancer is `application`\.
+
+  You can't set this option in configuration files \([\.Ebextensions](ebextensions.md)\)\.
 + `aws:elbv2:loadbalancer` – Configure access logs and other settings that apply to the Application Load Balancer as a whole\.
 + `aws:elbv2:listener` – Configure listeners on the Application Load Balancer\. These settings map to the settings in `aws:elb:listener` for Classic Load Balancers\.
 + `aws:elbv2:listenerrule` – Configure rules that route traffic to different processes, depending on the request path\. Rules are unique to Application Load Balancers\.
 + `aws:elasticbeanstalk:environment:process` – Configure health checks and specify the port and protocol for the processes that run on your environment's instances\. The port and protocol settings map to the instance port and instance protocol settings in `aws:elb:listener` for a listener on a Classic Load Balancer\. Health check settings map to the settings in the `aws:elb:healthcheck` and `aws:elasticbeanstalk:application` namespaces\.
-
-**Example \.ebextensions/application\-load\-balancer\.config**  
-To get started with an Application Load Balancer, use a [configuration file](ebextensions.md) to set the load balancer type to `application`\.  
-
-```
-option_settings:
-  aws:elasticbeanstalk:environment:
-    LoadBalancerType: application
-```
-
-**Note**  
-You can set the load balancer type only during environment creation\.
 
 **Example \.ebextensions/alb\-access\-logs\.config**  
 The following configuration file enables access log uploads for an environment with an Application Load Balancer\.  

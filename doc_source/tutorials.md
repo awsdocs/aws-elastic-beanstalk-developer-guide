@@ -11,7 +11,7 @@ These tutorials are targeted at intermediate users and may not contain instructi
 + **PHP and Drupal HA Configuration** \- [Deploying a high\-availability Drupal website with an external Amazon RDS database to Elastic Beanstalk](php-hadrupal-tutorial.md)
 + **PHP and WordPress HA Configuration** \- [Deploying a high\-availability WordPress website with an external Amazon RDS database to Elastic Beanstalk](php-hawordpress-tutorial.md)
 + **Node\.js with DynamoDB HA Configuration** \- [Deploying a Node\.js application with DynamoDB to Elastic Beanstalk](nodejs-dynamodb-tutorial.md)
-+ **ASP\.NET Core** \- [Deploying an ASP\.NET core application with Elastic Beanstalk](dotnet-core-tutorial.md)
++ **ASP\.NET Core** \- [Tutorial: Deploying an ASP\.NET core application with Elastic Beanstalk](dotnet-core-tutorial.md)
 + **Python and Flask** \- [Deploying a flask application to Elastic Beanstalk](create-deploy-python-flask.md)
 + **Python and Django** \- [Deploying a Django application to Elastic Beanstalk](create-deploy-python-django.md)
 + **Node\.js and Express** \- [Deploying an Express application to Elastic Beanstalk](create_deploy_nodejs_express.md)
@@ -33,12 +33,12 @@ You can download the sample applications used by Elastic Beanstalk when you crea
 + **Ruby** – [ruby\.zip](samples/ruby.zip)
 
 More involved sample applications that show the use of additional web frameworks, libraries and tools are available as open source projects on GitHub:
-+ **[Load Balanced WordPress](https://github.com/awslabs/eb-php-wordpress)** \([tutorial](php-hawordpress-tutorial.md)\) – Configuration files for installing WordPress securely and running it in a load balanced AWS Elastic Beanstalk environment\.
-+ **[Load Balanced Drupal](https://github.com/awslabs/eb-php-drupal)** \([tutorial](php-hadrupal-tutorial.md)\) – Configuration files and instructions for installing Drupal securely and running it in a load balanced AWS Elastic Beanstalk environment\. 
++ **[Load\-balanced WordPress](https://github.com/awslabs/eb-php-wordpress)** \([tutorial](php-hawordpress-tutorial.md)\) – Configuration files for installing WordPress securely and running it in a load\-balanced Elastic Beanstalk environment\.
++ **[Load\-balanced Drupal](https://github.com/awslabs/eb-php-drupal)** \([tutorial](php-hadrupal-tutorial.md)\) – Configuration files and instructions for installing Drupal securely and running it in a load\-balanced Elastic Beanstalk environment\. 
 + **[Scorekeep](https://github.com/awslabs/eb-java-scorekeep)** \- RESTful web API that uses the Spring framework and the AWS SDK for Java to provide an interface for creating and managing users, sessions, and games\. The API is bundled with an Angular 1\.5 web app that consumes the API over HTTP\. Includes branches that show integration with Amazon Cognito, AWS X\-Ray, and Amazon Relational Database Service\.
 
   The application uses features of the Java SE platform to download dependencies and build on\-instance, minimizing the size of the souce bundle\. The application also includes nginx configuration files that override the default configuration to serve the frontend web app statically on port 80 through the proxy, and route requests to paths under `/api` to the API running on `localhost:5000`\.
-+ **[Does it Have Snakes?](https://github.com/awslabs/eb-tomcat-snakes)** \- Tomcat application that shows the use of RDS in a Java EE web application in AWS Elastic Beanstalk\. The project shows the use of Servlets, JSPs, Simple Tag Support, Tag Files, JDBC, SQL, Log4J, Bootstrap, Jackson, and Elastic Beanstalk configuration files\.
++ **[Does it Have Snakes?](https://github.com/awslabs/eb-tomcat-snakes)** \- Tomcat application that shows the use of RDS in a Java EE web application in Elastic Beanstalk\. The project shows the use of Servlets, JSPs, Simple Tag Support, Tag Files, JDBC, SQL, Log4J, Bootstrap, Jackson, and Elastic Beanstalk configuration files\.
 + **[Locust Load Generator ](https://github.com/awslabs/eb-locustio-sample)** \- This project shows the use of Java SE platform features to install and run [Locust](http://locust.io/), a load generating tool written in Python\. The project includes configuration files that install and configure Locust, a build script that configures a DynamoDB table, and a Procfile that runs Locust\.
 + **[Share Your Thoughts](https://github.com/awslabs/eb-demo-php-simple-app)** \([tutorial](php-ha-tutorial.md)\) \- PHP application that shows the use of MySQL on Amazon RDS, Composer, and configuration files\.
 + **[A New Startup](https://github.com/awslabs/eb-node-express-sample)** \([tutorial](nodejs-dynamodb-tutorial.md)\) \- Node\.js sample application that shows the use of DynamoDB, the AWS SDK for JavaScript in Node\.js, npm package management, and configuration files\.

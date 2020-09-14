@@ -222,7 +222,7 @@ Linux user that owns the file\.
 A six\-digit octal value representing the mode for this file\. Not supported for Windows systems\. Use the first three digits for symlinks and the last three digits for setting permissions\. To create a symlink, specify `120xxx`, where `xxx` defines the permissions of the target file\. To specify permissions for a file, use the last three digits, such as `000644`\.
 
 `authentication`  
-The name of a [AWS CloudFormation authentication method](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html) to use\. You can add authentication methods to the autoscaling group metadata with the Resources key\. See below for an example\.
+The name of a [AWS CloudFormation authentication method](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-authentication.html) to use\. You can add authentication methods to the Auto Scaling group metadata with the Resources key\. See below for an example\.
 
 ### Example snippet<a name="linux-files-snippet"></a>
 

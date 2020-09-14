@@ -30,9 +30,9 @@ Amazon EFS supports encrypted file systems\. The [https://github.com/awslabs/ela
 
 ## Sample applications<a name="services-efs-samples"></a>
 
-Elastic Beanstalk also provides sample applications that use Amazon EFS for shared storage\. The two projects are configuration files that you can use with a standard WordPress or Drupal installer to run a blog or other content management system in a load balanced environment\. When a user uploads a photo or other media, it is stored on an Amazon EFS file system, avoiding the need to use a plugin to store uploaded files in Amazon S3\.
-+ **[Load Balanced WordPress](https://github.com/awslabs/eb-php-wordpress)** – Configuration files for installing WordPress securely and running it in a load balanced Elastic Beanstalk environment\.
-+ **[Load Balanced Drupal](https://github.com/awslabs/eb-php-drupal)** – Configuration files and instructions for installing Drupal securely and running it in a load balanced Elastic Beanstalk environment\. 
+Elastic Beanstalk also provides sample applications that use Amazon EFS for shared storage\. The two projects are configuration files that you can use with a standard WordPress or Drupal installer to run a blog or other content management system in a load\-balanced environment\. When a user uploads a photo or other media, it is stored on an Amazon EFS file system, avoiding the need to use a plugin to store uploaded files in Amazon S3\.
++ **[Load\-balanced WordPress](https://github.com/awslabs/eb-php-wordpress)** – Configuration files for installing WordPress securely and running it in a load\-balanced Elastic Beanstalk environment\.
++ **[Load\-balanced Drupal](https://github.com/awslabs/eb-php-drupal)** – Configuration files and instructions for installing Drupal securely and running it in a load\-balanced Elastic Beanstalk environment\. 
 
 ## Cleaning up file systems<a name="services-efs-cleanup"></a>
 

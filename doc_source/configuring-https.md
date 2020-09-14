@@ -10,7 +10,7 @@ To use an ACM certificate with Elastic Beanstalk, see [Configuring your Elastic 
 
 If you run your application in a single instance environment, or need to secure the connection all the way to the EC2 instances behind the load balancer, you can [configure the proxy server that runs on the instance to terminate HTTPS](https-singleinstance.md)\. Configuring your instances to terminate HTTPS connections requires the use of [configuration files](ebextensions.md) to modify the software running on the instances, and to modify security groups to allow secure connections\.
 
-For end\-to\-end HTTPS in a load balanced environment, you can [combine instance and load balancer termination](configuring-https-endtoend.md) to encrypt both connections\. By default, if you configure the load balancer to forward traffic using HTTPS, it will trust any certificate presented to it by the backend instances\. For maximum security, you can attach policies to the load balancer that prevent it from connecting to instances that don't present a public certificate that it trusts\.
+For end\-to\-end HTTPS in a load\-balanced environment, you can [combine instance and load balancer termination](configuring-https-endtoend.md) to encrypt both connections\. By default, if you configure the load balancer to forward traffic using HTTPS, it will trust any certificate presented to it by the backend instances\. For maximum security, you can attach policies to the load balancer that prevent it from connecting to instances that don't present a public certificate that it trusts\.
 
 **Note**  
 You can also configure the load balancer to [relay HTTPS traffic without decrypting it](https-tcp-passthrough.md)\. The down side to this method is that the load balancer cannot see the requests and thus cannot optimize routing or report response metrics\.
@@ -29,7 +29,7 @@ The [Does it have Snakes?](https://github.com/awslabs/eb-tomcat-snakes) sample a
 + [Upload a certificate to IAM](configuring-https-ssl-upload.md)
 + [Configuring your Elastic Beanstalk environment's load balancer to terminate HTTPS](configuring-https-elb.md)
 + [Configuring your application to terminate HTTPS connections at the instance](https-singleinstance.md)
-+ [Configuring end\-to\-end encryption in a load balanced Elastic Beanstalk environment](configuring-https-endtoend.md)
++ [Configuring end\-to\-end encryption in a load\-balanced Elastic Beanstalk environment](configuring-https-endtoend.md)
 + [Configuring your environment's load balancer for TCP Passthrough](https-tcp-passthrough.md)
 + [Storing private keys securely in Amazon S3](https-storingprivatekeys.md)
 + [Configuring HTTP to HTTPS redirection](configuring-https-httpredirect.md)

@@ -1,8 +1,8 @@
 # Configuring a Network Load Balancer<a name="environments-cfg-nlb"></a>
 
-When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports several load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. 
+When you [enable load balancing](using-features-managing-env-types.md#using-features.managing.changetype), your AWS Elastic Beanstalk environment is equipped with an Elastic Load Balancing load balancer to distribute traffic among the instances in your environment\. Elastic Load Balancing supports several load balancer types\. To learn about them, see the [Elastic Load Balancing User Guide](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/)\. Elastic Beanstalk can create a load balancer for you, or let you specify a shared load balancer that you've created\.
 
-This topic describes the configuration of a [Network Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/)\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load balancer for your Elastic Beanstalk environment](using-features.managing.elb.md)\.
+This topic describes the configuration of a [Network Load Balancer](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/) that Elastic Beanstalk creates and dedicates to your environment\. For information about configuring all the load balancer types that Elastic Beanstalk supports, see [Load balancer for your Elastic Beanstalk environment](using-features.managing.elb.md)\.
 
 **Note**  
 You can choose the type of load balancer that your environment uses only during environment creation\. You can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.
@@ -66,7 +66,6 @@ If the **Load balancer** configuration category doesn't have an **Edit** button,
 **Topics**
 + [Listeners](#environments-cfg-nlb-console-listeners)
 + [Processes](#environments-cfg-nlb-console-processes)
-+ [Example: Network Load Balancer for an environment with end\-to\-end encryption](#environments-cfg-nlb-console-example)
 
 ### Listeners<a name="environments-cfg-nlb-console-listeners"></a>
 
@@ -122,7 +121,7 @@ The Elastic Load Balancing health check doesn't affect the health check behavior
 
 For more information about health checks and how they influence your environment's overall health, see [Basic health reporting](using-features.healthstatus.md)\.
 
-### Example: Network Load Balancer for an environment with end\-to\-end encryption<a name="environments-cfg-nlb-console-example"></a>
+## Example: Network Load Balancer for an environment with end\-to\-end encryption<a name="environments-cfg-nlb-console-example"></a>
 
 In this example, your application requires end\-to\-end traffic encryption\. To configure your environment's Network Load Balancer to meet these requirements, you configure the default process to listen to port 443, add a listener to port 443 that routes traffic to the default process, and disable the default listener\.
 

@@ -9,7 +9,7 @@ You can view your environment's network configuration settings in the **Network 
 
 ## Why you should migrate<a name="vpc-ec2migration.benefits"></a>
 
-In most cases, you should migrate your AWS account on the EC2\-Classic platform to a new AWS account that supports VPCs\. All AWS accounts created after December 4, 2013 have a default VPC in every AWS Region\. You will benefit from access to the most recent AWS functionality and supported features\. 
+In most cases, you should migrate your AWS account on the EC2\-Classic platform to a new AWS account that supports VPCs\. All AWS accounts created on or after December 4, 2013 have a default VPC in every AWS Region\. You will benefit from access to the most recent AWS functionality and supported features\. 
 
 This involves creating a new AWS account and re\-creating your AWS EC2\-Classic environments in your new AWS account\. You don't have to do any additional configuration work for your environments to use the default VPC\. If the default VPC does not meet your requirements, you can manually create a custom VPC and associate it with your environments\.
 
@@ -17,7 +17,7 @@ Alternatively, if your existing AWS account has resources that you can't migrate
 
 ## Migrate an environment from EC2\-Classic into a new AWS account \(recommended\)<a name="vpc-ec2migration.newaccount"></a>
 
-If you don't already have an AWS account that was created after December 3, 2013, you need to create a new one first\. You will be migrating your environments into this new account\. 
+If you don't already have an AWS account that was created on or after December 4, 2013, you need to create a new one first\. You will be migrating your environments into this new account\. 
 
 1. Your new AWS account provides a default VPC to its environments\. If you don't need to create a custom VPC, skip to step 2\.
 

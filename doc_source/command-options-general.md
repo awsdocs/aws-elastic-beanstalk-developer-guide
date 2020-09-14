@@ -74,7 +74,7 @@ For more information, see [Your Elastic Beanstalk environment's Amazon EC2 insta
 |  MonitoringInterval  |  Interval at which you want Amazon CloudWatch metrics returned\.  |  `5 minute`  |  `1 minute` `5 minute`  | 
 |  SecurityGroups  |  Lists the Amazon EC2 security groups to assign to the EC2 instances in the Auto Scaling group in order to define firewall rules for the instances\. You can provide a single string of comma\-separated values that contain the name of existing Amazon EC2 security groups or references to AWS::EC2::SecurityGroup resources created in the template\. Security group names are case sensitive\. If you use [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\) with Elastic Beanstalk so that your instances are launched within a virtual private cloud \(VPC\), specify security group IDs instead of security group names\.  |   `elasticbeanstalk-default`   |   | 
 |   SSHSourceRestriction  |  Used to lock down SSH access to an environment\. For instance, you can lock down SSH access to the EC2 instances so that only a bastion host can access the instances in the private subnet\. This string takes the following form: `protocol, fromPort, toPort, source_restriction` [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html) Example: `tcp, 22, 22, 54.240.196.185/32` Example: `tcp, 22, 22, my-security-group` Example \(EC2\-Classic\): `tcp, 22, 22, 123456789012/their-security-group` Example \(VPC\): `tcp, 22, 22, sg-903004f8`  |  None  |   | 
-|  BlockDeviceMappings  |  Attach additional Amazon EBS volumes or instance store volumes on all of the instances in the autoscaling group\. When you map instance store volumes you only map the device name to a volume name; when you map Amazon EBS volumes, you can specify the following fields, separated by a colon: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html) The following example attaches three Amazon EBS volumes, one blank 100GB gp2 volume and one snapshot, one blank 20GB io1 volume with 2000 provisioned IOPS, and an instance store volume `ephemeral0`\. Multiple instance store volumes can be attached if the instance type supports it\.  `/dev/sdj=:100:true:gp2,/dev/sdh=snap-51eef269,/dev/sdi=:20:true:io1:2000,/dev/sdb=ephemeral0`   |  None  |   | 
+|  BlockDeviceMappings  |  Attach additional Amazon EBS volumes or instance store volumes on all of the instances in the Auto Scaling group\. When you map instance store volumes you only map the device name to a volume name; when you map Amazon EBS volumes, you can specify the following fields, separated by a colon: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html) The following example attaches three Amazon EBS volumes, one blank 100GB gp2 volume and one snapshot, one blank 20GB io1 volume with 2000 provisioned IOPS, and an instance store volume `ephemeral0`\. Multiple instance store volumes can be attached if the instance type supports it\.  `/dev/sdj=:100:true:gp2,/dev/sdh=snap-51eef269,/dev/sdi=:20:true:io1:2000,/dev/sdb=ephemeral0`   |  None  |   | 
 |  RootVolumeType  |  Volume type \(magnetic, general purpose SSD or provisioned IOPS SSD\) to use for the root Amazon EBS volume attached to your environment's EC2 instances\.  |  Varies per platform\.  |  `standard` for magnetic storage `gp2` for general purpose SSD `io1` for provisioned IOPS SSD  | 
 |  RootVolumeSize  |  Storage capacity of the root Amazon EBS volume in whole GB\. Required if you set `RootVolumeType` to provisioned IOPS SSD\. For example, `"64"`\.  |  Varies per platform for magnetic storage and general purpose SSD\. None for provisioned IOPS SSD\.  |  `10` to `16384` GB for general purpose and provisioned IOPS SSD\. `8` to `1024` GB for magnetic\.  | 
 |  RootVolumeIOPS  |  Desired input/output operations per second \(IOPS\) for a provisioned IOPS SSD root volume\. The maximum ratio of IOPS to volume size is 30 to 1\. For example, a volume with 3000 IOPS must be at least 100 GB\.  |  None  |  `100` to `20000`  | 
@@ -130,10 +130,10 @@ Configure rolling updates your environment's Auto Scaling group\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  MaxBatchSize  |  The number of instances included in each batch of the rolling update\.  |  One\-third of the minimum size of the autoscaling group, rounded to the next highest integer\.  |  `1` to `10000`  | 
-|  MinInstancesInService  |  The minimum number of instances that must be in service within the autoscaling group while other instances are terminated\.  |  The minimum size of the AutoScaling group or one less than the maximum size of the autoscaling group, whichever is lower\.  |  `0` to `9999`  | 
+|  MaxBatchSize  |  The number of instances included in each batch of the rolling update\.  |  One\-third of the minimum size of the Auto Scaling group, rounded to the next highest integer\.  |  `1` to `10000`  | 
+|  MinInstancesInService  |  The minimum number of instances that must be in service within the Auto Scaling group while other instances are terminated\.  |  The minimum size of the Auto Scaling group or one less than the maximum size of the Auto Scaling group, whichever is lower\.  |  `0` to `9999`  | 
 |  RollingUpdateEnabled  |  If `true`, enables rolling updates for an environment\. Rolling updates are useful when you need to make small, frequent updates to your Elastic Beanstalk software application and you want to avoid application downtime\. Setting this value to true automatically enables the `MaxBatchSize`, `MinInstancesInService`, and `PauseTime` options\. Setting any of those options also automatically sets the `RollingUpdateEnabled` option value to `true`\. Setting this option to `false` disables rolling updates\.  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |   `false`   |   `true`   `false`   | 
-|  RollingUpdateType  |  Time\-based rolling updates apply a PauseTime between batches\. Health\-based rolling updates wait for new instances to pass health checks before moving on to the next batch\. [Immutable updates](environmentmgmt-updates-immutable.md) launch a full set of instances in a new AutoScaling group\.  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |   `Time`   |   `Time`   `Health`  `Immutable`  | 
+|  RollingUpdateType  |  Time\-based rolling updates apply a PauseTime between batches\. Health\-based rolling updates wait for new instances to pass health checks before moving on to the next batch\. [Immutable updates](environmentmgmt-updates-immutable.md) launch a full set of instances in a new Auto Scaling group\.  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |   `Time`   |   `Time`   `Health`  `Immutable`  | 
 |  PauseTime  |  The amount of time the Elastic Beanstalk service will wait after it has completed updates to one batch of instances before it continues on to the next batch\.  |  Automatically computed based on instance type and container\.  |  `PT0S`\* \(0 seconds\) to `PT1H` \(1 hour\)  | 
 |  Timeout  |  Maximum amount of time to wait for all instances in a batch of instances to pass health checks before canceling the update\.  |  `PT30M` \(30 minutes\)  |  `PT5M`\* \(5 minutes\) to `PT1H` \(1 hour\) \*[ISO8601 duration](http://en.wikipedia.org/wiki/ISO_8601#Durations) format: `PT#H#M#S` where each \# is the number of hours, minutes, and/or seconds, respectively\.  | 
 
@@ -151,7 +151,7 @@ For more information, see [Auto Scaling group for your Elastic Beanstalk environ
 |  EnableSpot  |  Enable Spot Instance requests for your environment\. When `false`, some options in this namespace don't take effect\.  |  `false`  |  `true` `false`  | 
 |  InstanceTypes  |  A comma\-separated list of instance types you want your environment to use\. For example: `t2.micro,t3.micro` When Spot Instances are disabled \(`EnableSpot` is `false`\), only the first instance type on the list is used\. The first instance type on the list in this option is equivalent to the value of the `InstanceType` option in the [`aws:autoscaling:launchconfiguration`](#command-options-general-autoscalinglaunchconfiguration) namespace\. The latter is obsolete, and we don't recommend using it\. If you specify both, the first instance type on the list in the `InstanceTypes` option is used, and `InstanceType` is ignored\.  Some older AWS accounts might provide Elastic Beanstalk with default instance types that don't support Spot Instances \(for example, t1\.micro\)\. If you enable Spot Instance requests and you get an error about an instance type that doesn’t support Spot, be sure to configure instance types that support Spot\. To choose Spot Instance types, use the [Spot Instance Advisor](https://aws.amazon.com/ec2/spot/instance-advisor/)\.   When you update your environment configuration and remove one or more instance types from the `InstanceTypes` option, Elastic Beanstalk terminates any Amazon EC2 instances running on any of the removed instance types\. Your environment's Auto Scaling group then launches new instances, as necessary to complete the desired capacity, using your current specified instance types\.  |  A list of two instance types\. Varies by account, region, and platform\.  |  `1` to `10` EC2 instance types \(at least two recommended\)  | 
 |  SpotFleetOnDemandBase  |  The minimum number of On\-Demand Instances that your Auto Scaling group provisions before considering Spot Instances as your environment scales up\. This option is relevant only when `EnableSpot` is `true`\.  |  `0`  |  `0` to `MaxSize` option in [`aws:autoscaling:asg`](#command-options-general-autoscalingasg) namespace  | 
-|  SpotFleetOnDemandAboveBasePercentage  |  The percentage of On\-Demand Instances as part of additional capacity that your Auto Scaling group provisions beyond the `SpotOnDemandBase` instances\. This option is relevant only when `EnableSpot` is `true`\.  |  `0` for a Single Instance environment `70` for a Load Balanced environment  |  `0` to `100`  | 
+|  SpotFleetOnDemandAboveBasePercentage  |  The percentage of On\-Demand Instances as part of additional capacity that your Auto Scaling group provisions beyond the `SpotOnDemandBase` instances\. This option is relevant only when `EnableSpot` is `true`\.  |  `0` for a single\-instance environment `70` for a load\-balanced environment  |  `0` to `100`  | 
 |  SpotMaxPrice  |  The maximum price per unit hour, in US$, that you're willing to pay for a Spot Instance\. This option is relevant only when `EnableSpot` is `true`\.  |  On\-Demand price, per instance type\. The option's value in this case is `null`\.  |  `0.001` to `20.0` `null`  | 
 
 ## aws:ec2:vpc<a name="command-options-general-ec2vpc"></a>
@@ -168,7 +168,7 @@ Configure your environment to launch resources in a custom [Amazon Virtual Priva
 |  ELBSubnets  |  The IDs of the subnet or subnets for the elastic load balancer\. If you have multiple subnets, specify the value as a single comma\-delimited string of subnet IDs \(for example, `"subnet-11111111,subnet-22222222"`\)\.  |  None  |   | 
 |  ELBScheme  |  Specify `internal` if you want to create an internal load balancer in your Amazon VPC so that your Elastic Beanstalk application cannot be accessed from outside your Amazon VPC\. If you specify a value other than `public` or `internal`, Elastic Beanstalk will ignore the value\.  |   `public`   |   `public`   `internal`   | 
 |  DBSubnets  |  Contains the IDs of the database subnets\. This is only used if you want to add an Amazon RDS DB Instance as part of your application\. If you have multiple subnets, specify the value as a single comma\-delimited string of subnet IDs \(for example, `"subnet-11111111,subnet-22222222"`\)\.  |  None  |   | 
-|  AssociatePublicIpAddress  |  Specifies whether to launch instances with public IP addresses in your Amazon VPC\. Instances with public IP addresses do not require a NAT device to communicate with the Internet\. You must set the value to `true` if you want to include your load balancer and instances in a single public subnet\. This option has no effect on a single\-instance environment, which always has a single Amazon EC2 instance with an Elastic IP address\. The option is relevant to load\-balancing, autoscaling environments\.  |  None  |   `true`   `false`   | 
+|  AssociatePublicIpAddress  |  Specifies whether to launch instances with public IP addresses in your Amazon VPC\. Instances with public IP addresses do not require a NAT device to communicate with the Internet\. You must set the value to `true` if you want to include your load balancer and instances in a single public subnet\. This option has no effect on a single\-instance environment, which always has a single Amazon EC2 instance with an Elastic IP address\. The option is relevant to load\-balanced, scalable environments\.  |  None  |   `true`   `false`   | 
 
 ## aws:elasticbeanstalk:application<a name="command-options-general-elasticbeanstalkapplication"></a>
 
@@ -248,7 +248,8 @@ Configure your environment's architecture and service role\.
 | --- | --- | --- | --- | 
 |  EnvironmentType  |  Set to `SingleInstance` to launch one EC2 instance with no load balancer\.  |   `LoadBalanced`   |   `SingleInstance`   `LoadBalanced`   | 
 |  ServiceRole  |  The name of an IAM role that Elastic Beanstalk uses to manage resources for the environment\. Specify a role name \(optionally prefixed with a custom path\) or its ARN\. Examples: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html)  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  None  |  IAM role name, path/name, or ARN  | 
-|  LoadBalancerType  |  The type of load balancer for your environment\.  |  `classic`  |  `classic` `application` `network`  | 
+|  LoadBalancerType  |  The type of load balancer for your environment\. For details, see [Load balancer for your Elastic Beanstalk environment](using-features.managing.elb.md)\.  |  `classic`  |  `classic` `application` `network`  | 
+|  LoadBalancerIsShared  |  Determines if the environment's load balancer is dedicated or shared\. This option can only be set for an Application Load Balancer\. It can't be changed after environment creation\. When `false`, the environment has its own dedicated load balancer, created and managed by Elastic Beanstalk\. When `true`, the environment uses a shared load balancer, created by you and specified in the `SharedLoadBalancer` option of the [aws:elbv2:loadbalancer](#command-options-general-elbv2) namespace\.  |   `false`   |   `true`   `false`   | 
 
 ## aws:elasticbeanstalk:environment:process:default<a name="command-options-general-environmentprocess"></a>
 
@@ -321,6 +322,7 @@ Configure enhanced health reporting for your environment\.
 | --- | --- | --- | --- | 
 |  SystemType  |  Health reporting system \([basic](using-features.healthstatus.md) or [enhanced](health-enhanced.md)\)\. Enhanced health reporting requires a [service role](concepts-roles-service.md) and a version 2 or newer [platform version](concepts.platforms.md)\.  If you use the Elastic Beanstalk console or EB CLI to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console and EB CLI override this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |   `basic`   |   `basic`   `enhanced`   | 
 | ConfigDocument | A JSON document describing the environment and instance metrics to publish to CloudWatch\. | None |  | 
+|  EnhancedHealthAuthEnabled  |  Enable authorization for the internal API that Elastic Beanstalk uses to communicate enhanced health information from your environment instances to the Elastic Beanstalk service\. For details, see [Enhanced health roles](health-enhanced.md#health-enhanced-roles)\.  This option is only applicable to enhanced health reporting \(i\.e\. when `SystemType` is set to `enhanced`\)\.   |   `false`   |   `true`   `false`   | 
 |  HealthCheckSuccessThreshold  |  Lower the threshold for instances to pass health checks\.  If you use the Elastic Beanstalk console to create an environment, you can't set this option in a [configuration file](ebextensions.md)\. The console overrides this option with a [recommended value](command-options.md#configuration-options-recommendedvalues)\.   |  `Ok`  |  `Ok` `Warning` `Degraded` `Severe`  | 
 
 ## aws:elasticbeanstalk:hostmanager<a name="command-options-general-elasticbeanstalkhostmanager"></a>
@@ -431,7 +433,7 @@ Run the AWS X\-Ray daemon to relay trace information from your [X\-Ray integrate
 
 ## aws:elb:healthcheck<a name="command-options-general-elbhealthcheck"></a>
 
-Configure healthchecks for a classic load balancer\.
+Configure healthchecks for a Classic Load Balancer\.
 
 
 **Namespace: `aws:elb:healthcheck`**  
@@ -446,7 +448,7 @@ Configure healthchecks for a classic load balancer\.
 
 ## aws:elb:loadbalancer<a name="command-options-general-elbloadbalancer"></a>
 
-Configure your environment's classic load balancer\.
+Configure your environment's Classic Load Balancer\.
 
 Several of the options in this namespace have been deprecated in favor of listener\-specific options in the [aws:elb:listener](#command-options-general-elblistener) namespace\. The deprecated options only let you configure two listeners \(one secure and one unsecure\) on standard ports\.
 
@@ -466,7 +468,7 @@ Several of the options in this namespace have been deprecated in favor of listen
 
 ## aws:elb:listener<a name="command-options-general-elblistener"></a>
 
-Configure the default listener \(port 80\) on a classic load balancer\.
+Configure the default listener \(port 80\) on a Classic Load Balancer\.
 
 
 **Namespace: `aws:elb:listener`**  
@@ -481,7 +483,7 @@ Configure the default listener \(port 80\) on a classic load balancer\.
 
 ## aws:elb:listener:listener\_port<a name="command-options-general-elblistener-listener"></a>
 
-Configure additional listeners on a classic load balancer\.
+Configure additional listeners on a Classic Load Balancer\.
 
 
 **Namespace: `aws:elb:listener:listener_port`**  
@@ -497,7 +499,7 @@ Configure additional listeners on a classic load balancer\.
 
 ## aws:elb:policies<a name="command-options-general-elbpolicies"></a>
 
-Modify the default stickiness and global load balancer policies for a classic load balancer\.
+Modify the default stickiness and global load balancer policies for a Classic Load Balancer\.
 
 
 **Namespace: `aws:elb:policies`**  
@@ -513,7 +515,7 @@ Modify the default stickiness and global load balancer policies for a classic lo
 
 ## aws:elb:policies:policy\_name<a name="command-options-general-elbpolicies-custom"></a>
 
-Create additional load balancer policies for a classic load balancer\.
+Create additional load balancer policies for a Classic Load Balancer\.
 
 
 **Namespace: `aws:elb:policies:policy_name`**  
@@ -533,7 +535,9 @@ Create additional load balancer policies for a classic load balancer\.
 
 ## aws:elbv2:listener:default<a name="command-options-general-elbv2-listener-default"></a>
 
-Configure the default listener \(port 80\) on an application load balancer or a network load balancer\.
+Configure the default listener \(port 80\) on an Application Load Balancer or a Network Load Balancer\.
+
+This namespace doesn't apply to an environment that uses a shared load balancer\. Shared load balancers don't have a default listener\.
 
 
 **Namespace: `aws:elbv2:listener:default`**  
@@ -543,13 +547,16 @@ Configure the default listener \(port 80\) on an application load balancer or a 
 |  DefaultProcess  |  Name of the [process](#command-options-general-environmentprocess) to which to forward traffic when no rules match\.  |  `default`  |  A process name\.  | 
 |  ListenerEnabled  |  Set to `false` to disable the listener\. You can use this option to disable the default listener on port 80\.  |  `true`  |  `true` `false`  | 
 |  Protocol  |  Protocol of traffic to process\.  |  With application load balancer: `HTTP` With network load balancer: `TCP`  |  With application load balancer: `HTTP`, `HTTPS` With network load balancer: `TCP`  | 
-|  Rules  |  List of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener This option is only applicable to environments with an application load balancer\.  |  None  |  Comma separated list of rule names\.  | 
-|  SSLCertificateArns  |  The ARN of the SSL certificate to bind to the listener\. This option is only applicable to environments with an application load balancer\.  |  None  |  The ARN of a certificate stored in IAM or ACM\.  | 
-|  SSLPolicy  |  Specify a security policy to apply to the listener\. This option is only applicable to environments with an application load balancer\.  | None \(ELB default\) |  The name of a load balancer security policy\.  | 
+|  Rules  |  List of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener This option is only applicable to environments with an Application Load Balancer\.  |  None  |  Comma separated list of rule names\.  | 
+|  SSLCertificateArns  |  The ARN of the SSL certificate to bind to the listener\. This option is only applicable to environments with an Application Load Balancer\.  |  None  |  The ARN of a certificate stored in IAM or ACM\.  | 
+|  SSLPolicy  |  Specify a security policy to apply to the listener\. This option is only applicable to environments with an Application Load Balancer\.  | None \(ELB default\) |  The name of a load balancer security policy\.  | 
 
 ## aws:elbv2:listener:listener\_port<a name="command-options-general-elbv2-listener"></a>
 
-Configure additional listeners on an application load balancer or a network load balancer\.
+Configure additional listeners on an Application Load Balancer or a Network Load Balancer\.
+
+**Note**  
+For a shared Application Load Balancer, you can specify only the `Rule` option\. The other options aren't applicable to shared load balancers\.
 
 
 **Namespace: `aws:elbv2:listener:listener_port`**  
@@ -559,13 +566,13 @@ Configure additional listeners on an application load balancer or a network load
 |  DefaultProcess  |  Name of the [process](#command-options-general-environmentprocess) where traffic is forwarded when no rules match\.  |  `default`  |  A process name\.  | 
 |  ListenerEnabled  |  Set to `false` to disable the listener\. You can use this option to disable the default listener on port 80\.  |  `true`  |  `true` `false`  | 
 |  Protocol  |  Protocol of traffic to process\.  |  With application load balancer: `HTTP` With network load balancer: `TCP`  |  With application load balancer: `HTTP`, `HTTPS` With network load balancer: `TCP`  | 
-|  Rules  |  List of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener This option is only applicable to environments with an application load balancer\.  |  None  |  Comma separated list of rule names\.  | 
-|  SSLCertificateArns  |  The ARN of the SSL certificate to bind to the listener\. This option is only applicable to environments with an application load balancer\.  |  None  |  The ARN of a certificate stored in IAM or ACM\.  | 
-|  SSLPolicy  |  Specify a security policy to apply to the listener\. This option is only applicable to environments with an application load balancer\.  | None \(ELB default\) |  The name of a load balancer security policy\.  | 
+|  Rules  |  List of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener This option is applicable only to environments with an Application Load Balancer\. If your environment uses a shared Application Load Balancer, and you don't specify this option for any listener, Elastic Beanstalk automatically associates the `default` rule with a port 80 listener\.  |  None  |  Comma separated list of rule names\.  | 
+|  SSLCertificateArns  |  The ARN of the SSL certificate to bind to the listener\. This option is only applicable to environments with an Application Load Balancer\.  |  None  |  The ARN of a certificate stored in IAM or ACM\.  | 
+|  SSLPolicy  |  Specify a security policy to apply to the listener\. This option is only applicable to environments with an Application Load Balancer\.  | None \(ELB default\) |  The name of a load balancer security policy\.  | 
 
 ## aws:elbv2:listenerrule:rule\_name<a name="command-options-general-elbv2-listenerrule"></a>
 
-Define listener rules for an application load balancer\. If a request matches the host names or paths in a rule, the load balancer forwards it to the specified process\. To use a rule, add it to a listener with the `Rules` option in the [`aws:elbv2:listener:listener_port`](#command-options-general-elbv2-listener) namespace\.
+Define listener rules for an Application Load Balancer\. If a request matches the host names or paths in a rule, the load balancer forwards it to the specified process\. To use a rule, add it to a listener with the `Rules` option in the [`aws:elbv2:listener:listener_port`](#command-options-general-elbv2-listener) namespace\.
 
 **Note**  
 This namespace isn't applicable to environments with a network load balancer\.
@@ -575,17 +582,19 @@ This namespace isn't applicable to environments with a network load balancer\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  HostHeaders  |  List of host names to match\. For example, `my.example.com`\.  |  None  |  Each name can have up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and can include up to three wildcard characters \(`*` matches zero or more characters; `?` matches exactly one character\)\. You can add multiple comma\-separated names\.  | 
-|  PathPatterns  |  Path patterns to match\. For example, `/img/*`\. This option is only applicable to environments with an application load balancer\.  |  None  |  Each pattern can have up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and can include up to three wildcard characters \(`*` matches zero or more characters; `?` matches exactly one character\)\. You can add multiple comma\-separated path patterns\.  | 
-|  Priority  |  Precedence of this rule when multiple rules match\. The lower number takes precedence\. No two rules can have the same priority\.  |  `1`  |  `1` to `1000`  | 
+|  HostHeaders  |  List of host names to match\. For example, `my.example.com`\.  |  Dedicated load balancer: None Shared load balancer: The environment's CNAME  |  Each name can have up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and can include up to three wildcard characters \(`*` matches zero or more characters; `?` matches exactly one character\)\. You can add multiple comma\-separated names\. Application Load Balancer supports up to five combined `HostHeader` and `PathPattern` rules\. For details, see [Host conditions](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#host-conditions) in the *User Guide for Application Load Balancers*\.  | 
+|  PathPatterns  |  Path patterns to match\. For example, `/img/*`\. This option is only applicable to environments with an application load balancer\.  |  None  |  Each pattern can have up to 128 characters \(A\-Z, a\-z, 0\-9, –\) and can include up to three wildcard characters \(`*` matches zero or more characters; `?` matches exactly one character\)\. You can add multiple comma\-separated path patterns\. Application Load Balancer supports up to five combined `HostHeader` and `PathPattern` rules\. For details, see [Path conditions](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-listeners.html#path-conditions) in the *User Guide for Application Load Balancers*\.  | 
+|  Priority  |  Precedence of this rule when multiple rules match\. The lower number takes precedence\. No two rules can have the same priority\. With a shared load balancer, Elastic Beanstalk treats rule priorities as relative across sharing environments, and maps them to absolute priorities during creation\.  |  `1`  |  `1` to `1000`  | 
 |  Process  |  Name of the [process](#command-options-general-environmentprocess) to which to forward traffic when this rule matches the request\.  |  `default`  |  A process name\.  | 
 
 ## aws:elbv2:loadbalancer<a name="command-options-general-elbv2"></a>
 
-Configure an application load balancer\.
+Configure an Application Load Balancer\.
+
+For a shared load balancer, only the `SharedLoadBalancer` and `SecurityGroups` options are valid\.
 
 **Note**  
-This namespace isn't applicable to environments with a network load balancer\.
+This namespace isn't applicable to environments with a Network Load Balancer\.
 
 
 **Namespace: `aws:elbv2:loadbalancer`**  
@@ -597,7 +606,8 @@ This namespace isn't applicable to environments with a network load balancer\.
 |  AccessLogsS3Prefix  |  Prefix to prepend to access log names\. By default, the load balancer uploads logs to a directory named AWSLogs in the bucket you specify\. Specify a prefix to place the AWSLogs directory inside another directory\.  |  None  |   | 
 |  IdleTimeout  |  Time to wait for a request to complete before closing connections to client and instance\.  |  None  |  `1` to `3600`  | 
 |  ManagedSecurityGroup  |  Assign an existing security group to your environment’s load balancer, instead of creating a new one\. To use this setting, update the `SecurityGroups` setting in this namespace to include your security group’s ID, and remove the automatically created security group’s ID, if one exists\. To allow traffic from the load balancer to your environment’s EC2 instances, Elastic Beanstalk adds a rule to the instances’ security group that allows inbound traffic from the managed security group\.  |  The security group that Elastic Beanstalks creates for your load balancer\.  |  A security group ID\.  | 
-|  SecurityGroups  |  List of security groups to attach to the load balancer\.  |  The security group that Elastic Beanstalks creates for your load balancer\.  | Comma separated list of security group IDs\. | 
+|  SecurityGroups  |  List of security groups to attach to the load balancer\. For a shared load balancer, if you don't specify this value, Elastic Beanstalk checks if an existing security group that it manages is already attached to the load balancer\. If not, Elastic Beanstalk creates a security group and attaches it to the load balancer\. Elastic Beanstalk deletes this security group when the last environment sharing the load balancer terminates\. The load balancer security groups are used to set up the Amazon EC2 instance security group ingress rule\.  |  The security group that Elastic Beanstalk creates for your load balancer\.  |  Comma\-separated list of security group IDs\.  | 
+|  SharedLoadBalancer  |  The ARN of a shared load balancer\. This option is relevant only to an Application Load Balancer\. It's required when the `LoadBalancerIsShared` option of the [aws:elasticbeanstalk:environment](#command-options-general-elasticbeanstalkenvironment) namespace is set to `true`\. You can't change the shared load balancer ARN after environment creation\. Criteria for a valid value: [\[See the AWS documentation website for more details\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options-general.html) Example: `arn:aws:elasticloadbalancing:us-east-2:123456789012:loadbalancer/app/FrontEndLB/0dbf78d8ad96abbc`  |  None  |  ARN of a valid load balancer that meets the criteria described here\.  | 
 
 ## aws:rds:dbinstance<a name="command-options-general-rdsdbinstance"></a>
 
