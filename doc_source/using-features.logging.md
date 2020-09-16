@@ -114,6 +114,18 @@ Elastic Beanstalk uses files in subfolders of `/opt/elasticbeanstalk/tasks` \(Li
 
   `/opt/elasticbeanstalk/tasks/publishlogs.d/`
 
+**On Amazon Linux 2:**
+
++ **Tail Logs** –
+
+  `/opt/elasticbeanstalk/config/private/logtasks/tail/`
++ **Bundle Logs** –
+
+  `/opt/elasticbeanstalk/config/private/logtasks/bundle/`
++ **Rotated Logs** –
+
+  `/opt/elasticbeanstalk/config/private/logtasks/publish/`
+
 **On Windows Server:**
 + **Tail Logs** –
 
