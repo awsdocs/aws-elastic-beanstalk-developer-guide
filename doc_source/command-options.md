@@ -38,6 +38,8 @@ For example, both the EB CLI and Elastic Beanstalk console set the configuration
 Because the recommended values are set at the API level, they will override values for the same options that you set in configuration files or saved configurations\. The following options are set:
 
 **Elastic Beanstalk console**
++ Namespace: `aws:autoscaling:asg`
+  Option Names: `HealthCheckType`, `HealthCheckGracePeriod`
 + Namespace: `aws:autoscaling:launchconfiguration`
 
   Option Names: `IamInstanceProfile`, `EC2KeyName`, `InstanceType`
