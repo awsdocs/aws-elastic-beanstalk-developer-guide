@@ -28,7 +28,7 @@ All paths in the `Buildfile` are relative to the root of the source bundle\. In 
 make: ./build.sh
 ```
 
-If you want to provide custom build steps, we recommend that you use `predeploy` platform hooks for anything but the simplest commands, instead of a `Buildfile`\. Platform hooks allow richer scripts and better error handling\. Platform hooks are described in the previous section\.
+If you want to provide custom build steps, we recommend that you use `predeploy` platform hooks for anything but the simplest commands, instead of a `Buildfile`\. Platform hooks allow richer scripts and better error handling\. Platform hooks are described in the next section\.
 
 ### Procfile<a name="platforms-linux-extend.proc"></a>
 
