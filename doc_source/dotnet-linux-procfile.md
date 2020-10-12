@@ -9,8 +9,8 @@ The following example uses a `Procfile` to specify two applications for Elastic 
 **Example Procfile**  
 
 ```
-web: ./dotnet-core-app1/dotnetcoreapp1.dll
-web2: ./dotnet-core-app2/dotnetcoreapp2.dll
+web: dotnet ./dotnet-core-app1/dotnetcoreapp1.dll
+web2: dotnet ./dotnet-core-app2/dotnetcoreapp2.dll
 ```
 
 For details about writing and using a `Procfile`, expand the *Buildfile and Procfile* section in [Extending Elastic Beanstalk Linux platforms](platforms-linux-extend.md)\.
