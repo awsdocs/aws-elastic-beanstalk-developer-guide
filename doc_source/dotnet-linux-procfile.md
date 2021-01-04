@@ -6,6 +6,11 @@ We recommend that you always provide a `Procfile` in the source bundle with your
 
 The following example uses a `Procfile` to specify two applications for Elastic Beanstalk to run on the same web server\.
 
+**Note**  
+Procfile contents should be UTF-8 encoded, without a UTF-8 BOM header
+
+The accidental inclusion of a BOM header (likely inserted if using Visual Studio) can lead to `There is no proc command in proc file` deployment errors as the file is not correctly parsed.
+
 **Example Procfile**  
 
 ```
