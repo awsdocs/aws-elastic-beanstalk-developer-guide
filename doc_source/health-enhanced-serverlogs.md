@@ -106,7 +106,7 @@ The following example shows the log configuration for Apache\.
 
 ```
 LogFormat "%{%s}t\"%U\"%s\"%D\"%D\"%{X-Forwarded-For}i" healthd
-CustomLog "|/usr/sbin/rotatelogs /var/log/httpd/healthd/application.log.%Y-%m-%d-%H 3600" healthd
+CustomLog "|/usr/bin/rotatelogs /var/log/httpd/healthd/application.log.%Y-%m-%d-%H 3600" healthd
 ```
 
 ## Generating logs for enhanced health reporting<a name="health-enhanced-serverlogs.generate"></a>
