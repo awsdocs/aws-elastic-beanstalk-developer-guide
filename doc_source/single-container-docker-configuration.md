@@ -44,8 +44,8 @@ Optionally, you can specify a list of ports in **HostPort**\. **HostPort** entri
   },
   "Ports": [
     {
-      "ContainerPort": 8080,
-      "HostPort": 8000
+      "ContainerPort": "8080",
+      "HostPort": "8000"
     }
   ]
 }
