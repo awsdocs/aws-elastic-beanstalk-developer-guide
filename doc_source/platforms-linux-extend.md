@@ -54,7 +54,7 @@ cache: bin/mycache
 foo: bin/fooapp
 ```
 
-Elastic Beanstalk configures the proxy server to forward requests to your main web application on port 5000, and you can configure this port number\. A common use for a `Procfile` is to pass this port number to your application as a command argument\. For details about proxy configuration, expand the *Reverse proxy configuration* section on this page\.
+Elastic Beanstalk configures the proxy server to forward requests to your main web application on port 8000, and you can configure this port number\. A common use for a `Procfile` is to pass this port number to your application as a command argument\. For details about proxy configuration, expand the *Reverse proxy configuration* section on this page\.
 
 Elastic Beanstalk captures standard output and error streams from `Procfile` processes in log files\. Elastic Beanstalk names the log files after the process and stores them in `/var/log`\. For example, the `web` process in the preceding example generates logs named `web-1.log` and `web-1.error.log` for `stdout` and `stderr`, respectively\.
 
