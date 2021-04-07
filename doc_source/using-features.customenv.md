@@ -12,21 +12,43 @@ A custom AMI also allows you to make changes to low\-level components, such as t
 
 1. In a command window, run a command like the following\. Specify the AWS Region where you want to use your custom AMI, and replace the platform ARN and version number with the Elastic Beanstalk platform that your application is based on\.
 
-   ```
-   $ aws elasticbeanstalk describe-platform-version --region us-east-2 \
-         --platform-arn "arn:aws:elasticbeanstalk:us-east-2::platform/Tomcat 8.5 with Java 8 running on 64bit Amazon Linux/3.1.6" \
-         --query PlatformDescription.CustomAmiList
-   [
-       {
-           "VirtualizationType": "pv",
-           "ImageId": ""
-       },
-       {
-           "VirtualizationType": "hvm",
-           "ImageId": "ami-020ae06fdda6a0f66"
-       }
-   ]
-   ```
+------
+#### [ Mac OS/Linux OS ]
+
+```
+$ aws elasticbeanstalk describe-platform-version --region us-east-2 \
+        --platform-arn "arn:aws:elasticbeanstalk:us-east-2::platform/Tomcat 8.5 with Java 8 running on 64bit Amazon Linux/3.1.6" \
+        --query PlatformDescription.CustomAmiList
+[
+    {
+        "VirtualizationType": "pv",
+        "ImageId": ""
+    },
+    {
+        "VirtualizationType": "hvm",
+        "ImageId": "ami-020ae06fdda6a0f66"
+    }
+]
+```
+
+------
+#### [ Windows OS ]
+
+```
+C:\> aws elasticbeanstalk describe-platform-version --region us-east-2 --platform-arn "arn:aws:elasticbeanstalk:us-east-2::platform/IIS 10.0 running on 64bit Windows Server 2019/2.6.4" --query PlatformDescription.CustomAmiList
+[
+    {
+        "VirtualizationType": "pv",
+        "ImageId": "ami-0c0ad77b87af46a96"
+    },
+    {
+        "VirtualizationType": "hvm",
+        "ImageId": "ami-0318eb094f743ffc7"
+    }
+]
+```
+
+------
 
 1. Take note of the `ImageId` value that looks like `ami-020ae06fdda6a0f66` in the result\.
 
@@ -39,7 +61,7 @@ We recommend that you always use the latest platform version\. When you update t
 It is also possible to create a custom AMI from a community AMI that wasn't published by Elastic Beanstalk\. You can use the latest [Amazon Linux](https://aws.amazon.com/amazon-linux-ami/) AMI as a starting point\. When you launch an environment with a Linux AMI that isn't managed by Elastic Beanstalk, Elastic Beanstalk attempts to install platform software \(language, framework, proxy server, etc\.\) and additional components to support features such as [Enhanced Health Reporting](health-enhanced.md)\. 
 
 **Note**  
-AMIs that aren't managed by Elastic Beanstalk aren't supported for Windows Server\-based Elastic Beanstalk platforms\.
+Windows Server\-based Elastic Beanstalk platforms require the use of the stock Elastic Beanstalk AMI returned from the call to `describe-platform-version`\.
 
 Although Elastic Beanstalk can use an AMI that isn't managed by Elastic Beanstalk, the increase in provisioning time that results from Elastic Beanstalk installing missing components can reduce or eliminate the benefits of creating a custom AMI in the first place\. Other Linux distributions might work with some troubleshooting but are not officially supported\. If your application requires a specific Linux distribution, one alternative is to create a Docker image and run it on the Elastic Beanstalk [Docker platform](single-container-docker.md) or [Multicontainer Docker platform](create_deploy_docker_ecs.md)\.
 
@@ -51,14 +73,14 @@ Although Elastic Beanstalk can use an AMI that isn't managed by Elastic Beanstal
 
 1. Choose **Community AMIs**\.
 
-1. If you identified a base Elastic Beanstalk or Amazon Linux AMI that you want to customize to create a custom AMI, enter its AMI ID in the search box, and then press **Enter**\.
+1. If you identified a base Elastic Beanstalk AMI (e.g. using `describe-platform-version`), or an Amazon Linux AMI that you want to customize to create a custom AMI, enter its AMI ID in the search box, and then press **Enter**\.
 
    You can also search the list for another community AMI that suits your needs\.
 **Note**  
 We recommend that you choose an AMI that uses HVM virtualization\. These AMIs show **Virtualization type: hvm** in their description\.  
 
 ![\[AMI with HVM virtualization type listed on EC2 console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/using-features-customenv-hvm-ami.png)
-For details about instance virtualization types, see [Linux AMI Virtualization Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html) in the *Amazon EC2 User Guide for Linux Instances*\.
+For details about instance virtualization types, see [Linux AMI Virtualization Types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html) in the *Amazon EC2 User Guide for Linux Instances*, or [Windows AMI Virtualization types](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types) in the *Amazon EC2 User Guide for Windows Instances*\.
 
 1. Choose **Select** to select the AMI\.
 
