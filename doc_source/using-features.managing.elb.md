@@ -18,7 +18,7 @@ Elastic Beanstalk supports all three load balancer types\. The following table s
 |  Application Load Balancer  |   ✓ Yes  |   ✓ Yes  | 
 |  Network Load Balancer  |   ✓ Yes  |   ☓ No  | 
 
-By default, Elastic Beanstalk creates an Application Load Balancer for your environment when you enable load balancing with the Elastic Beanstalk console or the EB CLI\. It configures the load balancer to listen for HTTP traffic on port 80 and forward this traffic to instances on the same port\. You can choose the type of load balancer that your environment uses only during environment creation\. Later, you can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.
+By default, Elastic Beanstalk creates a Classic Load Balancer for your environment when you enable load balancing with the Elastic Beanstalk console or the EB CLI\. It configures the load balancer to listen for HTTP traffic on port 80 and forward this traffic to instances on the same port\. You can choose the type of load balancer that your environment uses only during environment creation\. Later, you can change settings to manage the behavior of your running environment's load balancer, but you can't change its type\.
 
 **Note**  
 Your environment must be in a VPC with subnets in at least two Availability Zones to create an Application Load Balancer\. All new AWS accounts include default VPCs that meet this requirement\. If your environment is in a VPC with subnets in only one Availability Zone, it defaults to a Classic Load Balancer\. If you don't have any subnets, you can't enable load balancing\.
