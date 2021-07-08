@@ -48,18 +48,17 @@ container_commands:
 **Note**  
 Avoid committing a configuration file that contains your private key to source control\. After you have tested the configuration and confirmed that it works, store your private key in Amazon S3 and modify the configuration to download it during deployment\. For instructions, see [Storing private keys securely in Amazon S3](https-storingprivatekeys.md)\.
 
-Place the following in a file with the `.conf` extension in the `.ebextensions/nginx/conf.d/` directory of your source bundle \(for example, `.ebextensions/nginx/conf.d/https.conf`\)\. Replace *app\_port* with the port number that your application listens on\. This example configures the nginx server to listen on port 443 using SSL\. For more information about these configuration files on the \.NET Core on Linux platform, see [Configuring the proxy server for your \.NET Core on Linux environment](dotnet-linux-platform-nginx.md)\.
+Place the following in a file with the `.conf` extension in the `.platform/nginx/conf.d/` directory of your source bundle \(for example, `.platform/nginx/conf.d/https.conf`\)\. Replace *app\_port* with the port number that your application listens on (default is 5000)\. This example configures the nginx server to listen on port 443 using SSL\. For more information about these configuration files on the \.NET Core on Linux platform, see [Configuring the proxy server for your \.NET Core on Linux environment](dotnet-linux-platform-nginx.md)\.
 
-**Example \.ebextensions/nginx/conf\.d/https\.conf**  
+**Example \.platform/nginx/conf\.d/https\.conf**  
 
 ```
 # HTTPS server
 
 server {
-    listen       443;
+    listen       443 ssl;
     server_name  localhost;
     
-    ssl                  on;
     ssl_certificate      /etc/pki/tls/certs/server.crt;
     ssl_certificate_key  /etc/pki/tls/certs/server.key;
     
