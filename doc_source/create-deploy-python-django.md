@@ -450,14 +450,14 @@ You can add commands to your `.ebextensions` script that are run when your site 
    ```
    container_commands:
      01_migrate:
-       command: "django-admin.py migrate"
-       leader_only: true
+      command: "source /var/app/venv/*/bin/activate && python3 manage.py migrate"
+      leader_only: true
    option_settings:
      aws:elasticbeanstalk:application:environment:
        DJANGO_SETTINGS_MODULE: ebdjango.settings
    ```
 
-   This configuration file runs the `django-admin.py migrate` command during the deployment process, before starting your application\. Because it runs before the application starts, you must also configure the `DJANGO_SETTINGS_MODULE` environment variable explicitly \(usually `wsgi.py` takes care of this for you during startup\)\. Specifying `leader_only: true` in the command ensures that it is run only once when you're deploying to multiple instances\.
+   This configuration file activates the server's virtual environment and runs the `manage.py migrate` command during the deployment process, before starting your application\. Because it runs before the application starts, you must also configure the `DJANGO_SETTINGS_MODULE` environment variable explicitly \(usually `wsgi.py` takes care of this for you during startup\)\. Specifying `leader_only: true` in the command ensures that it is run only once when you're deploying to multiple instances\.
 
 1. Deploy your application\.
 
