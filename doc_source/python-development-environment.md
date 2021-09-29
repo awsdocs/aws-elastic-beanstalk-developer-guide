@@ -40,6 +40,13 @@ Once you have the prerequisites installed, set up a virtual environment with `vi
 
 **To set up a virtual environment**
 
+
+1. Install virtualenv:
+
+   ```
+   $ pip install virtualenv
+   ```
+
 1. Open a command\-line window and type:
 
    ```
