@@ -20,7 +20,7 @@ You can add a DB instance to your environment by using the Elastic Beanstalk con
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk).
 
-1. In the **Regions** list, select your AWS Region\.
+1. From the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose the name of your environment from the **Environments** list\.
 **Note**  
@@ -80,7 +80,7 @@ You can view and modify configuration settings for your DB instance in the **Dat
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk).
 
-1. In the **Regions** list, select your AWS Region\.
+1. From the **Regions** list, select your AWS Region\.
 
 1. In the navigation pane, choose the name of your environment from the **Environments** list\.
 **Note**  
