@@ -82,7 +82,7 @@ You can view and modify configuration settings for your DB instance in the **Dat
 
 1. In the **Regions** list, select your AWS Region\.
 
-1. In the navigation pane, choose the name of your environments from the **Environments** list\.
+1. In the navigation pane, choose the name of your environment from the **Environments** list\.
 **Note**  
 If you have many environments, use the search bar to filter the environment list\.
 
