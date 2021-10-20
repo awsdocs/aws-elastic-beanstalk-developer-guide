@@ -7,7 +7,7 @@ You can use an [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/la
   + **Public Subnet** – Instances have a public IP address and use an internet gateway to access the internet\.
   + **Private Subnet** – Instances use a NAT device to access the internet\.
 **Note**  
-If you configure [VPC endpoints](vpc-vpce.md) in your VPC to connect to both the `elasticbeanstalk` and `elasticbeanstalk-healthd` services, internet access is optional, and is only required if your application specifically needs it\. Without VPC endpoints, your VPC must have access to the internet\.  
+If you configure [VPC endpoints](vpc-vpce.md) in your VPC to connect to both the `elasticbeanstalk` and `elasticbeanstalk-health` services, internet access is optional, and is only required if your application specifically needs it\. Without VPC endpoints, your VPC must have access to the internet\.  
 The default VPC that Elastic Beanstalk sets up for you provides internet access\.
 
   Elastic Beanstalk doesn't support proxy settings like `HTTPS_PROXY` for configuring a web proxy\.
