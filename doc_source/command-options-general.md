@@ -345,7 +345,7 @@ Configure managed platform updates for your environment\.
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  ManagedActionsEnabled  |  Enable [managed platform updates](environment-platform-update-managed.md#environment-platform-update-managed-namespace)\. When you set this to `true`, you must also specify a `PreferredStartTime` and `UpdateLevel`\.  |   `true`   |   `true`   `false`   | 
+|  ManagedActionsEnabled  |  Enable [managed platform updates](environment-platform-update-managed.md#environment-platform-update-managed-namespace)\. When you set this to `true`, you must also specify a `PreferredStartTime` and `UpdateLevel`\.  |   `false`   |   `true`   `false`   | 
 |  PreferredStartTime  |  Configure a maintenance window for managed actions in UTC\. For example, `"Tue:09:00"`\.  | None | Day and time in *day*:*hour*:*minute* format\. | 
 |  ServiceRoleForManagedUpdates  |  The name of an IAM role that Elastic Beanstalk uses to perform managed platform updates for your environment\. You can use either the same role that you specified for the `ServiceRole` option of the `aws:elasticbeanstalk:environment` namespace, or your account's [managed updates service\-linked role](using-service-linked-roles-managedupdates.md)\. In the latter case, if the account doesn't have a managed\-updates service\-linked role yet, Elastic Beanstalk creates it\.  | None |  Same as `ServiceRole` or `AWSServiceRoleForElasticBeanstalkManagedUpdates`  | 
 
