@@ -18,7 +18,7 @@ For common setup steps and tools that apply to all languages, see [Configuring y
 + [Using a virtual environment](#python-common-setup-venv)
 + [Configuring a Python project for Elastic Beanstalk](#python-common-configuring)
 
-## Installing Python and pip<a name="python-common-prereq"></a>
+## Prerequisites<a name="python-common-prereq"></a>
 
 For all Python applications that you'll deploy with Elastic Beanstalk, these prerequisites are common:
 
@@ -26,7 +26,11 @@ For all Python applications that you'll deploy with Elastic Beanstalk, these pre
 
 1. The `pip` utility, matching your Python version\. This is used to install and list dependencies for your project, so that Elastic Beanstalk knows how to set up your application's environment\.
 
-1. The `virtualenv` package\. This is used to create an environment used to develop and test your application, so that the environment can be replicated by Elastic Beanstalk without installing extra packages that aren't needed by your application\.
+1. The `virtualenv` package\. This is used to create an environment used to develop and test your application, so that the environment can be replicated by Elastic Beanstalk without installing extra packages that aren't needed by your application\. You can install this package with the command 
+   
+   ```
+   $ pip install virtualenv
+   ``` 
 
 1. The `awsebcli` package\. This is used to initialize your application with the files necessary for deploying with Elastic Beanstalk\.
 
