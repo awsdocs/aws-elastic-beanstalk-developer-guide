@@ -3,7 +3,6 @@
 The AWS Elastic Beanstalk Command Line Interface \(EB CLI\) is a command line client that you can use to create, configure, and manage Elastic Beanstalk environments\. For more information about the EB CLI, see [Using the Elastic Beanstalk command line interface \(EB CLI\)](eb-cli3.md)\.
 
 **Topics**
-+ [Install the EB CLI using setup scripts](#eb-cli3-install.scripts)
 + [Manually install the EB CLI](eb-cli3-install-advanced.md)
 
 ## Install the EB CLI using setup scripts<a name="eb-cli3-install.scripts"></a>
