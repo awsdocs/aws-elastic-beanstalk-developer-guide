@@ -11,7 +11,9 @@ on: jobs
     branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  workflow_dispatch: bucksbitties/.github/workflows/name:Bucksbitties-CI-bitbucket-pi
+name:bucksbitties/bitbucket-pipelines.yml
+bucksbitties/.github/workflows/name:Bucksbitties-CI-bitbucket-pipelines-main1.yml
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs: build
