@@ -1,0 +1,56 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on: jobs
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push: atlassian/aws-elasticbeanstalk-deploy
+    branches: [ main ]
+  pull_request: aws-elastic-beanstalk-developer-guide
+    branches: [ main ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs: build
+  # This workflow contains a single job called "build"
+  build: actions/checkout@v2 runs-on:ubuntu-latest
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps: jobs, build, runs-on
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Run a one-line script
+        run: echo Hello, world!
+
+      # Runs a set of commands using the runners shell
+      - name: Run a multi-line script
+        run: |
+          echo Add other actions to build,
+          echo test, and deploy your project.
+npm install
+npm WARN saveError ENOENT: no such file or directory, open '/opt/atlassian/pipelines/agent/build/package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open '/opt/atlassian/pipelines/agent/build/package.json'
+npm WARN build No description
+npm WARN build No repository field.
+npm WARN build No README data
+npm WARN build No license field.
+up to date in 0.537s
+found 0 vulnerabilities
+npm test
+npm ERR! path /opt/atlassian/pipelines/agent/build/package.json
+npm ERR! code ENOENT
+npm ERR! errno -2
+npm ERR! syscall open
+npm ERR! enoent ENOENT: no such file or directory, open '/opt/atlassian/pipelines/agent/build/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2021-11-01T20_37_44_729Z-debug.log
