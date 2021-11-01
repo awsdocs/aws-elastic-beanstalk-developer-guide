@@ -34,3 +34,23 @@ jobs: build
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+npm install
+npm WARN saveError ENOENT: no such file or directory, open '/opt/atlassian/pipelines/agent/build/package.json'
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN enoent ENOENT: no such file or directory, open '/opt/atlassian/pipelines/agent/build/package.json'
+npm WARN build No description
+npm WARN build No repository field.
+npm WARN build No README data
+npm WARN build No license field.
+up to date in 0.537s
+found 0 vulnerabilities
+npm test
+npm ERR! path /opt/atlassian/pipelines/agent/build/package.json
+npm ERR! code ENOENT
+npm ERR! errno -2
+npm ERR! syscall open
+npm ERR! enoent ENOENT: no such file or directory, open '/opt/atlassian/pipelines/agent/build/package.json'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /root/.npm/_logs/2021-11-01T20_37_44_729Z-debug.log
