@@ -1,6 +1,6 @@
 # Setting configuration options during environment creation<a name="environment-configuration-methods-during"></a>
 
-When you create an AWS Elastic Beanstalk environment by using the Elastic Beanstalk console, EB CLI, AWS CLI, an SDK, or the Elastic Beanstalk API, you can provide values for configuration options to customize your environment and the AWS resources that are launched within it\.
+When you create an AWS Elastic Beanstalk environment by using the Elastic Beanstalk console, EB CLI, AWS CLI, and SDK, or the Elastic Beanstalk API, you can provide values for configuration options to customize your environment and the AWS resources that are launched within it\.
 
 For anything other than a one\-off configuration change, you can [store configuration files](environment-configuration-methods-before.md) locally, in your source bundle, or in Amazon S3\.
 
