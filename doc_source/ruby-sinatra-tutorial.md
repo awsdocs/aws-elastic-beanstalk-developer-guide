@@ -13,9 +13,9 @@ To follow the procedures in this guide, you will need a command line terminal or
 this is output
 ```
 
-On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
+On Linux and macOS, you can use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Sinatra requires Ruby 1\.9 or newer\. In this tutorial we use Ruby 2\.5\.1 and the corresponding Elastic Beanstalk platform version\. Install Ruby by following the instructions at [Setting up your Ruby development environment](ruby-development-environment.md)\.
+Sinatra 2\.1\.0 requires Ruby 2\.3\.0 or newer\. In this tutorial we use Ruby 3\.0\.2 and the corresponding Elastic Beanstalk platform version\. Install Ruby by following the instructions at [Setting up your Ruby development environment](ruby-development-environment.md)\.
 
 ## Launch an Elastic Beanstalk environment<a name="ruby-sinatra-tutorial-launch"></a>
 
@@ -37,6 +37,10 @@ Environment creation takes about 5 minutes and creates the following resources:
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
   Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or NGINX as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
+**Important**  
+The *Let's Encrypt* cross\-signed DST Root CA X3 certificate *expired* on *September 30, 2021*\. Due to this, Beanstalk environments running on the Amazon Linux 2 and Amazon Linux AMI operating systems might not be able to connect to servers using *Let's Encrypt* certificates\.  
+On October 3, 2021 Elastic Beanstalk released new platform versions for Amazon Linux AMI and Amazon Linux 2 with the updated CA certificates\. To receive these updates and address this issue turn on [Managed Updates](environment-platform-update-managed.md) or [update your platforms manually](using-features.platform.upgrade.md#using-features.platform.upgrade.config)\. For more information, see the [platform update release notes](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2021-10-03-linux.html) in the *AWS Elastic Beanstalk Release Notes*\.  
+You can also apply the manual workarounds described in this [AWS Knowledge Center article](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-expired-certificate/)\. Since Elastic Beanstalk provides AMIs with locked GUIDs, we recommend that you use the sudo yum install command in the article\. Alternatively, you can also use the sudo sed command in the article if you prefer to manually modify the system in place\.
 + **Instance security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
 + **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
 + **Load balancer security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
@@ -79,6 +83,36 @@ The Amazon S3 bucket that Elastic Beanstalk creates is shared between environmen
    ```
    source 'https://rubygems.org'
    gem 'sinatra'
+   gem 'puma'
+   ```
+
+1. Run bundle install to generate the `Gemfile.lock`  
+**Example**  
+
+   ```
+   ~/eb-sinatra$ bundle install
+   Fetching gem metadata from https://rubygems.org/....
+   Resolving dependencies...
+   Using bundler 2.2.22
+   Using rack 2.2.3
+   ...
+   ```
+
+1. In order for Elastic Beanstalk to successfully deploy the application on the Ruby platform, we need to update `Gemfile.lock`\. Some dependencies of `Gemfile.lock ` might be platform specific\. Therefore, we need to add **platform ruby** to `Gemfile.lock` so that all required dependencies are installed with the deployment\.  
+**Example**  
+
+   ```
+   ~/eb-sinatra$ bundle lock --add-platform ruby
+   Fetching gem metadata from https://rubygems.org/....
+   Resolving dependencies...
+   Writing lockfile to /Users/janedoe/EBDPT/RubyApps/eb-sinatra/Gemfile.lock
+   ```
+
+1. Create a Procfile with the following contents\.  
+**Example Procfile**  
+
+   ```
+   web: bundle exec puma -C /opt/elasticbeanstalk/config/private/pumaconf.rb
    ```
 
 ## Deploy your application<a name="ruby-sinatra-tutorial-deploy"></a>

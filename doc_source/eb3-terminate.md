@@ -2,14 +2,16 @@
 
 ## Description<a name="eb3-terminatedescription"></a>
 
-Terminates the running environment so that you do not incur charges for unused AWS resources\.
+Terminates the running environment so that you don't incur charges for unused AWS resources\.
 
-Using the `--all` option, deletes the application that the current directory was initialized to using [eb init](eb3-init.md)\. The command terminates all environments in the application, terminates the application's [application versions](applications-versions.md) and [saved configurations](environment-configuration-savedconfig.md), and then deletes the application\.
+Using the `--all` option, deletes the application that the current directory was initialized to using [eb init](eb3-init.md)\. The command terminates all environments in the application\. It also terminates the [application versions](applications-versions.md) and [saved configurations](environment-configuration-savedconfig.md) for the application, and then deletes the application\.
 
 If the root directory contains a `platform.yaml` file specifying a custom platform, this command terminates the running custom environment\.
 
 **Note**  
-You can always launch a new environment using the same version later\. If you have data from an environment that you would like to preserve, create a snapshot of your current database instance before you terminate the environment\. You can later use it as the basis for new DB instance when you create a new environment\. For more information, see [Creating a DB Snapshot](http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_CreateSnapshot.html) in the *Amazon Relational Database Service User Guide*\.
+You can always launch a new environment using the same version later\. If you have data from an environment that you want to preserve, set the database deletion policy to `Retain` before terminating the environment\. This keeps the database operational outside of Elastic Beanstalk\. After this, any Elastic Beanstalk environments must connect to it as an external database\. If you want to back up the data without keeping the database operational, set the deletion policy to take a snapshot of the database before terminating the environment\. For more information, see [Database lifecycle](using-features.managing.db.md#environments-cfg-rds-lifecycle) in the *Configuring environments* chapter of this guide\.
+
+
 
 ## Syntax<a name="eb3-terminatesyntax"></a>
 
@@ -25,8 +27,8 @@ You can always launch a new environment using the same version later\. If you ha
 |  Name  |  Description  | 
 | --- | --- | 
 |  `--all`  |  Terminates all environments in the application, the application's [application versions](applications-versions.md), and its [saved configurations](environment-configuration-savedconfig.md), and then deletes the application\.  | 
-|  `--force`  |  Terminate the environment without prompting for confirmation\.  | 
-|  `--ignore-links`  |  Terminate the environment even if there are dependent environments with links to it\. See [Compose Environments](ebcli-compose.md)\.  | 
+|  `--force`  |  Terminates the environment without prompting for confirmation\.  | 
+|  `--ignore-links`  |  Terminates the environment even if there are dependent environments with links to it\. See [Compose Environments](ebcli-compose.md)\.  | 
 |  `--timeout`  |  The number of minutes before the command times out\.  | 
 
 ## Output<a name="eb3-terminateoutput"></a>

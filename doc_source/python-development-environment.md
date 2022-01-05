@@ -9,12 +9,12 @@ To follow the procedures in this guide, you will need a command line terminal or
 this is output
 ```
 
-On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
+On Linux and macOS, you can use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
 For common setup steps and tools that apply to all languages, see [Configuring your development machine for use with Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
-+ [Installing Python and pip](#python-common-prereq)
++ [Prerequisites](#python-common-prereq)
 + [Using a virtual environment](#python-common-setup-venv)
 + [Configuring a Python project for Elastic Beanstalk](#python-common-configuring)
 
@@ -26,15 +26,15 @@ For all Python applications that you'll deploy with Elastic Beanstalk, these pre
 
 1. The `pip` utility, matching your Python version\. This is used to install and list dependencies for your project, so that Elastic Beanstalk knows how to set up your application's environment\.
 
-1. The `virtualenv` package\. This is used to create an environment used to develop and test your application, so that the environment can be replicated by Elastic Beanstalk without installing extra packages that aren't needed by your application\. You can install this package with the command 
-   
-   ```
-   $ pip install virtualenv
-   ``` 
-
-1. The `awsebcli` package\. This is used to initialize your application with the files necessary for deploying with Elastic Beanstalk\.
+1. The AWS Elastic Beanstalk Command Line Interface \(EB CLI\)\. This is used to initialize your application with the files necessary for deploying with Elastic Beanstalk\.
 
 1. A working `ssh` installation\. This is used to connect with your running instances when you need to examine or debug a deployment\.
+
+1. The `virtualenv` package\. This is used to create an environment used to develop and test your application, so that the environment can be replicated by Elastic Beanstalk without installing extra packages that aren't needed by your application\. Install this package with the following command:
+
+   ```
+   $ pip install virtualenv
+   ```
 
 For instructions on installing Python, pip, and the EB CLI, see [Install the EB CLI](eb-cli3-install.md)\.
 

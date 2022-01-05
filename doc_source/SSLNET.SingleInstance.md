@@ -18,7 +18,7 @@ files:
     content: |
       import-module webadministration
       ## Settings - replace the following values with your own
-      $bucket = "my-bucket"        ## S3 bucket name
+      $bucket = "DOC-EXAMPLE-BUCKET"        ## S3 bucket name
       $certkey = "example.com.pfx" ## S3 object key for your PFX certificate
       $pwdkey = "password.txt"     ## S3 object key for a text file containing the certificate's password
       ##

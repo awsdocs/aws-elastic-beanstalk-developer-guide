@@ -15,7 +15,7 @@ You might want to set up different AWS accounts to perform different tasks, such
 
 1. In the **Secret Access Key** text box, type your AWS secret key\. 
 
-   For API access, you need an access key ID and secret access key\. Use IAM user access keys instead of AWS account root user access keys\. For more information about creating access keys, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in the *IAM User Guide*\. 
+   For API access, you need an access key ID and secret access key\. Use IAM user access keys instead of AWS account root user access keys\. For more information about creating access keys, see [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in the *IAM User Guide*\. 
 
 1. Click **OK**\. 
 

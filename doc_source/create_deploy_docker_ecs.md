@@ -1,16 +1,15 @@
-# Multicontainer Docker environments<a name="create_deploy_docker_ecs"></a>
-
- You can create docker environments that support multiple containers per Amazon EC2 instance with multicontainer Docker platform for Elastic Beanstalk\. 
-
- Elastic Beanstalk uses Amazon Elastic Container Service \(Amazon ECS\) to coordinate container deployments to multicontainer Docker environments\. Amazon ECS provides tools to manage a cluster of instances running Docker containers\. Elastic Beanstalk takes care of Amazon ECS tasks including cluster creation, task definition and execution\. 
+# Using the Multicontainer Docker platform \(Amazon Linux AMI\)<a name="create_deploy_docker_ecs"></a>
 
 **Note**  
-Some regions don't offer Amazon ECS\. Multicontainer Docker environments aren't supported in these regions\.  
-For information about the AWS services offered in each region, see [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)\.
+ This platform only supports the Amazon Linux AMI operating system \(preceding Amazon Linux 2\)\. Multicontainer Docker functionality on Amazon Linux 2 is provided by the [Docker](docker.md) platform and receives long\-term support\.\. 
+
+If your Elastic Beanstalk Docker environment uses an Amazon Linux AMI platform version \(preceding Amazon Linux 2\), you can create docker environments that support multiple containers per Amazon EC2 instance with multicontainer Docker platform for Elastic Beanstalk\. 
+
+ Elastic Beanstalk uses Amazon Elastic Container Service \(Amazon ECS\) to coordinate container deployments to multicontainer Docker environments\. Amazon ECS provides tools to manage a cluster of instances running Docker containers\. Elastic Beanstalk takes care of Amazon ECS tasks including cluster creation, task definition and execution\. The instances in the environment each run the same set of containers, which are defined in a `Dockerrun.aws.json` file\. 
 
 **Topics**
 + [Multicontainer Docker platform](#create_deploy_docker_ecs_platform)
-+ [Dockerrun\.aws\.json file](#create_deploy_docker_ecs_dockerrun)
++ [`Dockerrun.aws.json` file](#create_deploy_docker_ecs_dockerrun)
 + [Docker images](#create_deploy_docker_ecs_images)
 + [Container instance role](#create_deploy_docker_ecs_role)
 + [Amazon ECS resources created by Elastic Beanstalk](#create_deploy_docker_ecs_resources)
@@ -18,6 +17,7 @@ For information about the AWS services offered in each region, see [Region Table
 + [Failed container deployments](#create_deploy_docker_ecs_rollback)
 + [Multicontainer Docker configuration](create_deploy_docker_v2config.md)
 + [Multicontainer Docker environments with the Elastic Beanstalk console](create_deploy_docker_ecstutorial.md)
++ [Migrating to the Docker Amazon Linux 2 Platform](docker-multicontainer-migration.md)
 
 ## Multicontainer Docker platform<a name="create_deploy_docker_ecs_platform"></a>
 
@@ -27,14 +27,14 @@ The following diagram shows an example Elastic Beanstalk environment configured 
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-multicontainer-docker-example.png)
 
-## Dockerrun\.aws\.json file<a name="create_deploy_docker_ecs_dockerrun"></a>
+## `Dockerrun.aws.json` file<a name="create_deploy_docker_ecs_dockerrun"></a>
 
  Container instances—Amazon EC2 instances running Multicontainer Docker in an Elastic Beanstalk environment—require a configuration file named `Dockerrun.aws.json`\. This file is specific to Elastic Beanstalk and can be used alone or combined with source code and content in a [source bundle](applications-sourcebundle.md) to create an environment on a Docker platform\. 
 
 **Note**  
  Version 1 of the `Dockerrun.aws.json` format is used to launch a single Docker container to an Elastic Beanstalk environment\. Version 2 adds support for multiple containers per Amazon EC2 instance and can only be used with the multicontainer Docker platform\. The format differs significantly from the previous version which is detailed under [Docker configuration](single-container-docker-configuration.md) 
 
- See [Dockerrun\.aws\.json v2](create_deploy_docker_v2config.md#create_deploy_docker_v2config_dockerrun) for details on the updated format and an example file\. 
+ See [`Dockerrun.aws.json` v2](create_deploy_docker_v2config.md#create_deploy_docker_v2config_dockerrun) for details on the updated format and an example file\. 
 
 ## Docker images<a name="create_deploy_docker_ecs_images"></a>
 
@@ -136,7 +136,7 @@ For more information on the configuration file format, see [Adding and customizi
 ]
 ```
 
-See [Dockerrun\.aws\.json v2](create_deploy_docker_v2config.md#create_deploy_docker_v2config_dockerrun) for details on the `Dockerrun.aws.json` file format\. 
+See [`Dockerrun.aws.json` v2](create_deploy_docker_v2config.md#create_deploy_docker_v2config_dockerrun) for details on the `Dockerrun.aws.json` file format\. 
 
 ## Failed container deployments<a name="create_deploy_docker_ecs_rollback"></a>
 

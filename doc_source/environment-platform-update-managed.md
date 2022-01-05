@@ -46,7 +46,7 @@ Managed platform updates depend on [enhanced health reporting](health-enhanced.m
 
 ## Permissions required to perform managed platform updates<a name="environment-platform-update-managed-perms"></a>
 
-Elastic Beanstalk needs permission to initiate a platform update on your behalf\. To gain these permissions, Elastic Beanstalk assumes the *managed\-updates service role*\. When you use the default [service role](iam-servicerole.md) for your environment, the Elastic Beanstalk console uses it as the managed\-updates service role too\. The console assigns the [`AWSElasticBeanstalkService`](iam-servicerole.md#iam-servicerole-update) managed policy to your service role\. This policy has all permissions that Elastic Beanstalk needs to perform managed platform updates\.
+Elastic Beanstalk needs permission to initiate a platform update on your behalf\. To gain these permissions, Elastic Beanstalk assumes the *managed\-updates service role*\. When you use the default [service role](iam-servicerole.md) for your environment, the Elastic Beanstalk console uses it as the managed\-updates service role too\. The console assigns the [`AWSElasticBeanstalkManagedUpdatesCustomerRolePolicy`](iam-servicerole.md#iam-servicerole-update) managed policy to your service role\. This policy has all permissions that Elastic Beanstalk needs to perform managed platform updates\.
 
 For details about other ways to set the managed\-updates service role, see [Managing Elastic Beanstalk service roles](iam-servicerole.md)\.
 

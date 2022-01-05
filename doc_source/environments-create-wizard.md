@@ -21,11 +21,11 @@ You can create a new environment from two types of platforms:
 
 **Managed platform**
 
-In most cases you use an Elastic Beanstalk managed platform for your new environment\. When the new environment wizard starts, it selects the **Managed platform** option by default, as shown in the following screenshot\.
+In most cases you use an Elastic Beanstalk managed platform for your new environment\. When the new environment wizard starts, it selects the **Managed platform** option by default\.
 
 ![\[Managed platform option in the create new environment wizard\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-defaultenvironment.png)
 
-Select a platform, a platform branch within that platform, and a specific platfotrm version in the branch\. When you select a platform branch, the recommended version within the branch is selected by default\. In addition, you can select any platform version you've used before\.
+Select a platform, a platform branch within that platform, and a specific platform version in the branch\. When you select a platform branch, the recommended version within the branch is selected by default\. In addition, you can select any platform version you've used before\.
 
 **Note**  
 For a production environment, we recommend that you choose a platform version in a supported platform branch\. For details about platform branch states, see the *Platform Branch* definition in the [Elastic Beanstalk platforms glossary](platforms-glossary.md)\.
@@ -45,7 +45,7 @@ You have several options:
 + You can use code that you already deployed to Elastic Beanstalk\. Choose **Existing version** and your application in the **Application code** section\.
 + You can upload new code\. Choose **Upload your code**, and then choose **Upload**\. You can upload new application code from a local file, or you can specify the URL for the Amazon S3 bucket that contains your application code\.
 **Note**  
-Depending on the platform version you selected, you can upload your application in a ZIP [source bundle](applications-sourcebundle.md), a [WAR file](java-tomcat-platform.md), or a [plaintext Docker configuration](single-container-docker.md)\. The file size limit is 512 MB\.
+Depending on the platform version you selected, you can upload your application in a ZIP [source bundle](applications-sourcebundle.md), a [WAR file](java-tomcat-platform.md), or a [plaintext Docker configuration](docker.md)\. The file size limit is 512 MB\.
 
   When you choose to upload new code, you can also provide tags to associate with your new code\. For more information about tagging an application version, see [Tagging application versions](applications-versions-tagging.md)\.  
 ![\[Uploading new application code in the create new environment wizard of the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-environment-appcode-upload.png)
@@ -99,7 +99,7 @@ Use the **Modify software** configuration page to configure the software on the 
 
 #### Instances<a name="environments-create-wizard-instances"></a>
 
-Use the **Modify instances** configuration page to configure the Amazon EC2 instances that run your application\. For details, see [Your Elastic Beanstalk environment's Amazon EC2 instances](using-features.managing.ec2.md)\.
+Use the **Modify instances** configuration page to configure the Amazon EC2 instances that run your application\. For details, see [The Amazon EC2 instances for your Elastic Beanstalk environment](using-features.managing.ec2.md)\.
 
 ![\[Modify instances configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-instances.png)
 
@@ -112,7 +112,7 @@ A load\-balanced environment can run multiple instances for high availability an
 **Warning**  
 A single\-instance environment isn't production ready\. If the instance becomes unstable during deployment, or Elastic Beanstalk terminates and restarts the instance during a configuration update, your application can be unavailable for a period of time\. Use single\-instance environments for development, testing, or staging\. Use load\-balanced environments for production\.
 
-For more information about environment capacity settings, see [Auto Scaling group for your Elastic Beanstalk environment](using-features.managing.as.md)\.
+For more information about environment capacity settings, see [Auto Scaling group for your Elastic Beanstalk environment](using-features.managing.as.md) and [The Amazon EC2 instances for your Elastic Beanstalk environment](using-features.managing.ec2.md)\.
 
 ![\[Modify capacity configuration page\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-capacity.png)
 

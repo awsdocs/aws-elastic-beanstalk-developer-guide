@@ -1,6 +1,6 @@
 # Running a Docker environment locally with the EB CLI<a name="create_deploy_docker-eblocal"></a>
 
-You can use the Elastic Beanstalk Command Line Interface \(EB CLI\) to run the Docker containers configured in your AWS Elastic Beanstalk application locally\. The EB CLI uses the Docker configuration file \(Dockerfile or Dockerrun\.aws\.json\) and source code in your project directory to run your application locally in Docker\.
+You can use the Elastic Beanstalk Command Line Interface \(EB CLI\) to run the Docker containers configured in your AWS Elastic Beanstalk application locally\. The EB CLI uses the Docker configuration file \(`Dockerfile` or `Dockerrun.aws.json`\) and source code in your project directory to run your application locally in Docker\.
 
 The EB CLI supports locally running applications defined using the Docker, Multicontainer Docker, and Preconfigured Docker platforms\.
 
@@ -38,6 +38,8 @@ The EB CLI supports locally running applications defined using the Docker, Multi
 + w3m \(optional\)
 
   W3m is a web browser that you can use to view your running web application within a command line terminal with eb local run\. If you are using the command line in a desktop environment, you don't need w3m\.
+
+  
 
 Docker containers run locally without emulating AWS resources that are provisioned when you deploy an application to Elastic Beanstalk, including security groups and data or worker tiers\.
 

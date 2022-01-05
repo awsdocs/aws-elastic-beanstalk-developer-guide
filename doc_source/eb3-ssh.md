@@ -9,6 +9,8 @@ Connect to a Linux Amazon EC2 instance in your environment using Secure Shell \(
 
 If the root directory contains a `platform.yaml` file specifying a custom platform, this command also connects to instances in the custom environment\.
 
+ 
+
 **SSH keys**  
 If you have not previously configured SSH, you can use the EB CLI to create a key when running eb init\. If you have already run eb init, run it again with the `--interactive` option and select **Yes** and **Create New Keypair** when prompted to set up SSH\. Keys created during this process will be stored in the proper folder by the EB CLI\.
 

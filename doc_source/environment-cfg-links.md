@@ -24,7 +24,7 @@ When you create an environment with an application version that includes the abo
 To use environment links, add an environment manifest to your application source and upload it with the EB CLI, AWS CLI or an SDK\. If you use the AWS CLI or an SDK, set the `process` flag when you call `CreateApplicationVersion`: 
 
 ```
-$ aws elasticbeanstalk create-application-version --process --application-name my-app --version-label frontend-v1 --source-bundle S3Bucket="my-bucket",S3Key="front-v1.zip"
+$ aws elasticbeanstalk create-application-version --process --application-name my-app --version-label frontend-v1 --source-bundle S3Bucket="DOC-EXAMPLE-BUCKET",S3Key="front-v1.zip"
 ```
 
 This option tells Elastic Beanstalk to validate the environment manifest and configuration files in your source bundle when you create the application version\. The EB CLI sets this flag automatically when you have an environment manifest in your project directory\.

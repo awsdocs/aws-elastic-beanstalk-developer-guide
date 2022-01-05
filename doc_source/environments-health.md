@@ -7,6 +7,7 @@ When you are running a production website, it is important to know that your app
 + [Basic health reporting](using-features.healthstatus.md)
 + [Enhanced health reporting and monitoring](health-enhanced.md)
 + [Manage alarms](using-features.alarms.md)
++ [Viewing an Elastic Beanstalk environment's change history](using-features.changehistory.md)
 + [Viewing an Elastic Beanstalk environment's event stream](using-features.events.md)
 + [Listing and connecting to server instances](using-features.ec2connect.md)
 + [Viewing logs from Amazon EC2 instances in your Elastic Beanstalk environment](using-features.logging.md)

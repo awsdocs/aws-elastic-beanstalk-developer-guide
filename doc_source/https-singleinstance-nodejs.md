@@ -49,6 +49,7 @@ files:
               proxy_set_header        X-Forwarded-Proto https;
           }
       }
+      
   /etc/pki/tls/certs/server.crt:
     mode: "000400"
     owner: root

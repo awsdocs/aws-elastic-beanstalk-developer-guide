@@ -4,6 +4,8 @@
 
 Configures the EB CLI to [deploy from a CodeCommit repository](eb-cli-codecommit.md), or disables CodeCommit integration and uploads the source bundle from your local machine\.
 
+
+
 **Note**  
 Some AWS Regions don't offer CodeCommit\. The integration between Elastic Beanstalk and CodeCommit doesn't work in these Regions\.  
 For information about the AWS services offered in each Region, see [Region Table](https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/)\.
@@ -46,7 +48,7 @@ Select a repository
 (default is 1): 1
 
 Select a branch
-1) master
+1) mainline
 2) test
 3) [ Create new Branch with local HEAD ]
 (default is 1): 1
@@ -58,6 +60,6 @@ Use eb codesource local to disable CodeCommit integration for the current branch
 ~/my-app$ eb codesource local
 Current CodeCommit setup:
   Repository: my-app
-  Branch: master
+  Branch: mainline
 Default set to use local sources
 ```

@@ -8,6 +8,8 @@ Elastic Beanstalk provides single page sample applications for each platform as 
 
 The single page samples are the same code that you get when you create an environment without supplying your own source code\. The more complex examples are hosted on GitHub and may need to be compiled or built prior to deploying to an Elastic Beanstalk environment\.
 
+ 
+
 
 **Samples**  
 
@@ -30,7 +32,7 @@ Download any of the sample applications and deploy it to Elastic Beanstalk by fo
 1. On the application overview page, choose **Create a new environment**\.  
 ![\[The application overview page with a list of application environments on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-mgmt-environments.png)
 
-1. Choose the **Web server environment** or **Worker environment** [environment tier](concepts.md#concepts-tier)\. You can't change an environment's tier after creation\.
+1. Next, for environment tier, choose the **Web server environment** or **Worker environment** [environment tier](concepts.md#concepts-tier)\. You can't change an environment's tier after creation\.
 **Note**  
 The [\.NET on Windows Server platform](create_deploy_NET.md) doesn't support the worker environment tier\.  
 ![\[The Select environment tier page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-choosetier.png)
@@ -45,6 +47,7 @@ Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most o
    + Environment name
    + Domain name
    + Platform version
+   + Processor
    + VPC
    + Tier
 

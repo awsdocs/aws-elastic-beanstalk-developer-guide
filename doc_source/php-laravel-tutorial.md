@@ -23,9 +23,11 @@ To follow the procedures in this guide, you will need a command line terminal or
 this is output
 ```
 
-On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
+On Linux and macOS, you can use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Laravel requires PHP 5\.5\.9 or later and the `mbstring` extension for PHP\. In this tutorial we use PHP 7\.0 and the corresponding Elastic Beanstalk platform version\. Install PHP and Composer by following the instructions at [Setting up your PHP development environment](php-development-environment.md)\.
+Laravel 6 requires PHP 7\.2 or later\. It also requires the PHP extensions listed in the [server requirements](https://laravel.com/docs/6.x/installation#server-requirements) topic in the official Laravel documentation\. Follow the instructions in the topic [Setting up your PHP development environment](php-development-environment.md) to install PHP and Composer\.
+
+For Laravel support and maintenance information, see the [support policy](https://laravel.com/docs/master/releases#support-policy) topic on the official Laravel documentation\.
 
 ## Launch an Elastic Beanstalk environment<a name="php-laravel-tutorial-launch"></a>
 
@@ -47,6 +49,10 @@ Environment creation takes about 5 minutes and creates the following resources:
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
   Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or NGINX as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
+**Important**  
+The *Let's Encrypt* cross\-signed DST Root CA X3 certificate *expired* on *September 30, 2021*\. Due to this, Beanstalk environments running on the Amazon Linux 2 and Amazon Linux AMI operating systems might not be able to connect to servers using *Let's Encrypt* certificates\.  
+On October 3, 2021 Elastic Beanstalk released new platform versions for Amazon Linux AMI and Amazon Linux 2 with the updated CA certificates\. To receive these updates and address this issue turn on [Managed Updates](environment-platform-update-managed.md) or [update your platforms manually](using-features.platform.upgrade.md#using-features.platform.upgrade.config)\. For more information, see the [platform update release notes](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2021-10-03-linux.html) in the *AWS Elastic Beanstalk Release Notes*\.  
+You can also apply the manual workarounds described in this [AWS Knowledge Center article](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-expired-certificate/)\. Since Elastic Beanstalk provides AMIs with locked GUIDs, we recommend that you use the sudo yum install command in the article\. Alternatively, you can also use the sudo sed command in the article if you prefer to manually modify the system in place\.
 + **Instance security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
 + **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
 + **Load balancer security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
@@ -67,26 +73,11 @@ Composer can install Laravel and create a working project with one command:
 
 ```
 ~$ composer create-project --prefer-dist laravel/laravel eb-laravel
-Installing laravel/laravel (v5.5.28)
-  - Installing laravel/laravel (v5.5.28): Downloading (100%)
-Created project in eb-laravel
-> @php -r "file_exists('.env') || copy('.env.example', '.env');"
-Loading composer repositories with package information
-Updating dependencies (including require-dev)
-
-Package operations: 70 installs, 0 updates, 0 removals
-  - Installing symfony/thanks (v1.0.7): Downloading (100%)
-  - Installing hamcrest/hamcrest-php (v2.0.0): Downloading (100%)
-  - Installing mockery/mockery (1.0): Downloading (100%)
-  - Installing vlucas/phpdotenv (v2.4.0): Downloading (100%)
-  - Installing symfony/css-selector (v3.4.8): Downloading (100%)
-  - Installing tijsverkoyen/css-to-inline-styles (2.2.1): Downloading (100%)
-...
 ```
 
 Composer installs Laravel and its dependencies, and generates a default project\.
 
-If you run into any issues installing Laravel, go to the installation topic in the official documentation: [https://laravel\.com/docs/5\.2](https://laravel.com/docs/5.2)
+If you run into any issues installing Laravel, go to the installation topic in the official documentation: [https://laravel\.com/docs/6\.x](https://laravel.com/docs/6.x)\. 
 
 ## Deploy your application<a name="php-laravel-tutorial-deploy"></a>
 
@@ -123,11 +114,11 @@ When the deployment completes, click the URL to open your Laravel application in
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-laravel-403.png)
 
-What's this? By default, Elastic Beanstalk serves the root of your project at the root path of the web site\. In this case, though, the default page \(`index.php`\) is one level down in the `public` folder\. You can verify this by adding `/public` to the URL\. For example, `http://laravel.us-east-2.elasticbeanstalk.com/public`\.
+What's this? By default, Elastic Beanstalk serves the root of your project at the root path of the website\. In this case, though, the default page \(`index.php`\) is one level down in the `public` folder\. You can verify this by adding `/public` to the URL\. For example, `http://laravel.us-east-2.elasticbeanstalk.com/public`\.
 
-To serve the Laravel application at the root path, use the Elastic Beanstalk console to configure the *document root* for the web site\.
+To serve the Laravel application at the root path, use the Elastic Beanstalk console to configure the *document root* for the website\.
 
-**To configure your web site's document root**
+**To configure your website's document root**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
@@ -153,9 +144,6 @@ So far, so good\. Next you'll add a database to your environment and configure L
 
 Launch an RDS DB instance in your Elastic Beanstalk environment\. You can use MySQL, SQLServer, or PostgreSQL databases with Laravel on Elastic Beanstalk\. For this example, we'll use MySQL\.
 
-**Note**  
-Running an Amazon RDS instance in your Elastic Beanstalk environment is great for development and testing, but it ties the lifecycle of your database to your environment\. See [Launching and connecting to an external Amazon RDS instance in a default VPC](rds-external-defaultvpc.md) for instructions on connecting to a database running outside of your environment\.
-
 **To add an RDS DB instance to your Elastic Beanstalk environment**
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
@@ -174,7 +162,9 @@ If you have many environments, use the search bar to filter the environment list
 
 1. Choose **Apply**\.
 
-Creating a database instance takes about 10 minutes\. In the meantime, you can update your source code to read connection information from the environment\. Elastic Beanstalk provides connection details using environment variables, such as `RDS_HOSTNAME`, that you can access from your application\.
+Creating a database instance takes about 10 minutes\. For more information about databases coupled to an Elastic Beanstalk environment, see [Adding a database to your Elastic Beanstalk environment](using-features.managing.db.md)\.
+
+In the meantime, you can update your source code to read connection information from the environment\. Elastic Beanstalk provides connection details using environment variables, such as `RDS_HOSTNAME`, that you can access from your application\.
 
 Laravel's database configuration is stored in a file named `database.php` in the `config` folder in your project code\. Find the `mysql` entry and modify the `host`, `database`, `username`, `and password` variables to read the corresponding values from Elastic Beanstalk:
 
@@ -281,7 +271,7 @@ In addition, you can terminate database resources that you created outside of yo
 
 ## Next steps<a name="php-laravel-tutorial-nextsteps"></a>
 
-For more information about Laravel, go to the tutorial at [laravel\.com](https://laravel.com/docs/5.2/quickstart)\.
+For more information about Laravel, go to the Laravel official website at [laravel\.com](https://laravel.com/)\.
 
 As you continue to develop your application, you'll probably want a way to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
 

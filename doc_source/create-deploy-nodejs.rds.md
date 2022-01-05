@@ -6,10 +6,6 @@ If you are using Amazon RDS for the first time, [add a DB instance](#nodejs-rds-
 
 To connect to a database, [add the driver](#nodejs-rds-drivers) to your application, load the driver in your code, and [create a connection object](#nodejs-rds-connect) with the environment properties provided by Elastic Beanstalk\. The configuration and connection code vary depending on the database engine and framework that you use\.
 
-**Note**  
-For learning purposes or test environments, you can use Elastic Beanstalk to add a DB instance\.  
-For production environments, you can create a DB instance outside of your Elastic Beanstalk environment to decouple your environment resources from your database resources\. This way, when you terminate your environment, the DB instance isn't deleted\. An external DB instance also lets you connect to the same database from multiple environments and perform [blue\-green deployments](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.CNAMESwap.html)\. For instructions, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\.
-
 **Topics**
 + [Adding a DB instance to your environment](#nodejs-rds-create)
 + [Downloading a driver](#nodejs-rds-drivers)
@@ -39,7 +35,7 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
 | Property name | Description | Property value | 
 | --- | --- | --- | 
 |  `RDS_HOSTNAME`  |  The hostname of the DB instance\.  |  On the **Connectivity & security** tab on the Amazon RDS console: **Endpoint**\.  | 
-|  `RDS_PORT`  |  The port on which the DB instance accepts connections\. The default value varies among DB engines\.  |  On the **Connectivity & security** tab on the Amazon RDS console: **Port**\.  | 
+|  `RDS_PORT`  |  The port where the DB instance accepts connections\. The default value varies among DB engines\.  |  On the **Connectivity & security** tab on the Amazon RDS console: **Port**\.  | 
 |  `RDS_DB_NAME`  |  The database name, **ebdb**\.  |  On the **Configuration** tab on the Amazon RDS console: **DB Name**\.  | 
 |  `RDS_USERNAME`  |  The username that you configured for your database\.  |  On the **Configuration** tab on the Amazon RDS console: **Master username**\.  | 
 |  `RDS_PASSWORD`  |  The password that you configured for your database\.  |  Not available for reference in the Amazon RDS console\.  | 
@@ -71,15 +67,10 @@ Add the database driver to your project's [`package.json` file](nodejs-platform-
 ```
 
 **Common driver packages for Node\.js**
-+ **MySQL** – `mysql`
-+ **PostgreSQL** – `pg`
-+ **SQL Server** – `mssql`
-+ **Oracle** – `oracle` or `oracledb`
-
-  The Oracle package and version depend on the Node\.js version you're using:
-  + **Node\.js 6\.x, 8\.x** – Use the latest version of `oracledb`\.
-  + **Node\.js 4\.x** – Use the `oracledb` version 2\.2\.0\.
-  + **Node\.js 5\.x, 7\.x** – Use the latest version of `oracle`\. The `oracledb` package doesn't support these Node\.js versions\.
++ **MySQL** – [mysql](https://www.npmjs.com/package/mysql)
++ **PostgreSQL** – [node\-postgres](https://www.npmjs.com/package/pg)
++ **SQL Server** – [node\-mssql](https://www.npmjs.com/package/mssql)
++ **Oracle** – [node\-oracledb](https://www.npmjs.com/package/oracledb)
 
 ## Connecting to a database<a name="nodejs-rds-connect"></a>
 

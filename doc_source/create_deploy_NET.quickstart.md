@@ -55,27 +55,41 @@ If you haven't done so already, you can get the sample [here](samples/dotnet-asp
 
 1. Expand **Solution ‘BeanstalkDotNetSample’ \(2 projects\)**\.
 
-1. Open the context \(right\-click\) menu for **MVC5App**, and then choose **Publish to AWS**\.  
+1. Open the context \(right\-click\) menu for **MVC5App**, and then choose **Publish to AWS**\.
+
+      
 ![\[Elastic Beanstalk .NET tutorial Solution Explorer publish to AWS\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-visual-studio-solution-explorer.png)
 
-1. On the **Publish to AWS Elastic Beanstalk** page, for **Deployment Target**, choose the environment that you just created, and then choose **Next**\.  
+1. On the **Publish to AWS Elastic Beanstalk** page, for **Deployment Target**, choose the environment that you just created, and then choose **Next**\.
+
+      
 ![\[Elastic Beanstalk .NET tutorial publish to AWS Elastic Beanstalk deployment target\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-visual-studio-publish-to-aws-elastic-beanstalk.png)
 
-1. On the **Application Options** page, accept all of the defaults, and then choose **Next**\.  
+1. On the **Application Options** page, accept all of the defaults, and then choose **Next**\.
+
+      
 ![\[Elastic Beanstalk .NET tutorial publish to AWS Elastic Beanstalk application options\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-visual-studio-application-options.png)
 
-1. On the **Review** page, choose **Deploy**\.  
+1. On the **Review** page, choose **Deploy**\.
+
+      
 ![\[Elastic Beanstalk .NET tutorial review and deploy\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-visual-studio-review-and-deploy.png)
 
-1. If you want to monitor deployment status, use the **NuGet Package Manager** in Visual Studio\.  
+1. If you want to monitor deployment status, use the **NuGet Package Manager** in Visual Studio\.
+
+      
 ![\[Elastic Beanstalk .NET tutorial monitor status NuGet package manager\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-visual-studio-nuget-package-manager.png)
 
-   When the application has successfully been deployed, the **Output** box displays **completed successfully**\.  
+   When the application has successfully been deployed, the **Output** box displays **completed successfully**\.
+
+      
 ![\[Elastic Beanstalk .NET tutorial output completed successfully\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-visual-studio-output-completed-successfully.png)
 
 1. Return to the Elastic Beanstalk console\. In the navigation pane, choose **Go to environment**\.
 
-   Your ASP\.NET application opens in a new tab\.  
+   Your ASP\.NET application opens in a new tab\.
+
+      
 ![\[Elastic Beanstalk .NET tutorial see your ASP.NET application running in the web browser\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dot-net-tutorial-my-asp-net-application.png)
 
 ## Clean up your AWS resources<a name="aws-elastic-beanstalk-tutorial-step-3-clean-up-your-resources"></a>

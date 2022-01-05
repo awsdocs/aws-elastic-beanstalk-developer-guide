@@ -1,8 +1,5 @@
 # Using the Elastic Beanstalk Ruby platform<a name="create_deploy_Ruby.container"></a>
 
-**Important**  
-Amazon Linux 2 platform versions are fundamentally different than Amazon Linux AMI platform versions \(preceding Amazon Linux 2\)\. These different platform generations are incompatible in several ways\. If you are migrating to an Amazon Linux 2 platform version, be sure to read the information in [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
-
 The AWS Elastic Beanstalk Ruby platform is a set of [environment configurations](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.ruby) for Ruby web applications that can run behind an nginx proxy server under a Puma application server\. Each platform branch corresponds to a version of Ruby\.
 
 If you use RubyGems, you can [include a `Gemfile` file](ruby-platform-gemfile.md) in your source bundle to install packages during deployment\.
@@ -48,9 +45,20 @@ The **Log options** section has two settings:
 
 To improve performance, the **Static files** section lets you configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. For each directory, you set the virtual path to directory mapping\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\.
 
-For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
+For details about configuring static files using configuration files or the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
 
-By default, the proxy server in a Ruby environment serves any files in the `public` folder at the `/public` path, and any files in the `public/assets` subfolder at the `/assets` path\. For example, if your application source contains a file named `logo.png` in a folder named `public`, the proxy server serves it to users at `subdomain.elasticbeanstalk.com/public/logo.png`\. If `logo.png` is in a folder named `assets` inside the `public` folder, the proxy server serves it at `subdomain.elasticbeanstalk.com/assets/logo.png`\. You can configure additional mappings as explained in this section\.
+By default, the proxy server in a Ruby environment is configured to serve static files as follows:
++ Files in the `public` folder are served from the `/public` path and the domain root \(`/` path\)\.
++ Files in the `public/assets` subfolder are served from the `/assets` path\.
+
+The following examples illustrate how the default configuration works:
++ If your application source contains a file named `logo.png` in a folder named `public`, the proxy server serves it to users from `subdomain.elasticbeanstalk.com/public/logo.png` and `subdomain.elasticbeanstalk.com/logo.png`\.
++ If your application source contains a file named `logo.png` in a folder named `assets` inside the `public` folder, the proxy server serves it from `subdomain.elasticbeanstalk.com/assets/logo.png`\.
+
+You can configure additional mappings for static files\. For more information, see [Ruby configuration namespaces](#ruby-namespaces) later in this topic\.
+
+**Note**  
+For platform versions prior to *Ruby 2\.7 AL2 version 3\.3\.7*, the default Elastic Beanstalk nginx proxy server configuration doesn't support serving static files from the domain root \(`subdomain.elasticbeanstalk.com/`\)\. This platform version was released on October 21, 2021\. For more information see [New platform versions \- Ruby](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2021-10-21-linux.html#release-2021-10-21-linux.platforms.ruby) in the *AWS Elastic Beanstalk Release Notes*\.
 
 ### Environment properties<a name="create_deploy_Ruby.env.console.ruby.envprops"></a>
 

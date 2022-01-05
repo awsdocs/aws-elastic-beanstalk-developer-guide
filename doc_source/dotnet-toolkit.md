@@ -64,6 +64,8 @@ After testing your application, you are ready to deploy it to Elastic Beanstalk\
    1. Select the **Type** of environment that you want\.
 
       You can select either **Load balanced, auto scaled** or a **Single instance** environment\. For more information, see [Environment types](using-features-managing-env-types.md)\.
+
+       
 **Note**  
 For single\-instance environments, load balancing, auto scaling, and the health check URL settings don't apply\.
 

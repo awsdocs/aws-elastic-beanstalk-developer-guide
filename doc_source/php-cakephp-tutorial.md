@@ -22,9 +22,9 @@ To follow the procedures in this guide, you will need a command line terminal or
 this is output
 ```
 
-On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
+On Linux and macOS, you can use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-CakePHP requires PHP 5\.5\.9 or newer, and the `mbstring` and `intl` extensions for PHP\. In this tutorial we use PHP 7\.0 and the corresponding Elastic Beanstalk platform version\. Install PHP and Composer by following the instructions at [Setting up your PHP development environment](php-development-environment.md)\.
+CakePHP 4 requires PHP 7\.2 or later\. It also requires the PHP extensions listed in the official [CakePHP installation](https://book.cakephp.org/4/en/installation.html) documentation\. Follow the instructions in the [Setting up your PHP development environment](php-development-environment.md) topic to install PHP and Composer\.
 
 ## Launch an Elastic Beanstalk environment<a name="php-cakephp-tutorial-launch"></a>
 
@@ -46,6 +46,10 @@ Environment creation takes about 5 minutes and creates the following resources:
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
   Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or NGINX as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
+**Important**  
+The *Let's Encrypt* cross\-signed DST Root CA X3 certificate *expired* on *September 30, 2021*\. Due to this, Beanstalk environments running on the Amazon Linux 2 and Amazon Linux AMI operating systems might not be able to connect to servers using *Let's Encrypt* certificates\.  
+On October 3, 2021 Elastic Beanstalk released new platform versions for Amazon Linux AMI and Amazon Linux 2 with the updated CA certificates\. To receive these updates and address this issue turn on [Managed Updates](environment-platform-update-managed.md) or [update your platforms manually](using-features.platform.upgrade.md#using-features.platform.upgrade.config)\. For more information, see the [platform update release notes](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2021-10-03-linux.html) in the *AWS Elastic Beanstalk Release Notes*\.  
+You can also apply the manual workarounds described in this [AWS Knowledge Center article](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-expired-certificate/)\. Since Elastic Beanstalk provides AMIs with locked GUIDs, we recommend that you use the sudo yum install command in the article\. Alternatively, you can also use the sudo sed command in the article if you prefer to manually modify the system in place\.
 + **Instance security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
 + **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
 + **Load balancer security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
@@ -66,21 +70,11 @@ Composer can install CakePHP and create a working project with one command:
 
 ```
 ~$ composer create-project --prefer-dist cakephp/app eb-cake
-Installing cakephp/app (3.6.0)
-  - Installing cakephp/app (3.6.0): Loading from cache
-Created project in eb-cake2
-Loading composer repositories with package information
-Updating dependencies (including require-dev)
-
-Package operations: 46 installs, 0 updates, 0 removals
-  - Installing cakephp/plugin-installer (1.1.0): Loading from cache
-  - Installing aura/intl (3.0.0): Loading from cache
-...
 ```
 
 Composer installs CakePHP and around 20 dependencies, and generates a default project\.
 
-If you run into any issues installing CakePHP, visit the installation topic in the official documentation: [http://book\.cakephp\.org/3\.0/en/installation\.html](http://book.cakephp.org/3.0/en/installation.html)
+If you run into any issues installing CakePHP, visit the installation topic in the official documentation: [http://book\.cakephp\.org/4\.0/en/installation\.html](http://book.cakephp.org/4.0/en/installation.html)
 
 ## Deploy your application<a name="php-cakephp-tutorial-deploy"></a>
 
@@ -111,9 +105,7 @@ If you have many environments, use the search bar to filter the environment list
 **Note**  
 To optimize the source bundle further, initialize a Git repository and use the [`git archive` command](applications-sourcebundle.md#using-features.deployment.source.git) to create the source bundle\. The default Symfony project includes a `.gitignore` file that tells Git to exclude the `vendor` folder and other files that are not required for deployment\.
 
-When the process completes, click the URL to open your CakePHP application in the browser:
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-cakephp-defaultnodb.png)
+When the process completes, click the URL to open your CakePHP application in the browser\.
 
 So far, so good\. Next you'll add a database to your environment and configure CakePHP to connect to it\.
 
@@ -255,7 +247,7 @@ In addition, you can terminate database resources that you created outside of yo
 
 ## Next steps<a name="php-cakephp-tutorial-nextsteps"></a>
 
-For more information about CakePHP, read the book at [book\.cakephp\.org](http://book.cakephp.org/3.0/en/index.html)\.
+For more information about CakePHP, read the book at [book\.cakephp\.org](http://book.cakephp.org/4.0/en/index.html)\.
 
 As you continue to develop your application, you'll probably want a way to manage environments and deploy your application without manually creating a \.zip file and uploading it to the Elastic Beanstalk console\. The [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) provides easy\-to\-use commands for creating, configuring, and deploying applications to Elastic Beanstalk environments from the command line\.
 

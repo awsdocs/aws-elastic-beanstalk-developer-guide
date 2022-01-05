@@ -7,6 +7,8 @@ Clones an environment to a new environment so that both have identical environme
 **Note**  
 By default, regardless of the solution stack version of the environment from which you create the clone, the eb clone command creates the clone environment with the most recent solution stack\. You can suppress this by including the `--exact` option when you run the command\.
 
+
+
 ## Syntax<a name="eb3-clonesyntax"></a>
 
  eb clone 

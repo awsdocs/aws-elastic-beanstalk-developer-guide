@@ -12,7 +12,7 @@ Worker environments\. For details, see [Elastic Beanstalk worker environments](u
 Bundle logs\. For details, see [View instance logs](using-features.logging.md)\.
 In addition, platform versions earlier than v2\.0\.0 don't support enhanced health reporting, managed platform updates, immutable updates, immutable deployments, and rolling deployments with an additional batch\.
 
-The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
+The topics in this chapter assume that you have some some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
 **Topics**
 + [Getting started with \.NET on Elastic Beanstalk](dotnet-getstarted.md)

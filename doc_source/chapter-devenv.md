@@ -72,6 +72,6 @@ You can also [configure the EB CLI to deploy a build artifact](eb-cli3-configura
 
 ## Installing the AWS CLI<a name="devenv-awscli"></a>
 
-The AWS Command Line Interface \(AWS CLI\) is a unified client for AWS services that provides commands for all public API operations\. These commands are lower level than those provided by the EB CLI, so it often takes more commands to do an operation with the AWS CLI\. On the other hand, the AWS CLI allows you to work with any application or environment running in your account without setting up a repository on your local machine\. Use the AWS CLI to create scripts that simplify or automate operational tasks\.
+The AWS Command Line Interface \(AWS CLI\) is a unified client for AWS services that provides commands for all public API operations\. These commands are lower level than those provided by the EB CLI, so it often takes more commands to do an operation with the AWS CLI\. On the other hand, the AWS Command Line Interface allows you to work with any application or environment running in your account without setting up a repository on your local machine\. Use the AWS CLI to create scripts that simplify or automate operational tasks\.
 
 For more information about supported services and to download the AWS Command Line Interface, see [AWS Command Line Interface](https://aws.amazon.com/cli/)\.

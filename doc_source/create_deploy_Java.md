@@ -14,7 +14,7 @@ If you use the Eclipse integrated development environment \(IDE\) to develop you
 
 If the command line is more your style, install the [Elastic Beanstalk Command Line Interface](eb-cli3.md) \(EB CLI\) and use it to create, monitor, and manage your Elastic Beanstalk environments from the command line\. If you run multiple environments for your application, the EB CLI integrates with Git to let you associate each of your environments with a different Git branch\.
 
-The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
+The topics in this chapter assume that you have some some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
 **Topics**
 + [Getting started with Java on Elastic Beanstalk](java-getstarted.md)

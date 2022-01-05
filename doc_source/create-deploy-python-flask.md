@@ -1,10 +1,10 @@
-# Deploying a flask application to Elastic Beanstalk<a name="create-deploy-python-flask"></a>
+# Deploying a Flask application to Elastic Beanstalk<a name="create-deploy-python-flask"></a>
 
 Flask is an open source web application framework for Python\. This tutorial walks you through the process of generating a Flask application and deploying it to an AWS Elastic Beanstalk environment\.
 
 In this tutorial, you’ll do the following:
-+ [Set up a Python virtual environment with flask](#python-flask-setup-venv)
-+ [Create a flask application](#python-flask-create-app)
++ [Set up a Python virtual environment with Flask](#python-flask-setup-venv)
++ [Create a Flask application](#python-flask-create-app)
 + [Deploy your site with the EB CLI](#python-flask-deploy) 
 + [Cleanup](#python-flask-tutorial-cleanup) 
 
@@ -19,15 +19,15 @@ To follow the procedures in this guide, you will need a command line terminal or
 this is output
 ```
 
-On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
+On Linux and macOS, you can use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Flask requires Python 2\.7 or 3\.4 or newer\. In this tutorial we use Python 3\.7 and the corresponding Elastic Beanstalk platform version\. Install Python by following the instructions at [Setting up your Python development environment](python-development-environment.md)\.
+Flask requires Python 3\.7 or later\. In this tutorial we use Python 3\.7 and the corresponding Elastic Beanstalk platform version\. Install Python by following the instructions at [Setting up your Python development environment](python-development-environment.md)\.
 
 The [Flask](http://flask.pocoo.org/) framework will be installed as part of the tutorial\.
 
 This tutorial also uses the Elastic Beanstalk Command Line Interface \(EB CLI\)\. For details on installing and configuring the EB CLI, see [Install the EB CLI](eb-cli3-install.md) and [Configure the EB CLI](eb-cli3-configuration.md)\.
 
-## Set up a Python virtual environment with flask<a name="python-flask-setup-venv"></a>
+## Set up a Python virtual environment with Flask<a name="python-flask-setup-venv"></a>
 
 Create a project directory and virtual environment for your application, and install Flask\.
 
@@ -50,22 +50,22 @@ Create a project directory and virtual environment for your application, and ins
 
    You will see `(virt)` prepended to your command prompt, indicating that you're in a virtual environment\. Use the virtual environment for the rest of this tutorial\.
 
-1. Install flask with `pip install`:
+1. Install Flask with `pip install`:
 
    ```
-   (virt)~/eb-flask$ pip install flask==1.0.2
+   (virt)~/eb-flask$ pip install flask==1.1.2
    ```
 
 1. View the installed libraries with `pip freeze`:
 
    ```
    (virt)~/eb-flask$ pip freeze
-   click==6.7
-   Flask==1.0.2
-   itsdangerous==0.24
-   Jinja2==2.10
-   MarkupSafe==1.0
-   Werkzeug==0.14.1
+   click==7.1.2
+   Flask==1.1.2
+   itsdangerous==1.1.0
+   Jinja2==2.11.3
+   MarkupSafe===1.1.1
+   Werkzeug==1.0.1
    ```
 
    This command lists all of the packages installed in your virtual environment\. Because you are in a virtual environment, globally installed packages like the EB CLI are not shown\.
@@ -78,7 +78,7 @@ Create a project directory and virtual environment for your application, and ins
 
    This file tells Elastic Beanstalk to install the libraries during deployment\. For more information, see [Specifying dependencies using a requirements file](python-configuration-requirements.md)\.
 
-## Create a flask application<a name="python-flask-create-app"></a>
+## Create a Flask application<a name="python-flask-create-app"></a>
 
 Next, create an application that you'll deploy using Elastic Beanstalk\. We'll create a "Hello World" RESTful web service\.
 
@@ -174,7 +174,7 @@ virt
 
 Next, you'll create your application environment and deploy your configured application with Elastic Beanstalk\.
 
-**To create an environment and deploy your flask application**
+**To create an environment and deploy your Flask application**
 
 1. Initialize your EB CLI repository with the eb init command:
 
@@ -208,6 +208,10 @@ Environment creation takes about 5 minutes and creates the following resources:
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
   Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or NGINX as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
+**Important**  
+The *Let's Encrypt* cross\-signed DST Root CA X3 certificate *expired* on *September 30, 2021*\. Due to this, Beanstalk environments running on the Amazon Linux 2 and Amazon Linux AMI operating systems might not be able to connect to servers using *Let's Encrypt* certificates\.  
+On October 3, 2021 Elastic Beanstalk released new platform versions for Amazon Linux AMI and Amazon Linux 2 with the updated CA certificates\. To receive these updates and address this issue turn on [Managed Updates](environment-platform-update-managed.md) or [update your platforms manually](using-features.platform.upgrade.md#using-features.platform.upgrade.config)\. For more information, see the [platform update release notes](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2021-10-03-linux.html) in the *AWS Elastic Beanstalk Release Notes*\.  
+You can also apply the manual workarounds described in this [AWS Knowledge Center article](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-expired-certificate/)\. Since Elastic Beanstalk provides AMIs with locked GUIDs, we recommend that you use the sudo yum install command in the article\. Alternatively, you can also use the sudo sed command in the article if you prefer to manually modify the system in place\.
 + **Instance security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
 + **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
 + **Load balancer security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.

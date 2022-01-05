@@ -6,6 +6,8 @@ To get started with \.NET Core on Linux applications on AWS Elastic Beanstalk, a
 
 Elastic Beanstalk provides single\-page sample applications for each platform\.
 
+ 
+
 
 **Samples**  
 
@@ -25,7 +27,7 @@ Download the sample application and deploy it to Elastic Beanstalk by following 
 1. On the application overview page, choose **Create a new environment**\.  
 ![\[The application overview page with a list of application environments on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/applications-mgmt-environments.png)
 
-1. Choose the **Web server environment** or **Worker environment** [environment tier](concepts.md#concepts-tier)\. You can't change an environment's tier after creation\.
+1. Next, for environment tier, choose the **Web server environment** or **Worker environment** [environment tier](concepts.md#concepts-tier)\. You can't change an environment's tier after creation\.
 **Note**  
 The [\.NET on Windows Server platform](create_deploy_NET.md) doesn't support the worker environment tier\.  
 ![\[The Select environment tier page on the Elastic Beanstalk console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/wizard-choosetier.png)
@@ -40,6 +42,7 @@ Elastic Beanstalk supports multiple [versions](concepts.platforms.md) for most o
    + Environment name
    + Domain name
    + Platform version
+   + Processor
    + VPC
    + Tier
 

@@ -1,9 +1,6 @@
 # Using the Elastic Beanstalk Python platform<a name="create-deploy-python-container"></a>
 
-**Important**  
-Amazon Linux 2 platform versions are fundamentally different than Amazon Linux AMI platform versions \(preceding Amazon Linux 2\)\. These different platform generations are incompatible in several ways\. If you are migrating to an Amazon Linux 2 platform version, be sure to read the information in [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
-
-The AWS Elastic Beanstalk Python platform is a set of [platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.python) for Python web applications that can run behind a proxy server with WSGI\. Each platform branch corresponds to a version of Python, such as Python 3\.4\.
+The AWS Elastic Beanstalk Python platform is a set of [platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.python) for Python web applications that can run behind a proxy server with WSGI\. Each platform branch corresponds to a version of Python, such as Python 3\.8\.
 
 Starting with Amazon Linux 2 platform branches, Elastic Beanstalk provides [Gunicorn](https://gunicorn.org/) as the default WSGI server\.
 
@@ -60,7 +57,7 @@ The Log Options section has two settings:
 
 To improve performance, the **Static files** section lets you configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. For each directory, you set the virtual path to directory mapping\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\.
 
-For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
+For details about configuring static files using configuration files or the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
 
 By default, the proxy server in a Python environment serves any files in a folder named `static` at the `/static` path\. For example, if your application source contains a file named `logo.png` in a folder named `static`, the proxy server serves it to users at `subdomain.elasticbeanstalk.com/static/logo.png`\. You can configure additional mappings as explained in this section\.
 

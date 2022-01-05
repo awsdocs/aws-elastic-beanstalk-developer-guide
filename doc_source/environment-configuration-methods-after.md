@@ -358,7 +358,7 @@ Setting configuration options with `update-environment` overrides settings from 
 You can also remove options from your environment with `update-environment`\.<a name="configuration-options-remove-awscli"></a>
 
 **To remove configuration options \(AWS CLI\)**
-+ Run the `update-environment` command with the `--settings-to-remove` option\.
++ Run the `update-environment` command with the `--options-to-remove` option\.
 
   ```
   $ aws elasticbeanstalk update-environment --environment-name my-env --options-to-remove Namespace=aws:autoscaling:launchconfiguration,OptionName=InstanceType

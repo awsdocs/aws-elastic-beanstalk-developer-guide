@@ -8,6 +8,7 @@ To implement your application's environments, Elastic Beanstalk manages resource
 + [Logging Elastic Beanstalk API calls with AWS CloudTrail](AWSHowTo.cloudtrail.md)
 + [Using Elastic Beanstalk with Amazon CloudWatch](AWSHowTo.cloudwatch.md)
 + [Using Elastic Beanstalk with Amazon CloudWatch Logs](AWSHowTo.cloudwatchlogs.md)
++ [Using Elastic Beanstalk with Amazon EventBridge](AWSHowTo.eventbridge.md)
 + [Finding and tracking Elastic Beanstalk resources with AWS Config](AWSHowTo.config.md)
 + [Using Elastic Beanstalk with Amazon DynamoDB](AWSHowTo.dynamoDB.md)
 + [Using Elastic Beanstalk with Amazon ElastiCache](AWSHowTo.ElastiCache.md)

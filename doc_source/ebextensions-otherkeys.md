@@ -22,7 +22,7 @@ Parameters:
   bucket:
     Type: String
     Description: "Name of the Amazon S3 bucket in which to store load balancer logs"
-    Default: "my-bucket"
+    Default: "DOC-EXAMPLE-BUCKET"
   bucketprefix:
     Type: String
     Description: "Optional prefix. Can't start or end with a /, or contain the word AWSLogs"
