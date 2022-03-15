@@ -26,7 +26,7 @@ The i386 32\-bit architecture is no longer supported by the majority of Elastic 
 
 By default, Elastic Beanstalk selects the x86 processor architecture when you create a new environment\. You can choose the processor architecture \(x86, arm64\) for the instance types only when you’re creating a new environment\. After you create an environment, you can only change the instance types to others within the same processor architecture of your running environment\. You can't change the processor architecture\.
 
-All of the instance types in the configuration for a given Elastic Beanstalk environment must have the same type of processor architecture\. Assume that you add a new instance type to an existing environment that already has a t2\.medium instance type, which is based on x86 architecture\. You can only add another instance type of the same architecture, such as t2\.small or t4g\.large\.
+All of the instance types in the configuration for a given Elastic Beanstalk environment must have the same type of processor architecture\. Assume that you add a new instance type to an existing environment that already has a t2\.medium instance type, which is based on x86 architecture\. You can only add another instance type of the same architecture, such as t2\.small or m6i\.large\.
 
 Elastic Beanstalk regularly adds support for new compatible instance types after Amazon EC2 introduces them\. For information about instance types that are available, see [Instance types](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html) in the *Amazon EC2 User Guide for Linux Instances* or [Instance types](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/instance-types.html) in the *Amazon EC2 User Guide for Windows Instances*\.
 
