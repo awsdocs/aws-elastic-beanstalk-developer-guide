@@ -93,7 +93,7 @@ To provide hooks that run during a configuration deployment, place them under th
 
 ### More about platform hooks<a name="platforms-linux-extend.hooks.more"></a>
 
-Hook files can be binary files, or script files starting with a `#!` line containing their interpreter path, such as `#!/bin/bash`\. All files have to have execute permission\. Use `chmod +x` to set execute permission on your hook files\.
+Hook files can be binary files, or script files starting with a `#!` line containing their interpreter path, such as `#!/bin/bash`\. All files have to have execute permission\.
 
 Elastic Beanstalk runs files in each one of these directories in lexicographical order of file names\. All files run as the `root` user\. The current working directory \(cwd\) for platform hooks is the application's root directory\. For `prebuild` and `predeploy` files it's the application staging directory, and for `postdeploy` files it's the current application directory\. If one of the files fails \(exits with a non\-zero exit code\), the deployment aborts and fails\.
 
