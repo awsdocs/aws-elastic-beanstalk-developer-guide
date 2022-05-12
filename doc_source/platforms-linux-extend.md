@@ -93,7 +93,7 @@ To provide hooks that run during a configuration deployment, place them under th
 
 ### More about platform hooks<a name="platforms-linux-extend.hooks.more"></a>
 
-Hook files can be binary files, or script files starting with a `#!` line containing their interpreter path, such as `#!/bin/bash`\. All files have to have execute permission\.
+Hook files can be binary files, or script files starting with a `#!` line containing their interpreter path, such as `#!/bin/bash`\. All files must have execute permission\.  Use `chmod +x` to set execute permission on your hook files. For all Amazon Linux 2 based platforms versions that were released on or after April 29, 2022, Elastic Beanstalk automatically grants execute permissions to all of the platform hook scripts. In this case you don't have to manually grant execute permissions. For a list of these platform versions, refer to the [April 29, 2022 - Linux platform](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2022-04-29-linux.html#release-2022-04-29-linux.platforms)  release notes in the *AWS Elastic Beanstalk Release Notes Guide*.
 
 Elastic Beanstalk runs files in each one of these directories in lexicographical order of file names\. All files run as the `root` user\. The current working directory \(cwd\) for platform hooks is the application's root directory\. For `prebuild` and `predeploy` files it's the application staging directory, and for `postdeploy` files it's the current application directory\. If one of the files fails \(exits with a non\-zero exit code\), the deployment aborts and fails\.
 
