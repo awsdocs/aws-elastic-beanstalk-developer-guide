@@ -39,7 +39,7 @@ If you have many environments, use the search bar to filter the environment list
 ### Container options<a name="nodejs-platform-console-settings"></a>
 
 You can specify these platform\-specific options:
-+ **Proxy server** – The proxy server to use on your environment instances\. By default, NGNIX is used\.
++ **Proxy server** – The proxy server to use on your environment instances\. By default, NGINX is used\.
 
 ### Log options<a name="nodejs-platform-console-logging"></a>
 
