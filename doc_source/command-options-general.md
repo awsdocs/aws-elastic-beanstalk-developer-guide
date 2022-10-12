@@ -550,7 +550,7 @@ This namespace doesn't apply to an environment that uses a shared load balancer\
 |  DefaultProcess  |  The name of the [process](#command-options-general-environmentprocess) to forward traffic to when no rules match\.  |  `default`  |  A process name\.  | 
 |  ListenerEnabled  |  Set to `false` to disable the listener\. You can use this option to disable the default listener on port 80\.  |  `true`  |  `true` `false`  | 
 |  Protocol  |  The protocol of traffic to process\.  |  With application load balancer: `HTTP` With network load balancer: `TCP`  |  With application load balancer: `HTTP`, `HTTPS` With network load balancer: `TCP`  | 
-|  Rules  |  A list of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener This option is only applicable to environments with an Application Load Balancer\.  |  None  |  A comma\-separated list of rule names\.  | 
+|  Rules  |  A list of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener.\ This option is only applicable to environments with an Application Load Balancer\.  |  None  |  A comma\-separated list of rule names\.  | 
 |  SSLCertificateArns  |  The Amazon Resource Name \(ARN\) of the SSL certificate to bind to the listener\. This option is only applicable to environments with an Application Load Balancer\.  |  None  |  The ARN of a certificate stored in IAM or ACM\.  | 
 |  SSLPolicy  |  Specify a security policy to apply to the listener\. This option is only applicable to environments with an Application Load Balancer\.  | None \(ELB default\) |  The name of a load balancer security policy\.  | 
 
@@ -567,9 +567,9 @@ For a shared Application Load Balancer, you can specify only the `Rule` option\.
 | **Name**  | **Description**  | **Default**  | **Valid values**  | 
 | --- | --- | --- | --- | 
 |  DefaultProcess  |  The name of the [process](#command-options-general-environmentprocess) where traffic is forwarded when no rules match\.  |  `default`  |  A process name\.  | 
-|  ListenerEnabled  |  Set to `false` to disable the listener\. You can use this option to disable the default listener on port 80\.  |  `true`  |  `true` `false`  | 
+|  ListenerEnabled  |  Set to `false` to disable the listener\. You can use this option to enable a listener on port `listener_port`\.  |  `true`  |  `true` `false`  | 
 |  Protocol  |  The protocol of traffic to process\.  |  With application load balancer: `HTTP` With network load balancer: `TCP`  |  With application load balancer: `HTTP`, `HTTPS` With network load balancer: `TCP`  | 
-|  Rules  |  List of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener This option is applicable only to environments with an Application Load Balancer\. If your environment uses a shared Application Load Balancer, and you don't specify this option for any listener, Elastic Beanstalk automatically associates the `default` rule with a port 80 listener\.  |  None  |  A comma\-separated list of rule names\.  | 
+|  Rules  |  List of [rules](#command-options-general-elbv2-listenerrule) to apply to the listener\. This option is applicable only to environments with an Application Load Balancer\. If your environment uses a shared Application Load Balancer, and you don't specify this option for any listener, Elastic Beanstalk automatically associates the `default` rule with a port 80 listener\.  |  None  |  A comma\-separated list of rule names\.  | 
 |  SSLCertificateArns  |  The Amazon Resource Name \(ARN\) of the SSL certificate to bind to the listener\. This option is only applicable to environments with an Application Load Balancer\.  |  None  |  The ARN of a certificate stored in IAM or ACM\.  | 
 |  SSLPolicy  |  Specify a security policy to apply to the listener\. This option is only applicable to environments with an Application Load Balancer\.  | None \(ELB default\) |  The name of a load balancer security policy\.  | 
 
