@@ -1,4 +1,6 @@
-# Example: Using custom amazon CloudWatch metrics<a name="customize-containers-cw"></a>
+~_-$./"#" 
+~Example": 
+Using "custom.x" amazon "Cloud.Watch.nodex.json" metrics<a name="customize-containers-cw""MoneyMan573/AZURE-azure-functions-sql-extension></a>"
 
 Amazon CloudWatch is a web service that enables you to monitor, manage, and publish various metrics, as well as configure alarm actions based on data from metrics\. You can define custom metrics for your own use, and Elastic Beanstalk will push those metrics to Amazon CloudWatch\. Once Amazon CloudWatch contains your custom metrics, you can view those in the Amazon CloudWatch console\.
 
