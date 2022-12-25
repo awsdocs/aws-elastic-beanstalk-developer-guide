@@ -1,20 +1,21 @@
-# Example: Using custom amazon CloudWatch metrics<a name="customize-containers-cw"></a>
+# Example: Using custom Amazon CloudWatch metrics<a name="customize-containers-cw"></a>
 
 Amazon CloudWatch is a web service that enables you to monitor, manage, and publish various metrics, as well as configure alarm actions based on data from metrics\. You can define custom metrics for your own use, and Elastic Beanstalk will push those metrics to Amazon CloudWatch\. Once Amazon CloudWatch contains your custom metrics, you can view those in the Amazon CloudWatch console\.
 
-The Amazon CloudWatch Monitoring Scripts for Linux are available to demonstrate how to produce and consume Amazon CloudWatch custom metrics\. The scripts comprise a fully functional example that reports memory, swap, and disk space utilization metrics for an Amazon Elastic Compute Cloud \(Amazon EC2\) Linux instance\. For more information about the Amazon CloudWatch Monitoring Scripts, go to [Amazon CloudWatch Monitoring Scripts for Linux](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/mon-scripts.html) in the *Amazon CloudWatch Developer Guide*\.
+The Amazon CloudWatch agent is an open-source project under the MIT license that enables CloudWatch metric and log collection from Amazon EC2 instances and on-premises servers across operating systems. The agent supports metrics collected at the system level as well as custom log and metric collection from your applications or services. This agent replaces the [Amazon CloudWatch Monitoring Scripts](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/mon-scripts.html), which are now deprecated. For more information about the Amazon CloudWatch agent, go to [Collecting metrics and logs from Amazon EC2 instances and on-premises servers with the CloudWatch agent ](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Install-CloudWatch-Agent.html) in the *Amazon CloudWatch User Guide*\.
 
 **Note**  
 Elastic Beanstalk [Enhanced Health Reporting](health-enhanced.md) has native support for publishing a wide range of instance and environment metrics to CloudWatch\. See [Publishing Amazon CloudWatch custom metrics for an environment](health-enhanced-cloudwatch.md) for details\.
 
 **Topics**
-+ [\.Ebextensions configuration file](#customize-containers-cw-update-roles)
-+ [Permissions](#customize-containers-cw-policy)
-+ [Viewing metrics in the CloudWatch console](#customize-containers-cw-console)
+- [Example: Using custom Amazon CloudWatch metrics<a name="customize-containers-cw"></a>](#example-using-custom-amazon-cloudwatch-metrics)
+  - [\.Ebextensions configuration file<a name="customize-containers-cw-update-roles"></a>](#ebextensions-configuration-file)
+  - [Permissions<a name="customize-containers-cw-policy"></a>](#permissions)
+  - [Viewing metrics in the CloudWatch console<a name="customize-containers-cw-console"></a>](#viewing-metrics-in-the-cloudwatch-console)
 
 ## \.Ebextensions configuration file<a name="customize-containers-cw-update-roles"></a>
 
-This example uses commands and option settings in an \.ebextensions configuration file to download, install, and run monitoring scripts provided by Amazon CloudWatch\.
+This example uses files and commands in an \.ebextensions configuration file to configure and run the Amazon CloudWatch agent on the Amazon Linux 2 platform\. The agent is prepackaged with Amazon Linux 2--if you are using a different operating system, additional steps for installing the agent may be necessary. See [Installing the CloudWatch agent](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/install-CloudWatch-Agent-on-EC2-Instance.html) for details.
 
 To use this sample, save it to a file named `cloudwatch.config` in a directory named `.ebextensions` at the top level of your project directory, then deploy your application using the Elastic Beanstalk console \(include the \.ebextensions directory in your [source bundle](applications-sourcebundle.md)\) or the [EB CLI](eb-cli3.md)\.
 
@@ -23,82 +24,62 @@ For more information about configuration files, see [Advanced environment custom
 **\.ebextensions/cloudwatch\.config**
 
 ```
-packages:
-  yum:
-    perl-DateTime: []
-    perl-Sys-Syslog: []
-    perl-LWP-Protocol-https: []
-    perl-Switch: []
-    perl-URI: []
-    perl-Bundle-LWP: []
+files:  
+  "/opt/aws/amazon-cloudwatch-agent/bin/config.json": 
+    mode: "000600"
+    owner: root
+    group: root
+    content: |
+      {
+        "agent": {
+          "metrics_collection_interval": 60,
+          "run_as_user": "root"
+        },
+        "metrics": {
+          "append_dimensions": {
+            "AutoScalingGroupName": "${aws:AutoScalingGroupName}"
+          },
+          "metrics_collected": {
+            "mem": {
+              "measurement": [
+                "used_percent"
+              ]
+            }
+          }
+        }
+      }
 
-sources: 
-  /opt/cloudwatch: https://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip
-  
 container_commands:
-  01-setupcron:
-    command: |
-      echo '*/5 * * * * root perl /opt/cloudwatch/aws-scripts-mon/mon-put-instance-data.pl `{"Fn::GetOptionSetting" : { "OptionName" : "CloudWatchMetrics", "DefaultValue" : "--mem-util --disk-space-util --disk-path=/" }}` >> /var/log/cwpump.log 2>&1' > /etc/cron.d/cwpump
-  02-changeperm:
-    command: chmod 644 /etc/cron.d/cwpump
-  03-changeperm:
-    command: chmod u+x /opt/cloudwatch/aws-scripts-mon/mon-put-instance-data.pl
-
-option_settings:
-  "aws:autoscaling:launchconfiguration" :
-    IamInstanceProfile : "aws-elasticbeanstalk-ec2-role"
-  "aws:elasticbeanstalk:customoption" :
-    CloudWatchMetrics : "--mem-util --mem-used --mem-avail --disk-space-util --disk-space-used --disk-space-avail --disk-path=/ --auto-scaling"
+  start_cloudwatch_agent: 
+    command: /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c file:/opt/aws/amazon-cloudwatch-agent/bin/config.json
 ```
 
-After you verify the configuration file works, you can conserve disk usage by changing the command redirect from a log file \(`>> /var/log/cwpump.log 2>&1`\) to `/dev/null` \(`> /dev/null`\)\. 
+This file has two sections:
+- `files`: This section adds the agent configuration file, which tells the agent what metrics and/or logs to send to Amazon CloudWatch. In this example, we are only sending the `mem_used_percent` metric. See [Metrics collected by the CloudWatch agent](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/metrics-collected-by-CloudWatch-agent.html) for a complete listing of system-level metrics supported by the Amazon CloudWatch agent.
+- `container_commands`: This section contains a command that starts the agent using the configuration file. See [Customizing software on Linux servers](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customize-containers-ec2.html#linux-container-commands) from the AWS Elastic Beanstalk Developer Guide for more details on `container_commands`.
 
 ## Permissions<a name="customize-containers-cw-policy"></a>
 
-In order to publish custom Amazon CloudWatch metrics, the instances in your environment need permission to use CloudWatch\. You can grant permissions to your environment's instances by adding them to the environment's [instance profile](concepts-roles-instance.md)\. You can add permissions to the instance profile before or after deploying your application\.
+The instances in your environment need the proper IAM permissions in order to publish custom Amazon CloudWatch metrics using the Amazon CloudWatch agent\. You can grant permissions to your environment's instances by adding them to the environment's [instance profile](concepts-roles-instance.md)\. You can add permissions to the instance profile before or after deploying your application\.
 
 **To grant permissions to publish CloudWatch metrics**
 
 1. Open the IAM console at [https://console\.aws\.amazon\.com/iam/](https://console.aws.amazon.com/iam/)\.
 
-1. In the navigation pane, choose **Roles**\.
+2. In the navigation pane, choose **Roles**\.
 
-1. Choose your environment's instance profile role\. By default, when you create an environment with the Elastic Beanstalk console or [EB CLI](eb-cli3.md), this is `aws-elasticbeanstalk-ec2-role`\.
+3. Choose your environment's instance profile role\. By default, when you create an environment with the Elastic Beanstalk console or [EB CLI](eb-cli3.md), this is `aws-elasticbeanstalk-ec2-role`\.
 
-1. Choose the **Permissions** tab\.
+4. Choose the **Permissions** tab\.
 
-1. Under **Inline Policies**, in the **Permissions** section, choose **Create Role Policy**\.
+5. Under **Permissions Policies**, in the **Permissions** section, choose **Attach policies**\.
 
-1. Choose **Custom Policy**, and then choose **Select**\.
-
-1. Complete the following fields, and then choose **Apply Policy**:  
-**Policy Name**  
-The name of the policy\.  
-**Policy Document**  
-Copy and paste the following text into the policy document:  
-
-   ```
-   {
-     "Version": "2012-10-17",
-     "Statement": [
-       {
-         "Action": [
-           "cloudwatch:PutMetricData",
-           "ec2:DescribeTags"
-         ],
-         "Effect": "Allow",
-         "Resource": [
-           "*"
-         ]
-       }
-     ]
-   }
-   ```
+6. Under **Attach Permissions**, choose the AWS managed policy **CloudWatchAgentServerPolicy**, and click **Attach policy**.
 
    For more information about managing policies, see [Working with Policies](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingPolicies.html) in the *IAM User Guide*\.
 
 ## Viewing metrics in the CloudWatch console<a name="customize-containers-cw-console"></a>
 
-After deploying the CloudWatch configuration file to your environment, check the [Amazon CloudWatch console](https://console.aws.amazon.com/cloudwatch/home) to view your metrics\. Custom metrics will have the prefix **Linux System**\.
+After deploying the CloudWatch configuration file to your environment, check the [Amazon CloudWatch console](https://console.aws.amazon.com/cloudwatch/home) to view your metrics\. Custom metrics will be located in the **CWAgent** namespace\.
 
 ![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/aeb-container-cw.png)

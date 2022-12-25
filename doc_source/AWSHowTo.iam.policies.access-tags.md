@@ -13,8 +13,8 @@ For the complete syntax and semantics of tag condition keys, see [Controlling Ac
 
 The following examples demonstrate how to specify tag conditions in policies for Elastic Beanstalk users\.
 
-**Example 1: Limit actions based on tags in the request**  <a name="policy_tags.deny_by_request_tag"></a>
-The Elastic Beanstalk **AWSElasticBeanstalkFullAccess** managed user policy gives users unlimited permission to perform any Elastic Beanstalk action on any resource\.   
+**Example 1: Limit actions based on tags in the request**  <a name="example_policy_tags.deny_by_request_tag"></a>
+The Elastic Beanstalk **AdministratorAccess\-AWSElasticBeanstalk** managed user policy gives users unlimited permission to perform any Elastic Beanstalk action on any Elastic Beanstalk\-managed resource\.   
 The following policy limits this power and denies unauthorized users permission to create Elastic Beanstalk production environments\. To do that, it denies the `CreateEnvironment` action if the request specifies a tag named `stage` with one of the values `gamma` or `prod`\. In addition, the policy prevents these unauthorized users from tampering with the stage of production environments by not allowing tag modification actions to include these same tag values or to completely remove the `stage` tag\. A customer's administrator must attach this IAM policy to unauthorized IAM users, in addition to the managed user policy\.  
 
 ```
@@ -50,8 +50,8 @@ The following policy limits this power and denies unauthorized users permission 
 }
 ```
 
-**Example 2: Limit actions based on resource tags**  <a name="policy_tags.deny_by_resource_tag"></a>
-The Elastic Beanstalk **AWSElasticBeanstalkFullAccess** managed user policy gives users unlimited permission to perform any Elastic Beanstalk action on any resource\.   
+**Example 2: Limit actions based on resource tags**  <a name="example_policy_tags.deny_by_resource_tag"></a>
+The Elastic Beanstalk **AdministratorAccess\-AWSElasticBeanstalk** managed user policy gives users unlimited permission to perform any Elastic Beanstalk action on any Elastic Beanstalk\-managed resource\.   
 The following policy limits this power and denies unauthorized users permission to perform actions on Elastic Beanstalk production environments\. To do that, it denies specific actions if the environment has a tag named `stage` with one of the values `gamma` or `prod`\. A customer's administrator must attach this IAM policy to unauthorized IAM users, in addition to the managed user policy\.  
 
 ```
@@ -81,7 +81,7 @@ The following policy limits this power and denies unauthorized users permission 
 
 **Example 3: Allow actions based on tags in the request**  <a name="example_policy_tags.allow_by_request_tag"></a>
 The following policy grants users permission to create Elastic Beanstalk development applications\.   
-To do that, it allows the `CreateApplication`and `AddTags` actions if the request specifies a tag named `stage` with the value `development`\. The `aws:TagKeys` condition ensures that the user can't add other tag keys\. In particular, it ensures case sensitivity of the `stage` tag key\. Notice that this policy is useful for IAM users that don't have the Elastic Beanstalk **AWSElasticBeanstalkFullAccess** managed user policy attached\. The managed policy gives users unlimited permission to perform any Elastic Beanstalk action on any resource\.  
+To do that, it allows the `CreateApplication`and `AddTags` actions if the request specifies a tag named `stage` with the value `development`\. The `aws:TagKeys` condition ensures that the user can't add other tag keys\. In particular, it ensures case sensitivity of the `stage` tag key\. Notice that this policy is useful for IAM users that don't have the Elastic Beanstalk **AdministratorAccess\-AWSElasticBeanstalk** managed user policy attached\. The managed policy gives users unlimited permission to perform any Elastic Beanstalk action on any Elastic Beanstalk\-managed resource\.  
 
 ```
 {
@@ -107,9 +107,9 @@ To do that, it allows the `CreateApplication`and `AddTags` actions if the reques
 }
 ```
 
-**Example 4: Allow actions based on resource tags**  <a name="example_policy_tags.allow_by_request_tag"></a>
+**Example 4: Allow actions based on resource tags**  <a name="example_policy_tags.allow_by_resource_tag"></a>
 The following policy grants users permission to perform actions on, and get information about, Elastic Beanstalk development applications\.   
-To do that, it allows specific actions if the application has a tag named `stage` with the value `development`\. The `aws:TagKeys` condition ensures that the user can't add other tag keys\. In particular, it ensures case sensitivity of the `stage` tag key\. Notice that this policy is useful for IAM users that don't have the Elastic Beanstalk **AWSElasticBeanstalkFullAccess** managed user policy attached\. The managed policy gives users unlimited permission to perform any Elastic Beanstalk action on any resource\.  
+To do that, it allows specific actions if the application has a tag named `stage` with the value `development`\. The `aws:TagKeys` condition ensures that the user can't add other tag keys\. In particular, it ensures case sensitivity of the `stage` tag key\. Notice that this policy is useful for IAM users that don't have the Elastic Beanstalk **AdministratorAccess\-AWSElasticBeanstalk** managed user policy attached\. The managed policy gives users unlimited permission to perform any Elastic Beanstalk action on any Elastic Beanstalk\-managed resource\.  
 
 ```
 {

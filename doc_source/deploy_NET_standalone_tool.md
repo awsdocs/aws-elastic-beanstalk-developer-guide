@@ -20,7 +20,7 @@ The deployment tool is typically installed in one of the following directories o
 
 | 32\-bit | 64\-bit | 
 | --- | --- | 
-|  C:\\Program Files\\AWS Tools\\Deployment Tool\\awsdeploy\.exe  |  C:\\Program Files \(x86\)\\AWS Tools\\Deployment Tool\\awsdeploy\.exe  | 
+|  `C:\Program Files\AWS Tools\Deployment Tool\awsdeploy.exe`  |  `C:\Program Files (x86)\AWS Tools\Deployment Tool\awsdeploy.exe`  | 
 
 ## Deploy to Elastic Beanstalk<a name="deploy_NET_standalone_tool.deploy"></a>
 
@@ -36,7 +36,7 @@ To deploy the sample application to Elastic Beanstalk using the deployment tool,
    AWSSecretKey = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
    ```
 **Note**  
-For API access, you need an access key ID and secret access key\. Use IAM user access keys instead of AWS account root user access keys\. For more information about creating access keys, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in the *IAM User Guide*\. 
+For API access, you need an access key ID and secret access key\. Use IAM user access keys instead of AWS account root user access keys\. For more information about creating access keys, see [Managing access keys for IAM users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in the *IAM User Guide*\. 
 
 1. At the command line prompt, type the following:
 

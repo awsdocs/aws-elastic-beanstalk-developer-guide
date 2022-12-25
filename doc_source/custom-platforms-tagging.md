@@ -17,7 +17,7 @@ With the AWS CLI or other API\-based clients, add tags by using the `--tags` par
 ```
 $ aws elasticbeanstalk create-platform-version \
       --tags Key=mytag1,Value=value1 Key=mytag2,Value=value2 \
-      --platform-name my-platform --platform-version 1.0.0 --platform-definition-bundle S3Bucket=my-bucket,S3Key=sample.zip
+      --platform-name my-platform --platform-version 1.0.0 --platform-definition-bundle S3Bucket=DOC-EXAMPLE-BUCKET,S3Key=sample.zip
 ```
 
 ## Managing tags of an existing custom platform version<a name="custom-platforms-tagging.manage"></a>

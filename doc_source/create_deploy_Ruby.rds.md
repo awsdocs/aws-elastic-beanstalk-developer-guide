@@ -6,10 +6,6 @@ If you are using Amazon RDS for the first time, [add a DB instance](#ruby-rds-cr
 
 To connect to a database, [add the adapter](#ruby-rds-drivers) to your application and [configure a connection](#ruby-rds-connect) with the environment properties provided by Elastic Beanstalk\. The configuration and connection code vary depending on the database engine and framework that you use\.
 
-**Note**  
-For learning purposes or test environments, you can use Elastic Beanstalk to add a DB instance\.  
-For production environments, you can create a DB instance outside of your Elastic Beanstalk environment to decouple your environment resources from your database resources\. This way, when you terminate your environment, the DB instance isn't deleted\. An external DB instance also lets you connect to the same database from multiple environments and perform [blue\-green deployments](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.CNAMESwap.html)\. For instructions, see [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md)\.
-
 **Topics**
 + [Adding a DB instance to your environment](#ruby-rds-create)
 + [Downloading an adapter](#ruby-rds-drivers)
@@ -39,7 +35,7 @@ Adding a DB instance takes about 10 minutes\. When the environment update is com
 | Property name | Description | Property value | 
 | --- | --- | --- | 
 |  `RDS_HOSTNAME`  |  The hostname of the DB instance\.  |  On the **Connectivity & security** tab on the Amazon RDS console: **Endpoint**\.  | 
-|  `RDS_PORT`  |  The port on which the DB instance accepts connections\. The default value varies among DB engines\.  |  On the **Connectivity & security** tab on the Amazon RDS console: **Port**\.  | 
+|  `RDS_PORT`  |  The port where the DB instance accepts connections\. The default value varies among DB engines\.  |  On the **Connectivity & security** tab on the Amazon RDS console: **Port**\.  | 
 |  `RDS_DB_NAME`  |  The database name, **ebdb**\.  |  On the **Configuration** tab on the Amazon RDS console: **DB Name**\.  | 
 |  `RDS_USERNAME`  |  The username that you configured for your database\.  |  On the **Configuration** tab on the Amazon RDS console: **Master username**\.  | 
 |  `RDS_PASSWORD`  |  The password that you configured for your database\.  |  Not available for reference in the Amazon RDS console\.  | 
@@ -55,15 +51,15 @@ Add the database adapter to your project's [gem file](ruby-platform-gemfile.md)\
 ```
 source 'https://rubygems.org'
 gem 'puma'
-gem 'rails', '4.1.8'
+gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 gem 'mysql2'
 ```
 
 **Common adapter gems for Ruby**
-+ **MySQL** – `mysql2`
-+ **PostgreSQL** – `pg`
-+ **Oracle** – `activerecord-oracle_enhanced-adapter`
-+ **SQL Server** – ` sql_server`
++ **MySQL** – [https://rubygems.org/gems/mysql2](https://rubygems.org/gems/mysql2) 
++ **PostgreSQL** – [https://rubygems.org/gems/pg](https://rubygems.org/gems/pg) 
++ **Oracle** – [https://rubygems.org/gems/activerecord-oracle_enhanced-adapter](https://rubygems.org/gems/activerecord-oracle_enhanced-adapter) 
++ **SQL Server** – [https://rubygems.org/gems/activerecord-sqlserver-adapter](https://rubygems.org/gems/activerecord-sqlserver-adapter) 
 
 ## Connecting to a database<a name="ruby-rds-connect"></a>
 

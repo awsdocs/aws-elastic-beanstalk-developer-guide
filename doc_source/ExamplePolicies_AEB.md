@@ -82,6 +82,8 @@ Note that this policy is an example\. It gives a broad set of permissions to the
 }
 ```
 
+
+
 ## Example 3: Testers – View only<a name="ExamplePolicies_AEB.tester"></a>
 
 The following policy allows read\-only access to all applications, application versions, events, and environments\. It doesn't allow performing any actions\.

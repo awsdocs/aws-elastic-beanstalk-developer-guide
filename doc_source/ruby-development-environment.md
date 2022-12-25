@@ -9,7 +9,7 @@ To follow the procedures in this guide, you will need a command line terminal or
 this is output
 ```
 
-On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
+On Linux and macOS, you can use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
 For common setup steps and tools that apply to all languages, see [Configuring your development machine for use with Elastic Beanstalk](chapter-devenv.md)
 
@@ -35,7 +35,7 @@ On Amazon Linux, use `yum`\.
 Install RVM to manage Ruby language installations on your machine\. Use the commands at [rvm\.io](https://rvm.io/) to get the project keys and run the installation script\.
 
 ```
-~$ gpg --keyserver hkp://keys.gnupg.net --recv-keys key1 key2
+~$ gpg2 --recv-keys key1 key2
 ~$ curl -sSL https://get.rvm.io | bash -s stable
 ```
 
@@ -56,24 +56,25 @@ View the available versions of Ruby\.
 ```
 ~$ rvm list known
 # MRI Rubies
-[ruby-]2.1[.10]
-[ruby-]2.2[.10]
-[ruby-]2.3[.7]
-[ruby-]2.4[.4]
-[ruby-]2.5[.1]
+...
+[ruby-]2.6[.8]
+[ruby-]2.7[.4]
+[ruby-]3[.0.2]
 ...
 ```
 
 Check [Ruby](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.ruby) in the *AWS Elastic Beanstalk Platforms* document to find the latest version of Ruby available on an Elastic Beanstalk platform\. Install that version\.
 
 ```
-~$ rvm install 2.5.1
+~$ rvm install 3.0.2
 Searching for binary rubies, this might take some time.
-Found remote file https://rvm_io.global.ssl.fastly.net/binaries/ubuntu/16.04/x86_64/ruby-2.5.1.tar.bz2
+Found remote file https://rubies.travis-ci.org/ubuntu/20.04/x86_64/ruby-3.0.2.tar.bz2
 Checking requirements for ubuntu.
+Updating system..
+...
 Requirements installation successful.
-ruby-2.5.1 - #configure
-ruby-2.5.1 - #download
+ruby-3.0.2 - #configure
+ruby-3.0.2 - #download
 ...
 ```
 
@@ -81,7 +82,7 @@ Test your Ruby installation\.
 
 ```
 ~$ ruby --version
-ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
+ruby 3.0.2p107 (2021-07-07 revision 0db68f0233) [x86_64-linux]
 ```
 
 ## Installing the AWS SDK for Ruby<a name="ruby-development-environment-sdk"></a>

@@ -1,6 +1,6 @@
 # Deploying a Symfony application to Elastic Beanstalk<a name="php-symfony-tutorial"></a>
 
-[Symfony](http://symfony.com/) is an open source framework for developing dynamic PHP web applications\. This tutorial walks you through the process of generating a Symfony application and deploying it to an AWS Elastic Beanstalk environment\.
+[Symfony](http://symfony.com/) is an open\-source framework for developing dynamic PHP web applications\. This tutorial walks you through the process of generating a Symfony application and deploying it to an AWS Elastic Beanstalk environment\.
 
 **Topics**
 + [Prerequisites](#php-symfony-tutorial-prereqs)
@@ -22,9 +22,11 @@ To follow the procedures in this guide, you will need a command line terminal or
 this is output
 ```
 
-On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
+On Linux and macOS, you can use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
-Symfony 4\.3 requires PHP 7\.1 or later and the `intl` extension for PHP\. In this tutorial we use PHP 7\.2 and the corresponding Elastic Beanstalk platform version\. Install PHP and Composer by following the instructions at [Setting up your PHP development environment](php-development-environment.md)\.
+Symfony 4\.4\.9 requires PHP 7\.1\.3 or later\. It also requires the PHP extensions listed in the [technical requirements](https://symfony.com/doc/4.4/setup.html ) topic in the official Symfony installation documentation\. In this tutorial, we use PHP 7\.2 and the corresponding Elastic Beanstalk [platform version](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.PHP)\. Follow the instructions in the [Setting up your PHP development environment](php-development-environment.md) topic to install PHP and Composer\.
+
+For Symfony support and maintenance information, see the [symfony releases](https://symfony.com/releases) topic on the Symfony website\. For more information about updates related to PHP version support for Symfony 4\.4\.9, see the [Symfony 4\.4\.9 release notes](https://symfony.com/blog/symfony-4-4-9-released) topic on the Symfony website\.
 
 ## Launch an Elastic Beanstalk environment<a name="php-symfony-tutorial-launch"></a>
 
@@ -46,6 +48,10 @@ Environment creation takes about 5 minutes and creates the following resources:
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
   Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or NGINX as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
+**Important**  
+The *Let's Encrypt* cross\-signed DST Root CA X3 certificate *expired* on *September 30, 2021*\. Due to this, Beanstalk environments running on the Amazon Linux 2 and Amazon Linux AMI operating systems might not be able to connect to servers using *Let's Encrypt* certificates\.  
+On October 3, 2021 Elastic Beanstalk released new platform versions for Amazon Linux AMI and Amazon Linux 2 with the updated CA certificates\. To receive these updates and address this issue turn on [Managed Updates](environment-platform-update-managed.md) or [update your platforms manually](using-features.platform.upgrade.md#using-features.platform.upgrade.config)\. For more information, see the [platform update release notes](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2021-10-03-linux.html) in the *AWS Elastic Beanstalk Release Notes*\.  
+You can also apply the manual workarounds described in this [AWS Knowledge Center article](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-expired-certificate/)\. Since Elastic Beanstalk provides AMIs with locked GUIDs, we recommend that you use the sudo yum install command in the article\. Alternatively, you can also use the sudo sed command in the article if you prefer to manually modify the system in place\.
 + **Instance security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
 + **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
 + **Load balancer security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
@@ -66,26 +72,11 @@ Composer can install Symfony and create a working project with one command:
 
 ```
 ~$ composer create-project symfony/website-skeleton eb-symfony
-Installing symfony/website-skeleton (v4.3.99)
-  - Installing symfony/website-skeleton (v4.3.99): Downloading (100%)
-Created project in eb-symfony
-Loading composer repositories with package information
-Updating dependencies (including require-dev)
-Package operations: 1 install, 0 updates, 0 removals
-  - Installing symfony/flex (v1.4.5): Downloading (100%)
-Symfony operations: 1 recipe (539d006017ad5ef71beab4a2e2870e9a)
-  - Configuring symfony/flex (>=1.0): From github.com/symfony/recipes:master
-Loading composer repositories with package information
-Updating dependencies (including require-dev)
-Restricting packages listed in "symfony/symfony" to "4.3.*"
-Package operations: 103 installs, 0 updates, 0 removals
-  - Installing ocramius/package-versions (1.4.0): Loading from cache
-...
 ```
 
 Composer installs Symfony and its dependencies, and generates a default project\.
 
-If you run into any issues installing Symfony, go to the installation topic in the official documentation: [symfony\.com/doc/current/setup\.html](https://symfony.com/doc/current/setup.html)
+If you run into any issues installing Symfony, go to the [installation](https://symfony.com/doc/4.4/setup.html) topic in the official Symfony documentation\.
 
 ## Deploy your application<a name="php-symfony-tutorial-deploy"></a>
 
@@ -124,9 +115,7 @@ To optimize the source bundle further, initialize a Git repository and use the [
 
 ## Configure Composer settings<a name="php-symfony-tutorial-configure"></a>
 
-When the deployment completes, click the URL to open your Symfony application in the browser:
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-symfony-403.png)
+When the deployment completes, click the URL to open your Symfony application in the browser\.
 
 What's this? By default, Elastic Beanstalk serves the root of your project at the root path of the web site\. In this case, though, the default page \(`app.php`\) is one level down in the `web` folder\. You can verify this by adding `/public` to the URL\. For example, `http://symfony.us-east-2.elasticbeanstalk.com/public`\.
 
@@ -149,8 +138,6 @@ If you have many environments, use the search bar to filter the environment list
 1. Choose **Apply**\.
 
 1. When the update is complete, click the URL to reopen your site in the browser\.
-
-![\[Image NOT FOUND\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/php-symfony-success.png)
 
 ## Cleanup<a name="php-symfony-tutorial-cleanup"></a>
 

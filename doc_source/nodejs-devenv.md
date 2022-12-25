@@ -5,22 +5,28 @@ Set up a Node\.js development environment to test your application locally prior
 For common setup steps and tools that apply to all languages, see [Configuring your development machine for use with Elastic Beanstalk](chapter-devenv.md)\.
 
 **Topics**
-+ [Installing Node\.js](#nodejs-devenv-nodejs)
-+ [Installing npm](#nodejs-devenv-npm)
-+ [Installing the AWS SDK for Node\.js](#nodejs-devenv-awssdk)
-+ [Installing Express](#nodejs-devenv-express)
++ [Install Node\.js](#nodejs-devenv-nodejs)
++ [Confirm npm installation](#nodejs-devenv-npm)
++ [Install the AWS SDK for Node\.js](#nodejs-devenv-awssdk)
++ [Install Express](#nodejs-devenv-express)
 
-## Installing Node\.js<a name="nodejs-devenv-nodejs"></a>
+## Install Node\.js<a name="nodejs-devenv-nodejs"></a>
 
 Install Node\.js to run Node\.js applications locally\. If you don't have a preference, get the latest version supported by Elastic Beanstalk\. See [Node\.js](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.nodejs) in the *AWS Elastic Beanstalk Platforms* document for a list of supported versions\.
 
 Download Node\.js at [nodejs\.org](https://nodejs.org/en/)\.
 
-## Installing npm<a name="nodejs-devenv-npm"></a>
+## Confirm npm installation<a name="nodejs-devenv-npm"></a>
 
-Node\.js uses the npm package manager to helps you install tools and frameworks for use in your application\. Download npm at [npmjs\.com](https://www.npmjs.com/)\.
+Node\.js uses the npm package manager to help you install tools and frameworks for use in your application\. Since npm is distributed with Node\.js, you will automatically install it when you download and install Node\.js\. To confirm you have npm installed you can run the following command:
 
-## Installing the AWS SDK for Node\.js<a name="nodejs-devenv-awssdk"></a>
+```
+$ npm -v
+```
+
+For more information on npm, visit the [npmjs](https://www.npmjs.com/get-npm) website\.
+
+## Install the AWS SDK for Node\.js<a name="nodejs-devenv-awssdk"></a>
 
 If you need to manage AWS resources from within your application, install the AWS SDK for JavaScript in Node\.js\. Install the SDK with npm:
 
@@ -30,7 +36,7 @@ $ npm install aws-sdk
 
 Visit the [AWS SDK for JavaScript in Node\.js](https://aws.amazon.com/sdk-for-node-js/) homepage for more information\.
 
-## Installing Express<a name="nodejs-devenv-express"></a>
+## Install Express<a name="nodejs-devenv-express"></a>
 
 Express is a web application framework that runs on Node\.js\. To use it, set up Express and create the project structure\. The following walks you through setting up Express on a Linux operating system\.
 

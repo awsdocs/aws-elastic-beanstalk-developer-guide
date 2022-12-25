@@ -167,8 +167,10 @@ files:
       /var/app/current/log/*.log
 ```
 
-**Note**  
 Log task configurations don't support wildcard characters on Windows platforms\.
+
+**Note**  
+To help familiarize yourself with log customization procedures, you can deploy a sample application using the [EB CLI](eb-cli3.md)\. For this, the EB CLI creates a local application directory that contains an `.ebextentions` subdirectory with a sample configuration\. You can also use the sample application's log files to explore the log retrieval feature described in this topic\. For more information about how to create a sample application with the EB CLI, see [EB CLI basics](eb-cli3-getting-started.md)\.
 
 For more information about using configuration files, see [Advanced environment customization with configuration files \(`.ebextensions`\)](ebextensions.md)\.
 

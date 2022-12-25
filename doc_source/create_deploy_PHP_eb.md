@@ -2,7 +2,7 @@
 
 AWS Elastic Beanstalk for PHP makes it easy to deploy, manage, and scale your PHP web applications using Amazon Web Services\. Elastic Beanstalk for PHP is available to anyone developing or hosting a web application using PHP\. This section provides instructions for deploying your PHP web application to Elastic Beanstalk\. You can deploy your application in just a few minutes using the Elastic Beanstalk Command Line Interface \(EB CLI\) or by using the Elastic Beanstalk Management Console\. It also provides walkthroughs for common frameworks such as CakePHP and Symfony\.
 
-The topics in this chapter assume some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
+The topics in this chapter assume that you have some some knowledge of Elastic Beanstalk environments\. If you haven't used Elastic Beanstalk before, try the [getting started tutorial](GettingStarted.md) to learn the basics\.
 
 If you need help with PHP application development, there are several places you can go:
 

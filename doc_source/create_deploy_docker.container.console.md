@@ -7,11 +7,14 @@ If your Elastic Beanstalk environment uses an Amazon Linux AMI Docker platform v
 
 **Topics**
 + [Configuring software in Docker environments](#docker-software-config)
++ [Referencing environment variables in containers](#docker-env-cfg.env-variables)
++ [Generating logs for enhanced health reporting \(Docker Compose\)](#docker-env-cfg.healthd-logging)
++ [Docker container customized logging \(Docker Compose\)](#docker-env-cfg.dc-customized-logging)
 + [Docker images](#docker-images)
 + [Reclaiming Docker storage space](#reclaim-docker-storage)
 + [Configuring managed updates for Docker environments](#docker-managed-updates)
-+ [Docker configuration on Amazon Linux AMI \(preceding Amazon Linux 2\)](#docker-alami)
 + [Docker configuration namespaces](#docker-namespaces)
++ [Docker configuration on Amazon Linux AMI \(preceding Amazon Linux 2\)](#docker-alami)
 
 ## Configuring software in Docker environments<a name="docker-software-config"></a>
 
@@ -39,11 +42,104 @@ For information about configuring software settings in any environment, see [Env
 
 The **Container options** section has platform\-specific options\. For Docker environments, it lets you choose whether or not your environment includes the Nginx proxy server\.
 
-### Environment properties<a name="docker-software-config.env"></a>
+**Environments with Docker Compose**  
+If you manage your Docker environment with Docker Compose, Elastic Beanstalk assumes that you run a proxy server as a container\. Therefore it defaults to **None** for the **Proxy server** setting, and Elastic Beanstalk does not provide an NGINX configuration\.
 
-The **Environment properties** section lets you specify environment configuration settings on the Amazon Elastic Compute Cloud \(Amazon EC2\) instances that are running your application\. Environment properties are passed in as key\-value pairs to the application\.
+**Note**  
+Even if you select **NGINX** as a proxy server, this setting is ignored in an environment with Docker Compose\. The **Proxy server** setting still defaults to **None**\. 
 
-In a Docker environment, Elastic Beanstalk passes environment properties to Docker containers as environment variables\. Your application code running in a container can refer to an environment variable by name and read its value\. The code to do so depends on the programming language you're using\. You can find instructions for reading environment variable values in the programming languages that Elastic Beanstalk managed platforms support in the respective platform topic\. For a list of links to these topics, see [Environment properties and other software settings](environments-cfg-softwaresettings.md)\.
+Since the NGINX web server proxy is disabled for the Docker on Amazon Linux 2 platform with Docker Compose, you must follow the instructions for generating logs for enhanced health reporting\. For more information, see [Generating logs for enhanced health reporting \(Docker Compose\)](#docker-env-cfg.healthd-logging)\.
+
+### Environment properties and Environment Variables<a name="docker-software-config.env"></a>
+
+The **Environment properties** section lets you specify environment configuration settings on the Amazon Elastic Compute Cloud \(Amazon EC2\) instances that are running your application\. Environment properties are passed in as key\-value pairs to the application\. In a Docker environment, Elastic Beanstalk passes environment properties to containers as environment variables\. 
+
+Your application code running in a container can refer to an environment variable by name and read its value\. The source code that reads these environment variables will vary by progamming language\. You can find instructions for reading environment variable values in the programming languages that Elastic Beanstalk managed platforms support in the respective platform topic\. For a list of links to these topics, see [Environment properties and other software settings](environments-cfg-softwaresettings.md)\.
+
+**Environments with Docker Compose**  
+If you manage your Docker environment with Docker Compose, you must make some additional configuration to retrieve the environment variables in the containers\. In order for the executables running in your container to access these enrironment variables, you must reference them in the `docker-compose.yml`\. For more information see [Referencing environment variables in containers](#docker-env-cfg.env-variables)\. 
+
+## Referencing environment variables in containers<a name="docker-env-cfg.env-variables"></a>
+
+If you are using the Docker Compose tool on the Amazon Linux 2 Docker platform, Elastic Beanstalk generates a Docker Compose environment file called `.env` in the root directory of your application project\. This file stores the environment variables you configured for Elastic Beanstalk\.
+
+**Note**  
+ If you include a `.env` file in your application bundle, Elastic Beanstalk will not generate an `.env` file\. 
+
+In order for a container to reference the environment variables you define in Elastic Beanstalk, you must follow one or both of these configuration approaches\.
++ Add the `.env` file generated by Elastic Beanstalk to the `env_file` configuration option in the `docker-compose.yml` file\.
++ Directly define the environment variables in the `docker-compose.yml` file\.
+
+The following files provide an example\. The sample `docker-compose.yml` file demonstrates both approaches\. 
++ If you define environment properties `DEBUG_LEVEL=1` and `LOG_LEVEL=error`, Elastic Beanstalk generates the following `.env` file for you:
+
+  ```
+  DEBUG_LEVEL=1
+  LOG_LEVEL=error
+  ```
++ In this `docker-compose.yml` file, the `env_file` configuration option points to the `.env` file, and it also defines the environment variable `DEBUG=1` directly in the `docker-compose.yml` file\.
+
+  ```
+  services:
+    web:
+      build: .
+      environment:
+        - DEBUG=1
+      env_file:
+        - .env
+  ```
+
+**Notes**  
+If you set the same environment variable in both files, the variable defined in the `docker-compose.yml` file has higher precedence than the variable defined in the `.env` file\.
+Be careful to not leave spaces between the equal sign \(=\) and the value assigned to your variable in order to prevent spaces from being added to the string\.
+
+To learn more about environment variables in Docker Compose, see [Environment variables in Compose](https://docs.docker.com/compose/environment-variables/) 
+
+## Generating logs for enhanced health reporting \(Docker Compose\)<a name="docker-env-cfg.healthd-logging"></a>
+
+ The [Elastic Beanstalk health agent](health-enhanced.md#health-enhanced-agent) provides operating system and application health metrics for Elastic Beanstalk environments\. It relies on web server log formats that relay information in a specific format\.
+
+Elastic Beanstalk assumes that you run a web server proxy as a container\. As a result the NGINX web server proxy is disabled for Docker environments running Docker Compose\. You must configure your server to write logs in the location and format that the Elastic Beanstalk health agent uses\. Doing so allows you to make full use of enhanced health reporting, even if the web server proxy is disabled\.
+
+For instructions on how to do this, see [Web server log configuration](health-enhanced-serverlogs.md#health-enhanced-serverlogs.configure) 
+
+## Docker container customized logging \(Docker Compose\)<a name="docker-env-cfg.dc-customized-logging"></a>
+
+In order to efficiently troubleshoot issues and monitor your containerized services, you can [request instance logs](using-features.logging.md) from Elastic Beanstalk through the environment management console or the EB CLI\. Instance logs are comprised of bundle logs and tail logs, combined and packaged to allow you to view logs and recent events in an efficient and straightforward manner\.
+
+ Elastic Beanstalk creates log directories on the container instance, one for each service defined in the `docker-compose.yml` file, at `/var/log/eb-docker/containers/<service name>`\. If you are using the Docker Compose feature on the Amazon Linux 2 Docker platform, you can mount these directories to the location within the container file structure where logs are written\. When you mount log directories for writing log data, Elastic Beanstalk can gather log data from these directories\.
+
+ If your applications are on a Docker platform that is not using Docker Compose, you can follow the standard procedure desribed in [Docker container customized logging \(Docker Compose\)](#docker-env-cfg.dc-customized-logging)\.
+
+**To configure your service's logs files to be retreivable tail files and bundle logs**
+
+1. Edit the `docker-compose.yml` file\.
+
+1. Under the `volumes` key for your service add a bind mount to be the following:
+
+    ` "${EB_LOG_BASE_DIR}/<service name>:<log directory inside container> ` 
+
+   In the sample `docker-compose.yml` file below:
+   +  `nginx-proxy` is *<service name>* 
+   +  `/var/log/nginx` is *<log directory inside container>* 
+
+   ```
+   services:
+     nginx-proxy:
+       image: "nginx"
+       volumes:
+         - "${EB_LOG_BASE_DIR}/nginx-proxy:/var/log/nginx"
+   ```
+
+
++  The `var/log/nginx` directory contains the logs for the *nginx\-proxy* service in the container, and it will be mapped to the `/var/log/eb-docker/containers/nginx-proxy` directory on the host\. 
++  All of the logs in this directory are now retrievable as bundle and tail logs through Elastic Beanstalk's [request instance logs](using-features.logging.md) functionality\. 
+
+
+
+**Notes**  
+*$\{EB\_LOG\_BASE\_DIR\}* is an environment variable set by Elastic Beanstalk with the value `/var/log/eb-docker/containers`\.
+Elastic Beanstalk automatically creates the `/var/log/eb-docker/containers/<service name>` directory for each service in the `docker-compose.yml`file\.
 
 ## Docker images<a name="docker-images"></a>
 
@@ -174,6 +270,26 @@ option_settings:
 
 For environments running Docker platform versions 2\.9\.0 or earlier, Elastic Beanstalk never performs managed platform updates if the new platform version includes a new Docker version\.
 
+## Docker configuration namespaces<a name="docker-namespaces"></a>
+
+You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
+
+**Note**  
+ This information only applies to Docker environment that are not running Docker Compose\. This option has a different behavior with Docker environments that run Docker Compose\. For further information on proxy services with Docker Compose see [Container options](#docker-software-config.container)\. 
+
+The Docker platform supports options in the following namespaces, in addition to the [options supported for all Elastic Beanstalk environments](command-options-general.md):
++ `aws:elasticbeanstalk:environment:proxy` – Choose the proxy server for your environment\. Docker supports either running Nginx or no proxy server\.
+
+The following example configuration file configures a Docker environment to run no proxy server\.
+
+**Example \.ebextensions/docker\-settings\.config**  
+
+```
+option_settings:
+  aws:elasticbeanstalk:environment:proxy:
+    ProxyServer: none
+```
+
 ## Docker configuration on Amazon Linux AMI \(preceding Amazon Linux 2\)<a name="docker-alami"></a>
 
 If your Elastic Beanstalk Docker environment uses an Amazon Linux AMI platform version \(preceding Amazon Linux 2\), read the additional information in this section\.
@@ -238,20 +354,3 @@ option_settings:
 
 **Note**  
 When you change settings in this namespace, Elastic Beanstalk replaces all instances in your environment with instances running the new configuration\. See [Configuration changes](environments-updating.md) for details\.
-
-## Docker configuration namespaces<a name="docker-namespaces"></a>
-
-You can use a [configuration file](ebextensions.md) to set configuration options and perform other instance configuration tasks during deployments\. Configuration options can be defined by the Elastic Beanstalk service or the platform that you use and are organized into *namespaces*\.
-
-The Docker platform supports options in the following namespaces, in addition to the [options supported for all Elastic Beanstalk environments](command-options-general.md):
-+ `aws:elasticbeanstalk:environment:proxy` – Choose the proxy server for your environment\. Docker supports either running Nginx or no proxy server\.
-
-The following example configuration file configures a Docker environment to run no proxy server\.
-
-**Example \.ebextensions/docker\-settings\.config**  
-
-```
-option_settings:
-  aws:elasticbeanstalk:environment:proxy:
-    ProxyServer: none
-```

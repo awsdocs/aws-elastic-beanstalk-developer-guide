@@ -2,11 +2,13 @@
 
 Elastic Beanstalk creates an application version whenever you upload source code\. This usually occurs when you create an environment or upload and deploy code using the [environment management console](environments-console.md) or [EB CLI](eb-cli3.md)\. Elastic Beanstalk deletes these application versions according to the application's lifecycle policy and when you delete the application\. For details about application lifecycle policy, see [Configuring application version lifecycle settings](applications-lifecycle.md)\.
 
-You can also upload a source bundle without deploying it from the [application management console](applications-console.md)\. Elastic Beanstalk stores source bundles in Amazon Simple Storage Service \(Amazon S3\) and doesn't automatically delete them\.
+You can also upload a source bundle without deploying it from the [application management console](applications-console.md) or with the EB CLI command [eb appversion](eb3-appversion.md)\. Elastic Beanstalk stores source bundles in Amazon Simple Storage Service \(Amazon S3\) and doesn't automatically delete them\.
 
 You can apply tags to an application version when you create it, and edit tags of existing application versions\. For details, see [Tagging application versions](applications-versions-tagging.md)\.
 
 **To create a new application version**
+
+You can also create a new application version using the EB CLI\. For more information, see [eb appversion](eb3-appversion.md) in the *EB CLI commands* chapter\. 
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 
@@ -32,6 +34,8 @@ Over time, your application can accumulate many application versions\. To save s
 Deleting an application version doesn't affect environments currently running that version\.
 
 **To delete an application version**
+
+You can also delete an application version using the EB CLI\. For more information, see [eb appversion](eb3-appversion.md) in the *EB CLI commands* chapter\. 
 
 1. Open the [Elastic Beanstalk console](https://console.aws.amazon.com/elasticbeanstalk), and in the **Regions** list, select your AWS Region\.
 

@@ -1,6 +1,6 @@
-# Deploying a GlassFish application to the Docker platform<a name="docker-glassfish-tutorial"></a>
+# Deploying a GlassFish application to the Docker platform: a migration path to Amazon Linux 2<a name="docker-glassfish-tutorial"></a>
 
-The goal of this tutorial is to provide customers using the Preconfigured Docker GlassFish platform \(based on Amazon Linux AMI\) with a migration path to Amazon Linux 2\.
+The goal of this tutorial is to provide customers using the Preconfigured Docker GlassFish platform \(based on Amazon Linux AMI\) with a migration path to Amazon Linux 2\. You can migrate your GlassFish application to Amazon Linux 2 by deploying GlassFish and your application code to an Amazon Linux 2 Docker image\.
 
 The tutorial walks you through using the AWS Elastic Beanstalk Docker platform to deploy an application based on the [Java EE GlassFish application server](https://www.oracle.com/middleware/technologies/glassfish-server.html) to an Elastic Beanstalk environment\. 
 
@@ -10,9 +10,13 @@ We demonstrate two approaches to building a Docker image:
 
 ## Prerequisites<a name="docker-glassfish-tutorial.prereqs"></a>
 
-This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations, [Using the Elastic Beanstalk command line interface \(EB CLI\)](eb-cli3.md), and Docker\. To follow this tutorial, you need a working local installation of Docker\. For more information about installing Docker, see the [Docker installation guide](https://docs.docker.com/install/)\.
+This tutorial assumes that you have some knowledge of basic Elastic Beanstalk operations, the Elastic Beanstalk command line interface \(EB CLI\), and Docker\. If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\. This tutorial uses the [EB CLI](eb-cli3.md), but you can also create environments and upload applications by using the Elastic Beanstalk console\.
 
-If you haven't already, follow the instructions in [Getting started using Elastic Beanstalk](GettingStarted.md) to launch your first Elastic Beanstalk environment\. This tutorial uses the EB CLI, but you can also create environments and upload applications by using the Elastic Beanstalk console\. To learn more about configuring Docker environments, see [Docker configuration](single-container-docker-configuration.md)\.
+To follow this tutorial, you will also need the following Docker components:
++ A working local installation of Docker\. For more information, see [Get Docker](https://docs.docker.com/install/) on the Docker documentation website\.
++ Access to Docker Hub\. You will need to create a Docker ID to access the Docker Hub\. For more information, see [Share the application](https://docs.docker.com/get-started/04_sharing_app/) on the Docker documentation website\.
+
+To learn more about configuring Docker environments on Elastic Beanstalk platforms, see [Docker configuration](single-container-docker-configuration.md) in this same chapter\.
 
 ## Simple example: provide your application code<a name="docker-glassfish-tutorial.simple"></a>
 
@@ -97,21 +101,22 @@ This is a more advanced way to deploy your GlassFish application\. Building on t
 
 When you launch an environment and provide your Docker image, instances in your environment download and use this image directly and don't need to build a Docker image\. Therefore, instance provisioning time is decreased\.
 
-**Note**  
+**Notes**  
 The following steps create a publicly available Docker image\.
+You will use Docker commands from your local Docker installation, along with your Docker Hub credentials\. For more information, see the preceding [Prerequisites](docker.md#single-container-docker.prereqs) section\.
 
 **To launch an environment with a prebuilt GlassFish application Docker image**
 
 1. Download and expand the example `docker-glassfish-al2-v1.zip` as in the previous [simple example](#docker-glassfish-tutorial.simple)\. If you've completed that example, you can use the directory you already have\.
 
-1. Build a Docker image and push it to Docker Hub\.
+1. Build a Docker image and push it to Docker Hub\. Enter your Docker ID for *docker\-id* to sign in to Docker Hub\.
 
    ```
-   ~/glassfish-example$ docker build -t docker-username/beanstalk-glassfish-example:latest .
-   ~/glassfish-example$ docker push docker-username/beanstalk-glassfish-example:latest
+   ~/glassfish-example$ docker build -t docker-id/beanstalk-glassfish-example:latest .
+   ~/glassfish-example$ docker push docker-id/beanstalk-glassfish-example:latest
    ```
 **Note**  
-Before pushing your image, you might need to run docker login\.
+Before pushing your image, you might need to run docker login\. You will be prompted for your Docker Hub credentials if you run the command without parameters\.
 
 1. Create an additional directory\.
 

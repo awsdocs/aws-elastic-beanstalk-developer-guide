@@ -1,8 +1,8 @@
 # Using the EB CLI with AWS CodeCommit<a name="eb-cli-codecommit"></a>
 
-You can use the EB CLI to deploy your application directly from your AWS CodeCommit repository\. With CodeCommit, you can upload only your changes to the repository when you deploy, instead of uploading your entire project\. This can save you time and bandwidth if you have a large project or limited Internet connectivity\. The EB CLI pushes your local commits and uses them to create application versions when you use eb create or eb deploy\.
+You can use the EB CLI to deploy your application directly from your AWS CodeCommit repository\. With CodeCommit, you can upload only your changes to the repository when you deploy, instead of uploading your entire project\. This can save you time and bandwidth if you have a large project or limited Internet connectivity\. The EB CLI pushes your local commits and uses them to create application versions when you use eb appversion, eb create or eb deploy\.
 
-To deploy your changes, CodeCommit integration requires you to commit changes first\. However, as you develop or debug, you might not want to push changes that you haven't confirmed are working\. You can avoid committing your changes by staging them and using eb deploy \-\-staged \(which performs a standard deployment\)\. Or commit your changes to a development or testing branch first, and merge to your master branch only when your code is ready\. With eb use, you can configure the EB CLI to deploy to one environment from your development branch, and to a different environment from your master branch\.
+To deploy your changes, CodeCommit integration requires you to commit changes first\. However, as you develop or debug, you might not want to push changes that you haven't confirmed are working\. You can avoid committing your changes by staging them and using eb deploy \-\-staged \(which performs a standard deployment\)\. Or commit your changes to a development or testing branch first, and merge to your mainline branch only when your code is ready\. With eb use, you can configure the EB CLI to deploy to one environment from your development branch, and to a different environment from your mainline branch\.
 
 **Note**  
 Some regions don't offer CodeCommit\. The integration between Elastic Beanstalk and CodeCommit doesn't work in these regions\.  
@@ -75,8 +75,8 @@ To get started with CodeCommit, run [eb init](eb3-init.md)\. During repository c
    ```
    Enter Branch Name
    ***** Must have at least one commit to create a new branch with CodeCommit *****
-   (default is "master"): ENTER
-   Successfully created branch: master
+   (default is "mainline"): ENTER
+   Successfully created branch: mainline
    ```
 
 ## Deploying from your CodeCommit repository<a name="eb-cli-codecommit-deploy"></a>
@@ -166,7 +166,7 @@ CodeCommit configuration applies to a single branch\. You can use eb use and eb 
    (default is 2): 2
    
    Select a branch
-   1) master
+   1) mainline
    2) test
    3) [ Create new Branch with local HEAD ]
    (default is 1): 1
@@ -178,7 +178,7 @@ CodeCommit configuration applies to a single branch\. You can use eb use and eb 
    ~/my-app$ eb codesource local
    Current CodeCommit setup:
      Repository: my-app
-     Branch: master
+     Branch: mainline
    Default set to use local sources
    ```
 
@@ -225,7 +225,7 @@ If you already have a CodeCommit repository and want to use it with Elastic Bean
    (default is 1): 1
    
    Select a branch
-   1) master
+   1) mainline
    2) dev-env
    3) [ Create new Branch with local HEAD ]
    (default is 2): 2

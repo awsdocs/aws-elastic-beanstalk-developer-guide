@@ -1,8 +1,11 @@
 # Adding and customizing Elastic Beanstalk environment resources<a name="environment-resources"></a>
 
-You may also want to customize your environment resources that are part of your Elastic Beanstalk environment\. For example, you may want to add an Amazon SQS queue and an alarm on queue depth, or you might want to add an Amazon ElastiCache cluster\. You can easily customize your environment at the same time that you deploy your application version by including a configuration file with your source bundle\.
+You may want to customize your environment resources that are part of your Elastic Beanstalk environment\. For example, you may want to add an Amazon SQS queue and an alarm on queue depth, or you might want to add an Amazon ElastiCache cluster\. You can easily customize your environment at the same time that you deploy your application version by including a configuration file with your source bundle\.
 
 You can use the `Resources` key in a [configuration file](ebextensions.md) to create and customize AWS resources in your environment\. Resources defined in configuration files are added to the AWS CloudFormation template used to launch your environment\. All AWS CloudFormation [resources types](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html) are supported\.
+
+**Note**  
+Whenever you add a resource that isn't managed by Elastic Beanstalk, be sure to add a user policy with the appropriate permissions to your AWS Identity and Access Management \(IAM\) users\. The [managed user policies](AWSHowTo.iam.managed-policies.md) that Elastic Beanstalk provides only cover permissions to Elastic Beanstalk\-managed resources\.
 
 For example, the following configuration file adds an Auto Scaling lifecycle hook to the default Auto Scaling group created by Elastic Beanstalk:
 

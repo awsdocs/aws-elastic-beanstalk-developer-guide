@@ -4,7 +4,7 @@ You can use the EB CLI to create groups of AWS Elastic Beanstalk environments, e
 
 **Note**  
 Environment groups are different than multiple containers in a Multicontainer Docker environment\. With environment groups, each component of your application runs in a separate Elastic Beanstalk environment, with its own dedicated set of Amazon EC2 instances\. Each component can scale separately\. With Multicontainer Docker, you combine several components of an application into a single environment\. All components share the same set of Amazon EC2 instances, with each instance running multiple Docker containers\. Choose one of these architectures according to your application's needs\.  
-For details about Multicontainer Docker, see [Multicontainer Docker environments](create_deploy_docker_ecs.md)\.
+For details about Multicontainer Docker, see [Using the Multicontainer Docker platform \(Amazon Linux AMI\)](create_deploy_docker_ecs.md)\.
 
 Organize your application components into the following folder structure:
 

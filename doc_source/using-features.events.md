@@ -19,6 +19,8 @@ The [EB CLI](eb-cli3.md) and [AWS CLI](https://aws.amazon.com/cli/) both provide
 
 To pull events using the AWS CLI, use the `describe-events` command and specify the environment by name or ID:
 
+ 
+
 ```
 $ aws elasticbeanstalk describe-events --environment-id e-gbjzqccra3
 {

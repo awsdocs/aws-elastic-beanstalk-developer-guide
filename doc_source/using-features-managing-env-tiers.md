@@ -44,13 +44,13 @@ The daemon sets the following HTTP headers\.
 | --- |
 | **Name** | **Value** | 
 | --- |--- |
-|  User\-Agent  |  `aws-sqsd` `aws-sqsd/1.1`1  | 
-|  X\-Aws\-Sqsd\-Msgid  |  SQS message ID, used to detect message storms \(an unusually high number of new messages\)\.  | 
-|  X\-Aws\-Sqsd\-Queue  |  Name of the SQS queue\.  | 
-|  X\-Aws\-Sqsd\-First\-Received\-At  |  UTC time, in [ISO 8601 format](http://www.w3.org/TR/NOTE-datetime), when the message was first received\.  | 
-|  X\-Aws\-Sqsd\-Receive\-Count  |  SQS message receive count\.  | 
-|  X\-Aws\-Sqsd\-Attr\-*message\-attribute\-name*  |  Custom message attributes assigned to the message being processed\. The `message-attribute-name` is the actual message attribute name\. All string and number message attributes are added to the header\. Binary attributes are discarded and not included in the header\.  | 
-|  Content\-Type  |  Mime type configuration; by default, `application/json`\.  | 
+|  `User-Agent`  |  `aws-sqsd` `aws-sqsd/1.1`1  | 
+|  `X-Aws-Sqsd-Msgid`  |  SQS message ID, used to detect message storms \(an unusually high number of new messages\)\.  | 
+|  `X-Aws-Sqsd-Queue`  |  Name of the SQS queue\.  | 
+|  `X-Aws-Sqsd-First-Received-At`  |  UTC time, in [ISO 8601 format](http://www.w3.org/TR/NOTE-datetime), when the message was first received\.  | 
+|  `X-Aws-Sqsd-Receive-Count`  |  SQS message receive count\.  | 
+|  `X-Aws-Sqsd-Attr-message-attribute-name`  |  Custom message attributes assigned to the message being processed\. The `message-attribute-name` is the actual message attribute name\. All string and number message attributes are added to the header\. Binary attributes are discarded and not included in the header\.  | 
+|  `Content-Type`  |  Mime type configuration; by default, `application/json`\.  | 
 
 ## Dead\-letter queues<a name="worker-deadletter"></a>
 
@@ -97,6 +97,8 @@ Elastic Beanstalk uses leader election to determine which instance in your worke
 
 For periodic tasks, the worker daemon sets the following additional headers\.
 
+ 
+
 
 ****  
 
@@ -104,9 +106,9 @@ For periodic tasks, the worker daemon sets the following additional headers\.
 | --- |
 | **Name** | **Value** | 
 | --- |--- |
-|  X\-Aws\-Sqsd\-Taskname  |  For periodic tasks, the name of the task to perform\.  | 
-|  X\-Aws\-Sqsd\-Scheduled\-At  |  Time at which the periodic task was scheduled  | 
-|  X\-Aws\-Sqsd\-Sender\-Id  |  AWS account number of the sender of the message  | 
+|  `X-Aws-Sqsd-Taskname`  |  For periodic tasks, the name of the task to perform\.  | 
+|  `X-Aws-Sqsd-Scheduled-At`  |  Time at which the periodic task was scheduled  | 
+|  `X-Aws-Sqsd-Sender-Id`  |  AWS account number of the sender of the message  | 
 
 ## Use Amazon CloudWatch for automatic scaling in worker environment tiers<a name="worker-scaling"></a>
 

@@ -96,6 +96,8 @@ Traffic\-splitting deployments require an Application Load Balancer\. Elastic Be
 You can use the [configuration options](command-options.md) in the [`aws:elasticbeanstalk:command`](command-options-general.md#command-options-general-elasticbeanstalkcommand) namespace to configure your deployments\. If you choose the traffic\-splitting policy, additional options for this policy are available in the [`aws:elasticbeanstalk:trafficsplitting`](command-options-general.md#command-options-general-elasticbeanstalktrafficsplitting) namespace\.
 
 Use the `DeploymentPolicy` option to set the deployment type\. The following values are supported:
+
+ 
 + `AllAtOnce` – Disables rolling deployments and always deploys to all instances simultaneously\.
 + `Rolling` – Enables standard rolling deployments\.
 + `RollingWithAdditionalBatch` – Launches an extra batch of instances, before starting the deployment, to maintain full capacity\.

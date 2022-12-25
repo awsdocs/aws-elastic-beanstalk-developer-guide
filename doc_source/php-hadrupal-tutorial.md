@@ -25,13 +25,15 @@ To follow the procedures in this guide, you will need a command line terminal or
 this is output
 ```
 
-On Linux and macOS, use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
+On Linux and macOS, you can use your preferred shell and package manager\. On Windows 10, you can [install the Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) to get a Windows\-integrated version of Ubuntu and Bash\.
 
 The procedures in this tutorial for Amazon Relational Database Service \(Amazon RDS\) tasks assume that you are launching resources in a default [Amazon Virtual Private Cloud](https://docs.aws.amazon.com/vpc/latest/userguide/) \(Amazon VPC\)\. All new accounts include a default VPC in each region\. If you don't have a default VPC, the procedures will vary\. See [Using Elastic Beanstalk with Amazon RDS](AWSHowTo.RDS.md) for instructions for EC2\-Classic and custom VPC platforms\.
 
 The sample application uses Amazon EFS\. It only works in AWS Regions that support Amazon EFS\. To learn about supporting AWS Regions, see [Amazon Elastic File System Endpoints and Quotas](https://docs.aws.amazon.com/general/latest/gr/elasticfilesystem.html) in the *AWS General Reference*\.
 
-This tutorial was developed with Drupal version 8\.5\.3 and PHP 7\.0\.
+If the platform of your Elastic Beanstalk environment uses PHP 7\.4 or earlier, we recommend that you use Drupal version 8\.9\.13 for this tutorial\. For platforms installed with PHP 8\.0 or later, we recommend that you use Drupal 9\.1\.5\.
+
+For more information about Drupal releases and the PHP versions that they support, see [PHP requirements](https://www.drupal.org/docs/system-requirements/php-requirements#php_required) on the Drupal website\. The core versions that Drupal recommends are listed on the website [https://www\.drupal\.org/project/drupal](https://www.drupal.org/project/drupal)\. 
 
 ## Launch a DB instance in Amazon RDS<a name="php-hadrupal-tutorial-database"></a>
 
@@ -43,26 +45,26 @@ Use the Amazon RDS console to launch a Multi\-AZ **MySQL** DB instance\. Choosin
 
 1. Open the [RDS console](https://console.aws.amazon.com/rds/home)\.
 
-1. Choose **Databases** in the navigation pane\.
+1. In the navigation pane, choose **Databases**\.
 
 1. Choose **Create database**\.
 
 1. Choose **Standard Create**\.
 **Important**  
-Do not choose **Easy Create**\. It does not allow you to configure the necessery settings to launch this RDS DB\.
+Do not choose **Easy Create**\. If you choose it, you can't configure the necessary settings to launch this RDS DB\.
 
 1. Under **Additional configuration**, for **Initial database name**, type **ebdb**\. 
 
-1. Review the default settings carefully and adjust as necessary\. Pay attention to the following options:
+1. Review the default settings and adjust these settings according to your specific requirements\. Pay attention to the following options:
    + **DB instance class** – Choose an instance size that has an appropriate amount of memory and CPU power for your workload\.
    + **Multi\-AZ deployment** – For high availability, set this to **Create an Aurora Replica/Reader node in a different AZ**\.
-   + **Master username** and **Master password** – The database username and password\. Make a note of these settings because you'll use them later\.
+   + **Master username** and **Master password** – The database username and password\. Make a note of these settings because you will use them later\.
 
 1. Verify the default settings for the remaining options, and then choose **Create database**\.
 
 Next, modify the security group attached to your DB instance to allow inbound traffic on the appropriate port\. This is the same security group that you will attach to your Elastic Beanstalk environment later, so the rule that you add will grant ingress permission to other resources in the same security group\.
 
-**To modify the inbound rules on your RDS instance's security group**
+**To modify the inbound rules on the security group that's attached to your RDS instance**
 
 1. Open the [ Amazon RDS console](https://console.aws.amazon.com/rds/home)\.
 
@@ -70,9 +72,9 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 
 1. Choose the name of your DB instance to view its details\.
 
-1. In the **Connectivity** section, make a note of the **Subnets**, **Security groups**, and **Endpoint** shown on this page so you can use this information later\.
+1. In the **Connectivity** section, make a note of the **Subnets**, **Security groups**, and **Endpoint** that are displayed on this page\. This is so you can use this information later\.
 
-1. Under **Security**, you can see the security group associated with the DB instance\. Open the link to view the security group in the Amazon EC2 console\.  
+1. Under **Security**, you can see the security group that's associated with the DB instance\. Open the link to view the security group in the Amazon EC2 console\.  
 ![\[Connectivity section of a DB instance page in the Amazon RDS console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/rds-securitygroup.png)
 
 1. In the security group details, choose **Inbound**\.
@@ -83,7 +85,7 @@ Next, modify the security group attached to your DB instance to allow inbound tr
 
 1. For **Type**, choose the DB engine that your application uses\.
 
-1. For **Source**, type **sg\-** to view a list of available security groups\. Choose the security group associated with an Elastic Beanstalk environment's Auto Scaling group to allow Amazon EC2 instances in the environment to have access to the database\.  
+1. For **Source**, type **sg\-** to view a list of available security groups\. Choose the security group that's associated with the Auto Scaling group that's used with your Elastic Beanstalk environment\. This is so that Amazon EC2 instances in the environment can have access to the database\.  
 ![\[Edit the inbound rules for a security group in the Amazon EC2 console\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/ec2-securitygroup-rds.png)
 
 1. Choose **Save**\.
@@ -110,6 +112,10 @@ Environment creation takes about 5 minutes and creates the following resources:
 + **EC2 instance** – An Amazon Elastic Compute Cloud \(Amazon EC2\) virtual machine configured to run web apps on the platform that you choose\.
 
   Each platform runs a specific set of software, configuration files, and scripts to support a specific language version, framework, web container, or combination of these\. Most platforms use either Apache or NGINX as a reverse proxy that sits in front of your web app, forwards requests to it, serves static assets, and generates access and error logs\.
+**Important**  
+The *Let's Encrypt* cross\-signed DST Root CA X3 certificate *expired* on *September 30, 2021*\. Due to this, Beanstalk environments running on the Amazon Linux 2 and Amazon Linux AMI operating systems might not be able to connect to servers using *Let's Encrypt* certificates\.  
+On October 3, 2021 Elastic Beanstalk released new platform versions for Amazon Linux AMI and Amazon Linux 2 with the updated CA certificates\. To receive these updates and address this issue turn on [Managed Updates](environment-platform-update-managed.md) or [update your platforms manually](using-features.platform.upgrade.md#using-features.platform.upgrade.config)\. For more information, see the [platform update release notes](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2021-10-03-linux.html) in the *AWS Elastic Beanstalk Release Notes*\.  
+You can also apply the manual workarounds described in this [AWS Knowledge Center article](https://aws.amazon.com/premiumsupport/knowledge-center/ec2-expired-certificate/)\. Since Elastic Beanstalk provides AMIs with locked GUIDs, we recommend that you use the sudo yum install command in the article\. Alternatively, you can also use the sudo sed command in the article if you prefer to manually modify the system in place\.
 + **Instance security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the load balancer reach the EC2 instance running your web app\. By default, traffic isn't allowed on other ports\.
 + **Load balancer** – An Elastic Load Balancing load balancer configured to distribute requests to the instances running your application\. A load balancer also eliminates the need to expose your instances directly to the internet\.
 + **Load balancer security group** – An Amazon EC2 security group configured to allow inbound traffic on port 80\. This resource lets HTTP traffic from the internet reach the load balancer\. By default, traffic isn't allowed on other ports\.
@@ -195,13 +201,23 @@ To create a Drupal project for Elastic Beanstalk, download the Drupal source cod
 
 **To create a Drupal project**
 
-1. Download Drupal from [https://www\.drupal\.org/download](https://www.drupal.org/download)\.
+1. Run the follwing command to download Drupal from *www\.drupal\.org/download*\. To learn more about downloads, see the [the Drupal website](https://www.drupal.org/download)\.
+
+   If the platform of your Elastic Beanstalk environment uses PHP 7\.4 or earlier, we recommend that you download Drupal version 8\.9\.13 for this tutorial\. You can run the following command to download it\.
 
    ```
-   ~$ curl https://ftp.drupal.org/files/projects/drupal-8.5.3.tar.gz -o drupal.tar.gz
+   ~$ curl https://ftp.drupal.org/files/projects/drupal-8.9.13.tar.gz -o drupal.tar.gz
    ```
 
-1. Download the configuration files from the sample repository:
+   If your platform uses PHP 8\.0 or later, we recommend that you download Drupal 9\.1\.5\. You can use this command to download it\.
+
+   ```
+   ~$ curl https://ftp.drupal.org/files/projects/drupal-9.1.5.tar.gz -o drupal.tar.gz
+   ```
+
+   For more information about Drupal releases and the PHP versions that they support, see [PHP requirements](https://www.drupal.org/docs/system-requirements/php-requirements#php_required) in the official Drupal documentation\. The core versions that Drupal recommends are listed on [the Drupal website](https://www.drupal.org/project/drupal)\.
+
+1. Use the following command to download the configuration files from the sample repository:
 
    ```
    ~$ wget https://github.com/aws-samples/eb-php-drupal/releases/download/v1.1/eb-php-drupal-v1.zip
@@ -209,9 +225,19 @@ To create a Drupal project for Elastic Beanstalk, download the Drupal source cod
 
 1. Extract Drupal and change the name of the folder\.
 
+   If you downloaded Drupal 8\.9\.13:
+
    ```
     ~$ tar -xvf drupal.tar.gz
-    ~$ mv drupal-8.5.3 drupal-beanstalk
+    ~$ mv drupal-8.9.13 drupal-beanstalk
+    ~$ cd drupal-beanstalk
+   ```
+
+   If you downloaded Drupal 9\.1\.5:
+
+   ```
+    ~$ tar -xvf drupal.tar.gz
+    ~$ mv drupal-9.1.5 drupal-beanstalk
     ~$ cd drupal-beanstalk
    ```
 

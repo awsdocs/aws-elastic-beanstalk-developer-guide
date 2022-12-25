@@ -68,7 +68,7 @@ For example, you can use the AWS CLI to download a DLL file to your application 
 ```
 container_commands:
   copy-dll:
-    command: aws s3 cp s3://my-bucket/dlls/large-dll.dll .\lib\
+    command: aws s3 cp s3://DOC-EXAMPLE-BUCKET/dlls/large-dll.dll .\lib\
 ```
 
 For more information on using configuration files, see [Advanced environment customization with configuration files \(`.ebextensions`\)](ebextensions.md)\.

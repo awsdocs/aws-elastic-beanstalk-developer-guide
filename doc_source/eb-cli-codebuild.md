@@ -29,7 +29,7 @@ eb_codebuild_settings:
 `CodeBuildServiceRole`  
 The ARN or name of the AWS Identity and Access Management \(IAM\) service role that CodeBuild can use to interact with dependent AWS services on your behalf\. This value is required\. If you omit it, any subsequent eb create or eb deploy command fails\.  
 To learn more about creating a service role for CodeBuild, see [Create a CodeBuild Service Role](https://docs.aws.amazon.com/codebuild/latest/userguide/setting-up.html#setting-up-service-role) in the *AWS CodeBuild User Guide*\.  
-You also need permissions to perform actions in CodeBuild itself\. The Elastic Beanstalk `AWSElasticBeanstalkFullAccess` managed user policy includes all the required CodeBuild action permissions\. If you're not using the managed policy, be sure to allow the following permissions in your user policy\.  
+You also need permissions to perform actions in CodeBuild itself\. The Elastic Beanstalk **AdministratorAccess\-AWSElasticBeanstalk** managed user policy includes all the required CodeBuild action permissions\. If you're not using the managed policy, be sure to allow the following permissions in your user policy\.  
 
 ```
   "codebuild:CreateProject",

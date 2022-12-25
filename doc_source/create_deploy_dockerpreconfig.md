@@ -4,7 +4,7 @@ Elastic Beanstalk has a platform branch running a Docker container that is preco
 
 **Notes**  
 Elastic Beanstalk also supports platform branches with preconfigured Docker containers for Go and Python\. These platform branches are scheduled for retirement\.
-All the Preconfigured Docker platform branches use the Amazon Linux AMI operating system \(preceding Amazon Linux 2\)\. To migrate your GlassFish application to Amazon Linux 2, use the generic Docker platform and deploy GlassFish and your application code to an Amazon Linux 2 Docker image\. For details, see [Deploying a GlassFish application to the Docker platform](docker-glassfish-tutorial.md)\.
+All the Preconfigured Docker platform branches use the Amazon Linux AMI operating system \(preceding Amazon Linux 2\)\. To migrate your GlassFish application to Amazon Linux 2, use the generic Docker platform and deploy GlassFish and your application code to an Amazon Linux 2 Docker image\. For details, see [Deploying a GlassFish application to the Docker platform: a migration path to Amazon Linux 2](docker-glassfish-tutorial.md)\.
 
 The following section provides a detailed procedure for deploying an application to Elastic Beanstalk using a preconfigured Docker container\.
 
@@ -67,9 +67,7 @@ You must include the `-p` flag to map port 8080 on the container to the localhos
 
    ```
    http://localhost:3000
-   ```
-
-   The following web page appears\.  
+   ```  
 ![\[The GlassFish example application showing in a web browser\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/dockerpreconfig-webpage.png)
 
 ### Deploy to Elastic Beanstalk<a name="create_deploy_dockerpreconfig.walkthrough.deploy"></a>

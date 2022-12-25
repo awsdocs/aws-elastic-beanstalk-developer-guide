@@ -25,14 +25,16 @@ In Amazon Linux 2 platform versions, Elastic Beanstalk implements these features
 The following Docker\-specific configuration options apply to the Docker and Preconfigured Docker platforms\.
 
 **Note**  
-These configuration options do not apply to the Multicontainer Docker platform\.
+These configuration options do not apply to  
+the Docker platform \(Amazon Linux 2\) with Docker Compose
+the Multicontainer Docker platform \(Amazon Linux AMI\)
 
 
 **Namespace: `aws:elasticbeanstalk:environment:proxy`**  
 
 |  **Name**  |  **Description**  |  **Default**  |  **Valid values**  | 
 | --- | --- | --- | --- | 
-|  ProxyServer  |  Specifies the web server to use as a proxy\.  |  `nginx`  |  `nginx` `none` – *Amazon Linux AMI only*  | 
+|  ProxyServer  |  Specifies the web server to use as a proxy\.  |  `nginx`  |  `nginx` `none` – *Amazon Linux AM* and *Docker w/DC only*  | 
 
 ## Go platform options<a name="command-options-golang"></a>
 

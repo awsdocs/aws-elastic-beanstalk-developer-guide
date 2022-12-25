@@ -19,7 +19,9 @@ To initially set up AWS Config, see the following topics in the [AWS Config Deve
 
 ## Configuring AWS Config to record Elastic Beanstalk resources<a name="AWSHowTo.config.record"></a>
 
-By default, AWS Config records configuration changes for all supported types of *regional resources* that it discovers in the region in which your environment is running\. You can customize AWS Config to record changes only for specific resource types, or changes to *global resources*\. For example, you can configure AWS Config to record changes for Elastic Beanstalk resources and a subset of other AWS resources that Elastic Beanstalk starts for you\.
+By default, AWS Config records configuration changes for all supported types of *regional resources* that it discovers in the region in which your environment is running\. You can customize AWS Config to record changes only for specific resource types, or changes to *global resources*\.
+
+For example, you can configure AWS Config to record changes for Elastic Beanstalk resources and a subset of other AWS resources that Elastic Beanstalk starts for you\. Using the [AWS Config Console](https://docs.aws.amazon.com/config/latest/developerguide/gs-console.html), you can select Elastic Beanstalk as a resource in the AWS Config **Settings** page from the **Specific Types** field\. From there you can choose to record any of the Elastic Beanstalk resource types: **Application**, **ApplicationVersion**, and **Environment**\. 
 
 The following figure shows the AWS Config **Settings** page, with Elastic Beanstalk resource types that you can choose to record: **Application**, **ApplicationVersion**, and **Environment**\.
 
@@ -43,11 +45,11 @@ You can use the AWS Config console to look for Elastic Beanstalk resources, and 
 
 1. On the **Resource inventory** page, choose **Resources**\.
 
-1. Open the **Resource type** menu, scroll to **ElasticBeanstalk**, and then choose one or more of the Elastic Beanstalk resource types\. See **1** in the following figure\.
+1. Open the **Resource type** menu, scroll to **ElasticBeanstalk**, and then choose one or more of the Elastic Beanstalk resource types\.   
 **Note**  
 To view configuration details for other resources that Elastic Beanstalk created for your application, choose additional resource types\. For example, you can choose **Instance** under **EC2**\.
 
-1. Choose **Look up**\. See **2** in the following figure\.  
+1. Choose **Look up**\.  See **2** in the following figure\.   
 ![\[AWS Config resource inventory page showing a list of resource types to look up\]](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/images/cc-resources-dropdown.png)
 
 1. Choose a resource ID in the list of resources that AWS Config displays\.  

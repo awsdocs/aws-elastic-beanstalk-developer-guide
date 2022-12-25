@@ -1,7 +1,10 @@
 # Using the Elastic Beanstalk Tomcat platform<a name="java-tomcat-platform"></a>
 
 **Important**  
-Amazon Linux 2 platform versions are fundamentally different than Amazon Linux AMI platform versions \(preceding Amazon Linux 2\)\. These different platform generations are incompatible in several ways\. If you are migrating to an Amazon Linux 2 platform version, be sure to read the information in [Migrating your Elastic Beanstalk Linux application to Amazon Linux 2](using-features.migration-al.md)\.
+AWS Elastic Beanstalk installs Log4j from the Amazon Linux default package repositories in its Tomcat platforms for Amazon Linux 1 and Amazon Linux 2\. The versions of Log4j available in the Amazon Linux 1 and Amazon Linux 2 repositories are not affected by [CVE\-2021\-44228](https://www.cve.org/CVERecord?id=CVE-2021-44228) or [CVE\-2021\-45046](https://www.cve.org/CVERecord?id=CVE-2021-45046) in their default configuration\.  
+*If you've made configuration changes to your application’s use of log4j, or installed newer versions of log4j, then we recommend that you take action to update your application’s code to mitigate this issue\.*  
+Out of caution, Elastic Beanstalk released new platform versions that use the latest Amazon Linux default package repositories, which include the [Log4j hotpatched JDK](http://aws.amazon.com/blogs/opensource/hotpatch-for-apache-log4j/), in our [Amazon Linux platform release on December 21, 2021](https://docs.aws.amazon.com/elasticbeanstalk/latest/relnotes/release-2021-12-21-linux.html)\. If you've customized log4j installation as your application dependency, we recommend that you upgrade to the latest Elastic Beanstalk platform version to mitigate CVE\-2021\-44228 or CVE\-2021\-45046\. You can also enable automated managed updates as part of normal update practices\.  
+For more information about security\-related software updates for Amazon Linux, see the [Amazon Linux Security Center](https://alas.aws.amazon.com/)\.
 
 The AWS Elastic Beanstalk Tomcat platform is a set of [platform versions](https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html#platforms-supported.java) for Java web applications that can run in a Tomcat web container\. Tomcat runs behind an nginx proxy server\. Each platform branch corresponds to a major version of Tomcat, like *Java 8 with Tomcat 8*\.
 
@@ -72,7 +75,7 @@ The **Log Options** section has two settings:
 
 To improve performance, the **Static files** section lets you configure the proxy server to serve static files \(for example, HTML or images\) from a set of directories inside your web application\. For each directory, you set the virtual path to directory mapping\. When the proxy server receives a request for a file under the specified path, it serves the file directly instead of routing the request to your application\.
 
-For details about configuring static files using the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
+For details about configuring static files using configuration files or the Elastic Beanstalk console, see [Serving static files](environment-cfg-staticfiles.md)\.
 
 ### Environment properties<a name="java-tomcat-options-properties"></a>
 

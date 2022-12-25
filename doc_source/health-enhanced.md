@@ -61,6 +61,8 @@ See [Instance metrics](health-enhanced-metrics.md) for details on the metrics re
 
 In addition to the basic health reporting system checks, including [Elastic Load Balancing health checks](using-features.healthstatus.md#using-features.healthstatus.understanding) and [resource monitoring](using-features.healthstatus.md#monitoring-basic-additionalchecks), Elastic Beanstalk enhanced health reporting gathers additional data about the state of the instances in your environment\. This includes operating system metrics, server logs, and the state of ongoing environment operations such as deployments and updates\. The Elastic Beanstalk health reporting service combines information from all available sources and analyzes it to determine the overall health of the environment\.
 
+
+
 ### Operations and commands<a name="health-enhanced-factors-operations"></a>
 
 When you perform an operation on your environment, such as deploying a new version of an application, Elastic Beanstalk makes several changes that affect the environment's health status\.
@@ -134,11 +136,11 @@ For the instance profile, you can use the `AWSElasticBeanstalkWebTier` or `AWSEl
 
 ## Enhanced health authorization<a name="health-enhanced-authz"></a>
 
-The Elastic Beanstalk instance profile managed policies contain permission for the `elasticbeanstalk:PutInstanceStatistics` action\. This action isn't part of the Elastic Beanstalk API\. It is part of a different API that environment instances use internally to communicate enhanced health information to the Elastic Beanstalk service\. You don't call this API directly\.
+The Elastic Beanstalk instance profile managed policies contain permissions for the `elasticbeanstalk:PutInstanceStatistics` action\. This action isn't part of the Elastic Beanstalk API\. It's part of a different API that environment instances use internally to communicate enhanced health information to the Elastic Beanstalk service\. You don't call this API directly\.
 
-By default, authorization for the `elasticbeanstalk:PutInstanceStatistics` action isn't enabled\. Therefore, allowing it for your application and environment resources in your instance profile, as the managed policy does, isn't required\. To increase security of your environment and help prevent health data spoofing on your behalf, we recommend that you set the `EnhancedHealthAuthEnabled` option in the [aws:elasticbeanstalk:healthreporting:system](command-options-general.md#command-options-general-elasticbeanstalkhealthreporting) namespace to `true`\. You can configure this option by using an [option setting](ebextensions-optionsettings.md) in a [configuration file](ebextensions.md)\.
+When you create a new environment, authorization for the `elasticbeanstalk:PutInstanceStatistics` action is enabled by default\. To increase security of your environment and help prevent health data spoofing on your behalf, we recommend that you keep authorization for this action enabled\. If you use managed policies for your instance profile, this feature is available for your new environment without any further configuration\. However, If you use a *custom instance profile* instead of a *managed policy*, your environment might display a **No Data** health status\. This happens because the instances aren't authorized for the action that communicates enhanced health data to the service\.
 
-If you enable authorization for `elasticbeanstalk:PutInstanceStatistics` using the `EnhancedHealthAuthEnabled` option, and you use managed policies for your instance profile, then there's nothing else you need to do—our managed policies cover the necessary authorization\. If you use a custom instance profile instead of a managed policy, your environment might show the **No Data** health status\. This happens because the instances aren't authorized for the action that communicates enhanced health data to the service\. To authorize the action, include the following statement in your instance profile\.
+To authorize the action, include the following statement in your instance profile\.
 
 ```
     {
@@ -153,6 +155,11 @@ If you enable authorization for `elasticbeanstalk:PutInstanceStatistics` using t
       ]
     }
 ```
+
+If you don’t want to use enhanced health authorization at this time, disable it by setting set the `EnhancedHealthAuthEnabled` option in the [aws:elasticbeanstalk:healthreporting:system](command-options-general.md#command-options-general-elasticbeanstalkhealthreporting) namespace to `false`\. If this option is disabled, the permissions described previously aren’t required\. You can remove them from the instance profile for [ least privilege access](security-best-practices.md#security-best-practices.preventive.least-priv) to your applications and environments\. 
+
+**Note**  
+Previously the default setting for `EnhancedHealthAuthEnabled` was `false`, which resulted in authorization for the `elasticbeanstalk:PutInstanceStatistics` action also being disabled by default\. To enable this action for an existing environment, set the `EnhancedHealthAuthEnabled` option in the [aws:elasticbeanstalk:healthreporting:system](command-options-general.md#command-options-general-elasticbeanstalkhealthreporting) namespace to `true`\. You can configure this option by using an [option setting](ebextensions-optionsettings.md) in a [configuration file](ebextensions.md)\. 
 
 ## Enhanced health events<a name="health-enhanced-events"></a>
 

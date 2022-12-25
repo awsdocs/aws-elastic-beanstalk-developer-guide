@@ -22,10 +22,10 @@ The EB CLI provides integration with Git\. This section provides an overview of 
 
 ## Associating Elastic Beanstalk environments with Git branches<a name="eb3-cli-git.branches"></a>
 
-You can associate a different environment with each branch of your code\. When you checkout a branch, changes are deployed to the associated environment\. For example, you can type the following to associate your production environment with your master branch, and a separate development environment with your development branch:
+You can associate a different environment with each branch of your code\. When you checkout a branch, changes are deployed to the associated environment\. For example, you can type the following to associate your production environment with your mainline branch, and a separate development environment with your development branch:
 
 ```
-~/eb$ git checkout master
+~/eb$ git checkout mainline
 ~/eb$ eb use prod
 ~/eb$ git checkout develop
 ~/eb$ eb use dev

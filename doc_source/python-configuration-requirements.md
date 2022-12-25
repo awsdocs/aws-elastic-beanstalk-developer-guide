@@ -9,8 +9,8 @@ The standard tool for installing Python packages is `pip`\. It has a feature tha
 Create a file named `requirements.txt` and place it in the top\-level directory of your source bundle\. The following is an example `requirements.txt` file for Django\.
 
 ```
-Django==1.11.3
-MySQL-python==1.2.5
+Django==2.2
+mysqlclient==2.0.3
 ```
 
 In your development environment, you can use the `pip freeze` command to generate your requirements file\.
