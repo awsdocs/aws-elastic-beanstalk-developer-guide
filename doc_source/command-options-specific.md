@@ -230,6 +230,6 @@ By default, the proxy server in a Python environment serves any files in a folde
 |  RAILS\_SKIP\_ASSET\_COMPILATION  |  Specifies whether the container should run ``rake assets:precompile` `on behalf of the users' applications; or whether it should be skipped\. This is also only applicable to Rails 3 applications\.  |  `false`  |  `true` `false`  | 
 |  BUNDLE\_WITHOUT  |  A colon \(`:`\) separated list of groups to ignore when installing dependencies from a Gemfile\.  |  `test:development`  |  n/a  | 
 |  RACK\_ENV  |  Specifies what environment stage an application can be run in\. Examples of common environments include development, production, test\.  |  `production`  |  n/a  | 
-|  BUNDLER\_DEPLOYMENT\_MODE  |  Set to true to install dependencies in [deployment mode](https://bundler.io/man/bundle-install.1.html#DEPLOYMENT-MODE) using Bundler\. Set to false to run bundle install in development mode\. *This environment property isn't defined on Amazon Linux AMI Ruby platform branches (preceding Amazon Linux 2)\.*  |  `true`  |  `true` `false`  | 
+|  BUNDLER\_DEPLOYMENT\_MODE  |  Set to true to install dependencies in [deployment mode](https://bundler.io/man/bundle-install.1.html#DEPLOYMENT-MODE) using Bundler\. Set to false to run bundle install in development mode\. *This environment property isn't defined on Amazon Linux AMI Ruby platform branches \(preceding Amazon Linux 2\)\.*  |  `true`  |  `true` `false`  | 
 
 See [Environment properties and other software settings](environments-cfg-softwaresettings.md) for more information\.
