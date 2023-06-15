@@ -1,9 +1,0 @@
-# Using Elastic Beanstalk with Amazon CloudWatch<a name="AWSHowTo.cloudwatch"></a>
-
-Amazon CloudWatch enables you to monitor, manage, and publish various metrics, as well as configure alarm actions based on data from metrics\. Amazon CloudWatch monitoring enables you to collect, analyze, and view system and application metrics so that you can make operational and business decisions more quickly and with greater confidence\.
-
-You can use Amazon CloudWatch to collect metrics about your Amazon Web Services \(AWS\) resources—such as the performance of your Amazon EC2 instances\. You can also publish your own metrics directly to Amazon CloudWatch\. Amazon CloudWatch alarms help you implement decisions more easily by enabling you to send notifications or automatically make changes to the resources you are monitoring, based on rules that you define\. For example, you can create alarms that initiate Amazon EC2 Auto Scaling and Amazon Simple Notification Service \(Amazon SNS\) actions on your behalf\.
-
-Elastic Beanstalk automatically uses Amazon CloudWatch to help you monitor your application and environment status\. You can navigate to the Amazon CloudWatch console to see your dashboard and get an overview of all of your resources as well as your alarms\. You can also choose to view more metrics or add custom metrics\.
-
-For more information about Amazon CloudWatch, go to the [Amazon CloudWatch Developer Guide](http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/)\. For an example of how to use Amazon CloudWatch with Elastic Beanstalk, see [Example: Using custom amazon CloudWatch metrics](customize-containers-cw.md)\.
